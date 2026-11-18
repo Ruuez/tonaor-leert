@@ -31,7 +31,8 @@
     "nl": "de collega",
     "th": "เพื่อนร่วมงาน"
    },
-   "ex": "My colleague is very kind."
+   "ex": "My colleague is very kind.",
+   "nlLike": "de collega"
   },
   {
    "id": "en-break",
@@ -71,7 +72,8 @@
     "nl": "de informatie",
     "th": "ข้อมูล"
    },
-   "ex": "I need more information."
+   "ex": "I need more information.",
+   "nlLike": "de informatie"
   },
   {
    "id": "en-appointment",

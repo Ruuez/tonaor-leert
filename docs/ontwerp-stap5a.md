@@ -116,6 +116,17 @@ Bron: `ontwerp-stap2b.md` (M6, N-M6) en het didactisch plan, hoofdstuk 2.
 - **Begeleider:** ziet bij meekijken de verdeling over de laatste 7 dagen.
 - **Nog niet gebouwd:** dat de app de keuze van de volgende scène of activiteit laat meewegen. Dat is een vervolgstap.
 
+## E-M1 en E-M2: Engels gescheiden en via de steuntaal
+
+Bron: `onderbouwing-engels.md` 2.2 en 2.3, `ontwerp-stap2b.md`.
+
+- **E-M1:** een nieuw woord wacht als zijn tegenhanger in de andere taal minder dan `MOTOR.pairDays` (7) dagen geleden nieuw was (`pairOf` via `tr.nl`, `pairBlocked` in `newWords`).
+- **E-M2:** de Engelse oefeningen tonen de betekenis in de steuntaal.
+  - Het Nederlandse woord staat er alleen nog bij als brug, als het erop lijkt (`nlLike`). Bij een valse vriend (`falseFriend`) staat er een waarschuwing.
+  - Vroeger stond de Nederlandse vertaling er altijd bij ("Nederlands: …"). Dat mengde twee vreemde talen, en dat wil E-M1 juist voorkomen.
+  - Bij Nederlands als steuntaal (of alleen Nederlands) blijft de Nederlandse vertaling de prompt.
+  - In en-t1 krijgen colleague (de collega) en information (de informatie) een `nlLike`.
+
 ## Wat kan breken
 
 - **Opslag:** niets. De vorm `tik` komt in de bestaande lijst `forms`.
