@@ -259,8 +259,10 @@ docs/didactisch-plan.md is het fundament (leeruitkomsten per jaar, leerweg, onde
 | nt2-I-luisteren-2 | 4 | 110 | 6 | 8 |
 | nt2-I-schrijven-1 | 17 | 472 | 0 | 34 |
 | nt2-I-schrijven-2 | 0 | 0 | 0 | 0 |
+| nt2-I-schrijven-3 | 0 | 0 | 0 | 0 |
 | nt2-I-spreken-1 | 20 | 539 | 0 | 40 |
 | nt2-I-spreken-2 | 7 | 165 | 0 | 14 |
+| nt2-I-spreken-3 | 1 | 27 | 0 | 2 |
 | rekenen-2-grootheden | 3 | 67 | 0 | 6 |
 | rekenen-2-informatie | 4 | 86 | 0 | 8 |
 | rekenen-2-procenten | 1 | 22 | 0 | 2 |
