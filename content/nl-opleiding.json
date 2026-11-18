@@ -956,7 +956,7 @@
        },
        "opts": [
         {
-         "t": "Een dag zonder werk",
+         "t": "Een dag zonder werk en zonder school",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1152,7 +1152,7 @@
          }
         },
         {
-         "t": "Het wisselgeld van de kassa",
+         "t": "Het wisselgeld van de kassa in de winkel",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1240,7 +1240,7 @@
          }
         },
         {
-         "t": "Over het weer op school",
+         "t": "Over het weer op school en in de stad",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -1335,7 +1335,7 @@
        },
        "opts": [
         {
-         "t": "Omdat de opleiding dan gratis is",
+         "t": "Omdat de opleiding dan gratis is voor iedereen",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -1449,7 +1449,7 @@
        ],
        "opts": [
         {
-         "t": "Ik kok worden wil.",
+         "t": "Ik kok worden wil graag.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -1501,7 +1501,7 @@
          }
         },
         {
-         "t": "Ik wil kok worden, want kook ik graag.",
+         "t": "Ik wil kok worden, want kook ik heel graag.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -1574,7 +1574,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, hier ik heb de folder.",
+         "t": "Ja, natuurlijk. Hier ik heb de folder.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -2245,7 +2245,7 @@
          }
         },
         {
-         "t": "De folder",
+         "t": "De folder op tafel",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2439,7 +2439,7 @@
        },
        "opts": [
         {
-         "t": "Monteur",
+         "t": "Monteur bij een garage",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2585,7 +2585,7 @@
          }
         },
         {
-         "t": "Je wacht tot thuis",
+         "t": "Je wacht tot je thuis bent",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2803,7 +2803,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, ik vraag heb een over opleiding.",
+         "t": "Ja, ik vraag heb een over de opleiding nu.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -2855,7 +2855,7 @@
          }
         },
         {
-         "t": "Hoeveel jaar kost de opleiding?",
+         "t": "Hoeveel jaar kost de opleiding in totaal?",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -2906,7 +2906,7 @@
          }
         },
         {
-         "t": "Ik kies deze opleiding, want ik graag verzorgende wil worden.",
+         "t": "Ik kies deze opleiding, want ik graag verzorgende wil worden nu.",
          "r": "near",
          "err": "woordvolgorde",
          "why": {
@@ -2948,13 +2948,13 @@
          }
         },
         {
-         "t": "Dank u wel folder.",
+         "t": "Dank u wel voor folder en informatie.",
          "r": "no",
-         "err": "woordvolgorde",
+         "err": "lidwoord",
          "why": {
-          "nl": "Dit is geen volledige zin. Zeg: Dank u wel voor de informatie.",
-          "th": "นี่ไม่ใช่ประโยคเต็ม พูดว่า: Dank u wel voor de informatie",
-          "en": "This is not a full sentence. Say: Dank u wel voor de informatie."
+          "nl": "Er hoort een lidwoord bij: voor de folder en de informatie.",
+          "th": "ต้องมีคำนำหน้านาม: voor de folder en de informatie",
+          "en": "It needs an article: voor de folder en de informatie."
          }
         }
        ]
@@ -3271,7 +3271,7 @@
        },
        "opts": [
         {
-         "t": "De opleiding betalen",
+         "t": "De opleiding betalen aan het begin van het jaar",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -3494,7 +3494,7 @@
          }
         },
         {
-         "t": "Op de folder",
+         "t": "Op de folder van de opleiding",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -3544,7 +3544,7 @@
        },
        "opts": [
         {
-         "t": "Een folder over de kosten",
+         "t": "Een folder over de kosten van de opleiding",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -3869,13 +3869,13 @@
        ],
        "opts": [
         {
-         "t": "Ja, ik wil mij aanmelden voor opleiding.",
+         "t": "Ja, ik wil mij aanmelden voor opleiding van kok vandaag.",
          "r": "near",
          "err": "lidwoord",
          "why": {
-          "nl": "Bijna. Er hoort een lidwoord bij: voor de opleiding.",
-          "th": "เกือบถูก ต้องมีคำนำหน้านาม: voor de opleiding",
-          "en": "Almost. It needs an article: voor de opleiding."
+          "nl": "Bijna. Er hoort een lidwoord bij: voor de opleiding. En het is een opleiding tot kok, niet opleiding van kok.",
+          "th": "เกือบถูก ต้องมีคำนำหน้านาม: voor de opleiding และต้องพูดว่า opleiding tot kok ไม่ใช่ opleiding van kok",
+          "en": "Almost. It needs an article: voor de opleiding. And it is an opleiding tot kok, not opleiding van kok."
          }
         },
         {
@@ -3911,7 +3911,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, ik diploma heb.",
+         "t": "Ja, ik diploma heb van een school.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -4065,7 +4065,10 @@
      "items": [
       "opl.motivatie",
       "opl.omdat",
-      "wrk.want"
+      "wrk.want",
+      "opl.regel.want",
+      "opl.regel.omdat",
+      "opl.regel.reden"
      ],
      "ask": {
       "nl": "Schrijf je motivatie voor het formulier in twee korte zinnen: je beroep met want, je aanmelding met omdat.",
@@ -4553,7 +4556,7 @@
          }
         },
         {
-         "t": "Bij de dokter",
+         "t": "Bij de dokter in de stad",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4636,7 +4639,7 @@
        },
        "opts": [
         {
-         "t": "De opleiding betalen",
+         "t": "De opleiding betalen met je eigen geld per maand",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -4748,7 +4751,7 @@
          }
         },
         {
-         "t": "Ik werk twee jaar in een keuken gehad.",
+         "t": "Ik werk twee jaar in een grote keuken gehad.",
          "r": "no",
          "err": "tijd",
          "why": {
@@ -4790,7 +4793,7 @@
          }
         },
         {
-         "t": "Ik als kok ga werken.",
+         "t": "Ik als kok ga werken in een hotel.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -4813,7 +4816,7 @@
        ],
        "opts": [
         {
-         "t": "Nee, nog niet. Ik ga zoeken een bedrijf.",
+         "t": "Nee, nog niet. Ik ga zoeken een goed bedrijf.",
          "r": "near",
          "err": "woordvolgorde",
          "why": {
@@ -4873,7 +4876,7 @@
          }
         },
         {
-         "t": "Dank u wel. Hoi.",
+         "t": "Dank u wel voor de tijd. Hoi.",
          "r": "no",
          "err": "beleefdheid",
          "why": {
@@ -5080,7 +5083,10 @@
       "opl.plan",
       "opl.intake",
       "opl.stage",
-      "opl.omdat"
+      "opl.omdat",
+      "opl.regel.gaan",
+      "opl.regel.plan",
+      "opl.regel.omdat"
      ],
      "ask": {
       "nl": "De docent vraagt: Wat kun je al en wat ga je doen? Vertel het in ongeveer 30 seconden.",
@@ -5093,6 +5099,11 @@
       "en": "For example: Ik heb twee jaar in een keuken gewerkt. Ik ga een opleiding tot kok doen, omdat ik kok wil worden. Ik ga ook stage lopen bij een bedrijf."
      },
      "checklist": [
+      {
+       "nl": "Komt de inhoud over? Weet de ander na het luisteren wat je bedoelt, en heb je alles gezegd wat de opdracht vraagt?",
+       "th": "ผู้ฟังเข้าใจเนื้อหาไหม ฟังแล้วรู้ว่าคุณหมายถึงอะไร และคุณพูดครบตามที่โจทย์ถามไหม",
+       "en": "Does the content come across? After listening, does the other person know what you mean, and did you say everything the task asks?"
+      },
       {
        "nl": "Vertel je wat je al kunt (ervaring), met heb + het deelwoord aan het eind?",
        "th": "คุณเล่าสิ่งที่ทำได้แล้ว (ประสบการณ์) ด้วย heb + กริยาช่องที่สามท้ายประโยคไหม",
@@ -5107,6 +5118,11 @@
        "nl": "Geef je een reden met omdat en het werkwoord achteraan?",
        "th": "คุณให้เหตุผลด้วย omdat และกริยาท้ายประโยคไหม",
        "en": "Do you give a reason with omdat and the verb at the end?"
+      },
+      {
+       "nl": "Klinkt je stem natuurlijk, met <b>intonatie</b>: omhoog bij een ja/nee-vraag, omlaag aan het eind van een gewone zin?",
+       "th": "เสียงของคุณฟังเป็นธรรมชาติ มี <b>intonatie</b> (ทำนองเสียง) ไหม เสียงสูงขึ้นเมื่อเป็นคำถามที่ตอบว่าใช่หรือไม่ และต่ำลงเมื่อจบประโยคธรรมดา",
+       "en": "Does your voice sound natural, with <b>intonation</b>: up for a yes/no question, down at the end of a normal sentence?"
       }
      ]
     },
@@ -5115,14 +5131,17 @@
      "items": [
       "opl.plan",
       "opl.ervaring",
-      "opl.volgen"
+      "opl.volgen",
+      "opl.regel.gaan",
+      "opl.regel.plan",
+      "opl.regel.omdat"
      ],
      "ask": {
       "nl": "Schrijf drie korte zinnen voor de docent: je plan, je ervaring en je reden.",
       "th": "เขียนสามประโยคสั้น ๆ ถึงอาจารย์: แผน ประสบการณ์ และเหตุผลของคุณ",
       "en": "Write three short sentences for the teacher: your plan, your experience and your reason."
      },
-     "frame": "Ik ga ___ doen. Ik heb ervaring met ___. Ik kies deze opleiding, omdat ___.",
+     "frame": "Ik ___ ___ ___ doen. Ik heb ervaring met ___. Ik kies deze opleiding, omdat ___.",
      "model": "Ik ga een opleiding tot kok doen. Ik heb ervaring met koken. Ik kies deze opleiding, omdat ik kok wil worden.",
      "checklist": [
       {
@@ -5535,7 +5554,7 @@
          }
         },
         {
-         "t": "Een opleiding betalen",
+         "t": "Een opleiding betalen met het geld van school",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -5652,7 +5671,7 @@
          }
         },
         {
-         "t": "Wat de opleiding kost",
+         "t": "Wat de opleiding kost en hoe lang hij duurt",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5704,7 +5723,7 @@
          }
         },
         {
-         "t": "Ik een opleiding ga doen tot monteur.",
+         "t": "Ik een opleiding ga doen tot monteur in de stad.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -5755,7 +5774,7 @@
          }
         },
         {
-         "t": "Ik wil monteur worden, omdat repareer ik graag machines.",
+         "t": "Ik wil monteur worden, omdat repareer ik graag veel machines.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -5778,7 +5797,7 @@
        ],
        "opts": [
         {
-         "t": "Ik niveau 2 kies, omdat die opleiding 1 tot 2 jaar duurt.",
+         "t": "Ik niveau 2 kies, omdat die opleiding maar 1 tot 2 jaar duurt.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -6085,14 +6104,17 @@
       "opl.plan",
       "opl.omdat",
       "wrk.eerst",
-      "wrk.daarna"
+      "wrk.daarna",
+      "opl.regel.gaan",
+      "opl.regel.plan",
+      "opl.regel.omdat"
      ],
      "ask": {
       "nl": "Schrijf een kort bericht aan een vriend: wat is je plan en waarom? Zeg ook wat je eerst gaat doen en wat daarna.",
       "th": "เขียนข้อความสั้น ๆ ถึงเพื่อน: แผนของคุณคืออะไรและเพราะอะไร บอกด้วยว่าคุณจะทำอะไรก่อนและอะไรทีหลัง",
       "en": "Write a short message to a friend: what is your plan and why? Also say what you will do first and what afterwards."
      },
-     "frame": "Ik ga ___ doen, omdat ___. Eerst ga ik ___. Daarna ga ik ___.",
+     "frame": "Ik ___ ___ doen, omdat ___. Eerst ___ ik ___. Daarna ___ ik ___.",
      "model": "Ik ga een opleiding tot kok doen, omdat ik kok wil worden. Eerst ga ik naar de open dag. Daarna ga ik mij aanmelden.",
      "checklist": [
       {
@@ -6831,6 +6853,38 @@
      }
     },
     {
+     "type": "make",
+     "items": [
+      "opl.kosten",
+      "opl.regel.kosten",
+      "opl.regel.uren"
+     ],
+     "ask": {
+      "nl": "De opleiding kost € 1.200 per jaar en je betaalt in 12 maanden. Je hebt dinsdag 6 uur, woensdag 5 uur en donderdag 4 uur les. Schrijf wat je per maand betaalt en hoeveel uur les je per week hebt.",
+      "th": "หลักสูตรราคา 1.200 ยูโรต่อปี และคุณจ่ายใน 12 เดือน คุณเรียนวันอังคาร 6 ชั่วโมง วันพุธ 5 ชั่วโมง และวันพฤหัสบดี 4 ชั่วโมง เขียนว่าต่อเดือนจ่ายเท่าไรและเรียนกี่ชั่วโมงต่อสัปดาห์",
+      "en": "The course costs € 1,200 a year and you pay in 12 months. You have 6 hours of lessons on Tuesday, 5 on Wednesday and 4 on Thursday. Write what you pay per month and how many hours of lessons you have per week."
+     },
+     "frame": "Per maand betaal ik € ___ (___ : ___). Ik heb ___ + ___ + ___ = ___ uur les per week.",
+     "model": "Per maand betaal ik € 100 (1.200 : 12). Ik heb 6 + 5 + 4 = 15 uur les per week.",
+     "checklist": [
+      {
+       "nl": "Deel je het bedrag per jaar door 12 voor het bedrag per maand (1.200 : 12)?",
+       "th": "คุณหารยอดต่อปีด้วย 12 เพื่อได้ยอดต่อเดือนไหม (1.200 : 12)",
+       "en": "Do you divide the amount per year by 12 to get the amount per month (1.200 : 12)?"
+      },
+      {
+       "nl": "Tel je de uren van elke dag bij elkaar op (6 + 5 + 4)?",
+       "th": "คุณบวกชั่วโมงของแต่ละวันเข้าด้วยกันไหม (6 + 5 + 4)",
+       "en": "Do you add up the hours of each day (6 + 5 + 4)?"
+      },
+      {
+       "nl": "Kan het kloppen? 12 maanden × € 100 is € 1.200 en drie dagen van ongeveer 5 uur is ongeveer 15.",
+       "th": "สมเหตุสมผลไหม 12 เดือน × 100 ยูโร คือ 1.200 ยูโร และสามวันวันละประมาณ 5 ชั่วโมง คือประมาณ 15",
+       "en": "Can it be right? 12 months × € 100 is € 1,200 and three days of about 5 hours is about 15."
+      }
+     ]
+    },
+    {
      "type": "extra",
      "err": "rekenstap",
      "explain": {
@@ -7190,7 +7244,7 @@
        },
        "opts": [
         {
-         "t": "Nee, je hebt alleen les op school",
+         "t": "Nee, je hebt alleen les op school en geen stage",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -7291,6 +7345,49 @@
        "answer": "Over het mbo en de stage"
       },
       {
+       "form": "choose",
+       "items": [
+        "opl.mbo"
+       ],
+       "ask": {
+        "nl": "Wat voor tekst is dit?",
+        "th": "นี่เป็นข้อความประเภทไหน",
+        "en": "What kind of text is this?"
+       },
+       "opts": [
+        {
+         "t": "Een advertentie van een bedrijf dat personeel zoekt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Het bedrijf is maar een deel van het verhaal. De tekst legt uit hoe het mbo werkt en zoekt geen personeel.",
+          "th": "บริษัทเป็นเพียงส่วนหนึ่งของเรื่อง ข้อความอธิบายว่า mbo ทำงานอย่างไร ไม่ได้หาพนักงาน",
+          "en": "The company is only part of the story. The text explains how the mbo works and does not look for staff."
+         }
+        },
+        {
+         "t": "Uitleg over het mbo voor nieuwe studenten",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De tekst legt het mbo uit: niveaus, stage, leerwegen en lesgeld.",
+          "th": "ถูกต้อง ข้อความอธิบาย mbo: ระดับ การฝึกงาน รูปแบบการเรียน และ lesgeld",
+          "en": "Good. The text explains the mbo: levels, internship, learning routes and lesgeld."
+         }
+        },
+        {
+         "t": "Een brief van school over jouw lesgeld",
+         "r": "near",
+         "err": "lezen",
+         "why": {
+          "nl": "Bijna. Lesgeld staat erin, maar het is geen brief aan jou. De tekst legt het hele mbo uit.",
+          "th": "เกือบถูก มี lesgeld อยู่ แต่ไม่ใช่จดหมายถึงคุณ ข้อความอธิบาย mbo ทั้งหมด",
+          "en": "Almost. Lesgeld is in it, but it is not a letter to you. The text explains the whole mbo."
+         }
+        }
+       ],
+       "answer": "Uitleg over het mbo voor nieuwe studenten"
+      },
+      {
        "form": "number",
        "items": [
         "opl.niveau"
@@ -7363,7 +7460,7 @@
        },
        "opts": [
         {
-         "t": "Ja, € 1.511 per jaar",
+         "t": "Ja, je betaalt € 1.511 per jaar aan lesgeld",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7696,7 +7793,7 @@
  ],
  "review": {
   "model": "claude-opus-5-5",
-  "date": "2026-11-14",
+  "date": "2026-11-18",
   "verdict": "goed"
  }
 }

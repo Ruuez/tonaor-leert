@@ -881,7 +881,7 @@
          }
         },
         {
-         "t": "Een boekje met telefoonnummers",
+         "t": "Een boekje met telefoonnummers van alle dokters",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -1059,7 +1059,7 @@
          }
         },
         {
-         "t": "De apotheker die medicijnen geeft",
+         "t": "De apotheker die medicijnen geeft aan mensen",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1176,7 +1176,7 @@
          }
         },
         {
-         "t": "Een bericht van de apotheek",
+         "t": "Een bericht van de apotheek over je medicijnen",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -1432,7 +1432,7 @@
          }
         },
         {
-         "t": "Geef mij de dokter.",
+         "t": "Geef mij nu de dokter aan de telefoon.",
          "r": "no",
          "why": {
           "nl": "Dit klinkt als een bevel. Aan de telefoon vraag je: Ik wil graag een afspraak maken.",
@@ -1742,6 +1742,43 @@
      }
     },
     {
+     "type": "make",
+     "items": [
+      "dok.balie",
+      "dok.regel.vraag",
+      "dok.regel.lidwoord"
+     ],
+     "ask": {
+      "nl": "Je staat bij de balie. Schrijf twee vragen aan de assistent met het werkwoord voorop. Gebruik bij elk woord het goede lidwoord (de of het).",
+      "th": "คุณยืนที่เคาน์เตอร์ เขียนคำถามสองข้อถึงผู้ช่วยโดยให้กริยาอยู่หน้าสุด ใช้ de หรือ het ที่ถูกต้องกับแต่ละคำ",
+      "en": "You are at the desk. Write two questions to the assistant with the verb first. Use the right article (de or het) with each word."
+     },
+     "frame": "___ ___ hier wachten? ___ ___ ___ recept hier ophalen?",
+     "model": "Kan ik hier wachten? Kan ik het recept hier ophalen?",
+     "checklist": [
+      {
+       "nl": "Staat in beide vragen het werkwoord voorop (<b>Kan</b> ik …?)?",
+       "th": "ในคำถามทั้งสองข้อ กริยาอยู่หน้าสุดไหม (<b>Kan</b> ik …?)",
+       "en": "Is the verb first in both questions (<b>Kan</b> ik …?)?"
+      },
+      {
+       "nl": "Staat er na het werkwoord eerst <b>ik</b>, dan de rest?",
+       "th": "หลังกริยามี <b>ik</b> ก่อน แล้วค่อยตามด้วยส่วนที่เหลือไหม",
+       "en": "After the verb, does <b>ik</b> come first, then the rest?"
+      },
+      {
+       "nl": "Staat er bij elk woord het goede lidwoord (<b>de</b> balie, <b>het</b> recept)?",
+       "th": "แต่ละคำมี de หรือ het ที่ถูกต้องไหม (<b>de</b> balie, <b>het</b> recept)",
+       "en": "Is the right article with each word (<b>de</b> balie, <b>het</b> recept)?"
+      },
+      {
+       "nl": "Eindigt elke vraag met een vraagteken?",
+       "th": "ทุกคำถามลงท้ายด้วยเครื่องหมายคำถามไหม",
+       "en": "Does each question end with a question mark?"
+      }
+     ]
+    },
+    {
      "type": "extra",
      "err": "woordvolgorde",
      "explain": {
@@ -1762,7 +1799,7 @@
        },
        "opts": [
         {
-         "t": "Ik moet bellen morgen.",
+         "t": "Ik moet bellen morgen om half drie.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -2184,7 +2221,7 @@
        },
        "opts": [
         {
-         "t": "De assistent",
+         "t": "De assistent aan de balie",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -2390,7 +2427,7 @@
        ],
        "opts": [
         {
-         "t": "Mijn geboortedatum is negen uur.",
+         "t": "Mijn geboortedatum is negen uur 's ochtends.",
          "r": "no",
          "why": {
           "nl": "Negen uur is een tijd, geen datum. Een geboortedatum heeft een dag, een maand en een jaar.",
@@ -2533,7 +2570,7 @@
          }
         },
         {
-         "t": "Nee, ik ga naar huis.",
+         "t": "Nee, ik ga nu liever weer naar huis, dag.",
          "r": "no",
          "why": {
           "nl": "Dan zie je de dokter niet. De assistent zegt: ga zitten en wacht.",
@@ -2719,6 +2756,11 @@
      },
      "checklist": [
       {
+       "nl": "Komt de inhoud over? Weet de ander na het luisteren wat je bedoelt, en heb je alles gezegd wat de opdracht vraagt?",
+       "th": "ผู้ฟังเข้าใจเนื้อหาไหม ฟังแล้วรู้ว่าคุณหมายถึงอะไร และคุณพูดครบตามที่โจทย์ถามไหม",
+       "en": "Does the content come across? After listening, does the other person know what you mean, and did you say everything the task asks?"
+      },
+      {
        "nl": "Zeg je geboortedatum: de dag, de maand en het jaar.",
        "th": "บอกวันเกิด: วัน เดือน และปี",
        "en": "Say your date of birth: the day, the month and the year."
@@ -2732,6 +2774,11 @@
        "nl": "Praat rustig en duidelijk.",
        "th": "พูดช้า ๆ และชัดเจน",
        "en": "Speak calmly and clearly."
+      },
+      {
+       "nl": "Klinkt je stem natuurlijk, met <b>intonatie</b>: omhoog bij een ja/nee-vraag, omlaag aan het eind van een gewone zin?",
+       "th": "เสียงของคุณฟังเป็นธรรมชาติ มี <b>intonatie</b> (ทำนองเสียง) ไหม เสียงสูงขึ้นเมื่อเป็นคำถามที่ตอบว่าใช่หรือไม่ และต่ำลงเมื่อจบประโยคธรรมดา",
+       "en": "Does your voice sound natural, with <b>intonation</b>: up for a yes/no question, down at the end of a normal sentence?"
       }
      ]
     },
@@ -3096,7 +3143,7 @@
          }
         },
         {
-         "t": "Je arm",
+         "t": "Je arm en je hand",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -3497,7 +3544,7 @@
          }
         },
         {
-         "t": "Ja, mijn arm is een pijn.",
+         "t": "Ja, mijn arm is een pijn en mijn been ook.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -4167,7 +4214,7 @@
          }
         },
         {
-         "t": "Een afspraak vergeten",
+         "t": "Een afspraak vergeten en niet meer komen",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -4418,7 +4465,7 @@
        },
        "opts": [
         {
-         "t": "Over een recept van de dokter",
+         "t": "Over een recept van de dokter voor je medicijn",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4722,7 +4769,7 @@
        ],
        "opts": [
         {
-         "t": "Ik verzet de huisarts.",
+         "t": "Ik verzet de huisarts naar een andere dag.",
          "r": "no",
          "why": {
           "nl": "Je verzet een afspraak, niet de dokter. Zeg: Ik wil graag mijn afspraak verzetten.",
@@ -4867,7 +4914,7 @@
          }
         },
         {
-         "t": "Dank u wel. Tot morgen!",
+         "t": "Dank u wel voor de hulp. Tot morgen!",
          "r": "no",
          "err": "tijd",
          "why": {
@@ -5166,7 +5213,7 @@
          }
         },
         {
-         "t": "Een nieuwe afspraak maken",
+         "t": "Een nieuwe afspraak maken bij de dokter",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -5501,7 +5548,7 @@
        },
        "opts": [
         {
-         "t": "Bij de balie",
+         "t": "Bij de balie van de praktijk",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5590,7 +5637,7 @@
          }
         },
         {
-         "t": "Een medicijn voor op je huid",
+         "t": "Een medicijn voor op je huid en je hand",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -5702,7 +5749,7 @@
          }
         },
         {
-         "t": "Een agenda",
+         "t": "Een agenda met alle afspraken",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5795,7 +5842,7 @@
          }
         },
         {
-         "t": "Ik kom voor de balie.",
+         "t": "Ik kom voor de balie, want ik heb een afspraak.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5817,7 +5864,7 @@
        ],
        "opts": [
         {
-         "t": "Mijn geboortedatum is twaalf uur.",
+         "t": "Mijn geboortedatum is twaalf uur 's middags.",
          "r": "no",
          "why": {
           "nl": "Twaalf uur is een tijd. Zeg dag, maand en jaar: 12 mei 1980.",
@@ -5859,7 +5906,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, ik wil een nieuwe agenda.",
+         "t": "Ja, ik wil graag een nieuwe agenda hebben.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5911,7 +5958,7 @@
          }
         },
         {
-         "t": "Nee, ik wacht bij de apotheek.",
+         "t": "Nee, ik wacht liever bij de apotheek op de hoek.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5930,6 +5977,358 @@
          }
         }
        ]
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "dok.afspraak",
+      "dok.assistent",
+      "dok.balie",
+      "dok.wachtkamer",
+      "dok.verzetten",
+      "dok.apotheek"
+     ],
+     "text": {
+      "nl": "Informatie voor nieuwe patiënten. Welkom bij onze huisartsenpraktijk! Wilt u een afspraak maken? Bel dan tussen acht en tien uur 's ochtends. De assistent schrijft de afspraak in de agenda. Zeg altijd uw geboortedatum, want zo vindt de assistent uw gegevens. Neem uw zorgpas mee naar de praktijk. Meld u bij de balie en wacht in de wachtkamer. De huisarts roept u zelf. Een gewone afspraak duurt tien minuten. Heeft u veel vragen? Maak dan een dubbele afspraak. Kunt u niet komen? Verzet de afspraak dan zo snel mogelijk, liefst een dag van tevoren. Dan kan iemand anders de tijd gebruiken. Krijgt u medicijnen? Dan schrijft de huisarts een recept. Dat haalt u bij de apotheek. Heeft u een vraag over uw medicijn? Vraag het dan aan de huisarts of aan de apotheek. Soms moet u terugkomen voor een controle. Dat hoort u van de huisarts. Is het levensgevaarlijk? Bel dan meteen 112.",
+      "th": "ข้อมูลสำหรับผู้ป่วยใหม่ ยินดีต้อนรับสู่คลินิกแพทย์ประจำตัวของเรา! ต้องการนัดหมายไหม ให้โทรมาระหว่างแปดโมงถึงสิบโมงเช้า ผู้ช่วยจะจดนัดหมายลงในสมุดนัด ให้บอกวันเกิดของคุณเสมอ เพราะผู้ช่วยจะใช้ค้นหาข้อมูลของคุณ นำบัตรประกันสุขภาพมาที่คลินิกด้วย แจ้งที่เคาน์เตอร์และรอในห้องรอ แพทย์จะเรียกคุณเอง การนัดหมายปกติใช้เวลาสิบนาที ถ้าคุณมีคำถามมาก ให้นัดแบบสองเท่าของเวลา ถ้าคุณมาไม่ได้ ให้เลื่อนนัดโดยเร็วที่สุด ดีที่สุดคือล่วงหน้าหนึ่งวัน เพื่อให้คนอื่นใช้เวลานั้นได้ ถ้าคุณได้รับยา แพทย์จะเขียนใบสั่งยา ซึ่งคุณไปรับที่ร้านขายยา ถ้าคุณมีคำถามเรื่องยา ให้ถามแพทย์หรือร้านขายยา บางครั้งคุณต้องกลับมาตรวจติดตาม คุณจะได้ยินจากแพทย์เอง ถ้าอันตรายถึงชีวิต ให้โทร 112 ทันที",
+      "en": "Information for new patients. Welcome to our GP practice! Would you like to make an appointment? Then call between eight and ten o'clock in the morning. The assistant writes the appointment in the diary. Always say your date of birth, because this is how the assistant finds your details. Bring your health insurance card to the practice. Report to the desk and wait in the waiting room. The GP will call you. A normal appointment takes ten minutes. Do you have many questions? Then make a double appointment. Can you not come? Then reschedule the appointment as soon as possible, preferably a day in advance. Then someone else can use the time. Do you get medicine? Then the GP writes a prescription. You collect that at the pharmacy. Do you have a question about your medicine? Then ask the GP or the pharmacy. Sometimes you have to come back for a check-up. You hear that from the GP. Is it life-threatening? Then call 112 immediately."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "dok.huisarts"
+       ],
+       "ask": {
+        "nl": "Wat voor tekst is dit?",
+        "th": "นี่เป็นข้อความประเภทไหน",
+        "en": "What kind of text is this?"
+       },
+       "opts": [
+        {
+         "t": "Een reclame voor een nieuwe apotheek in de buurt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De tekst komt van een huisartsenpraktijk en geeft uitleg. Het is geen reclame.",
+          "th": "ข้อความมาจากคลินิกแพทย์ประจำตัวและให้คำอธิบาย ไม่ใช่โฆษณา",
+          "en": "The text comes from a GP practice and gives explanations. It is not an advertisement."
+         }
+        },
+        {
+         "t": "Informatie van de praktijk voor nieuwe patiënten",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Bovenaan staat: informatie voor nieuwe patiënten.",
+          "th": "ถูกต้อง ด้านบนเขียนว่า ข้อมูลสำหรับผู้ป่วยใหม่",
+          "en": "Good. At the top it says: information for new patients."
+         }
+        },
+        {
+         "t": "Een bericht van de dokter over jouw ziekte",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De tekst gaat niet over een ziekte van jou. Het is informatie voor alle nieuwe patiënten.",
+          "th": "ข้อความไม่ได้เกี่ยวกับโรคของคุณ เป็นข้อมูลสำหรับผู้ป่วยใหม่ทุกคน",
+          "en": "The text is not about an illness of yours. It is information for all new patients."
+         }
+        }
+       ],
+       "answer": "Informatie van de praktijk voor nieuwe patiënten",
+       "why": {
+        "nl": "Goed. Bovenaan staat: informatie voor nieuwe patiënten.",
+        "th": "ถูกต้อง ด้านบนเขียนว่า ข้อมูลสำหรับผู้ป่วยใหม่",
+        "en": "Good. At the top it says: information for new patients."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "dok.afspraak"
+       ],
+       "ask": {
+        "nl": "Waarom schrijft de praktijk deze tekst?",
+        "th": "ทำไมคลินิกจึงเขียนข้อความนี้",
+        "en": "Why does the practice write this text?"
+       },
+       "opts": [
+        {
+         "t": "De praktijk gaat sluiten en zoekt een andere plek",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Daar staat niets over. De tekst legt uit hoe de praktijk werkt.",
+          "th": "ไม่มีเรื่องนั้น ข้อความอธิบายว่าคลินิกทำงานอย่างไร",
+          "en": "Nothing is said about that. The text explains how the practice works."
+         }
+        },
+        {
+         "t": "Nieuwe patiënten moeten weten hoe de praktijk werkt",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De tekst legt uit hoe je een afspraak maakt en wat je daarna doet.",
+          "th": "ถูกต้อง ข้อความอธิบายว่าจะนัดหมายอย่างไรและทำอะไรต่อ",
+          "en": "Good. The text explains how you make an appointment and what to do next."
+         }
+        },
+        {
+         "t": "De huisarts wil dat mensen meer geld betalen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat niets over geld voor de huisarts. Het gaat om uitleg.",
+          "th": "ไม่มีเรื่องเงินให้แพทย์ เป็นเพียงคำอธิบาย",
+          "en": "Nothing is said about money for the GP. It is explanation."
+         }
+        }
+       ],
+       "answer": "Nieuwe patiënten moeten weten hoe de praktijk werkt",
+       "why": {
+        "nl": "Goed. De tekst legt uit hoe je een afspraak maakt en wat je daarna doet.",
+        "th": "ถูกต้อง ข้อความอธิบายว่าจะนัดหมายอย่างไรและทำอะไรต่อ",
+        "en": "Good. The text explains how you make an appointment and what to do next."
+       }
+      },
+      {
+       "form": "number",
+       "items": [
+        "dok.afspraak"
+       ],
+       "ask": {
+        "nl": "Hoe lang duurt een gewone afspraak in minuten? Typ het getal.",
+        "th": "การนัดหมายปกติใช้เวลากี่นาที พิมพ์ตัวเลข",
+        "en": "How long does a normal appointment take in minutes? Type the number."
+       },
+       "answer": "10",
+       "why": {
+        "nl": "Goed. Er staat: een gewone afspraak duurt tien minuten.",
+        "th": "ถูกต้อง เขียนว่า การนัดหมายปกติใช้เวลาสิบนาที",
+        "en": "Good. It says: a normal appointment takes ten minutes."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "dok.geboortedatum"
+       ],
+       "ask": {
+        "nl": "Waarom zeg je altijd je geboortedatum?",
+        "th": "ทำไมคุณต้องบอกวันเกิดเสมอ",
+        "en": "Why do you always say your date of birth?"
+       },
+       "opts": [
+        {
+         "t": "Omdat de huisarts voor een recept wil weten hoe oud je bent",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. De assistent gebruikt je geboortedatum om je gegevens te vinden.",
+          "th": "ไม่ได้เขียนไว้ ผู้ช่วยใช้วันเกิดเพื่อค้นหาข้อมูลของคุณ",
+          "en": "That is not in the text. The assistant uses your date of birth to find your details."
+         }
+        },
+        {
+         "t": "Omdat de assistent zo je gegevens vindt",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: zo vindt de assistent uw gegevens.",
+          "th": "ถูกต้อง เขียนว่า ผู้ช่วยจะค้นหาข้อมูลของคุณได้",
+          "en": "Good. It says: this is how the assistant finds your details."
+         }
+        },
+        {
+         "t": "Omdat de apotheek dat altijd aan de balie vraagt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Over de apotheek staat dit niet in de tekst. De assistent in de praktijk vraagt ernaar.",
+          "th": "ข้อความไม่ได้พูดถึงร้านขายยาในเรื่องนี้ ผู้ช่วยในคลินิกเป็นคนถาม",
+          "en": "The text does not say this about the pharmacy. The assistant in the practice asks for it."
+         }
+        }
+       ],
+       "answer": "Omdat de assistent zo je gegevens vindt",
+       "why": {
+        "nl": "Goed. Er staat: zo vindt de assistent uw gegevens.",
+        "th": "ถูกต้อง เขียนว่า ผู้ช่วยจะค้นหาข้อมูลของคุณได้",
+        "en": "Good. It says: this is how the assistant finds your details."
+       }
+      },
+      {
+       "form": "type",
+       "items": [
+        "dok.recept"
+       ],
+       "ask": {
+        "nl": "Waar haal je de medicijnen met het recept? Typ het woord.",
+        "th": "คุณรับยาตามใบสั่งยาที่ไหน พิมพ์คำนั้น",
+        "en": "Where do you collect the medicine with the prescription? Type the word."
+       },
+       "answer": "apotheek",
+       "why": {
+        "nl": "Goed. Er staat: dat haalt u bij de apotheek.",
+        "th": "ถูกต้อง เขียนว่า คุณไปรับที่ร้านขายยา",
+        "en": "Good. It says: you collect that at the pharmacy."
+       },
+       "hint": [
+        {
+         "nl": "Zoek het woord recept in de tekst.",
+         "th": "หาคำว่า recept ในข้อความ",
+         "en": "Look for the word recept in the text."
+        },
+        {
+         "nl": "Het woord begint met: apo…",
+         "th": "คำนี้ขึ้นต้นด้วย: apo…",
+         "en": "The word starts with: apo…"
+        }
+       ]
+      },
+      {
+       "form": "choose",
+       "items": [
+        "dok.huisarts"
+       ],
+       "ask": {
+        "nl": "Waar gaat de tekst vooral over?",
+        "th": "ข้อความนี้ส่วนใหญ่เกี่ยวกับอะไร",
+        "en": "What is the text mostly about?"
+       },
+       "opts": [
+        {
+         "t": "Over de medicijnen die de huisarts geeft",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Medicijnen komen kort voor. De tekst gaat vooral over de afspraak en de praktijk.",
+          "th": "ยามีพูดถึงสั้น ๆ ข้อความส่วนใหญ่เกี่ยวกับการนัดหมายและคลินิก",
+          "en": "Medicines appear briefly. The text is mostly about the appointment and the practice."
+         }
+        },
+        {
+         "t": "Over wat je doet voor en bij een afspraak",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De tekst noemt bellen, melden, wachten, verzetten en het recept.",
+          "th": "ถูกต้อง ข้อความกล่าวถึงการโทร การแจ้ง การรอ การเลื่อน และใบสั่งยา",
+          "en": "Good. The text names calling, reporting, waiting, rescheduling and the prescription."
+         }
+        },
+        {
+         "t": "Over de kosten van de zorgverzekering",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De zorgverzekering komt maar één keer voor, als iets om mee te nemen.",
+          "th": "ประกันสุขภาพถูกกล่าวถึงครั้งเดียว ในฐานะสิ่งที่ต้องนำมา",
+          "en": "The health insurance appears only once, as something to bring."
+         }
+        }
+       ],
+       "answer": "Over wat je doet voor en bij een afspraak",
+       "why": {
+        "nl": "Goed. De tekst noemt bellen, melden, wachten, verzetten en het recept.",
+        "th": "ถูกต้อง ข้อความกล่าวถึงการโทร การแจ้ง การรอ การเลื่อน และใบสั่งยา",
+        "en": "Good. The text names calling, reporting, waiting, rescheduling and the prescription."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "dok.verzetten"
+       ],
+       "ask": {
+        "nl": "Waarom verzet je een afspraak liefst een dag van tevoren?",
+        "th": "ทำไมจึงควรเลื่อนนัดล่วงหน้าหนึ่งวัน",
+        "en": "Why do you preferably reschedule an appointment a day in advance?"
+       },
+       "opts": [
+        {
+         "t": "Dan krijg je een goedkoper medicijn bij de apotheek",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. De reden is dat iemand anders de tijd kan gebruiken.",
+          "th": "ไม่ได้เขียนไว้ เหตุผลคือคนอื่นใช้เวลานั้นได้",
+          "en": "That is not in the text. The reason is that someone else can use the time."
+         }
+        },
+        {
+         "t": "Dan kan iemand anders de tijd gebruiken",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat staat in de tekst.",
+          "th": "ถูกต้อง เขียนไว้ในข้อความ",
+          "en": "Good. That is in the text."
+         }
+        },
+        {
+         "t": "Dan is de balie nog open voor de assistent",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De balie komt hier niet in voor. De tekst noemt een andere reden.",
+          "th": "ไม่มีเรื่องเคาน์เตอร์ ข้อความบอกเหตุผลอื่น",
+          "en": "The desk is not mentioned here. The text gives another reason."
+         }
+        }
+       ],
+       "answer": "Dan kan iemand anders de tijd gebruiken",
+       "why": {
+        "nl": "Goed. Dat staat in de tekst.",
+        "th": "ถูกต้อง เขียนไว้ในข้อความ",
+        "en": "Good. That is in the text."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "dok.verzetten"
+       ],
+       "ask": {
+        "nl": "Je kunt morgen niet komen. Wat is een goede conclusie?",
+        "th": "พรุ่งนี้คุณมาไม่ได้ ข้อสรุปที่ดีคืออะไร",
+        "en": "You cannot come tomorrow. What is a good conclusion?"
+       },
+       "opts": [
+        {
+         "t": "Ik kom niet en ik zeg niets, want dat mag",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat mag niet. Je verzet de afspraak, liefst een dag van tevoren.",
+          "th": "ไม่ควรทำแบบนั้น คุณต้องเลื่อนนัด ดีที่สุดคือล่วงหน้าหนึ่งวัน",
+          "en": "That is not allowed. You reschedule the appointment, preferably a day in advance."
+         }
+        },
+        {
+         "t": "Ik bel vandaag en verzet mijn afspraak",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Zo kan iemand anders de tijd gebruiken.",
+          "th": "ถูกต้อง แบบนี้คนอื่นจะใช้เวลานั้นได้",
+          "en": "Good. This way someone else can use the time."
+         }
+        },
+        {
+         "t": "Ik wacht in de wachtkamer tot de huisarts mij roept",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dan ben je er niet, want je kunt niet komen. Bel de praktijk.",
+          "th": "คุณไม่ได้อยู่ที่นั่นเพราะมาไม่ได้ ให้โทรหาคลินิก",
+          "en": "You are not there, because you cannot come. Call the practice."
+         }
+        }
+       ],
+       "answer": "Ik bel vandaag en verzet mijn afspraak",
+       "why": {
+        "nl": "Goed. Zo kan iemand anders de tijd gebruiken.",
+        "th": "ถูกต้อง แบบนี้คนอื่นจะใช้เวลานั้นได้",
+        "en": "Good. This way someone else can use the time."
+       }
       }
      ]
     },
@@ -5989,7 +6388,7 @@
          }
         },
         {
-         "t": "Het gaat goed. Ik ben minder pijn.",
+         "t": "Het gaat goed. Ik ben nu minder pijn.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -6272,7 +6671,8 @@
       "dok.rug",
       "dok.koorts",
       "dok.hoofdpijn",
-      "dok.graag"
+      "dok.graag",
+      "dok.regel.modaal"
      ],
      "ask": {
       "nl": "Vertel de huisarts hoe het gaat. Maak de zinnen af met je eigen woorden.",
@@ -6300,6 +6700,11 @@
        "nl": "Gebruik je minstens één woord uit de les over een klacht (pijn, koorts, hoofdpijn)?",
        "th": "คุณใช้คำจากบทเรียนเกี่ยวกับอาการอย่างน้อยหนึ่งคำไหม (pijn, koorts, hoofdpijn)",
        "en": "Do you use at least one word from the lesson about a complaint (pijn, koorts, hoofdpijn)?"
+      },
+      {
+       "nl": "Staat na <b>wil graag</b> het tweede werkwoord aan het eind (Ik wil graag een afspraak <b>maken</b>)?",
+       "th": "หลัง <b>wil graag</b> กริยาตัวที่สองอยู่ท้ายประโยคไหม (Ik wil graag een afspraak <b>maken</b>)",
+       "en": "After <b>wil graag</b>, is the second verb at the end (Ik wil graag een afspraak <b>maken</b>)?"
       }
      ]
     },
@@ -6734,7 +7139,7 @@
        },
        "opts": [
         {
-         "t": "3 + 4",
+         "t": "3 + 4 = 7",
          "r": "no",
          "err": "model",
          "why": {
@@ -7009,7 +7414,7 @@
        },
        "opts": [
         {
-         "t": "6 + 7",
+         "t": "6 + 7 = 13",
          "r": "no",
          "err": "model",
          "why": {
@@ -7254,6 +7659,38 @@
      }
     },
     {
+     "type": "make",
+     "items": [
+      "dok.tablet",
+      "dok.medicijn",
+      "dok.regel.etiket"
+     ],
+     "ask": {
+      "nl": "Op het etiket staat: 2 pillen per keer, 3 keer per dag, 4 dagen. Schrijf in twee zinnen hoeveel pillen dat per dag en in totaal zijn.",
+      "th": "บนฉลากเขียนว่า ครั้งละ 2 เม็ด วันละ 3 ครั้ง 4 วัน เขียนสองประโยคว่าต่อวันและรวมทั้งหมดกี่เม็ด",
+      "en": "The label says: 2 pills each time, 3 times a day, 4 days. Write two sentences about how many pills that is per day and in total."
+     },
+     "frame": "Per dag neem ik ___ × ___ = ___ pillen. In ___ dagen is dat ___ × ___ = ___ pillen.",
+     "model": "Per dag neem ik 3 × 2 = 6 pillen. In 4 dagen is dat 6 × 4 = 24 pillen.",
+     "checklist": [
+      {
+       "nl": "Reken je eerst het aantal pillen <b>per dag</b> uit (keer per dag × pillen per keer)?",
+       "th": "คุณคำนวณจำนวนเม็ด <b>ต่อวัน</b> ก่อนไหม (จำนวนครั้งต่อวัน × เม็ดต่อครั้ง)",
+       "en": "Do you first work out the pills <b>per day</b> (times a day × pills each time)?"
+      },
+      {
+       "nl": "Reken je daarna het aantal pillen per dag <b>keer</b> het aantal dagen?",
+       "th": "จากนั้นคุณคำนวณจำนวนเม็ดต่อวัน <b>คูณ</b> จำนวนวันไหม",
+       "en": "Do you then work out the pills per day <b>times</b> the number of days?"
+      },
+      {
+       "nl": "Kan het kloppen? 6 pillen per dag, dus na 4 dagen ruim 20.",
+       "th": "สมเหตุสมผลไหม วันละ 6 เม็ด ดังนั้น 4 วันก็เกิน 20 เม็ด",
+       "en": "Can it be right? 6 pills a day, so after 4 days more than 20."
+      }
+     ]
+    },
+    {
      "type": "quiz",
      "role": "ophalen",
      "q": [
@@ -7288,7 +7725,7 @@
          }
         },
         {
-         "t": "75 minuten",
+         "t": "75 minuten, meer dan een uur",
          "r": "no",
          "err": "rekenstap",
          "why": {
@@ -7573,7 +8010,7 @@
          }
         },
         {
-         "t": "Een bewijs van je zorgverzekering",
+         "t": "Een bewijs van je zorgverzekering voor de apotheek",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -7719,7 +8156,7 @@
        },
        "opts": [
         {
-         "t": "De specialist schrijft zelf de brief",
+         "t": "De specialist schrijft dan zelf de brief",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7971,7 +8408,7 @@
        },
        "opts": [
         {
-         "t": "Toch een brief geven",
+         "t": "Toch een brief geven, ook als het niet nodig is",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -8159,7 +8596,7 @@
  },
  "review": {
   "model": "claude-opus-5-5",
-  "date": "2026-11-15",
+  "date": "2026-11-18",
   "verdict": "goed"
  }
 }

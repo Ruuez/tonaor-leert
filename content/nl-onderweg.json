@@ -813,7 +813,7 @@
        },
        "opts": [
         {
-         "t": "Een plek waar je brood koopt",
+         "t": "Een plek waar je brood en koffie koopt",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1000,7 +1000,7 @@
          }
         },
         {
-         "t": "Je stapt uit de trein",
+         "t": "Je stapt uit de trein op het station",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -1083,7 +1083,7 @@
          }
         },
         {
-         "t": "Mijn vertrek trein is negen.",
+         "t": "Mijn vertrek trein is negen uur 's ochtends.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -1166,7 +1166,7 @@
          }
         },
         {
-         "t": "Ja, ik heb een kaart. Ik ga nu incheck.",
+         "t": "Ja, ik heb een kaart. Ik ga nu incheck bij de paal.",
          "r": "near",
          "err": "werkwoordsvorm",
          "why": {
@@ -1833,7 +1833,7 @@
          }
         },
         {
-         "t": "Over een nieuw kaartje",
+         "t": "Over een nieuw kaartje voor de trein",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2052,7 +2052,7 @@
        },
        "opts": [
         {
-         "t": "Over een nieuwe halte",
+         "t": "Over een nieuwe halte voor de bus",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2159,7 +2159,7 @@
        },
        "opts": [
         {
-         "t": "Door de regen",
+         "t": "Door de regen en de wind",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2442,7 +2442,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, ik gehoord het bericht.",
+         "t": "Ja, ik gehoord het bericht van de trein net.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -2534,7 +2534,7 @@
          }
         },
         {
-         "t": "Ik komt om negen uur op het station.",
+         "t": "Ik komt om negen uur al op het station.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -3014,7 +3014,7 @@
          }
         },
         {
-         "t": "Een kaartje kopen",
+         "t": "Een kaartje kopen voor de trein",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -3247,7 +3247,7 @@
          }
         },
         {
-         "t": "Ja, ik weg kwijt ben.",
+         "t": "Ja, ik weg kwijt ben in de stad.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -3278,7 +3278,7 @@
        ],
        "opts": [
         {
-         "t": "Ik ben het station.",
+         "t": "Ik ben het station van de stad.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -4003,7 +4003,7 @@
        },
        "opts": [
         {
-         "t": "Door het weer",
+         "t": "Door het weer in de stad",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4171,7 +4171,7 @@
          }
         },
         {
-         "t": "De persoon heeft een kaartje",
+         "t": "De persoon heeft een kaartje voor de trein",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4295,7 +4295,7 @@
          }
         },
         {
-         "t": "Door de regen",
+         "t": "Door de regen en het weer",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4350,7 +4350,7 @@
        },
        "opts": [
         {
-         "t": "De persoon heeft de bus gepakt",
+         "t": "De persoon heeft de bus naar huis gepakt",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4757,7 +4757,7 @@
        ],
        "opts": [
         {
-         "t": "Nee, ik de volgende trein heb gemist.",
+         "t": "Nee, ik de volgende trein heb gemist in de stad.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -4885,14 +4885,16 @@
      "items": [
       "ond.telaat",
       "ond.missen",
-      "ond.storing"
+      "ond.storing",
+      "ond.regel.was",
+      "ond.regel.heb"
      ],
      "ask": {
       "nl": "Je bent te laat voor je werk. Schrijf een kort bericht aan je collega. Vertel wat er is gebeurd.",
       "th": "คุณไปทำงานสาย เขียนข้อความสั้น ๆ ถึงเพื่อนร่วมงาน เล่าว่าเกิดอะไรขึ้น",
       "en": "You are late for work. Write a short message to your colleague. Tell what happened."
      },
-     "frame": "Hoi, ik ben te laat. De trein had ___. Ik heb de bus ___. Ik ben om ___ bij je. Sorry!",
+     "frame": "Hoi, ik ben te laat. De trein ___ vertraging. Ik ___ de bus ___. Ik ben om ___ bij je. Sorry!",
      "model": "Hoi, ik ben te laat. De trein had vertraging. Ik heb de bus gemist. Ik ben om half tien bij je. Sorry!",
      "checklist": [
       {
@@ -5238,7 +5240,7 @@
        },
        "opts": [
         {
-         "t": "Het adres van het station",
+         "t": "Het adres van het station en de halte",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5299,7 +5301,7 @@
          }
         },
         {
-         "t": "Een kaartje kopen",
+         "t": "Een nieuw kaartje kopen bij de balie",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -5728,7 +5730,7 @@
        ],
        "opts": [
         {
-         "t": "Nee, ik heb te laat gekomen.",
+         "t": "Nee, ik heb te laat gekomen op het werk.",
          "r": "near",
          "err": "werkwoordsvorm",
          "why": {
@@ -5757,6 +5759,366 @@
          }
         }
        ]
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "ond.station",
+      "ond.spoor",
+      "ond.vertraging",
+      "ond.storing",
+      "ond.overstappen",
+      "ond.missen",
+      "ond.telaat",
+      "ond.reis"
+     ],
+     "text": {
+      "nl": "Gisteren was een lange dag. Ik moest om negen uur op mijn werk zijn. Ik ben om half acht naar het station gegaan. Eerst heb ik een kaartje gekocht en ben ik ingecheckt. Volgens de dienstregeling ging mijn trein om 7.45 uur, van spoor vier. Maar er was een storing en de trein had twintig minuten vertraging. Een omroepbericht zei: de trein komt om 8.05 uur. Ik heb gewacht en ik heb mijn collega een bericht gestuurd. In de stad moest ik overstappen op de bus. Door de vertraging heb ik de bus gemist. De volgende bus kwam pas over tien minuten. Ik ben te laat op mijn werk gekomen, om half tien. Mijn collega was erg aardig. Ik heb sorry gezegd. Vandaag neem ik een eerdere trein, want ik wil niet weer te laat zijn. Misschien neem ik ook de fiets. Het fietspad is mooi en dan hoef ik niet op de trein te wachten.",
+      "th": "เมื่อวานเป็นวันที่ยาวนาน ฉันต้องไปถึงที่ทำงานตอนเก้าโมง ฉันไปที่สถานีตอนเจ็ดโมงครึ่ง ก่อนอื่นฉันซื้อตั๋วและเช็กอิน ตามตารางเวลา รถไฟของฉันจะออกตอน 7.45 น. จากชานชาลาสี่ แต่มีเหตุขัดข้องและรถไฟล่าช้ายี่สิบนาที ประกาศบอกว่า รถไฟจะมาถึงตอน 8.05 น. ฉันรอและส่งข้อความถึงเพื่อนร่วมงาน ในเมืองฉันต้องเปลี่ยนไปขึ้นรถบัส เพราะความล่าช้า ฉันจึงตกรถบัส รถบัสคันต่อไปมาอีกสิบนาทีถัดไป ฉันไปถึงที่ทำงานสาย ตอนเก้าโมงครึ่ง เพื่อนร่วมงานใจดีมาก ฉันขอโทษแล้ว วันนี้ฉันจะขึ้นรถไฟเที่ยวก่อนหน้า เพราะไม่อยากสายอีก บางทีฉันอาจปั่นจักรยานด้วย ทางจักรยานสวยและฉันไม่ต้องรอรถไฟ",
+      "en": "Yesterday was a long day. I had to be at work at nine o'clock. I went to the station at half past seven. First I bought a ticket and checked in. According to the timetable my train was due to leave at 7.45, from platform four. But there was a disruption and the train had a delay of twenty minutes. An announcement said: the train will arrive at 8.05. I waited and I sent my colleague a message. In the city I had to change to the bus. Because of the delay I missed the bus. The next bus only came ten minutes later. I arrived late at work, at half past nine. My colleague was very kind. I said sorry. Today I am taking an earlier train, because I do not want to be late again. Maybe I will also take the bike. The cycle path is nice and then I do not have to wait for the train."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "ond.reis"
+       ],
+       "ask": {
+        "nl": "Wat voor tekst is dit?",
+        "th": "นี่เป็นข้อความประเภทไหน",
+        "en": "What kind of text is this?"
+       },
+       "opts": [
+        {
+         "t": "Een omroepbericht van het station met tijden en sporen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Een omroepbericht klinkt op het station. Hier vertelt iemand zelf over een reis.",
+          "th": "ประกาศดังที่สถานี แต่ที่นี่มีคนเล่าเรื่องการเดินทางของตัวเอง",
+          "en": "An announcement sounds at the station. Here someone tells about their own journey."
+         }
+        },
+        {
+         "t": "Een persoonlijk verhaal over een reis van gisteren",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De schrijver vertelt wat er gisteren gebeurde, in de verleden tijd.",
+          "th": "ถูกต้อง ผู้เขียนเล่าสิ่งที่เกิดขึ้นเมื่อวาน ด้วยกาลอดีต",
+          "en": "Good. The writer tells what happened yesterday, in the past tense."
+         }
+        },
+        {
+         "t": "Een dienstregeling van de trein en de bus",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Een dienstregeling is een lijst met tijden. Dit is een verhaal.",
+          "th": "ตารางเดินรถคือรายการเวลา นี่คือเรื่องเล่า",
+          "en": "A timetable is a list of times. This is a story."
+         }
+        }
+       ],
+       "answer": "Een persoonlijk verhaal over een reis van gisteren",
+       "why": {
+        "nl": "Goed. De schrijver vertelt wat er gisteren gebeurde, in de verleden tijd.",
+        "th": "ถูกต้อง ผู้เขียนเล่าสิ่งที่เกิดขึ้นเมื่อวาน ด้วยกาลอดีต",
+        "en": "Good. The writer tells what happened yesterday, in the past tense."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "ond.telaat"
+       ],
+       "ask": {
+        "nl": "Waarom schrijft de persoon deze tekst?",
+        "th": "ทำไมจึงมีคนเขียนข้อความนี้",
+        "en": "Why does the person write this text?"
+       },
+       "opts": [
+        {
+         "t": "Vragen hoe laat de trein vandaag vertrekt van het station",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat geen vraag over een tijd. De persoon vertelt over gisteren.",
+          "th": "ไม่มีคำถามเรื่องเวลา ผู้เขียนเล่าเรื่องเมื่อวาน",
+          "en": "There is no question about a time. The person tells about yesterday."
+         }
+        },
+        {
+         "t": "Vertellen waarom de reis niet goed ging",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De persoon legt uit waarom hij of zij te laat was.",
+          "th": "ถูกต้อง ผู้เขียนอธิบายว่าทำไมมาสาย",
+          "en": "Good. The person explains why they were late."
+         }
+        },
+        {
+         "t": "Een nieuw kaartje bestellen voor morgen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat niets over bestellen. De persoon heeft gisteren een kaartje gekocht.",
+          "th": "ไม่มีเรื่องสั่งตั๋ว ผู้เขียนซื้อตั๋วเมื่อวานแล้ว",
+          "en": "Nothing is said about ordering. The person bought a ticket yesterday."
+         }
+        }
+       ],
+       "answer": "Vertellen waarom de reis niet goed ging",
+       "why": {
+        "nl": "Goed. De persoon legt uit waarom hij of zij te laat was.",
+        "th": "ถูกต้อง ผู้เขียนอธิบายว่าทำไมมาสาย",
+        "en": "Good. The person explains why they were late."
+       }
+      },
+      {
+       "form": "number",
+       "items": [
+        "ond.telaat"
+       ],
+       "ask": {
+        "nl": "Hoe laat moest de persoon op het werk zijn? Typ het uur.",
+        "th": "ผู้เขียนต้องไปถึงที่ทำงานกี่โมง พิมพ์ชั่วโมง",
+        "en": "At what time did the person have to be at work? Type the hour."
+       },
+       "answer": "9",
+       "why": {
+        "nl": "Goed. Er staat: ik moest om negen uur op mijn werk zijn.",
+        "th": "ถูกต้อง เขียนว่า ฉันต้องไปถึงที่ทำงานตอนเก้าโมง",
+        "en": "Good. It says: I had to be at work at nine o'clock."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "ond.vertraging"
+       ],
+       "ask": {
+        "nl": "Waarom had de trein vertraging?",
+        "th": "ทำไมรถไฟจึงล่าช้า",
+        "en": "Why was the train delayed?"
+       },
+       "opts": [
+        {
+         "t": "Door het weer op het spoor in de ochtend",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Over het weer staat niets in de tekst. Er was een storing.",
+          "th": "ไม่มีเรื่องสภาพอากาศในข้อความ มีเหตุขัดข้อง",
+          "en": "Nothing is said about the weather in the text. There was a disruption."
+         }
+        },
+        {
+         "t": "Door een storing",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: er was een storing.",
+          "th": "ถูกต้อง เขียนว่า มีเหตุขัดข้อง",
+          "en": "Good. It says: there was a disruption."
+         }
+        },
+        {
+         "t": "Doordat de persoon te laat op het station was",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De persoon was op tijd op het station. De trein had vertraging.",
+          "th": "ผู้เขียนมาถึงสถานีทันเวลา รถไฟต่างหากที่ล่าช้า",
+          "en": "The person was at the station on time. The train had the delay."
+         }
+        }
+       ],
+       "answer": "Door een storing",
+       "why": {
+        "nl": "Goed. Er staat: er was een storing.",
+        "th": "ถูกต้อง เขียนว่า มีเหตุขัดข้อง",
+        "en": "Good. It says: there was a disruption."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "ond.missen"
+       ],
+       "ask": {
+        "nl": "Waarom heeft de persoon de bus gemist?",
+        "th": "ทำไมผู้เขียนจึงตกรถบัส",
+        "en": "Why did the person miss the bus?"
+       },
+       "opts": [
+        {
+         "t": "Door de vertraging van de trein",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: door de vertraging heb ik de bus gemist.",
+          "th": "ถูกต้อง เขียนว่า เพราะความล่าช้า ฉันจึงตกรถบัส",
+          "en": "Good. It says: because of the delay I missed the bus."
+         }
+        },
+        {
+         "t": "Omdat de persoon eerst nog een kaartje moest kopen bij het station",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Het kaartje kocht de persoon eerder, voor de trein. De reden is de vertraging.",
+          "th": "ผู้เขียนซื้อตั๋วก่อนหน้านั้นสำหรับรถไฟ เหตุผลคือความล่าช้า",
+          "en": "The person bought the ticket earlier, for the train. The reason is the delay."
+         }
+        },
+        {
+         "t": "Omdat de bus niet reed",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De bus reed wel: de volgende kwam over tien minuten.",
+          "th": "รถบัสวิ่ง คันต่อไปมาอีกสิบนาที",
+          "en": "The bus did run: the next one came in ten minutes."
+         }
+        }
+       ],
+       "answer": "Door de vertraging van de trein",
+       "why": {
+        "nl": "Goed. Er staat: door de vertraging heb ik de bus gemist.",
+        "th": "ถูกต้อง เขียนว่า เพราะความล่าช้า ฉันจึงตกรถบัส",
+        "en": "Good. It says: because of the delay I missed the bus."
+       }
+      },
+      {
+       "form": "type",
+       "items": [
+        "ond.telaat"
+       ],
+       "ask": {
+        "nl": "Hoe laat kwam de persoon op het werk? Typ de tijd.",
+        "th": "ผู้เขียนไปถึงที่ทำงานกี่โมง พิมพ์เวลา",
+        "en": "At what time did the person arrive at work? Type the time."
+       },
+       "answer": "half tien",
+       "why": {
+        "nl": "Goed. Er staat: te laat op mijn werk gekomen, om half tien.",
+        "th": "ถูกต้อง เขียนว่า ไปถึงที่ทำงานสายตอนเก้าโมงครึ่ง",
+        "en": "Good. It says: arrived late at work, at half past nine."
+       },
+       "accept": [
+        "9.30",
+        "9:30",
+        "09.30",
+        "half 10"
+       ],
+       "hint": [
+        {
+         "nl": "Zoek: te laat op mijn werk gekomen.",
+         "th": "หา: te laat op mijn werk gekomen",
+         "en": "Look for: te laat op mijn werk gekomen."
+        },
+        {
+         "nl": "De tijd begint met: half …",
+         "th": "เวลาขึ้นต้นด้วย: half …",
+         "en": "The time starts with: half …"
+        }
+       ]
+      },
+      {
+       "form": "choose",
+       "items": [
+        "ond.reis"
+       ],
+       "ask": {
+        "nl": "Waar gaat de tekst vooral over?",
+        "th": "ข้อความนี้ส่วนใหญ่เกี่ยวกับอะไร",
+        "en": "What is the text mostly about?"
+       },
+       "opts": [
+        {
+         "t": "Over een reis die te laat eindigde door een storing en een gemiste bus",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De tekst vertelt het hele verhaal van de reis, met de reden voor de vertraging.",
+          "th": "ถูกต้อง ข้อความเล่าเรื่องการเดินทางทั้งหมดพร้อมเหตุผลของความล่าช้า",
+          "en": "Good. The text tells the whole story of the journey, with the reason for the delay."
+         }
+        },
+        {
+         "t": "Over een nieuwe fiets die goedkoop is",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De fiets komt alleen aan het eind voor, als idee voor vandaag.",
+          "th": "จักรยานกล่าวถึงแค่ตอนท้ายในฐานะความคิดสำหรับวันนี้",
+          "en": "The bike only appears at the end, as an idea for today."
+         }
+        },
+        {
+         "t": "Over een collega die boos is",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De collega was juist aardig.",
+          "th": "เพื่อนร่วมงานใจดีต่างหาก",
+          "en": "The colleague was in fact kind."
+         }
+        }
+       ],
+       "answer": "Over een reis die te laat eindigde door een storing en een gemiste bus",
+       "why": {
+        "nl": "Goed. De tekst vertelt het hele verhaal van de reis, met de reden voor de vertraging.",
+        "th": "ถูกต้อง ข้อความเล่าเรื่องการเดินทางทั้งหมดพร้อมเหตุผลของความล่าช้า",
+        "en": "Good. The text tells the whole story of the journey, with the reason for the delay."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "ond.telaat"
+       ],
+       "ask": {
+        "nl": "Wat doet de persoon vandaag om niet weer te laat te zijn?",
+        "th": "วันนี้ผู้เขียนทำอะไรเพื่อไม่ให้สายอีก",
+        "en": "What does the person do today to avoid being late again?"
+       },
+       "opts": [
+        {
+         "t": "Thuis blijven en niet naar het werk gaan als het regent",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. De persoon neemt een eerdere trein.",
+          "th": "ไม่ได้เขียนไว้ ผู้เขียนขึ้นรถไฟเที่ยวก่อนหน้า",
+          "en": "That is not in the text. The person takes an earlier train."
+         }
+        },
+        {
+         "t": "Een eerdere trein nemen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: vandaag neem ik een eerdere trein.",
+          "th": "ถูกต้อง เขียนว่า วันนี้ฉันจะขึ้นรถไฟเที่ยวก่อนหน้า",
+          "en": "Good. It says: today I am taking an earlier train."
+         }
+        },
+        {
+         "t": "Een nieuw kaartje kopen voor de bus",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. De persoon neemt een eerdere trein, en misschien de fiets.",
+          "th": "ไม่ได้เขียนไว้ ผู้เขียนขึ้นรถไฟเที่ยวก่อนหน้า และอาจปั่นจักรยาน",
+          "en": "That is not in the text. The person takes an earlier train, and maybe the bike."
+         }
+        }
+       ],
+       "answer": "Een eerdere trein nemen",
+       "why": {
+        "nl": "Goed. Er staat: vandaag neem ik een eerdere trein.",
+        "th": "ถูกต้อง เขียนว่า วันนี้ฉันจะขึ้นรถไฟเที่ยวก่อนหน้า",
+        "en": "Good. It says: today I am taking an earlier train."
+       }
       }
      ]
     },
@@ -5986,7 +6348,10 @@
       "ond.vertraging",
       "ond.overstappen",
       "ond.telaat",
-      "ond.station"
+      "ond.station",
+      "ond.regel.was",
+      "ond.regel.zijn",
+      "ond.regel.heb"
      ],
      "ask": {
       "nl": "Een vriend vraagt: Hoe was je reis? Vertel het.",
@@ -5999,6 +6364,11 @@
       "en": "For example: Mijn reis was lang. Ik ben om acht uur naar het station gegaan. De trein had vertraging. Ik moest overstappen. Ik was een uur te laat."
      },
      "checklist": [
+      {
+       "nl": "Komt de inhoud over? Weet de ander na het luisteren wat je bedoelt, en heb je alles gezegd wat de opdracht vraagt?",
+       "th": "ผู้ฟังเข้าใจเนื้อหาไหม ฟังแล้วรู้ว่าคุณหมายถึงอะไร และคุณพูดครบตามที่โจทย์ถามไหม",
+       "en": "Does the content come across? After listening, does the other person know what you mean, and did you say everything the task asks?"
+      },
       {
        "nl": "Gebruik je de verleden tijd (was, had, moest)?",
        "th": "คุณใช้รูปอดีตไหม (was, had, moest)",
@@ -6013,6 +6383,11 @@
        "nl": "Vertel je wat er mis ging (vertraging, overstappen, te laat)?",
        "th": "คุณเล่าไหมว่าอะไรผิดพลาด (vertraging, overstappen, te laat)",
        "en": "Do you tell what went wrong (vertraging, overstappen, te laat)?"
+      },
+      {
+       "nl": "Klinkt je stem natuurlijk, met <b>intonatie</b>: omhoog bij een ja/nee-vraag, omlaag aan het eind van een gewone zin?",
+       "th": "เสียงของคุณฟังเป็นธรรมชาติ มี <b>intonatie</b> (ทำนองเสียง) ไหม เสียงสูงขึ้นเมื่อเป็นคำถามที่ตอบว่าใช่หรือไม่ และต่ำลงเมื่อจบประโยคธรรมดา",
+       "en": "Does your voice sound natural, with <b>intonation</b>: up for a yes/no question, down at the end of a normal sentence?"
       }
      ]
     },
@@ -6035,14 +6410,17 @@
      "items": [
       "ond.reis",
       "ond.vertraging",
-      "ond.overstappen"
+      "ond.overstappen",
+      "ond.regel.was",
+      "ond.regel.zijn",
+      "ond.regel.heb"
      ],
      "ask": {
       "nl": "Schrijf een kort bericht aan een vriend over je reis gisteren. Gebruik de verleden tijd.",
       "th": "เขียนข้อความสั้น ๆ ถึงเพื่อนเรื่องการเดินทางเมื่อวาน ใช้รูปอดีต",
       "en": "Write a short message to a friend about your trip yesterday. Use the past tense."
      },
-     "frame": "Gisteren ben ik naar de stad ___. De trein had ___. Ik moest in de stad ___. Ik was om ___ op het station.",
+     "frame": "Gisteren ___ ik naar de stad ___. De trein ___ vertraging. Ik ___ in de stad ___. Ik ___ om ___ op het station.",
      "model": "Gisteren ben ik naar de stad gegaan. De trein had vertraging. Ik moest in de stad overstappen. Ik was om tien uur op het station.",
      "checklist": [
       {
@@ -6059,6 +6437,11 @@
        "nl": "Vertel je wat er gebeurde op de reis?",
        "th": "คุณเล่าไหมว่าเกิดอะไรขึ้นระหว่างเดินทาง",
        "en": "Do you tell what happened on the trip?"
+      },
+      {
+       "nl": "Kies je goed tussen <b>ben</b> en <b>heb</b>? Ben bij gaan, komen en blijven (ik ben gegaan); heb bij missen en wachten (ik heb gemist).",
+       "th": "คุณเลือกระหว่าง <b>ben</b> กับ <b>heb</b> ถูกต้องไหม ben ใช้กับ gaan, komen, blijven (ik ben gegaan) heb ใช้กับ missen, wachten (ik heb gemist)",
+       "en": "Do you choose correctly between <b>ben</b> and <b>heb</b>? Ben with gaan, komen and blijven (ik ben gegaan); heb with missen and wachten (ik heb gemist)."
       }
      ]
     },
@@ -6182,7 +6565,7 @@
          }
         },
         {
-         "t": "De persoon was op tijd",
+         "t": "De persoon was op tijd bij het station",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -6569,7 +6952,7 @@
        },
        "opts": [
         {
-         "t": "Trein B",
+         "t": "Trein B, aankomst 9:10",
          "r": "no",
          "err": "rekenstap",
          "why": {
@@ -6641,7 +7024,7 @@
        },
        "opts": [
         {
-         "t": "Trein B, 50 minuten",
+         "t": "Trein B, want die duurt 50 minuten",
          "r": "no",
          "err": "rekenstap",
          "why": {
@@ -6927,7 +7310,7 @@
        },
        "opts": [
         {
-         "t": "Ja, dat klopt",
+         "t": "Ja, dat klopt, het is bijna twee uur",
          "r": "no",
          "err": "rekenstap",
          "why": {
@@ -7344,7 +7727,7 @@
          }
         },
         {
-         "t": "Over de prijs van een fiets",
+         "t": "Over de prijs van een fiets in de winkel in Nederland",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7752,7 +8135,7 @@
  ],
  "review": {
   "model": "claude-opus-5-5",
-  "date": "2026-11-14",
+  "date": "2026-11-18",
   "verdict": "goed"
  }
 }

@@ -1096,7 +1096,7 @@
        },
        "opts": [
         {
-         "t": "Je betaalt de rekening",
+         "t": "Je betaalt de rekening voor de boodschappen",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1372,7 +1372,7 @@
          }
         },
         {
-         "t": "Nee, ik lijstje niet.",
+         "t": "Nee, ik lijstje niet, ik heb geen tijd.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -1445,7 +1445,7 @@
          }
         },
         {
-         "t": "Ja, ik schrijf aardappel en tomaat op.",
+         "t": "Ja, ik schrijf aardappel en tomaat nu op.",
          "r": "no",
          "err": "getal",
          "why": {
@@ -1697,6 +1697,44 @@
      }
     },
     {
+     "type": "make",
+     "items": [
+      "mrk.lijstje",
+      "mrk.regel.meervoud",
+      "mrk.regel.hoeveelheid",
+      "mrk.regel.dubbel"
+     ],
+     "ask": {
+      "nl": "Schrijf je boodschappenlijstje. Je hebt nodig: ei (6), appel (2 kilo), pak melk (3), fles water (2). Zet er de hoeveelheid bij.",
+      "th": "เขียนรายการซื้อของของคุณ คุณต้องการ: ไข่ (6) แอปเปิล (2 กิโล) กล่องนม (3) ขวดน้ำ (2) ใส่จำนวนด้วย",
+      "en": "Write your shopping list. You need: egg (6), apple (2 kilos), carton of milk (3), bottle of water (2). Add the amount."
+     },
+     "frame": "Twee kilo ___. Zes ___. Drie ___ melk en twee ___ water.",
+     "model": "Twee kilo appels. Zes eieren. Drie pakken melk en twee flessen water.",
+     "checklist": [
+      {
+       "nl": "Blijft <b>kilo</b> gelijk na een getal (twee kilo, niet twee kilos)?",
+       "th": "<b>kilo</b> คงเดิมหลังตัวเลขไหม (twee kilo ไม่ใช่ twee kilos)",
+       "en": "Does <b>kilo</b> stay the same after a number (twee kilo, not twee kilos)?"
+      },
+      {
+       "nl": "Staat het product in het meervoud (appels, eieren)?",
+       "th": "สินค้าอยู่ในรูปพหูพจน์ไหม (appels, eieren)",
+       "en": "Is the product in the plural (appels, eieren)?"
+      },
+      {
+       "nl": "Schrijf je <b>eieren</b> (niet eis)?",
+       "th": "คุณเขียน <b>eieren</b> ไหม (ไม่ใช่ eis)",
+       "en": "Do you write <b>eieren</b> (not eis)?"
+      },
+      {
+       "nl": "Komt er een letter bij na een korte klank (pak – pakken, fles – flessen)?",
+       "th": "มีตัวอักษรเพิ่มหลังเสียงสั้นไหม (pak – pakken, fles – flessen)",
+       "en": "Does a letter get added after a short sound (pak – pakken, fles – flessen)?"
+      }
+     ]
+    },
+    {
      "type": "do",
      "form": "gap",
      "items": [
@@ -1759,7 +1797,7 @@
          }
         },
         {
-         "t": "Ik koop twaalf eis.",
+         "t": "Ik koop twaalf eis op de markt.",
          "r": "no",
          "err": "spelling",
          "why": {
@@ -1853,7 +1891,7 @@
        },
        "opts": [
         {
-         "t": "Eieren en kaas",
+         "t": "Eieren en kaas en een pak melk",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2058,7 +2096,7 @@
        },
        "opts": [
         {
-         "t": "Een bedrag in euro",
+         "t": "Een bedrag in euro voor je boodschappen",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -2145,7 +2183,7 @@
          }
         },
         {
-         "t": "Een bankpas",
+         "t": "Een bankpas en een pincode",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -2200,7 +2238,7 @@
          }
         },
         {
-         "t": "Twee kilo voor een euro",
+         "t": "Twee kilo appels voor een euro",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2420,7 +2458,7 @@
          }
         },
         {
-         "t": "Over een recept met kaas",
+         "t": "Over een recept met kaas en tomaten",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2514,7 +2552,7 @@
          }
         },
         {
-         "t": "Omdat de appels duur zijn",
+         "t": "Omdat de appels op de markt duur zijn",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2954,7 +2992,7 @@
          }
         },
         {
-         "t": "Ja, doe ook maar zes ei.",
+         "t": "Ja, doe ook maar zes ei erbij.",
          "r": "no",
          "err": "spelling",
          "why": {
@@ -3329,7 +3367,7 @@
          }
         },
         {
-         "t": "Een plek waar je boeken leent",
+         "t": "Een plek waar je boeken leent en teruggeeft",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -3432,7 +3470,7 @@
        },
        "opts": [
         {
-         "t": "Op de kassa",
+         "t": "Op de kassa bij de uitgang",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -3603,7 +3641,7 @@
          }
         },
         {
-         "t": "Naar de markt",
+         "t": "Naar de markt in het centrum van de stad",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -3650,7 +3688,7 @@
          }
         },
         {
-         "t": "Op de markt",
+         "t": "Op de markt in het centrum",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -3823,7 +3861,7 @@
        },
        "opts": [
         {
-         "t": "Alleen contant",
+         "t": "Alleen contant bij de kassa",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -4041,7 +4079,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, waar rijst is?",
+         "t": "Ja, waar rijst is hier in de winkel?",
          "r": "near",
          "err": "woordvolgorde",
          "why": {
@@ -4082,7 +4120,7 @@
        ],
        "opts": [
         {
-         "t": "Dank u wel. Waar de melk staat?",
+         "t": "Dank u wel. Waar de melk staat in de winkel?",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -4133,7 +4171,7 @@
          }
         },
         {
-         "t": "Mooi! Dan neem ik twee paks.",
+         "t": "Mooi! Dan neem ik twee paks melk.",
          "r": "no",
          "err": "spelling",
          "why": {
@@ -4164,7 +4202,7 @@
        ],
        "opts": [
         {
-         "t": "Ik pinnen, ik heb geen contant.",
+         "t": "Ik pinnen, want ik heb geen contant geld.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -4253,14 +4291,15 @@
      "items": [
       "mrk.vinden",
       "mrk.schap",
-      "mrk.supermarkt"
+      "mrk.supermarkt",
+      "mrk.regel.beleefd"
      ],
      "ask": {
       "nl": "Je zoekt de rijst in de supermarkt en je vindt hem niet. Schrijf een korte vraag aan een medewerker.",
       "th": "คุณหาข้าวในซูเปอร์มาร์เก็ตไม่เจอ เขียนคำถามสั้น ๆ ถึงพนักงาน",
       "en": "You look for the rice in the supermarket and cannot find it. Write a short question to an employee."
      },
-     "frame": "Goedemiddag, ik kan de ___ niet vinden. Kunt u mij helpen? Dank u wel.",
+     "frame": "Goedemiddag, ik kan de ___ niet vinden. ___ ___ mij helpen? Dank u wel.",
      "model": "Goedemiddag, ik kan de rijst niet vinden. Kunt u mij helpen? Dank u wel.",
      "checklist": [
       {
@@ -4437,7 +4476,7 @@
          }
         },
         {
-         "t": "Ze zijn kapot",
+         "t": "Ze zijn kapot en niet meer goed",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4641,7 +4680,7 @@
        },
        "opts": [
         {
-         "t": "De fles is vies",
+         "t": "De fles is vies en niet schoon",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -4710,7 +4749,7 @@
          }
         },
         {
-         "t": "Een lijstje met wat je moet kopen",
+         "t": "Een lijstje met wat je nog moet kopen in de winkel",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -4906,7 +4945,7 @@
        },
        "opts": [
         {
-         "t": "Het is nieuw",
+         "t": "Het is nieuw en nog niet open",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -4967,7 +5006,7 @@
          }
         },
         {
-         "t": "Ik terugbrengen dit pak melk.",
+         "t": "Ik terugbrengen dit pak melk naar de winkel.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -5007,7 +5046,7 @@
          }
         },
         {
-         "t": "De melk is kapot. Hij ruikt zuur.",
+         "t": "De melk is kapot. Hij ruikt heel zuur.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5170,7 +5209,7 @@
        },
        "opts": [
         {
-         "t": "U kunt mijn geld teruggeven?",
+         "t": "U kunt mijn geld nu teruggeven?",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -5338,14 +5377,15 @@
       "mrk.bedorven",
       "mrk.terugbrengen",
       "mrk.kassabon",
-      "mrk.gekocht"
+      "mrk.gekocht",
+      "mrk.regel.beleefd"
      ],
      "ask": {
       "nl": "Schrijf een kort bericht aan de klantenservice. Je hebt gisteren een pak melk gekocht, maar de melk is bedorven. Je wilt je geld terug.",
       "th": "เขียนข้อความสั้น ๆ ถึงฝ่ายบริการลูกค้า เมื่อวานคุณซื้อนมหนึ่งกล่อง แต่นมเสีย คุณต้องการเงินคืน",
       "en": "Write a short message to customer service. Yesterday you bought a carton of milk, but the milk is spoiled. You want your money back."
      },
-     "frame": "Goedemiddag, ik heb gisteren een ___ gekocht, maar de ___ is ___. Kunt u mij mijn geld teruggeven? Dank u wel.",
+     "frame": "Goedemiddag, ik heb gisteren een ___ gekocht, maar de ___ is ___. ___ ___ mij mijn geld teruggeven? Dank u wel.",
      "model": "Goedemiddag, ik heb gisteren een pak melk gekocht, maar de melk is bedorven. Kunt u mij mijn geld teruggeven? Dank u wel.",
      "checklist": [
       {
@@ -5490,7 +5530,7 @@
        },
        "opts": [
         {
-         "t": "Hij is bedorven",
+         "t": "Hij is bedorven en niet goed",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5788,7 +5828,7 @@
          }
         },
         {
-         "t": "Naar de buren",
+         "t": "Naar de buren van de straat",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -6055,7 +6095,7 @@
          }
         },
         {
-         "t": "Ik heb appels en kaas kopen.",
+         "t": "Ik heb appels en kaas kopen gisteren.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -6137,7 +6177,7 @@
          }
         },
         {
-         "t": "Ik betaald contant.",
+         "t": "Ik betaald contant met geld.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -6160,7 +6200,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, ik heb ook twee paks melk gekocht.",
+         "t": "Ja, ik heb ook twee paks melk gekocht voor jou.",
          "r": "no",
          "err": "spelling",
          "why": {
@@ -6189,6 +6229,327 @@
          }
         }
        ]
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "mrk.markt",
+      "mrk.supermarkt",
+      "mrk.kilo",
+      "mrk.contant",
+      "mrk.kassabon",
+      "mrk.aanbieding"
+     ],
+     "text": {
+      "nl": "Hoi, ik schrijf je over onze boodschappen. Gisteren was ik op de markt en vandaag in de supermarkt. Op de markt kosten de appels € 2 per kilo en de tomaten € 3 per kilo. Je kunt er alleen contant betalen, dus neem geld mee. De groenten zijn vers, maar je krijgt geen kassabon. In de supermarkt zijn de appels € 2,50 per kilo en de tomaten € 3,50 per kilo, maar er is een aanbieding: twee pakken melk voor twee euro. Je kunt er pinnen en je krijgt altijd een kassabon. Op de markt zijn de prijzen lager voor groente, maar in de supermarkt is er meer keuze, ook in rijst, en staat alles in het schap bij elkaar. Ik heb gisteren vier kilo appels en drie kilo tomaten gekocht en € 17 betaald. Ik denk dat je groente beter op de markt koopt, en melk en rijst in de supermarkt. Wat denk jij? Als je wilt, ga ik zaterdag weer naar de markt. Dan kun je met mij mee.",
+      "th": "สวัสดี ฉันเขียนถึงคุณเรื่องการซื้อของของเรา เมื่อวานฉันไปตลาดนัด และวันนี้ไปซูเปอร์มาร์เก็ต ที่ตลาดนัด แอปเปิลกิโลละ 2 ยูโร และมะเขือเทศกิโลละ 3 ยูโร ที่นั่นจ่ายได้เฉพาะเงินสด ดังนั้นให้นำเงินไปด้วย ผักสด แต่จะไม่ได้ใบเสร็จ ที่ซูเปอร์มาร์เก็ต แอปเปิลกิโลละ 2,50 ยูโร และมะเขือเทศกิโลละ 3,50 ยูโร แต่มีโปรโมชัน: นมสองกล่องราคาสองยูโร ที่นั่นรูดบัตรได้ และคุณจะได้ใบเสร็จเสมอ ที่ตลาดนัด ราคาผักถูกกว่า แต่ที่ซูเปอร์มาร์เก็ตมีให้เลือกมากกว่า รวมถึงข้าวด้วย และของทุกอย่างอยู่บนชั้นรวมกันในที่เดียว เมื่อวานฉันซื้อแอปเปิลสี่กิโลและมะเขือเทศสามกิโล และจ่ายไป 17 ยูโร ฉันคิดว่าคุณควรซื้อผักที่ตลาดนัด ส่วนนมและข้าวซื้อที่ซูเปอร์มาร์เก็ต คุณคิดอย่างไร ถ้าคุณอยากไป วันเสาร์ฉันจะไปตลาดนัดอีก คุณไปกับฉันได้",
+      "en": "Hi, I am writing to you about our shopping. Yesterday I was at the market and today in the supermarket. At the market the apples cost € 2 a kilo and the tomatoes € 3 a kilo. You can only pay cash there, so bring money. The vegetables are fresh, but you do not get a receipt. In the supermarket the apples are € 2.50 a kilo and the tomatoes € 3.50 a kilo, but there is a special offer: two cartons of milk for two euros. You can pay by card there and you always get a receipt. At the market the prices are lower for vegetables, but in the supermarket there is more choice, also in rice, and everything is together on the shelves. Yesterday I bought four kilos of apples and three kilos of tomatoes and paid € 17. I think it is better to buy vegetables at the market, and milk and rice in the supermarket. What do you think? If you want, I will go to the market again on Saturday. Then you can come with me."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "mrk.markt"
+       ],
+       "ask": {
+        "nl": "Wat voor tekst is dit?",
+        "th": "นี่เป็นข้อความประเภทไหน",
+        "en": "What kind of text is this?"
+       },
+       "opts": [
+        {
+         "t": "Een persoonlijk bericht van iemand die boodschappen vergelijkt",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De schrijver vertelt over eigen boodschappen en vraagt wat jij denkt.",
+          "th": "ถูกต้อง ผู้เขียนเล่าเรื่องการซื้อของของตัวเองและถามความเห็นของคุณ",
+          "en": "Good. The writer tells about their own shopping and asks what you think."
+         }
+        },
+        {
+         "t": "Een reclame van de supermarkt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Een reclame laat alleen de goede kanten zien. Hier vergelijkt iemand de markt en de supermarkt.",
+          "th": "โฆษณาแสดงแต่ด้านดี ที่นี่มีคนเปรียบเทียบตลาดนัดกับซูเปอร์มาร์เก็ต",
+          "en": "An advertisement only shows the good sides. Here someone compares the market and the supermarket."
+         }
+        },
+        {
+         "t": "Een brief van de klantenservice over een kassabon",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat geen klacht in de tekst en de klantenservice komt niet voor.",
+          "th": "ไม่มีเรื่องร้องเรียนในข้อความ และไม่มีฝ่ายบริการลูกค้า",
+          "en": "There is no complaint in the text and the customer service does not appear."
+         }
+        }
+       ],
+       "answer": "Een persoonlijk bericht van iemand die boodschappen vergelijkt",
+       "why": {
+        "nl": "Goed. De schrijver vertelt over eigen boodschappen en vraagt wat jij denkt.",
+        "th": "ถูกต้อง ผู้เขียนเล่าเรื่องการซื้อของของตัวเองและถามความเห็นของคุณ",
+        "en": "Good. The writer tells about their own shopping and asks what you think."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "mrk.supermarkt"
+       ],
+       "ask": {
+        "nl": "Wat wil de schrijver met dit bericht?",
+        "th": "ผู้เขียนต้องการอะไรจากข้อความนี้",
+        "en": "What does the writer want with this message?"
+       },
+       "opts": [
+        {
+         "t": "Vragen of je geld wilt lenen voor boodschappen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat niets over lenen. De schrijver vergelijkt prijzen en geeft een tip.",
+          "th": "ไม่มีเรื่องยืมเงิน ผู้เขียนเปรียบเทียบราคาและให้คำแนะนำ",
+          "en": "Nothing is said about borrowing. The writer compares prices and gives a tip."
+         }
+        },
+        {
+         "t": "Vertellen wat het verschil is en een tip geven",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De schrijver vergelijkt markt en supermarkt en geeft een advies.",
+          "th": "ถูกต้อง ผู้เขียนเปรียบเทียบตลาดนัดกับซูเปอร์มาร์เก็ตและให้คำแนะนำ",
+          "en": "Good. The writer compares market and supermarket and gives advice."
+         }
+        },
+        {
+         "t": "Zeggen dat de supermarkt dicht gaat",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. De supermarkt is vandaag gewoon open.",
+          "th": "ไม่ได้เขียนไว้ ซูเปอร์มาร์เก็ตวันนี้เปิดตามปกติ",
+          "en": "That is not in the text. The supermarket is simply open today."
+         }
+        }
+       ],
+       "answer": "Vertellen wat het verschil is en een tip geven",
+       "why": {
+        "nl": "Goed. De schrijver vergelijkt markt en supermarkt en geeft een advies.",
+        "th": "ถูกต้อง ผู้เขียนเปรียบเทียบตลาดนัดกับซูเปอร์มาร์เก็ตและให้คำแนะนำ",
+        "en": "Good. The writer compares market and supermarket and gives advice."
+       }
+      },
+      {
+       "form": "number",
+       "items": [
+        "mrk.kilo"
+       ],
+       "ask": {
+        "nl": "Hoeveel kost een kilo tomaten op de markt? Typ het getal in euro.",
+        "th": "มะเขือเทศกิโลละเท่าไรที่ตลาดนัด พิมพ์ตัวเลขเป็นยูโร",
+        "en": "How much is a kilo of tomatoes at the market? Type the number in euros."
+       },
+       "answer": "3",
+       "why": {
+        "nl": "Goed. Er staat: de tomaten kosten € 3 per kilo.",
+        "th": "ถูกต้อง เขียนว่า มะเขือเทศกิโลละ 3 ยูโร",
+        "en": "Good. It says: the tomatoes cost € 3 a kilo."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "mrk.contant"
+       ],
+       "ask": {
+        "nl": "Waarom neem je geld mee naar de markt?",
+        "th": "ทำไมต้องนำเงินไปที่ตลาดนัด",
+        "en": "Why do you bring money to the market?"
+       },
+       "opts": [
+        {
+         "t": "Je krijgt er een kassabon bij de kassa",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat juist: op de markt krijg je geen kassabon.",
+          "th": "เขียนว่าที่ตลาดนัดจะไม่ได้ใบเสร็จ",
+          "en": "It says the opposite: at the market you do not get a receipt."
+         }
+        },
+        {
+         "t": "Je kunt er alleen contant betalen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: je kunt er alleen contant betalen, dus neem geld mee.",
+          "th": "ถูกต้อง เขียนว่า จ่ายได้เฉพาะเงินสด ดังนั้นให้นำเงินไปด้วย",
+          "en": "Good. It says: you can only pay cash there, so bring money."
+         }
+        },
+        {
+         "t": "De appels zijn er altijd gratis voor nieuwe klanten",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. De appels kosten € 2 per kilo.",
+          "th": "ไม่ได้เขียนไว้ แอปเปิลกิโลละ 2 ยูโร",
+          "en": "That is not in the text. The apples cost € 2 a kilo."
+         }
+        }
+       ],
+       "answer": "Je kunt er alleen contant betalen",
+       "why": {
+        "nl": "Goed. Er staat: je kunt er alleen contant betalen, dus neem geld mee.",
+        "th": "ถูกต้อง เขียนว่า จ่ายได้เฉพาะเงินสด ดังนั้นให้นำเงินไปด้วย",
+        "en": "Good. It says: you can only pay cash there, so bring money."
+       }
+      },
+      {
+       "form": "type",
+       "items": [
+        "mrk.kassabon"
+       ],
+       "ask": {
+        "nl": "Wat krijg je altijd in de supermarkt na het betalen? Typ het woord.",
+        "th": "คุณได้อะไรเสมอที่ซูเปอร์มาร์เก็ตหลังจ่ายเงิน พิมพ์คำนั้น",
+        "en": "What do you always get in the supermarket after paying? Type the word."
+       },
+       "answer": "kassabon",
+       "why": {
+        "nl": "Goed. Er staat: je krijgt altijd een kassabon.",
+        "th": "ถูกต้อง เขียนว่า คุณจะได้ใบเสร็จเสมอ",
+        "en": "Good. It says: you always get a receipt."
+       },
+       "hint": [
+        {
+         "nl": "Zoek: je kunt er pinnen en je krijgt altijd een …",
+         "th": "หา: je kunt er pinnen en je krijgt altijd een …",
+         "en": "Look for: je kunt er pinnen en je krijgt altijd een …"
+        },
+        {
+         "nl": "Het woord begint met: kas…",
+         "th": "คำนี้ขึ้นต้นด้วย: kas…",
+         "en": "The word starts with: kas…"
+        }
+       ]
+      },
+      {
+       "form": "choose",
+       "items": [
+        "mrk.markt"
+       ],
+       "ask": {
+        "nl": "Waar gaat de tekst vooral over?",
+        "th": "ข้อความนี้ส่วนใหญ่เกี่ยวกับอะไร",
+        "en": "What is the text mostly about?"
+       },
+       "opts": [
+        {
+         "t": "Over het kopen van groente voor een groot feest",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Een feest komt niet voor. De tekst vergelijkt twee plekken om boodschappen te doen.",
+          "th": "ไม่มีเรื่องงานเลี้ยง ข้อความเปรียบเทียบสองที่สำหรับซื้อของ",
+          "en": "A party is not mentioned. The text compares two places to do the shopping."
+         }
+        },
+        {
+         "t": "Over de verschillen tussen de markt en de supermarkt",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De tekst noemt prijzen, betalen, kassabon en keuze op beide plekken.",
+          "th": "ถูกต้อง ข้อความกล่าวถึงราคา การจ่ายเงิน ใบเสร็จ และตัวเลือกของทั้งสองที่",
+          "en": "Good. The text names prices, paying, receipt and choice in both places."
+         }
+        },
+        {
+         "t": "Over de prijs van melk en rijst",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Melk komt kort voor bij de aanbieding. Het hoofdonderwerp is de vergelijking.",
+          "th": "นมกล่าวถึงสั้น ๆ ในโปรโมชัน หัวข้อหลักคือการเปรียบเทียบ",
+          "en": "Milk appears briefly in the offer. The main subject is the comparison."
+         }
+        }
+       ],
+       "answer": "Over de verschillen tussen de markt en de supermarkt",
+       "why": {
+        "nl": "Goed. De tekst noemt prijzen, betalen, kassabon en keuze op beide plekken.",
+        "th": "ถูกต้อง ข้อความกล่าวถึงราคา การจ่ายเงิน ใบเสร็จ และตัวเลือกของทั้งสองที่",
+        "en": "Good. The text names prices, paying, receipt and choice in both places."
+       }
+      },
+      {
+       "form": "number",
+       "items": [
+        "mrk.betaald"
+       ],
+       "ask": {
+        "nl": "Hoeveel euro heeft de schrijver gisteren betaald? Typ het getal.",
+        "th": "เมื่อวานผู้เขียนจ่ายไปกี่ยูโร พิมพ์ตัวเลข",
+        "en": "How many euros did the writer pay yesterday? Type the number."
+       },
+       "answer": "17",
+       "why": {
+        "nl": "Goed. 4 kilo appels × € 2 = € 8 en 3 kilo tomaten × € 3 = € 9. Samen € 17.",
+        "th": "ถูกต้อง แอปเปิล 4 กิโล × 2 ยูโร = 8 ยูโร และมะเขือเทศ 3 กิโล × 3 ยูโร = 9 ยูโร รวม 17 ยูโร",
+        "en": "Good. 4 kilos of apples × € 2 = € 8 and 3 kilos of tomatoes × € 3 = € 9. Together € 17."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "mrk.supermarkt"
+       ],
+       "ask": {
+        "nl": "Wat is de conclusie van de schrijver?",
+        "th": "ข้อสรุปของผู้เขียนคืออะไร",
+        "en": "What is the conclusion of the writer?"
+       },
+       "opts": [
+        {
+         "t": "Alles koop je beter in de supermarkt, want daar is het altijd goedkoop",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat zegt de schrijver niet. Groente is op de markt goedkoper.",
+          "th": "ผู้เขียนไม่ได้พูดแบบนั้น ผักที่ตลาดนัดถูกกว่า",
+          "en": "The writer does not say that. Vegetables are cheaper at the market."
+         }
+        },
+        {
+         "t": "Groente koop je beter op de markt, melk en rijst in de supermarkt",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Zo staat het aan het eind van de tekst.",
+          "th": "ถูกต้อง เขียนไว้แบบนี้ตอนท้ายข้อความ",
+          "en": "Good. This is what it says at the end of the text."
+         }
+        },
+        {
+         "t": "Je koopt niets meer op de markt en ook niet in de supermarkt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat is geen conclusie uit de tekst. De schrijver gaat zaterdag weer naar de markt.",
+          "th": "ไม่ใช่ข้อสรุปจากข้อความ ผู้เขียนจะไปตลาดนัดอีกวันเสาร์",
+          "en": "That is not a conclusion from the text. The writer goes to the market again on Saturday."
+         }
+        }
+       ],
+       "answer": "Groente koop je beter op de markt, melk en rijst in de supermarkt",
+       "why": {
+        "nl": "Goed. Zo staat het aan het eind van de tekst.",
+        "th": "ถูกต้อง เขียนไว้แบบนี้ตอนท้ายข้อความ",
+        "en": "Good. This is what it says at the end of the text."
+       }
       }
      ]
     },
@@ -6260,7 +6621,7 @@
          }
         },
         {
-         "t": "Ik heb betalen met mijn pas.",
+         "t": "Ik heb betalen met mijn eigen pas.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -6416,7 +6777,8 @@
       "mrk.betaald",
       "mrk.markt",
       "mrk.kilo",
-      "mrk.contant"
+      "mrk.contant",
+      "mrk.regel.voltooid"
      ],
      "ask": {
       "nl": "Een huisgenoot vraagt: Wat heb je gisteren gekocht en wat heb je betaald? Vertel het.",
@@ -6429,6 +6791,11 @@
       "en": "For example: Gisteren heb ik op de markt twee kilo appels gekocht. Ik heb vier euro contant betaald."
      },
      "checklist": [
+      {
+       "nl": "Komt de inhoud over? Weet de ander na het luisteren wat je bedoelt, en heb je alles gezegd wat de opdracht vraagt?",
+       "th": "ผู้ฟังเข้าใจเนื้อหาไหม ฟังแล้วรู้ว่าคุณหมายถึงอะไร และคุณพูดครบตามที่โจทย์ถามไหม",
+       "en": "Does the content come across? After listening, does the other person know what you mean, and did you say everything the task asks?"
+      },
       {
        "nl": "Gebruik je heb of hebben en staat het deelwoord (gekocht, betaald) aan het eind?",
        "th": "ใช้ heb หรือ hebben และกริยาช่องที่สาม (gekocht, betaald) อยู่ท้ายไหม",
@@ -6443,6 +6810,11 @@
        "nl": "Zeg je hoeveel je hebt betaald?",
        "th": "บอกไหมว่าจ่ายไปเท่าไร",
        "en": "Do you say how much you paid?"
+      },
+      {
+       "nl": "Klinkt je stem natuurlijk, met <b>intonatie</b>: omhoog bij een ja/nee-vraag, omlaag aan het eind van een gewone zin?",
+       "th": "เสียงของคุณฟังเป็นธรรมชาติ มี <b>intonatie</b> (ทำนองเสียง) ไหม เสียงสูงขึ้นเมื่อเป็นคำถามที่ตอบว่าใช่หรือไม่ และต่ำลงเมื่อจบประโยคธรรมดา",
+       "en": "Does your voice sound natural, with <b>intonation</b>: up for a yes/no question, down at the end of a normal sentence?"
       }
      ]
     },
@@ -6452,14 +6824,15 @@
       "mrk.gekocht",
       "mrk.betaald",
       "mrk.kilo",
-      "mrk.lijstje"
+      "mrk.lijstje",
+      "mrk.regel.voltooid"
      ],
      "ask": {
       "nl": "Schrijf een kort bericht aan een huisgenoot: wat heb je gisteren gekocht en hoeveel heb je betaald?",
       "th": "เขียนข้อความสั้น ๆ ถึงคนที่อยู่บ้านเดียวกัน: เมื่อวานคุณซื้ออะไรและจ่ายเท่าไร",
       "en": "Write a short message to a housemate: what did you buy yesterday and how much did you pay?"
      },
-     "frame": "Gisteren heb ik ___ gekocht. Ik heb € ___ betaald.",
+     "frame": "Gisteren ___ ik ___ ___. Ik ___ € ___ ___.",
      "model": "Gisteren heb ik twee kilo appels en zes eieren gekocht. Ik heb € 6 betaald.",
      "checklist": [
       {
@@ -6510,7 +6883,7 @@
          }
         },
         {
-         "t": "Gisteren heb ik een fles kopen.",
+         "t": "Gisteren heb ik een grote fles kopen.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -7206,6 +7579,43 @@
      }
     },
     {
+     "type": "make",
+     "items": [
+      "mrk.perkilo",
+      "mrk.regel.perkilo",
+      "mrk.regel.korting"
+     ],
+     "ask": {
+      "nl": "Twee kilo kaas kost € 10. Schrijf wat een kilo kost, en wat je per kilo betaalt met 10% korting.",
+      "th": "ชีสสองกิโลราคา 10 ยูโร เขียนว่าหนึ่งกิโลราคาเท่าไร และกิโลละเท่าไรเมื่อลด 10%",
+      "en": "Two kilos of cheese cost € 10. Write what one kilo costs, and what you pay per kilo with 10% discount."
+     },
+     "frame": "2 kilo kost € ___. Per kilo is dat € ___ (___ : ___). Met 10% korting is dat € ___ minder, dus ik betaal € ___ per kilo.",
+     "model": "2 kilo kost € 10. Per kilo is dat € 5 (10 : 2). Met 10% korting is dat € 0,50 minder, dus ik betaal € 4,50 per kilo.",
+     "checklist": [
+      {
+       "nl": "Reken je de prijs per kilo uit door de prijs te <b>delen</b> door het aantal kilo (10 : 2)?",
+       "th": "คุณคำนวณราคาต่อกิโลโดย <b>หาร</b> ราคาด้วยจำนวนกิโลไหม (10 : 2)",
+       "en": "Do you work out the price per kilo by <b>dividing</b> the price by the number of kilos (10 : 2)?"
+      },
+      {
+       "nl": "Reken je 10% uit door te delen door 10 (5 : 10 = 0,50)?",
+       "th": "คุณคำนวณ 10% โดยหารด้วย 10 ไหม (5 : 10 = 0,50)",
+       "en": "Do you work out 10% by dividing by 10 (5 : 10 = 0.50)?"
+      },
+      {
+       "nl": "Trek je de korting van de prijs <b>af</b> (5 − 0,50 = 4,50)?",
+       "th": "คุณ <b>ลบ</b> ส่วนลดออกจากราคาไหม (5 − 0,50 = 4,50)",
+       "en": "Do you <b>subtract</b> the discount from the price (5 − 0.50 = 4.50)?"
+      },
+      {
+       "nl": "Kan het kloppen? Met korting betaal je minder dan € 5.",
+       "th": "สมเหตุสมผลไหม เมื่อลดราคา คุณจ่ายน้อยกว่า 5 ยูโร",
+       "en": "Can it be right? With discount you pay less than € 5."
+      }
+     ]
+    },
+    {
      "type": "quiz",
      "role": "ophalen",
      "q": [
@@ -7609,7 +8019,7 @@
        },
        "opts": [
         {
-         "t": "Naar de dokter",
+         "t": "Naar de dokter in de buurt",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -7937,7 +8347,7 @@
          }
         },
         {
-         "t": "De persoon gooit de fles weg",
+         "t": "De persoon gooit de fles zomaar weg",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -8099,7 +8509,7 @@
  ],
  "review": {
   "model": "claude-opus-5-5",
-  "date": "2026-11-15",
+  "date": "2026-11-18",
   "verdict": "goed"
  }
 }
