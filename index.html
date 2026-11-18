@@ -2224,7 +2224,9 @@ function contHtml(){const left=Math.ceil(dayPart()-todayMins());
   return `<section class="card stack">${left>0?T('cont.left',{n:left}):T('cont.dayDone')}<p class="small muted">${T('cont.week',hm(weekMins()))}</p>
    <button class="btn btn-main" id="c-next">${TB('cont.next')}</button>
    <div class="u-list"><button class="u-item" id="c-rev"><span>${T('cont.review')}</span></button><button class="u-item" id="c-expl"><span>${T('cont.explain')}</span></button><button class="u-item" id="c-play"><span>${T(S.story?'cont.speed':'cont.story')}</span></button></div></section>`}
-function bindCont(){if($('#c-next'))$('#c-next').onclick=()=>startLesson(false);if($('#c-rev'))$('#c-rev').onclick=()=>startLesson(true);if($('#c-expl'))$('#c-expl').onclick=()=>{show('vandaag');route=vExplain;rerender();window.scrollTo(0,0)};if($('#c-play'))$('#c-play').onclick=()=>S.story?startSpeed():startStory()}
+/* MO-M4 (onderbouwing-motivatie 2.1): gedrag meten naast de tikken: hoe vaak het doorgaan-scherm komt en hoe vaak de leerder doorgaat (per dag, hooguit 12 weken) */
+function behNote(k){if(STORE!=='ok')return;if(!S.beh||typeof S.beh!=='object'||Array.isArray(S.beh))S.beh={};const d=today(),o=S.beh[d]&&typeof S.beh[d]==='object'?S.beh[d]:(S.beh[d]={shown:0,go:0});o[k]=(+o[k]||0)+1;const cut=d-84*DAY;for(const x of Object.keys(S.beh))if(+x<cut)delete S.beh[x];save()}
+function bindCont(){behNote('shown');const go=f=>()=>{behNote('go');f()};if($('#c-next'))$('#c-next').onclick=go(()=>startLesson(false));if($('#c-rev'))$('#c-rev').onclick=go(()=>startLesson(true));if($('#c-expl'))$('#c-expl').onclick=go(()=>{show('vandaag');route=vExplain;rerender();window.scrollTo(0,0)});if($('#c-play'))$('#c-play').onclick=go(()=>S.story?startSpeed():startStory())}
 function vContinue(){$('#nav').hidden=false;paint(`${T('cont.title')}${contHtml()}<button class="btn btn-ghost" id="home">${T('cont.home')}</button>`);bindCont();$('#home').onclick=()=>show('vandaag')}
 
 /* ============ uitleg (docs/uitleg.md) ============
@@ -2300,14 +2302,14 @@ function fresh(){
   const items={};[...NL,...EN,...REK].forEach(x=>items[x.id]=item());
   return {v:2,onboarded:false,thai:'altijd',size:'normaal',goal:'normaal',moment:null,items,introduced:[],
     points:{},days:{},mins:{},help:[],answers:[],conf:[],sessions:0,talks:0,story:0,speedBest:0,
-    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},schema:SCHEMA};
+    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},schema:SCHEMA};
 }
 /* ============ opslag veilig laden (#30) ============
    S.v blijft 2. S.schema telt de vorm van de opslag (zonder veld = 1). Elke stap n -> n+1 staat in MIGRATE en mag vaker draaien.
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=8,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=9,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2316,7 +2318,8 @@ const MIGRATE={
  4:s=>{if(!s.world||typeof s.world!=='object'||Array.isArray(s.world))s.world={done:{},at:null};if(!s.world.done||typeof s.world.done!=='object')s.world.done={};return s},
  5:s=>{if(!s.errs||typeof s.errs!=='object'||Array.isArray(s.errs))s.errs={};if(s.world&&typeof s.world==='object'&&(!s.world.ok||typeof s.world.ok!=='object'))s.world.ok={};if(s.world&&typeof s.world==='object'&&(!s.world.best||typeof s.world.best!=='object'))s.world.best={};for(const it of Object.values(s.items||{}))if(it&&typeof it==='object'&&typeof it.h!=='string')it.h='';if(typeof s.trial!=='boolean')s.trial=false;if(typeof s.seenNews!=='string')s.seenNews='';if(typeof s.bkNudge!=='number')s.bkNudge=Date.now();return s},   /* bkNudge: de eerste herinnering aan een kopie na een maand */   // diepte en diagnose: foutprofiel per soort fout, beheerste scènes (alleen toegevoegd)   // concept stap 2: scènes (alleen toegevoegd)   // fase 3: goede oefeningen per item (docs/herhaalmodel.md)
  6:s=>{for(const k of ['minsV','outside','prog','blockAdj'])if(!s[k]||typeof s[k]!=='object'||Array.isArray(s[k]))s[k]={};return s},
- 7:s=>{for(const it of Object.values(s.items||{}))if(it&&typeof it==='object'&&typeof it.s==='number'&&it.s>=10)it.gf=1;return s}   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
+ 7:s=>{for(const it of Object.values(s.items||{}))if(it&&typeof it==='object'&&typeof it.s==='number'&&it.s>=10)it.gf=1;return s},
+ 8:s=>{if(!s.beh||typeof s.beh!=='object'||Array.isArray(s.beh))s.beh={};return s}   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
 function checkState(o){if(!o||typeof o!=='object'||Array.isArray(o)||o.v!==2||!o.items||typeof o.items!=='object'||Array.isArray(o.items))return 'broken';
@@ -3396,6 +3399,12 @@ const CARDS={
  ens:{t:'Engels: -s bij he/she/it',uit:'Bij he, she en it krijgt het werkwoord een -s, net zoals hij in het Nederlands een -t krijgt.',fout:'"She work at night."',vb:'Zeg om de beurt een Engelse zin over iemand anders: "Sjaak reads the paper."',vraag:'"Wat doet Emiel elke ochtend? He …"'}
 };
 function cardHtml(k){const c=CARDS[k];return `<p><b>${c.t}</b></p><p><b>Uitleggen:</b> ${c.uit}</p><p><b>Typische fout:</b> ${c.fout}</p><p><b>Voorbeeld:</b> ${c.vb}</p><p><b>Controlevraag:</b> ${c.vraag}</p><div class="note small">Corrigeer per gesprek één ding. Begin met wat goed ging.</div>`}
+/* MO-M4: gedrag van de laatste vier weken naast de tikken na een ronde (voor de begeleider) */
+function behTable(){const rows=[];for(let k=3;k>=0;k--){const m0=monday()-k*7*DAY,m1=m0+7*DAY,inW=t=>+t>=m0&&+t<m1;
+    const days=Object.keys(S.mins||{}).filter(d=>inW(d)&&(S.mins[d]||0)>=1).length,mins=Math.round(Object.entries(S.mins||{}).filter(([d])=>inW(d)).reduce((a,[,m])=>a+m,0));
+    const conf=(S.conf||[]).filter(c=>inW(c.t)),b=Object.entries(S.beh||{}).filter(([d])=>inW(d)).reduce((a,[,o])=>({shown:a.shown+(+o.shown||0),go:a.go+(+o.go||0)}),{shown:0,go:0});
+    rows.push(`<tr><td>${new Date(m0).toLocaleDateString('nl-NL',{day:'numeric',month:'short'})}</td><td class="num">${days}</td><td class="num">${mins}</td><td class="num">${conf.length}</td><td class="num">${b.shown?Math.round(100*b.go/b.shown)+'%':'–'}</td><td class="num">${conf.filter(c=>c.c==='moeilijk').length} / ${conf.filter(c=>c.fun==='saai').length}</td></tr>`)}
+  return `<section class="card stack-sm"><h3>Gedrag, laatste vier weken</h3><table class="small" style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left">Week van</th><th>Dagen</th><th>Min.</th><th>Rondes</th><th>Doorgaan</th><th>Moeilijk / saai</th></tr></thead><tbody>${rows.join('')}</tbody></table><p class="small muted">Wat de leerder doet (dagen, minuten, doorgaan na een ronde) naast wat de leerder zelf aangeeft na een ronde. Doorgaan = hoe vaak na een ronde voor nog een ronde of uitleg werd gekozen.</p></section>`}
 function vEmiel(){
   const w=weekDots(),lv=S.placement?S.placement.lv:null;
   const mastered=ids=>ids.filter(id=>stage(id)>=3).length/ids.length;
@@ -3414,6 +3423,7 @@ function vEmiel(){
     <p class="small muted">Een eerste inschatting op basis van de korte startmeting en hoeveel woorden en vaardigheden al als knop of bloem staan. Hoe meer er geoefend wordt, hoe preciezer dit wordt.</p></section>
   <section class="grid2 stack-sm"><div class="card"><h3>Deze week</h3><div class="week">${w.html}</div><p class="small muted num" style="margin-top:8px">${mins7} minuten · ${S.talks} gesprekken</p></div>
     <div class="card"><h3>Vandaag</h3><p class="num" style="font-size:1.6rem;font-weight:800;font-family:var(--f-display)">${pts()} punten</p><p class="small muted">${S.sessions} lessen in totaal · ${tw}× twijfel</p></div></section>
+  ${behTable()}
   <section class="card stack"><div class="row between"><h3>Hulpvragen</h3><span class="pill pill-lilac num">${open.length} open</span></div>
     ${open.length?`<ul class="list">${open.slice(0,6).map(h=>`<li><b>${esc(h.ctx)}</b><span class="small muted">${new Date(h.t).toLocaleString('nl-NL',{weekday:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span>
       <div class="row" style="flex-wrap:wrap;gap:8px"><button class="pill pill-mint" data-card="${h.i}">Uitlegkaart sturen</button><button class="pill pill-sky" data-type="${h.i}">Antwoord typen</button><button class="pill pill-apricot" data-later="${h.i}">Bespreken we vanavond</button></div>

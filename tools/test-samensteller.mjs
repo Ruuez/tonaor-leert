@@ -98,7 +98,7 @@ ok('de leerklok kan niet struikelen over het laden', html.includes('function lea
   ok('zinnen en klanken: niet dezelfde oefening als in de ronde ervoor', ex(r2).filter(id => ex(r1).includes(id)).length <= 1, ex(r1).join(',') + ' | ' + ex(r2).join(','));
   const types = [...r1, ...r2, ...r3].filter(x => x.w && x.step === 1).map(x => x.type);
   ok('woordvormen wisselen over de rondes (niet alleen typen)', new Set(types).size >= 2, types.join(','));
-  ok('na de les: Verder leren start meteen een nieuwe ronde', html.includes("id=\"c-next\"") && html.includes("$('#c-next').onclick=()=>startLesson(false)"));
+  ok('na de les: Verder leren start meteen een nieuwe ronde', html.includes("id=\"c-next\"") && html.includes("$('#c-next').onclick=go(()=>startLesson(false))"));   // MO-M4: via go(), dat doorgaan telt
 }
 // punt 1 (14 november): nieuw woord eerst als vraag, dagbudget, spreiding binnen een ronde
 { const S5 = { v: 2, introduced: [], items: {}, explained: {}, rounds: {}, log: [], days: {}, newPerDay: 16, newLog: {} };

@@ -75,6 +75,14 @@ Wat de controle opleverde:
 - **Eén overtreding, hersteld:** het scherm Route zei "Kies samen met je begeleider een beloning voor als het lukt". Dat was een beloning die vooraf beloofd werd. Nu staat er: "Kijk daarna samen met je begeleider terug op wat je nu kunt" (waardering achteraf).
 - **Test:** `tools/test-motivatie.mjs` bewaakt dit.
 
+## MO-M4: gedrag meten
+
+Bron: `onderbouwing-motivatie-en-kennis.md` 2.1.
+- **Wat de app bijhoudt:** per dag hoe vaak het doorgaan-scherm verschijnt na een ronde en hoe vaak de leerder daarna doorgaat (`behNote`, `S.beh`). Dat wordt hooguit 12 weken bewaard.
+- **Opslag:** SCHEMA 9, alleen toevoegend.
+- **Scherm van de begeleider (meekijken):** een tabel van de laatste vier weken, per week: dagen met leertijd, minuten, rondes, hoe vaak de leerder doorging, en de tikken "te moeilijk" en "saai". Zo staat wat de leerder doet naast wat de leerder aangeeft.
+- **Het bericht naar de EDGE:** verandert niet.
+
 ## Wat kan breken
 
 - **Opslag:** niets. De vorm `tik` komt in de bestaande lijst `forms`.
