@@ -16,6 +16,11 @@ Bijgewerkt: 14 november 2026.
 - Uitleg (speler, drie ingangen, 32 uitleggen) en het weekdoel (standaard 10 uur, merktekens op 3,5, 7 en 10 uur).
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
+- Herstelronde thema 1 op G2 en nl-buren, cache v2-69:
+  - nl-thuis (goed = langste 60% naar 20%) en nl-werk (72% naar 28%) met een nieuwe leestekst van ruim 160 woorden en een eigen zin per regel. Review Opus goed; de kleine punten zijn verwerkt.
+  - nl-buren (thema 2, order 70): live na drie reviewrondes (ronde 3 op G2: 25%).
+  - nl-dokter, nl-markt, nl-onderweg en nl-opleiding zijn hersteld (29 tot 32%) en liggen bij de review.
+  - Redactiepoort: een Latijnse letter vast aan Thaise tekst is een fout.
 - Werkorder stap 5 vervolg en ijkmoment G2 (docs/ijkmoment-g2.md), cache v2-68:
   - M5/N-M4: de trede per regel (kiezen, afmaken, een eigen zin).
     - Een regel bloeit pas als trede 2 in een gesloten productieve vorm op twee dagen goed ging, plus een eigen zin (make of speak). Besluit ontwerpsessie na G2.

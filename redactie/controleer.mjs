@@ -21,6 +21,8 @@ const err = [], warn = [];
   else for (const m of PC.checkChapter(p).errors) err.push('hoofdstuk: ' + m);
   if (p.type === 'hoofdstuk' || p.type === 'les') for (const m of PC.checkG2(p).issues.filter(m => p.type === 'hoofdstuk' || !/150 tot 450/.test(m))) err.push('G2: ' + m); }   /* ijkmoment G2: goed = langste, stramien, lange tekst, raden, schatten   // werkvormen, hints, lees- en luistertekst, spreken, spel, goals (masterplan A6, B1, B2, C1, C2, G2) */
 const ID = /^[A-Za-z0-9._-]+$/, LANGS = ['nl', 'th', 'en'];
+/* een Latijnse letter vast aan een Thais teken is een tikfout (twee keer gevonden in de redactie, 18 november 2026) */
+{ const mix = /[ก-๛][A-Za-z]|[A-Za-z][ก-๛]/; const walk = (o, w) => { if (typeof o === 'string') { const m = mix.exec(o); if (m) err.push(w + ': Latijnse letter vast aan Thais (' + o.slice(Math.max(0, m.index - 6), m.index + 8) + ')'); } else if (Array.isArray(o)) o.forEach((v, i) => walk(v, w + '[' + i + ']')); else if (o && typeof o === 'object') for (const k in o) walk(o[k], w + '.' + k); }; walk(p, p.id || 'pakket'); }
 const E = (w, m) => err.push(w + ': ' + m), Wn = (w, m) => warn.push(w + ': ' + m);
 const txt = (x, w, langs = LANGS) => { if (!x || typeof x !== 'object') return E(w, 'tekst ontbreekt'); for (const l of langs) if (typeof x[l] !== 'string' || !x[l].trim()) E(w, 'taal ' + l + ' ontbreekt'); };
 const THAI = /[฀-๿]/;

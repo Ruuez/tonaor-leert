@@ -796,7 +796,7 @@
          }
         },
         {
-         "t": "Iemand die in jouw gezin woont",
+         "t": "Iemand die in jouw gezin en in jouw eigen huis woont",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -962,7 +962,7 @@
        },
        "opts": [
         {
-         "t": "de voornaam",
+         "t": "de voornaam, het eerste deel van je naam",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -1163,7 +1163,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, dat is leuk.",
+         "t": "Ja, dat is heel leuk, dank je wel.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1334,7 +1334,7 @@
        },
        "opts": [
         {
-         "t": "Je woon waar?",
+         "t": "Je woon waar in de stad?",
          "r": "near",
          "err": "woordvolgorde",
          "why": {
@@ -1425,6 +1425,44 @@
       "th": "คุณเจอเพื่อนบ้านบน<b>บันได</b>",
       "en": "You meet the neighbour on the <b>trap</b>."
      }
+    },
+    {
+     "type": "make",
+     "items": [
+      "thu.woonplaats",
+      "thu.regel.vraagwoord",
+      "thu.regel.janee",
+      "thu.regel.jijvraag"
+     ],
+     "ask": {
+      "nl": "Je ontmoet een nieuwe buur. Schrijf twee vragen aan de buur: een vraag met een vraagwoord (waar, hoe) en een vraag met ja of nee.",
+      "th": "คุณพบเพื่อนบ้านใหม่ เขียนคำถามสองข้อถึงเพื่อนบ้าน: หนึ่งข้อมีคำแสดงคำถาม (waar, hoe) และอีกข้อตอบ ja หรือ nee",
+      "en": "You meet a new neighbour. Write two questions to the neighbour: a question with a question word (waar, hoe) and a yes-or-no question."
+     },
+     "frame": "___ ___ je? ___ je hier?",
+     "model": "Waar woon je? Woon je hier al lang?",
+     "checklist": [
+      {
+       "nl": "Staat in de eerste vraag het vraagwoord voorop (<b>Waar</b> …, <b>Hoe</b> …)?",
+       "th": "ในคำถามแรก คำแสดงคำถามอยู่หน้าสุดไหม (<b>Waar</b> …, <b>Hoe</b> …)",
+       "en": "In the first question, does the question word come first (<b>Waar</b> …, <b>Hoe</b> …)?"
+      },
+      {
+       "nl": "Staat in de tweede vraag het werkwoord voorop (<b>Woon</b> je hier?)?",
+       "th": "ในคำถามที่สอง กริยาอยู่หน้าสุดไหม (<b>Woon</b> je hier?)",
+       "en": "In the second question, does the verb come first (<b>Woon</b> je hier?)?"
+      },
+      {
+       "nl": "Staat <b>je</b> ná het werkwoord, zonder extra t (<b>woon</b> je, niet woont je)?",
+       "th": "<b>je</b> อยู่หลังกริยา และไม่มี t เพิ่ม (<b>woon</b> je ไม่ใช่ woont je) ไหม",
+       "en": "Is <b>je</b> after the verb, without an extra t (<b>woon</b> je, not woont je)?"
+      },
+      {
+       "nl": "Eindigt elke vraag met een vraagteken?",
+       "th": "ทุกคำถามลงท้ายด้วยเครื่องหมายคำถามไหม",
+       "en": "Does each question end with a question mark?"
+      }
+     ]
     },
     {
      "type": "extra",
@@ -1546,7 +1584,7 @@
        },
        "opts": [
         {
-         "t": "De voornaam van de buur",
+         "t": "De voornaam van de nieuwe buur",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1753,7 +1791,7 @@
        },
        "opts": [
         {
-         "t": "Een lijst met boodschappen",
+         "t": "Een lijst met boodschappen die je in de winkel koopt",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -1831,7 +1869,7 @@
        },
        "opts": [
         {
-         "t": "Bij de bakker",
+         "t": "Bij de bakker op de hoek",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1885,7 +1923,7 @@
        },
        "opts": [
         {
-         "t": "Je postcode schrijven",
+         "t": "Je postcode en je huisnummer in het vak schrijven",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -1960,7 +1998,7 @@
        },
        "opts": [
         {
-         "t": "de postcode",
+         "t": "de postcode met cijfers en letters",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -2036,7 +2074,7 @@
        },
        "opts": [
         {
-         "t": "Naar de dokter",
+         "t": "Naar de dokter voor een afspraak vandaag",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -2193,7 +2231,7 @@
        },
        "opts": [
         {
-         "t": "Dan weet je het huisnummer",
+         "t": "Dan weet de medewerker wat het huisnummer van je nieuwe huis is",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2330,7 +2368,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, graag. Ik wil formulier.",
+         "t": "Ja, graag. Ik wil formulier voor mijn adres.",
          "r": "near",
          "err": "lidwoord",
          "why": {
@@ -2413,7 +2451,7 @@
        ],
        "opts": [
         {
-         "t": "Mijn postcode is twaalf.",
+         "t": "Mijn postcode is twaalf, met twee letters.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -2980,7 +3018,7 @@
        },
        "opts": [
         {
-         "t": "De zus van je moeder",
+         "t": "De zus van je moeder of de zus van je vader",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -3121,7 +3159,7 @@
          }
         },
         {
-         "t": "Over de moeder van je moeder",
+         "t": "Over de moeder van je moeder of de moeder van je vader",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -3263,7 +3301,7 @@
        },
        "opts": [
         {
-         "t": "Mijn broer en mijn zus",
+         "t": "Mijn broer en mijn zus en mijn oma",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -3356,7 +3394,7 @@
        ],
        "opts": [
         {
-         "t": "Ik heb broer en zus.",
+         "t": "Ik heb broer en zus in een ander land.",
          "r": "near",
          "err": "lidwoord",
          "why": {
@@ -3987,7 +4025,7 @@
        },
        "opts": [
         {
-         "t": "Het eten aan het eind van de dag",
+         "t": "Het eten dat je aan het eind van de dag als laatste eet",
          "r": "near",
          "err": "tijd",
          "why": {
@@ -4065,7 +4103,7 @@
        },
        "opts": [
         {
-         "t": "In de ochtend",
+         "t": "In de ochtend, als je opstaat",
          "r": "no",
          "err": "tijd",
          "why": {
@@ -4388,7 +4426,7 @@
        },
        "opts": [
         {
-         "t": "Het ontbijt eten",
+         "t": "Het ontbijt eten met de buur",
          "r": "no",
          "err": "tijd",
          "why": {
@@ -4582,7 +4620,7 @@
          }
         },
         {
-         "t": "Ik sta laat op, om half zeven.",
+         "t": "Ik sta laat op, om half zeven 's ochtends.",
          "r": "no",
          "err": "tijd",
          "why": {
@@ -4623,7 +4661,7 @@
          }
         },
         {
-         "t": "Bij het ontbijt eet ik trap.",
+         "t": "Bij het ontbijt eet ik een trap.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5796,7 +5834,7 @@
          }
         },
         {
-         "t": "Ja, ik heb de gemeente van het formulier.",
+         "t": "Ja, ik heb de gemeente van het formulier vandaag.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -5891,6 +5929,314 @@
          }
         }
        ]
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "thu.buur",
+      "thu.boodschappen",
+      "thu.gemeente",
+      "thu.trap",
+      "thu.vroeg",
+      "thu.laat"
+     ],
+     "text": {
+      "nl": "Welkom in de straat! Hallo, ik ben de buur van nummer 14. Ik woon hier al tien jaar met mijn gezin. Mijn ouders wonen ook in de buurt en mijn oma woont in de straat naast ons. Ik schrijf je dit bericht, want ik wil je graag helpen. De supermarkt is om de hoek. Hij is open van acht uur tot zes uur. Voor het ontbijt kun je daar vers brood kopen. 's Ochtends vroeg is het druk, dus ga liever later in de ochtend. Op maandag haalt de gemeente het afval op. Zet de zak om zeven uur 's ochtends buiten, niet de avond ervoor. Alle mensen in dit huis maken om de beurt de trap schoon. Jij bent over twee weken aan de beurt. Ik werk overdag, maar 's avonds heb ik tijd. Heb je een vraag? Kom gerust langs na het avondeten, dan ben ik bijna altijd thuis. Op zaterdag drinken wij koffie met de buren. Je bent van harte welkom!",
+      "th": "ยินดีต้อนรับสู่ถนนของเรา! สวัสดี ฉันเป็นเพื่อนบ้านบ้านเลขที่ 14 ฉันอาศัยอยู่ที่นี่มาสิบปีแล้วกับครอบครัว พ่อแม่ของฉันก็อาศัยอยู่ในย่านนี้ และคุณยายของฉันอาศัยอยู่ในถนนข้างเรา ฉันเขียนข้อความนี้ถึงคุณเพราะอยากช่วยคุณ ซูเปอร์มาร์เก็ตอยู่ตรงหัวมุม เปิดตั้งแต่แปดโมงถึงหกโมงเย็น คุณซื้อขนมปังสดที่นั่นไว้กินมื้อเช้าได้ ช่วงเช้าตรู่คนมาก ดังนั้นไปสายหน่อยในตอนเช้าจะดีกว่า วันจันทร์เทศบาลมาเก็บขยะ ให้เอาถุงขยะไปวางข้างนอกตอนเจ็ดโมงเช้า ไม่ใช่ตอนเย็นก่อนหน้า ทุกคนในบ้านหลังนี้ผลัดกันทำความสะอาดบันได อีกสองสัปดาห์ถึงคิวของคุณ ฉันทำงานตอนกลางวัน แต่ตอนเย็นฉันว่าง คุณมีคำถามไหม แวะมาได้เลยหลังมื้อเย็น ฉันแทบจะอยู่บ้านเสมอ วันเสาร์พวกเราดื่มกาแฟกับเพื่อนบ้าน ยินดีต้อนรับอย่างจริงใจ!",
+      "en": "Welcome to the street! Hello, I am the neighbour at number 14. I have lived here for ten years with my family. My parents also live in the area and my grandmother lives in the street next to ours. I am writing you this message because I would like to help you. The supermarket is round the corner. It is open from eight o'clock to six o'clock. You can buy fresh bread there for breakfast. It is busy early in the morning, so it is better to go later in the morning. On Monday the municipality collects the rubbish. Put the bag outside at seven o'clock in the morning, not the evening before. All the people in this house clean the stairs in turn. In two weeks it is your turn. I work during the day, but in the evening I have time. Do you have a question? Just come by after dinner, I am almost always at home then. On Saturday we drink coffee with the neighbours. You are very welcome!"
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "thu.buur"
+       ],
+       "ask": {
+        "nl": "Wat voor tekst is dit?",
+        "th": "นี่เป็นข้อความประเภทไหน",
+        "en": "What kind of text is this?"
+       },
+       "opts": [
+        {
+         "t": "Een brief van de gemeente met regels over de huur",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Het bericht komt van een buur, niet van de gemeente. De buur schrijft over de buurt en over wat je kunt doen.",
+          "th": "ข้อความนี้มาจากเพื่อนบ้าน ไม่ใช่จากเทศบาล เพื่อนบ้านเขียนเรื่องย่านและสิ่งที่คุณทำได้",
+          "en": "The message is from a neighbour, not from the municipality. The neighbour writes about the area and what you can do."
+         }
+        },
+        {
+         "t": "Een bericht van een buur voor een nieuwe bewoner",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De buur stelt zich voor en geeft tips aan iemand die nieuw is.",
+          "th": "ถูกต้อง เพื่อนบ้านแนะนำตัวและให้คำแนะนำแก่คนที่เพิ่งย้ายมา",
+          "en": "Good. The neighbour introduces themselves and gives tips to someone new."
+         }
+        },
+        {
+         "t": "Een reclame van een winkel",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Een winkel wil iets verkopen. Deze buur wil je alleen helpen.",
+          "th": "ร้านค้าอยากขายของ แต่เพื่อนบ้านคนนี้แค่อยากช่วยคุณ",
+          "en": "A shop wants to sell something. This neighbour only wants to help you."
+         }
+        }
+       ],
+       "answer": "Een bericht van een buur voor een nieuwe bewoner",
+       "why": {
+        "nl": "Goed. De buur stelt zich voor en geeft tips aan iemand die nieuw is.",
+        "th": "ถูกต้อง เพื่อนบ้านแนะนำตัวและให้คำแนะนำแก่คนที่เพิ่งย้ายมา",
+        "en": "Good. The neighbour introduces themselves and gives tips to someone new."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "thu.buur"
+       ],
+       "ask": {
+        "nl": "Waarom schrijft de buur dit bericht?",
+        "th": "ทำไมเพื่อนบ้านจึงเขียนข้อความนี้",
+        "en": "Why does the neighbour write this message?"
+       },
+       "opts": [
+        {
+         "t": "De buur wil geld voor de koffie op zaterdag",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat niets over geld. De buur nodigt je uit voor koffie.",
+          "th": "ไม่มีเรื่องเงิน เพื่อนบ้านเชิญคุณดื่มกาแฟ",
+          "en": "Nothing is said about money. The neighbour invites you for coffee."
+         }
+        },
+        {
+         "t": "De buur wil je helpen in je nieuwe buurt",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: ik schrijf je dit bericht, want ik wil je graag helpen.",
+          "th": "ถูกต้อง เขียนว่า ฉันเขียนข้อความนี้ถึงคุณเพราะอยากช่วยคุณ",
+          "en": "Good. It says: I am writing you this message because I would like to help you."
+         }
+        },
+        {
+         "t": "De buur wil weten waar de nieuwe bewoner werkt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat vraagt de buur niet. De buur vertelt zelf iets over de straat.",
+          "th": "เพื่อนบ้านไม่ได้ถามเรื่องนั้น เพื่อนบ้านเล่าเรื่องถนนเอง",
+          "en": "The neighbour does not ask that. The neighbour tells about the street."
+         }
+        }
+       ],
+       "answer": "De buur wil je helpen in je nieuwe buurt",
+       "why": {
+        "nl": "Goed. Er staat: ik schrijf je dit bericht, want ik wil je graag helpen.",
+        "th": "ถูกต้อง เขียนว่า ฉันเขียนข้อความนี้ถึงคุณเพราะอยากช่วยคุณ",
+        "en": "Good. It says: I am writing you this message because I would like to help you."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "thu.buurt"
+       ],
+       "ask": {
+        "nl": "Waar gaat het bericht vooral over?",
+        "th": "ข้อความนี้ส่วนใหญ่เกี่ยวกับอะไร",
+        "en": "What is the message mostly about?"
+       },
+       "opts": [
+        {
+         "t": "Over de familie van de buur",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De familie komt kort voor, maar het gaat vooral om de buurt en het huis.",
+          "th": "ครอบครัวมีพูดถึงสั้น ๆ แต่ส่วนใหญ่เกี่ยวกับย่านและบ้าน",
+          "en": "The family appears briefly, but the message is mostly about the area and the house."
+         }
+        },
+        {
+         "t": "Over wat je moet weten als je hier nieuw woont",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De buur vertelt over de winkel, het afval, de trap en de koffie.",
+          "th": "ถูกต้อง เพื่อนบ้านเล่าเรื่องร้านค้า ขยะ บันได และกาแฟ",
+          "en": "Good. The neighbour tells about the shop, the rubbish, the stairs and the coffee."
+         }
+        },
+        {
+         "t": "Over het eten dat de buur lekker vindt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat alleen dat je vers brood kunt kopen. Het gaat niet over eten dat de buur lekker vindt.",
+          "th": "เขียนแค่ว่าซื้อขนมปังสดได้ ไม่ได้เกี่ยวกับอาหารที่เพื่อนบ้านชอบ",
+          "en": "It only says you can buy fresh bread. It is not about food the neighbour likes."
+         }
+        }
+       ],
+       "answer": "Over wat je moet weten als je hier nieuw woont",
+       "why": {
+        "nl": "Goed. De buur vertelt over de winkel, het afval, de trap en de koffie.",
+        "th": "ถูกต้อง เพื่อนบ้านเล่าเรื่องร้านค้า ขยะ บันได และกาแฟ",
+        "en": "Good. The neighbour tells about the shop, the rubbish, the stairs and the coffee."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "thu.laat"
+       ],
+       "ask": {
+        "nl": "Waarom kun je 's ochtends beter wat later naar de supermarkt gaan?",
+        "th": "ทำไมตอนเช้าควรไปซูเปอร์มาร์เก็ตสายหน่อย",
+        "en": "Why is it better to go to the supermarket a bit later in the morning?"
+       },
+       "opts": [
+        {
+         "t": "Want het brood is pas om elf uur vers",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Daar staat niets over in de tekst. Er staat: 's ochtends vroeg is het druk.",
+          "th": "ในข้อความไม่มีเรื่องนี้ เขียนว่า: ช่วงเช้าตรู่คนมาก",
+          "en": "The text says nothing about that. It says: it is busy early in the morning."
+         }
+        },
+        {
+         "t": "Want het is vroeg druk in de supermarkt",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: 's ochtends vroeg is het druk, dus ga liever later.",
+          "th": "ถูกต้อง เขียนว่า: ช่วงเช้าตรู่คนมาก ดังนั้นไปสายหน่อยจะดีกว่า",
+          "en": "Good. It says: it is busy early in the morning, so go later."
+         }
+        },
+        {
+         "t": "Want de gemeente haalt dan altijd het afval op",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Het afval is een ander onderwerp. De supermarkt is vroeg druk.",
+          "th": "ขยะเป็นอีกเรื่องหนึ่ง ซูเปอร์มาร์เก็ตคนมากตอนเช้าตรู่",
+          "en": "The rubbish is another subject. The supermarket is busy early."
+         }
+        }
+       ],
+       "answer": "Want het is vroeg druk in de supermarkt",
+       "why": {
+        "nl": "Goed. Er staat: het is vroeg druk, dus ga liever laat.",
+        "th": "ถูกต้อง เขียนว่า ช่วงเช้าตรู่คนมาก ดังนั้นไปสายหน่อยจะดีกว่า",
+        "en": "Good. It says: it is busy early, so it is better to go late."
+       }
+      },
+      {
+       "form": "type",
+       "items": [
+        "thu.gemeente"
+       ],
+       "ask": {
+        "nl": "Op welke dag haalt de gemeente het afval op? Typ de dag.",
+        "th": "เทศบาลมาเก็บขยะวันไหน พิมพ์ชื่อวัน",
+        "en": "On which day does the municipality collect the rubbish? Type the day."
+       },
+       "answer": "maandag",
+       "why": {
+        "nl": "Goed. Er staat: op maandag haalt de gemeente het afval op.",
+        "th": "ถูกต้อง เขียนว่า วันจันทร์เทศบาลมาเก็บขยะ",
+        "en": "Good. It says: on Monday the municipality collects the rubbish."
+       },
+       "accept": [
+        "Maandag",
+        "op maandag"
+       ],
+       "hint": [
+        {
+         "nl": "Zoek het woord afval in de tekst.",
+         "th": "หาคำว่า afval ในข้อความ",
+         "en": "Look for the word afval in the text."
+        },
+        {
+         "nl": "De dag begint met: maan…",
+         "th": "ชื่อวันขึ้นต้นด้วย: maan…",
+         "en": "The day starts with: maan…"
+        }
+       ]
+      },
+      {
+       "form": "number",
+       "items": [
+        "thu.trap"
+       ],
+       "ask": {
+        "nl": "Over hoeveel weken ben jij aan de beurt voor de trap? Typ het getal.",
+        "th": "อีกกี่สัปดาห์จะถึงคิวของคุณทำความสะอาดบันได พิมพ์ตัวเลข",
+        "en": "In how many weeks is it your turn for the stairs? Type the number."
+       },
+       "answer": "2",
+       "why": {
+        "nl": "Goed. Er staat: jij bent over twee weken aan de beurt.",
+        "th": "ถูกต้อง เขียนว่า อีกสองสัปดาห์ถึงคิวของคุณ",
+        "en": "Good. It says: in two weeks it is your turn."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "thu.gemeente"
+       ],
+       "ask": {
+        "nl": "Je leest dit bericht. Wat is een goede conclusie?",
+        "th": "คุณอ่านข้อความนี้ ข้อสรุปที่ดีคืออะไร",
+        "en": "You read this message. What is a good conclusion?"
+       },
+       "opts": [
+        {
+         "t": "Ik zet de afvalzak maandagochtend buiten en maak over twee weken de trap schoon",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Zo gebruik je wat de buur schrijft over het afval en de trap.",
+          "th": "ถูกต้อง คุณใช้สิ่งที่เพื่อนบ้านเขียนเรื่องขยะและบันไดได้",
+          "en": "Good. This way you use what the neighbour writes about the rubbish and the stairs."
+         }
+        },
+        {
+         "t": "Ik zet de afvalzak zondagavond buiten, want dan is het rustig",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat: niet de avond ervoor. Je zet de zak maandagochtend om zeven uur buiten.",
+          "th": "เขียนว่า ไม่ใช่ตอนเย็นก่อนหน้า ให้วางถุงตอนเจ็ดโมงเช้าวันจันทร์",
+          "en": "It says: not the evening before. You put the bag out on Monday at seven in the morning."
+         }
+        },
+        {
+         "t": "Ik ga naar de buur om geld voor de trap te vragen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat niets over geld. Alle mensen maken om de beurt de trap schoon.",
+          "th": "ไม่มีเรื่องเงิน ทุกคนผลัดกันทำความสะอาดบันได",
+          "en": "Nothing is said about money. All people clean the stairs in turn."
+         }
+        }
+       ],
+       "answer": "Ik zet de afvalzak maandagochtend buiten en maak over twee weken de trap schoon",
+       "why": {
+        "nl": "Goed. Zo gebruik je wat de buur schrijft over het afval en de trap.",
+        "th": "ถูกต้อง คุณใช้สิ่งที่เพื่อนบ้านเขียนเรื่องขยะและบันไดได้",
+        "en": "Good. This way you use what the neighbour writes about the rubbish and the stairs."
+       }
       }
      ]
     },
@@ -6044,6 +6390,11 @@
      },
      "checklist": [
       {
+       "nl": "Komt de inhoud over? Weet de ander na het luisteren wie je bent en wat je vertelt, en heb je alles gezegd wat de opdracht vraagt?",
+       "th": "ผู้ฟังเข้าใจเนื้อหาไหม ฟังแล้วรู้ว่าคุณเป็นใครและเล่าอะไร และคุณพูดครบตามที่โจทย์ถามไหม",
+       "en": "Does the content come across? After listening, does the other person know who you are and what you tell, and did you say everything the task asks?"
+      },
+      {
        "nl": "Zeg je naam: <b>Ik heet …</b>",
        "th": "บอกชื่อของคุณ: <b>Ik heet …</b>",
        "en": "Say your name: <b>Ik heet …</b>"
@@ -6067,6 +6418,11 @@
        "nl": "Praat rustig en duidelijk.",
        "th": "พูดช้า ๆ และชัดเจน",
        "en": "Speak calmly and clearly."
+      },
+      {
+       "nl": "Klinkt je stem natuurlijk, met <b>intonatie</b>: omhoog bij een ja/nee-vraag, omlaag aan het eind van een gewone zin?",
+       "th": "เสียงของคุณฟังเป็นธรรมชาติ มี <b>intonatie</b> (ทำนองเสียง) ไหม เสียงสูงขึ้นเมื่อเป็นคำถามที่ตอบว่าใช่หรือไม่ และต่ำลงเมื่อจบประโยคธรรมดา",
+       "en": "Does your voice sound natural, with <b>intonation</b>: up for a yes/no question, down at the end of a normal sentence?"
       }
      ]
     },
@@ -6409,7 +6765,7 @@
        },
        "opts": [
         {
-         "t": "50 + 12",
+         "t": "50 + 12 = 62",
          "r": "no",
          "err": "model",
          "why": {
@@ -6516,7 +6872,7 @@
          }
         },
         {
-         "t": "De huur",
+         "t": "De huur van het huis",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -6631,7 +6987,7 @@
        },
        "opts": [
         {
-         "t": "Ja, dat klopt",
+         "t": "Ja, dat klopt, € 900 is genoeg",
          "r": "no",
          "err": "rekenstap",
          "why": {
@@ -6718,6 +7074,37 @@
      }
     },
     {
+     "type": "make",
+     "items": [
+      "thu.energie",
+      "thu.regel.maandjaar"
+     ],
+     "ask": {
+      "nl": "Kies een bedrag dat je elke maand betaalt, bijvoorbeeld voor je telefoon of de energie. Schrijf in een of twee zinnen hoeveel dat per jaar is en hoe je dat rekent.",
+      "th": "เลือกจำนวนเงินที่คุณจ่ายทุกเดือน เช่น ค่าโทรศัพท์หรือค่าพลังงาน เขียนหนึ่งหรือสองประโยคว่าต่อปีเป็นเท่าไรและคุณคิดอย่างไร",
+      "en": "Choose an amount that you pay every month, for example for your phone or energy. Write one or two sentences about how much that is a year and how you work it out."
+     },
+     "frame": "Per maand betaal ik € ___. Een jaar heeft 12 maanden. Dus ik betaal € ___ × 12 = € ___ per jaar.",
+     "model": "Per maand betaal ik € 40. Een jaar heeft 12 maanden. Dus ik betaal € 40 × 12 = € 480 per jaar.",
+     "checklist": [
+      {
+       "nl": "Noem je het bedrag per maand en het aantal maanden in een jaar (12)?",
+       "th": "คุณบอกจำนวนเงินต่อเดือนและจำนวนเดือนในหนึ่งปี (12) ไหม",
+       "en": "Do you name the amount per month and the number of months in a year (12)?"
+      },
+      {
+       "nl": "Reken je het bedrag per maand <b>keer</b> 12?",
+       "th": "คุณคำนวณเงินต่อเดือน <b>คูณ</b> 12 ไหม",
+       "en": "Do you work out the amount per month <b>times</b> 12?"
+      },
+      {
+       "nl": "Kan het kloppen? Een jaar is meer dan 10 maanden, dus je uitkomst is meer dan 10 × het bedrag per maand.",
+       "th": "สมเหตุสมผลไหม หนึ่งปีมากกว่า 10 เดือน ดังนั้นผลลัพธ์ของคุณมากกว่า 10 × จำนวนเงินต่อเดือน",
+       "en": "Can it be right? A year is more than 10 months, so your result is more than 10 × the amount per month."
+      }
+     ]
+    },
+    {
      "type": "quiz",
      "role": "ophalen",
      "q": [
@@ -6763,7 +7150,7 @@
        },
        "opts": [
         {
-         "t": "1.800 + 885",
+         "t": "1.800 + 885 = 2.685",
          "r": "no",
          "err": "model",
          "why": {
@@ -7102,7 +7489,7 @@
          }
         },
         {
-         "t": "Dat hoeft niet",
+         "t": "Dat hoeft niet, je mag zelf kiezen wanneer",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7165,7 +7552,7 @@
        },
        "opts": [
         {
-         "t": "Over een afspraak bij de dokter",
+         "t": "Over een afspraak met de dokter in de nieuwe buurt",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7250,7 +7637,7 @@
          }
         },
         {
-         "t": "Alleen bij de dokter",
+         "t": "Alleen bij de dokter of bij de bakker",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7298,7 +7685,7 @@
          }
         },
         {
-         "t": "Je krijgt een nieuw huis",
+         "t": "Je krijgt een nieuw huis van de gemeente, zonder formulier",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7543,7 +7930,7 @@
        },
        "opts": [
         {
-         "t": "De dag van je verhuizing",
+         "t": "De dag van je verhuizing, 8 dagen eerder",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7612,7 +7999,7 @@
  ],
  "review": {
   "model": "claude-opus-5-5",
-  "date": "2026-11-15",
+  "date": "2026-11-18",
   "verdict": "goed"
  }
 }

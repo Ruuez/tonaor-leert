@@ -755,7 +755,7 @@
          }
         },
         {
-         "t": "Een kamer waar je slaapt",
+         "t": "Een kamer waar je 's nachts slaapt als je moe bent",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -833,7 +833,7 @@
          }
         },
         {
-         "t": "Aan het eind",
+         "t": "Aan het eind, als alles klaar is en je naar huis gaat",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -1071,7 +1071,7 @@
        ],
        "opts": [
         {
-         "t": "Laat zien mijn werkplek.",
+         "t": "Laat zien mijn werkplek en de kantine.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -1163,7 +1163,7 @@
          }
         },
         {
-         "t": "Eerst ik ga naar de kleedkamer.",
+         "t": "Eerst ik ga nu naar de kleedkamer.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -1284,13 +1284,13 @@
        },
        "opts": [
         {
-         "t": "Eerst ik trek mijn kleding aan.",
+         "t": "Eerst ik trek mijn werkkleding aan.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
-          "nl": "Het werkwoord moet op plek twee: Eerst <b>trek</b> ik mijn kleding aan.",
-          "th": "คำกริยาต้องอยู่ตำแหน่งที่สอง: Eerst <b>trek</b> ik mijn kleding aan.",
-          "en": "The verb must be in second place: Eerst <b>trek</b> ik mijn kleding aan."
+          "nl": "Het werkwoord moet op plek twee: Eerst <b>trek</b> ik mijn werkkleding aan.",
+          "th": "คำกริยาต้องอยู่ตำแหน่งที่สอง: Eerst <b>trek</b> ik mijn werkkleding aan.",
+          "en": "The verb must be in second place: Eerst <b>trek</b> ik mijn werkkleding aan."
          }
         },
         {
@@ -1440,6 +1440,39 @@
       "th": "<b>daarna</b> เหมาะ: ก่อนอย่างหนึ่ง แล้วอีกอย่าง",
       "en": "<b>Daarna</b> fits: first one thing, after that the other."
      }
+    },
+    {
+     "type": "make",
+     "items": [
+      "wrk.eerst",
+      "wrk.daarna",
+      "wrk.regel.inversie",
+      "wrk.regel.tmp"
+     ],
+     "ask": {
+      "nl": "Schrijf drie zinnen over morgen: een zin met eerst, een zin met daarna en een zin met tijd, hoe en waar (bijvoorbeeld met de bus naar je werk).",
+      "th": "เขียนสามประโยคเกี่ยวกับพรุ่งนี้: หนึ่งประโยคมี eerst หนึ่งประโยคมี daarna และอีกประโยคมีเวลา วิธีไป และสถานที่ (เช่น ไปทำงานด้วยรถบัส)",
+      "en": "Write three sentences about tomorrow: a sentence with eerst, a sentence with daarna and a sentence with time, how and where (for example by bus to your work)."
+     },
+     "frame": "Eerst ___ ik ___. Daarna ___ ik ___. Ik ga ___ met de ___ naar mijn werk.",
+     "model": "Eerst ga ik naar de kleedkamer. Daarna werk ik op mijn werkplek. Ik ga morgen met de bus naar mijn werk.",
+     "checklist": [
+      {
+       "nl": "Staat in de zin met <b>Eerst</b> het werkwoord op plek twee (Eerst <b>ga</b> ik)?",
+       "th": "ในประโยคที่มี <b>Eerst</b> กริยาอยู่ตำแหน่งที่สองไหม (Eerst <b>ga</b> ik)",
+       "en": "In the sentence with <b>Eerst</b>, is the verb in second place (Eerst <b>ga</b> ik)?"
+      },
+      {
+       "nl": "Staat in de zin met <b>Daarna</b> het werkwoord ook op plek twee (Daarna <b>werk</b> ik)?",
+       "th": "ในประโยคที่มี <b>Daarna</b> กริยาอยู่ตำแหน่งที่สองเช่นกันไหม (Daarna <b>werk</b> ik)",
+       "en": "In the sentence with <b>Daarna</b>, is the verb also in second place (Daarna <b>werk</b> ik)?"
+      },
+      {
+       "nl": "Staat in de derde zin eerst de tijd, dan hoe, dan waar (morgen, met de bus, naar mijn werk)?",
+       "th": "ในประโยคที่สาม เวลาอยู่ก่อน แล้วตามด้วยวิธี แล้วสถานที่ไหม (morgen, met de bus, naar mijn werk)",
+       "en": "In the third sentence, do time, how and where come in that order (morgen, met de bus, naar mijn werk)?"
+      }
+     ]
     },
     {
      "type": "extra",
@@ -1859,7 +1892,7 @@
          }
         },
         {
-         "t": "Pauze houden",
+         "t": "Pauze houden en koffie drinken in de kantine",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -2108,7 +2141,7 @@
        },
        "opts": [
         {
-         "t": "Over een recept van de dokter",
+         "t": "Over een recept van de dokter voor je werk",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2245,7 +2278,7 @@
        },
        "opts": [
         {
-         "t": "Omdat het uurloon verandert",
+         "t": "Omdat het uurloon van de collega verandert",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -2388,7 +2421,7 @@
          }
         },
         {
-         "t": "Donderdag ik werk de ochtenddienst.",
+         "t": "Donderdag ik werk altijd de ochtenddienst.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -2579,7 +2612,7 @@
        ],
        "opts": [
         {
-         "t": "Ja, ik ruilen met jou.",
+         "t": "Ja, ik ruilen met jou, dat is goed.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -2672,7 +2705,7 @@
          }
         },
         {
-         "t": "Nee, jij niet zeggen.",
+         "t": "Nee, jij niet zeggen tegen de leidinggevende.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -2715,7 +2748,7 @@
        },
        "opts": [
         {
-         "t": "Vier uur in de middag",
+         "t": "Vier uur in de middag, na de pauze",
          "r": "no",
          "err": "tijd",
          "why": {
@@ -3003,7 +3036,7 @@
        },
        "opts": [
         {
-         "t": "Een soort jas voor de regen",
+         "t": "Een soort jas die je draagt bij regen en kou",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -3145,7 +3178,7 @@
          }
         },
         {
-         "t": "Naar je werkplek",
+         "t": "Naar je werkplek bij de machine",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -3297,7 +3330,7 @@
          }
         },
         {
-         "t": "Of u het wilt ruilen",
+         "t": "Of u de dienst met een collega wilt ruilen",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -3577,7 +3610,7 @@
        },
        "opts": [
         {
-         "t": "Ik ga naar mijn werk met de bus morgen.",
+         "t": "Ik ga naar mijn werk met de bus morgen vroeg.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -3796,7 +3829,7 @@
          }
         },
         {
-         "t": "Nooduitgang is waar?",
+         "t": "Nooduitgang is waar, achter de machine?",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -3971,7 +4004,7 @@
          }
         },
         {
-         "t": "Ik werk in de kantine met een collega vandaag.",
+         "t": "Ik werk in de kantine met een collega vandaag samen.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -4261,7 +4294,7 @@
        },
        "opts": [
         {
-         "t": "Ik ga naar huis.",
+         "t": "Ik ga vandaag naar huis, dag.",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -4393,7 +4426,7 @@
        },
        "opts": [
         {
-         "t": "Dat de persoon op vakantie gaat",
+         "t": "Dat de persoon op vakantie gaat met familie",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -4544,7 +4577,7 @@
        },
        "opts": [
         {
-         "t": "Ik ga naar de dokter",
+         "t": "Ik ga nu naar de dokter, want ik heb pijn",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -4605,7 +4638,7 @@
          }
         },
         {
-         "t": "Ik kom niet. Dag.",
+         "t": "Ik kom vandaag niet naar het werk. Dag.",
          "r": "no",
          "err": "beleefdheid",
          "why": {
@@ -4636,7 +4669,7 @@
        ],
        "opts": [
         {
-         "t": "Ik hebben koorts.",
+         "t": "Ik hebben koorts en ook hoofdpijn.",
          "r": "no",
          "err": "werkwoordsvorm",
          "why": {
@@ -4686,7 +4719,7 @@
          }
         },
         {
-         "t": "Ja, ik bereikbaar ben.",
+         "t": "Ja, ik bereikbaar ben op mijn eigen telefoon.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -4792,6 +4825,362 @@
      ]
     },
     {
+     "type": "read",
+     "items": [
+      "wrk.ochtenddienst",
+      "wrk.helm",
+      "wrk.nooduitgang",
+      "wrk.ruilen",
+      "wrk.ziekmelden",
+      "wrk.loonstrook"
+     ],
+     "text": {
+      "nl": "Beste nieuwe collega, welkom bij ons team! Hier staat wat je in je eerste week moet weten. Op maandag begin je om zeven uur met de ochtenddienst. Trek eerst je werkkleding aan in de kleedkamer. Daarna ga je naar je werkplek. Bij de machine draag je altijd een helm. Dat is een regel voor iedereen, want het werk is soms gevaarlijk. Begrijp je de instructie niet? Vraag het dan gerust aan een collega en zeg: Kun je dat herhalen? De nooduitgang is achter de machine. Bij brand loop je daar direct naartoe. De pauze is om half elf in de kantine. Wil je een dienst ruilen? Vraag het dan eerst aan de leidinggevende, want het rooster verandert. Ben je ziek? Meld je dan vóór zes uur 's ochtends ziek en zorg dat je bereikbaar bent op je telefoon. Aan het eind van de maand krijg je je loonstrook. Daarop zie je je uren en je uurloon. Wij hopen dat je het hier naar je zin hebt. Veel succes! Groeten, je leidinggevende.",
+      "th": "เรียนเพื่อนร่วมงานใหม่ ยินดีต้อนรับสู่ทีมของเรา! ข้อความนี้บอกสิ่งที่คุณต้องรู้ในสัปดาห์แรก วันจันทร์คุณเริ่มงานตอนเจ็ดโมงด้วยกะเช้า ให้เปลี่ยนชุดทำงานในห้องแต่งตัวก่อน แล้วค่อยไปที่จุดทำงานของคุณ ที่เครื่องจักรต้องสวมหมวกนิรภัยเสมอ นี่เป็นกฎสำหรับทุกคน เพราะงานบางครั้งอันตราย ถ้าคุณไม่เข้าใจคำสั่งงาน ก็ถามเพื่อนร่วมงานได้เลยและพูดว่า Kun je dat herhalen? ทางออกฉุกเฉินอยู่หลังเครื่องจักร เมื่อเกิดไฟไหม้ให้ไปที่นั่นทันที เวลาพักคือสิบโมงครึ่งในโรงอาหาร ถ้าคุณอยากสลับกะ ให้ถามหัวหน้าก่อน เพราะตารางงานจะเปลี่ยน ถ้าคุณป่วย ให้แจ้งลาป่วยก่อนหกโมงเช้า และต้องติดต่อได้ทางโทรศัพท์ ตอนสิ้นเดือนคุณจะได้รับสลิปเงินเดือน ในนั้นคุณจะเห็นชั่วโมงทำงานและค่าจ้างต่อชั่วโมง เราหวังว่าคุณจะมีความสุขที่นี่ ขอให้โชคดี! ด้วยความนับถือ หัวหน้างานของคุณ",
+      "en": "Dear new colleague, welcome to our team! This is what you need to know in your first week. On Monday you start at seven o'clock with the morning shift. First put on your work clothes in the changing room. Then you go to your workplace. At the machine you always wear a helmet. That is a rule for everyone, because the work is sometimes dangerous. Do you not understand the instruction? Just ask a colleague and say: Kun je dat herhalen? The emergency exit is behind the machine. In case of fire you walk straight there. The break is at half past ten in the canteen. Do you want to swap a shift? Then ask the manager first, because the rota changes. Are you ill? Then report in sick before six o'clock in the morning and make sure you can be reached by phone. At the end of the month you get your payslip. On it you see your hours and your hourly wage. We hope you enjoy it here. Good luck! Kind regards, your manager."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "wrk.werkplek"
+       ],
+       "ask": {
+        "nl": "Wat voor tekst is dit?",
+        "th": "นี่เป็นข้อความประเภทไหน",
+        "en": "What kind of text is this?"
+       },
+       "opts": [
+        {
+         "t": "Een advertentie voor een nieuwe baan bij het bedrijf",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Een advertentie zoekt nieuwe mensen. Deze tekst is voor mensen die hier al beginnen.",
+          "th": "โฆษณาหาคนใหม่ แต่ข้อความนี้เขียนถึงคนที่กำลังเริ่มงานที่นี่",
+          "en": "An advertisement looks for new people. This text is for people who are starting here."
+         }
+        },
+        {
+         "t": "Een bericht van de leidinggevende aan nieuwe collega's",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De schrijver geeft informatie en regels voor de eerste week.",
+          "th": "ถูกต้อง ผู้เขียนให้ข้อมูลและกฎสำหรับสัปดาห์แรก",
+          "en": "Good. The writer gives information and rules for the first week."
+         }
+        },
+        {
+         "t": "Een brief van de dokter aan een zieke collega",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat niets over een dokter. De tekst gaat over het werk.",
+          "th": "ไม่มีเรื่องหมอ ข้อความเกี่ยวกับงาน",
+          "en": "There is nothing about a doctor. The text is about work."
+         }
+        }
+       ],
+       "answer": "Een bericht van de leidinggevende aan nieuwe collega's",
+       "why": {
+        "nl": "Goed. De schrijver geeft informatie en regels voor de eerste week.",
+        "th": "ถูกต้อง ผู้เขียนให้ข้อมูลและกฎสำหรับสัปดาห์แรก",
+        "en": "Good. The writer gives information and rules for the first week."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "wrk.werkplek"
+       ],
+       "ask": {
+        "nl": "Waarom schrijft de leidinggevende dit bericht?",
+        "th": "ทำไมหัวหน้าจึงเขียนข้อความนี้",
+        "en": "Why does the manager write this message?"
+       },
+       "opts": [
+        {
+         "t": "De leidinggevende wil het rooster van het hele jaar doorgeven",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat alleen wat er in de eerste week gebeurt, niet het rooster van het hele jaar.",
+          "th": "เขียนแค่สิ่งที่เกิดขึ้นในสัปดาห์แรก ไม่ใช่ตารางงานทั้งปี",
+          "en": "It only says what happens in the first week, not the rota for the whole year."
+         }
+        },
+        {
+         "t": "Nieuwe collega's moeten weten wat ze in de eerste week doen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: hier staat wat je in je eerste week moet weten.",
+          "th": "ถูกต้อง เขียนว่า ข้อความนี้บอกสิ่งที่คุณต้องรู้ในสัปดาห์แรก",
+          "en": "Good. It says: this is what you need to know in your first week."
+         }
+        },
+        {
+         "t": "Er is een nieuwe machine gekocht",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Over een nieuwe machine staat niets. De machine komt alleen voor bij de regel over de helm.",
+          "th": "ไม่มีเรื่องเครื่องจักรใหม่ เครื่องจักรกล่าวถึงแค่ในกฎเรื่องหมวกนิรภัย",
+          "en": "Nothing is said about a new machine. The machine only appears in the rule about the helmet."
+         }
+        }
+       ],
+       "answer": "Nieuwe collega's moeten weten wat ze in de eerste week doen",
+       "why": {
+        "nl": "Goed. Er staat: hier staat wat je in je eerste week moet weten.",
+        "th": "ถูกต้อง เขียนว่า ข้อความนี้บอกสิ่งที่คุณต้องรู้ในสัปดาห์แรก",
+        "en": "Good. It says: this is what you need to know in your first week."
+       }
+      },
+      {
+       "form": "number",
+       "items": [
+        "wrk.ochtenddienst"
+       ],
+       "ask": {
+        "nl": "Hoe laat begin je op maandag? Typ het getal.",
+        "th": "วันจันทร์คุณเริ่มงานกี่โมง พิมพ์ตัวเลข",
+        "en": "What time do you start on Monday? Type the number."
+       },
+       "answer": "7",
+       "why": {
+        "nl": "Goed. Er staat: op maandag begin je om zeven uur.",
+        "th": "ถูกต้อง เขียนว่า วันจันทร์คุณเริ่มงานตอนเจ็ดโมง",
+        "en": "Good. It says: on Monday you start at seven o'clock."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "wrk.helm"
+       ],
+       "ask": {
+        "nl": "Waarom draag je bij de machine een helm?",
+        "th": "ทำไมที่เครื่องจักรต้องสวมหมวกนิรภัย",
+        "en": "Why do you wear a helmet at the machine?"
+       },
+       "opts": [
+        {
+         "t": "Want de leidinggevende vindt dat mooi om te zien",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. De reden is veiligheid.",
+          "th": "ไม่ได้เขียนไว้ เหตุผลคือความปลอดภัย",
+          "en": "That is not in the text. The reason is safety."
+         }
+        },
+        {
+         "t": "Want het werk is soms gevaarlijk",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er staat: het is een regel voor iedereen, want het werk is soms gevaarlijk.",
+          "th": "ถูกต้อง เขียนว่า เป็นกฎสำหรับทุกคน เพราะงานบางครั้งอันตราย",
+          "en": "Good. It says: it is a rule for everyone, because the work is sometimes dangerous."
+         }
+        },
+        {
+         "t": "Want de machine maakt heel veel lawaai in de hal",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Over lawaai staat niets. De tekst noemt gevaar als reden.",
+          "th": "ไม่มีเรื่องเสียงดัง ข้อความบอกเหตุผลว่าอันตราย",
+          "en": "Nothing is said about noise. The text gives danger as the reason."
+         }
+        }
+       ],
+       "answer": "Want het werk is soms gevaarlijk",
+       "why": {
+        "nl": "Goed. Er staat: het is een regel voor iedereen, want het werk is soms gevaarlijk.",
+        "th": "ถูกต้อง เขียนว่า เป็นกฎสำหรับทุกคน เพราะงานบางครั้งอันตราย",
+        "en": "Good. It says: it is a rule for everyone, because the work is sometimes dangerous."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "wrk.herhalen"
+       ],
+       "ask": {
+        "nl": "Je begrijpt de instructie niet. Wat zeg je volgens de tekst?",
+        "th": "คุณไม่เข้าใจคำสั่งงาน ตามข้อความคุณพูดว่าอะไร",
+        "en": "You do not understand the instruction. What do you say, according to the text?"
+       },
+       "opts": [
+        {
+         "t": "Ik ga naar de leidinggevende en meld me ziek, dag",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat staat er niet. Je vraagt een collega om de uitleg te herhalen.",
+          "th": "ไม่ได้เขียนไว้ คุณขอให้เพื่อนร่วมงานพูดอธิบายซ้ำ",
+          "en": "That is not in the text. You ask a colleague to repeat the explanation."
+         }
+        },
+        {
+         "t": "Kun je dat herhalen?",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat staat in de tekst: zeg tegen een collega: Kun je dat herhalen?",
+          "th": "ถูกต้อง ข้อความบอกให้พูดกับเพื่อนร่วมงานว่า Kun je dat herhalen?",
+          "en": "Good. That is in the text: say to a colleague: Kun je dat herhalen?"
+         }
+        },
+        {
+         "t": "Wat is een helm en waar staat de machine?",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Dat is geen vraag uit de tekst. Je wilt dat de collega het nog een keer zegt.",
+          "th": "ไม่ใช่คำถามจากข้อความ คุณอยากให้เพื่อนร่วมงานพูดอีกครั้ง",
+          "en": "That is not a question from the text. You want the colleague to say it again."
+         }
+        }
+       ],
+       "answer": "Kun je dat herhalen?",
+       "why": {
+        "nl": "Goed. Dat staat in de tekst: zeg tegen een collega: Kun je dat herhalen?",
+        "th": "ถูกต้อง ข้อความบอกให้พูดกับเพื่อนร่วมงานว่า Kun je dat herhalen?",
+        "en": "Good. That is in the text: say to a colleague: Kun je dat herhalen?"
+       }
+      },
+      {
+       "form": "type",
+       "items": [
+        "wrk.kantine"
+       ],
+       "ask": {
+        "nl": "Waar is de pauze om half elf? Typ het woord.",
+        "th": "พักตอนสิบโมงครึ่งที่ไหน พิมพ์คำนั้น",
+        "en": "Where is the break at half past ten? Type the word."
+       },
+       "answer": "kantine",
+       "why": {
+        "nl": "Goed. Er staat: de pauze is om half elf in de kantine.",
+        "th": "ถูกต้อง เขียนว่า เวลาพักคือสิบโมงครึ่งในโรงอาหาร",
+        "en": "Good. It says: the break is at half past ten in the canteen."
+       },
+       "hint": [
+        {
+         "nl": "Zoek: de pauze is om half elf in de …",
+         "th": "หา: de pauze is om half elf in de …",
+         "en": "Look for: de pauze is om half elf in de …"
+        },
+        {
+         "nl": "Het woord begint met: kant…",
+         "th": "คำนี้ขึ้นต้นด้วย: kant…",
+         "en": "The word starts with: kant…"
+        }
+       ],
+       "accept": [
+        "de kantine",
+        "in de kantine"
+       ]
+      },
+      {
+       "form": "choose",
+       "items": [
+        "wrk.werkdag"
+       ],
+       "ask": {
+        "nl": "Waar gaat de tekst vooral over?",
+        "th": "ข้อความนี้ส่วนใหญ่เกี่ยวกับอะไร",
+        "en": "What is the text mostly about?"
+       },
+       "opts": [
+        {
+         "t": "Over het loon dat je elke maand van het bedrijf krijgt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Het loon komt kort voor, aan het eind. Het hoofdonderwerp is de eerste werkweek.",
+          "th": "ค่าจ้างพูดถึงสั้น ๆ ตอนท้าย หัวข้อหลักคือสัปดาห์แรกของงาน",
+          "en": "The wage appears briefly at the end. The main subject is the first working week."
+         }
+        },
+        {
+         "t": "Over wat je moet weten en doen in je eerste werkweek",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De tekst noemt de dienst, de helm, de uitgang, ruilen, ziek zijn en de loonstrook.",
+          "th": "ถูกต้อง ข้อความกล่าวถึงกะ หมวกนิรภัย ทางออก การสลับกะ การป่วย และสลิปเงินเดือน",
+          "en": "Good. The text names the shift, the helmet, the exit, swapping, being ill and the payslip."
+         }
+        },
+        {
+         "t": "Over de regels van de kantine",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "De kantine komt alleen voor bij de pauze. Het gaat om de hele eerste week.",
+          "th": "โรงอาหารกล่าวถึงแค่ตอนพัก เนื้อหาเกี่ยวกับทั้งสัปดาห์แรก",
+          "en": "The canteen only appears at the break. The text is about the whole first week."
+         }
+        }
+       ],
+       "answer": "Over wat je moet weten en doen in je eerste werkweek",
+       "why": {
+        "nl": "Goed. De tekst noemt de dienst, de helm, de uitgang, ruilen, ziek zijn en de loonstrook.",
+        "th": "ถูกต้อง ข้อความกล่าวถึงกะ หมวกนิรภัย ทางออก การสลับกะ การป่วย และสลิปเงินเดือน",
+        "en": "Good. The text names the shift, the helmet, the exit, swapping, being ill and the payslip."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "wrk.ruilen"
+       ],
+       "ask": {
+        "nl": "Je wilt volgende week een dienst ruilen. Wat is een goede conclusie?",
+        "th": "คุณอยากสลับกะสัปดาห์หน้า ข้อสรุปที่ดีคืออะไร",
+        "en": "You want to swap a shift next week. What is a good conclusion?"
+       },
+       "opts": [
+        {
+         "t": "Ik ruil met een collega en ik zeg het niet tegen de leidinggevende",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Er staat: vraag het eerst aan de leidinggevende, want het rooster verandert.",
+          "th": "เขียนว่า ให้ถามหัวหน้าก่อน เพราะตารางงานเปลี่ยน",
+          "en": "It says: ask the manager first, because the rota changes."
+         }
+        },
+        {
+         "t": "Ik vraag het eerst aan de leidinggevende, want het rooster verandert",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Zo staat het in de tekst.",
+          "th": "ถูกต้อง ข้อความเขียนไว้แบบนี้",
+          "en": "Good. This is what the text says."
+         }
+        },
+        {
+         "t": "Ik meld me ziek, dan hoef ik niet te ruilen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Je meldt je alleen ziek als je echt ziek bent. Ruilen doe je via de leidinggevende.",
+          "th": "คุณแจ้งป่วยเมื่อป่วยจริงเท่านั้น การสลับกะต้องผ่านหัวหน้า",
+          "en": "You only report sick when you are really ill. Swapping goes through the manager."
+         }
+        }
+       ],
+       "answer": "Ik vraag het eerst aan de leidinggevende, want het rooster verandert",
+       "why": {
+        "nl": "Goed. Zo staat het in de tekst.",
+        "th": "ถูกต้อง ข้อความเขียนไว้แบบนี้",
+        "en": "Good. This is what the text says."
+       }
+      }
+     ]
+    },
+    {
      "type": "rule",
      "items": [
       "wrk.regel.want",
@@ -4849,7 +5238,7 @@
        },
        "opts": [
         {
-         "t": "Ik kom niet, want heb ik koorts.",
+         "t": "Ik kom niet, want heb ik hoge koorts.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -5389,7 +5778,7 @@
          }
         },
         {
-         "t": "Wat iemand je vertelt",
+         "t": "Wat iemand je over iets vertelt",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -5664,13 +6053,13 @@
        },
        "opts": [
         {
-         "t": "Naar de kleedkamer",
+         "t": "Naar de kleedkamer om je om te kleden",
          "r": "no",
          "err": "betekenis",
          "why": {
-          "nl": "Bij brand ga je niet om te kleden. Je loopt naar de nooduitgang.",
-          "th": "เมื่อไฟไหม้คุณไม่ไปเปลี่ยนเสื้อผ้า คุณเดินไปที่ทางออกฉุกเฉิน",
-          "en": "In a fire you do not go to change. You walk to the nooduitgang."
+          "nl": "Bij brand ga je je niet omkleden. Je loopt naar de nooduitgang.",
+          "th": "เมื่อเกิดไฟไหม้ไม่ต้องไปเปลี่ยนเสื้อผ้า คุณวิ่งไปที่ทางออกฉุกเฉิน",
+          "en": "In case of fire you do not go and change clothes. You walk to the emergency exit."
          }
         },
         {
@@ -5810,7 +6199,7 @@
          }
         },
         {
-         "t": "Ja, zaterdag ik ruil met jou.",
+         "t": "Ja, dat kan. Zaterdag ik ruil dan met jou.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -5943,7 +6332,7 @@
        },
        "opts": [
         {
-         "t": "Ik begrijp de instructie niet, want is de uitleg snel.",
+         "t": "Ik begrijp de instructie niet, want is de uitleg erg snel.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -6130,6 +6519,11 @@
      },
      "checklist": [
       {
+       "nl": "Komt de inhoud over? Weet de ander na het luisteren wat je vindt en waarom, en heb je alles gezegd wat de opdracht vraagt?",
+       "th": "ผู้ฟังเข้าใจเนื้อหาไหม ฟังแล้วรู้ว่าคุณคิดอย่างไรและเพราะอะไร และคุณพูดครบตามที่โจทย์ถามไหม",
+       "en": "Does the content come across? After listening, does the other person know what you think and why, and did you say everything the task asks?"
+      },
+      {
        "nl": "Begin je met Volgens mij en staat het werkwoord daarna op plek twee?",
        "th": "คุณเริ่มด้วย Volgens mij และคำกริยาอยู่ตำแหน่งที่สองหลังจากนั้นไหม",
        "en": "Do you start with Volgens mij and is the verb then in second place?"
@@ -6143,6 +6537,11 @@
        "nl": "Praat je rustig en duidelijk?",
        "th": "คุณพูดช้า ๆ และชัดเจนไหม",
        "en": "Do you speak calmly and clearly?"
+      },
+      {
+       "nl": "Klinkt je stem natuurlijk, met <b>intonatie</b>: omhoog bij een ja/nee-vraag, omlaag aan het eind van een gewone zin?",
+       "th": "เสียงของคุณฟังเป็นธรรมชาติ มี <b>intonatie</b> (ทำนองเสียง) ไหม เสียงสูงขึ้นเมื่อเป็นคำถามที่ตอบว่าใช่หรือไม่ และต่ำลงเมื่อจบประโยคธรรมดา",
+       "en": "Does your voice sound natural, with <b>intonation</b>: up for a yes/no question, down at the end of a normal sentence?"
       }
      ]
     },
@@ -6201,7 +6600,7 @@
        },
        "opts": [
         {
-         "t": "Volgens mij de pauze is te kort.",
+         "t": "Volgens mij de pauze is veel te kort.",
          "r": "no",
          "err": "woordvolgorde",
          "why": {
@@ -6592,7 +6991,7 @@
        },
        "opts": [
         {
-         "t": "Hoe laat de pauze begint",
+         "t": "Hoe laat de pauze begint en eindigt",
          "r": "near",
          "err": "lezen",
          "why": {
@@ -6778,6 +7177,37 @@
      }
     },
     {
+     "type": "make",
+     "items": [
+      "wrk.uurloon",
+      "wrk.regel.uren"
+     ],
+     "ask": {
+      "nl": "Kies hoeveel uur je werkt, bijvoorbeeld je dienst van morgen, en kies een uurloon. Schrijf in een of twee zinnen hoeveel je verdient en hoe je dat rekent.",
+      "th": "เลือกจำนวนชั่วโมงที่คุณทำงาน เช่น กะของพรุ่งนี้ และเลือกค่าจ้างต่อชั่วโมง เขียนหนึ่งหรือสองประโยคว่าคุณได้เท่าไรและคิดอย่างไร",
+      "en": "Choose how many hours you work, for example your shift of tomorrow, and choose an hourly wage. Write one or two sentences about how much you earn and how you work it out."
+     },
+     "frame": "Ik werk ___ uur. Het uurloon is € ___. Dus ik verdien ___ × ___ = € ___.",
+     "model": "Ik werk 6 uur. Het uurloon is € 15. Dus ik verdien 6 × 15 = € 90.",
+     "checklist": [
+      {
+       "nl": "Noem je de uren en het uurloon?",
+       "th": "คุณบอกจำนวนชั่วโมงและค่าจ้างต่อชั่วโมงไหม",
+       "en": "Do you name the hours and the hourly wage?"
+      },
+      {
+       "nl": "Reken je de uren <b>keer</b> het uurloon?",
+       "th": "คุณคำนวณชั่วโมง <b>คูณ</b> ค่าจ้างต่อชั่วโมงไหม",
+       "en": "Do you work out the hours <b>times</b> the hourly wage?"
+      },
+      {
+       "nl": "Kan het kloppen? Reken ongeveer na met ronde getallen (bijvoorbeeld 6 × 10 = 60 en 6 × 5 = 30, samen € 90) en kijk of je antwoord in de buurt ligt.",
+       "th": "สมเหตุสมผลไหม ลองคำนวณคร่าว ๆ ด้วยตัวเลขกลม ๆ (เช่น 6 × 10 = 60 และ 6 × 5 = 30 รวมเป็น 90 ยูโร) แล้วดูว่าคำตอบของคุณใกล้เคียงไหม",
+       "en": "Can it be right? Check roughly with round numbers (for example 6 × 10 = 60 and 6 × 5 = 30, together € 90) and see if your answer is close."
+      }
+     ]
+    },
+    {
      "type": "quiz",
      "role": "ophalen",
      "q": [
@@ -6813,7 +7243,7 @@
          }
         },
         {
-         "t": "Uren plus uurloon",
+         "t": "Uren plus het uurloon",
          "r": "no",
          "err": "model",
          "why": {
@@ -6883,7 +7313,7 @@
        },
        "opts": [
         {
-         "t": "Ja, dat klopt",
+         "t": "Ja, dat klopt, want 15 is een groot bedrag",
          "r": "no",
          "err": "rekenstap",
          "why": {
@@ -7170,7 +7600,7 @@
        },
        "opts": [
         {
-         "t": "Meer dan € 1.000",
+         "t": "Meer dan € 1.000, want je krijgt extra",
          "r": "no",
          "err": "betekenis",
          "why": {
@@ -7212,7 +7642,7 @@
        },
        "opts": [
         {
-         "t": "Een bonnetje uit de winkel",
+         "t": "Een bonnetje uit de winkel met de bedragen die je betaalt",
          "r": "near",
          "err": "betekenis",
          "why": {
@@ -7281,7 +7711,7 @@
        },
        "opts": [
         {
-         "t": "Over een rooster",
+         "t": "Over een rooster met diensten voor deze week",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7367,7 +7797,7 @@
        },
        "opts": [
         {
-         "t": "Het loon dat op je rekening komt",
+         "t": "Het loon dat na de belasting op je rekening komt",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -7713,7 +8143,7 @@
  ],
  "review": {
   "model": "claude-opus-5-5",
-  "date": "2026-11-15",
+  "date": "2026-11-18",
   "verdict": "goed"
  }
 }
