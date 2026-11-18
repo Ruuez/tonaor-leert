@@ -20,7 +20,10 @@ Bijgewerkt: 14 november 2026.
   - nl-thuis (goed = langste 60% naar 20%) en nl-werk (72% naar 28%) met een nieuwe leestekst van ruim 160 woorden en een eigen zin per regel. Review Opus goed; de kleine punten zijn verwerkt.
   - nl-buren (thema 2, order 70): live na drie reviewrondes (ronde 3 op G2: 25%).
   - nl-dokter (33%), nl-markt (29%), nl-onderweg (29%) en nl-opleiding (32%): na de herstelronde goed bevonden (review Opus), met de kleine punten verwerkt. Make-frames laten de plek van de regel open, zodat de eigen zin echt telt. Live als cache v2-70.
-  - De herstelronde van thema 1 is klaar. Nog 3 regels zonder eigen zin, allemaal in een basispakket: nl.regel.plek2, nl.regel.heb, en.regel.s.
+  - De herstelronde van thema 1 is klaar.
+  - Basisregels (uitleg 19, besluit ontwerpsessie): nl.regel.plek2 telt via de eigen zin met inversie in nl-werk (werk-1), nl.regel.heb via die met zijn/hebben in nl-thuis (thu-3).
+  - Open: en.regel.s wacht op de eerste Engelse scène. Een make-oefening in een basispakket kan de samensteller niet aan zonder een grote ingreep.
+  - De poort G2 blijft in de app een melding, geen weigering (besluit ontwerpsessie); in de redactiepoort weigert hij.
   - Redactiepoort: een Latijnse letter vast aan Thaise tekst is een fout.
 - Werkorder stap 5 vervolg en ijkmoment G2 (docs/ijkmoment-g2.md), cache v2-68:
   - M5/N-M4: de trede per regel (kiezen, afmaken, een eigen zin).

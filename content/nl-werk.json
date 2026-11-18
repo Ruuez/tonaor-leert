@@ -1447,7 +1447,8 @@
       "wrk.eerst",
       "wrk.daarna",
       "wrk.regel.inversie",
-      "wrk.regel.tmp"
+      "wrk.regel.tmp",
+      "nl.regel.plek2"
      ],
      "ask": {
       "nl": "Schrijf drie zinnen over morgen: een zin met eerst, een zin met daarna en een zin met tijd, hoe en waar (bijvoorbeeld met de bus naar je werk).",
