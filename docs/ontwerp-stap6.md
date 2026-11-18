@@ -62,3 +62,29 @@ Stand: 18 november 2026. Hoort bij stap 6 van `werkorder.md`. Het ontwerp per we
 - Dat het fragment niet meer vanzelf speelt, is een bewuste verandering volgens het ontwerp.
 
 **Test:** `tools/test-luisteren.mjs`. In de browser gecontroleerd op 375 px: meelezen met een oplichtende zin; alleen luisteren met de tekst pas na het antwoord.
+
+## 1.1 tot 1.3: getallenlijn, strook en verhoudingstabel als vraag
+
+**Eisen:** werkvormen 1.1, 1.2 en 1.3, en masterplan 16 (alleen gesloten nakijken). Het formaat staat in `scenes.md`.
+
+**Voor de leerder:**
+- **Getallenlijn:** een schuif van `from` tot `to`. Na **Klaar** verschijnt een streepje op de goede plek, met de afstand.
+- **Strook:** delen aantikken om ze te kleuren. Bovenaan staat het bedrag, onderaan het percentage.
+- **Verhoudingstabel:** lege vakken invullen. De pijlen tonen de bewerking, afbouwend van 2 naar 1 en 0.
+- Bij de strook en de tabel krijgt de leerder een tweede kans. Daarna volgt het antwoord met uitleg.
+
+**Hoe het telt:**
+- Eigen vormcodes `getallenlijn`, `strook` en `tabel` (geschiedenis e, f, h).
+- Een fout telt in het foutprofiel, pas bij Volgende.
+- In een hoofdstuk telt de vorm als rekenen in de situatie.
+
+**Hoe:**
+- Het nakijken staat als pure functies in `pakketcheck.js` (`numGrade`, `stripValue`, `ratioFull`, `ratioOps`). App en test gebruiken dezelfde code.
+- Eén scherm `sc_num` voor alle drie de vormen.
+
+**Wat kan breken:**
+- Niets bestaands: de vormen zijn nieuw.
+- Er is nog geen lesstof die ze gebruikt; de redactielijn kan ze nu inzetten.
+- Een tekening in `uitleg.js` hoort er nog niet bij: de modellen staan in het scherm zelf.
+
+**Test:** `tools/test-rekenmodellen.mjs`. In de browser gecontroleerd op 375 px met proefvragen: alle drie de vormen, goed, de tweede kans, en een antwoord met een komma.

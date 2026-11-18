@@ -335,6 +335,7 @@
       // een vraag (quiz, rule, extra, en nieuwe vragen in read en listen): docs/scenes.md, "De stappen voor diepte en diagnose"
       var vraag = function (qq, u, nlOnly) { if (!qq || typeof qq !== 'object') { err(u + ': geen vraag'); return; }
         var EXF = ['build', 'gap', 'listen', 'money', 'clock', 'discount'], TYP = ['type', 'hear-type', 'complete'];
+        if (NUMF.indexOf(qq.form) >= 0) { itemsOk(qq.items, u); tekst(qq.ask, u + '.ask'); if (!qq.why) err(u + ': why ontbreekt'); else tekst(qq.why, u + '.why'); if (qq.err != null && ERRS.indexOf(qq.err) < 0) err(u + ': err ' + qq.err + ' staat niet in de lijst'); numCheck(qq, u, err); return; }   /* werkvormen 1.1-1.3 */
         if (['choose', 'hear', 'number'].concat(TYP, EXF).indexOf(qq.form) < 0) { err(u + ': vorm ' + qq.form + (['own', 'match', 'spot', 'dictee', 'mc', 'write', 'situation'].indexOf(qq.form) >= 0 ? ' is nog niet in een scène te gebruiken (stap 6)' : ' bestaat niet')); return; }
         if (qq.hint != null && (!Array.isArray(qq.hint) || qq.hint.length !== 2)) err(u + ': hint moet twee stappen hebben'); else if (qq.hint) qq.hint.forEach(function (h, i) { tekst(h, u + '.hint[' + i + ']'); });
         if (EXF.indexOf(qq.form) >= 0) { itemsOk(qq.items, u); if (qq.ask != null) tekst(qq.ask, u + '.ask'); if (!qq.why) err(u + ': why ontbreekt'); else tekst(qq.why, u + '.why'); if (qq.err != null && ERRS.indexOf(qq.err) < 0) err(u + ': err ' + qq.err + ' staat niet in de lijst');
@@ -541,7 +542,7 @@
         if (st.type === 'speak') has.speak = true;
         if (st.type === 'game') has.game = true;
         if (st.type === 'make') has.make = true;
-        if (sc.subject === 'rk' && ((st.type === 'do' && ['money', 'clock', 'setclock', 'discount', 'change'].indexOf(st.form) >= 0) || qq.some(function (q) { return q && (q.form === 'number' || ['money', 'clock', 'discount'].indexOf(q.form) >= 0); }))) has.reken = true;
+        if (sc.subject === 'rk' && ((st.type === 'do' && ['money', 'clock', 'setclock', 'discount', 'change'].indexOf(st.form) >= 0) || qq.some(function (q) { return q && (q.form === 'number' || ['money', 'clock', 'discount'].concat(NUMF).indexOf(q.form) >= 0); }))) has.reken = true;
         var lists = (st.turns || []).map(function (t) { return t.opts || []; }).concat(qq.map(function (q) { return (q && q.opts) || []; }), [st.opts || []]);
         lists.forEach(function (os) { os.forEach(function (o) { if (o && o.r !== 'ok' && ERRS_.indexOf(o.err) < 0) err(v + ': foute keuze "' + o.t + '" zonder soort fout (err)'); }); });
         if (st.role !== 'controle' && st.role !== 'instap') qq.forEach(function (q, qi) { if (q && ['type', 'hear-type', 'complete'].indexOf(q.form) >= 0 && !(Array.isArray(q.hint) && q.hint.length === 2)) err(v + '.q[' + qi + ']: zelf typen zonder hint in twee stappen'); });
@@ -629,6 +630,40 @@
     });
     return { errors: errors };
   }
-  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioTexts: audioTexts, withParts: withParts };
+  /* Rekenen met een model (werkvormen 1.1-1.3): nakijken als pure functies, dezelfde code in de app en in de test. */
+  var NUMF = ['numline', 'strip', 'ratio'];
+  function num(x) { return typeof x === 'number' && isFinite(x); }
+  function numTol(qq) { return num(qq.tol) && qq.tol > 0 ? qq.tol : (qq.to - qq.from) * 0.05; }
+  // getallenlijn: goed binnen tol (standaard 5% van de lijn), retry binnen tweemaal tol, anders fout
+  function numGrade(qq, v) { if (!num(v)) return false; var d = Math.abs(v - qq.target), t = numTol(qq); return d <= t + 1e-9 ? true : d <= 2 * t + 1e-9 ? 'retry' : false; }
+  // strook: de waarde van k gekleurde delen
+  function stripValue(qq, k) { return Math.round(k * qq.total / qq.parts * 1e6) / 1e6; }
+  // verhoudingstabel: de volle tabel (de vraagtekens rij voor rij uit answers) en de bewerking tussen twee kolommen (uit de eerste rij)
+  function ratioFull(qq) { var k = 0; return qq.rows.map(function (r) { return r.map(function (c, i) { return i && c === '?' ? qq.answers[k++] : c; }); }); }
+  function ratioOps(qq) { var f = ratioFull(qq)[0], out = []; for (var i = 1; i < f.length - 1; i++) { var a = f[i], b = f[i + 1], m = b / a; out.push(!a || !b ? '' : Math.abs(m - Math.round(m)) < 1e-9 && m >= 1 ? '×' + Math.round(m) : Math.abs(1 / m - Math.round(1 / m)) < 1e-9 ? ':' + Math.round(1 / m) : ''); } return out; }
+  function numCheck(qq, u, err) {
+    if (qq.form === 'numline') {
+      if (!num(qq.from) || !num(qq.to) || qq.from >= qq.to) err(u + ': getallenlijn heeft from < to nodig');
+      else { if (!num(qq.target) || qq.target < qq.from || qq.target > qq.to) err(u + ': target ligt niet op de lijn'); if (qq.tol != null && (!num(qq.tol) || qq.tol <= 0 || qq.tol >= (qq.to - qq.from) / 2)) err(u + ': tol moet tussen 0 en de halve lijn liggen'); }
+      if (typeof qq.show !== 'string' || !qq.show.trim()) err(u + ': show (het getal zoals de leerder het leest) ontbreekt');
+    } else if (qq.form === 'strip') {
+      if (!num(qq.total) || qq.total <= 0) err(u + ': total moet een getal boven 0 zijn');
+      if (!(qq.parts === Math.round(qq.parts) && qq.parts >= 2 && qq.parts <= 12)) err(u + ': parts moet 2 tot 12 zijn');
+      else if (num(qq.total)) { var hit = false; for (var k = 1; k <= qq.parts; k++) if (Math.abs(stripValue(qq, k) - qq.answer) < 1e-6) hit = true; if (!num(qq.answer) || !hit) err(u + ': answer is geen waarde van een aantal delen van de strook'); }
+      if (qq.unit != null && typeof qq.unit !== 'string') err(u + ': unit moet tekst zijn');
+    } else if (qq.form === 'ratio') {
+      var R = qq.rows;
+      if (!Array.isArray(R) || R.length !== 2 || !R.every(function (r) { return Array.isArray(r) && r.length === R[0].length; }) || R[0].length < 3 || R[0].length > 6) { err(u + ': rows moet twee even lange rijen van 3 tot 6 vakken zijn'); return; }
+      if (!R.every(function (r) { return typeof r[0] === 'string' && r.slice(1).every(function (c) { return c === '?' || num(c); }); })) { err(u + ': elke rij begint met een naam, daarna getallen of ?'); return; }
+      var nq = R[0].concat(R[1]).filter(function (c) { return c === '?'; }).length;
+      if (!nq || !Array.isArray(qq.answers) || qq.answers.length !== nq || !qq.answers.every(num)) { err(u + ': answers moet voor elk ? een getal hebben'); return; }
+      var F = ratioFull(qq), m = null, okR = true;
+      for (var i = 1; i < F[0].length; i++) { if (!F[0][i]) { okR = false; break; } var x = F[1][i] / F[0][i]; if (m == null) m = x; else if (Math.abs(x - m) > 1e-9 * Math.max(1, Math.abs(m))) okR = false; }
+      if (!okR) err(u + ': de tabel is niet evenredig (onderste rij gedeeld door bovenste rij is niet overal gelijk)');
+      for (var j = 1; j < F[0].length; j++) if (R[0][j] === '?' && R[1][j] === '?') err(u + ': een kolom met twee lege vakken');
+      if (qq.help != null && [0, 1, 2].indexOf(qq.help) < 0) err(u + ': help moet 0, 1 of 2 zijn');
+    }
+  }
+  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, NUMF: NUMF, numGrade: numGrade, numTol: numTol, stripValue: stripValue, ratioFull: ratioFull, ratioOps: ratioOps, audioTexts: audioTexts, withParts: withParts };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.PakketCheck = api;
 })(this);

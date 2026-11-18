@@ -10,6 +10,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Leren">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}.lsent{border-radius:.3em;transition:background .2s}.lsent.on{background:var(--sky-fill)}@media (prefers-reduced-motion:reduce){.lsent{transition:none}}
+.nl-line{position:relative;padding:.6rem 0}.nl-line input{width:100%}.nl-real{position:absolute;top:0;bottom:0;width:4px;margin-left:-2px;background:var(--leaf-ink,#3d7a55);border-radius:2px}
+.strip{display:flex;gap:2px}.strip-p{flex:1;height:3rem;border:2px solid var(--sky-fill);background:var(--surface);border-radius:.4rem}.strip-p.on{background:var(--sky-fill)}.strip-top,.strip-bot{text-align:center}
+.rt{border-collapse:collapse;margin:0 auto}.rt th,.rt td{padding:.35rem .5rem;text-align:center}.rt th{text-align:left}.rt-in{width:4.5rem;font:inherit;text-align:center;padding:.3rem;border:2px solid var(--sky-fill);border-radius:.4rem}.rt-in.right{border-color:var(--leaf-ink,#3d7a55)}.rt-in.wrong{border-color:var(--sun-ink,#9a6a1c)}
 </style>
 <title>Leren</title>
 <meta name="theme-color" content="#f4f6f1">
@@ -761,6 +764,10 @@ en:{
  "garden.tip":"Every word and every skill is a plant. Remembering it well makes it grow. A drop means: review it briefly today.",
  "garden.empty":"Your first plant will grow here soon.",
  "route.title":"My route",
+ "num.done":"Check",
+ "num.line":"Number line",
+ "num.off":"You were {d} off. The line shows the right place.",
+ "strip.tap":"Tap the parts to colour them.",
  "lis.play":"Listen",
  "lis.again":"This sentence again",
  "lis.speed":"Speed",
@@ -1292,6 +1299,10 @@ nl:{
  "garden.tip":"Elk woord en elke vaardigheid is een plantje. Goed onthouden laat het groeien. Een druppel betekent: vandaag even herhalen.",
  "garden.empty":"Hier groeit straks je eerste plantje.",
  "route.title":"<h1>Mijn route</h1>",
+ "num.done":"Klaar",
+ "num.line":"Getallenlijn",
+ "num.off":"Je zat er {d} naast. Het streepje is de goede plek.",
+ "strip.tap":"Tik op de delen om ze te kleuren.",
  "lis.play":"Luister",
  "lis.again":"Deze zin nog eens",
  "lis.speed":"Snelheid",
@@ -1821,6 +1832,10 @@ th:{
  "garden.tip":"ทุกคำและทุกทักษะคือต้นไม้ จำได้ดีต้นไม้จะโต หยดน้ำหมายถึงวันนี้ควรทบทวน",
  "garden.empty":"ต้นไม้ต้นแรกจะเติบโตที่นี่",
  "route.title":"เส้นทางของฉัน",
+ "num.done":"เสร็จแล้ว",
+ "num.line":"เส้นจำนวน",
+ "num.off":"คุณคลาดไป {d} ขีดคือตำแหน่งที่ถูกต้อง",
+ "strip.tap":"แตะที่ส่วนต่าง ๆ เพื่อระบายสี",
  "lis.play":"ฟัง",
  "lis.again":"ประโยคนี้อีกครั้ง",
  "lis.speed":"ความเร็ว",
@@ -2044,7 +2059,7 @@ const NOGROW=['voorbeeld','check','spel'];   /* spel: wel wachttijd, geen vorm v
    Een poging = dagen sinds de vorige poging (base 36) + vormcode (één letter) + uitkomst (1 goed, 2 goed na een poging of hint, 0 fout), gescheiden door een komma.
    De dagen tellen vanaf it.hd (de dag van de eerste poging in de reeks). Afgekapt op MOTOR.histMax (MOTOR.histBloom in volle bloei);
    wat afvalt staat in f1 (eerste dag ooit), na (pogingen) en nk (goed). Alle reeksen samen hooguit MOTOR.histBudget tekens (histTrim). */
-const HCODE={typen:'t',herkennen:'k',luisteren:'l',build:'b',gap:'g',listen:'i',dictee:'d',geld:'m',klok:'c',korting:'p',talk:'s',make:'w',spreken:'o',point:'a',read:'r',rekenen:'n',spel:'x',voorbeeld:'v',check:'q',tik:'j',luisteren2:'u'};
+const HCODE={getallenlijn:'e',strook:'f',tabel:'h',typen:'t',herkennen:'k',luisteren:'l',build:'b',gap:'g',listen:'i',dictee:'d',geld:'m',klok:'c',korting:'p',talk:'s',make:'w',spreken:'o',point:'a',read:'r',rekenen:'n',spel:'x',voorbeeld:'v',check:'q',tik:'j',luisteren2:'u'};
 const HFORM=Object.fromEntries(Object.entries(HCODE).map(([k,v])=>[v,k]));
 function histParse(it){const out=[];if(!it||typeof it.h!=='string'||!it.h)return out;let d=+it.hd||0;
   for(const p of it.h.split(',')){if(p.length<3)continue;d+=parseInt(p.slice(0,-2),36)||0;out.push([d,HFORM[p[p.length-2]]||'',+p[p.length-1]])}return out}
@@ -2961,7 +2976,8 @@ function nextScene(){const all=SCENES.slice().sort((a,b)=>a.order-b.order||(a.pa
 function sceneQ(sc,hard){const isLes=LESSEN.some(l=>(l.scenes||[]).includes(sc)),q=[],vak=sc.subject||'nl',ph={look:1,talk:2,read:2,listen:2,slot:3,explain:3,do:3,make:3,rule:3,end:4},qph={instap:1,ophalen:1,controle:4};
   q.push({type:'sc_intro',sc,step:1,vak,hard:!!hard});
   const EXF=['build','gap','listen','money','clock','discount'];
-  const ask=(base,qq,exid,o)=>{if(!EXF.includes(qq.form))return {...base,type:'sc_q',qq,items:qq.items.slice(),exid,hard:!!hard,...o};   // een vraag (docs/scenes.md, diepte en diagnose)
+  const ask=(base,qq,exid,o)=>{if(PC&&PC.NUMF&&PC.NUMF.includes(qq.form))return {...base,type:'sc_num',qq,items:qq.items.slice(),exid,hard:!!hard,...o};   // werkvormen 1.1-1.3
+    if(!EXF.includes(qq.form))return {...base,type:'sc_q',qq,items:qq.items.slice(),exid,hard:!!hard,...o};   // een vraag (docs/scenes.md, diepte en diagnose)
     const e={id:exid,form:qq.form,items:qq.items.slice(),...(qq.gen?{gen:qq.gen}:{data:qq.data}),fb:{ok:qq.why},hint:qq.hint},x=exQ(e,base.step,'nl',qq.items[0]);   // een bestaande oefenvorm: hetzelfde scherm als in de les
     if(!x)return null;return {...x,sc,st:base.st,vak,_sceneErr:qq.err||null,...(qq.ask?{_ask:qq.ask}:{}),...o}};   // review dokter 7: de vraag van de scène staat boven de oefening
   const push=x=>{if(x)q.push(x)};
@@ -3140,6 +3156,43 @@ H.sc_speak=q=>{const st=q.st,m=plainX(st.model,'nl'),ex=!!st.exam,max=ex?(MOTOR.
       tick=setInterval(()=>{if(!here()){stopTick();return recAbort()}left=Math.max(0,left-1);const i=document.querySelector('#spk .timer i'),n=document.querySelector('#spk .timer + p');if(i)i.style.width=(left/max*100)+'%';if(n)n.innerHTML=T('rec.left',{n:left})},1000)})
     .catch(()=>{stopTick();can=false;mode='idle';toast(tx('rec.noMic'));if(here())draw()})};   // geen toestemming of geen microfoon: verder zoals voorheen, geen fout
   draw()};
+/* Rekenen met een model (werkvormen 1.1-1.3): de getallenlijn (een stip schuiven naar het getal; goed binnen tol, retry binnen tweemaal tol),
+   de strook (delen kleuren tot het gevraagde deel; boven het bedrag, onder het percentage) en de verhoudingstabel (lege vakken invullen; de bewerking
+   bij de pijl afbouwend met help 2, 1, 0). Gesloten nagekeken met de functies uit pakketcheck (dezelfde code in de test). Tweede kans bij strook en tabel. */
+const NUMFORM={numline:'getallenlijn',strip:'strook',ratio:'tabel'};
+function numFmt(x){return String(Math.round(x*1000)/1000).replace('.',',')}
+function numIn(v){v=String(v==null?'':v).trim().replace(/\s/g,'').replace(/^€/,'').replace(',','.');return v===''||isNaN(+v)?null:+v}
+H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f];let first=true,done=false;
+  const end=(res,msg)=>{done=true;const e=qq.err;score(res===true,10);if(res===false)later(()=>scFault(q,e));practiced(q,res,code);$('#fb').innerHTML=fbBox(res!==false,msg,'')+nextBtn();$('#nx').onclick=next};
+  const why=()=>scT(qq.why);
+  if(f==='numline'){const span=qq.to-qq.from,pc=x=>Math.max(0,Math.min(100,(x-qq.from)/span*100));let v=null;
+    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${scT(qq.ask)}</p><p class="big num" style="text-align:center" lang="nl">${esc(qq.show)}</p>
+      <div class="nl-line"><input type="range" id="nlr" min="${qq.from}" max="${qq.to}" step="${span/400}" value="${qq.from}" aria-label="${esc(String(t('num.line')).replace(/<[^>]*>/g,''))}"><div class="nl-real" id="nlReal" hidden></div></div>
+      <div class="row between small muted"><span class="num">${esc(numFmt(qq.from))}</span><span class="num">${esc(numFmt(qq.to))}</span></div>
+      <button class="btn btn-main" id="chk" disabled>${TB('num.done')}</button><div id="fb"></div></div>`);
+    $('#nlr').oninput=()=>{v=+$('#nlr').value;$('#chk').disabled=false};
+    $('#chk').onclick=()=>{if(done||v==null)return;$('#chk').remove();$('#nlr').disabled=true;const r=PC.numGrade(qq,v),rl=$('#nlReal');rl.hidden=false;rl.style.left=pc(qq.target)+'%';
+      end(r,`${T('num.off',{d:esc(numFmt(Math.round(Math.abs(v-qq.target)*1000)/1000))})}<br>${why()}`)};return}
+  if(f==='strip'){const n=qq.parts,on=new Set(),u=qq.unit?esc(qq.unit)+' ':'';
+    const draw=()=>{const k=on.size;return `<div class="strip-top num small">${u}${esc(numFmt(PC.stripValue(qq,k)))} / ${u}${esc(numFmt(qq.total))}</div><div class="strip" role="group">${Array.from({length:n},(_,i)=>`<button class="strip-p${on.has(i)?' on':''}" data-p="${i}" aria-pressed="${on.has(i)}" aria-label="${i+1}"></button>`).join('')}</div><div class="strip-bot num small muted">${esc(numFmt(Math.round(k/n*1000)/10))}%</div>`};
+    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${scT(qq.ask)}</p><p class="small muted">${T('strip.tap')}</p><div id="stp">${draw()}</div><button class="btn btn-main" id="chk">${TB('num.done')}</button><div id="fb"></div></div>`);
+    const bind=()=>app.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{if(done)return;const i=+b.dataset.p;on.has(i)?on.delete(i):on.add(i);$('#stp').innerHTML=draw();bind()});bind();
+    $('#chk').onclick=()=>{if(done)return;const good=Math.abs(PC.stripValue(qq,on.size)-qq.answer)<1e-6;
+      if(good){$('#chk').remove();return end(first?true:'retry',why())}
+      if(first){first=false;$('#fb').innerHTML=fbBox(false,T('scene.again'),'');return}
+      $('#chk').remove();end(false,`${T('scene.answer')} <b class="num">${u}${esc(numFmt(qq.answer))}</b><br>${why()}`)};return}
+  if(f==='ratio'){const help=qq.help==null?2:qq.help,ops=PC.ratioOps(qq),full=PC.ratioFull(qq);let qn=0;
+    const cell=(c,r,i)=>i===0?`<th scope="row">${esc(c)}</th>`:c==='?'?`<td><input class="rt-in" inputmode="decimal" autocomplete="off" data-r="${r}" data-i="${i}" data-k="${qn++}" aria-label="${esc(qq.rows[r][0])}"></td>`:`<td class="num">${esc(numFmt(c))}</td>`;
+    const arrows=help?`<tr class="rt-ops"><td></td>${qq.rows[0].slice(1).map((_,i)=>i<ops.length?`<td class="num small muted">${help===2&&ops[i]?'→ '+esc(ops[i]):'→'}</td>`:'<td></td>').join('')}</tr>`:'';
+    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${scT(qq.ask)}</p><table class="rt">${arrows}${qq.rows.map((row,r)=>`<tr>${row.map((c,i)=>cell(c,r,i)).join('')}</tr>`).join('')}</table>
+      <button class="btn btn-main" id="chk">${TB('num.done')}</button><div id="fb"></div></div>`);
+    const ins=[...app.querySelectorAll('.rt-in')];
+    $('#chk').onclick=()=>{if(done)return;let bad=0;ins.forEach(x=>{const want=qq.answers[+x.dataset.k],v=numIn(x.value),ok=v!=null&&Math.abs(v-want)<1e-6;x.classList.toggle('wrong',!ok);x.classList.toggle('right',ok);if(!ok)bad++});
+      if(!bad){$('#chk').remove();ins.forEach(x=>x.disabled=true);return end(first?true:'retry',why())}
+      if(first){first=false;$('#fb').innerHTML=fbBox(false,T('scene.again'),'');return}
+      $('#chk').remove();ins.forEach(x=>{x.disabled=true;x.value=numFmt(qq.answers[+x.dataset.k])});end(false,`${T('scene.answer')}<br>${why()}`)};
+    setTimeout(()=>{try{ins[0].focus()}catch(e){}},50);return}
+  next()};
 /* spel (stap game): de of het op tempo, 60 seconden, met de woorden van de scène en wat aan de beurt is. Elk antwoord werkt het herhaalmodel bij
    met de vorm 'spel', die niet meetelt voor bloei (masterplan C5: vervangt productief oefenen niet). */
 H.sc_game=q=>{const sc=q.sc,counted=new Set(),ids=new Set([...q.items,...sc.targets]),pool0=NL.filter(w=>(w.art==='de'||w.art==='het')&&ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0),more=NL.filter(w=>(w.art==='de'||w.art==='het')&&!ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0&&thirsty(w.id));

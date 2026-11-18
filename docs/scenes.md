@@ -157,3 +157,21 @@ Een persoon heeft `who` (de rol), `look` (`neutral`, `happy`, `worried`, `talk`,
 - `SceneVis.check(art)` geeft een lijst meldingen; `pakketcheck` roept hem aan per scène.
 - Kleuren: de variabelen van de app. Nieuw en met een terugvalwaarde in `scene.js`, dus pas nodig bij een donker thema: `--wood`, `--sun`, `--skin-a/b/c`, `--hair-dark/brown/grey/fair` en per kleur `--…-deep` (een tint tussen `-fill` en `-ink`).
 - Een bouwsteen toevoegen: een functie in `THING`, een regel in `HALO`, een regel in dit document, en een plaatje in de controle in de browser.
+
+### Rekenen met een model als vraag (werkvormen 1.1-1.3, stap 6)
+
+Een vraag in `quiz`, `rule` of `extra` kan ook een rekenmodel zijn. Elke vraag heeft, zoals altijd, `items`, `ask` en `why`, en eventueel `err`. De poort (`numCheck` in `pakketcheck.js`) controleert de velden.
+
+**Getallenlijn:** `{"form": "numline", "from": 0, "to": 1, "target": 0.75, "show": "3/4", "tol": 0.05}`.
+- De leerder schuift een stip naar het getal dat in `show` staat.
+- Goed als de stip binnen `tol` ligt (standaard 5% van de lijn); `retry` binnen tweemaal `tol`. Daarna toont de app de goede plek.
+
+**Strook:** `{"form": "strip", "total": 80, "unit": "€", "parts": 4, "answer": 20}`.
+- De leerder kleurt delen. Bovenaan staat het bedrag van de gekleurde delen, onderaan het percentage.
+- `answer` moet de waarde van een heel aantal delen zijn. De leerder krijgt een tweede kans.
+
+**Verhoudingstabel:** `{"form": "ratio", "rows": [["kg", 1, 3, "?"], ["€", 2.5, "?", 20]], "answers": [8, 7.5], "help": 2}`.
+- De rijen beginnen met een naam. De vraagtekens worden rij voor rij gevuld uit `answers`.
+- De tabel moet evenredig zijn, en een kolom heeft nooit twee lege vakken.
+- `help` 2 toont de bewerking bij de pijl (×3, :2), 1 alleen de pijlen en 0 niets.
+- De leerder krijgt een tweede kans; een komma of een punt mag allebei.
