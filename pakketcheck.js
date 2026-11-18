@@ -483,6 +483,7 @@
         if (st.opts) choice(st.opts);
       });
     });
+    if (p && p.type === 'les' && n >= 3 && longest === n) issues.push(id + ': bij alle ' + n + ' keuzevragen is het goede antwoord het langste (G2 2.1, maat voor een losse les)');
     if (n >= 10 && longest / n > 0.4) issues.push(id + ': bij ' + Math.round(100 * longest / n) + '% van de ' + n + ' keuzevragen is het goede antwoord het langste; hooguit 40% (G2 2.1)');
     if (p && p.type === 'hoofdstuk' && !longText) issues.push(id + ': geen lees- of luistertekst van 150 tot 450 woorden (G2 2.3)');
     return { n: n, longest: n ? longest / n : 0, issues: issues };
