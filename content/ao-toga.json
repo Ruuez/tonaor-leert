@@ -1,0 +1,680 @@
+{
+ "format": 1,
+ "id": "ao-toga",
+ "type": "les",
+ "version": 1,
+ "order": 38,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "mens en samenleving",
+ "vorm": "een voorwerp en zijn verhaal",
+ "draden": [
+  "ao-grondrecht",
+  "ao-wet",
+  "ao-monnik"
+ ],
+ "title": {
+  "nl": "Waarom draagt een rechter een toga?",
+  "th": "ทำไมผู้พิพากษาจึงสวมชุดครุย",
+  "en": "Why does a judge wear a gown?"
+ },
+ "sources": [
+  {
+   "url": "https://www.rechtspraak.nl/organisatie-en-contact/rechtspraak-in-nederland/rechters/veelgestelde-vragen",
+   "title": "Rechtspraak.nl: Veelgestelde vragen rechters (Waarom draagt de rechter een toga?)"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Toga_(modern)",
+   "title": "Wikipedia: Toga (modern)"
+  },
+  {
+   "url": "https://www.rechtspraak.nl/organisatie-en-contact/organisatie/raad-voor-de-rechtspraak/nieuws/college-voor-mensenrechten-rechtbank-mocht-sollicitante-met-hoofddoek-niet-afwijzen",
+   "title": "Rechtspraak.nl: Rechtspraak houdt vast aan neutraliteit kleding rechter en griffier"
+  }
+ ],
+ "items": [
+  {
+   "id": "tga.toga",
+   "kind": "word",
+   "w": "toga",
+   "art": "de",
+   "tr": {
+    "th": "ชุดครุย",
+    "en": "gown, robe"
+   },
+   "def": "Een lang, zwart gewaad dat een rechter in de rechtszaal draagt.",
+   "ex": "De rechter draagt een toga.",
+   "gap": "De ___ is een lang, zwart gewaad.",
+   "wrong": [
+    "pan",
+    "trap",
+    "bril"
+   ]
+  },
+  {
+   "id": "tga.rechter",
+   "kind": "word",
+   "w": "rechter",
+   "art": "de",
+   "tr": {
+    "th": "ผู้พิพากษา",
+    "en": "judge"
+   },
+   "def": "Iemand die beslist wie gelijk heeft in een rechtszaak.",
+   "ex": "De rechter luistert naar beide kanten.",
+   "gap": "De ___ luistert naar beide kanten en beslist.",
+   "wrong": [
+    "lamp",
+    "fiets",
+    "jas"
+   ]
+  },
+  {
+   "id": "tga.bef",
+   "kind": "word",
+   "w": "bef",
+   "art": "de",
+   "tr": {
+    "th": "แถบผ้าขาวที่คอของชุดครุย",
+    "en": "white bands (on a gown)"
+   },
+   "def": "Twee smalle witte stukken stof bij de hals van een toga.",
+   "ex": "Bij de toga hoort een witte bef.",
+   "gap": "De witte ___ zit aan de hals van de toga.",
+   "wrong": [
+    "pan",
+    "fiets",
+    "tas"
+   ]
+  },
+  {
+   "id": "tga.onpartijdig",
+   "kind": "word",
+   "w": "onpartijdig",
+   "art": "",
+   "tr": {
+    "th": "เป็นกลาง ไม่ลำเอียง",
+    "en": "impartial"
+   },
+   "def": "Niet voor de een en niet voor de ander.",
+   "ex": "Een rechter moet onpartijdig zijn.",
+   "gap": "Een rechter moet ___ zijn: niet voor de een en niet voor de ander.",
+   "wrong": [
+    "blauw",
+    "gisteren",
+    "koud"
+   ]
+  },
+  {
+   "id": "tga.zitting",
+   "kind": "word",
+   "w": "zitting",
+   "art": "de",
+   "tr": {
+    "th": "การพิจารณาคดีในศาล",
+    "en": "court session, hearing"
+   },
+   "def": "Het moment waarop de rechter in de rechtszaal een zaak behandelt.",
+   "ex": "De zitting begint om negen uur.",
+   "gap": "De ___ begint om negen uur in de rechtbank.",
+   "wrong": [
+    "jas",
+    "soep",
+    "lamp"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-toga-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom draagt een rechter een toga?",
+    "th": "ทำไมผู้พิพากษาจึงสวมชุดครุย",
+    "en": "Why does a judge wear a gown?"
+   },
+   "intro": {
+    "nl": "Een voorwerp met een verhaal: de toga. Eerst een vraag, dan lees je waar het vandaan komt en wat het betekent.",
+    "th": "วัตถุที่มีเรื่องราว: ชุดครุย เริ่มด้วยคำถาม แล้วอ่านว่ามาจากไหนและหมายความว่าอะไร",
+    "en": "An object with a story: the gown. First a question, then you read where it comes from and what it means."
+   },
+   "can": {
+    "nl": "Uitleggen waarom een rechter een toga draagt",
+    "th": "อธิบายได้ว่าทำไมผู้พิพากษาจึงสวมชุดครุย",
+    "en": "Explain why a judge wears a gown"
+   },
+   "targets": [
+    "tga.toga",
+    "tga.rechter",
+    "tga.bef",
+    "tga.onpartijdig",
+    "tga.zitting"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "lilac",
+    "alt": {
+     "nl": "Een kamer met een tafel, een brief en een bord met Toga.",
+     "th": "ห้องที่มีโต๊ะ จดหมาย และป้ายเขียนว่า Toga",
+     "en": "A room with a table, a letter and a sign that says Toga."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     },
+     {
+      "kind": "letter",
+      "x": 170,
+      "y": 120
+     },
+     {
+      "kind": "sign",
+      "x": 80,
+      "y": 70,
+      "text": "Toga",
+      "hot": true,
+      "item": "tga.toga",
+      "label": {
+       "nl": "Toga: een lang, zwart gewaad voor de zitting",
+       "th": "ชุดครุย: ชุดยาวสีดำสำหรับการพิจารณาคดี",
+       "en": "Gown: a long black garment for the hearing"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 260,
+      "y": 70,
+      "text": "Zitting",
+      "hot": true,
+      "item": "tga.zitting",
+      "label": {
+       "nl": "Zitting: de rechter behandelt een zaak",
+       "th": "การพิจารณาคดี: ผู้พิพากษาพิจารณาคดี",
+       "en": "Hearing: the judge handles a case"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "tga.toga",
+        "tga.rechter"
+       ],
+       "ask": {
+        "nl": "Wie draagt in een Nederlandse rechtszaal een toga?",
+        "th": "ใครสวมชุดครุยในศาลเนเธอร์แลนด์",
+        "en": "Who wears a gown in a Dutch courtroom?"
+       },
+       "opts": [
+        {
+         "t": "Alleen de rechter",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee, niet alleen de rechter. Je leest zo wie nog meer.",
+          "th": "ไม่ใช่ ไม่ใช่แค่ผู้พิพากษา เดี๋ยวคุณจะได้อ่านว่ามีใครอีก",
+          "en": "No, not only the judge. You read in a moment who else."
+         }
+        },
+        {
+         "t": "Iedereen in de zaal, ook het publiek en de mensen die komen kijken",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het publiek draagt geen toga.",
+          "th": "ไม่ใช่ ผู้เข้าฟังไม่สวมชุดครุย",
+          "en": "No. The public does not wear a gown."
+         }
+        },
+        {
+         "t": "Rechters, officieren van justitie en advocaten",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Zij dragen een zwarte toga met een witte bef. Ook de griffier draagt een toga.",
+          "th": "ถูกต้อง พวกเขาสวมชุดครุยสีดำกับแถบผ้าขาวที่คอ นายทะเบียนศาล (griffier) ก็สวมชุดครุยเช่นกัน",
+          "en": "Right. They wear a black gown with white bands. The clerk (griffier) also wears a gown."
+         }
+        }
+       ],
+       "answer": "Rechters, officieren van justitie en advocaten",
+       "guess": true
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "tga.toga",
+      "tga.bef",
+      "tga.zitting"
+     ],
+     "sources": [
+      {
+       "url": "https://www.rechtspraak.nl/organisatie-en-contact/rechtspraak-in-nederland/rechters/veelgestelde-vragen",
+       "title": "Rechtspraak.nl: Veelgestelde vragen rechters (Waarom draagt de rechter een toga?)"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Toga_(modern)",
+       "title": "Wikipedia: Toga (modern)"
+      }
+     ],
+     "text": {
+      "nl": "Een gewaad met een betekenis.\n\nIn een Nederlandse rechtszaal dragen rechters, officieren van justitie en advocaten een zwarte toga en een witte bef. De bef zijn twee smalle stukken witte stof bij de hals. Ook de griffier draagt een toga. Op kantoor dragen ze gewone kleren: de toga is voor de zitting.\n\nDe toga heeft een symbolische betekenis. De mensen in de zaal worden er minder persoonlijk door. De aandacht gaat naar hun taak: rechter, officier of advocaat.",
+      "th": "ชุดที่มีความหมาย\n\nในศาลเนเธอร์แลนด์ ผู้พิพากษา อัยการ และทนายความสวมชุดครุยสีดำและผ้าพันคอสีขาว ผ้าพันคอ (bef) คือผ้าขาวผืนแคบสองชิ้นที่คอ นายทะเบียนศาล (griffier) ก็สวมชุดครุยเช่นกัน ที่สำนักงานพวกเขาสวมเสื้อผ้าธรรมดา ชุดครุยใช้สำหรับการพิจารณาคดี\n\nชุดครุยมีความหมายเชิงสัญลักษณ์ ทำให้คนในห้องเป็นส่วนตัวน้อยลง ความสนใจไปอยู่ที่หน้าที่ของพวกเขา คือผู้พิพากษา อัยการ หรือทนายความ",
+      "en": "A gown with a meaning.\n\nIn a Dutch courtroom judges, public prosecutors and lawyers wear a black gown and white bands (bef). The bef are two narrow pieces of white cloth at the neck. The clerk (griffier) also wears a gown. In the office they wear normal clothes: the gown is for the hearing.\n\nThe gown has a symbolic meaning. It makes the people in the room less personal. The attention goes to their task: judge, prosecutor or lawyer."
+     },
+     "q": [
+      {
+       "form": "complete",
+       "items": [
+        "tga.bef"
+       ],
+       "ask": {
+        "nl": "Maak af: Een rechter draagt een zwarte toga en een witte ___.",
+        "th": "เติมคำ: ผู้พิพากษาสวมชุดครุยสีดำและ ___ สีขาว",
+        "en": "Complete: A judge wears a black gown and white ___."
+       },
+       "answer": "bef",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Het zijn twee smalle stukken stof bij de hals.",
+         "th": "เป็นผ้าผืนแคบสองชิ้นที่คอ",
+         "en": "They are two narrow pieces of cloth at the neck."
+        },
+        {
+         "nl": "Het woord heeft drie letters en begint met b.",
+         "th": "คำนี้มีสามตัวอักษรและขึ้นต้นด้วย b",
+         "en": "The word has three letters and starts with b."
+        }
+       ],
+       "why": {
+        "nl": "Goed. Een bef is de witte stof bij de hals van de toga.",
+        "th": "ถูกต้อง bef คือผ้าขาวที่คอของชุดครุย",
+        "en": "Right. A bef is the white cloth at the neck of the gown."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "tga.toga"
+       ],
+       "ask": {
+        "nl": "Wat krijgt volgens de Rechtspraak de nadruk door de toga?",
+        "th": "ตามที่ศาล (Rechtspraak) บอก ชุดครุยทำให้เน้นอะไร",
+        "en": "According to the judiciary (Rechtspraak), what gets the emphasis because of the gown?"
+       },
+       "opts": [
+        {
+         "t": "Hoe belangrijk de persoon zelf is",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. De toga maakt mensen juist minder persoonlijk.",
+          "th": "ไม่ใช่ ชุดครุยทำให้คนเป็นส่วนตัวน้อยลง",
+          "en": "No. The gown makes people less personal."
+         }
+        },
+        {
+         "t": "Het weer in de rechtszaal",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Dat heeft er niets mee te maken.",
+          "th": "ไม่ใช่ ไม่เกี่ยวกันเลย",
+          "en": "No. That has nothing to do with it."
+         }
+        },
+        {
+         "t": "Hun taak: rechter, officier of advocaat",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De nadruk komt te liggen op hun ambt, niet op de persoon.",
+          "th": "ถูกต้อง เน้นที่หน้าที่ของพวกเขา ไม่ใช่ตัวบุคคล",
+          "en": "Right. The emphasis lies on their office, not on the person."
+         }
+        }
+       ],
+       "answer": "Hun taak: rechter, officier of advocaat"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "tga.toga",
+      "tga.rechter"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Toga_(modern)",
+       "title": "Wikipedia: Toga (modern)"
+      }
+     ],
+     "text": {
+      "nl": "Waar komt het vandaan?\n\nDat rechters en advocaten in Nederland een toga dragen, gaat vooral terug op Napoleon, de Franse keizer. In zijn decreten schreef hij precies voor hoe rechterlijke ambtenaren en advocaten zich moesten kleden. De toga zorgt ervoor dat niemand in een zaak voordeel of nadeel heeft van de kleding, de afkomst of de religieuze tekens van een ander.\n\nDe toga’s van de rechters lijken veel op elkaar. Kleine verschillen zie je alleen als je goed kijkt: hoe hoger de rechter, hoe meer franje. Bij sommige zaken, bijvoorbeeld als een kind wordt gehoord, kan de rechter besluiten geen toga te dragen. Het kind raakt dan niet onnodig in de war.",
+      "th": "มาจากไหน\n\nการที่ผู้พิพากษาและทนายความในเนเธอร์แลนด์สวมชุดครุย ส่วนใหญ่ย้อนไปถึงนโปเลียน จักรพรรดิฝรั่งเศส ในกฤษฎีกาของเขา เขากำหนดอย่างละเอียดว่าเจ้าหน้าที่ศาลและทนายความต้องแต่งกายอย่างไร ชุดครุยทำให้ไม่มีใครได้เปรียบหรือเสียเปรียบเพราะเสื้อผ้า ภูมิหลัง หรือสัญลักษณ์ทางศาสนาของอีกฝ่าย\n\nชุดครุยของผู้พิพากษาคล้ายกันมาก ความแตกต่างเล็ก ๆ จะเห็นเมื่อดูใกล้ ๆ ผู้พิพากษายิ่งระดับสูง ยิ่งมีลวดลายประดับมาก ในบางคดี เช่นเมื่อรับฟังเด็ก ผู้พิพากษาอาจตัดสินใจไม่สวมชุดครุย เพื่อไม่ให้เด็กสับสนโดยไม่จำเป็น",
+      "en": "Where does it come from?\n\nThat judges and lawyers in the Netherlands wear a gown goes back mostly to Napoleon, the French emperor. In his decrees he prescribed precisely how judicial officials and lawyers had to dress. The gown makes sure that nobody in a case has an advantage or disadvantage from the clothing, the background or the religious signs of another.\n\nThe gowns of the judges look much alike. You see small differences only when you look closely: the higher the judge, the more trimming. In some cases, for example when a child is heard, the judge may decide not to wear a gown. The child is then not confused for no reason."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "tga.toga"
+       ],
+       "ask": {
+        "nl": "Aan wie gaat het dragen van de toga in Nederland vooral terug?",
+        "th": "การสวมชุดครุยในเนเธอร์แลนด์ส่วนใหญ่ย้อนไปถึงใคร",
+        "en": "To whom does the wearing of the gown in the Netherlands mostly go back?"
+       },
+       "opts": [
+        {
+         "t": "De Romeinen, ruim tweeduizend jaar geleden",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. De Romeinse toga was een ander kledingstuk. Het gewaad van de rechters gaat vooral terug op Napoleon.",
+          "th": "ไม่ใช่ โตกาของโรมันเป็นเสื้อผ้าอีกแบบ ชุดของผู้พิพากษาย้อนไปถึงนโปเลียนเป็นส่วนใหญ่",
+          "en": "No. The Roman toga was a different garment. The gown of the judges goes back mostly to Napoleon."
+         }
+        },
+        {
+         "t": "Napoleon, de Franse keizer",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Hij schreef in zijn decreten voor hoe rechters en advocaten zich kleden.",
+          "th": "ถูกต้อง เขากำหนดในกฤษฎีกาว่าผู้พิพากษาและทนายความแต่งกายอย่างไร",
+          "en": "Right. In his decrees he prescribed how judges and lawyers dress."
+         }
+        },
+        {
+         "t": "Een Engelse koning",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Dat staat niet in de bron. Het gaat om Napoleon.",
+          "th": "ไม่ใช่ ไม่มีในแหล่งข้อมูล ผู้นั้นคือนโปเลียน",
+          "en": "No. That is not in the source. It is Napoleon."
+         }
+        }
+       ],
+       "answer": "Napoleon, de Franse keizer"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "tga.toga"
+       ],
+       "ask": {
+        "nl": "Maak af: Bij sommige zaken kan de rechter besluiten geen ___ te dragen.",
+        "th": "เติมคำ: ในบางคดีผู้พิพากษาอาจตัดสินใจไม่สวม ___",
+        "en": "Complete: In some cases the judge may decide not to wear a ___."
+       },
+       "answer": "toga",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Het lange zwarte gewaad.",
+         "th": "ชุดยาวสีดำ",
+         "en": "The long black gown."
+        },
+        {
+         "nl": "Begin zo: to…",
+         "th": "ขึ้นต้นแบบนี้: to…",
+         "en": "Start like this: to…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Bijvoorbeeld als een kind wordt gehoord, kan de rechter de toga weglaten.",
+        "th": "ถูกต้อง เช่นเมื่อรับฟังเด็ก ผู้พิพากษาอาจไม่สวมชุดครุย",
+        "en": "Right. For example when a child is heard, the judge may leave the gown off."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "items": [
+      "tga.toga",
+      "tga.zitting"
+     ],
+     "ask": {
+      "nl": "Wanneer draagt een rechter normaal geen toga?",
+      "th": "เมื่อไรที่ผู้พิพากษาโดยปกติไม่สวมชุดครุย",
+      "en": "When does a judge normally not wear a gown?"
+     },
+     "opts": [
+      {
+       "t": "Tijdens de zitting in de rechtszaal",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Tijdens de zitting draagt de rechter wel een toga.",
+        "th": "ไม่ใช่ ระหว่างการพิจารณาคดีผู้พิพากษาสวมชุดครุย",
+        "en": "No. During the hearing the judge does wear a gown."
+       }
+      },
+      {
+       "t": "Op kantoor",
+       "r": "ok",
+       "why": {
+        "nl": "Goed. Op kantoor dragen rechters gewone kleren.",
+        "th": "ถูกต้อง ที่สำนักงานผู้พิพากษาสวมเสื้อผ้าธรรมดา",
+        "en": "Right. In the office judges wear normal clothes."
+       }
+      },
+      {
+       "t": "Als er veel mensen komen kijken",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Het aantal mensen maakt niet uit.",
+        "th": "ไม่ใช่ จำนวนคนไม่มีผล",
+        "en": "No. The number of people does not matter."
+       }
+      }
+     ],
+     "answer": "Op kantoor",
+     "why": {
+      "nl": "De toga is voor de zitting. Op kantoor dragen rechters gewone kleren.",
+      "th": "ชุดครุยใช้สำหรับการพิจารณาคดี ที่สำนักงานผู้พิพากษาสวมเสื้อผ้าธรรมดา",
+      "en": "The gown is for the hearing. In the office judges wear normal clothes."
+     },
+     "err": "betekenis"
+    },
+    {
+     "type": "read",
+     "items": [
+      "tga.onpartijdig",
+      "tga.rechter",
+      "tga.zitting"
+     ],
+     "sources": [
+      {
+       "url": "https://www.rechtspraak.nl/organisatie-en-contact/rechtspraak-in-nederland/rechters/veelgestelde-vragen",
+       "title": "Rechtspraak.nl: Veelgestelde vragen rechters (Waarom draagt de rechter een toga?)"
+      }
+     ],
+     "text": {
+      "nl": "Een regel in de zittingszaal.\n\nVolgens de Rechtspraak moeten rechters en griffiers in de zittingszaal een toga dragen. Zo wordt hun onpartijdigheid en onafhankelijkheid zichtbaar. Door de toga laten ze niet zien wat ze zelf geloven of vinden. Daarom combineren ze de toga niet met een hoofddoek, een keppeltje of een kruisje.\n\nBuiten de zittingszaal mogen medewerkers van de Rechtspraak hun overtuiging wel laten zien.",
+      "th": "กฎในห้องพิจารณาคดี\n\nตามที่ศาล (Rechtspraak) กล่าว ผู้พิพากษาและนายทะเบียนศาลต้องสวมชุดครุยในห้องพิจารณาคดี เพื่อให้เห็นความเป็นกลางและความเป็นอิสระของพวกเขา ด้วยชุดครุยพวกเขาไม่แสดงสิ่งที่ตนเชื่อหรือคิดเอง ดังนั้นจึงไม่สวมชุดครุยร่วมกับผ้าคลุมศีรษะ หมวกคิปปะของชาวยิว หรือกางเขน\n\nนอกห้องพิจารณาคดี เจ้าหน้าที่ของ Rechtspraak สามารถแสดงความเชื่อของตนได้",
+      "en": "A rule in the courtroom.\n\nAccording to the judiciary (Rechtspraak), judges and clerks must wear a gown in the courtroom. That makes their impartiality and independence visible. With the gown they do not show what they themselves believe or think. That is why they do not combine the gown with a headscarf, a kippah or a cross.\n\nOutside the courtroom, staff of the Rechtspraak may show their beliefs."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "tga.onpartijdig"
+       ],
+       "ask": {
+        "nl": "Wat betekent “onpartijdig”?",
+        "th": "คำว่า “onpartijdig” หมายถึงอะไร",
+        "en": "What does “onpartijdig” mean?"
+       },
+       "opts": [
+        {
+         "t": "Heel streng zijn, ook als iemand spijt heeft",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Onpartijdig gaat niet over strengheid.",
+          "th": "ไม่ใช่ onpartijdig ไม่เกี่ยวกับความเข้มงวด",
+          "en": "No. Impartial is not about strictness."
+         }
+        },
+        {
+         "t": "Niet voor de een en niet voor de ander zijn",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Een rechter kiest geen kant vooraf.",
+          "th": "ถูกต้อง ผู้พิพากษาไม่เลือกข้างล่วงหน้า",
+          "en": "Right. A judge does not choose a side beforehand."
+         }
+        },
+        {
+         "t": "Heel snel beslissen",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het gaat niet om snelheid.",
+          "th": "ไม่ใช่ ไม่เกี่ยวกับความเร็ว",
+          "en": "No. It is not about speed."
+         }
+        }
+       ],
+       "answer": "Niet voor de een en niet voor de ander zijn"
+      }
+     ]
+    },
+    {
+     "type": "make",
+     "items": [
+      "tga.toga",
+      "tga.onpartijdig"
+     ],
+     "ask": {
+      "nl": "Iemand vraagt: waarom draagt een rechter een toga? Antwoord in twee zinnen.",
+      "th": "มีคนถามว่า ทำไมผู้พิพากษาจึงสวมชุดครุย ตอบในสองประโยค",
+      "en": "Someone asks: why does a judge wear a gown? Answer in two sentences."
+     },
+     "frame": "Een rechter draagt een toga, want ...",
+     "model": "Een rechter draagt een toga, want zo wordt de onpartijdigheid zichtbaar. Mensen kijken dan naar de taak, niet naar de persoon.",
+     "checklist": [
+      {
+       "nl": "Ik heb een reden gegeven met “want”.",
+       "th": "ฉันให้เหตุผลด้วยคำว่า “want”",
+       "en": "I gave a reason with “want”."
+      },
+      {
+       "nl": "Ik heb het woord onpartijdig of taak gebruikt.",
+       "th": "ฉันใช้คำว่า onpartijdig หรือ taak",
+       "en": "I used the word onpartijdig or taak."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "tga.toga",
+      "tga.onpartijdig"
+     ],
+     "sources": [
+      {
+       "url": "https://www.rechtspraak.nl/organisatie-en-contact/organisatie/raad-voor-de-rechtspraak/nieuws/college-voor-mensenrechten-rechtbank-mocht-sollicitante-met-hoofddoek-niet-afwijzen",
+       "title": "Rechtspraak.nl: Rechtspraak houdt vast aan neutraliteit kleding rechter en griffier"
+      },
+      {
+       "url": "https://www.rechtspraak.nl/organisatie-en-contact/rechtspraak-in-nederland/rechters/veelgestelde-vragen",
+       "title": "Rechtspraak.nl: Veelgestelde vragen rechters (Waarom draagt de rechter een toga?)"
+      }
+     ],
+     "text": {
+      "nl": "Twee kanten van een zaak.\n\nIn 2016 vond het College voor de Rechten van de Mens dat de rechtbank van Rotterdam een sollicitante niet had mogen afwijzen. De vrouw wilde als buitengriffier werken, maar niet haar hoofddoek afdoen. Het College vond dat voor het vertrouwen in de rechter niet nodig is dat ook de griffier geen religieus teken draagt. Het College vond ook dat de regel sommige groepen uitsluit van het werk bij de Rechtspraak.\n\nDe Rechtspraak was het daar niet mee eens. Zij zei dat het werk van de griffier sterk verweven is met dat van de rechter, en dat de wetgever bij de toga geen onderscheid maakte. De Rechtspraak noemde ook dat er rechters en griffiers van alle religies en overtuigingen werken. Hier beschrijven we beide standpunten; we kiezen geen kant.",
+      "th": "สองด้านของเรื่อง\n\nในปี 2016 คณะกรรมการสิทธิมนุษยชนแห่งเนเธอร์แลนด์ (College voor de Rechten van de Mens) เห็นว่าศาลรอตเตอร์ดัมไม่ควรปฏิเสธผู้สมัครคนหนึ่ง หญิงผู้นั้นอยากทำงานเป็นนายทะเบียนศาลแบบเรียกใช้ แต่ไม่ยอมถอดผ้าคลุมศีรษะ คณะกรรมการเห็นว่า เพื่อความเชื่อมั่นต่อผู้พิพากษา ไม่จำเป็นที่นายทะเบียนศาลต้องไม่สวมสัญลักษณ์ทางศาสนาด้วย คณะกรรมการยังเห็นว่ากฎนี้ทำให้บางกลุ่มคนไม่สามารถทำงานที่ศาลได้\n\nศาล (Rechtspraak) ไม่เห็นด้วย กล่าวว่างานของนายทะเบียนศาลเกี่ยวพันกับงานของผู้พิพากษาอย่างมาก และผู้ออกกฎหมายก็ไม่ได้แยกแยะในเรื่องชุดครุย ศาลยังกล่าวว่ามีผู้พิพากษาและนายทะเบียนศาลจากทุกศาสนาและความเชื่อทำงานอยู่ ที่นี่เราอธิบายทั้งสองมุมมอง เราไม่เลือกข้าง",
+      "en": "Two sides of a case.\n\nIn 2016 the Netherlands Institute for Human Rights (College voor de Rechten van de Mens) held that the court of Rotterdam should not have rejected an applicant. The woman wanted to work as an on-call clerk, but did not want to take off her headscarf. The Institute held that for trust in the judge it is not necessary that the clerk too wears no religious sign. The Institute also held that the rule excludes some groups from working at the judiciary.\n\nThe judiciary (Rechtspraak) did not agree. It said that the work of the clerk is closely tied to that of the judge, and that the legislator made no distinction in the gown rule. The judiciary also said that judges and clerks of all religions and beliefs work there. Here we describe both positions; we take no side."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "tga.toga"
+       ],
+       "ask": {
+        "nl": "Wat gebeurt er in deze tekst?",
+        "th": "เกิดอะไรขึ้นในข้อความนี้",
+        "en": "What happens in this text?"
+       },
+       "opts": [
+        {
+         "t": "De tekst kiest de kant van het College",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst beschrijft beide standpunten en kiest geen kant.",
+          "th": "ไม่ใช่ ข้อความอธิบายทั้งสองมุมมองและไม่เลือกข้าง",
+          "en": "No. The text describes both positions and takes no side."
+         }
+        },
+        {
+         "t": "De tekst beschrijft twee standpunten naast elkaar",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het College en de Rechtspraak denken er verschillend over.",
+          "th": "ถูกต้อง คณะกรรมการและ Rechtspraak คิดต่างกัน",
+          "en": "Right. The Institute and the judiciary think differently about it."
+         }
+        },
+        {
+         "t": "De tekst kiest de kant van de Rechtspraak",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst beschrijft beide standpunten en kiest geen kant.",
+          "th": "ไม่ใช่ ข้อความอธิบายทั้งสองมุมมองและไม่เลือกข้าง",
+          "en": "No. The text describes both positions and takes no side."
+         }
+        }
+       ],
+       "answer": "De tekst beschrijft twee standpunten naast elkaar"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: rechters, officieren en advocaten dragen in de zittingszaal een toga, zodat de onpartijdigheid zichtbaar wordt. De regel gaat grotendeels terug op Napoleon.",
+      "th": "ตอนนี้คุณเล่าได้ว่า ผู้พิพากษา อัยการ และทนายความสวมชุดครุยในห้องพิจารณาคดี เพื่อให้เห็นความเป็นกลาง กฎนี้ส่วนใหญ่ย้อนไปถึงนโปเลียน",
+      "en": "You can now tell: judges, prosecutors and lawyers wear a gown in the courtroom, so that impartiality becomes visible. The rule goes back largely to Napoleon."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

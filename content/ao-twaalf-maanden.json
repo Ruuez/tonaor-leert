@@ -1,0 +1,509 @@
+{
+ "format": 1,
+ "id": "ao-twaalf-maanden",
+ "type": "les",
+ "version": 1,
+ "order": 21,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "wetenschap",
+ "vorm": "eerst raden",
+ "draden": [
+  "ao-maan",
+  "ao-zijderoute",
+  "ao-ramadan"
+ ],
+ "title": {
+  "nl": "Waarom heeft een jaar twaalf maanden?",
+  "th": "ทำไมหนึ่งปีจึงมีสิบสองเดือน",
+  "en": "Why does a year have twelve months?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Month",
+   "title": "Wikipedia: Month"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Roman_calendar",
+   "title": "Wikipedia: Roman calendar"
+  }
+ ],
+ "items": [
+  {
+   "id": "mnd.maand",
+   "kind": "word",
+   "w": "maand",
+   "art": "de",
+   "tr": {
+    "th": "เดือน",
+    "en": "month"
+   },
+   "def": "Een deel van het jaar, ongeveer dertig dagen.",
+   "ex": "Mei is de vijfde maand van het jaar.",
+   "gap": "De ___ duurt ongeveer dertig dagen.",
+   "wrong": [
+    "uur",
+    "week",
+    "eeuw"
+   ]
+  },
+  {
+   "id": "mnd.maan",
+   "kind": "word",
+   "w": "maan",
+   "art": "de",
+   "tr": {
+    "th": "ดวงจันทร์",
+    "en": "moon"
+   },
+   "def": "De grote lichte bol die je 's nachts aan de hemel ziet.",
+   "ex": "Vanavond is de maan heel helder.",
+   "gap": "De ___ draait om de aarde.",
+   "wrong": [
+    "bus",
+    "stoel",
+    "pen"
+   ]
+  },
+  {
+   "id": "mnd.jaar",
+   "kind": "word",
+   "w": "jaar",
+   "art": "het",
+   "tr": {
+    "th": "ปี",
+    "en": "year"
+   },
+   "def": "Een periode van twaalf maanden.",
+   "ex": "Het jaar begint op 1 januari.",
+   "gap": "Het ___ heeft twaalf maanden.",
+   "wrong": [
+    "kwartier",
+    "weekend",
+    "seizoen"
+   ]
+  },
+  {
+   "id": "mnd.kalender",
+   "kind": "word",
+   "w": "kalender",
+   "art": "de",
+   "tr": {
+    "th": "ปฏิทิน",
+    "en": "calendar"
+   },
+   "def": "Een lijst van alle dagen, weken en maanden van het jaar.",
+   "ex": "Op de kalender staat mijn afspraak.",
+   "gap": "Op de ___ zie ik welke dag het is.",
+   "wrong": [
+    "fiets",
+    "pan",
+    "bril"
+   ]
+  },
+  {
+   "id": "mnd.schrikkel",
+   "kind": "word",
+   "w": "schrikkeldag",
+   "art": "de",
+   "tr": {
+    "th": "วันอธิกวาร (วันที่เพิ่มมา)",
+    "en": "leap day"
+   },
+   "def": "Een extra dag die er om de vier jaar bij komt.",
+   "ex": "Een schrikkeldag is de 29e februari.",
+   "gap": "De ___ komt om de vier jaar.",
+   "wrong": [
+    "gordijn",
+    "taart",
+    "trein"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-twaalf-maanden-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom heeft een jaar twaalf maanden?",
+    "th": "ทำไมหนึ่งปีจึงมีสิบสองเดือน",
+    "en": "Why does a year have twelve months?"
+   },
+   "intro": {
+    "nl": "Eerst een gok over de maan. Daarna zie je hoe Rome er twaalf maanden van maakte.",
+    "th": "เดาเรื่องดวงจันทร์ก่อน แล้วดูว่าโรมทำให้เป็นสิบสองเดือนได้อย่างไร",
+    "en": "First a guess about the moon. Then you see how Rome made twelve months of it."
+   },
+   "can": {
+    "nl": "Vertellen waarom een jaar twaalf maanden heeft",
+    "th": "เล่าได้ว่าทำไมหนึ่งปีจึงมีสิบสองเดือน",
+    "en": "Tell why a year has twelve months"
+   },
+   "targets": [
+    "mnd.maand",
+    "mnd.maan",
+    "mnd.jaar",
+    "mnd.kalender",
+    "mnd.schrikkel"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "sky",
+    "alt": {
+     "nl": "Een kamer met een raam, een agenda en een bord met het woord Jaar.",
+     "th": "ห้องที่มีหน้าต่าง สมุดนัดหมาย และป้ายที่เขียนว่า Jaar (ปี)",
+     "en": "A room with a window, a diary and a sign with the word Jaar (year)."
+    },
+    "things": [
+     {
+      "kind": "sign",
+      "x": 60,
+      "y": 80,
+      "text": "Jaar",
+      "hot": true,
+      "item": "mnd.jaar",
+      "label": {
+       "nl": "Het jaar: twaalf maanden",
+       "th": "ปี: สิบสองเดือน",
+       "en": "The year: twelve months"
+      }
+     },
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56,
+      "hot": true,
+      "item": "mnd.maan",
+      "label": {
+       "nl": "Buiten de maan: een maand komt van de maan",
+       "th": "ดวงจันทร์ข้างนอก: เดือนมาจากดวงจันทร์",
+       "en": "The moon outside: a month comes from the moon"
+      }
+     },
+     {
+      "kind": "agenda",
+      "x": 170,
+      "y": 158,
+      "hot": true,
+      "item": "mnd.kalender",
+      "label": {
+       "nl": "De kalender: alle dagen en maanden van het jaar",
+       "th": "ปฏิทิน: ทุกวันและทุกเดือนของปี",
+       "en": "The calendar: all days and months of the year"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "mnd.maan"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel dagen zitten er tussen de ene volle maan en de volgende? Typ een getal.",
+        "th": "ประมาณการ: ระหว่างพระจันทร์เต็มดวงครั้งหนึ่งกับครั้งถัดไปมีกี่วัน พิมพ์ตัวเลข",
+        "en": "Estimate: how many days are there between one full moon and the next? Type a number."
+       },
+       "answer": "30",
+       "tol": 3,
+       "err": "getal",
+       "why": {
+        "nl": "Het zijn ongeveer 29,5 dagen. Gemiddeld is het 29,53059 dagen. Daar komt de maand vandaan.",
+        "th": "ประมาณ 29.5 วัน โดยเฉลี่ยคือ 29.53059 วัน เดือนมีที่มาจากตรงนี้",
+        "en": "It is about 29.5 days. On average it is 29.53059 days. That is where the month comes from."
+       }
+      }
+     ]
+    },
+    {
+     "type": "look",
+     "min": 3
+    },
+    {
+     "type": "read",
+     "items": [
+      "mnd.maand",
+      "mnd.maan",
+      "mnd.jaar"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Month",
+       "title": "Wikipedia: Month"
+      }
+     ],
+     "text": {
+      "nl": "Een maand begon bij de maan.\n\nDe maan doet er gemiddeld 29,53059 dagen over om van de ene volle maan naar de volgende te gaan. Twaalf van die maanden zijn samen 354 of 355 dagen. Een kalender die alleen de maan volgt, heeft dus een jaar van 354 of 355 dagen.\n\nIn één jaar met de zon passen ongeveer 12,37 van die maanden. Dat past niet precies. Daarom is de lengte van een jaar en van een maand een probleem voor elke kalender.",
+      "th": "เดือนเริ่มต้นจากดวงจันทร์\n\nดวงจันทร์ใช้เวลาโดยเฉลี่ย 29.53059 วันจากพระจันทร์เต็มดวงครั้งหนึ่งไปอีกครั้ง สิบสองเดือนแบบนี้รวมกันเป็น 354 หรือ 355 วัน ปฏิทินที่ตามดวงจันทร์อย่างเดียวจึงมีหนึ่งปี 354 หรือ 355 วัน\n\nในหนึ่งปีตามดวงอาทิตย์มีเดือนแบบนี้ประมาณ 12.37 เดือน ไม่ลงตัวพอดี ความยาวของปีและของเดือนจึงเป็นปัญหาของปฏิทินทุกแบบ",
+      "en": "A month began with the moon.\n\nThe moon takes on average 29.53059 days to go from one full moon to the next. Twelve of those months together are 354 or 355 days. A calendar that follows only the moon therefore has a year of 354 or 355 days.\n\nIn one year with the sun fit about 12.37 of those months. That does not fit exactly. So the length of a year and of a month is a problem for every calendar."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "mnd.maan",
+        "mnd.jaar"
+       ],
+       "ask": {
+        "nl": "Hoeveel dagen heeft een jaar van twaalf maanden van de maan?",
+        "th": "หนึ่งปีที่มีสิบสองเดือนตามดวงจันทร์มีกี่วัน",
+        "en": "How many days does a year of twelve moon months have?"
+       },
+       "opts": [
+        {
+         "t": "354 of 355 dagen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Twaalf keer 29,5 dagen is ongeveer 354 dagen.",
+          "th": "ถูกต้อง 29.5 วัน คูณสิบสอง ได้ประมาณ 354 วัน",
+          "en": "Right. Twelve times 29.5 days is about 354 days."
+         }
+        },
+        {
+         "t": "Precies 365 dagen",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Twaalf maanden van de maan zijn korter dan een jaar met de zon. Je ziet het in de tekst: 354 of 355.",
+          "th": "ไม่ใช่ สิบสองเดือนตามดวงจันทร์สั้นกว่าหนึ่งปีตามดวงอาทิตย์ ดูในข้อความ: 354 หรือ 355",
+          "en": "No. Twelve moon months are shorter than a year with the sun. Look in the text: 354 or 355."
+         }
+        },
+        {
+         "t": "Ongeveer 300 dagen",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Het is meer: twaalf keer bijna dertig dagen is bijna 360.",
+          "th": "ไม่ใช่ มากกว่านั้น สิบสองคูณเกือบสามสิบวันได้เกือบ 360",
+          "en": "No. It is more: twelve times almost thirty days is almost 360."
+         }
+        }
+       ],
+       "answer": "354 of 355 dagen"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "mnd.kalender",
+      "mnd.schrikkel"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Roman_calendar",
+       "title": "Wikipedia: Roman calendar"
+      }
+     ],
+     "text": {
+      "nl": "Rome begon met tien maanden.\n\nVolgens latere Romeinse schrijvers had het oudste Romeinse jaar tien maanden en 304 dagen. Het jaar begon in maart. De winter had geen eigen maanden. Daarom was september de zevende maand, oktober de achtste, november de negende en december de tiende.\n\nVolgens de overlevering voegde koning Numa Pompilius januari en februari toe.\n\nIn 46 voor Christus liet Caesar de kalender veranderen. Een jaar kreeg 365 dagen, en elk vierde jaar kwam er een extra dag bij: de schrikkeldag.",
+      "th": "โรมเริ่มต้นด้วยสิบเดือน\n\nตามที่นักเขียนโรมันรุ่นหลังเล่าไว้ ปีโรมันที่เก่าแก่ที่สุดมีสิบเดือนและ 304 วัน ปีเริ่มในเดือนมีนาคม ฤดูหนาวไม่มีเดือนของตัวเอง ดังนั้น september เป็นเดือนที่เจ็ด oktober เดือนที่แปด november เดือนที่เก้า และ december เดือนที่สิบ\n\nตามตำนาน กษัตริย์นูมา ปอมปิลิอุส เพิ่มเดือนมกราคมและกุมภาพันธ์\n\nในปี 46 ก่อนคริสต์ศักราช ซีซาร์สั่งเปลี่ยนปฏิทิน หนึ่งปีมี 365 วัน และทุกสี่ปีมีอีกหนึ่งวัน คือ schrikkeldag",
+      "en": "Rome began with ten months.\n\nAccording to later Roman writers, the oldest Roman year had ten months and 304 days. The year began in March. The winter had no months of its own. That is why September was the seventh month, October the eighth, November the ninth and December the tenth.\n\nAccording to tradition, King Numa Pompilius added January and February.\n\nIn 46 BC Caesar had the calendar changed. A year got 365 days, and every fourth year an extra day was added: the leap day."
+     },
+     "q": [
+      {
+       "form": "type",
+       "items": [
+        "mnd.maand"
+       ],
+       "ask": {
+        "nl": "Welke maand was in het oude Rome de zevende? Typ één woord.",
+        "th": "เดือนใดเป็นเดือนที่เจ็ดในโรมโบราณ พิมพ์หนึ่งคำ",
+        "en": "Which month was the seventh in ancient Rome? Type one word."
+       },
+       "answer": "september",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Het jaar begon in maart. Tel door: maart is de eerste.",
+         "th": "ปีเริ่มในเดือนมีนาคม นับต่อไป: มีนาคมเป็นเดือนแรก",
+         "en": "The year began in March. Count on: March is the first."
+        },
+        {
+         "nl": "Begin zo: sep…",
+         "th": "ขึ้นต้นแบบนี้: sep…",
+         "en": "Start like this: sep…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Maart was de eerste maand, dus september was de zevende. De namen zijn gebleven, ook al is het nu de negende maand.",
+        "th": "ถูกต้อง มีนาคมเป็นเดือนแรก september จึงเป็นเดือนที่เจ็ด ชื่อยังคงอยู่ แม้ตอนนี้จะเป็นเดือนที่เก้า",
+        "en": "Right. March was the first month, so September was the seventh. The names stayed, even though it is now the ninth month."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "mnd.kalender"
+       ],
+       "ask": {
+        "nl": "Hoeveel maanden had het oudste Romeinse jaar volgens de overlevering?",
+        "th": "ปีโรมันที่เก่าแก่ที่สุดมีกี่เดือนตามตำนาน",
+        "en": "How many months did the oldest Roman year have, according to tradition?"
+       },
+       "opts": [
+        {
+         "t": "Tien",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Volgens de overlevering waren het tien maanden, samen 304 dagen. De winter telde niet mee.",
+          "th": "ถูกต้อง ตามตำนานมีสิบเดือน รวม 304 วัน ฤดูหนาวไม่นับ",
+          "en": "Right. According to tradition it was ten months, 304 days together. The winter did not count."
+         }
+        },
+        {
+         "t": "Twaalf",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Twaalf maanden kwamen later, toen januari en februari erbij kwamen.",
+          "th": "ไม่ใช่ สิบสองเดือนมาทีหลัง เมื่อมกราคมและกุมภาพันธ์ถูกเพิ่มเข้ามา",
+          "en": "No. Twelve months came later, when January and February were added."
+         }
+        },
+        {
+         "t": "Acht",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Het waren er tien. Je ziet het in de tekst.",
+          "th": "ไม่ใช่ มีสิบเดือน ดูในข้อความ",
+          "en": "No. There were ten. You can see it in the text."
+         }
+        }
+       ],
+       "answer": "Tien"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "mnd.kalender",
+      "mnd.jaar"
+     ],
+     "ask": {
+      "nl": "Leg de geschiedenis van de kalender in de goede volgorde. Bouw de zin.",
+      "th": "เรียงประวัติของปฏิทินให้ถูกลำดับ ต่อประโยค",
+      "en": "Put the history of the calendar in the right order. Build the sentence."
+     },
+     "data": {
+      "parts": [
+       "Eerst had het jaar tien maanden,",
+       "dan kwamen volgens de overlevering januari en februari erbij,",
+       "dan maakte Caesar een jaar van 365 dagen."
+      ],
+      "tr": {
+       "th": "ก่อนอื่นปีมีสิบเดือน แล้วตามตำนานมกราคมและกุมภาพันธ์ถูกเพิ่มเข้ามา แล้วซีซาร์ทำให้หนึ่งปีมี 365 วัน",
+       "en": "First the year had ten months, then according to tradition January and February were added, then Caesar made a year of 365 days."
+      }
+     },
+     "answer": "Eerst had het jaar tien maanden, dan kwamen volgens de overlevering januari en februari erbij, dan maakte Caesar een jaar van 365 dagen.",
+     "err": "woordvolgorde",
+     "why": {
+      "nl": "Eerst tien maanden, dan januari en februari, en in 46 voor Christus de kalender van Caesar met 365 dagen.",
+      "th": "ก่อนสิบเดือน แล้วมกราคมและกุมภาพันธ์ และในปี 46 ก่อนคริสต์ศักราช ปฏิทินของซีซาร์ที่มี 365 วัน",
+      "en": "First ten months, then January and February, and in 46 BC the calendar of Caesar with 365 days."
+     }
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "mnd.schrikkel",
+      "mnd.kalender"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Roman_calendar",
+       "title": "Wikipedia: Roman calendar"
+      }
+     ],
+     "text": {
+      "nl": "Het langste jaar ooit.\n\nOm de nieuwe kalender te laten passen, duurde het jaar van de hervorming, 46 voor Christus, 446 dagen. Het was het jaar van Caesars derde consulaat.\n\nIn de kalender van Caesar is een jaar gemiddeld 365,25 dagen: drie jaar van 365 dagen en één van 366.",
+      "th": "ปีที่ยาวที่สุดเท่าที่เคยมี\n\nเพื่อให้ปฏิทินใหม่ลงตัว ปีแห่งการปฏิรูป คือปี 46 ก่อนคริสต์ศักราช ยาวถึง 446 วัน เป็นปีที่ซีซาร์ดำรงตำแหน่งกงสุลครั้งที่สาม\n\nในปฏิทินของซีซาร์ หนึ่งปีเฉลี่ย 365.25 วัน คือสามปีที่มี 365 วัน และหนึ่งปีที่มี 366 วัน",
+      "en": "The longest year ever.\n\nTo make the new calendar fit, the year of the reform, 46 BC, lasted 446 days. It was the year of Caesar's third consulship.\n\nIn Caesar's calendar a year is on average 365.25 days: three years of 365 days and one of 366."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "mnd.jaar"
+       ],
+       "ask": {
+        "nl": "Hoe lang duurde het jaar van de hervorming, 46 voor Christus?",
+        "th": "ปีแห่งการปฏิรูป 46 ก่อนคริสต์ศักราช ยาวเท่าไร",
+        "en": "How long was the year of the reform, 46 BC?"
+       },
+       "opts": [
+        {
+         "t": "446 dagen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat is 81 dagen langer dan een gewoon jaar.",
+          "th": "ถูกต้อง ยาวกว่าปีปกติ 81 วัน",
+          "en": "Right. That is 81 days longer than a normal year."
+         }
+        },
+        {
+         "t": "365 dagen",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Dat is de lengte van een gewoon jaar na de hervorming, niet van het jaar zelf.",
+          "th": "ไม่ใช่ นั่นคือความยาวของปีปกติหลังการปฏิรูป ไม่ใช่ปีนั้น",
+          "en": "No. That is the length of a normal year after the reform, not of that year itself."
+         }
+        },
+        {
+         "t": "304 dagen",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. 304 dagen was het oudste Romeinse jaar.",
+          "th": "ไม่ใช่ 304 วันคือปีโรมันที่เก่าแก่ที่สุด",
+          "en": "No. 304 days was the oldest Roman year."
+         }
+        }
+       ],
+       "answer": "446 dagen"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: een maand komt van de maan, maar twaalf maanden van de maan zijn korter dan een jaar. Daarom heeft elke kalender een oplossing nodig.",
+      "th": "ตอนนี้คุณเล่าได้ว่า เดือนมาจากดวงจันทร์ แต่สิบสองเดือนตามดวงจันทร์สั้นกว่าหนึ่งปี ปฏิทินทุกแบบจึงต้องมีวิธีแก้",
+      "en": "You can now tell: a month comes from the moon, but twelve moon months are shorter than a year. So every calendar needs a fix."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

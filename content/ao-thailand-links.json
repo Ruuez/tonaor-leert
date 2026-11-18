@@ -1,0 +1,515 @@
+{
+ "format": 1,
+ "id": "ao-thailand-links",
+ "type": "les",
+ "version": 1,
+ "order": 29,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "aardrijkskunde",
+ "vorm": "een zoektocht op de kaart",
+ "draden": [
+  "ao-stille-oceaan",
+  "ao-mekong",
+  "ao-1953"
+ ],
+ "title": {
+  "nl": "Waarom rijden ze in Thailand links en in Nederland rechts?",
+  "th": "ทำไมในไทยขับชิดซ้าย แต่ในเนเธอร์แลนด์ขับชิดขวา",
+  "en": "Why do they drive on the left in Thailand and on the right in the Netherlands?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic",
+   "title": "Wikipedia: Left- and right-hand traffic"
+  },
+  {
+   "url": "https://www.anwb.nl/vakantie/thailand/reisvoorbereiding/verkeer",
+   "title": "ANWB: Verkeer in Thailand"
+  }
+ ],
+ "items": [
+  {
+   "id": "lnk.verkeer",
+   "kind": "word",
+   "w": "verkeer",
+   "art": "het",
+   "tr": {
+    "th": "การจราจร",
+    "en": "traffic"
+   },
+   "def": "Alle auto's, fietsen en mensen op de weg.",
+   "ex": "Het verkeer staat stil.",
+   "gap": "Het ___ rijdt in Thailand links.",
+   "wrong": [
+    "kwartier",
+    "seizoen",
+    "weekend"
+   ]
+  },
+  {
+   "id": "lnk.links",
+   "kind": "word",
+   "w": "links",
+   "art": "",
+   "tr": {
+    "th": "ซ้าย",
+    "en": "left"
+   },
+   "def": "Aan de kant van je hart.",
+   "ex": "Ik sla links af.",
+   "gap": "In Thailand rijdt het verkeer ___.",
+   "wrong": [
+    "gisteren",
+    "tafel",
+    "lopen"
+   ]
+  },
+  {
+   "id": "lnk.rechts",
+   "kind": "word",
+   "w": "rechts",
+   "art": "",
+   "tr": {
+    "th": "ขวา",
+    "en": "right"
+   },
+   "def": "Aan de andere kant dan links.",
+   "ex": "Ik sla rechts af.",
+   "gap": "In Nederland rijdt het verkeer ___.",
+   "wrong": [
+    "gisteren",
+    "tafel",
+    "lopen"
+   ]
+  },
+  {
+   "id": "lnk.kant",
+   "kind": "word",
+   "w": "kant",
+   "art": "de",
+   "tr": {
+    "th": "ด้าน",
+    "en": "side"
+   },
+   "def": "Een zijde van iets: links of rechts.",
+   "ex": "Ik rijd aan de linkerkant.",
+   "gap": "De ___ van de weg waar je rijdt, is links of rechts.",
+   "wrong": [
+    "pan",
+    "jas",
+    "bril"
+   ]
+  },
+  {
+   "id": "lnk.regel",
+   "kind": "word",
+   "w": "regel",
+   "art": "de",
+   "tr": {
+    "th": "กฎ",
+    "en": "rule"
+   },
+   "def": "Iets wat je moet doen.",
+   "ex": "Dit is een belangrijke regel.",
+   "gap": "De ___ zegt aan welke kant je rijdt.",
+   "wrong": [
+    "wolk",
+    "stoel",
+    "soep"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-thailand-links-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom rijden ze in Thailand links en in Nederland rechts?",
+    "th": "ทำไมในไทยขับชิดซ้าย แต่ในเนเธอร์แลนด์ขับชิดขวา",
+    "en": "Why do they drive on the left in Thailand and on the right in the Netherlands?"
+   },
+   "intro": {
+    "nl": "Eerst een schatting. Daarna zoek je op de kaart wie links en wie rechts rijdt.",
+    "th": "ประมาณก่อน แล้วหาบนแผนที่ว่าประเทศใดขับซ้ายและประเทศใดขับขวา",
+    "en": "First an estimate. Then you look on the map for who drives left and who drives right."
+   },
+   "can": {
+    "nl": "Aanwijzen welke buren van Thailand rechts rijden en vertellen wat bekend is over links rijden",
+    "th": "ชี้ได้ว่าเพื่อนบ้านใดของไทยขับชิดขวา และเล่าได้ว่าเรื่องการขับชิดซ้ายรู้อะไรบ้าง",
+    "en": "Point out which neighbours of Thailand drive on the right and tell what is known about driving on the left"
+   },
+   "targets": [
+    "lnk.verkeer",
+    "lnk.links",
+    "lnk.rechts",
+    "lnk.kant",
+    "lnk.regel"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "sky",
+    "alt": {
+     "nl": "Een kamer met een raam en een tafel.",
+     "th": "ห้องที่มีหน้าต่างและโต๊ะ",
+     "en": "A room with a window and a table."
+    },
+    "things": [
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56
+     },
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "lnk.links"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel procent van de mensen in de wereld woont in een land waar het verkeer links rijdt? Typ een getal.",
+        "th": "ประมาณการ: ประชากรโลกกี่เปอร์เซ็นต์อาศัยอยู่ในประเทศที่ขับรถชิดซ้าย พิมพ์ตัวเลข",
+        "en": "Estimate: what percentage of the people in the world lives in a country where traffic drives on the left? Type a number."
+       },
+       "answer": "33",
+       "tol": 12,
+       "err": "getal",
+       "why": {
+        "nl": "Het is ongeveer een derde, dus ongeveer 33 procent. Links verkeer beslaat ongeveer een zesde van het land op aarde en een vierde van de wegen.",
+        "th": "ประมาณหนึ่งในสาม คือประมาณ 33 เปอร์เซ็นต์ การจราจรชิดซ้ายครอบคลุมประมาณหนึ่งในหกของพื้นที่บนบกและหนึ่งในสี่ของถนน",
+        "en": "It is about a third, so about 33 percent. Left-hand traffic covers about a sixth of the land on earth and a quarter of the roads."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "lnk.verkeer",
+      "lnk.rechts"
+     ],
+     "map": "azie",
+     "zoom": [
+      90,
+      5,
+      112,
+      28
+     ],
+     "hl": [
+      "TH",
+      "LA",
+      "KH"
+     ],
+     "ask": {
+      "nl": "Thailand, Laos en Cambodja zijn gekleurd. Thailand rijdt links. Laos en Cambodja rijden rechts, en ook één land in het westen. Tik dat land aan.",
+      "th": "ประเทศไทย ลาว และกัมพูชามีสี ประเทศไทยขับรถชิดซ้าย ลาวและกัมพูชาขับชิดขวา และมีอีกประเทศหนึ่งทางตะวันตกที่ขับชิดขวา แตะประเทศนั้น",
+      "en": "Thailand, Laos and Cambodia are coloured. Thailand drives on the left. Laos and Cambodia drive on the right, and so does one country in the west. Tap that country."
+     },
+     "answer": "MM",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed. Dat is Myanmar. Cambodja, Laos en Myanmar rijden rechts, ook al grenzen ze aan Thailand. Op de meeste grensovergangen regelt een verkeerslicht de wissel van kant. Op een paar plekken is er een knooppunt waar het verkeer doorrijdt.",
+      "th": "ถูกต้อง คือเมียนมา กัมพูชา ลาว และเมียนมาขับชิดขวา แม้จะติดกับไทย ที่ด่านชายแดนส่วนใหญ่ สัญญาณไฟจราจรควบคุมการเปลี่ยนด้าน และบางแห่งมีทางแยกที่ให้รถวิ่งต่อเนื่องได้",
+      "en": "Right. That is Myanmar. Cambodia, Laos and Myanmar drive on the right, even though they border Thailand. At most border crossings a traffic light controls the change of side. In a few places there is an interchange where traffic keeps flowing."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "lnk.verkeer",
+      "lnk.kant",
+      "lnk.regel"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic",
+       "title": "Wikipedia: Left- and right-hand traffic"
+      }
+     ],
+     "text": {
+      "nl": "Links of rechts: niemand weet waarom.\n\nWaarom sommige samenlevingen links kozen en andere rechts, is niet duidelijk. Er zijn verklaringen over de hand waarin je de teugels hield, over zwaarden en over een zweep, maar dat zijn alleen beweringen.\n\nEen bekend verhaal zegt dat Napoleon Frankrijk en de landen die hij veroverde rechts liet rijden. Wetenschappers vonden daar geen bewijs voor. In de Verenigde Staten kwam rechts rijden aan het eind van de 18e eeuw. De eerste wet voor rechts rijden was van 1792, voor een weg bij Philadelphia en Lancaster.",
+      "th": "ซ้ายหรือขวา: ไม่มีใครรู้ว่าทำไม\n\nทำไมสังคมบางแห่งเลือกซ้ายและบางแห่งเลือกขวา ไม่ชัดเจน มีคำอธิบายเกี่ยวกับมือที่จับบังเหียน เกี่ยวกับดาบ และเกี่ยวกับแส้ แต่เป็นเพียงข้ออ้าง\n\nมีเรื่องเล่าที่รู้จักกันว่า นโปเลียนให้ฝรั่งเศสและประเทศที่เขายึดได้ขับชิดขวา นักวิชาการไม่พบหลักฐานของเรื่องนี้ ในสหรัฐอเมริกา การขับชิดขวาเริ่มปลายศตวรรษที่ 18 กฎหมายแรกเรื่องขับชิดขวาคือปี 1792 สำหรับถนนใกล้ฟิลาเดลเฟียและแลงคาสเตอร์",
+      "en": "Left or right: nobody knows why.\n\nWhy some societies chose left and others right is not clear. There are explanations about the hand in which you held the reins, about swords and about a whip, but those are only claims.\n\nA well-known story says Napoleon had France and the lands he conquered drive on the right. Scholars have found no evidence for that. In the United States driving on the right came at the end of the 18th century. The first law for driving on the right was from 1792, for a road near Philadelphia and Lancaster."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "lnk.regel"
+       ],
+       "ask": {
+        "nl": "Wat zegt de tekst over waarom sommige landen links rijden?",
+        "th": "ข้อความกล่าวอะไรเกี่ยวกับเหตุผลที่บางประเทศขับชิดซ้าย",
+        "en": "What does the text say about why some countries drive on the left?"
+       },
+       "opts": [
+        {
+         "t": "Het is niet duidelijk: er zijn alleen verklaringen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Er zijn verklaringen over teugels, zwaarden en een zweep, maar het zijn alleen beweringen.",
+          "th": "ถูกต้อง มีคำอธิบายเรื่องบังเหียน ดาบ และแส้ แต่เป็นเพียงข้ออ้าง",
+          "en": "Right. There are explanations about reins, swords and a whip, but they are only claims."
+         }
+        },
+        {
+         "t": "Napoleon heeft het bepaald, en historici hebben dat bewezen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Wetenschappers vonden geen bewijs voor het verhaal over Napoleon.",
+          "th": "ไม่ใช่ นักวิชาการไม่พบหลักฐานของเรื่องนโปเลียน",
+          "en": "No. Scholars found no evidence for the story about Napoleon."
+         }
+        },
+        {
+         "t": "Alle mensen zijn linkshandig",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Dat staat nergens in de tekst.",
+          "th": "ไม่ใช่ ไม่มีที่ใดในข้อความ",
+          "en": "No. That is nowhere in the text."
+         }
+        }
+       ],
+       "answer": "Het is niet duidelijk: er zijn alleen verklaringen"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "lnk.links",
+      "lnk.rechts"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic",
+       "title": "Wikipedia: Left- and right-hand traffic"
+      },
+      {
+       "url": "https://www.anwb.nl/vakantie/thailand/reisvoorbereiding/verkeer",
+       "title": "ANWB: Verkeer in Thailand"
+      }
+     ],
+     "text": {
+      "nl": "En Thailand?\n\nThailand rijdt links, zegt ook de ANWB. Thailand is een van de weinige landen met links verkeer die geen Britse kolonie waren. Andere zijn Indonesië, Japan, Nepal, Bhutan, Macau en Mozambique. In Japan werd links rijden in 1924 in de wet gezet.\n\nVan de buren van Thailand rijden Cambodja, Laos en Myanmar rechts. Op de meeste grensovergangen regelt een verkeerslicht de wissel van kant. Op een paar plekken is er een knooppunt waar het verkeer doorrijdt.",
+      "th": "แล้วประเทศไทยล่ะ\n\nประเทศไทยขับรถชิดซ้าย ตามที่ ANWB ก็ระบุ ไทยเป็นหนึ่งในไม่กี่ประเทศที่ขับชิดซ้ายโดยไม่เคยเป็นอาณานิคมของอังกฤษ ประเทศอื่นได้แก่ อินโดนีเซีย ญี่ปุ่น เนปาล ภูฏาน มาเก๊า และโมซัมบิก ในญี่ปุ่นการขับชิดซ้ายถูกบัญญัติเป็นกฎหมายในปี 1924\n\nในบรรดาเพื่อนบ้านของไทย กัมพูชา ลาว และเมียนมาขับชิดขวา ที่ด่านชายแดนส่วนใหญ่ สัญญาณไฟจราจรควบคุมการเปลี่ยนด้าน และบางแห่งมีทางแยกที่ให้รถวิ่งต่อเนื่องได้",
+      "en": "And Thailand?\n\nThailand drives on the left, says the ANWB too. Thailand is one of the few countries with left-hand traffic that were not a British colony. Others are Indonesia, Japan, Nepal, Bhutan, Macau and Mozambique. In Japan driving on the left was put in law in 1924.\n\nOf the neighbours of Thailand, Cambodia, Laos and Myanmar drive on the right. At most border crossings a traffic light controls the change of side. In a few places there is an interchange where traffic keeps flowing."
+     },
+     "q": [
+      {
+       "form": "type",
+       "items": [
+        "lnk.links"
+       ],
+       "ask": {
+        "nl": "Aan welke kant rijdt het verkeer in Thailand? Typ één woord.",
+        "th": "การจราจรในประเทศไทยขับชิดด้านใด พิมพ์หนึ่งคำ",
+        "en": "On which side does traffic drive in Thailand? Type one word."
+       },
+       "answer": "links",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Het is niet rechts.",
+         "th": "ไม่ใช่ขวา",
+         "en": "It is not right."
+        },
+        {
+         "nl": "Begin zo: li…",
+         "th": "ขึ้นต้นแบบนี้: li…",
+         "en": "Start like this: li…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. In Thailand rijdt het verkeer links.",
+        "th": "ถูกต้อง ในประเทศไทยขับชิดซ้าย",
+        "en": "Right. In Thailand traffic drives on the left."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "lnk.kant"
+       ],
+       "ask": {
+        "nl": "Welke buurlanden van Thailand rijden rechts?",
+        "th": "ประเทศเพื่อนบ้านใดของไทยขับชิดขวา",
+        "en": "Which neighbours of Thailand drive on the right?"
+       },
+       "opts": [
+        {
+         "t": "Cambodja, Laos en Myanmar",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Alle drie rijden rechts.",
+          "th": "ถูกต้อง ทั้งสามประเทศขับชิดขวา",
+          "en": "Right. All three drive on the right."
+         }
+        },
+        {
+         "t": "Geen: alle buren rijden links",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Cambodja, Laos en Myanmar rijden rechts.",
+          "th": "ไม่ใช่ กัมพูชา ลาว และเมียนมาขับชิดขวา",
+          "en": "No. Cambodia, Laos and Myanmar drive on the right."
+         }
+        },
+        {
+         "t": "Alleen Laos",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Ook Cambodja en Myanmar rijden rechts.",
+          "th": "ไม่ใช่ กัมพูชาและเมียนมาก็ขับชิดขวาด้วย",
+          "en": "No. Cambodia and Myanmar also drive on the right."
+         }
+        }
+       ],
+       "answer": "Cambodja, Laos en Myanmar"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "lnk.links"
+     ],
+     "map": "europa",
+     "zoom": [
+      -12,
+      48,
+      14,
+      62
+     ],
+     "hl": [
+      "NL",
+      "FR"
+     ],
+     "ask": {
+      "nl": "Nederland en Frankrijk (gekleurd) rijden rechts. Het Verenigd Koninkrijk rijdt links, net als Thailand. Tik het Verenigd Koninkrijk aan.",
+      "th": "เนเธอร์แลนด์และฝรั่งเศส (มีสี) ขับชิดขวา สหราชอาณาจักรขับชิดซ้ายเหมือนไทย แตะสหราชอาณาจักร",
+      "en": "The Netherlands and France (coloured) drive on the right. The United Kingdom drives on the left, like Thailand. Tap the United Kingdom."
+     },
+     "answer": "GB",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed. Het Verenigd Koninkrijk rijdt links. Veel landen die ooit Brits waren, rijden ook links, bijvoorbeeld India, Australië en Maleisië.",
+      "th": "ถูกต้อง สหราชอาณาจักรขับชิดซ้าย หลายประเทศที่เคยเป็นของอังกฤษก็ขับชิดซ้าย เช่น อินเดีย ออสเตรเลีย และมาเลเซีย",
+      "en": "Right. The United Kingdom drives on the left. Many countries that were once British also drive on the left, for example India, Australia and Malaysia."
+     }
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "lnk.rechts"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic",
+       "title": "Wikipedia: Left- and right-hand traffic"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Myanmar",
+       "title": "Wikipedia: Myanmar"
+      }
+     ],
+     "text": {
+      "nl": "Een land dat wisselde.\n\nMyanmar was een Britse kolonie tot 1948. Op 6 december 1970 ging het over op rechts verkeer.\n\nIndonesië was een kolonie van Nederland. Het bleef links rijden, terwijl Nederland in 1906 naar rechts ging.\n\nOok in Nederland ging dat niet overal meteen goed. In Rotterdam was er tot 1917 geen vaste regel. In mei 1917 dwong de politie daar rechts rijden af.",
+      "th": "ประเทศที่เปลี่ยนด้าน\n\nเมียนมาเป็นอาณานิคมของอังกฤษจนถึงปี 1948 วันที่ 6 ธันวาคม 1970 เปลี่ยนมาขับชิดขวา\n\nอินโดนีเซียเคยเป็นอาณานิคมของเนเธอร์แลนด์ ยังคงขับชิดซ้าย ขณะที่เนเธอร์แลนด์เปลี่ยนมาขับชิดขวาในปี 1906\n\nในเนเธอร์แลนด์เองก็ไม่ได้เรียบร้อยทุกที่ทันที ที่รอตเตอร์ดัมไม่มีกฎที่แน่นอนจนถึงปี 1917 ในเดือนพฤษภาคม 1917 ตำรวจที่นั่นบังคับให้ขับชิดขวา",
+      "en": "A country that switched.\n\nMyanmar was a British colony until 1948. On 6 December 1970 it switched to right-hand traffic.\n\nIndonesia was a colony of the Netherlands. It kept driving on the left, while the Netherlands moved to the right in 1906.\n\nEven in the Netherlands this did not go smoothly everywhere. In Rotterdam there was no fixed rule until 1917. In May 1917 the police there enforced driving on the right."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "lnk.rechts"
+       ],
+       "ask": {
+        "nl": "In welk jaar ging Myanmar over op rechts verkeer?",
+        "th": "เมียนมาเปลี่ยนมาขับชิดขวาในปีใด",
+        "en": "In which year did Myanmar switch to right-hand traffic?"
+       },
+       "opts": [
+        {
+         "t": "1970",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Op 6 december 1970.",
+          "th": "ถูกต้อง วันที่ 6 ธันวาคม 1970",
+          "en": "Right. On 6 December 1970."
+         }
+        },
+        {
+         "t": "1948",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. In 1948 hield de Britse tijd op. De wissel kwam later, in 1970.",
+          "th": "ไม่ใช่ ปี 1948 คือสิ้นสุดยุคอังกฤษ การเปลี่ยนมาทีหลังในปี 1970",
+          "en": "No. In 1948 the British time ended. The switch came later, in 1970."
+         }
+        },
+        {
+         "t": "1924",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. In 1924 werd links rijden in Japan in de wet gezet.",
+          "th": "ไม่ใช่ ในปี 1924 ญี่ปุ่นบัญญัติการขับชิดซ้ายเป็นกฎหมาย",
+          "en": "No. In 1924 driving on the left was put in law in Japan."
+         }
+        }
+       ],
+       "answer": "1970"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: ongeveer een derde van de mensen woont waar links gereden wordt. Waarom precies, weet niemand zeker. Thailand rijdt links, drie van de buren rechts.",
+      "th": "ตอนนี้คุณเล่าได้ว่า ประมาณหนึ่งในสามของผู้คนอาศัยอยู่ในที่ที่ขับชิดซ้าย ทำไมกันแน่ ไม่มีใครรู้แน่ ไทยขับชิดซ้าย เพื่อนบ้านสามในสี่ประเทศขับชิดขวา",
+      "en": "You can now tell: about a third of the people live where traffic drives on the left. Why exactly, nobody knows for sure. Thailand drives on the left, three of its neighbours on the right."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

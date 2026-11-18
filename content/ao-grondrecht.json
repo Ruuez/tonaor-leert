@@ -1,0 +1,566 @@
+{
+ "format": 1,
+ "id": "ao-grondrecht",
+ "type": "les",
+ "version": 1,
+ "order": 30,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "politiek",
+ "vorm": "een dilemma (wat zou jij doen?)",
+ "draden": [
+  "ao-wet",
+  "ao-koning",
+  "ao-eerste-wereldoorlog"
+ ],
+ "title": {
+  "nl": "Wat is een grondrecht?",
+  "th": "สิทธิขั้นพื้นฐานคืออะไร",
+  "en": "What is a fundamental right?"
+ },
+ "sources": [
+  {
+   "url": "https://www.rijksoverheid.nl/onderwerpen/grondwet-en-statuut/grondwet",
+   "title": "Rijksoverheid: Grondwet"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Grondrecht",
+   "title": "Wikipedia: Grondrecht"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Constitution_of_the_Netherlands",
+   "title": "Wikipedia: Constitution of the Netherlands"
+  },
+  {
+   "url": "https://wetten.overheid.nl/BWBR0001840/2023-02-22/0",
+   "title": "Wetten.nl: Grondwet"
+  }
+ ],
+ "items": [
+  {
+   "id": "grr.grondrecht",
+   "kind": "word",
+   "w": "grondrecht",
+   "art": "het",
+   "tr": {
+    "th": "สิทธิขั้นพื้นฐาน",
+    "en": "fundamental right"
+   },
+   "def": "Een recht dat in de Grondwet staat en dat je beschermt tegen de overheid.",
+   "ex": "Vrijheid van meningsuiting is een grondrecht.",
+   "gap": "Het ___ staat in de Grondwet.",
+   "wrong": [
+    "weekend",
+    "kwartier",
+    "seizoen"
+   ]
+  },
+  {
+   "id": "grr.grondwet",
+   "kind": "word",
+   "w": "Grondwet",
+   "art": "de",
+   "tr": {
+    "th": "รัฐธรรมนูญ",
+    "en": "constitution"
+   },
+   "def": "De hoogste wet van een land.",
+   "ex": "De Grondwet bevat de grondrechten.",
+   "gap": "De ___ is de hoogste wet van het land.",
+   "wrong": [
+    "pan",
+    "jas",
+    "bril"
+   ]
+  },
+  {
+   "id": "grr.vrijheid",
+   "kind": "word",
+   "w": "vrijheid",
+   "art": "de",
+   "tr": {
+    "th": "เสรีภาพ",
+    "en": "freedom"
+   },
+   "def": "Zelf kunnen kiezen wat je doet.",
+   "ex": "Vrijheid is voor veel mensen belangrijk.",
+   "gap": "De ___ om je mening te zeggen is een grondrecht.",
+   "wrong": [
+    "tas",
+    "bus",
+    "wolk"
+   ]
+  },
+  {
+   "id": "grr.overheid",
+   "kind": "word",
+   "w": "overheid",
+   "art": "de",
+   "tr": {
+    "th": "รัฐ (ภาครัฐ)",
+    "en": "government, authorities"
+   },
+   "def": "De organisaties die het land besturen.",
+   "ex": "De overheid maakt regels voor iedereen.",
+   "gap": "De ___ maakt regels voor het hele land.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "pen"
+   ]
+  },
+  {
+   "id": "grr.beperken",
+   "kind": "word",
+   "w": "beperken",
+   "art": "",
+   "tr": {
+    "th": "จำกัด",
+    "en": "limit, restrict"
+   },
+   "def": "Minder ruimte of vrijheid geven.",
+   "ex": "De wet kan een recht beperken.",
+   "gap": "De wetgever mag een recht soms ___.",
+   "wrong": [
+    "gisteren",
+    "tafel",
+    "lopen"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-grondrecht-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Wat is een grondrecht?",
+    "th": "สิทธิขั้นพื้นฐานคืออะไร",
+    "en": "What is a fundamental right?"
+   },
+   "intro": {
+    "nl": "Eerst een keuze: moet de overheid een vrijheid ooit mogen beperken? Daarna lees je wat de Grondwet zegt.",
+    "th": "เลือกก่อน: รัฐควรจำกัดเสรีภาพได้ไหมในบางครั้ง แล้วอ่านว่ารัฐธรรมนูญกล่าวอย่างไร",
+    "en": "First a choice: may the government ever limit a freedom? Then you read what the Constitution says."
+   },
+   "can": {
+    "nl": "Uitleggen wat een grondrecht is en hoe het beperkt kan worden",
+    "th": "อธิบายได้ว่าสิทธิขั้นพื้นฐานคืออะไรและจำกัดได้อย่างไร",
+    "en": "Explain what a fundamental right is and how it can be limited"
+   },
+   "targets": [
+    "grr.grondrecht",
+    "grr.grondwet",
+    "grr.vrijheid",
+    "grr.overheid",
+    "grr.beperken"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "lilac",
+    "alt": {
+     "nl": "Een kamer met een tafel en een brief.",
+     "th": "ห้องที่มีโต๊ะและจดหมาย",
+     "en": "A room with a table and a letter."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     },
+     {
+      "kind": "letter",
+      "x": 170,
+      "y": 120
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "choose",
+       "standpunt": true,
+       "items": [
+        "grr.grondrecht",
+        "grr.beperken"
+       ],
+       "ask": {
+        "nl": "Een stad wil een grote bijeenkomst op een plein verbieden, omdat het er te druk en onrustig kan worden. Idee A: dat mag nooit, want mensen mogen altijd samenkomen. Idee B: dat mag soms, als er een wet is en een goede reden. Wat zou jij doen?",
+        "th": "เมืองหนึ่งอยากห้ามการชุมนุมใหญ่ในจัตุรัส เพราะอาจแออัดและวุ่นวาย ความคิด A: ห้ามไม่ได้ เพราะคนมีสิทธิ์รวมตัวเสมอ ความคิด B: บางครั้งทำได้ ถ้ามีกฎหมายและเหตุผลที่ดี คุณจะทำอย่างไร",
+        "en": "A city wants to ban a big gathering on a square, because it can get too crowded and unsettled. Idea A: that is never allowed, because people may always meet. Idea B: that is sometimes allowed, if there is a law and a good reason. What would you do?"
+       },
+       "opts": [
+        {
+         "t": "Idee A: dat mag nooit",
+         "r": "ok",
+         "why": {
+          "nl": "Je vindt de vrijheid van mensen het belangrijkst. Je leest zo wat de Grondwet zegt.",
+          "th": "คุณเห็นว่าเสรีภาพของผู้คนสำคัญที่สุด เดี๋ยวคุณจะอ่านว่ารัฐธรรมนูญว่าอย่างไร",
+          "en": "You find the freedom of people most important. You read in a moment what the Constitution says."
+         }
+        },
+        {
+         "t": "Idee B: soms, met een wet en een reden",
+         "r": "ok",
+         "why": {
+          "nl": "Je vindt dat vrijheid en orde samen moeten gaan. Je leest zo wat de Grondwet zegt.",
+          "th": "คุณเห็นว่าเสรีภาพและความเป็นระเบียบต้องไปด้วยกัน เดี๋ยวคุณจะอ่านว่ารัฐธรรมนูญว่าอย่างไร",
+          "en": "You find that freedom and order must go together. You read in a moment what the Constitution says."
+         }
+        },
+        {
+         "t": "Ik weet het nog niet",
+         "r": "ok",
+         "why": {
+          "nl": "Dat mag. Veel mensen twijfelen. Lees wat de Grondwet zegt.",
+          "th": "ไม่เป็นไร หลายคนลังเล อ่านว่ารัฐธรรมนูญว่าอย่างไร",
+          "en": "That is fine. Many people doubt. Read what the Constitution says."
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "grr.grondwet",
+      "grr.grondrecht",
+      "grr.vrijheid",
+      "grr.overheid"
+     ],
+     "sources": [
+      {
+       "url": "https://www.rijksoverheid.nl/onderwerpen/grondwet-en-statuut/grondwet",
+       "title": "Rijksoverheid: Grondwet"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Grondrecht",
+       "title": "Wikipedia: Grondrecht"
+      }
+     ],
+     "text": {
+      "nl": "Wat is een grondrecht?\n\nDe Grondwet legt de grondrechten van burgers vast. Ze staan in hoofdstuk 1. Grondrechten geven mensen vrijheid om zonder bemoeienis van de overheid te leven en om mee te doen aan de samenleving en de politiek.\n\nEr zijn twee soorten. Klassieke grondrechten zijn burgerlijke en politieke rechten: kiesrecht, vrijheid van meningsuiting, privacy, godsdienstvrijheid en het verbod op discriminatie. Sociale grondrechten gaan over huisvesting, sociale zekerheid, gezondheidszorg en onderwijs. Klassieke grondrechten kun je meestal bij de rechter afdwingen, sociale meestal niet.\n\nArtikel 1 zegt: \"Allen die zich in Nederland bevinden, worden in gelijke gevallen gelijk behandeld.\"",
+      "th": "สิทธิขั้นพื้นฐานคืออะไร\n\nรัฐธรรมนูญระบุสิทธิขั้นพื้นฐานของประชาชนไว้ อยู่ในบทที่ 1 สิทธิขั้นพื้นฐานให้เสรีภาพแก่ผู้คนในการใช้ชีวิตโดยรัฐไม่เข้ามายุ่ง และให้ร่วมในสังคมและการเมือง\n\nมีสองประเภท สิทธิแบบคลาสสิกคือสิทธิพลเมืองและสิทธิทางการเมือง: สิทธิเลือกตั้ง เสรีภาพในการแสดงความคิดเห็น ความเป็นส่วนตัว เสรีภาพทางศาสนา และการห้ามเลือกปฏิบัติ สิทธิทางสังคมเกี่ยวกับที่อยู่อาศัย ความมั่นคงทางสังคม การดูแลสุขภาพ และการศึกษา สิทธิแบบคลาสสิกมักเรียกร้องได้ที่ศาล ส่วนสิทธิทางสังคมมักไม่ได้\n\nมาตรา 1 กล่าวว่า: “ทุกคนที่อยู่ในเนเธอร์แลนด์จะได้รับการปฏิบัติอย่างเท่าเทียมในกรณีที่เหมือนกัน”",
+      "en": "What is a fundamental right?\n\nThe Constitution lays down the fundamental rights of citizens. They are in chapter 1. Fundamental rights give people freedom to live without interference from the government and to take part in society and politics.\n\nThere are two kinds. Classic fundamental rights are civil and political rights: the right to vote, freedom of expression, privacy, freedom of religion and the ban on discrimination. Social fundamental rights are about housing, social security, health care and education. Classic rights you can usually enforce in court, social ones usually not.\n\nArticle 1 says: \"All persons in the Netherlands shall be treated equally in equal circumstances.\""
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "grr.grondwet"
+       ],
+       "ask": {
+        "nl": "In welk hoofdstuk van de Grondwet staan de grondrechten?",
+        "th": "สิทธิขั้นพื้นฐานอยู่ในบทใดของรัฐธรรมนูญ",
+        "en": "In which chapter of the Constitution are the fundamental rights?"
+       },
+       "opts": [
+        {
+         "t": "Hoofdstuk 1",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Hoofdstuk 1 van de Grondwet.",
+          "th": "ถูกต้อง บทที่ 1 ของรัฐธรรมนูญ",
+          "en": "Right. Chapter 1 of the Constitution."
+         }
+        },
+        {
+         "t": "Hoofdstuk 5",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De grondrechten staan helemaal vooraan, in hoofdstuk 1.",
+          "th": "ไม่ใช่ สิทธิขั้นพื้นฐานอยู่หน้าสุด ในบทที่ 1",
+          "en": "No. The fundamental rights are right at the front, in chapter 1."
+         }
+        },
+        {
+         "t": "Er is geen aparte plek",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Ze staan in hoofdstuk 1.",
+          "th": "ไม่ใช่ อยู่ในบทที่ 1",
+          "en": "No. They are in chapter 1."
+         }
+        }
+       ],
+       "answer": "Hoofdstuk 1"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "grr.grondrecht"
+       ],
+       "ask": {
+        "nl": "Maak af: Artikel 1: \"Allen die zich in Nederland bevinden, worden in gelijke gevallen ___ behandeld.\"",
+        "th": "เติมคำ: มาตรา 1: “ทุกคนที่อยู่ในเนเธอร์แลนด์ จะได้รับการปฏิบัติ ___ ในกรณีที่เหมือนกัน”",
+        "en": "Complete: Article 1: \"All persons in the Netherlands shall be treated ___ in equal circumstances.\""
+       },
+       "answer": "gelijk",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Het tegenovergestelde van anders.",
+         "th": "ตรงข้ามกับ ต่างกัน",
+         "en": "The opposite of different."
+        },
+        {
+         "nl": "Begin zo: gel…",
+         "th": "ขึ้นต้นแบบนี้: gel…",
+         "en": "Start like this: gel…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. In gelijke gevallen gelijk behandeld: dat is artikel 1.",
+        "th": "ถูกต้อง ปฏิบัติอย่างเท่าเทียมในกรณีที่เหมือนกัน นั่นคือมาตรา 1",
+        "en": "Right. Treated equally in equal cases: that is article 1."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "items": [
+      "grr.vrijheid",
+      "grr.overheid"
+     ],
+     "ask": {
+      "nl": "Welke vrijheid is een klassiek grondrecht?",
+      "th": "เสรีภาพใดเป็นสิทธิขั้นพื้นฐานแบบคลาสสิก",
+      "en": "Which freedom is a classic fundamental right?"
+     },
+     "opts": [
+      {
+       "t": "Vrijheid van meningsuiting",
+       "r": "ok",
+       "why": {
+        "nl": "Goed. Meningsuiting, godsdienst, privacy en kiesrecht zijn klassieke grondrechten.",
+        "th": "ถูกต้อง การแสดงความคิดเห็น ศาสนา ความเป็นส่วนตัว และสิทธิเลือกตั้งเป็นสิทธิแบบคลาสสิก",
+        "en": "Right. Expression, religion, privacy and the right to vote are classic fundamental rights."
+       }
+      },
+      {
+       "t": "Recht op een betaalbare huurwoning",
+       "r": "no",
+       "err": "lezen",
+       "why": {
+        "nl": "Nee. Huisvesting is een sociaal grondrecht, geen klassiek.",
+        "th": "ไม่ใช่ ที่อยู่อาศัยเป็นสิทธิทางสังคม ไม่ใช่แบบคลาสสิก",
+        "en": "No. Housing is a social fundamental right, not a classic one."
+       }
+      },
+      {
+       "t": "Recht op sociale zekerheid",
+       "r": "no",
+       "err": "lezen",
+       "why": {
+        "nl": "Nee. Sociale zekerheid is een sociaal grondrecht.",
+        "th": "ไม่ใช่ ความมั่นคงทางสังคมเป็นสิทธิทางสังคม",
+        "en": "No. Social security is a social fundamental right."
+       }
+      }
+     ],
+     "answer": "Vrijheid van meningsuiting",
+     "why": {
+      "nl": "Goed. Meningsuiting, godsdienst, privacy en kiesrecht zijn klassieke grondrechten.",
+      "th": "ถูกต้อง การแสดงความคิดเห็น ศาสนา ความเป็นส่วนตัว และสิทธิเลือกตั้งเป็นสิทธิแบบคลาสสิก",
+      "en": "Right. Expression, religion, privacy and the right to vote are classic fundamental rights."
+     },
+     "err": "betekenis",
+     "form": "choose"
+    },
+    {
+     "type": "read",
+     "items": [
+      "grr.beperken",
+      "grr.overheid"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Grondrecht",
+       "title": "Wikipedia: Grondrecht"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Constitution_of_the_Netherlands",
+       "title": "Wikipedia: Constitution of the Netherlands"
+      },
+      {
+       "url": "https://wetten.overheid.nl/BWBR0001840/2023-02-22/0",
+       "title": "Wetten.nl: Grondwet"
+      }
+     ],
+     "text": {
+      "nl": "En kan een grondrecht beperkt worden?\n\nBij de meeste grondrechten kan de wetgever het recht beperken, bij een formele wet. Artikel 9, over vergadering en betoging, zegt: \"Het recht tot vergadering en betoging wordt erkend, behoudens ieders verantwoordelijkheid volgens de wet.\" De wet kan regels stellen \"ter bescherming van de gezondheid, in het belang van het verkeer en ter bestrijding of voorkoming van wanordelijkheden.\" Artikel 8, over vereniging, zegt: \"Bij de wet kan dit recht worden beperkt in het belang van de openbare orde.\" De vrijheid van godsdienst kan ook bij wet beperkt worden. Voor de vrijheid van meningsuiting is censuur voorafgaand aan de uiting helemaal verboden.\n\nDe regels staan dus aan twee kanten: de overheid moet de vrijheid beschermen, en mag haar soms beperken, maar alleen bij een wet.",
+      "th": "และสิทธิขั้นพื้นฐานจำกัดได้ไหม\n\nสิทธิขั้นพื้นฐานส่วนใหญ่ ฝ่ายนิติบัญญัติสามารถจำกัดได้ ด้วยกฎหมายที่ตราขึ้นอย่างเป็นทางการ มาตรา 9 เรื่องการประชุมและการชุมนุมกล่าวว่า “สิทธิในการประชุมและการชุมนุมได้รับการรับรอง โดยบุคคลทุกคนยังต้องรับผิดชอบตามกฎหมาย” กฎหมายอาจวางกฎเพื่อคุ้มครองสุขภาพ เพื่อประโยชน์ของการจราจร และเพื่อปราบปรามหรือป้องกันความไม่สงบเรียบร้อย มาตรา 8 เรื่องการรวมตัวกันกล่าวว่า “สิทธินี้อาจถูกจำกัดโดยกฎหมายเพื่อประโยชน์ของความสงบเรียบร้อยสาธารณะ” เสรีภาพทางศาสนาก็อาจถูกจำกัดโดยกฎหมายได้เช่นกัน สำหรับเสรีภาพในการแสดงความคิดเห็น การเซ็นเซอร์ก่อนแสดงออกถูกห้ามโดยสิ้นเชิง\n\nกฎจึงมีสองด้าน: รัฐต้องปกป้องเสรีภาพ และบางครั้งจำกัดได้ แต่ต้องทำโดยกฎหมายเท่านั้น",
+      "en": "And can a fundamental right be limited?\n\nFor most fundamental rights the legislature can limit the right, by a formal law. Article 9, about assembly and demonstration, says: \"The right of assembly and demonstration is recognised, without prejudice to everyone's responsibility under the law.\" The law can set rules \"for the protection of health, in the interest of traffic and to combat or prevent disorder.\" Article 8, about association, says: \"This right can be limited by law in the interest of public order.\" Freedom of religion can also be limited by law. For freedom of expression, censorship before the expression is completely forbidden.\n\nThe rules are on two sides: the government must protect freedom, and may sometimes limit it, but only by a law."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "grr.beperken"
+       ],
+       "ask": {
+        "nl": "Hoe kan een grondrecht in Nederland meestal worden beperkt?",
+        "th": "ปกติแล้วสิทธิขั้นพื้นฐานในเนเธอร์แลนด์จำกัดได้อย่างไร",
+        "en": "How can a fundamental right in the Netherlands usually be limited?"
+       },
+       "opts": [
+        {
+         "t": "Bij een formele wet",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De wetgever kan dat bij een formele wet doen, bijvoorbeeld in het belang van de openbare orde.",
+          "th": "ถูกต้อง ฝ่ายนิติบัญญัติทำได้ด้วยกฎหมาย เช่น เพื่อความสงบเรียบร้อยสาธารณะ",
+          "en": "Right. The legislature can do that by a formal law, for example in the interest of public order."
+         }
+        },
+        {
+         "t": "Door een besluit van één ambtenaar",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. Het moet bij een formele wet.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ ต้องทำด้วยกฎหมายที่ตราอย่างเป็นทางการ",
+          "en": "No. That is not in the text. It must be by a formal law."
+         }
+        },
+        {
+         "t": "Nooit: grondrechten mogen niet worden beperkt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst zegt dat de wetgever de meeste grondrechten bij wet kan beperken.",
+          "th": "ไม่ใช่ ข้อความบอกว่าฝ่ายนิติบัญญัติจำกัดสิทธิส่วนใหญ่ได้ด้วยกฎหมาย",
+          "en": "No. The text says the legislature can limit most fundamental rights by law."
+         }
+        }
+       ],
+       "answer": "Bij een formele wet"
+      }
+     ]
+    },
+    {
+     "type": "make",
+     "items": [
+      "grr.grondrecht",
+      "grr.beperken"
+     ],
+     "ask": {
+      "nl": "Kijk terug naar je eerste keuze. Leg in twee zinnen uit: waarom vindt iemand dat een grondrecht nooit beperkt mag worden, en waarom vindt een ander dat het soms moet?",
+      "th": "ย้อนดูสิ่งที่คุณเลือกแรก อธิบายในสองประโยค: ทำไมบางคนเห็นว่าสิทธิขั้นพื้นฐานจำกัดไม่ได้เลย และทำไมอีกคนเห็นว่าบางครั้งต้องจำกัด",
+      "en": "Look back at your first choice. Explain in two sentences: why does one person think a fundamental right may never be limited, and why does another think it must sometimes be?"
+     },
+     "frame": "De ene vindt dat ..., omdat ... De ander vindt dat ..., omdat ...",
+     "model": "De ene vindt dat een recht nooit beperkt mag worden, omdat vrijheid belangrijk is. De ander vindt dat het soms moet, omdat er ook orde nodig is.",
+     "checklist": [
+      {
+       "nl": "Ik heb beide kanten uitgelegd, in dezelfde toon.",
+       "th": "ฉันอธิบายทั้งสองฝ่าย ด้วยน้ำเสียงเดียวกัน",
+       "en": "I explained both sides, in the same tone."
+      },
+      {
+       "nl": "Ik heb bij elke kant een reden gegeven.",
+       "th": "ฉันให้เหตุผลทั้งสองฝ่าย",
+       "en": "I gave a reason for each side."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "grr.grondwet"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Constitution_of_the_Netherlands",
+       "title": "Wikipedia: Constitution of the Netherlands"
+      }
+     ],
+     "text": {
+      "nl": "Oud en vernieuwd.\n\nDe Nederlandse Grondwet stamt uit 1815. In 1983 werd ze bijna helemaal herschreven. Toen kwamen er onder meer nieuwe sociale grondrechten bij, zoals over werk, gezondheid, wonen en onderwijs.\n\nIn de huidige Grondwet mag de rechter wetten en verdragen niet toetsen aan de Grondwet. Nederland heeft ook geen constitutioneel hof.",
+      "th": "เก่าและทำใหม่\n\nรัฐธรรมนูญเนเธอร์แลนด์มีมาตั้งแต่ปี 1815 ในปี 1983 ถูกเขียนใหม่เกือบทั้งหมด ตอนนั้นมีสิทธิทางสังคมใหม่เพิ่มเข้ามา เช่นเรื่องงาน สุขภาพ ที่อยู่อาศัย และการศึกษา\n\nในรัฐธรรมนูญปัจจุบัน ผู้พิพากษาไม่อาจตรวจสอบกฎหมายและสนธิสัญญากับรัฐธรรมนูญ เนเธอร์แลนด์ก็ไม่มีศาลรัฐธรรมนูญ",
+      "en": "Old and renewed.\n\nThe Dutch Constitution dates from 1815. In 1983 it was almost entirely rewritten. Then new social fundamental rights were added, among others about work, health, housing and education.\n\nIn the current Constitution the judge may not test laws and treaties against the Constitution. The Netherlands also has no constitutional court."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "grr.grondwet"
+       ],
+       "ask": {
+        "nl": "In welk jaar werd de Grondwet bijna helemaal herschreven?",
+        "th": "ในปีใดที่รัฐธรรมนูญถูกเขียนใหม่เกือบทั้งหมด",
+        "en": "In which year was the Constitution almost entirely rewritten?"
+       },
+       "opts": [
+        {
+         "t": "1983",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. In 1983. De Grondwet zelf stamt uit 1815.",
+          "th": "ถูกต้อง ปี 1983 ตัวรัฐธรรมนูญเองมีตั้งแต่ปี 1815",
+          "en": "Right. In 1983. The Constitution itself dates from 1815."
+         }
+        },
+        {
+         "t": "1815",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. In 1815 stamt de Grondwet. De herschrijving was later.",
+          "th": "ไม่ใช่ ปี 1815 คือปีที่รัฐธรรมนูญมีขึ้น การเขียนใหม่มาทีหลัง",
+          "en": "No. In 1815 the Constitution dates. The rewriting was later."
+         }
+        },
+        {
+         "t": "2023",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. De herschrijving was in 1983.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ การเขียนใหม่คือปี 1983",
+          "en": "No. That is not in the text. The rewriting was in 1983."
+         }
+        }
+       ],
+       "answer": "1983"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: grondrechten staan in hoofdstuk 1 van de Grondwet. Er zijn klassieke en sociale. De meeste kunnen alleen bij wet beperkt worden.",
+      "th": "ตอนนี้คุณเล่าได้ว่า สิทธิขั้นพื้นฐานอยู่ในบทที่ 1 ของรัฐธรรมนูญ มีแบบคลาสสิกและแบบสังคม ส่วนใหญ่จำกัดได้เฉพาะด้วยกฎหมาย",
+      "en": "You can now tell: fundamental rights are in chapter 1 of the Constitution. There are classic and social ones. Most can be limited only by law."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

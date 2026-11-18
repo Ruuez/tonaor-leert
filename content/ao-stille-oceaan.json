@@ -1,0 +1,435 @@
+{
+ "format": 1,
+ "id": "ao-stille-oceaan",
+ "type": "les",
+ "version": 1,
+ "order": 24,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "aardrijkskunde",
+ "vorm": "een plek op de kaart",
+ "draden": [
+  "ao-twaalf-maanden",
+  "ao-thailand-links",
+  "ao-zout"
+ ],
+ "title": {
+  "nl": "Waarom heet het Stille Oceaan?",
+  "th": "ทำไมจึงเรียกว่ามหาสมุทรแปซิฟิก (มหาสมุทรสงบ)",
+  "en": "Why is it called the Pacific Ocean?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Pacific_Ocean",
+   "title": "Wikipedia: Pacific Ocean"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Strait_of_Magellan",
+   "title": "Wikipedia: Strait of Magellan"
+  }
+ ],
+ "items": [
+  {
+   "id": "stl.oceaan",
+   "kind": "word",
+   "w": "oceaan",
+   "art": "de",
+   "tr": {
+    "th": "มหาสมุทร",
+    "en": "ocean"
+   },
+   "def": "Een heel grote zee tussen werelddelen.",
+   "ex": "De oceaan is heel diep.",
+   "gap": "De ___ is groter dan een zee.",
+   "wrong": [
+    "bus",
+    "pan",
+    "tas"
+   ]
+  },
+  {
+   "id": "stl.zeestraat",
+   "kind": "word",
+   "w": "zeestraat",
+   "art": "de",
+   "tr": {
+    "th": "ช่องแคบ",
+    "en": "strait"
+   },
+   "def": "Een smalle zee tussen twee stukken land.",
+   "ex": "Het schip vaart door de zeestraat.",
+   "gap": "Het schip vaart door de ___ naar de oceaan.",
+   "wrong": [
+    "kast",
+    "bril",
+    "trap"
+   ]
+  },
+  {
+   "id": "stl.storm",
+   "kind": "word",
+   "w": "storm",
+   "art": "de",
+   "tr": {
+    "th": "พายุ",
+    "en": "storm"
+   },
+   "def": "Heel harde wind, vaak met veel regen.",
+   "ex": "Tijdens de storm blijven we thuis.",
+   "gap": "Tijdens de ___ waait het heel hard.",
+   "wrong": [
+    "soep",
+    "lamp",
+    "bank"
+   ]
+  },
+  {
+   "id": "stl.rustig",
+   "kind": "word",
+   "w": "rustig",
+   "art": "",
+   "tr": {
+    "th": "สงบ",
+    "en": "calm, quiet"
+   },
+   "def": "Zonder veel wind of beweging.",
+   "ex": "Het water is rustig.",
+   "gap": "Het water was vandaag heel ___.",
+   "wrong": [
+    "gisteren",
+    "tafel",
+    "lopen"
+   ]
+  },
+  {
+   "id": "stl.vloot",
+   "kind": "word",
+   "w": "vloot",
+   "art": "de",
+   "tr": {
+    "th": "กองเรือ",
+    "en": "fleet"
+   },
+   "def": "Een groep schepen die samen varen.",
+   "ex": "De vloot had vijf schepen.",
+   "gap": "De ___ vaart met vijf schepen over de zee.",
+   "wrong": [
+    "pen",
+    "bakker",
+    "trein"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-stille-oceaan-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom heet het Stille Oceaan?",
+    "th": "ทำไมจึงเรียกว่ามหาสมุทรแปซิฟิก (มหาสมุทรสงบ)",
+    "en": "Why is it called the Pacific Ocean?"
+   },
+   "intro": {
+    "nl": "Eerst een schatting. Daarna zoek je zelf de plek op de kaart waar de naam begon.",
+    "th": "ประมาณก่อน แล้วหาที่บนแผนที่ที่ชื่อนี้เริ่มต้นด้วยตัวเอง",
+    "en": "First an estimate. Then you find the place on the map where the name began."
+   },
+   "can": {
+    "nl": "Aanwijzen waar de Stille Oceaan zijn naam kreeg en vertellen waarom",
+    "th": "ชี้ได้ว่ามหาสมุทรแปซิฟิกได้ชื่อที่ไหนและเล่าได้ว่าทำไม",
+    "en": "Point out where the Pacific got its name and tell why"
+   },
+   "targets": [
+    "stl.oceaan",
+    "stl.zeestraat",
+    "stl.storm",
+    "stl.rustig",
+    "stl.vloot"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "street",
+    "tone": "sky",
+    "alt": {
+     "nl": "Drie borden: Zeestraat, Oceaan en Storm.",
+     "th": "ป้ายสามป้าย: ช่องแคบ มหาสมุทร และพายุ",
+     "en": "Three signs: Strait, Ocean and Storm."
+    },
+    "things": [
+     {
+      "kind": "sign",
+      "x": 60,
+      "y": 80,
+      "text": "Zeestraat",
+      "hot": true,
+      "item": "stl.zeestraat",
+      "label": {
+       "nl": "Zeestraat: een smalle zee tussen twee stukken land",
+       "th": "ช่องแคบ: ทะเลแคบระหว่างแผ่นดินสองผืน",
+       "en": "Strait: a narrow sea between two pieces of land"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 170,
+      "y": 120,
+      "text": "Oceaan",
+      "hot": true,
+      "item": "stl.oceaan",
+      "label": {
+       "nl": "Oceaan: een heel grote zee",
+       "th": "มหาสมุทร: ทะเลที่ใหญ่มาก",
+       "en": "Ocean: a very large sea"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 280,
+      "y": 80,
+      "text": "Storm",
+      "hot": true,
+      "item": "stl.storm",
+      "label": {
+       "nl": "Storm: heel harde wind",
+       "th": "พายุ: ลมแรงมาก",
+       "en": "Storm: very strong wind"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "stl.oceaan"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel miljoen vierkante kilometer is de Stille Oceaan? Typ een getal.",
+        "th": "ประมาณการ: มหาสมุทรแปซิฟิกกว้างกี่ล้านตารางกิโลเมตร พิมพ์ตัวเลข",
+        "en": "Estimate: how many million square kilometres is the Pacific Ocean? Type a number."
+       },
+       "answer": "165",
+       "tol": 40,
+       "err": "getal",
+       "why": {
+        "nl": "Het zijn ongeveer 165 miljoen vierkante kilometer. Het is de grootste en diepste van de vijf oceanen.",
+        "th": "ประมาณ 165 ล้านตารางกิโลเมตร เป็นมหาสมุทรที่ใหญ่และลึกที่สุดในห้ามหาสมุทร",
+        "en": "It is about 165 million square kilometres. It is the largest and deepest of the five oceans."
+       }
+      }
+     ]
+    },
+    {
+     "type": "look",
+     "min": 3
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "stl.zeestraat",
+      "stl.vloot"
+     ],
+     "map": "wereld",
+     "zoom": [
+      -130,
+      -60,
+      -40,
+      20
+     ],
+     "ask": {
+      "nl": "In 1520 voer de vloot van Magellaan door een zeestraat helemaal onderin Zuid-Amerika, naar de Stille Oceaan. Tik ongeveer aan waar die zeestraat ligt.",
+      "th": "ในปี 1520 กองเรือของมาเจลลันแล่นผ่านช่องแคบทางใต้สุดของอเมริกาใต้ ไปสู่มหาสมุทรแปซิฟิก แตะประมาณตำแหน่งของช่องแคบนั้น",
+      "en": "In 1520 the fleet of Magellan sailed through a strait at the very bottom of South America, towards the Pacific Ocean. Tap roughly where that strait is."
+     },
+     "answer": [
+      -71,
+      -54
+     ],
+     "tol": 700,
+     "err": "betekenis",
+     "why": {
+      "nl": "De Straat van Magellaan ligt ongeveer op 54 graden zuid en 71 graden west, in het zuiden van Zuid-Amerika. Kijk naar de afstand die de app noemt: zo leer je een kaart.",
+      "th": "ช่องแคบมาเจลลันอยู่ประมาณละติจูด 54 องศาใต้ ลองจิจูด 71 องศาตะวันตก ทางใต้ของอเมริกาใต้ ดูระยะทางที่แอปบอก นี่คือวิธีเรียนรู้แผนที่",
+      "en": "The Strait of Magellan lies at about 54 degrees south and 71 degrees west, in the south of South America. Look at the distance the app gives: that is how you learn a map."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "stl.oceaan",
+      "stl.rustig",
+      "stl.storm"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Pacific_Ocean",
+       "title": "Wikipedia: Pacific Ocean"
+      }
+     ],
+     "text": {
+      "nl": "Een naam die bleef.\n\nDe Portugese ontdekkingsreiziger Magellaan gaf de oceaan in 1520 zijn naam: Mar Pacífico. In het Portugees en het Spaans betekent dat \"vreedzame zee\". Zijn vloot vond het water rustig.\n\nMaar de Stille Oceaan is niet altijd stil. Tropische stormen treffen vaak de eilanden in de oceaan.",
+      "th": "ชื่อที่คงอยู่\n\nนักสำรวจชาวโปรตุเกส มาเจลลัน ตั้งชื่อมหาสมุทรนี้ในปี 1520 ว่า Mar Pacífico ในภาษาโปรตุเกสและสเปนแปลว่า “ทะเลที่สงบ” กองเรือของเขาพบว่าน้ำสงบ\n\nแต่มหาสมุทรแปซิฟิกไม่ได้สงบเสมอไป พายุเขตร้อนมักพัดเข้าใส่เกาะต่าง ๆ ในมหาสมุทร",
+      "en": "A name that stayed.\n\nThe Portuguese explorer Magellan gave the ocean its name in 1520: Mar Pacífico. In Portuguese and Spanish that means \"peaceful sea\". His fleet found the water calm.\n\nBut the Pacific is not always peaceful. Tropical storms often hit the islands of the ocean."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "stl.rustig"
+       ],
+       "ask": {
+        "nl": "Waarom noemde Magellaan de oceaan \"vreedzame zee\"?",
+        "th": "ทำไมมาเจลลันจึงเรียกมหาสมุทรนี้ว่า “ทะเลที่สงบ”",
+        "en": "Why did Magellan call the ocean \"peaceful sea\"?"
+       },
+       "opts": [
+        {
+         "t": "Hij vond het water rustig",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Zijn vloot vond de oceaan rustig, en dat werd de naam.",
+          "th": "ถูกต้อง กองเรือของเขาพบว่ามหาสมุทรสงบ และนั่นกลายเป็นชื่อ",
+          "en": "Right. His fleet found the ocean calm, and that became the name."
+         }
+        },
+        {
+         "t": "Omdat er nooit stormen zijn",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst zegt dat er veel tropische stormen zijn op de eilanden.",
+          "th": "ไม่ใช่ ข้อความบอกว่ามีพายุเขตร้อนมากบนเกาะต่าง ๆ",
+          "en": "No. The text says there are many tropical storms on the islands."
+         }
+        },
+        {
+         "t": "Omdat de oceaan klein is",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het is de grootste oceaan, ongeveer 165 miljoen vierkante kilometer.",
+          "th": "ไม่ใช่ เป็นมหาสมุทรที่ใหญ่ที่สุด ประมาณ 165 ล้านตารางกิโลเมตร",
+          "en": "No. It is the largest ocean, about 165 million square kilometres."
+         }
+        }
+       ],
+       "answer": "Hij vond het water rustig"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "stl.oceaan"
+       ],
+       "ask": {
+        "nl": "Maak af: Mar Pacífico betekent \"vreedzame ___\".",
+        "th": "เติมคำ: Mar Pacífico แปลว่า “___ ที่สงบ”",
+        "en": "Complete: Mar Pacífico means \"peaceful ___\"."
+       },
+       "answer": "zee",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Water, kleiner dan een oceaan.",
+         "th": "น้ำ เล็กกว่ามหาสมุทร",
+         "en": "Water, smaller than an ocean."
+        },
+        {
+         "nl": "Begin zo: z…",
+         "th": "ขึ้นต้นแบบนี้: z…",
+         "en": "Start like this: z…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Mar is zee: vreedzame zee.",
+        "th": "ถูกต้อง Mar แปลว่า ทะเล: ทะเลที่สงบ",
+        "en": "Right. Mar is sea: peaceful sea."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "stl.zeestraat",
+      "stl.vloot"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Strait_of_Magellan",
+       "title": "Wikipedia: Strait of Magellan"
+      }
+     ],
+     "text": {
+      "nl": "De zeestraat zelf.\n\nOp 1 november 1520 voeren de schepen van Magellaan de zeestraat in. De straat is ongeveer 570 kilometer lang. Op het smalste punt is ze maar 2 kilometer breed.\n\nMagellaan noemde haar eerst de Straat van Allerheiligen, naar de dag waarop zijn schepen erin voeren. Later kreeg ze zijn naam.",
+      "th": "ช่องแคบเอง\n\nเมื่อวันที่ 1 พฤศจิกายน 1520 เรือของมาเจลลันแล่นเข้าสู่ช่องแคบ ช่องแคบยาวประมาณ 570 กิโลเมตร ตรงจุดที่แคบที่สุดกว้างเพียง 2 กิโลเมตร\n\nมาเจลลันตั้งชื่อช่องแคบนี้ว่า ช่องแคบนักบุญทั้งปวง (Strait of All Saints) ตามวันที่เรือของเขาแล่นเข้าไป ต่อมาจึงได้ชื่อของเขา",
+      "en": "The strait itself.\n\nOn 1 November 1520 the ships of Magellan entered the strait. The strait is about 570 kilometres long. At its narrowest point it is only 2 kilometres wide.\n\nMagellan first called it the Strait of All Saints, after the day his ships entered it. Later it got his name."
+     },
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "stl.zeestraat"
+       ],
+       "ask": {
+        "nl": "Hoe lang is de zeestraat ongeveer, in kilometers? Typ een getal.",
+        "th": "ช่องแคบยาวประมาณกี่กิโลเมตร พิมพ์ตัวเลข",
+        "en": "About how long is the strait, in kilometres? Type a number."
+       },
+       "answer": "570",
+       "tol": 100,
+       "err": "getal",
+       "hint": [
+        {
+         "nl": "Meer dan vijfhonderd.",
+         "th": "มากกว่าห้าร้อย",
+         "en": "More than five hundred."
+        },
+        {
+         "nl": "Het getal begint met 5.",
+         "th": "ตัวเลขขึ้นต้นด้วย 5",
+         "en": "The number starts with 5."
+        }
+       ],
+       "why": {
+        "nl": "Goed. Ongeveer 570 kilometer, een hele reis door het water.",
+        "th": "ถูกต้อง ประมาณ 570 กิโลเมตร เป็นการเดินทางที่ยาวนานทางน้ำ",
+        "en": "Right. About 570 kilometres, a long trip through the water."
+       }
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: de Stille Oceaan kreeg zijn naam in 1520 van Magellaan, omdat het water rustig was. Stil is hij niet altijd, en hij is de grootste oceaan.",
+      "th": "ตอนนี้คุณเล่าได้ว่า มหาสมุทรแปซิฟิกได้ชื่อจากมาเจลลันในปี 1520 เพราะน้ำสงบ แต่ไม่ได้สงบเสมอไป และเป็นมหาสมุทรที่ใหญ่ที่สุด",
+      "en": "You can now tell: the Pacific got its name from Magellan in 1520, because the water was calm. It is not always calm, and it is the largest ocean."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

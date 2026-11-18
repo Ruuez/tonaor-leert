@@ -1,0 +1,528 @@
+{
+ "format": 1,
+ "id": "ao-karma",
+ "type": "les",
+ "version": 1,
+ "order": 23,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "levensbeschouwing",
+ "vorm": "een misverstand (klopt het dat…?)",
+ "draden": [
+  "ao-monnik",
+  "ao-atheisme",
+  "ao-hypotheek"
+ ],
+ "title": {
+  "nl": "Wat is karma, en wat is het niet?",
+  "th": "กรรมคืออะไร และไม่ใช่อะไร",
+  "en": "What is karma, and what is it not?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Karma",
+   "title": "Wikipedia: Karma"
+  },
+  {
+   "url": "https://www.accesstoinsight.org/tipitaka/an/an06/an06.063.than.html",
+   "title": "Nibbedhika Sutta: Penetrative (AN 6.63), vertaling Thanissaro Bhikkhu, Access to Insight"
+  }
+ ],
+ "items": [
+  {
+   "id": "krm.karma",
+   "kind": "word",
+   "w": "karma",
+   "art": "het",
+   "tr": {
+    "th": "กรรม",
+    "en": "karma"
+   },
+   "def": "Een begrip uit Indiase religies over daden en wat daarna volgt.",
+   "ex": "Karma is een woord uit het Sanskriet.",
+   "gap": "Het ___ gaat over daden en hun gevolgen.",
+   "wrong": [
+    "weekend",
+    "kwartier",
+    "seizoen"
+   ]
+  },
+  {
+   "id": "krm.daad",
+   "kind": "word",
+   "w": "daad",
+   "art": "de",
+   "tr": {
+    "th": "การกระทำ",
+    "en": "deed, action"
+   },
+   "def": "Iets wat je doet.",
+   "ex": "Een goede daad helpt een ander.",
+   "gap": "Een ander helpen: dat is de goede ___ van vandaag.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "wolk"
+   ]
+  },
+  {
+   "id": "krm.bedoeling",
+   "kind": "word",
+   "w": "bedoeling",
+   "art": "de",
+   "tr": {
+    "th": "เจตนา",
+    "en": "intention"
+   },
+   "def": "Wat je wilt bereiken met wat je doet.",
+   "ex": "Zijn bedoeling was goed.",
+   "gap": "De ___ is wat je wilt met een daad.",
+   "wrong": [
+    "tafel",
+    "fiets",
+    "trein"
+   ]
+  },
+  {
+   "id": "krm.wedergeboorte",
+   "kind": "word",
+   "w": "wedergeboorte",
+   "art": "de",
+   "tr": {
+    "th": "การเกิดใหม่",
+    "en": "rebirth"
+   },
+   "def": "Het idee dat een leven na de dood opnieuw begint.",
+   "ex": "In veel religies bestaat het idee van wedergeboorte.",
+   "gap": "De ___ is het idee van een nieuw leven na de dood.",
+   "wrong": [
+    "kassa",
+    "bakker",
+    "winkel"
+   ]
+  },
+  {
+   "id": "krm.lot",
+   "kind": "word",
+   "w": "lot",
+   "art": "het",
+   "tr": {
+    "th": "โชคชะตา",
+    "en": "fate"
+   },
+   "def": "Wat er volgens sommigen vooraf al vaststaat in een leven.",
+   "ex": "Veel mensen geloven in het lot.",
+   "gap": "Wie in het ___ gelooft, denkt dat alles in een leven al vastligt.",
+   "wrong": [
+    "kwartier",
+    "seizoen",
+    "weekend"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-karma-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Wat is karma, en wat is het niet?",
+    "th": "กรรมคืออะไร และไม่ใช่อะไร",
+    "en": "What is karma, and what is it not?"
+   },
+   "intro": {
+    "nl": "Je hoort het woord karma vaak. Wat bedoelen mensen ermee, en wat betekent het in de religies waar het vandaan komt?",
+    "th": "คุณได้ยินคำว่า karma บ่อย ๆ คนหมายถึงอะไร และในศาสนาที่คำนี้มาจากมีความหมายว่าอย่างไร",
+    "en": "You often hear the word karma. What do people mean by it, and what does it mean in the religions it comes from?"
+   },
+   "can": {
+    "nl": "Uitleggen wat het woord karma betekent en het verschil met lot",
+    "th": "อธิบายได้ว่าคำว่า karma หมายถึงอะไรและต่างจากโชคชะตาอย่างไร",
+    "en": "Explain what the word karma means and how it differs from fate"
+   },
+   "targets": [
+    "krm.karma",
+    "krm.daad",
+    "krm.bedoeling",
+    "krm.wedergeboorte",
+    "krm.lot"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "lilac",
+    "alt": {
+     "nl": "Een kamer met een raam, een tafel en een plant.",
+     "th": "ห้องที่มีหน้าต่าง โต๊ะ และต้นไม้",
+     "en": "A room with a window, a table and a plant."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156,
+      "hot": true,
+      "item": "krm.daad",
+      "label": {
+       "nl": "Een daad: iets wat je doet",
+       "th": "การกระทำ: สิ่งที่คุณทำ",
+       "en": "A deed: something you do"
+      }
+     },
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56,
+      "hot": true,
+      "item": "krm.bedoeling",
+      "label": {
+       "nl": "Een bedoeling: wat je wilt met een daad",
+       "th": "เจตนา: สิ่งที่คุณต้องการด้วยการกระทำ",
+       "en": "An intention: what you want with a deed"
+      }
+     },
+     {
+      "kind": "plant",
+      "x": 40,
+      "y": 156,
+      "hot": true,
+      "item": "krm.wedergeboorte",
+      "label": {
+       "nl": "Wedergeboorte: een nieuw leven",
+       "th": "การเกิดใหม่: ชีวิตใหม่",
+       "en": "Rebirth: a new life"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "choose",
+       "standpunt": true,
+       "items": [
+        "krm.karma"
+       ],
+       "ask": {
+        "nl": "Iemand raakt zijn fiets kwijt. Een ander zegt: \"Dat is karma.\" Wat bedoelt die persoon denk je?",
+        "th": "มีคนทำจักรยานหาย อีกคนพูดว่า “นั่นคือกรรม” คุณคิดว่าเขาหมายถึงอะไร",
+        "en": "Someone loses their bike. Another says: \"That is karma.\" What do you think that person means?"
+       },
+       "opts": [
+        {
+         "t": "Het is een straf voor iets wat die persoon deed",
+         "r": "ok",
+         "why": {
+          "nl": "Dat is één manier om het te zien. Je leest zo wat de religies zelf met het woord bedoelen.",
+          "th": "นั่นเป็นวิธีมองอย่างหนึ่ง เดี๋ยวคุณจะอ่านว่าศาสนาต่าง ๆ หมายถึงอะไรกับคำนี้",
+          "en": "That is one way to see it. You read in a moment what the religions themselves mean by it."
+         }
+        },
+        {
+         "t": "Het is gewoon pech",
+         "r": "ok",
+         "why": {
+          "nl": "Dat is ook een manier om het te zien. Je leest zo wat het woord in de religies betekent.",
+          "th": "นั่นก็เป็นวิธีมองอย่างหนึ่ง เดี๋ยวคุณจะอ่านว่าคำนี้มีความหมายอย่างไรในศาสนา",
+          "en": "That is also a way to see it. You read in a moment what the word means in the religions."
+         }
+        },
+        {
+         "t": "Ik weet het niet",
+         "r": "ok",
+         "why": {
+          "nl": "Dat mag. Je leest zo wat het woord betekent.",
+          "th": "ไม่เป็นไร เดี๋ยวคุณจะอ่านว่าคำนี้แปลว่าอะไร",
+          "en": "That is fine. You read in a moment what the word means."
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "look",
+     "min": 3
+    },
+    {
+     "type": "read",
+     "items": [
+      "krm.karma",
+      "krm.daad",
+      "krm.wedergeboorte"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Karma",
+       "title": "Wikipedia: Karma"
+      }
+     ],
+     "text": {
+      "nl": "Een woord voor daad.\n\nKarma komt uit het Sanskriet en betekent \"daad\" of \"handeling\". Het woord hoort bij het hindoeïsme, het boeddhisme, het jaïnisme en het sikhisme. Het komt ook voor in het taoïsme.\n\nIn die religies is karma een idee over oorzaak en gevolg: wat iemand bedoelt en doet, heeft invloed op wat er later gebeurt.\n\nIn veel Indiase religies hoort karma bij het idee van wedergeboorte: alle levende wezens gaan door een kringloop van steeds nieuwe levens. Niet alle scholen vinden dat nodig. Sommige zien wedergeboorte niet als belangrijk.",
+      "th": "คำที่แปลว่า การกระทำ\n\nคำว่า karma มาจากภาษาสันสกฤต แปลว่า “การกระทำ” หรือ “การงาน” เป็นคำที่อยู่ในศาสนาพราหมณ์-ฮินดู พุทธ เชน และซิกข์ พบในลัทธิเต๋าด้วย\n\nในศาสนาเหล่านี้ กรรมเป็นแนวคิดเรื่องเหตุและผล สิ่งที่คนตั้งใจและทำ มีอิทธิพลต่อสิ่งที่เกิดขึ้นภายหลัง\n\nในศาสนาอินเดียหลายศาสนา กรรมเกี่ยวข้องกับความคิดเรื่องการเกิดใหม่ สิ่งมีชีวิตทั้งหมดผ่านวัฏจักรของชีวิตใหม่ที่ต่อเนื่อง แต่ไม่ใช่ทุกสำนักที่เห็นว่าจำเป็น บางสำนักไม่ถือว่าการเกิดใหม่สำคัญ",
+      "en": "A word for deed.\n\nKarma comes from Sanskrit and means \"deed\" or \"action\". The word belongs to Hinduism, Buddhism, Jainism and Sikhism. It also appears in Taoism.\n\nIn those religions karma is an idea about cause and effect: what a person intends and does influences what happens later.\n\nIn many Indian religions karma goes with the idea of rebirth: all living beings go through a cycle of ever new lives. Not all schools find that necessary. Some do not see rebirth as important."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "krm.daad"
+       ],
+       "ask": {
+        "nl": "Wat betekent het woord karma in het Sanskriet?",
+        "th": "คำว่า karma ในภาษาสันสกฤตแปลว่าอะไร",
+        "en": "What does the word karma mean in Sanskrit?"
+       },
+       "opts": [
+        {
+         "t": "Daad of handeling",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Karma betekent letterlijk wat iemand doet.",
+          "th": "ถูกต้อง karma แปลตรงตัวว่า สิ่งที่คนทำ",
+          "en": "Right. Karma literally means what a person does."
+         }
+        },
+        {
+         "t": "Pech of geluk dat je toevallig krijgt",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het woord zelf betekent daad.",
+          "th": "ไม่ใช่ คำนี้เองแปลว่า การกระทำ",
+          "en": "No. The word itself means deed."
+         }
+        },
+        {
+         "t": "Een god",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het is geen god en geen persoon. Het woord betekent daad.",
+          "th": "ไม่ใช่ ไม่ใช่เทพและไม่ใช่บุคคล คำนี้แปลว่า การกระทำ",
+          "en": "No. It is not a god or a person. The word means deed."
+         }
+        }
+       ],
+       "answer": "Daad of handeling"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "krm.lot",
+      "krm.bedoeling"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Karma",
+       "title": "Wikipedia: Karma"
+      },
+      {
+       "url": "https://www.accesstoinsight.org/tipitaka/an/an06/an06.063.than.html",
+       "title": "Nibbedhika Sutta: Penetrative (AN 6.63), Access to Insight"
+      }
+     ],
+     "text": {
+      "nl": "Karma en lot zijn niet hetzelfde.\n\nVeel mensen denken dat karma lot is, iets wat al vastligt. Dat is een misverstand. Karma gaat over oorzaak en gevolg: wat je bedoelt en doet, heeft invloed op later. Ook wat je nu doet, telt mee.\n\nIn het boeddhisme gaat karma over daden met een bedoeling. Die bedoeling heet cetana. In een oude boeddhistische tekst (AN 6.63) zegt de Boeddha: \"Bedoeling is karma.\" Het boeddhistische karma ligt niet strikt vast: het hangt ook af van de omstandigheden.",
+      "th": "กรรมกับโชคชะตาไม่เหมือนกัน\n\nหลายคนคิดว่ากรรมคือโชคชะตา สิ่งที่กำหนดไว้แล้ว นั่นเป็นความเข้าใจผิด กรรมเป็นเรื่องเหตุและผล สิ่งที่คุณตั้งใจและทำ มีอิทธิพลต่อภายหลัง สิ่งที่คุณทำตอนนี้ก็นับด้วย\n\nในพุทธศาสนา กรรมคือการกระทำที่มีเจตนา เจตนานี้เรียกว่า cetana ในตำราพุทธเก่าแก่ (AN 6.63) พระพุทธเจ้าตรัสว่า “เจตนาคือกรรม” กรรมในพุทธศาสนาไม่ได้ถูกกำหนดไว้อย่างตายตัว แต่ขึ้นอยู่กับสถานการณ์ด้วย",
+      "en": "Karma and fate are not the same.\n\nMany people think karma is fate, something that is already fixed. That is a misunderstanding. Karma is about cause and effect: what you intend and do influences what comes later. What you do now counts too.\n\nIn Buddhism karma is about deeds with an intention. That intention is called cetana. In an old Buddhist text (AN 6.63) the Buddha says: \"Intention is karma.\" Buddhist karma is not strictly fixed: it also depends on circumstances."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "krm.lot"
+       ],
+       "ask": {
+        "nl": "Klopt het dat karma en lot hetzelfde zijn?",
+        "th": "จริงไหมที่กรรมกับโชคชะตาเหมือนกัน",
+        "en": "Is it true that karma and fate are the same?"
+       },
+       "opts": [
+        {
+         "t": "Nee: karma gaat over daden, ook over wat je nu doet",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Karma wordt vaak voor lot aangezien, maar het is een ander begrip: het gaat over oorzaak en gevolg.",
+          "th": "ถูกต้อง กรรมมักถูกเข้าใจผิดว่าเป็นโชคชะตา แต่เป็นคนละแนวคิด คือเรื่องเหตุและผล",
+          "en": "Right. Karma is often mistaken for fate, but it is a different concept: it is about cause and effect."
+         }
+        },
+        {
+         "t": "Ja, karma is hetzelfde als lot",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het zijn twee verschillende begrippen: lot ligt vast, karma gaat over daden en hun gevolgen.",
+          "th": "ไม่ใช่ เป็นสองแนวคิดที่ต่างกัน โชคชะตากำหนดไว้แล้ว ส่วนกรรมเกี่ยวกับการกระทำและผลของมัน",
+          "en": "No. They are two different concepts: fate is fixed, karma is about deeds and their results."
+         }
+        },
+        {
+         "t": "Nee: karma bestaat alleen in het boeddhisme en nergens anders",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Karma komt ook voor in het hindoeïsme, het jaïnisme en het sikhisme. En het gaat hier om het verschil met lot.",
+          "th": "ไม่ใช่ กรรมมีในศาสนาพราหมณ์-ฮินดู เชน และซิกข์ด้วย และคำถามนี้เกี่ยวกับความต่างจากโชคชะตา",
+          "en": "No. Karma also appears in Hinduism, Jainism and Sikhism. And this question is about the difference from fate."
+         }
+        }
+       ],
+       "answer": "Nee: karma gaat over daden, ook over wat je nu doet"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "krm.bedoeling"
+       ],
+       "ask": {
+        "nl": "Maak af: In het boeddhisme gaat karma over daden met een ___.",
+        "th": "เติมคำ: ในพุทธศาสนา กรรมเกี่ยวกับการกระทำที่มี ___",
+        "en": "Complete: In Buddhism karma is about deeds with an ___."
+       },
+       "answer": "bedoeling",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Wat je wilt met een daad. Het woord heet cetana.",
+         "th": "สิ่งที่คุณต้องการด้วยการกระทำ คำนี้เรียกว่า cetana",
+         "en": "What you want with a deed. The word is cetana."
+        },
+        {
+         "nl": "Begin zo: bed…",
+         "th": "ขึ้นต้นแบบนี้: bed…",
+         "en": "Start like this: bed…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Een daad met een bedoeling: dat is volgens het boeddhisme karma.",
+        "th": "ถูกต้อง การกระทำที่มีเจตนา ตามพุทธศาสนาคือกรรม",
+        "en": "Right. A deed with an intention: that, according to Buddhism, is karma."
+       }
+      }
+     ]
+    },
+    {
+     "type": "make",
+     "items": [
+      "krm.karma",
+      "krm.lot"
+     ],
+     "ask": {
+      "nl": "Zeg het in je eigen woorden. Leg in één of twee zinnen uit wat mensen vaak denken over karma, en wat het woord in de religies is.",
+      "th": "พูดด้วยคำของคุณเอง อธิบายในหนึ่งหรือสองประโยคว่า คนมักคิดอย่างไรเกี่ยวกับกรรม และคำนี้ในศาสนาคืออะไร",
+      "en": "Say it in your own words. Explain in one or two sentences what people often think about karma, and what the word is in the religions."
+     },
+     "frame": "Mensen denken vaak dat karma ... is. Maar karma is eigenlijk ...",
+     "model": "Mensen denken vaak dat karma lot is. Maar karma is eigenlijk een daad, en wat daarna volgt.",
+     "checklist": [
+      {
+       "nl": "Ik heb beide kanten genoemd: gewoon gesprek en religie.",
+       "th": "ฉันพูดถึงทั้งสองด้าน: ภาษาพูดและศาสนา",
+       "en": "I mentioned both sides: everyday talk and religion."
+      },
+      {
+       "nl": "Ik heb niet gezegd wat waar is voor iedereen.",
+       "th": "ฉันไม่ได้บอกว่าอะไรเป็นความจริงสำหรับทุกคน",
+       "en": "I did not say what is true for everyone."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "krm.wedergeboorte",
+      "krm.karma"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Karma",
+       "title": "Wikipedia: Karma"
+      }
+     ],
+     "text": {
+      "nl": "Niet overal hetzelfde.\n\nHet jaïnisme gebruikt het woord heel anders. Daar is karma een fijne stof die zich aan de ziel vastmaakt, een soort karmisch vuil.\n\nOok in andere stromingen verschilt het. In sommige scholen is wedergeboorte overbodig of zelfs verzonnen. Het woord karma heeft dus niet één vaste uitleg.",
+      "th": "ไม่เหมือนกันทุกที่\n\nศาสนาเชนใช้คำนี้ต่างไปมาก ในศาสนาเชน กรรมเป็นสสารละเอียดที่ติดกับวิญญาณ เหมือนมลทินของกรรม\n\nในสำนักอื่นก็ต่างกัน บางสำนักเห็นว่าการเกิดใหม่ไม่จำเป็นหรือเป็นเรื่องแต่งขึ้น คำว่า karma จึงไม่ได้มีคำอธิบายเดียวตายตัว",
+      "en": "Not the same everywhere.\n\nJainism uses the word very differently. There karma is a subtle matter that attaches itself to the soul, a kind of karmic dirt.\n\nIn other traditions it also differs. In some schools rebirth is unnecessary or even fiction. So the word karma has not one fixed explanation."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "krm.karma"
+       ],
+       "ask": {
+        "nl": "Wat zegt de tekst over het jaïnisme?",
+        "th": "ข้อความกล่าวอะไรเกี่ยวกับศาสนาเชน",
+        "en": "What does the text say about Jainism?"
+       },
+       "opts": [
+        {
+         "t": "Karma is daar een fijne stof die zich aan de ziel hecht",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat is een heel andere uitleg dan in het boeddhisme.",
+          "th": "ถูกต้อง นั่นเป็นคำอธิบายที่ต่างจากพุทธศาสนามาก",
+          "en": "Right. That is a very different explanation from Buddhism."
+         }
+        },
+        {
+         "t": "Daar bestaat karma niet",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het jaïnisme heeft het woord wel, maar gebruikt het anders.",
+          "th": "ไม่ใช่ ศาสนาเชนมีคำนี้ แต่ใช้ต่างไป",
+          "en": "No. Jainism does have the word, but uses it differently."
+         }
+        },
+        {
+         "t": "Daar is karma hetzelfde als in het boeddhisme",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst zegt dat het jaïnisme het woord heel anders gebruikt.",
+          "th": "ไม่ใช่ ข้อความบอกว่าศาสนาเชนใช้คำนี้ต่างไปมาก",
+          "en": "No. The text says Jainism uses the word very differently."
+         }
+        }
+       ],
+       "answer": "Karma is daar een fijne stof die zich aan de ziel hecht"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: karma is een woord voor daad. Mensen gebruiken het vaak alsof het lot is. In de religies gaat het over daden en hun gevolgen, en het verschilt per stroming.",
+      "th": "ตอนนี้คุณเล่าได้ว่า karma คือคำที่แปลว่า การกระทำ คนมักใช้เหมือนเป็นโชคชะตา ในศาสนาเป็นเรื่องของการกระทำและผลของมัน และต่างกันไปตามแต่ละนิกาย",
+      "en": "You can now tell: karma is a word for deed. People often use it as if it were fate. In the religions it is about deeds and their results, and it differs per tradition."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

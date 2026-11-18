@@ -1,0 +1,527 @@
+{
+ "format": 1,
+ "id": "ao-hypotheek",
+ "type": "les",
+ "version": 1,
+ "order": 25,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "economie",
+ "vorm": "één getal en wat erachter zit",
+ "draden": [
+  "ao-inflatie",
+  "ao-btw",
+  "ao-kamer150"
+ ],
+ "title": {
+  "nl": "Hoe werkt een hypotheek?",
+  "th": "สินเชื่อบ้านทำงานอย่างไร",
+  "en": "How does a mortgage work?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Mortgage_loan",
+   "title": "Wikipedia: Mortgage loan"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Hypothecaire_lening",
+   "title": "Wikipedia: Hypothecaire lening"
+  },
+  {
+   "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/huis-kopen/hypotheekrenteaftrek",
+   "title": "Rijksoverheid: Heb ik recht op hypotheekrenteaftrek?"
+  }
+ ],
+ "items": [
+  {
+   "id": "hyp.hypotheek",
+   "kind": "word",
+   "w": "hypotheek",
+   "art": "de",
+   "tr": {
+    "th": "สินเชื่อบ้าน (เงินกู้ที่มีบ้านเป็นหลักประกัน)",
+    "en": "mortgage"
+   },
+   "def": "Een lening om een huis te kopen.",
+   "ex": "Wij hebben een hypotheek voor ons huis.",
+   "gap": "De ___ is een lening voor een huis.",
+   "wrong": [
+    "fiets",
+    "pan",
+    "bril"
+   ]
+  },
+  {
+   "id": "hyp.rente",
+   "kind": "word",
+   "w": "rente",
+   "art": "de",
+   "tr": {
+    "th": "ดอกเบี้ย",
+    "en": "interest"
+   },
+   "def": "Het geld dat je betaalt omdat je geld leent.",
+   "ex": "Over een lening betaal je rente.",
+   "gap": "De ___ betaal je over het geld dat je leent.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "wolk"
+   ]
+  },
+  {
+   "id": "hyp.onderpand",
+   "kind": "word",
+   "w": "onderpand",
+   "art": "het",
+   "tr": {
+    "th": "หลักประกัน",
+    "en": "collateral"
+   },
+   "def": "Iets van jou dat de bank mag houden als je niet betaalt.",
+   "ex": "Het huis is het onderpand.",
+   "gap": "Het ___ is een zekerheid voor de bank.",
+   "wrong": [
+    "weekend",
+    "kwartier",
+    "seizoen"
+   ]
+  },
+  {
+   "id": "hyp.aflossen",
+   "kind": "word",
+   "w": "aflossen",
+   "art": "",
+   "tr": {
+    "th": "ใช้คืนเงินกู้",
+    "en": "repay"
+   },
+   "def": "Een lening stap voor stap terugbetalen.",
+   "ex": "Ik wil mijn lening snel aflossen.",
+   "gap": "Ik wil mijn lening ___.",
+   "wrong": [
+    "gisteren",
+    "tafel",
+    "lopen"
+   ]
+  },
+  {
+   "id": "hyp.lening",
+   "kind": "word",
+   "w": "lening",
+   "art": "de",
+   "tr": {
+    "th": "เงินกู้",
+    "en": "loan"
+   },
+   "def": "Geld dat je van iemand krijgt en later teruggeeft.",
+   "ex": "Ik heb een lening bij de bank.",
+   "gap": "De ___ geef je later terug aan de bank.",
+   "wrong": [
+    "bus",
+    "jas",
+    "tas"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-hypotheek-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Hoe werkt een hypotheek?",
+    "th": "สินเชื่อบ้านทำงานอย่างไร",
+    "en": "How does a mortgage work?"
+   },
+   "intro": {
+    "nl": "Eerst een getal: wat kost het om geld te lenen? Daarna zie je wat erachter zit.",
+    "th": "เริ่มด้วยตัวเลข: การกู้เงินมีค่าใช้จ่ายเท่าไร แล้วดูว่ามีอะไรอยู่เบื้องหลัง",
+    "en": "First a number: what does it cost to borrow money? Then you see what is behind it."
+   },
+   "can": {
+    "nl": "Uitleggen wat een hypotheek en rente zijn en een eenvoudig bedrag uitrekenen",
+    "th": "อธิบายได้ว่าสินเชื่อบ้านและดอกเบี้ยคืออะไร และคำนวณจำนวนเงินง่าย ๆ ได้",
+    "en": "Explain what a mortgage and interest are and work out a simple amount"
+   },
+   "targets": [
+    "hyp.hypotheek",
+    "hyp.rente",
+    "hyp.onderpand",
+    "hyp.aflossen",
+    "hyp.lening"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "apricot",
+    "alt": {
+     "nl": "Een kamer met een tafel, een brief en een raam.",
+     "th": "ห้องที่มีโต๊ะ จดหมาย และหน้าต่าง",
+     "en": "A room with a table, a letter and a window."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156,
+      "hot": true,
+      "item": "hyp.hypotheek",
+      "label": {
+       "nl": "De hypotheek: een lening voor een huis",
+       "th": "สินเชื่อบ้าน: เงินกู้เพื่อซื้อบ้าน",
+       "en": "The mortgage: a loan for a house"
+      }
+     },
+     {
+      "kind": "letter",
+      "x": 170,
+      "y": 120,
+      "hot": true,
+      "item": "hyp.rente",
+      "label": {
+       "nl": "De rente: wat je betaalt voor het lenen",
+       "th": "ดอกเบี้ย: สิ่งที่คุณจ่ายสำหรับการกู้",
+       "en": "The interest: what you pay for borrowing"
+      }
+     },
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56,
+      "hot": true,
+      "item": "hyp.onderpand",
+      "label": {
+       "nl": "Het huis is het onderpand",
+       "th": "บ้านคือหลักประกัน",
+       "en": "The house is the collateral"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "hyp.rente"
+       ],
+       "ask": {
+        "nl": "Een voorbeeld. Je leent 200.000 euro voor een huis. De rente is 4 procent per jaar. Je lost nog niets af. Schat: hoeveel euro rente betaal je in het eerste jaar? Typ een getal.",
+        "th": "ตัวอย่าง คุณกู้ 200,000 ยูโรเพื่อซื้อบ้าน ดอกเบี้ย 4 เปอร์เซ็นต์ต่อปี คุณยังไม่ได้ใช้คืนเลย ประมาณการ: ปีแรกคุณจ่ายดอกเบี้ยกี่ยูโร พิมพ์ตัวเลข",
+        "en": "An example. You borrow 200,000 euros for a house. The interest is 4 percent per year. You have not repaid anything yet. Estimate: how many euros of interest do you pay in the first year? Type a number."
+       },
+       "answer": "8000",
+       "tol": 2000,
+       "err": "rekenstap",
+       "why": {
+        "nl": "4 procent van 200.000 euro is 8.000 euro per jaar, ongeveer 667 euro per maand. Let op: dit is een rekenvoorbeeld, geen echte rente.",
+        "th": "4 เปอร์เซ็นต์ของ 200,000 ยูโร คือ 8,000 ยูโรต่อปี ประมาณ 667 ยูโรต่อเดือน หมายเหตุ: นี่เป็นเพียงตัวอย่างการคำนวณ ไม่ใช่ดอกเบี้ยจริง",
+        "en": "4 percent of 200,000 euros is 8,000 euros per year, about 667 euros per month. Note: this is a calculation example, not a real interest rate."
+       }
+      }
+     ]
+    },
+    {
+     "type": "look",
+     "min": 3
+    },
+    {
+     "type": "read",
+     "items": [
+      "hyp.hypotheek",
+      "hyp.onderpand",
+      "hyp.lening"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Mortgage_loan",
+       "title": "Wikipedia: Mortgage loan"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Hypothecaire_lening",
+       "title": "Wikipedia: Hypothecaire lening"
+      }
+     ],
+     "text": {
+      "nl": "Een lening met een huis als zekerheid.\n\nEen hypotheek is een geldlening waarmee je een huis koopt. Het huis is het onderpand: de zekerheid voor degene die het geld leent. Betaal je niet meer, dan mag de geldschieter het huis in bezit nemen en verkopen.\n\nZo kan een bank veel geld lenen aan iemand die zoveel geld niet heeft.",
+      "th": "เงินกู้ที่มีบ้านเป็นหลักประกัน\n\nสินเชื่อบ้านคือเงินกู้ที่คุณใช้ซื้อบ้าน บ้านเป็นหลักประกัน คือความมั่นใจสำหรับผู้ให้กู้ ถ้าคุณหยุดจ่าย ผู้ให้กู้มีสิทธิ์ยึดบ้านและขายได้\n\nด้วยวิธีนี้ ธนาคารจึงให้เงินจำนวนมากแก่คนที่ไม่มีเงินมากขนาดนั้นได้",
+      "en": "A loan with a house as security.\n\nA mortgage is a loan with which you buy a house. The house is the collateral: the security for the one who lends the money. If you stop paying, the lender may take possession of the house and sell it.\n\nThis way a bank can lend a lot of money to someone who does not have that much money."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "hyp.onderpand"
+       ],
+       "ask": {
+        "nl": "Wat gebeurt er als je een hypotheek niet meer kunt betalen?",
+        "th": "จะเกิดอะไรขึ้นถ้าคุณจ่ายสินเชื่อบ้านไม่ได้อีก",
+        "en": "What happens if you can no longer pay a mortgage?"
+       },
+       "opts": [
+        {
+         "t": "De geldschieter mag het huis verkopen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het huis is het onderpand, daarom mag dat.",
+          "th": "ถูกต้อง บ้านเป็นหลักประกัน จึงทำได้",
+          "en": "Right. The house is the collateral, so this is allowed."
+         }
+        },
+        {
+         "t": "De lening is meteen weg",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De lening verdwijnt niet vanzelf. Het onderpand zorgt dat de geldschieter zijn geld kan terugkrijgen.",
+          "th": "ไม่ใช่ เงินกู้ไม่หายไปเอง หลักประกันทำให้ผู้ให้กู้ได้เงินคืน",
+          "en": "No. The loan does not disappear on its own. The collateral makes sure the lender can get money back."
+         }
+        },
+        {
+         "t": "Het huis blijft altijd van jou",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. Bij niet betalen mag de geldschieter het huis verkopen.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ ถ้าไม่จ่าย ผู้ให้กู้ขายบ้านได้",
+          "en": "No. That is not in the text. If you do not pay, the lender may sell the house."
+         }
+        }
+       ],
+       "answer": "De geldschieter mag het huis verkopen"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "hyp.aflossen",
+      "hyp.rente"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Mortgage_loan",
+       "title": "Wikipedia: Mortgage loan"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Hypothecaire_lening",
+       "title": "Wikipedia: Hypothecaire lening"
+      },
+      {
+       "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/huis-kopen/hypotheekrenteaftrek",
+       "title": "Rijksoverheid: Heb ik recht op hypotheekrenteaftrek?"
+      }
+     ],
+     "text": {
+      "nl": "Hoe los je af?\n\nEen hypotheek betaal je vaak elke maand terug. In Nederland meestal op een van twee manieren.\n\nBij een annuïteit is de betaling elke maand even groot. Bij een lineaire aflossing wordt de betaling langzaam kleiner.\n\nWeet je nog, de 4 procent uit de eerste vraag? Dat is de rente. Elke maand betaal je rente over wat je nog schuldig bent. Daarom betaal je in het begin de meeste rente.",
+      "th": "ใช้คืนอย่างไร\n\nสินเชื่อบ้านมักผ่อนคืนทุกเดือน ในเนเธอร์แลนด์มักเป็นหนึ่งในสองวิธี\n\nแบบ annuïteit การจ่ายเท่ากันทุกเดือน แบบ lineair การจ่ายจะค่อย ๆ ลดลง\n\nจำ 4 เปอร์เซ็นต์ในคำถามแรกได้ไหม นั่นคือดอกเบี้ย ทุกเดือนคุณจ่ายดอกเบี้ยจากส่วนที่ยังค้างอยู่ ดังนั้นในช่วงแรกคุณจ่ายดอกเบี้ยมากที่สุด",
+      "en": "How do you repay?\n\nYou often pay back a mortgage every month. In the Netherlands, usually in one of two ways.\n\nWith an annuity the payment is equally large every month. With linear repayment the payment slowly gets smaller.\n\nRemember the 4 percent from the first question? That is the interest. Every month you pay interest on what you still owe. That is why you pay the most interest at the start."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "hyp.aflossen"
+       ],
+       "ask": {
+        "nl": "Bij welke aflossing wordt de betaling langzaam kleiner?",
+        "th": "การใช้คืนแบบใดที่การจ่ายค่อย ๆ ลดลง",
+        "en": "With which repayment does the payment slowly get smaller?"
+       },
+       "opts": [
+        {
+         "t": "Lineair",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Bij lineaire aflossing daalt de betaling langzaam.",
+          "th": "ถูกต้อง ในการใช้คืนแบบ lineair การจ่ายค่อย ๆ ลดลง",
+          "en": "Right. With linear repayment the payment slowly falls."
+         }
+        },
+        {
+         "t": "Annuïteit",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Bij een annuïteit blijft de betaling gelijk.",
+          "th": "ไม่ใช่ ในแบบ annuïteit การจ่ายเท่าเดิม",
+          "en": "No. With an annuity the payment stays the same."
+         }
+        },
+        {
+         "t": "Bij allebei",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het verschil is juist dat de ene gelijk blijft en de andere daalt.",
+          "th": "ไม่ใช่ ความต่างคือแบบหนึ่งคงที่ อีกแบบลดลง",
+          "en": "No. The difference is that one stays equal and the other falls."
+         }
+        }
+       ],
+       "answer": "Lineair"
+      },
+      {
+       "form": "number",
+       "items": [
+        "hyp.rente"
+       ],
+       "ask": {
+        "nl": "Nog een voorbeeld: je leent 100.000 euro tegen 3 procent rente per jaar. Hoeveel euro rente is dat in een jaar, als je niets aflost? Typ een getal.",
+        "th": "อีกตัวอย่าง: คุณกู้ 100,000 ยูโร ดอกเบี้ย 3 เปอร์เซ็นต์ต่อปี ในหนึ่งปีถ้าไม่ได้ใช้คืนเลย เป็นดอกเบี้ยกี่ยูโร พิมพ์ตัวเลข",
+        "en": "Another example: you borrow 100,000 euros at 3 percent interest per year. How many euros of interest is that in a year, if you repay nothing? Type a number."
+       },
+       "answer": "3000",
+       "tol": 50,
+       "err": "rekenstap",
+       "hint": [
+        {
+         "nl": "Eerst 1 procent: dat is 1.000 euro.",
+         "th": "ก่อนอื่น 1 เปอร์เซ็นต์ คือ 1,000 ยูโร",
+         "en": "First 1 percent: that is 1,000 euros."
+        },
+        {
+         "nl": "Dan keer 3.",
+         "th": "แล้วคูณ 3",
+         "en": "Then times 3."
+        }
+       ],
+       "why": {
+        "nl": "1 procent van 100.000 is 1.000 euro. Drie keer dat is 3.000 euro per jaar.",
+        "th": "1 เปอร์เซ็นต์ของ 100,000 คือ 1,000 ยูโร สามเท่าคือ 3,000 ยูโรต่อปี",
+        "en": "1 percent of 100,000 is 1,000 euros. Three times that is 3,000 euros per year."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "hyp.lening",
+      "hyp.aflossen"
+     ],
+     "ask": {
+      "nl": "Leg de weg van een hypotheek in de goede volgorde. Bouw de zin.",
+      "th": "เรียงเส้นทางของสินเชื่อบ้านให้ถูกลำดับ ต่อประโยค",
+      "en": "Put the route of a mortgage in the right order. Build the sentence."
+     },
+     "data": {
+      "parts": [
+       "Eerst leen je geld van de bank,",
+       "dan koop je het huis,",
+       "dan betaal je elke maand een deel terug."
+      ],
+      "tr": {
+       "th": "ก่อนอื่นคุณกู้เงินจากธนาคาร แล้วซื้อบ้าน แล้วผ่อนคืนส่วนหนึ่งทุกเดือน",
+       "en": "First you borrow money from the bank, then you buy the house, then you pay back a part every month."
+      }
+     },
+     "answer": "Eerst leen je geld van de bank, dan koop je het huis, dan betaal je elke maand een deel terug.",
+     "err": "woordvolgorde",
+     "why": {
+      "nl": "Eerst de lening, dan het huis, dan elke maand terugbetalen.",
+      "th": "ก่อนเงินกู้ แล้วบ้าน แล้วจ่ายคืนทุกเดือน",
+      "en": "First the loan, then the house, then pay back every month."
+     }
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "hyp.hypotheek"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Mortgage_loan",
+       "title": "Wikipedia: Mortgage loan"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Hypothecaire_lening",
+       "title": "Wikipedia: Hypothecaire lening"
+      }
+     ],
+     "text": {
+      "nl": "Een oud woord.\n\nHet Engelse woord mortgage komt uit het Frans dat juristen in de middeleeuwen in Engeland gebruikten, en betekent \"doodspand\". Het Nederlandse woord hypotheek komt uit het Grieks: hypo (onder) en théké (bewaarplaats).\n\nHet pand eindigt als je alles hebt betaald, of als de geldschieter het huis overneemt.",
+      "th": "คำเก่าแก่\n\nคำภาษาอังกฤษ mortgage มาจากภาษาฝรั่งเศสที่นักกฎหมายในอังกฤษสมัยกลางใช้ แปลว่า “การจำนำที่ตาย” ส่วนคำดัตช์ hypotheek มาจากภาษากรีก: hypo (ใต้) และ théké (ที่เก็บ)\n\nการจำนำสิ้นสุดเมื่อคุณจ่ายครบ หรือเมื่อผู้ให้กู้ยึดบ้านไป",
+      "en": "An old word.\n\nThe English word mortgage comes from the French that lawyers used in England in the Middle Ages, and means \"death pledge\". The Dutch word hypotheek comes from Greek: hypo (under) and théké (storage place).\n\nThe pledge ends when you have paid everything, or when the lender takes over the house."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "hyp.hypotheek"
+       ],
+       "ask": {
+        "nl": "Wat betekent het Engelse woord mortgage letterlijk?",
+        "th": "คำภาษาอังกฤษ mortgage แปลตรงตัวว่าอะไร",
+        "en": "What does the English word mortgage literally mean?"
+       },
+       "opts": [
+        {
+         "t": "Doodspand",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het was een pand dat eindigde bij betalen of overnemen.",
+          "th": "ถูกต้อง เป็นการจำนำที่สิ้นสุดเมื่อจ่ายหรือถูกยึด",
+          "en": "Right. It was a pledge that ended with payment or takeover."
+         }
+        },
+        {
+         "t": "Huislening",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het woord betekent letterlijk doodspand.",
+          "th": "ไม่ใช่ คำนี้แปลตรงตัวว่า การจำนำที่ตาย",
+          "en": "No. The word literally means death pledge."
+         }
+        },
+        {
+         "t": "Geluk van een huis",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het woord betekent letterlijk doodspand.",
+          "th": "ไม่ใช่ คำนี้แปลตรงตัวว่า การจำนำที่ตาย",
+          "en": "No. The word literally means death pledge."
+         }
+        }
+       ],
+       "answer": "Doodspand"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: een hypotheek is een lening met het huis als zekerheid. De rente is de prijs van het lenen, en je kunt hem uitrekenen.",
+      "th": "ตอนนี้คุณเล่าได้ว่า สินเชื่อบ้านคือเงินกู้ที่มีบ้านเป็นหลักประกัน ดอกเบี้ยคือราคาของการกู้ และคุณคำนวณได้",
+      "en": "You can now tell: a mortgage is a loan with the house as security. The interest is the price of borrowing, and you can work it out."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

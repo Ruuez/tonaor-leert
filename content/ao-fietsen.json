@@ -1,0 +1,697 @@
+{
+ "format": 1,
+ "id": "ao-fietsen",
+ "type": "les",
+ "version": 1,
+ "order": 34,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "mens en samenleving",
+ "vorm": "waar of niet waar, op tempo",
+ "draden": [
+  "ao-zeespiegel",
+  "ao-hypotheek",
+  "ao-1953"
+ ],
+ "title": {
+  "nl": "Waarom zijn er zoveel fietsen in Nederland?",
+  "th": "ทำไมเนเธอร์แลนด์จึงมีจักรยานมากมาย",
+  "en": "Why are there so many bicycles in the Netherlands?"
+ },
+ "sources": [
+  {
+   "url": "https://www.cbs.nl/nl-nl/visualisaties/verkeer-en-vervoer/personen/fietsen",
+   "title": "CBS: Hoeveel fietsen inwoners van Nederland?"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Geschiedenis_van_het_fietsen_in_Nederland",
+   "title": "Wikipedia: Geschiedenis van het fietsen in Nederland"
+  }
+ ],
+ "items": [
+  {
+   "id": "fts.fietspad",
+   "kind": "word",
+   "w": "fietspad",
+   "art": "het",
+   "tr": {
+    "th": "ทางจักรยาน",
+    "en": "cycle path"
+   },
+   "def": "Een smalle weg voor fietsen.",
+   "ex": "Er ligt een nieuw fietspad langs het kanaal.",
+   "gap": "Op het ___ rijden fietsers, niet de auto’s.",
+   "wrong": [
+    "bord",
+    "brood",
+    "glas"
+   ]
+  },
+  {
+   "id": "fts.fietser",
+   "kind": "word",
+   "w": "fietser",
+   "art": "de",
+   "tr": {
+    "th": "คนปั่นจักรยาน",
+    "en": "cyclist"
+   },
+   "def": "Iemand die op de fiets zit.",
+   "ex": "De fietser stopt bij het rode licht.",
+   "gap": "De ___ stopt voor het rode licht.",
+   "wrong": [
+    "tafel",
+    "kast",
+    "soep"
+   ]
+  },
+  {
+   "id": "fts.bewering",
+   "kind": "word",
+   "w": "bewering",
+   "art": "de",
+   "tr": {
+    "th": "คำกล่าว, ข้อความที่กล่าวอ้าง",
+    "en": "statement, claim"
+   },
+   "def": "Een zin die zegt dat iets zo is. Het kan waar zijn of niet waar.",
+   "ex": "Deze bewering klopt niet.",
+   "gap": "De ___ in de tekst klopt niet.",
+   "wrong": [
+    "lamp",
+    "jas",
+    "pan"
+   ]
+  },
+  {
+   "id": "fts.vervoermiddel",
+   "kind": "word",
+   "w": "vervoermiddel",
+   "art": "het",
+   "tr": {
+    "th": "พาหนะ",
+    "en": "means of transport"
+   },
+   "def": "Iets waarmee je je verplaatst, zoals een fiets, een bus of een auto.",
+   "ex": "De fiets is een goed vervoermiddel in de stad.",
+   "gap": "Veel mensen gaan met de trein naar het werk. Voor hen is de trein het ___.",
+   "wrong": [
+    "brood",
+    "raam",
+    "dak"
+   ]
+  },
+  {
+   "id": "fts.gemiddeld",
+   "kind": "word",
+   "w": "gemiddeld",
+   "art": "",
+   "tr": {
+    "th": "โดยเฉลี่ย",
+    "en": "on average"
+   },
+   "def": "Als je alles bij elkaar optelt en deelt: het gewone getal.",
+   "ex": "Gemiddeld fiets ik elke dag een half uur.",
+   "gap": "Een inwoner fietst ___ ongeveer duizend kilometer per jaar.",
+   "wrong": [
+    "nooit",
+    "gisteren",
+    "hard"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-fietsen-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom zijn er zoveel fietsen in Nederland?",
+    "th": "ทำไมเนเธอร์แลนด์จึงมีจักรยานมากมาย",
+    "en": "Why are there so many bicycles in the Netherlands?"
+   },
+   "intro": {
+    "nl": "Waar of niet waar? Kies snel. Daarna lees je wat klopt en waarom.",
+    "th": "จริงหรือไม่จริง เลือกให้เร็ว แล้วอ่านว่าอะไรถูกและทำไม",
+    "en": "True or false? Choose quickly. Then you read what is right and why."
+   },
+   "can": {
+    "nl": "Vertellen hoeveel er in Nederland gefietst wordt en een paar redenen noemen",
+    "th": "เล่าได้ว่าในเนเธอร์แลนด์ปั่นจักรยานมากแค่ไหนและบอกเหตุผลสองสามข้อ",
+    "en": "Tell how much people cycle in the Netherlands and give a few reasons"
+   },
+   "targets": [
+    "fts.fietspad",
+    "fts.fietser",
+    "fts.bewering",
+    "fts.vervoermiddel",
+    "fts.gemiddeld"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "street",
+    "tone": "sky",
+    "alt": {
+     "nl": "Een straat met een bank en twee borden: Fietspad en Fietser.",
+     "th": "ถนนที่มีม้านั่งและป้ายสองป้าย: ทางจักรยานและคนปั่นจักรยาน",
+     "en": "A street with a bench and two signs: Cycle path and Cyclist."
+    },
+    "things": [
+     {
+      "kind": "bench",
+      "x": 170,
+      "y": 156
+     },
+     {
+      "kind": "sign",
+      "x": 70,
+      "y": 80,
+      "text": "Fietspad",
+      "hot": true,
+      "item": "fts.fietspad",
+      "label": {
+       "nl": "Fietspad: een weg alleen voor fietsen",
+       "th": "ทางจักรยาน: ถนนสำหรับจักรยานเท่านั้น",
+       "en": "Cycle path: a road only for bicycles"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 270,
+      "y": 80,
+      "text": "Fietser",
+      "hot": true,
+      "item": "fts.fietser",
+      "label": {
+       "nl": "Fietser: iemand op de fiets",
+       "th": "คนปั่นจักรยาน: คนที่อยู่บนจักรยาน",
+       "en": "Cyclist: someone on a bicycle"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "fts.gemiddeld",
+        "fts.fietser"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel kilometer fietst een inwoner van Nederland gemiddeld per jaar? Typ een getal.",
+        "th": "ประมาณการ: ชาวเนเธอร์แลนด์ปั่นจักรยานโดยเฉลี่ยปีละกี่กิโลเมตร พิมพ์ตัวเลข",
+        "en": "Estimate: how many kilometres does an inhabitant of the Netherlands cycle on average per year? Type a number."
+       },
+       "answer": "1065",
+       "err": "getal",
+       "tol": 400,
+       "why": {
+        "nl": "In 2023 was het gemiddeld 1065 kilometer per persoon, en daar deed iemand 96 uur over.",
+        "th": "ในปี 2023 โดยเฉลี่ยคนละ 1,065 กิโลเมตร และใช้เวลาปั่น 96 ชั่วโมง",
+        "en": "In 2023 it was on average 1065 kilometres per person, and a person spent 96 hours on it."
+       },
+       "guess": true
+      },
+      {
+       "form": "choose",
+       "items": [
+        "fts.bewering"
+       ],
+       "ask": {
+        "nl": "Waar of niet waar? Nederland heeft meer fietsen dan inwoners.",
+        "th": "จริงหรือไม่จริง เนเธอร์แลนด์มีจักรยานมากกว่าจำนวนประชากร",
+        "en": "True or false? The Netherlands has more bicycles than inhabitants."
+       },
+       "opts": [
+        {
+         "t": "Niet waar",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Het klopt wel. Rond 2019 waren er ongeveer 22,8 miljoen fietsen en 17 miljoen inwoners.",
+          "th": "จริง ราวปี 2019 มีจักรยานประมาณ 22.8 ล้านคัน และประชากร 17 ล้านคน",
+          "en": "It is true. Around 2019 there were about 22.8 million bicycles and 17 million inhabitants."
+         }
+        },
+        {
+         "t": "Waar",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Rond 2019 waren er ongeveer 22,8 miljoen fietsen en 17 miljoen inwoners.",
+          "th": "ถูกต้อง ราวปี 2019 มีจักรยานประมาณ 22.8 ล้านคัน และประชากร 17 ล้านคน",
+          "en": "Right. Around 2019 there were about 22.8 million bicycles and 17 million inhabitants."
+         }
+        }
+       ],
+       "answer": "Waar",
+       "guess": true
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "fts.vervoermiddel",
+      "fts.gemiddeld"
+     ],
+     "sources": [
+      {
+       "url": "https://www.cbs.nl/nl-nl/visualisaties/verkeer-en-vervoer/personen/fietsen",
+       "title": "CBS: Hoeveel fietsen inwoners van Nederland?"
+      }
+     ],
+     "text": {
+      "nl": "Fietsen in cijfers (2023).\n\nIn 2023 was de fiets, na de auto, het meest gebruikte vervoermiddel in Nederland: 27 procent van alle verplaatsingen ging op de fiets. Een inwoner van 6 jaar of ouder fietste dat jaar gemiddeld 266 keer, 1065 kilometer en 96 uur.\n\nDe meeste ritten zijn kort: 70 procent van alle fietsritten was korter dan 3,7 kilometer. Jongeren van 12 tot 18 jaar fietsen het meest: gemiddeld 1,5 keer per dag.",
+      "th": "ตัวเลขการปั่นจักรยาน (2023)\n\nในปี 2023 จักรยานเป็นพาหนะที่ใช้มากที่สุดเป็นอันดับสองในเนเธอร์แลนด์ รองจากรถยนต์ การเดินทางทั้งหมด 27 เปอร์เซ็นต์ใช้จักรยาน ผู้ที่อายุ 6 ปีขึ้นไปปั่นโดยเฉลี่ยปีนั้น 266 ครั้ง 1,065 กิโลเมตร และ 96 ชั่วโมง\n\nส่วนใหญ่เป็นการปั่นระยะสั้น 70 เปอร์เซ็นต์ของการปั่นทั้งหมดสั้นกว่า 3.7 กิโลเมตร วัยรุ่นอายุ 12 ถึง 18 ปีปั่นมากที่สุด โดยเฉลี่ยวันละ 1.5 ครั้ง",
+      "en": "Cycling in numbers (2023).\n\nIn 2023 the bicycle was, after the car, the most used means of transport in the Netherlands: 27 percent of all trips went by bicycle. A person of 6 years or older cycled on average 266 times that year, 1065 kilometres and 96 hours.\n\nMost rides are short: 70 percent of all bicycle rides were shorter than 3.7 kilometres. Young people from 12 to 18 cycle the most: on average 1.5 times a day."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "fts.bewering"
+       ],
+       "ask": {
+        "nl": "Waar of niet waar? De meeste fietsritten zijn langer dan 10 kilometer.",
+        "th": "จริงหรือไม่จริง การปั่นส่วนใหญ่ยาวกว่า 10 กิโลเมตร",
+        "en": "True or false? Most bicycle rides are longer than 10 kilometres."
+       },
+       "opts": [
+        {
+         "t": "Niet waar",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. 70 procent van de fietsritten was korter dan 3,7 kilometer.",
+          "th": "ถูกต้อง 70 เปอร์เซ็นต์ของการปั่นสั้นกว่า 3.7 กิโลเมตร",
+          "en": "Right. 70 percent of the rides were shorter than 3.7 kilometres."
+         }
+        },
+        {
+         "t": "Waar",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst zegt: 70 procent was korter dan 3,7 kilometer.",
+          "th": "ไม่ใช่ ข้อความบอกว่า 70 เปอร์เซ็นต์สั้นกว่า 3.7 กิโลเมตร",
+          "en": "No. The text says: 70 percent was shorter than 3.7 kilometres."
+         }
+        }
+       ],
+       "answer": "Niet waar"
+      },
+      {
+       "form": "number",
+       "items": [
+        "fts.gemiddeld"
+       ],
+       "ask": {
+        "nl": "Hoeveel uur fietste een inwoner in 2023 gemiddeld? Typ een getal.",
+        "th": "ในปี 2023 ชาวเนเธอร์แลนด์ปั่นโดยเฉลี่ยกี่ชั่วโมง พิมพ์ตัวเลข",
+        "en": "How many hours did an inhabitant cycle on average in 2023? Type a number."
+       },
+       "answer": "96",
+       "err": "getal",
+       "tol": 5,
+       "hint": [
+        {
+         "nl": "Het zijn bijna honderd uur.",
+         "th": "เกือบร้อยชั่วโมง",
+         "en": "It is almost a hundred hours."
+        },
+        {
+         "nl": "Het getal begint met 9.",
+         "th": "ตัวเลขขึ้นต้นด้วย 9",
+         "en": "The number starts with 9."
+        }
+       ],
+       "why": {
+        "nl": "Goed. Gemiddeld 96 uur per jaar.",
+        "th": "ถูกต้อง โดยเฉลี่ย 96 ชั่วโมงต่อปี",
+        "en": "Right. On average 96 hours a year."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "fts.vervoermiddel"
+       ],
+       "ask": {
+        "nl": "Waar of niet waar? In 2023 was de fiets na de auto het meest gebruikte vervoermiddel.",
+        "th": "จริงหรือไม่จริง ในปี 2023 จักรยานเป็นพาหนะที่ใช้มากที่สุดรองจากรถยนต์",
+        "en": "True or false? In 2023 the bicycle was, after the car, the most used means of transport."
+       },
+       "opts": [
+        {
+         "t": "Niet waar",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Het klopt wel: 27 procent van alle verplaatsingen ging op de fiets.",
+          "th": "จริง การเดินทาง 27 เปอร์เซ็นต์ใช้จักรยาน",
+          "en": "It is true: 27 percent of all trips went by bicycle."
+         }
+        },
+        {
+         "t": "Waar",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. 27 procent van alle verplaatsingen ging op de fiets.",
+          "th": "ถูกต้อง การเดินทาง 27 เปอร์เซ็นต์ใช้จักรยาน",
+          "en": "Right. 27 percent of all trips went by bicycle."
+         }
+        }
+       ],
+       "answer": "Waar"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "items": [
+      "fts.bewering",
+      "fts.vervoermiddel"
+     ],
+     "ask": {
+      "nl": "Waar of niet waar? In 1959 werd er in Nederland nog meer gefietst dan met de auto gereden (gemeten in reizigerskilometers).",
+      "th": "จริงหรือไม่จริง ในปี 1959 คนเนเธอร์แลนด์ยังปั่นจักรยานมากกว่าขับรถ (วัดเป็นกิโลเมตรของผู้เดินทาง)",
+      "en": "True or false? In 1959 people in the Netherlands still cycled more than they drove (measured in passenger kilometres)."
+     },
+     "opts": [
+      {
+       "t": "Niet waar",
+       "r": "no",
+       "err": "getal",
+       "why": {
+        "nl": "Het klopt wel. In 1959 was het aantal fietskilometers voor het laatst groter dan dat van de auto.",
+        "th": "จริง ในปี 1959 เป็นครั้งสุดท้ายที่กิโลเมตรจักรยานมากกว่ารถยนต์",
+        "en": "It is true. In 1959 the number of bicycle kilometres was for the last time bigger than that of the car."
+       }
+      },
+      {
+       "t": "Waar",
+       "r": "ok",
+       "why": {
+        "nl": "Goed. In 1959 was het aantal fietskilometers voor het laatst groter dan dat van de auto: ongeveer 17 miljard kilometer.",
+        "th": "ถูกต้อง ในปี 1959 เป็นครั้งสุดท้ายที่กิโลเมตรจักรยานมากกว่ารถยนต์ ประมาณ 17 พันล้านกิโลเมตร",
+        "en": "Right. In 1959 the number of bicycle kilometres was for the last time bigger than that of the car: about 17 billion kilometres."
+       }
+      }
+     ],
+     "answer": "Waar",
+     "why": {
+      "nl": "In 1959 werd er ongeveer 17 miljard kilometer gefietst, per Nederlander ongeveer 1500 kilometer. Daarna won de auto.",
+      "th": "ในปี 1959 ปั่นจักรยานรวมประมาณ 17 พันล้านกิโลเมตร ต่อคนประมาณ 1,500 กิโลเมตร หลังจากนั้นรถยนต์แซงหน้า",
+      "en": "In 1959 about 17 billion kilometres were cycled, about 1500 kilometres per Dutch person. After that the car won."
+     },
+     "err": "getal",
+     "guess": true
+    },
+    {
+     "type": "read",
+     "items": [
+      "fts.fietspad",
+      "fts.fietser"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Geschiedenis_van_het_fietsen_in_Nederland",
+       "title": "Wikipedia: Geschiedenis van het fietsen in Nederland"
+      }
+     ],
+     "text": {
+      "nl": "Een dip, en weer omhoog.\n\nIn de jaren zestig en zeventig groeide het autoverkeer. De fiets kwam in de knel. Tussen 1974 en 1977 fietsten Nederlanders per persoon ongeveer 700 kilometer per jaar, minder dan de 1500 kilometer van 1959.\n\nIn de jaren zeventig richtten fietsers een eigen bond op, die later de Fietsersbond ging heten. Tussen 1978 en 1988 groeide het aantal kilometers fietspad van 9.300 naar 16.100 kilometer, dat is 73 procent meer. Het wegennet voor auto’s groeide maar met 11 procent. Het fietsen nam weer toe.",
+      "th": "ลดลง แล้วเพิ่มขึ้นอีกครั้ง\n\nในทศวรรษ 1960 และ 1970 การจราจรของรถยนต์เพิ่มขึ้น จักรยานเสียเปรียบ ระหว่างปี 1974 ถึง 1977 คนเนเธอร์แลนด์ปั่นต่อคนประมาณ 700 กิโลเมตรต่อปี น้อยกว่า 1,500 กิโลเมตรในปี 1959\n\nในทศวรรษ 1970 ผู้ปั่นจักรยานรวมตัวกันตั้งสมาคมของตนเอง ซึ่งต่อมาเรียกว่า Fietsersbond ระหว่างปี 1978 ถึง 1988 ทางจักรยานเพิ่มจาก 9,300 เป็น 16,100 กิโลเมตร คือเพิ่มขึ้น 73 เปอร์เซ็นต์ ส่วนถนนสำหรับรถยนต์เพิ่มเพียง 11 เปอร์เซ็นต์ การปั่นจักรยานจึงกลับมาเพิ่มขึ้นอีก",
+      "en": "A dip, and up again.\n\nIn the sixties and seventies car traffic grew. The bicycle was squeezed. Between 1974 and 1977 Dutch people cycled about 700 kilometres per person per year, less than the 1500 kilometres of 1959.\n\nIn the seventies cyclists set up their own association, which was later called the Fietsersbond. Between 1978 and 1988 the number of kilometres of cycle path grew from 9,300 to 16,100 kilometres, which is 73 percent more. The road network for cars grew by only 11 percent. Cycling grew again."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "fts.fietspad"
+       ],
+       "ask": {
+        "nl": "Waar of niet waar? Tussen 1978 en 1988 groeide het aantal kilometers fietspad sneller dan het wegennet voor auto’s.",
+        "th": "จริงหรือไม่จริง ระหว่างปี 1978 ถึง 1988 ทางจักรยานเพิ่มเร็วกว่าถนนสำหรับรถยนต์",
+        "en": "True or false? Between 1978 and 1988 the number of kilometres of cycle path grew faster than the road network for cars."
+       },
+       "opts": [
+        {
+         "t": "Waar",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. 73 procent meer fietspad, tegen 11 procent meer weg voor auto’s.",
+          "th": "ถูกต้อง ทางจักรยานเพิ่ม 73 เปอร์เซ็นต์ ส่วนถนนรถยนต์เพิ่ม 11 เปอร์เซ็นต์",
+          "en": "Right. 73 percent more cycle path, compared with 11 percent more road for cars."
+         }
+        },
+        {
+         "t": "Niet waar",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst zegt: fietspad plus 73 procent, wegen voor auto’s plus 11 procent.",
+          "th": "ไม่ใช่ ข้อความบอกว่า ทางจักรยาน +73 เปอร์เซ็นต์ ถนนรถยนต์ +11 เปอร์เซ็นต์",
+          "en": "No. The text says: cycle path plus 73 percent, roads for cars plus 11 percent."
+         }
+        }
+       ],
+       "answer": "Waar"
+      },
+      {
+       "form": "choose",
+       "items": [
+        "fts.bewering"
+       ],
+       "ask": {
+        "nl": "Waar of niet waar? Tussen 1974 en 1977 fietsten Nederlanders per persoon meer dan in 1959.",
+        "th": "จริงหรือไม่จริง ระหว่างปี 1974 ถึง 1977 คนเนเธอร์แลนด์ปั่นต่อคนมากกว่าปี 1959",
+        "en": "True or false? Between 1974 and 1977 Dutch people cycled more per person than in 1959."
+       },
+       "opts": [
+        {
+         "t": "Waar",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Tussen 1974 en 1977 was het ongeveer 700 kilometer per persoon, in 1959 ongeveer 1500.",
+          "th": "ไม่ใช่ ระหว่างปี 1974 ถึง 1977 ประมาณ 700 กิโลเมตรต่อคน ส่วนปี 1959 ประมาณ 1,500",
+          "en": "No. Between 1974 and 1977 it was about 700 kilometres per person, in 1959 about 1500."
+         }
+        },
+        {
+         "t": "Niet waar",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Tussen 1974 en 1977 was het ongeveer 700 kilometer per persoon, in 1959 ongeveer 1500.",
+          "th": "ถูกต้อง ระหว่างปี 1974 ถึง 1977 ประมาณ 700 กิโลเมตรต่อคน ส่วนปี 1959 ประมาณ 1,500",
+          "en": "Right. Between 1974 and 1977 it was about 700 kilometres per person, in 1959 about 1500."
+         }
+        }
+       ],
+       "answer": "Niet waar"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "timeline",
+     "items": [
+      "fts.gemiddeld",
+      "fts.fietser"
+     ],
+     "from": 1900,
+     "to": 2030,
+     "scale": "lin",
+     "tol": 15,
+     "marks": [
+      {
+       "y": 1945,
+       "label": {
+        "nl": "einde van de Tweede Wereldoorlog",
+        "th": "สิ้นสุดสงครามโลกครั้งที่สอง",
+        "en": "end of the Second World War"
+       },
+       "known": true
+      }
+     ],
+     "cards": [
+      {
+       "y": 1909,
+       "label": {
+        "nl": "Ongeveer 382.000 fietsen",
+        "th": "จักรยานประมาณ 382,000 คัน",
+        "en": "About 382,000 bicycles"
+       }
+      },
+      {
+       "y": 1939,
+       "label": {
+        "nl": "Ongeveer 3,9 miljoen fietsen",
+        "th": "จักรยานประมาณ 3.9 ล้านคัน",
+        "en": "About 3.9 million bicycles"
+       }
+      },
+      {
+       "y": 1970,
+       "label": {
+        "nl": "Ongeveer 7,3 miljoen fietsen",
+        "th": "จักรยานประมาณ 7.3 ล้านคัน",
+        "en": "About 7.3 million bicycles"
+       }
+      },
+      {
+       "y": 1990,
+       "label": {
+        "nl": "Ongeveer 14,6 miljoen fietsen",
+        "th": "จักรยานประมาณ 14.6 ล้านคัน",
+        "en": "About 14.6 million bicycles"
+       }
+      },
+      {
+       "y": 2019,
+       "label": {
+        "nl": "Ongeveer 22,8 miljoen fietsen",
+        "th": "จักรยานประมาณ 22.8 ล้านคัน",
+        "en": "About 22.8 million bicycles"
+       }
+      }
+     ],
+     "ask": {
+      "nl": "Raad: het aantal fietsen groeide. Zet de vijf cijfers op het jaar waarin ze ongeveer klopten. Ongeveer goed is goed genoeg.",
+      "th": "เดา: จำนวนจักรยานเพิ่มขึ้น วางตัวเลขทั้งห้าบนปีที่ตัวเลขนั้นประมาณถูกต้อง ประมาณก็พอ",
+      "en": "Guess: the number of bicycles grew. Put the five numbers on the year in which they were roughly right. Roughly right is good enough."
+     },
+     "why": {
+      "nl": "In 1909 waren het er ongeveer 382.000, in 1939 ongeveer 3,9 miljoen, in 1970 ongeveer 7,3 miljoen, in 1990 ongeveer 14,6 miljoen en rond 2019 ongeveer 22,8 miljoen.",
+      "th": "ในปี 1909 มีประมาณ 382,000 คัน ในปี 1939 ประมาณ 3.9 ล้านคัน ในปี 1970 ประมาณ 7.3 ล้านคัน ในปี 1990 ประมาณ 14.6 ล้านคัน และราวปี 2019 ประมาณ 22.8 ล้านคัน",
+      "en": "In 1909 there were about 382,000, in 1939 about 3.9 million, in 1970 about 7.3 million, in 1990 about 14.6 million and around 2019 about 22.8 million."
+     },
+     "err": "tijd",
+     "guess": true
+    },
+    {
+     "type": "make",
+     "items": [
+      "fts.fietspad",
+      "fts.vervoermiddel"
+     ],
+     "ask": {
+      "nl": "Waarom zijn er zoveel fietsen in Nederland? Noem één reden uit de les, in je eigen woorden.",
+      "th": "ทำไมเนเธอร์แลนด์จึงมีจักรยานมากมาย บอกเหตุผลหนึ่งข้อจากบทเรียนด้วยคำของคุณเอง",
+      "en": "Why are there so many bicycles in the Netherlands? Give one reason from the lesson, in your own words."
+     },
+     "frame": "Er zijn veel fietsen, want ...",
+     "model": "Er zijn veel fietsen, want de meeste ritten zijn kort en er zijn veel fietspaden.",
+     "checklist": [
+      {
+       "nl": "Ik heb een reden uit de les genoemd.",
+       "th": "ฉันบอกเหตุผลจากบทเรียนแล้ว",
+       "en": "I gave a reason from the lesson."
+      },
+      {
+       "nl": "Ik heb “want” gebruikt.",
+       "th": "ฉันใช้คำว่า “want”",
+       "en": "I used “want”."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "fts.fietspad",
+      "fts.vervoermiddel"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Geschiedenis_van_het_fietsen_in_Nederland",
+       "title": "Wikipedia: Geschiedenis van het fietsen in Nederland"
+      },
+      {
+       "url": "https://www.cbs.nl/nl-nl/visualisaties/verkeer-en-vervoer/personen/fietsen",
+       "title": "CBS: Hoeveel fietsen inwoners van Nederland?"
+      }
+     ],
+     "text": {
+      "nl": "Meer dan één reden.\n\nEen enkel antwoord is er niet. In de bronnen staan een paar dingen. Rond 1900 werd de fiets goedkoper, en er kwam ook een markt voor tweedehands fietsen. Er kwamen eigen organisaties voor fietsers. Vanaf 1978 kwamen er veel fietspaden bij. En veel ritten zijn kort: 70 procent is korter dan 3,7 kilometer.",
+      "th": "มากกว่าหนึ่งเหตุผล\n\nไม่มีคำตอบเดียว ในแหล่งข้อมูลมีหลายอย่าง ราวปี 1900 จักรยานถูกลง และมีตลาดจักรยานมือสองด้วย มีองค์กรของผู้ปั่นจักรยานโดยเฉพาะ ตั้งแต่ปี 1978 มีทางจักรยานเพิ่มมากมาย และการปั่นส่วนใหญ่เป็นระยะสั้น 70 เปอร์เซ็นต์สั้นกว่า 3.7 กิโลเมตร",
+      "en": "More than one reason.\n\nThere is no single answer. The sources mention a few things. Around 1900 the bicycle became cheaper, and a market for second-hand bicycles appeared. Organisations for cyclists were founded. From 1978 many cycle paths were added. And many rides are short: 70 percent is shorter than 3.7 kilometres."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "fts.fietspad"
+       ],
+       "ask": {
+        "nl": "Welke reden staat in de tekst?",
+        "th": "เหตุผลใดอยู่ในข้อความ",
+        "en": "Which reason is in the text?"
+       },
+       "opts": [
+        {
+         "t": "De overheid gaf iedereen gratis een fiets",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. Wel: de fiets werd goedkoper.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ แต่มีว่า จักรยานถูกลง",
+          "en": "No. That is not in the text. What is there: the bicycle became cheaper."
+         }
+        },
+        {
+         "t": "Er kwamen veel fietspaden bij",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Vanaf 1978 groeide het aantal fietspaden sterk.",
+          "th": "ถูกต้อง ตั้งแต่ปี 1978 ทางจักรยานเพิ่มขึ้นมาก",
+          "en": "Right. From 1978 the number of cycle paths grew strongly."
+         }
+        },
+        {
+         "t": "In Nederland regent het nooit",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat nergens, en het klopt ook niet.",
+          "th": "ไม่ใช่ ไม่มีที่ไหนบอกแบบนั้น และก็ไม่จริง",
+          "en": "No. That is nowhere stated, and it is not true either."
+         }
+        }
+       ],
+       "answer": "Er kwamen veel fietspaden bij"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: Nederland heeft meer fietsen dan inwoners, de meeste ritten zijn kort, en er zijn meer redenen voor, zoals goedkopere fietsen en fietspaden.",
+      "th": "ตอนนี้คุณเล่าได้ว่า เนเธอร์แลนด์มีจักรยานมากกว่าประชากร การปั่นส่วนใหญ่เป็นระยะสั้น และมีหลายเหตุผล เช่น จักรยานถูกลงและมีทางจักรยาน",
+      "en": "You can now tell: the Netherlands has more bicycles than inhabitants, most rides are short, and there are several reasons, such as cheaper bicycles and cycle paths."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

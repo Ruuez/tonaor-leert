@@ -1,0 +1,695 @@
+{
+ "format": 1,
+ "id": "ao-schilderen-17e",
+ "type": "les",
+ "version": 1,
+ "order": 39,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "kunst",
+ "vorm": "twee dingen naast elkaar",
+ "draden": [
+  "ao-amsterdam-rijkste",
+  "ao-gezellig",
+  "ao-inflatie"
+ ],
+ "title": {
+  "nl": "Waarom schilderde men in de zeventiende eeuw zoveel gewone mensen?",
+  "th": "ทำไมในศตวรรษที่สิบเจ็ดจึงวาดภาพคนธรรมดามากมาย",
+  "en": "Why were so many ordinary people painted in the seventeenth century?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age_painting",
+   "title": "Wikipedia: Dutch Golden Age painting"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Flemish_Baroque_painting",
+   "title": "Wikipedia: Flemish Baroque painting"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+   "title": "Wikipedia: Gouden Eeuw (Nederland)"
+  },
+  {
+   "url": "https://pure.eur.nl/en/publications/a-mass-market-for-the-visual-arts-the-golden-age-of-dutch-paintin/",
+   "title": "Erasmus Universiteit Rotterdam (Vermeylen): A mass market for the visual arts"
+  }
+ ],
+ "items": [
+  {
+   "id": "sch.schilderij",
+   "kind": "word",
+   "w": "schilderij",
+   "art": "het",
+   "tr": {
+    "th": "ภาพวาด",
+    "en": "painting"
+   },
+   "def": "Een plaatje dat iemand met verf heeft gemaakt.",
+   "ex": "Het schilderij hangt boven de bank.",
+   "gap": "Het ___ hangt in een lijst aan de muur.",
+   "wrong": [
+    "brood",
+    "glas",
+    "spek"
+   ]
+  },
+  {
+   "id": "sch.burger",
+   "kind": "word",
+   "w": "burger",
+   "art": "de",
+   "tr": {
+    "th": "ชาวเมือง, ชนชั้นกลาง",
+    "en": "citizen, townsperson"
+   },
+   "def": "Iemand die in een stad woont, vaak met een eigen werk of handel. Het is geen edelman.",
+   "ex": "De rijke burger liet een portret schilderen.",
+   "gap": "De rijke ___ betaalt voor een portret.",
+   "wrong": [
+    "tafel",
+    "pan",
+    "fiets"
+   ]
+  },
+  {
+   "id": "sch.opdracht",
+   "kind": "word",
+   "w": "opdracht",
+   "art": "de",
+   "tr": {
+    "th": "งานที่ได้รับสั่ง, การว่าจ้าง",
+    "en": "commission, assignment"
+   },
+   "def": "Iemand vraagt je iets te maken en betaalt daarvoor.",
+   "ex": "De schilder kreeg een opdracht voor een portret.",
+   "gap": "De ___ voor een portret komt van een rijke koopman.",
+   "wrong": [
+    "trein",
+    "jas",
+    "soep"
+   ]
+  },
+  {
+   "id": "sch.kerk",
+   "kind": "word",
+   "w": "kerk",
+   "art": "de",
+   "tr": {
+    "th": "โบสถ์",
+    "en": "church"
+   },
+   "def": "Een gebouw waar christenen samen bidden.",
+   "ex": "De kerk heeft een hoge toren.",
+   "gap": "De ___ in het dorp heeft een hoge toren.",
+   "wrong": [
+    "bakker",
+    "fiets",
+    "tas"
+   ]
+  },
+  {
+   "id": "sch.alledaags",
+   "kind": "word",
+   "w": "alledaags",
+   "art": "",
+   "tr": {
+    "th": "ในชีวิตประจำวัน, ธรรมดา",
+    "en": "everyday"
+   },
+   "def": "Wat elke dag voorkomt en niet bijzonder is.",
+   "ex": "Op het schilderij zie je een alledaags tafereel.",
+   "gap": "Op het schilderij zie je een ___ tafereel: een vrouw die melk schenkt.",
+   "wrong": [
+    "gisteren",
+    "vanmorgen",
+    "onderweg"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-schilderen-17e-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom schilderde men in de zeventiende eeuw zoveel gewone mensen?",
+    "th": "ทำไมในศตวรรษที่สิบเจ็ดจึงวาดภาพคนธรรมดามากมาย",
+    "en": "Why were so many ordinary people painted in the seventeenth century?"
+   },
+   "intro": {
+    "nl": "Twee werelden naast elkaar: het zuiden en het noorden. Eerst een schatting, dan zie je waarom ze zo anders schilderden.",
+    "th": "สองโลกเคียงกัน: ทางใต้และทางเหนือ ประมาณก่อน แล้วดูว่าทำไมวาดแตกต่างกัน",
+    "en": "Two worlds side by side: the south and the north. First an estimate, then you see why they painted so differently."
+   },
+   "can": {
+    "nl": "Uitleggen waarom in het noorden zoveel gewone mensen en alledaagse tafereeltjes werden geschilderd",
+    "th": "อธิบายได้ว่าทำไมทางเหนือจึงวาดคนธรรมดาและฉากชีวิตประจำวันมากมาย",
+    "en": "Explain why so many ordinary people and everyday scenes were painted in the north"
+   },
+   "targets": [
+    "sch.schilderij",
+    "sch.burger",
+    "sch.opdracht",
+    "sch.kerk",
+    "sch.alledaags"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "apricot",
+    "alt": {
+     "nl": "Een kamer met een tafel, een raam en twee borden: Schilderij en Kerk.",
+     "th": "ห้องที่มีโต๊ะ หน้าต่าง และป้ายสองป้าย: ภาพวาดและโบสถ์",
+     "en": "A room with a table, a window and two signs: Painting and Church."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     },
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56
+     },
+     {
+      "kind": "sign",
+      "x": 70,
+      "y": 70,
+      "text": "Schilderij",
+      "hot": true,
+      "item": "sch.schilderij",
+      "label": {
+       "nl": "Schilderij: een plaatje met verf gemaakt",
+       "th": "ภาพวาด: ภาพที่ทำด้วยสี",
+       "en": "Painting: a picture made with paint"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 170,
+      "y": 100,
+      "text": "Kerk",
+      "hot": true,
+      "item": "sch.kerk",
+      "label": {
+       "nl": "Kerk: waar christenen samen bidden",
+       "th": "โบสถ์: ที่ที่คริสต์ศาสนิกชนสวดมนต์ร่วมกัน",
+       "en": "Church: where Christians pray together"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "sch.schilderij"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel schilderijen werden er in de twintig jaar na 1640 in Nederland gemaakt?",
+        "th": "ประมาณการ: ในยี่สิบปีหลังปี 1640 มีการวาดภาพกี่ภาพในเนเธอร์แลนด์",
+        "en": "Estimate: how many paintings were made in the Netherlands in the twenty years after 1640?"
+       },
+       "opts": [
+        {
+         "t": "Ongeveer 13.000",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Veel meer. Je leest zo het getal.",
+          "th": "มากกว่านั้นมาก เดี๋ยวคุณจะได้อ่านตัวเลข",
+          "en": "Many more. You read the number in a moment."
+         }
+        },
+        {
+         "t": "Ongeveer 130.000 schilderijen in totaal",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nog meer. Je leest zo het getal.",
+          "th": "ยิ่งมากกว่านั้น เดี๋ยวคุณจะได้อ่านตัวเลข",
+          "en": "Even more. You read the number in a moment."
+         }
+        },
+        {
+         "t": "Meer dan een miljoen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Naar schatting meer dan 1,3 miljoen. Geen wonder: ze hingen overal.",
+          "th": "ถูกต้อง ประมาณมากกว่า 1.3 ล้านภาพ ไม่แปลก เพราะมีแขวนอยู่ทุกที่",
+          "en": "Right. An estimated more than 1.3 million. No wonder: they hung everywhere."
+         }
+        }
+       ],
+       "answer": "Meer dan een miljoen",
+       "guess": true
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "sch.kerk",
+      "sch.burger",
+      "sch.opdracht"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age_painting",
+       "title": "Wikipedia: Dutch Golden Age painting"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Flemish_Baroque_painting",
+       "title": "Wikipedia: Flemish Baroque painting"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+       "title": "Wikipedia: Gouden Eeuw (Nederland)"
+      }
+     ],
+     "text": {
+      "nl": "Twee werelden.\n\nIn de zeventiende eeuw waren er in de Lage Landen twee werelden naast elkaar.\n\nIn het zuiden, in Vlaanderen, was het land katholiek. Daar zat een hof in Brussel en de kerk bestelde veel schilderijen. In Antwerpen schilderden kunstenaars als Rubens grote altaarstukken en dramatische schilderijen.\n\nIn het noorden, in de Republiek, was het anders. In de Calvinistische kerken hingen geen schilderijen. De kerk was dus geen klant meer. Er was geen koning, en er waren weinig grote adellijke huizen. De klanten waren vooral rijke kooplieden en andere burgers.",
+      "th": "สองโลก\n\nในศตวรรษที่สิบเจ็ด ในดินแดนต่ำ (เนเธอร์แลนด์และเบลเยียมในปัจจุบัน)มีสองโลกอยู่เคียงกัน\n\nทางใต้ ในแฟลนเดอร์ส แผ่นดินเป็นคาทอลิก มีราชสำนักในบรัสเซลส์ และโบสถ์สั่งภาพวาดมากมาย ในแอนต์เวิร์ป ศิลปินอย่างรูเบนส์วาดภาพแท่นบูชาขนาดใหญ่และภาพที่เร้าอารมณ์\n\nทางเหนือ ในสาธารณรัฐ เป็นอีกแบบ ในโบสถ์นิกายคาลวินไม่มีภาพวาดแขวนอยู่ โบสถ์จึงไม่ใช่ลูกค้าอีกต่อไป ไม่มีกษัตริย์ และมีบ้านขุนนางใหญ่ไม่กี่หลัง ลูกค้าส่วนใหญ่เป็นพ่อค้ามั่งคั่งและชาวเมืองอื่น ๆ",
+      "en": "Two worlds.\n\nIn the seventeenth century there were two worlds side by side in the Low Countries.\n\nIn the south, in Flanders, the region was Catholic. There was a court in Brussels and the church ordered many paintings. In Antwerp artists such as Rubens painted large altarpieces and dramatic paintings.\n\nIn the north, in the Republic, it was different. In the Calvinist churches no paintings hung. So the church was no longer a customer. There was no king, and there were few large noble houses. The customers were mostly rich merchants and other citizens."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "sch.kerk"
+       ],
+       "ask": {
+        "nl": "Waarom hingen er in de Hollandse kerken geen schilderijen met Bijbelverhalen?",
+        "th": "ทำไมในโบสถ์ของฮอลแลนด์จึงไม่มีภาพเรื่องราวในคัมภีร์ไบเบิล",
+        "en": "Why were there no paintings with Bible stories in the Dutch churches?"
+       },
+       "opts": [
+        {
+         "t": "Omdat er geen schilders waren",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Er waren heel veel schilders. Maar in de Calvinistische kerken hingen geen schilderijen.",
+          "th": "ไม่ใช่ มีจิตรกรมากมาย แต่ในโบสถ์นิกายคาลวินไม่มีภาพวาดแขวนอยู่",
+          "en": "No. There were very many painters. But in the Calvinist churches no paintings hung."
+         }
+        },
+        {
+         "t": "Omdat de Calvinistische kerk geen schilderijen wilde",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Daardoor verdween een grote klant van de schilders.",
+          "th": "ถูกต้อง ทำให้ลูกค้ารายใหญ่ของจิตรกรหายไป",
+          "en": "Right. As a result a large customer of the painters disappeared."
+         }
+        },
+        {
+         "t": "Omdat schilderijen in de kerk te duur waren voor de dorpen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. In de kerken hingen geen schilderijen.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ ในโบสถ์ไม่มีภาพวาดแขวนอยู่",
+          "en": "No. That is not in the text. No paintings hung in the churches."
+         }
+        }
+       ],
+       "answer": "Omdat de Calvinistische kerk geen schilderijen wilde"
+      },
+      {
+       "form": "choose",
+       "items": [
+        "sch.burger"
+       ],
+       "ask": {
+        "nl": "Wie waren in het noorden vooral de klanten van de schilders?",
+        "th": "ใครคือลูกค้าหลักของจิตรกรทางเหนือ",
+        "en": "Who were mostly the customers of the painters in the north?"
+       },
+       "opts": [
+        {
+         "t": "De koning en de adel",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Er was geen koning, en er waren weinig grote adellijke huizen.",
+          "th": "ไม่ใช่ ไม่มีกษัตริย์ และมีบ้านขุนนางใหญ่ไม่กี่หลัง",
+          "en": "No. There was no king, and there were few large noble houses."
+         }
+        },
+        {
+         "t": "Rijke kooplieden en andere burgers",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Zij wilden portretten en schilderijen voor in huis.",
+          "th": "ถูกต้อง พวกเขาต้องการภาพเหมือนและภาพสำหรับแขวนในบ้าน",
+          "en": "Right. They wanted portraits and paintings for their homes."
+         }
+        },
+        {
+         "t": "De kerk",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De Calvinistische kerk wilde geen schilderijen in de kerk.",
+          "th": "ไม่ใช่ โบสถ์นิกายคาลวินไม่ต้องการภาพในโบสถ์",
+          "en": "No. The Calvinist church wanted no paintings in the church."
+         }
+        }
+       ],
+       "answer": "Rijke kooplieden en andere burgers"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "items": [
+      "sch.schilderij",
+      "sch.alledaags"
+     ],
+     "ask": {
+      "nl": "Welk schilderij past bij de Republiek in het noorden?",
+      "th": "ภาพใดเหมาะกับสาธารณรัฐทางเหนือ",
+      "en": "Which painting fits the Republic in the north?"
+     },
+     "opts": [
+      {
+       "t": "Een enorm altaarstuk met engelen voor een kerk",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Dat past bij het katholieke zuiden. In het noorden hingen geen schilderijen in de kerken.",
+        "th": "ไม่ใช่ นั่นเหมาะกับทางใต้ที่เป็นคาทอลิก ทางเหนือไม่มีภาพแบบนี้แขวนในโบสถ์",
+        "en": "No. That fits the Catholic south. In the north no such paintings hung in the churches."
+       }
+      },
+      {
+       "t": "Een vrouw die in een keuken melk schenkt",
+       "r": "ok",
+       "why": {
+        "nl": "Goed. Zo’n alledaags tafereel past bij de burgers in het noorden. Het bekendste voorbeeld is Het melkmeisje van Vermeer.",
+        "th": "ถูกต้อง ฉากชีวิตประจำวันแบบนี้เหมาะกับชาวเมืองทางเหนือ ตัวอย่างที่รู้จักที่สุดคือ Het melkmeisje ของเฟอร์เมร์",
+        "en": "Right. Such an everyday scene fits the citizens in the north. The best-known example is The Milkmaid by Vermeer."
+       }
+      },
+      {
+       "t": "Een groot plafond met goden voor een paleis",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Er waren in het noorden weinig paleizen en grote adellijke huizen.",
+        "th": "ไม่ใช่ ทางเหนือมีวังและบ้านขุนนางใหญ่น้อย",
+        "en": "No. In the north there were few palaces and large noble houses."
+       }
+      }
+     ],
+     "answer": "Een vrouw die in een keuken melk schenkt",
+     "why": {
+      "nl": "In het noorden werden veel alledaagse tafereeltjes, portretten en landschappen geschilderd, voor burgers.",
+      "th": "ทางเหนือมีการวาดฉากชีวิตประจำวัน ภาพเหมือน และภูมิทัศน์มากมาย สำหรับชาวเมือง",
+      "en": "In the north many everyday scenes, portraits and landscapes were painted, for citizens."
+     },
+     "err": "betekenis"
+    },
+    {
+     "type": "read",
+     "items": [
+      "sch.schilderij",
+      "sch.opdracht",
+      "sch.burger"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age_painting",
+       "title": "Wikipedia: Dutch Golden Age painting"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+       "title": "Wikipedia: Gouden Eeuw (Nederland)"
+      },
+      {
+       "url": "https://pure.eur.nl/en/publications/a-mass-market-for-the-visual-arts-the-golden-age-of-dutch-paintin/",
+       "title": "Erasmus Universiteit Rotterdam (Vermeylen): A mass market for the visual arts"
+      }
+     ],
+     "text": {
+      "nl": "Een markt vol schilderijen.\n\nEr werd enorm veel geschilderd. Naar schatting zijn er in de twintig jaar na 1640 meer dan 1,3 miljoen schilderijen gemaakt. Een Engelse reiziger schreef in 1640 dat zelfs smeden en schoenmakers een schilderij bij hun werkplek hadden. Dat was waarschijnlijk wat overdreven.\n\nVeel schilderijen waren niet in opdracht gemaakt. Schilders verkochten ze via handelaren en op markten. Omdat er zoveel waren, waren ze niet duur, en velen konden er een kopen. Schilders specialiseerden zich: portretten, landschappen, tafereeltjes uit het dagelijks leven, bloemen.",
+      "th": "ตลาดที่เต็มไปด้วยภาพวาด\n\nมีการวาดภาพกันมหาศาล ตามการประมาณ ในยี่สิบปีหลังปี 1640 มีภาพวาดมากกว่า 1.3 ล้านภาพ นักเดินทางชาวอังกฤษเขียนไว้ในปี 1640 ว่าแม้แต่ช่างตีเหล็กและช่างทำรองเท้ายังมีภาพวาดไว้ที่ที่ทำงาน ซึ่งน่าจะเกินจริงไปหน่อย\n\nภาพวาดจำนวนมากไม่ได้ทำตามการว่าจ้าง จิตรกรขายผ่านพ่อค้าและในตลาด เพราะมีมากมาย จึงไม่แพง และหลายคนซื้อได้ จิตรกรเชี่ยวชาญเฉพาะด้าน: ภาพเหมือน ภูมิทัศน์ ฉากชีวิตประจำวัน ดอกไม้",
+      "en": "A market full of paintings.\n\nAn enormous amount was painted. An estimated more than 1.3 million paintings were made in the twenty years after 1640. An English traveller wrote in 1640 that even blacksmiths and cobblers had a painting at their workplace. That was probably a bit exaggerated.\n\nMany paintings were not made on commission. Painters sold them through dealers and at markets. Because there were so many, they were not expensive, and many people could buy one. Painters specialised: portraits, landscapes, scenes from daily life, flowers."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "sch.schilderij"
+       ],
+       "ask": {
+        "nl": "Waarom konden zoveel mensen een schilderij kopen?",
+        "th": "ทำไมคนจำนวนมากจึงซื้อภาพวาดได้",
+        "en": "Why could so many people buy a painting?"
+       },
+       "opts": [
+        {
+         "t": "De overheid gaf ze gratis weg",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ",
+          "en": "No. That is not in the text."
+         }
+        },
+        {
+         "t": "Schilders werkten zonder te verdienen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Schilders verkochten hun werk via handelaren en op markten.",
+          "th": "ไม่ใช่ จิตรกรขายผลงานผ่านพ่อค้าและในตลาด",
+          "en": "No. Painters sold their work through dealers and at markets."
+         }
+        },
+        {
+         "t": "Er waren er zoveel dat ze niet duur waren",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Veel aanbod betekende lage prijzen, behalve voor de bekendste schilders.",
+          "th": "ถูกต้อง มีมากก็ราคาถูก ยกเว้นจิตรกรที่มีชื่อเสียงที่สุด",
+          "en": "Right. Much supply meant low prices, except for the best-known painters."
+         }
+        }
+       ],
+       "answer": "Er waren er zoveel dat ze niet duur waren"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "sch.opdracht"
+       ],
+       "ask": {
+        "nl": "Maak af: Veel schilderijen waren niet in ___ gemaakt.",
+        "th": "เติมคำ: ภาพวาดจำนวนมากไม่ได้ทำตาม ___",
+        "en": "Complete: Many paintings were not made on ___."
+       },
+       "answer": "opdracht",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Iemand vraagt je iets te maken en betaalt ervoor.",
+         "th": "มีคนขอให้คุณทำและจ่ายเงิน",
+         "en": "Someone asks you to make something and pays for it."
+        },
+        {
+         "nl": "Begin zo: op…",
+         "th": "ขึ้นต้นแบบนี้: op…",
+         "en": "Start like this: op…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Veel schilderijen werden eerst gemaakt en daarna verkocht.",
+        "th": "ถูกต้อง ภาพวาดจำนวนมากถูกทำก่อนแล้วจึงขาย",
+        "en": "Right. Many paintings were made first and sold afterwards."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "items": [
+      "sch.schilderij"
+     ],
+     "ask": {
+      "nl": "Klopt het dat de schilders die wij nu het beroemdst vinden, toen allemaal rijk werden?",
+      "th": "จริงไหมที่จิตรกรที่เราถือว่าโด่งดังที่สุดในวันนี้ ร่ำรวยกันทุกคนในสมัยนั้น",
+      "en": "Is it true that the painters we now consider the most famous all became rich at the time?"
+     },
+     "opts": [
+      {
+       "t": "Ja, want iedereen wilde hun werk kopen voor heel veel geld",
+       "r": "no",
+       "err": "lezen",
+       "why": {
+        "nl": "Nee. Sommigen verdienden weinig.",
+        "th": "ไม่ใช่ บางคนหาเงินได้น้อย",
+        "en": "No. Some earned little."
+       }
+      },
+      {
+       "t": "Nee: sommigen, zoals Vermeer, hadden moeite om te leven",
+       "r": "ok",
+       "why": {
+        "nl": "Goed. Vermeer was toen weinig bekend, en Rembrandt raakte uit de mode. Ze verdienden weinig en stierven arm.",
+        "th": "ถูกต้อง เฟอร์เมร์ในสมัยนั้นไม่ค่อยเป็นที่รู้จัก และแรมบรันต์ตกยุค พวกเขาหาเงินได้น้อยและเสียชีวิตอย่างยากจน",
+        "en": "Right. Vermeer was little known at the time, and Rembrandt went out of fashion. They earned little and died poor."
+       }
+      },
+      {
+       "t": "Dat weten we niet",
+       "r": "no",
+       "err": "lezen",
+       "why": {
+        "nl": "Nee. Het staat in de bronnen.",
+        "th": "ไม่ใช่ มีอยู่ในแหล่งข้อมูล",
+        "en": "No. It is in the sources."
+       }
+      }
+     ],
+     "answer": "Nee: sommigen, zoals Vermeer, hadden moeite om te leven",
+     "why": {
+      "nl": "Schilders zonder grote naam of die uit de mode raakten, hadden moeite om te leven. Ook later beroemde schilders stierven soms arm.",
+      "th": "จิตรกรที่ไม่มีชื่อเสียงหรือตกยุคมีชีวิตลำบาก จิตรกรที่ต่อมาโด่งดังบางคนก็เสียชีวิตอย่างยากจน",
+      "en": "Painters without a big name or who fell out of fashion had trouble making a living. Some painters who became famous later also died poor."
+     },
+     "err": "lezen"
+    },
+    {
+     "type": "make",
+     "items": [
+      "sch.burger",
+      "sch.schilderij",
+      "sch.opdracht"
+     ],
+     "ask": {
+      "nl": "Stel je voor: je bent schilder in de Republiek. Wie zijn je klanten en wat schilder je? Schrijf twee zinnen.",
+      "th": "ลองนึกภาพ: คุณเป็นจิตรกรในสาธารณรัฐ ลูกค้าของคุณคือใครและคุณวาดอะไร เขียนสองประโยค",
+      "en": "Imagine: you are a painter in the Republic. Who are your customers and what do you paint? Write two sentences."
+     },
+     "frame": "Mijn klanten zijn ... Ik schilder ...",
+     "model": "Mijn klanten zijn kooplieden en burgers. Ik schilder portretten en alledaagse tafereeltjes.",
+     "checklist": [
+      {
+       "nl": "Ik heb klanten en onderwerpen genoemd.",
+       "th": "ฉันบอกลูกค้าและเรื่องที่วาดแล้ว",
+       "en": "I named customers and subjects."
+      },
+      {
+       "nl": "Mijn antwoord past bij het noorden, niet bij de kerk of het hof.",
+       "th": "คำตอบของฉันเหมาะกับทางเหนือ ไม่ใช่โบสถ์หรือราชสำนัก",
+       "en": "My answer fits the north, not the church or the court."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "sch.schilderij",
+      "sch.alledaags"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age_painting",
+       "title": "Wikipedia: Dutch Golden Age painting"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+       "title": "Wikipedia: Gouden Eeuw (Nederland)"
+      }
+     ],
+     "text": {
+      "nl": "Wat zie je echt?\n\nEen schilderij van het dagelijks leven is niet altijd een foto. Veel schilderijen laten ook een spreekwoord of een les zien. Wat zo’n schilderij precies bedoelt, is nu soms moeilijk te zien. Kunsthistorici denken er nog steeds over na.",
+      "th": "คุณเห็นอะไรจริง ๆ\n\nภาพวาดชีวิตประจำวันไม่ได้เป็นภาพถ่ายเสมอไป ภาพวาดหลายภาพแสดงสุภาษิตหรือบทเรียนด้วย ภาพแบบนี้ต้องการสื่ออะไรแน่ บางครั้งตอนนี้ยากจะเห็น นักประวัติศาสตร์ศิลป์ยังคงคิดเรื่องนี้อยู่",
+      "en": "What do you really see?\n\nA painting of daily life is not always a photograph. Many paintings also show a proverb or a lesson. What such a painting exactly means is sometimes hard to see now. Art historians still think about it."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "sch.alledaags"
+       ],
+       "ask": {
+        "nl": "Wat kan een schilderij van het dagelijks leven ook laten zien?",
+        "th": "ภาพวาดชีวิตประจำวันอาจแสดงอะไรอีก",
+        "en": "What else can a painting of daily life show?"
+       },
+       "opts": [
+        {
+         "t": "Altijd een precieze foto van de werkelijkheid",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De bron zegt dat de nauwkeurigheid niet altijd vaststaat.",
+          "th": "ไม่ใช่ แหล่งข้อมูลบอกว่าความแม่นยำไม่ได้แน่นอนเสมอไป",
+          "en": "No. The source says the accuracy cannot always be taken for granted."
+         }
+        },
+        {
+         "t": "Een spreekwoord of een les",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Veel tafereeltjes hadden zo’n bedoeling.",
+          "th": "ถูกต้อง ฉากหลายฉากมีความหมายแบบนี้",
+          "en": "Right. Many scenes had such a meaning."
+         }
+        },
+        {
+         "t": "Alleen een portret van de schilder",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het gaat om tafereeltjes met mensen zonder bekende naam.",
+          "th": "ไม่ใช่ เป็นฉากที่มีผู้คนไม่ทราบชื่อ",
+          "en": "No. These are scenes with people without a known name."
+         }
+        }
+       ],
+       "answer": "Een spreekwoord of een les"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: in het noorden schilderden schilders veel alledaagse tafereeltjes en portretten, omdat de kerk geen schilderijen meer vroeg en burgers de klanten waren. In het zuiden waren kerk en hof grote klanten.",
+      "th": "ตอนนี้คุณเล่าได้ว่า ทางเหนือจิตรกรวาดฉากชีวิตประจำวันและภาพเหมือนมากมาย เพราะโบสถ์ไม่ต้องการภาพวาดอีกและลูกค้าคือชาวเมือง ทางใต้โบสถ์และราชสำนักเป็นลูกค้ารายใหญ่",
+      "en": "You can now tell: in the north painters made many everyday scenes and portraits, because the church no longer asked for paintings and citizens were the customers. In the south church and court were big customers."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

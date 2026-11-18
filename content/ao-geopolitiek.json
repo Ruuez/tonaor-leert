@@ -1,0 +1,640 @@
+{
+ "format": 1,
+ "id": "ao-geopolitiek",
+ "type": "les",
+ "version": 1,
+ "order": 37,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "politiek",
+ "vorm": "een keten van oorzaak en gevolg",
+ "draden": [
+  "ao-zijderoute",
+  "ao-mekong",
+  "ao-stille-oceaan"
+ ],
+ "title": {
+  "nl": "Wat is geopolitiek, in één voorbeeld?",
+  "th": "ภูมิรัฐศาสตร์คืออะไร ด้วยตัวอย่างหนึ่ง",
+  "en": "What is geopolitics, in one example?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Strait_of_Malacca",
+   "title": "Wikipedia: Strait of Malacca"
+  },
+  {
+   "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints/",
+   "title": "U.S. Energy Information Administration: World Oil Transit Chokepoints"
+  }
+ ],
+ "items": [
+  {
+   "id": "geo.geopolitiek",
+   "kind": "word",
+   "w": "geopolitiek",
+   "art": "de",
+   "tr": {
+    "th": "ภูมิรัฐศาสตร์",
+    "en": "geopolitics"
+   },
+   "def": "Hoe de ligging van landen en zeeën invloed heeft op politiek en macht.",
+   "ex": "Geopolitiek gaat over kaarten, handel en macht.",
+   "gap": "De ___ gaat over ligging, handel en macht van landen.",
+   "wrong": [
+    "fiets",
+    "soep",
+    "jas"
+   ]
+  },
+  {
+   "id": "geo.zeestraat",
+   "kind": "word",
+   "w": "zeestraat",
+   "art": "de",
+   "tr": {
+    "th": "ช่องแคบ",
+    "en": "strait"
+   },
+   "def": "Een smalle zee tussen twee stukken land.",
+   "ex": "Het schip vaart door de zeestraat.",
+   "gap": "Het schip vaart door de smalle ___ naar de oceaan.",
+   "wrong": [
+    "kast",
+    "bril",
+    "trap"
+   ]
+  },
+  {
+   "id": "geo.olie",
+   "kind": "word",
+   "w": "olie",
+   "art": "de",
+   "tr": {
+    "th": "น้ำมัน",
+    "en": "oil"
+   },
+   "def": "Een dikke vloeistof uit de grond. Er worden brandstof en andere dingen van gemaakt.",
+   "ex": "De tanker vervoert olie.",
+   "gap": "De ___ gaat met een tanker over zee.",
+   "wrong": [
+    "bril",
+    "kast",
+    "sok"
+   ]
+  },
+  {
+   "id": "geo.afhankelijk",
+   "kind": "word",
+   "w": "afhankelijk",
+   "art": "",
+   "tr": {
+    "th": "พึ่งพา",
+    "en": "dependent"
+   },
+   "def": "Je hebt iets of iemand nodig en kunt niet zonder.",
+   "ex": "Veel landen zijn afhankelijk van olie.",
+   "gap": "Een land is ___ van olie uit andere landen.",
+   "wrong": [
+    "boven",
+    "gisteren",
+    "rood"
+   ]
+  },
+  {
+   "id": "geo.alternatief",
+   "kind": "word",
+   "w": "alternatief",
+   "art": "het",
+   "tr": {
+    "th": "ทางเลือก",
+    "en": "alternative"
+   },
+   "def": "Een andere manier of een andere weg.",
+   "ex": "Als de weg dicht is, zoek je een alternatief.",
+   "gap": "Het ___ is een andere weg of een andere manier.",
+   "wrong": [
+    "brood",
+    "raam",
+    "dak"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-geopolitiek-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Wat is geopolitiek, in één voorbeeld?",
+    "th": "ภูมิรัฐศาสตร์คืออะไร ด้วยตัวอย่างหนึ่ง",
+    "en": "What is geopolitics, in one example?"
+   },
+   "intro": {
+    "nl": "Eerst een schatting. Dan zoek je een smalle zeestraat op de kaart en volg je de keten van oorzaak en gevolg.",
+    "th": "ประมาณก่อน แล้วหาช่องแคบบนแผนที่ และติดตามห่วงโซ่เหตุและผล",
+    "en": "First an estimate. Then you find a narrow strait on the map and follow the chain of cause and effect."
+   },
+   "can": {
+    "nl": "Met één voorbeeld uitleggen wat geopolitiek is",
+    "th": "อธิบายได้ว่าภูมิรัฐศาสตร์คืออะไรด้วยตัวอย่างหนึ่ง",
+    "en": "Explain with one example what geopolitics is"
+   },
+   "targets": [
+    "geo.geopolitiek",
+    "geo.zeestraat",
+    "geo.olie",
+    "geo.afhankelijk",
+    "geo.alternatief"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "kind": "map",
+    "map": "azie",
+    "zoom": [
+     92,
+     -6,
+     112,
+     12
+    ],
+    "hl": [
+     "MY",
+     "ID"
+    ],
+    "pins": [
+     {
+      "at": [
+       103.82,
+       1.35
+      ],
+      "label": {
+       "nl": "Singapore",
+       "th": "สิงคโปร์",
+       "en": "Singapore"
+      }
+     }
+    ],
+    "line": {
+     "pts": [
+      [
+       98.3,
+       5.5
+      ],
+      [
+       99.4,
+       4.4
+      ],
+      [
+       100.6,
+       3.1
+      ],
+      [
+       101.8,
+       2
+      ],
+      [
+       103,
+       1.4
+      ],
+      [
+       103.8,
+       1.2
+      ]
+     ],
+     "label": {
+      "nl": "Straat van Malakka (schema)",
+      "th": "ช่องแคบมะละกา (แผนผัง)",
+      "en": "Strait of Malacca (sketch)"
+     },
+     "draw": true
+    },
+    "alt": {
+     "nl": "Kaart van Zuidoost-Azië met de Straat van Malakka tussen Maleisië en Sumatra.",
+     "th": "แผนที่เอเชียตะวันออกเฉียงใต้ แสดงช่องแคบมะละการะหว่างมาเลเซียกับสุมาตรา",
+     "en": "Map of Southeast Asia with the Strait of Malacca between Malaysia and Sumatra."
+    }
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "geo.olie",
+        "geo.zeestraat"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel procent van alle olie die over zee wordt vervoerd, gaat door de Straat van Malakka? Typ een getal.",
+        "th": "ประมาณการ: น้ำมันที่ขนส่งทางทะเลทั้งหมด กี่เปอร์เซ็นต์ผ่านช่องแคบมะละกา พิมพ์ตัวเลข",
+        "en": "Estimate: what percentage of all oil transported by sea goes through the Strait of Malacca? Type a number."
+       },
+       "answer": "29",
+       "err": "getal",
+       "tol": 10,
+       "why": {
+        "nl": "Het is ongeveer 29 procent, volgens de Amerikaanse energie-instantie EIA (eerste helft van 2025).",
+        "th": "ประมาณ 29 เปอร์เซ็นต์ ตามข้อมูลของหน่วยงานพลังงานสหรัฐ EIA (ครึ่งแรกของปี 2025)",
+        "en": "It is about 29 percent, according to the American energy agency EIA (first half of 2025)."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "geo.zeestraat"
+     ],
+     "map": "azie",
+     "zoom": [
+      92,
+      -6,
+      112,
+      12
+     ],
+     "hl": [
+      "MY",
+      "ID"
+     ],
+     "pins": [
+      {
+       "at": [
+        103.82,
+        1.35
+       ],
+       "label": {
+        "nl": "Singapore",
+        "th": "สิงคโปร์",
+        "en": "Singapore"
+       }
+      }
+     ],
+     "ask": {
+      "nl": "Twee landen zijn gekleurd: Maleisië (met het schiereiland) en Indonesië (met het eiland Sumatra). Ertussen ligt de Straat van Malakka. Tik ongeveer aan waar die ligt.",
+      "th": "สองประเทศมีสี: มาเลเซีย (ที่มีคาบสมุทร) และอินโดนีเซีย (ที่มีเกาะสุมาตรา) ระหว่างสองประเทศคือช่องแคบมะละกา แตะประมาณตำแหน่งของช่องแคบ",
+      "en": "Two countries are coloured: Malaysia (with the peninsula) and Indonesia (with the island of Sumatra). Between them lies the Strait of Malacca. Tap roughly where it is."
+     },
+     "answer": [
+      100.5,
+      3.6
+     ],
+     "tol": 450,
+     "err": "betekenis",
+     "why": {
+      "nl": "De Straat van Malakka ligt tussen het Maleisische schiereiland en het eiland Sumatra. Ze verbindt de Indische Oceaan met de Zuid-Chinese Zee, en Singapore ligt aan het zuidelijke einde.",
+      "th": "ช่องแคบมะละกาอยู่ระหว่างคาบสมุทรมลายูกับเกาะสุมาตรา เชื่อมมหาสมุทรอินเดียกับทะเลจีนใต้ และสิงคโปร์อยู่ที่ปลายด้านใต้",
+      "en": "The Strait of Malacca lies between the Malay peninsula and the island of Sumatra. It connects the Indian Ocean with the South China Sea, and Singapore is at the southern end."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "geo.zeestraat",
+      "geo.olie"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Strait_of_Malacca",
+       "title": "Wikipedia: Strait of Malacca"
+      },
+      {
+       "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints/",
+       "title": "U.S. Energy Information Administration: World Oil Transit Chokepoints"
+      }
+     ],
+     "text": {
+      "nl": "Een smalle weg.\n\nDe Straat van Malakka verbindt de Indische Oceaan met de Zuid-Chinese Zee. Ze is ongeveer 900 kilometer lang en 65 tot 250 kilometer breed.\n\nHet is de kortste zeeroute tussen de olie van het Midden-Oosten en de landen van Oost-Azië. Daarom varen er heel veel schepen: meer dan 94.000 per jaar (in 2008). Volgens een schatting uit 2003 gaat ongeveer een kwart van alle verhandelde goederen in de wereld erdoorheen.",
+      "th": "ทางแคบ\n\nช่องแคบมะละกาเชื่อมมหาสมุทรอินเดียกับทะเลจีนใต้ ยาวประมาณ 900 กิโลเมตร และกว้าง 65 ถึง 250 กิโลเมตร\n\nเป็นเส้นทางทะเลที่สั้นที่สุดระหว่างน้ำมันจากตะวันออกกลางกับประเทศในเอเชียตะวันออก ดังนั้นจึงมีเรือแล่นผ่านมากมาย มากกว่า 94,000 ลำต่อปี (ในปี 2008) ตามการประมาณในปี 2003 สินค้าที่ซื้อขายกันทั่วโลกราวหนึ่งในสี่ผ่านที่นี่",
+      "en": "A narrow road.\n\nThe Strait of Malacca connects the Indian Ocean with the South China Sea. It is about 900 kilometres long and 65 to 250 kilometres wide.\n\nIt is the shortest sea route between the oil of the Middle East and the countries of East Asia. That is why very many ships sail there: more than 94,000 a year (in 2008). According to an estimate from 2003 about a quarter of all goods traded in the world pass through it."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "geo.zeestraat"
+       ],
+       "ask": {
+        "nl": "Waarom varen er zoveel schepen door de Straat van Malakka?",
+        "th": "ทำไมจึงมีเรือแล่นผ่านช่องแคบมะละกามากมาย",
+        "en": "Why do so many ships sail through the Strait of Malacca?"
+       },
+       "opts": [
+        {
+         "t": "Omdat dit de enige zee in heel Azië is waar schepen kunnen varen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Er zijn meer zeeën in Azië. Deze straat is de kortste route.",
+          "th": "ไม่ใช่ ในเอเชียมีทะเลอื่นอีก ช่องแคบนี้เป็นเส้นทางที่สั้นที่สุด",
+          "en": "No. There are more seas in Asia. This strait is the shortest route."
+         }
+        },
+        {
+         "t": "Omdat het de kortste zeeroute is naar Oost-Azië",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat maakt de straat zo druk.",
+          "th": "ถูกต้อง นั่นทำให้ช่องแคบนี้คับคั่ง",
+          "en": "Right. That makes the strait so busy."
+         }
+        },
+        {
+         "t": "Omdat er daar nooit storm is",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. De reden is de korte route.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ เหตุผลคือเส้นทางสั้น",
+          "en": "No. That is not in the text. The reason is the short route."
+         }
+        }
+       ],
+       "answer": "Omdat het de kortste zeeroute is naar Oost-Azië"
+      },
+      {
+       "form": "number",
+       "items": [
+        "geo.zeestraat"
+       ],
+       "ask": {
+        "nl": "Hoeveel schepen per jaar (in 2008)? Typ een getal.",
+        "th": "มีเรือกี่ลำต่อปี (ในปี 2008) พิมพ์ตัวเลข",
+        "en": "How many ships a year (in 2008)? Type a number."
+       },
+       "answer": "94000",
+       "err": "getal",
+       "tol": 10000,
+       "accept": [
+        "94.000"
+       ],
+       "hint": [
+        {
+         "nl": "Het zijn er bijna honderdduizend.",
+         "th": "เกือบหนึ่งแสนลำ",
+         "en": "It is almost a hundred thousand."
+        },
+        {
+         "nl": "Het getal begint met 94.",
+         "th": "ตัวเลขขึ้นต้นด้วย 94",
+         "en": "The number starts with 94."
+        }
+       ],
+       "why": {
+        "nl": "Goed. Meer dan 94.000 schepen per jaar.",
+        "th": "ถูกต้อง มากกว่า 94,000 ลำต่อปี",
+        "en": "Right. More than 94,000 ships a year."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "geo.afhankelijk",
+      "geo.alternatief",
+      "geo.geopolitiek"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Strait_of_Malacca",
+       "title": "Wikipedia: Strait of Malacca"
+      },
+      {
+       "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints/",
+       "title": "U.S. Energy Information Administration: World Oil Transit Chokepoints"
+      }
+     ],
+     "text": {
+      "nl": "Van route naar zorg.\n\nVeel olie voor China komt via deze straat. In 2003 gebruikte de toenmalige Chinese president Hu Jintao de term “Malakka-dilemma”. Hij bedoelde: als er iets misgaat in de straat, heeft China een probleem. Volgens een schatting gaat ongeveer 80 procent van de ruwe olie die China invoert, door de straat. Ook andere landen in Oost-Azië krijgen veel olie via de straat.\n\nDit is een voorbeeld van geopolitiek: de ligging van een plek heeft invloed op de macht en de politiek van landen. Er zijn alternatieven, maar die zijn langer of kleiner. Schepen kunnen door de Straat van Lombok of de Straat van Soenda, of een langere route nemen. En er is een oliepijpleiding van Myanmar naar het zuidwesten van China.",
+      "th": "จากเส้นทางสู่ความกังวล\n\nน้ำมันจำนวนมากสำหรับจีนมาทางช่องแคบนี้ ในปี 2003 ประธานาธิบดีจีนในขณะนั้น หู จิ่นเทา ใช้คำว่า “ปัญหาคอขวดมะละกา” (Malakka-dilemma) เขาหมายความว่า ถ้ามีอะไรผิดพลาดในช่องแคบ จีนจะมีปัญหา ตามการประมาณ น้ำมันดิบที่จีนนำเข้าประมาณ 80 เปอร์เซ็นต์ผ่านช่องแคบนี้ ประเทศอื่นในเอเชียตะวันออกก็ได้รับน้ำมันจำนวนมากผ่านช่องแคบนี้ด้วย\n\nนี่เป็นตัวอย่างของภูมิรัฐศาสตร์ ที่ตั้งของสถานที่มีผลต่ออำนาจและการเมืองของประเทศ มีทางเลือกอื่น แต่ยาวกว่าหรือเล็กกว่า เรือสามารถผ่านช่องแคบลอมบอกหรือช่องแคบซุนดา หรือใช้เส้นทางที่ยาวกว่า และมีท่อส่งน้ำมันจากเมียนมาไปยังทางตะวันตกเฉียงใต้ของจีน",
+      "en": "From route to worry.\n\nA lot of oil for China comes through this strait. In 2003 the then Chinese president Hu Jintao used the term “Malacca dilemma”. He meant: if something goes wrong in the strait, China has a problem. According to an estimate about 80 percent of the crude oil that China imports goes through the strait. Other countries in East Asia also get a lot of oil through the strait.\n\nThis is an example of geopolitics: the position of a place influences the power and politics of countries. There are alternatives, but they are longer or smaller. Ships can go through the Lombok Strait or the Sunda Strait, or take a longer route. And there is an oil pipeline from Myanmar to the southwest of China."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "geo.afhankelijk"
+       ],
+       "ask": {
+        "nl": "Wat bedoelde het “Malakka-dilemma”?",
+        "th": "คำว่า “ปัญหาคอขวดมะละกา” หมายถึงอะไร",
+        "en": "What did the “Malacca dilemma” mean?"
+       },
+       "opts": [
+        {
+         "t": "Als er iets misgaat in de straat, heeft China een probleem",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. China is voor een groot deel van zijn olie afhankelijk van die route.",
+          "th": "ถูกต้อง จีนพึ่งพาเส้นทางนี้สำหรับน้ำมันจำนวนมาก",
+          "en": "Right. China depends on that route for a large part of its oil."
+         }
+        },
+        {
+         "t": "Een ruzie tussen landen over de naam en de grens van de straat",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het ging om de zorg voor de olie, niet om de naam.",
+          "th": "ไม่ใช่ เป็นเรื่องความกังวลเกี่ยวกับน้ำมัน ไม่ใช่เรื่องชื่อ",
+          "en": "No. It was about the worry for oil, not about the name."
+         }
+        },
+        {
+         "t": "Een tekort aan schepen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Er varen juist heel veel schepen.",
+          "th": "ไม่ใช่ มีเรือแล่นอยู่มากมาย",
+          "en": "No. There are in fact very many ships."
+         }
+        }
+       ],
+       "answer": "Als er iets misgaat in de straat, heeft China een probleem"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "geo.afhankelijk"
+       ],
+       "ask": {
+        "nl": "Maak af: Een land dat olie van buiten haalt, is ___ van die route.",
+        "th": "เติมคำ: ประเทศที่นำเข้าน้ำมันจากภายนอก ___ เส้นทางนั้น",
+        "en": "Complete: A country that gets oil from outside is ___ on that route."
+       },
+       "answer": "afhankelijk",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Je hebt het nodig en kunt niet zonder.",
+         "th": "คุณต้องการมันและขาดไม่ได้",
+         "en": "You need it and cannot do without."
+        },
+        {
+         "nl": "Begin zo: afhank…",
+         "th": "ขึ้นต้นแบบนี้: afhank…",
+         "en": "Start like this: afhank…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Afhankelijk: je hebt het nodig en kunt niet zonder.",
+        "th": "ถูกต้อง afhankelijk คือ ต้องการและขาดไม่ได้",
+        "en": "Right. Dependent: you need it and cannot do without."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "geo.geopolitiek",
+      "geo.afhankelijk"
+     ],
+     "ask": {
+      "nl": "Zet de keten van oorzaak en gevolg in de goede volgorde.",
+      "th": "เรียงห่วงโซ่เหตุและผลให้ถูกต้อง",
+      "en": "Put the chain of cause and effect in the right order."
+     },
+     "answer": "De zeestraat is de kortste route Daarom varen er heel veel schepen Daardoor zijn landen afhankelijk van de route Daarom zoeken ze andere routes",
+     "data": {
+      "parts": [
+       "De zeestraat is de kortste route",
+       "Daarom varen er heel veel schepen",
+       "Daardoor zijn landen afhankelijk van de route",
+       "Daarom zoeken ze andere routes"
+      ],
+      "tr": {
+       "th": "ช่องแคบเป็นเส้นทางที่สั้นที่สุด ดังนั้นจึงมีเรือแล่นมากมาย เพราะเหตุนี้ประเทศต่าง ๆ จึงพึ่งพาเส้นทาง ดังนั้นพวกเขาจึงหาเส้นทางอื่น",
+       "en": "The strait is the shortest route. That is why very many ships sail. Because of that countries depend on the route. That is why they look for other routes."
+      }
+     },
+     "why": {
+      "nl": "Eerst: de zeestraat is de kortste route. Daarom varen er veel schepen. Daardoor zijn landen afhankelijk van de route. Daarom zoeken ze andere routes, zoals een pijpleiding.",
+      "th": "ก่อนอื่น ช่องแคบเป็นเส้นทางที่สั้นที่สุด ดังนั้นมีเรือมาก เพราะเหตุนี้ประเทศต่าง ๆ พึ่งพาเส้นทาง ดังนั้นจึงหาเส้นทางอื่น เช่น ท่อส่งน้ำมัน",
+      "en": "First: the strait is the shortest route. That is why many ships sail. Because of that countries depend on the route. That is why they look for other routes, such as a pipeline."
+     },
+     "err": "woordvolgorde",
+     "help": 0
+    },
+    {
+     "type": "make",
+     "items": [
+      "geo.geopolitiek",
+      "geo.zeestraat"
+     ],
+     "ask": {
+      "nl": "Leg in twee zinnen uit waarom een smalle zeestraat belangrijk kan zijn voor landen ver weg.",
+      "th": "อธิบายในสองประโยคว่า ทำไมช่องแคบแคบ ๆ จึงสำคัญต่อประเทศที่อยู่ไกล",
+      "en": "Explain in two sentences why a narrow strait can matter to countries far away."
+     },
+     "frame": "De Straat van Malakka is belangrijk, want ...",
+     "model": "De Straat van Malakka is belangrijk, want veel schepen met olie varen erdoor. Landen ver weg zijn daar afhankelijk van.",
+     "checklist": [
+      {
+       "nl": "Ik heb een reden gegeven met “want”.",
+       "th": "ฉันให้เหตุผลด้วยคำว่า “want”",
+       "en": "I gave a reason with “want”."
+      },
+      {
+       "nl": "Ik heb het woord afhankelijk of olie gebruikt.",
+       "th": "ฉันใช้คำว่า afhankelijk หรือ olie",
+       "en": "I used the word afhankelijk or olie."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "geo.zeestraat",
+      "geo.afhankelijk"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Strait_of_Malacca",
+       "title": "Wikipedia: Strait of Malacca"
+      }
+     ],
+     "text": {
+      "nl": "Samenwerken.\n\nDe landen aan de straat werken samen aan veilige scheepvaart en aan het milieu. Ook landen die er niet aan liggen, doen mee: Japan, China, India, Zuid-Korea, Saoedi-Arabië en de Verenigde Arabische Emiraten betalen vrijwillig mee. De landen aan de straat willen zelf de baas blijven over hun water. Ze werken samen, maar houden de controle.",
+      "th": "การร่วมมือ\n\nประเทศที่อยู่ติดช่องแคบร่วมมือกันเพื่อการเดินเรือที่ปลอดภัยและเพื่อสิ่งแวดล้อม ประเทศที่ไม่ได้ติดช่องแคบก็ร่วมด้วย ญี่ปุ่น จีน อินเดีย เกาหลีใต้ ซาอุดีอาระเบีย และสหรัฐอาหรับเอมิเรตส์ ร่วมสมทบทุนโดยสมัครใจ ประเทศที่อยู่ติดช่องแคบอยากเป็นเจ้าของน่านน้ำของตนเอง พวกเขาร่วมมือกัน แต่ยังคงควบคุมเอง",
+      "en": "Working together.\n\nThe countries by the strait work together on safe shipping and on the environment. Countries that do not lie by it also take part: Japan, China, India, South Korea, Saudi Arabia and the United Arab Emirates contribute voluntarily. The countries by the strait want to stay in charge of their own waters. They work together, but keep control."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "geo.zeestraat"
+       ],
+       "ask": {
+        "nl": "Wie betaalt mee aan de veiligheid in de straat?",
+        "th": "ใครร่วมจ่ายเพื่อความปลอดภัยในช่องแคบ",
+        "en": "Who contributes to safety in the strait?"
+       },
+       "opts": [
+        {
+         "t": "Alleen de landen aan de straat",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Ook landen die er ver vandaan liggen, zoals Japan en India, betalen mee.",
+          "th": "ไม่ใช่ ประเทศที่อยู่ไกลออกไป เช่น ญี่ปุ่นและอินเดีย ก็ร่วมจ่ายด้วย",
+          "en": "No. Countries that lie far away, such as Japan and India, also contribute."
+         }
+        },
+        {
+         "t": "Ook landen die er niet aan liggen, zoals Japan en India",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het gaat om vrijwillige bijdragen.",
+          "th": "ถูกต้อง เป็นการสมทบโดยสมัครใจ",
+          "en": "Right. These are voluntary contributions."
+         }
+        },
+        {
+         "t": "Niemand",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Er zijn vrijwillige bijdragen van zes landen.",
+          "th": "ไม่ใช่ มีการสมทบโดยสมัครใจจากหกประเทศ",
+          "en": "No. There are voluntary contributions from six countries."
+         }
+        }
+       ],
+       "answer": "Ook landen die er niet aan liggen, zoals Japan en India"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen wat geopolitiek is, met een voorbeeld: de Straat van Malakka is een smalle, drukke route waar veel landen afhankelijk van zijn.",
+      "th": "ตอนนี้คุณเล่าได้ว่าภูมิรัฐศาสตร์คืออะไร พร้อมตัวอย่าง: ช่องแคบมะละกาเป็นเส้นทางแคบและคับคั่งที่หลายประเทศพึ่งพา",
+      "en": "You can now tell what geopolitics is, with an example: the Strait of Malacca is a narrow, busy route that many countries depend on."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

@@ -1,0 +1,485 @@
+{
+ "format": 1,
+ "id": "ao-maan",
+ "type": "les",
+ "version": 1,
+ "order": 28,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "wetenschap",
+ "vorm": "eerst schatten",
+ "draden": [
+  "ao-twaalf-maanden",
+  "ao-zout",
+  "ao-vaccin"
+ ],
+ "title": {
+  "nl": "Hoe ver is de maan?",
+  "th": "ดวงจันทร์อยู่ไกลแค่ไหน",
+  "en": "How far is the moon?"
+ },
+ "sources": [
+  {
+   "url": "https://science.nasa.gov/moon/facts/",
+   "title": "NASA: Moon Facts"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Moon",
+   "title": "Wikipedia: Moon"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Apollo_11",
+   "title": "Wikipedia: Apollo 11"
+  }
+ ],
+ "items": [
+  {
+   "id": "mon.afstand",
+   "kind": "word",
+   "w": "afstand",
+   "art": "de",
+   "tr": {
+    "th": "ระยะทาง",
+    "en": "distance"
+   },
+   "def": "De ruimte tussen twee dingen.",
+   "ex": "De afstand tot school is drie kilometer.",
+   "gap": "De ___ tussen de aarde en de maan is groot.",
+   "wrong": [
+    "pan",
+    "jas",
+    "bril"
+   ]
+  },
+  {
+   "id": "mon.kilometer",
+   "kind": "word",
+   "w": "kilometer",
+   "art": "de",
+   "tr": {
+    "th": "กิโลเมตร",
+    "en": "kilometre"
+   },
+   "def": "Een lengte van duizend meter.",
+   "ex": "Ik fiets vijf kilometer naar mijn werk.",
+   "gap": "De ___ is een lengte van duizend meter.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "wolk"
+   ]
+  },
+  {
+   "id": "mon.baan",
+   "kind": "word",
+   "w": "baan",
+   "art": "de",
+   "tr": {
+    "th": "วงโคจร (เส้นทางที่ดวงจันทร์เคลื่อนที่)",
+    "en": "orbit, path"
+   },
+   "def": "De weg die iets aflegt, bijvoorbeeld om de aarde.",
+   "ex": "De maan heeft een vaste baan.",
+   "gap": "De maan volgt de ___ om de aarde.",
+   "wrong": [
+    "tas",
+    "bus",
+    "lamp"
+   ]
+  },
+  {
+   "id": "mon.raket",
+   "kind": "word",
+   "w": "raket",
+   "art": "de",
+   "tr": {
+    "th": "จรวด",
+    "en": "rocket"
+   },
+   "def": "Een voertuig dat de ruimte in vliegt.",
+   "ex": "De raket vertrok uit Florida.",
+   "gap": "De ___ vliegt de ruimte in.",
+   "wrong": [
+    "kassa",
+    "bakker",
+    "bank"
+   ]
+  },
+  {
+   "id": "mon.astronaut",
+   "kind": "word",
+   "w": "astronaut",
+   "art": "de",
+   "tr": {
+    "th": "นักบินอวกาศ",
+    "en": "astronaut"
+   },
+   "def": "Iemand die in de ruimte reist.",
+   "ex": "De astronaut liep op de maan.",
+   "gap": "De ___ reist naar de maan.",
+   "wrong": [
+    "fiets",
+    "kast",
+    "trap"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-maan-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Hoe ver is de maan?",
+    "th": "ดวงจันทร์อยู่ไกลแค่ไหน",
+    "en": "How far is the moon?"
+   },
+   "intro": {
+    "nl": "Eerst een schatting. Daarna zie je hoe ver het echt is en hoe lang mensen erover deden.",
+    "th": "ประมาณก่อน แล้วดูว่าไกลจริงเท่าไรและมนุษย์ใช้เวลานานแค่ไหน",
+    "en": "First an estimate. Then you see how far it really is and how long people took."
+   },
+   "can": {
+    "nl": "Vertellen hoe ver de maan is en hoe de eerste reis ging",
+    "th": "เล่าได้ว่าดวงจันทร์อยู่ไกลแค่ไหนและการเดินทางครั้งแรกเป็นอย่างไร",
+    "en": "Tell how far the moon is and how the first trip went"
+   },
+   "targets": [
+    "mon.afstand",
+    "mon.kilometer",
+    "mon.baan",
+    "mon.raket",
+    "mon.astronaut"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "sky",
+    "alt": {
+     "nl": "Een kamer met een raam en een tafel.",
+     "th": "ห้องที่มีหน้าต่างและโต๊ะ",
+     "en": "A room with a window and a table."
+    },
+    "things": [
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56
+     },
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "mon.afstand"
+       ],
+       "ask": {
+        "nl": "Schat: hoe ver is de maan van de aarde, gemiddeld? Typ het aantal duizenden kilometers. Bij 300.000 km typ je 300.",
+        "th": "ประมาณการ: ดวงจันทร์อยู่ห่างจากโลกโดยเฉลี่ยเท่าไร พิมพ์จำนวนเป็นพันกิโลเมตร ถ้า 300,000 กม. พิมพ์ 300",
+        "en": "Estimate: how far is the moon from the earth, on average? Type the number of thousands of kilometres. For 300,000 km you type 300."
+       },
+       "answer": "384",
+       "tol": 100,
+       "err": "getal",
+       "why": {
+        "nl": "Het is gemiddeld 384.400 kilometer. Dat is 384 duizendtallen.",
+        "th": "เฉลี่ย 384,400 กิโลเมตร คือ 384 พัน",
+        "en": "On average it is 384,400 kilometres. That is 384 thousands."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "mon.afstand",
+      "mon.kilometer",
+      "mon.baan"
+     ],
+     "sources": [
+      {
+       "url": "https://science.nasa.gov/moon/facts/",
+       "title": "NASA: Moon Facts"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Moon",
+       "title": "Wikipedia: Moon"
+      }
+     ],
+     "text": {
+      "nl": "De maan is dichtbij en toch ver weg.\n\nDe maan is gemiddeld 384.400 kilometer van de aarde. Dat is niet altijd even ver: de afstand ligt tussen ongeveer 356.400 en 406.700 kilometer.\n\nLicht doet er ongeveer 1,28 seconde over om die afstand af te leggen. De maan is 3.474 kilometer breed, ongeveer een kwart van de aarde.\n\nDe maan draait in 27 aardse dagen één keer om de aarde. Van volle maan tot volle maan duurt het ongeveer 29,5 dagen.",
+      "th": "ดวงจันทร์ทั้งใกล้และไกล\n\nดวงจันทร์อยู่ห่างจากโลกโดยเฉลี่ย 384,400 กิโลเมตร ไม่ได้ห่างเท่ากันเสมอ ระยะทางอยู่ระหว่างประมาณ 356,400 ถึง 406,700 กิโลเมตร\n\nแสงใช้เวลาประมาณ 1.28 วินาทีในการเดินทางระยะนั้น ดวงจันทร์กว้าง 3,474 กิโลเมตร ประมาณหนึ่งในสี่ของโลก\n\nดวงจันทร์โคจรรอบโลกหนึ่งรอบใน 27 วันของโลก จากพระจันทร์เต็มดวงถึงพระจันทร์เต็มดวงครั้งถัดไปใช้เวลาประมาณ 29.5 วัน",
+      "en": "The moon is close and yet far away.\n\nThe moon is on average 384,400 kilometres from the earth. It is not always equally far: the distance lies between about 356,400 and 406,700 kilometres.\n\nLight takes about 1.28 seconds to cover that distance. The moon is 3,474 kilometres wide, about a quarter of the earth.\n\nThe moon goes around the earth once in 27 earth days. From full moon to full moon it takes about 29.5 days."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "mon.afstand"
+       ],
+       "ask": {
+        "nl": "Hoe lang doet licht erover om van de maan naar de aarde te gaan?",
+        "th": "แสงใช้เวลานานแค่ไหนจากดวงจันทร์มายังโลก",
+        "en": "How long does light take to go from the moon to the earth?"
+       },
+       "opts": [
+        {
+         "t": "Ongeveer 1,3 seconde",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het licht doet er ongeveer 1,28 seconde over.",
+          "th": "ถูกต้อง แสงใช้เวลาประมาณ 1.28 วินาที",
+          "en": "Right. The light takes about 1.28 seconds."
+         }
+        },
+        {
+         "t": "Ongeveer een uur",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Het gaat veel sneller: ongeveer 1,28 seconde.",
+          "th": "ไม่ใช่ เร็วกว่ามาก ประมาณ 1.28 วินาที",
+          "en": "No. It is much faster: about 1.28 seconds."
+         }
+        },
+        {
+         "t": "Ongeveer drie dagen",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Drie dagen is ongeveer hoe lang de astronauten naar de maan reisden, niet het licht. Licht doet er ongeveer 1,28 seconde over.",
+          "th": "ไม่ใช่ สามวันคือระยะเวลาประมาณที่นักบินอวกาศเดินทางไปดวงจันทร์ ไม่ใช่แสง แสงใช้ประมาณ 1.28 วินาที",
+          "en": "No. Three days is about how long the astronauts travelled to the moon, not the light. Light takes about 1.28 seconds."
+         }
+        }
+       ],
+       "answer": "Ongeveer 1,3 seconde"
+      },
+      {
+       "form": "number",
+       "items": [
+        "mon.baan"
+       ],
+       "ask": {
+        "nl": "Hoeveel aardse dagen doet de maan erover om één keer om de aarde te draaien? Typ een getal.",
+        "th": "ดวงจันทร์ใช้เวลากี่วันของโลกในการโคจรรอบโลกหนึ่งรอบ พิมพ์ตัวเลข",
+        "en": "How many earth days does the moon take to go around the earth once? Type a number."
+       },
+       "answer": "27",
+       "tol": 1,
+       "err": "getal",
+       "hint": [
+        {
+         "nl": "Het is bijna een maand, maar iets korter.",
+         "th": "เกือบหนึ่งเดือน แต่สั้นกว่าเล็กน้อย",
+         "en": "It is almost a month, but a little shorter."
+        },
+        {
+         "nl": "Het getal is tussen 25 en 30.",
+         "th": "ตัวเลขอยู่ระหว่าง 25 ถึง 30",
+         "en": "The number is between 25 and 30."
+        }
+       ],
+       "why": {
+        "nl": "Goed. 27 aardse dagen. Van volle maan tot volle maan duurt het ongeveer 29,5 dagen.",
+        "th": "ถูกต้อง 27 วันของโลก จากพระจันทร์เต็มดวงถึงพระจันทร์เต็มดวงครั้งถัดไปใช้เวลาประมาณ 29.5 วัน",
+        "en": "Right. 27 earth days. From full moon to full moon it takes about 29.5 days."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "mon.raket",
+      "mon.astronaut"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Apollo_11",
+       "title": "Wikipedia: Apollo 11"
+      }
+     ],
+     "text": {
+      "nl": "Hoe lang duurde de reis?\n\nOp 16 juli 1969 vertrok in Florida de raket van Apollo 11. Na ongeveer drie dagen was het ruimteschip bij de maan. Op 20 juli landde de maanlander. Neil Armstrong was de eerste mens op de maan. Buzz Aldrin volgde ongeveer negentien minuten later.\n\nOp 24 juli kwam de bemanning veilig terug op aarde, in de Stille Oceaan.",
+      "th": "การเดินทางใช้เวลานานแค่ไหน\n\nวันที่ 16 กรกฎาคม 1969 จรวดของอพอลโล 11 ออกจากฟลอริดา หลังเดินทางประมาณสามวัน ยานก็ไปถึงดวงจันทร์ แล้วในวันที่ 20 กรกฎาคม ยานลงจอดก็ลงจอดบนดวงจันทร์ นีล อาร์มสตรองเป็นมนุษย์คนแรกบนดวงจันทร์ บัซซ์ อัลดรินตามมาประมาณสิบเก้านาทีหลัง\n\nวันที่ 24 กรกฎาคม ลูกเรือกลับถึงโลกอย่างปลอดภัย ในมหาสมุทรแปซิฟิก",
+      "en": "How long was the trip?\n\nOn 16 July 1969 the rocket of Apollo 11 left Florida. After about three days the spacecraft was at the moon. On 20 July the lunar module landed. Neil Armstrong was the first human on the moon. Buzz Aldrin followed about nineteen minutes later.\n\nOn 24 July the crew came back safely to earth, in the Pacific Ocean."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "mon.astronaut"
+       ],
+       "ask": {
+        "nl": "Wie was de eerste mens op de maan?",
+        "th": "ใครเป็นมนุษย์คนแรกบนดวงจันทร์",
+        "en": "Who was the first human on the moon?"
+       },
+       "opts": [
+        {
+         "t": "Neil Armstrong",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Buzz Aldrin volgde ongeveer negentien minuten later.",
+          "th": "ถูกต้อง บัซซ์ อัลดรินตามมาประมาณสิบเก้านาทีหลัง",
+          "en": "Right. Buzz Aldrin followed about nineteen minutes later."
+         }
+        },
+        {
+         "t": "Buzz Aldrin",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Hij was de tweede. Armstrong stapte als eerste uit.",
+          "th": "ไม่ใช่ เขาเป็นคนที่สอง อาร์มสตรองก้าวลงก่อน",
+          "en": "No. He was the second. Armstrong stepped out first."
+         }
+        },
+        {
+         "t": "Niemand, het is nog nooit gelukt",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het lukte in 1969, met Apollo 11.",
+          "th": "ไม่ใช่ สำเร็จในปี 1969 กับอพอลโล 11",
+          "en": "No. It worked in 1969, with Apollo 11."
+         }
+        }
+       ],
+       "answer": "Neil Armstrong"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "mon.raket",
+      "mon.astronaut"
+     ],
+     "ask": {
+      "nl": "Leg de reis van Apollo 11 in de goede volgorde. Bouw de zin.",
+      "th": "เรียงการเดินทางของอพอลโล 11 ให้ถูกลำดับ ต่อประโยค",
+      "en": "Put the trip of Apollo 11 in the right order. Build the sentence."
+     },
+     "data": {
+      "parts": [
+       "Eerst vertrok de raket uit Florida,",
+       "dan landde de maanlander op de maan,",
+       "dan kwam de bemanning terug op aarde, in de Stille Oceaan."
+      ],
+      "tr": {
+       "th": "ก่อนอื่นจรวดออกจากฟลอริดา แล้วยานลงจอดลงบนดวงจันทร์ แล้วลูกเรือกลับถึงโลกในมหาสมุทรแปซิฟิก",
+       "en": "First the rocket left Florida, then the lunar module landed on the moon, then the crew came back to earth, in the Pacific Ocean."
+      }
+     },
+     "answer": "Eerst vertrok de raket uit Florida, dan landde de maanlander op de maan, dan kwam de bemanning terug op aarde, in de Stille Oceaan.",
+     "err": "woordvolgorde",
+     "why": {
+      "nl": "16 juli de start, 20 juli de landing op de maan, 24 juli de terugkomst in de Stille Oceaan.",
+      "th": "16 กรกฎาคมปล่อยจรวด 20 กรกฎาคมลงบนดวงจันทร์ 24 กรกฎาคมกลับลงมหาสมุทรแปซิฟิก",
+      "en": "16 July the launch, 20 July the landing on the moon, 24 July the return in the Pacific Ocean."
+     }
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "mon.afstand"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Moon",
+       "title": "Wikipedia: Moon"
+      }
+     ],
+     "text": {
+      "nl": "Hoe groot is de maan?\n\nDe straal van de maan is ongeveer 0,27 van de straal van de aarde. Dat past bij een breedte van 3.474 kilometer, ongeveer een kwart van de aarde.\n\nNaar de maan reizen is zo ver als ongeveer 9,6 keer om de aarde heen.",
+      "th": "ดวงจันทร์ใหญ่แค่ไหน\n\nรัศมีของดวงจันทร์ประมาณ 0.27 ของรัศมีโลก ซึ่งสอดคล้องกับความกว้าง 3,474 กิโลเมตร ประมาณหนึ่งในสี่ของโลก\n\nระยะทางไปดวงจันทร์เท่ากับการเดินรอบโลกประมาณ 9.6 รอบ",
+      "en": "How big is the moon?\n\nThe radius of the moon is about 0.27 of the radius of the earth. That fits a width of 3,474 kilometres, about a quarter of the earth.\n\nTravelling to the moon is as far as going around the earth about 9.6 times."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "mon.kilometer"
+       ],
+       "ask": {
+        "nl": "Hoe breed is de maan ongeveer?",
+        "th": "ดวงจันทร์กว้างประมาณเท่าไร",
+        "en": "About how wide is the moon?"
+       },
+       "opts": [
+        {
+         "t": "Ongeveer 3.500 kilometer",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het is 3.474 kilometer, ongeveer een kwart van de aarde.",
+          "th": "ถูกต้อง 3,474 กิโลเมตร ประมาณหนึ่งในสี่ของโลก",
+          "en": "Right. It is 3,474 kilometres, about a quarter of the earth."
+         }
+        },
+        {
+         "t": "Ongeveer 350.000 kilometer",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Dat lijkt meer op de afstand tot de aarde: 384.400 kilometer. De breedte is ongeveer 3.500.",
+          "th": "ไม่ใช่ นั่นใกล้เคียงกับระยะทางถึงโลกมากกว่า 384,400 กิโลเมตร ความกว้างประมาณ 3,500",
+          "en": "No. That is more like the distance to the earth: 384,400 kilometres. The width is about 3,500."
+         }
+        },
+        {
+         "t": "Ongeveer 35 kilometer",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Dat is veel te klein. De maan is 3.474 kilometer breed.",
+          "th": "ไม่ใช่ เล็กเกินไปมาก ดวงจันทร์กว้าง 3,474 กิโลเมตร",
+          "en": "No. That is much too small. The moon is 3,474 kilometres wide."
+         }
+        }
+       ],
+       "answer": "Ongeveer 3.500 kilometer"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: de maan is gemiddeld 384.400 kilometer ver. Licht doet er ongeveer 1,28 seconde over en in 1969 duurde de reis naar de maan ongeveer drie dagen.",
+      "th": "ตอนนี้คุณเล่าได้ว่า ดวงจันทร์อยู่ห่างเฉลี่ย 384,400 กิโลเมตร แสงใช้เวลาประมาณ 1.28 วินาที และในปี 1969 การเดินทางไปดวงจันทร์ใช้เวลาประมาณสามวัน",
+      "en": "You can now tell: the moon is on average 384,400 kilometres away. Light takes about 1.28 seconds and in 1969 the trip to the moon took about three days."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

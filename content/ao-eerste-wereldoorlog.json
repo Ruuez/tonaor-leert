@@ -1,0 +1,589 @@
+{
+ "format": 1,
+ "id": "ao-eerste-wereldoorlog",
+ "type": "les",
+ "version": 1,
+ "order": 22,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "geschiedenis",
+ "vorm": "een tijdlijn om zelf te leggen",
+ "draden": [
+  "ao-zeespiegel",
+  "ao-belgie-talen",
+  "ao-koning"
+ ],
+ "title": {
+  "nl": "Waarom begon de Eerste Wereldoorlog?",
+  "th": "ทำไมสงครามโลกครั้งที่หนึ่งจึงเริ่มขึ้น",
+  "en": "Why did the First World War begin?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand",
+   "title": "Wikipedia: Assassination of Archduke Franz Ferdinand"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/July_Crisis",
+   "title": "Wikipedia: July Crisis"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Dual_Alliance_(1879)",
+   "title": "Wikipedia: Dual Alliance (1879)"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Triple_Entente",
+   "title": "Wikipedia: Triple Entente"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Invasion_of_Belgium_(1914)",
+   "title": "Wikipedia: Invasion of Belgium (1914)"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Netherlands_in_World_War_I",
+   "title": "Wikipedia: Netherlands in World War I"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Armistice_of_11_November_1918",
+   "title": "Wikipedia: Armistice of 11 November 1918"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/German-speaking_Community_of_Belgium",
+   "title": "Wikipedia: German-speaking Community of Belgium"
+  }
+ ],
+ "items": [
+  {
+   "id": "wo1.oorlog",
+   "kind": "word",
+   "w": "oorlog",
+   "art": "de",
+   "tr": {
+    "th": "สงคราม",
+    "en": "war"
+   },
+   "def": "Een lange strijd tussen landen met legers.",
+   "ex": "De oorlog duurde vier jaar.",
+   "gap": "De ___ duurde meer dan vier jaar.",
+   "wrong": [
+    "vakantie",
+    "soep",
+    "fiets"
+   ]
+  },
+  {
+   "id": "wo1.aanslag",
+   "kind": "word",
+   "w": "aanslag",
+   "art": "de",
+   "tr": {
+    "th": "การลอบโจมตี",
+    "en": "attack, assassination"
+   },
+   "def": "Een gewelddadige aanval op een belangrijk persoon.",
+   "ex": "De aanslag stond de volgende dag in de krant.",
+   "gap": "Na de ___ was iedereen bang.",
+   "wrong": [
+    "verjaardag",
+    "taart",
+    "pen"
+   ]
+  },
+  {
+   "id": "wo1.bondgenoot",
+   "kind": "word",
+   "w": "bondgenoot",
+   "art": "de",
+   "tr": {
+    "th": "พันธมิตร",
+    "en": "ally"
+   },
+   "def": "Een land dat je helpt in een oorlog.",
+   "ex": "Duitsland was een bondgenoot van Oostenrijk-Hongarije.",
+   "gap": "Als twee landen samen vechten in een oorlog, is elk land de ___ van het andere.",
+   "wrong": [
+    "paraplu",
+    "kassa",
+    "wolk"
+   ]
+  },
+  {
+   "id": "wo1.neutraal",
+   "kind": "word",
+   "w": "neutraal",
+   "art": "",
+   "tr": {
+    "th": "เป็นกลาง",
+    "en": "neutral"
+   },
+   "def": "Je kiest geen kant in een strijd.",
+   "ex": "Nederland bleef neutraal.",
+   "gap": "Een land dat ___ is, kiest geen kant.",
+   "wrong": [
+    "dun",
+    "lekker",
+    "vers"
+   ]
+  },
+  {
+   "id": "wo1.wapenstilstand",
+   "kind": "word",
+   "w": "wapenstilstand",
+   "art": "de",
+   "tr": {
+    "th": "การสงบศึก (การหยุดยิง)",
+    "en": "armistice"
+   },
+   "def": "Afspraak dat het vechten stopt.",
+   "ex": "De wapenstilstand begon op 11 november.",
+   "gap": "De ___ maakt een einde aan het vechten.",
+   "wrong": [
+    "wasmachine",
+    "vakantie",
+    "markt"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-eerste-wereldoorlog-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom begon de Eerste Wereldoorlog?",
+    "th": "ทำไมสงครามโลกครั้งที่หนึ่งจึงเริ่มขึ้น",
+    "en": "Why did the First World War begin?"
+   },
+   "intro": {
+    "nl": "Eén aanslag in 1914, en een paar weken later vechten landen overal in Europa. Schat eerst wanneer het eindigde.",
+    "th": "การลอบสังหารครั้งเดียวในปี 1914 และไม่กี่สัปดาห์ต่อมาประเทศต่าง ๆ ทั่วยุโรปก็ต่อสู้กัน ลองประมาณก่อนว่าจบเมื่อไร",
+    "en": "One assassination in 1914, and a few weeks later countries fight all over Europe. First estimate when it ended."
+   },
+   "can": {
+    "nl": "Vertellen hoe één aanslag een wereldoorlog werd",
+    "th": "เล่าได้ว่าการลอบสังหารครั้งเดียวกลายเป็นสงครามโลกได้อย่างไร",
+    "en": "Tell how one assassination became a world war"
+   },
+   "targets": [
+    "wo1.oorlog",
+    "wo1.aanslag",
+    "wo1.bondgenoot",
+    "wo1.neutraal",
+    "wo1.wapenstilstand"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "street",
+    "tone": "sky",
+    "alt": {
+     "nl": "Vier borden langs een straat: Sarajevo, België, Nederland en Compiègne.",
+     "th": "ป้ายสี่ป้ายริมถนน: ซาราเยโว เบลเยียม เนเธอร์แลนด์ และคงเปียญ",
+     "en": "Four signs along a street: Sarajevo, Belgium, the Netherlands and Compiègne."
+    },
+    "things": [
+     {
+      "kind": "sign",
+      "x": 60,
+      "y": 70,
+      "text": "Sarajevo",
+      "hot": true,
+      "item": "wo1.aanslag",
+      "label": {
+       "nl": "Sarajevo: hier werd de aartshertog doodgeschoten",
+       "th": "ซาราเยโว: ที่นี่อาร์ชดยุกถูกยิงเสียชีวิต",
+       "en": "Sarajevo: here the archduke was shot dead"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 150,
+      "y": 110,
+      "text": "België",
+      "hot": true,
+      "item": "wo1.oorlog",
+      "label": {
+       "nl": "België: op 4 augustus viel Duitsland het binnen",
+       "th": "เบลเยียม: วันที่ 4 สิงหาคม เยอรมนีบุก",
+       "en": "Belgium: on 4 August Germany invaded it"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 240,
+      "y": 70,
+      "text": "Nederland",
+      "hot": true,
+      "item": "wo1.neutraal",
+      "label": {
+       "nl": "Nederland: bleef neutraal",
+       "th": "เนเธอร์แลนด์: เป็นกลาง",
+       "en": "The Netherlands: stayed neutral"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 290,
+      "y": 130,
+      "text": "Compiègne",
+      "hot": true,
+      "item": "wo1.wapenstilstand",
+      "label": {
+       "nl": "Compiègne: hier werd de wapenstilstand getekend",
+       "th": "คงเปียญ: ที่นี่ลงนามสงบศึก",
+       "en": "Compiègne: here the armistice was signed"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "wo1.oorlog"
+       ],
+       "ask": {
+        "nl": "Schat: in welk jaar eindigde de Eerste Wereldoorlog? Typ een jaartal.",
+        "th": "ประมาณการ: สงครามโลกครั้งที่หนึ่งสิ้นสุดในปีใด พิมพ์ปี",
+        "en": "Estimate: in which year did the First World War end? Type a year."
+       },
+       "answer": "1918",
+       "tol": 5,
+       "err": "getal",
+       "why": {
+        "nl": "Het was 1918. De wapenstilstand begon op 11 november 1918. Je legt zo zelf gebeurtenissen op de lijn.",
+        "th": "คือปี 1918 การสงบศึกเริ่มวันที่ 11 พฤศจิกายน 1918 เดี๋ยวคุณจะวางเหตุการณ์บนเส้นเวลาเอง",
+        "en": "It was 1918. The armistice began on 11 November 1918. In a moment you place events on the line yourself."
+       }
+      }
+     ]
+    },
+    {
+     "type": "look",
+     "min": 3
+    },
+    {
+     "type": "read",
+     "items": [
+      "wo1.aanslag",
+      "wo1.oorlog"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand",
+       "title": "Wikipedia: Assassination of Archduke Franz Ferdinand"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/July_Crisis",
+       "title": "Wikipedia: July Crisis"
+      }
+     ],
+     "text": {
+      "nl": "Eén aanslag, daarna een reeks.\n\nOp 28 juni 1914 werd in Sarajevo aartshertog Franz Ferdinand doodgeschoten. Hij was de troonopvolger van Oostenrijk-Hongarije. De schutter was een Bosnisch-Servische student.\n\nOp 23 juli stuurde Oostenrijk-Hongarije een ultimatum naar Servië. Op 28 juli verklaarde het land Servië de oorlog. Zo begon wat de Eerste Wereldoorlog werd.",
+      "th": "การลอบสังหารครั้งเดียว แล้วตามด้วยเหตุการณ์ต่อเนื่อง\n\nเมื่อวันที่ 28 มิถุนายน 1914 อาร์ชดยุกฟรานซ์ เฟอร์ดินานด์ ถูกยิงเสียชีวิตที่ซาราเยโว พระองค์เป็นรัชทายาทของออสเตรีย-ฮังการี ผู้ยิงเป็นนักศึกษาชาวเซิร์บในบอสเนีย\n\nวันที่ 23 กรกฎาคม ออสเตรีย-ฮังการีส่งคำขาดไปยังเซอร์เบีย วันที่ 28 กรกฎาคม ประกาศสงครามกับเซอร์เบีย นั่นคือจุดเริ่มต้นของสิ่งที่กลายเป็นสงครามโลกครั้งที่หนึ่ง",
+      "en": "One assassination, then a chain.\n\nOn 28 June 1914 Archduke Franz Ferdinand was shot dead in Sarajevo. He was the heir to the throne of Austria-Hungary. The shooter was a Bosnian Serb student.\n\nOn 23 July Austria-Hungary sent an ultimatum to Serbia. On 28 July it declared war on Serbia. That is how what became the First World War began."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "wo1.aanslag"
+       ],
+       "ask": {
+        "nl": "Waar werd aartshertog Franz Ferdinand doodgeschoten?",
+        "th": "อาร์ชดยุกฟรานซ์ เฟอร์ดินานด์ถูกยิงเสียชีวิตที่ไหน",
+        "en": "Where was Archduke Franz Ferdinand shot dead?"
+       },
+       "opts": [
+        {
+         "t": "In Sarajevo",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het was op 28 juni 1914 in Sarajevo.",
+          "th": "ถูกต้อง เกิดขึ้นเมื่อวันที่ 28 มิถุนายน 1914 ที่ซาราเยโว",
+          "en": "Right. It was on 28 June 1914 in Sarajevo."
+         }
+        },
+        {
+         "t": "In Brussel",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het gebeurde in Sarajevo. Brussel komt later in het verhaal.",
+          "th": "ไม่ใช่ เกิดที่ซาราเยโว บรัสเซลส์มาทีหลังในเรื่อง",
+          "en": "No. It happened in Sarajevo. Brussels comes later in the story."
+         }
+        },
+        {
+         "t": "In Berlijn",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het gebeurde in Sarajevo, niet in Duitsland.",
+          "th": "ไม่ใช่ เกิดที่ซาราเยโว ไม่ใช่ในเยอรมนี",
+          "en": "No. It happened in Sarajevo, not in Germany."
+         }
+        }
+       ],
+       "answer": "In Sarajevo"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "wo1.bondgenoot",
+      "wo1.neutraal"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/German-speaking_Community_of_Belgium",
+       "title": "Wikipedia: German-speaking Community of Belgium"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/July_Crisis",
+       "title": "Wikipedia: July Crisis"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Dual_Alliance_(1879)",
+       "title": "Wikipedia: Dual Alliance (1879)"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Triple_Entente",
+       "title": "Wikipedia: Triple Entente"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Invasion_of_Belgium_(1914)",
+       "title": "Wikipedia: Invasion of Belgium (1914)"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Netherlands_in_World_War_I",
+       "title": "Wikipedia: Netherlands in World War I"
+      }
+     ],
+     "text": {
+      "nl": "Bondgenoten en een buurland.\n\nDuitsland en Oostenrijk-Hongarije waren sinds 1879 bondgenoten. Het Verenigd Koninkrijk, Rusland en Frankrijk stonden samen aan de andere kant, in de Triple Entente.\n\nOp 1 augustus verklaarde Duitsland Rusland de oorlog. Op 3 augustus volgde Frankrijk. Op 4 augustus viel Duitsland België binnen. Het Verenigd Koninkrijk stuurde Duitsland een ultimatum en verklaarde daarna de oorlog.\n\nNederland bleef neutraal. Het leger werd wel gemobiliseerd: op 31 juli 1914 gaf de regering bevel om 200.000 dienstplichtigen op te roepen.\n\nNa de oorlog, in 1920, kreeg België een stuk van Duitsland: de Oostkantons.",
+      "th": "พันธมิตรและประเทศเพื่อนบ้าน\n\nเยอรมนีและออสเตรีย-ฮังการีเป็นพันธมิตรกันตั้งแต่ปี 1879 สหราชอาณาจักร รัสเซีย และฝรั่งเศสอยู่ด้วยกันอีกฝ่ายหนึ่ง ในไตรภาคี (Triple Entente)\n\nวันที่ 1 สิงหาคม เยอรมนีประกาศสงครามกับรัสเซีย วันที่ 3 สิงหาคมตามด้วยฝรั่งเศส วันที่ 4 สิงหาคม เยอรมนีบุกเบลเยียม สหราชอาณาจักรส่งคำขาดให้เยอรมนีแล้วประกาศสงคราม\n\nเนเธอร์แลนด์เป็นกลาง แต่กองทัพถูกระดมพล วันที่ 31 กรกฎาคม 1914 รัฐบาลสั่งเรียกทหารเกณฑ์ 200,000 คน\n\nหลังสงคราม ในปี 1920 เบลเยียมได้ดินแดนส่วนหนึ่งของเยอรมนี คือ Oostkantons (เขตตะวันออก)",
+      "en": "Allies and a neighbour.\n\nGermany and Austria-Hungary had been allies since 1879. The United Kingdom, Russia and France stood together on the other side, in the Triple Entente.\n\nOn 1 August Germany declared war on Russia. On 3 August France followed. On 4 August Germany invaded Belgium. The United Kingdom sent Germany an ultimatum and then declared war.\n\nThe Netherlands stayed neutral. The army was mobilised, though: on 31 July 1914 the government ordered 200,000 conscripts to be called up.\n\nAfter the war, in 1920, Belgium received a piece of land from Germany: the Oostkantons (the eastern cantons)."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "wo1.neutraal"
+       ],
+       "ask": {
+        "nl": "Welk land bleef in de oorlog neutraal?",
+        "th": "ประเทศใดเป็นกลางในสงคราม",
+        "en": "Which country stayed neutral in the war?"
+       },
+       "opts": [
+        {
+         "t": "Nederland",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Nederland bleef neutraal, ook al riep het leger zijn soldaten op.",
+          "th": "ถูกต้อง เนเธอร์แลนด์เป็นกลาง แม้จะเรียกทหารมา",
+          "en": "Right. The Netherlands stayed neutral, even though the army called up its soldiers."
+         }
+        },
+        {
+         "t": "België",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. België was neutraal, maar Duitsland viel het op 4 augustus binnen. Het kon niet buiten de oorlog blijven.",
+          "th": "ไม่ใช่ เบลเยียมเป็นกลาง แต่เยอรมนีบุกเมื่อวันที่ 4 สิงหาคม จึงอยู่นอกสงครามไม่ได้",
+          "en": "No. Belgium was neutral, but Germany invaded on 4 August. It could not stay out of the war."
+         }
+        },
+        {
+         "t": "Frankrijk",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Duitsland verklaarde Frankrijk op 3 augustus de oorlog.",
+          "th": "ไม่ใช่ เยอรมนีประกาศสงครามกับฝรั่งเศสเมื่อวันที่ 3 สิงหาคม",
+          "en": "No. Germany declared war on France on 3 August."
+         }
+        }
+       ],
+       "answer": "Nederland"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "wo1.oorlog",
+      "wo1.bondgenoot"
+     ],
+     "ask": {
+      "nl": "Leg het begin van de oorlog in de goede volgorde. Bouw de zin.",
+      "th": "เรียงเหตุการณ์ช่วงเริ่มสงครามให้ถูกลำดับ ต่อประโยค",
+      "en": "Put the beginning of the war in the right order. Build the sentence."
+     },
+     "data": {
+      "parts": [
+       "Eerst verklaarde Oostenrijk-Hongarije Servië de oorlog,",
+       "dan verklaarde Duitsland Rusland de oorlog,",
+       "dan viel Duitsland België binnen."
+      ],
+      "tr": {
+       "th": "ก่อนอื่นออสเตรีย-ฮังการีประกาศสงครามกับเซอร์เบีย แล้วเยอรมนีประกาศสงครามกับรัสเซีย แล้วเยอรมนีบุกเบลเยียม",
+       "en": "First Austria-Hungary declared war on Serbia, then Germany declared war on Russia, then Germany invaded Belgium."
+      }
+     },
+     "answer": "Eerst verklaarde Oostenrijk-Hongarije Servië de oorlog, dan verklaarde Duitsland Rusland de oorlog, dan viel Duitsland België binnen.",
+     "err": "woordvolgorde",
+     "why": {
+      "nl": "Oostenrijk-Hongarije op 28 juli, Duitsland tegen Rusland op 1 augustus, de inval in België op 4 augustus.",
+      "th": "ออสเตรีย-ฮังการีวันที่ 28 กรกฎาคม เยอรมนีต่อรัสเซียวันที่ 1 สิงหาคม การบุกเบลเยียมวันที่ 4 สิงหาคม",
+      "en": "Austria-Hungary on 28 July, Germany against Russia on 1 August, the invasion of Belgium on 4 August."
+     }
+    },
+    {
+     "type": "do",
+     "form": "timeline",
+     "items": [
+      "wo1.oorlog",
+      "wo1.wapenstilstand"
+     ],
+     "from": 1870,
+     "to": 1925,
+     "scale": "lin",
+     "tol": 3,
+     "marks": [
+      {
+       "y": 1914,
+       "label": {
+        "nl": "Begin van de Eerste Wereldoorlog",
+        "th": "จุดเริ่มต้นของสงครามโลกครั้งที่หนึ่ง",
+        "en": "Start of the First World War"
+       },
+       "known": true
+      }
+     ],
+     "cards": [
+      {
+       "y": 1879,
+       "label": {
+        "nl": "Duitsland en Oostenrijk-Hongarije sluiten een bondgenootschap",
+        "th": "เยอรมนีและออสเตรีย-ฮังการีทำสนธิสัญญาพันธมิตร",
+        "en": "Germany and Austria-Hungary form an alliance"
+       }
+      },
+      {
+       "y": 1918,
+       "label": {
+        "nl": "De wapenstilstand",
+        "th": "การสงบศึก",
+        "en": "The armistice"
+       }
+      },
+      {
+       "y": 1920,
+       "label": {
+        "nl": "Een stuk van Duitsland wordt Belgisch",
+        "th": "ดินแดนส่วนหนึ่งของเยอรมนีกลายเป็นของเบลเยียม",
+        "en": "A part of Germany becomes Belgian"
+       }
+      }
+     ],
+     "ask": {
+      "nl": "Het begin van de oorlog (1914) staat al op de lijn. Zet de drie gebeurtenissen erbij. Ongeveer goed is goed genoeg.",
+      "th": "จุดเริ่มต้นของสงคราม (1914) อยู่บนเส้นแล้ว วางเหตุการณ์ทั้งสามเพิ่ม ประมาณก็พอ",
+      "en": "The start of the war (1914) is already on the line. Add the three events. Roughly right is good enough."
+     },
+     "why": {
+      "nl": "Het bondgenootschap kwam in 1879, ruim voor de oorlog. De wapenstilstand was in 1918. In 1920 kreeg België een stuk van Duitsland.",
+      "th": "พันธมิตรเกิดในปี 1879 ก่อนสงครามนานแล้ว การสงบศึกในปี 1918 ในปี 1920 ดินแดนส่วนหนึ่งของเยอรมนีไปเป็นของเบลเยียม",
+      "en": "The alliance came in 1879, well before the war. The armistice was in 1918. In 1920 a part of Germany went to Belgium."
+     },
+     "err": "tijd"
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "wo1.wapenstilstand"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Armistice_of_11_November_1918",
+       "title": "Wikipedia: Armistice of 11 November 1918"
+      }
+     ],
+     "text": {
+      "nl": "Het einde, in een treinwagon.\n\nDe wapenstilstand werd getekend in een treinwagon in het bos van Compiègne, in Frankrijk. De handtekeningen kwamen tussen 5.00 en 5.45 uur, Parijse tijd, op 11 november 1918. Om 11.00 uur, Parijse tijd, begon de wapenstilstand. Daarom spreekt men wel van het elfde uur van de elfde dag van de elfde maand.",
+      "th": "จุดจบในตู้รถไฟ\n\nการสงบศึกลงนามในตู้รถไฟในป่าคงเปียญ ประเทศฝรั่งเศส ลายเซ็นเกิดขึ้นระหว่าง 5.00 ถึง 5.45 น. ตามเวลาปารีส ในวันที่ 11 พฤศจิกายน 1918 เวลา 11.00 น. ตามเวลาปารีส การสงบศึกมีผล จึงมีคนพูดถึง ชั่วโมงที่สิบเอ็ดของวันที่สิบเอ็ดของเดือนที่สิบเอ็ด",
+      "en": "The end, in a railway car.\n\nThe armistice was signed in a railway car in the forest of Compiègne, in France. The signatures came between 5.00 and 5.45 a.m., Paris time, on 11 November 1918. At 11.00 a.m., Paris time, the armistice began. That is why people speak of the eleventh hour of the eleventh day of the eleventh month."
+     },
+     "q": [
+      {
+       "form": "type",
+       "items": [
+        "wo1.wapenstilstand"
+       ],
+       "ask": {
+        "nl": "In welk land ligt het bos van Compiègne, waar de wapenstilstand werd getekend? Typ één woord.",
+        "th": "ป่าคงเปียญที่ลงนามสงบศึกอยู่ในประเทศใด พิมพ์หนึ่งคำ",
+        "en": "In which country is the forest of Compiègne, where the armistice was signed? Type one word."
+       },
+       "answer": "Frankrijk",
+       "accept": [
+        "France"
+       ],
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Het ligt ten zuiden van België, naast Duitsland.",
+         "th": "อยู่ทางใต้ของเบลเยียม ติดกับเยอรมนี",
+         "en": "It lies south of Belgium, next to Germany."
+        },
+        {
+         "nl": "Begin zo: Frank…",
+         "th": "ขึ้นต้นแบบนี้: Frank…",
+         "en": "Start like this: Frank…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. De wapenstilstand werd in Frankrijk getekend.",
+        "th": "ถูกต้อง การสงบศึกลงนามในฝรั่งเศส",
+        "en": "Right. The armistice was signed in France."
+       }
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: na één aanslag in 1914 kwam er een wereldoorlog, mede doordat landen bondgenoten hadden. Nederland bleef neutraal.",
+      "th": "ตอนนี้คุณเล่าได้ว่า หลังการลอบสังหารครั้งเดียวในปี 1914 เกิดสงครามโลกขึ้น ส่วนหนึ่งเพราะประเทศต่าง ๆ มีพันธมิตร เนเธอร์แลนด์เป็นกลาง",
+      "en": "You can now tell: after one assassination in 1914 came a world war, partly because countries had allies. The Netherlands stayed neutral."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

@@ -1,0 +1,741 @@
+{
+ "format": 1,
+ "id": "ao-eu",
+ "type": "les",
+ "version": 1,
+ "order": 40,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "politiek",
+ "vorm": "een misverstand (klopt het dat…?)",
+ "draden": [
+  "ao-koning",
+  "ao-belgie-talen",
+  "ao-eerste-wereldoorlog"
+ ],
+ "title": {
+  "nl": "Wat is de Europese Unie eigenlijk, en wat niet?",
+  "th": "สหภาพยุโรปคืออะไรกันแน่ และไม่ใช่อะไร",
+  "en": "What is the European Union really, and what is it not?"
+ },
+ "sources": [
+  {
+   "url": "https://european-union.europa.eu/principles-countries-history/facts-and-figures-european-union_nl",
+   "title": "Europese Unie: Feiten en cijfers over de Europese Unie"
+  },
+  {
+   "url": "https://european-union.europa.eu/principles-countries-history/principles-and-values/aims-and-values_nl",
+   "title": "Europese Unie: Doelstellingen en waarden"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Europese_Unie",
+   "title": "Wikipedia: Europese Unie"
+  }
+ ],
+ "items": [
+  {
+   "id": "eu.lidstaat",
+   "kind": "word",
+   "w": "lidstaat",
+   "art": "de",
+   "tr": {
+    "th": "ประเทศสมาชิก",
+    "en": "member state"
+   },
+   "def": "Een land dat bij een groep landen hoort, zoals de Europese Unie.",
+   "ex": "Nederland is een lidstaat van de Europese Unie.",
+   "gap": "De ___ van de EU heeft een eigen land en een eigen bestuur.",
+   "wrong": [
+    "bakker",
+    "fiets",
+    "jas"
+   ]
+  },
+  {
+   "id": "eu.verdrag",
+   "kind": "word",
+   "w": "verdrag",
+   "art": "het",
+   "tr": {
+    "th": "สนธิสัญญา",
+    "en": "treaty"
+   },
+   "def": "Een afspraak tussen landen die op papier staat.",
+   "ex": "De landen sloten een verdrag.",
+   "gap": "Het ___ is een afspraak tussen landen op papier.",
+   "wrong": [
+    "brood",
+    "raam",
+    "dak"
+   ]
+  },
+  {
+   "id": "eu.bevoegdheid",
+   "kind": "word",
+   "w": "bevoegdheid",
+   "art": "de",
+   "tr": {
+    "th": "อำนาจหน้าที่",
+    "en": "power, authority"
+   },
+   "def": "Het recht om iets te beslissen.",
+   "ex": "Het leger is een nationale bevoegdheid.",
+   "gap": "De ___ om dit te beslissen ligt bij het land zelf.",
+   "wrong": [
+    "trein",
+    "jas",
+    "pan"
+   ]
+  },
+  {
+   "id": "eu.munt",
+   "kind": "word",
+   "w": "munt",
+   "art": "de",
+   "tr": {
+    "th": "สกุลเงิน",
+    "en": "currency"
+   },
+   "def": "Het geld van een land of een groep landen.",
+   "ex": "De euro is de munt van veel landen.",
+   "gap": "De ___ van Nederland is de euro.",
+   "wrong": [
+    "fiets",
+    "tas",
+    "pan"
+   ]
+  },
+  {
+   "id": "eu.grens",
+   "kind": "word",
+   "w": "grens",
+   "art": "de",
+   "tr": {
+    "th": "พรมแดน",
+    "en": "border"
+   },
+   "def": "De lijn tussen twee landen.",
+   "ex": "Bij de grens staat een bord.",
+   "gap": "Aan de ___ tussen twee landen staat soms een bord.",
+   "wrong": [
+    "bakker",
+    "lamp",
+    "fiets"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-eu-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Wat is de Europese Unie eigenlijk, en wat niet?",
+    "th": "สหภาพยุโรปคืออะไรกันแน่ และไม่ใช่อะไร",
+    "en": "What is the European Union really, and what is it not?"
+   },
+   "intro": {
+    "nl": "Klopt het dat …? Een paar misverstanden over de EU, met de feiten. We beschrijven, we oordelen niet.",
+    "th": "จริงไหมที่ …? ความเข้าใจผิดเกี่ยวกับ EU สองสามข้อ พร้อมข้อเท็จจริง เราอธิบาย เราไม่ตัดสิน",
+    "en": "Is it true that …? A few misunderstandings about the EU, with the facts. We describe, we do not judge."
+   },
+   "can": {
+    "nl": "Uitleggen wat de EU is en een paar misverstanden rechtzetten",
+    "th": "อธิบายได้ว่า EU คืออะไรและแก้ความเข้าใจผิดสองสามข้อ",
+    "en": "Explain what the EU is and correct a few misunderstandings"
+   },
+   "targets": [
+    "eu.lidstaat",
+    "eu.verdrag",
+    "eu.bevoegdheid",
+    "eu.munt",
+    "eu.grens"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "kind": "map",
+    "map": "europa",
+    "zoom": [
+     -12,
+     34,
+     35,
+     72
+    ],
+    "hl": [
+     "AT",
+     "BE",
+     "BG",
+     "HR",
+     "CY",
+     "CZ",
+     "DK",
+     "EE",
+     "FI",
+     "FR",
+     "DE",
+     "GR",
+     "HU",
+     "IE",
+     "IT",
+     "LV",
+     "LT",
+     "LU",
+     "MT",
+     "NL",
+     "PL",
+     "PT",
+     "RO",
+     "SK",
+     "SI",
+     "ES",
+     "SE"
+    ],
+    "alt": {
+     "nl": "Kaart van Europa met de 27 EU-landen gekleurd.",
+     "th": "แผนที่ยุโรปที่ระบายสี 27 ประเทศ EU",
+     "en": "Map of Europe with the 27 EU countries coloured."
+    }
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "eu.lidstaat"
+       ],
+       "ask": {
+        "nl": "Klopt het dat de Europese Unie een land is?",
+        "th": "จริงไหมที่สหภาพยุโรปเป็นประเทศ",
+        "en": "Is it true that the European Union is a country?"
+       },
+       "opts": [
+        {
+         "t": "Ja, het is één land met een eigen regering in Brussel",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het zijn 27 landen die samenwerken.",
+          "th": "ไม่ใช่ เป็น 27 ประเทศที่ร่วมมือกัน",
+          "en": "No. It is 27 countries that work together."
+         }
+        },
+        {
+         "t": "Nee, het is een verband van 27 landen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De EU is een statenverband: de landen blijven eigen landen.",
+          "th": "ถูกต้อง สหภาพยุโรปเป็นกลุ่มรัฐ ประเทศต่าง ๆ ยังคงเป็นประเทศของตนเอง",
+          "en": "Right. The EU is a union of states: the countries remain countries of their own."
+         }
+        },
+        {
+         "t": "Ja, maar alleen op papier",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Er is geen EU-land. Er zijn 27 eigen landen.",
+          "th": "ไม่ใช่ ไม่มีประเทศ EU มี 27 ประเทศของตนเอง",
+          "en": "No. There is no EU country. There are 27 countries of their own."
+         }
+        }
+       ],
+       "answer": "Nee, het is een verband van 27 landen"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "eu.lidstaat",
+      "eu.verdrag"
+     ],
+     "sources": [
+      {
+       "url": "https://european-union.europa.eu/principles-countries-history/facts-and-figures-european-union_nl",
+       "title": "Europese Unie: Feiten en cijfers over de Europese Unie"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Europese_Unie",
+       "title": "Wikipedia: Europese Unie"
+      }
+     ],
+     "text": {
+      "nl": "Een samenwerking van landen.\n\nDe Europese Unie, de EU, is een samenwerking van 27 landen. Het begon in 1951 met zes landen: België, West-Duitsland, Frankrijk, Italië, Luxemburg en Nederland. De landen hebben afspraken gemaakt in verdragen. Er wonen bijna 450 miljoen mensen. Er zijn 24 officiële talen.\n\nElk van die landen blijft een eigen land. Het zijn lidstaten.",
+      "th": "ความร่วมมือของประเทศต่าง ๆ\n\nสหภาพยุโรปหรือ EU เป็นความร่วมมือของ 27 ประเทศ เริ่มต้นในปี 1951 ด้วยหกประเทศ: เบลเยียม เยอรมนีตะวันตก ฝรั่งเศส อิตาลี ลักเซมเบิร์ก และเนเธอร์แลนด์ ประเทศเหล่านี้ทำข้อตกลงกันในสนธิสัญญา มีผู้คนเกือบ 450 ล้านคน มีภาษาราชการ 24 ภาษา\n\nแต่ละประเทศยังคงเป็นประเทศของตนเอง เป็นประเทศสมาชิก (lidstaten)",
+      "en": "A cooperation of countries.\n\nThe European Union, the EU, is a cooperation of 27 countries. It began in 1951 with six countries: Belgium, West Germany, France, Italy, Luxembourg and the Netherlands. The countries made agreements in treaties. Almost 450 million people live there. There are 24 official languages.\n\nEach of those countries remains a country of its own. They are member states."
+     },
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "eu.lidstaat"
+       ],
+       "ask": {
+        "nl": "Hoeveel landen zijn er nu lid van de EU? Typ een getal.",
+        "th": "ปัจจุบันมีกี่ประเทศเป็นสมาชิก EU พิมพ์ตัวเลข",
+        "en": "How many countries are now members of the EU? Type a number."
+       },
+       "answer": "27",
+       "err": "getal",
+       "hint": [
+        {
+         "nl": "Het getal ligt tussen 25 en 30.",
+         "th": "ตัวเลขอยู่ระหว่าง 25 และ 30",
+         "en": "The number is between 25 and 30."
+        },
+        {
+         "nl": "Het getal begint met 2 en eindigt op 7.",
+         "th": "ตัวเลขขึ้นต้นด้วย 2 และลงท้ายด้วย 7",
+         "en": "The number starts with 2 and ends in 7."
+        }
+       ],
+       "why": {
+        "nl": "Goed. Er zijn 27 lidstaten.",
+        "th": "ถูกต้อง มี 27 ประเทศสมาชิก",
+        "en": "Right. There are 27 member states."
+       }
+      },
+      {
+       "form": "complete",
+       "items": [
+        "eu.verdrag"
+       ],
+       "ask": {
+        "nl": "Maak af: In 1951 begonnen ___ landen met de samenwerking.",
+        "th": "เติมคำ: ในปี 1951 มี ___ ประเทศเริ่มความร่วมมือ",
+        "en": "Complete: In 1951 ___ countries began the cooperation."
+       },
+       "answer": "zes",
+       "err": "spelling",
+       "accept": [
+        "6"
+       ],
+       "hint": [
+        {
+         "nl": "Het is minder dan tien en meer dan vier.",
+         "th": "น้อยกว่าสิบและมากกว่าสี่",
+         "en": "It is less than ten and more than four."
+        },
+        {
+         "nl": "Begin zo: ze…",
+         "th": "ขึ้นต้นแบบนี้: ze…",
+         "en": "Start like this: ze…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Zes landen: België, West-Duitsland, Frankrijk, Italië, Luxemburg en Nederland.",
+        "th": "ถูกต้อง หกประเทศ: เบลเยียม เยอรมนีตะวันตก ฝรั่งเศส อิตาลี ลักเซมเบิร์ก และเนเธอร์แลนด์",
+        "en": "Right. Six countries: Belgium, West Germany, France, Italy, Luxembourg and the Netherlands."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "eu.grens",
+      "eu.lidstaat"
+     ],
+     "sources": [
+      {
+       "url": "https://european-union.europa.eu/principles-countries-history/facts-and-figures-european-union_nl",
+       "title": "Europese Unie: Feiten en cijfers over de Europese Unie"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Europese_Unie",
+       "title": "Wikipedia: Europese Unie"
+      }
+     ],
+     "text": {
+      "nl": "Klopt het dat heel Europa erbij hoort?\n\nNee. Niet elk Europees land is lid van de EU. Noorwegen, IJsland, Zwitserland en Liechtenstein zijn geen lid. Ze doen wel mee aan Schengen: binnen dat gebied reis je zonder grenscontrole. In 2020 verliet het Verenigd Koninkrijk de EU. Dat was de eerste keer dat een land de EU verliet.",
+      "th": "จริงไหมที่ทั้งยุโรปอยู่ใน EU\n\nไม่จริง ไม่ใช่ทุกประเทศในยุโรปเป็นสมาชิก EU นอร์เวย์ ไอซ์แลนด์ สวิตเซอร์แลนด์ และลิกเตนสไตน์ไม่ได้เป็นสมาชิก แต่เข้าร่วมเชงเก้น (Schengen) ภายในพื้นที่นั้นเดินทางโดยไม่มีการตรวจชายแดน ในปี 2020 สหราชอาณาจักรออกจาก EU เป็นครั้งแรกที่ประเทศหนึ่งออกจาก EU",
+      "en": "Is it true that all of Europe is part of it?\n\nNo. Not every European country is a member of the EU. Norway, Iceland, Switzerland and Liechtenstein are not members. They do take part in Schengen: within that area you travel without border checks. In 2020 the United Kingdom left the EU. That was the first time that a country left the EU."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "eu.grens"
+       ],
+       "ask": {
+        "nl": "Welke landen doen mee aan Schengen, maar zijn geen lid van de EU?",
+        "th": "ประเทศใดเข้าร่วมเชงเก้นแต่ไม่ได้เป็นสมาชิก EU",
+        "en": "Which countries take part in Schengen but are not members of the EU?"
+       },
+       "opts": [
+        {
+         "t": "België, Nederland, Duitsland, Frankrijk en Italië",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Al die landen zijn lid van de EU.",
+          "th": "ไม่ใช่ ทุกประเทศเหล่านี้เป็นสมาชิก EU",
+          "en": "No. All of these countries are members of the EU."
+         }
+        },
+        {
+         "t": "Noorwegen, IJsland, Zwitserland en Liechtenstein",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat zijn vier landen buiten de EU die bij Schengen horen.",
+          "th": "ถูกต้อง นั่นคือสี่ประเทศนอก EU ที่อยู่ในเชงเก้น",
+          "en": "Right. Those are four countries outside the EU that belong to Schengen."
+         }
+        },
+        {
+         "t": "België en Nederland",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. België en Nederland zijn lid van de EU, en van Schengen.",
+          "th": "ไม่ใช่ เบลเยียมและเนเธอร์แลนด์เป็นสมาชิก EU และเชงเก้น",
+          "en": "No. Belgium and the Netherlands are members of the EU, and of Schengen."
+         }
+        }
+       ],
+       "answer": "Noorwegen, IJsland, Zwitserland en Liechtenstein"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "eu.lidstaat"
+     ],
+     "map": "europa",
+     "zoom": [
+      -12,
+      34,
+      35,
+      72
+     ],
+     "hl": [
+      "AT",
+      "BE",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "DE",
+      "GR",
+      "HU",
+      "IE",
+      "IT",
+      "LV",
+      "LT",
+      "LU",
+      "MT",
+      "NL",
+      "PL",
+      "PT",
+      "RO",
+      "SK",
+      "SI",
+      "ES",
+      "SE"
+     ],
+     "ask": {
+      "nl": "De gekleurde landen zijn de 27 EU-landen. Noorwegen ligt in Europa, maar is geen lid. Tik Noorwegen aan, ten westen van Zweden.",
+      "th": "ประเทศที่มีสีคือ 27 ประเทศ EU นอร์เวย์อยู่ในยุโรปแต่ไม่ใช่สมาชิก แตะนอร์เวย์ ทางตะวันตกของสวีเดน",
+      "en": "The coloured countries are the 27 EU countries. Norway lies in Europe, but is not a member. Tap Norway, west of Sweden."
+     },
+     "answer": "NO",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed: Noorwegen is niet gekleurd. Het ligt in Europa, maar het is geen EU-land. Het doet wel mee aan Schengen.",
+      "th": "ถูกต้อง: นอร์เวย์ไม่มีสี อยู่ในยุโรปแต่ไม่ใช่ประเทศ EU แต่เข้าร่วมเชงเก้น",
+      "en": "Right: Norway is not coloured. It lies in Europe, but it is not an EU country. It does take part in Schengen."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "eu.munt",
+      "eu.bevoegdheid",
+      "eu.verdrag"
+     ],
+     "sources": [
+      {
+       "url": "https://european-union.europa.eu/principles-countries-history/facts-and-figures-european-union_nl",
+       "title": "Europese Unie: Feiten en cijfers over de Europese Unie"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Europese_Unie",
+       "title": "Wikipedia: Europese Unie"
+      }
+     ],
+     "text": {
+      "nl": "Klopt het dat alle EU-landen dezelfde munt hebben, en dat Brussel alles beslist?\n\nNee, op beide vragen. De euro is de munt van 21 EU-landen. Zes EU-landen hebben een eigen munt.\n\nEn de EU beslist niet over alles. Ze mag alleen beslissen over onderwerpen die de landen in de verdragen aan haar hebben gegeven. Wat niet is gegeven, blijft bij de landen. Op sommige terreinen beslist alleen de EU. Op andere beslissen de EU en de landen samen. En op weer andere ondersteunt de EU alleen het beleid van de landen. Het leger is bijvoorbeeld een zaak van elk land zelf.",
+      "th": "จริงไหมที่ทุกประเทศ EU ใช้เงินสกุลเดียวกัน และบรัสเซลส์ตัดสินทุกอย่าง\n\nไม่จริงทั้งสองข้อ ยูโรเป็นสกุลเงินของ 21 ประเทศ EU หกประเทศ EU มีสกุลเงินของตนเอง\n\nและ EU ไม่ได้ตัดสินทุกเรื่อง EU ตัดสินได้เฉพาะเรื่องที่ประเทศต่าง ๆ มอบให้ในสนธิสัญญา สิ่งที่ไม่ได้มอบให้ ยังเป็นของประเทศนั้น ๆ ในบางด้านมีเพียง EU ที่ตัดสิน ในด้านอื่น EU และประเทศต่าง ๆ ตัดสินร่วมกัน และในอีกด้านหนึ่ง EU เพียงสนับสนุนนโยบายของประเทศต่าง ๆ เช่น กองทัพเป็นเรื่องของแต่ละประเทศเอง",
+      "en": "Is it true that all EU countries have the same currency, and that Brussels decides everything?\n\nNo, to both. The euro is the currency of 21 EU countries. Six EU countries have a currency of their own.\n\nAnd the EU does not decide about everything. It may only decide about subjects that the countries have given to it in the treaties. What is not given stays with the countries. In some areas only the EU decides. In others the EU and the countries decide together. And in still others the EU only supports the policy of the countries. The army, for example, is a matter for each country itself."
+     },
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "eu.munt"
+       ],
+       "ask": {
+        "nl": "Hoeveel EU-landen gebruiken de euro? Typ een getal.",
+        "th": "มีกี่ประเทศ EU ที่ใช้ยูโร พิมพ์ตัวเลข",
+        "en": "How many EU countries use the euro? Type a number."
+       },
+       "answer": "21",
+       "err": "getal",
+       "hint": [
+        {
+         "nl": "Het zijn er minder dan 27.",
+         "th": "น้อยกว่า 27",
+         "en": "It is fewer than 27."
+        },
+        {
+         "nl": "Het getal begint met 2 en eindigt op 1.",
+         "th": "ตัวเลขขึ้นต้นด้วย 2 และลงท้ายด้วย 1",
+         "en": "The number starts with 2 and ends in 1."
+        }
+       ],
+       "why": {
+        "nl": "Goed. De euro is de officiële munt van 21 EU-landen.",
+        "th": "ถูกต้อง ยูโรเป็นสกุลเงินทางการของ 21 ประเทศ EU",
+        "en": "Right. The euro is the official currency of 21 EU countries."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "eu.bevoegdheid"
+       ],
+       "ask": {
+        "nl": "Wie beslist over onderwerpen die niet in de verdragen aan de EU zijn gegeven?",
+        "th": "ใครตัดสินในเรื่องที่ไม่ได้มอบให้ EU ในสนธิสัญญา",
+        "en": "Who decides about subjects that were not given to the EU in the treaties?"
+       },
+       "opts": [
+        {
+         "t": "De Europese Commissie in Brussel",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De EU mag alleen beslissen over wat de landen aan haar hebben gegeven.",
+          "th": "ไม่ใช่ EU ตัดสินได้เฉพาะสิ่งที่ประเทศต่าง ๆ มอบให้",
+          "en": "No. The EU may only decide what the countries have given to it."
+         }
+        },
+        {
+         "t": "De landen zelf",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Wat niet is gegeven, blijft bij de landen.",
+          "th": "ถูกต้อง สิ่งที่ไม่ได้มอบให้ ยังเป็นของประเทศ",
+          "en": "Right. What is not given stays with the countries."
+         }
+        },
+        {
+         "t": "Niemand",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Die onderwerpen blijven bij de landen.",
+          "th": "ไม่ใช่ เรื่องเหล่านั้นยังเป็นของประเทศ",
+          "en": "No. Those subjects stay with the countries."
+         }
+        }
+       ],
+       "answer": "De landen zelf"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "timeline",
+     "items": [
+      "eu.verdrag",
+      "eu.lidstaat"
+     ],
+     "from": 1940,
+     "to": 2030,
+     "scale": "lin",
+     "tol": 8,
+     "marks": [
+      {
+       "y": 1945,
+       "label": {
+        "nl": "einde van de Tweede Wereldoorlog",
+        "th": "สิ้นสุดสงครามโลกครั้งที่สอง",
+        "en": "end of the Second World War"
+       },
+       "known": true
+      }
+     ],
+     "cards": [
+      {
+       "y": 1951,
+       "label": {
+        "nl": "Zes landen beginnen met de samenwerking",
+        "th": "หกประเทศเริ่มความร่วมมือ",
+        "en": "Six countries begin the cooperation"
+       }
+      },
+      {
+       "y": 1957,
+       "label": {
+        "nl": "Het Verdrag van Rome wordt getekend",
+        "th": "สนธิสัญญาโรมถูกลงนาม",
+        "en": "The Treaty of Rome is signed"
+       }
+      },
+      {
+       "y": 1993,
+       "label": {
+        "nl": "Het Verdrag van Maastricht gaat in: de EU",
+        "th": "สนธิสัญญามาสทริชต์มีผล: EU",
+        "en": "The Treaty of Maastricht takes effect: the EU"
+       }
+      },
+      {
+       "y": 2020,
+       "label": {
+        "nl": "Het Verenigd Koninkrijk verlaat de EU",
+        "th": "สหราชอาณาจักรออกจาก EU",
+        "en": "The United Kingdom leaves the EU"
+       }
+      }
+     ],
+     "ask": {
+      "nl": "Zet de vier gebeurtenissen op de lijn. Het einde van de Tweede Wereldoorlog (1945) staat er al. Ongeveer goed is goed genoeg.",
+      "th": "วางเหตุการณ์ทั้งสี่บนเส้นเวลา สิ้นสุดสงครามโลกครั้งที่สอง (1945) อยู่บนเส้นแล้ว ประมาณก็พอ",
+      "en": "Put the four events on the line. The end of the Second World War (1945) is already there. Roughly right is good enough."
+     },
+     "why": {
+      "nl": "In 1951 begonnen zes landen, in 1957 volgde het Verdrag van Rome, in 1993 ging het Verdrag van Maastricht in en in 2020 verliet het Verenigd Koninkrijk de EU.",
+      "th": "ในปี 1951 หกประเทศเริ่มต้น ในปี 1957 ตามด้วยสนธิสัญญาโรม ในปี 1993 สนธิสัญญามาสทริชต์มีผล และในปี 2020 สหราชอาณาจักรออกจาก EU",
+      "en": "In 1951 six countries began, in 1957 the Treaty of Rome followed, in 1993 the Treaty of Maastricht took effect and in 2020 the United Kingdom left the EU."
+     },
+     "err": "tijd"
+    },
+    {
+     "type": "make",
+     "items": [
+      "eu.lidstaat",
+      "eu.bevoegdheid"
+     ],
+     "ask": {
+      "nl": "Welk misverstand over de EU hoor je weleens? Leg in twee zinnen uit wat er klopt. Geef alleen feiten, geen mening.",
+      "th": "ความเข้าใจผิดเกี่ยวกับ EU อะไรที่คุณได้ยินบ้าง อธิบายในสองประโยคว่าอะไรถูกต้อง ให้เฉพาะข้อเท็จจริง ไม่ใช่ความเห็น",
+      "en": "Which misunderstanding about the EU do you sometimes hear? Explain in two sentences what is right. Give only facts, no opinion."
+     },
+     "frame": "Mensen denken dat ..., maar in werkelijkheid ...",
+     "model": "Mensen denken dat de EU een land is, maar in werkelijkheid zijn het 27 landen die samenwerken.",
+     "checklist": [
+      {
+       "nl": "Ik heb een misverstand en het goede antwoord genoemd.",
+       "th": "ฉันบอกความเข้าใจผิดและคำตอบที่ถูกต้อง",
+       "en": "I named a misunderstanding and the right answer."
+      },
+      {
+       "nl": "Ik heb alleen feiten gegeven.",
+       "th": "ฉันให้เฉพาะข้อเท็จจริง",
+       "en": "I gave only facts."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "eu.verdrag",
+      "eu.bevoegdheid"
+     ],
+     "sources": [
+      {
+       "url": "https://european-union.europa.eu/principles-countries-history/principles-and-values/aims-and-values_nl",
+       "title": "Europese Unie: Doelstellingen en waarden"
+      }
+     ],
+     "text": {
+      "nl": "Wat zegt de EU zelf?\n\nDe EU noemt zelf een aantal doelen. Onder andere: vrede, Europese waarden en het welzijn van mensen bevorderen. Vrijheid, veiligheid en recht bieden zonder grenzen binnen de EU. Een interne markt maken. Het milieu beschermen. De rijke verscheidenheid van talen en culturen respecteren.\n\nOver hoeveel de EU mag beslissen, denken landen en mensen verschillend. Sommigen willen dat de landen zelf meer beslissen. Anderen willen dat de EU meer samen beslist.",
+      "th": "EU พูดว่าอย่างไรเอง\n\nEU กล่าวถึงเป้าหมายหลายข้อด้วยตนเอง เช่น ส่งเสริมสันติภาพ ค่านิยมของยุโรป และความเป็นอยู่ที่ดีของผู้คน ให้เสรีภาพ ความปลอดภัย และความยุติธรรมโดยไม่มีพรมแดนภายใน EU สร้างตลาดภายใน ปกป้องสิ่งแวดล้อม เคารพความหลากหลายของภาษาและวัฒนธรรม\n\nเรื่องที่ EU ควรตัดสินได้มากแค่ไหน ประเทศและผู้คนคิดไม่เหมือนกัน บางคนอยากให้ประเทศต่าง ๆ ตัดสินเองมากขึ้น บางคนอยากให้ EU ตัดสินร่วมกันมากขึ้น",
+      "en": "What does the EU itself say?\n\nThe EU itself names a number of aims. Among them: promoting peace, European values and the well-being of people. Offering freedom, security and justice without borders inside the EU. Creating an internal market. Protecting the environment. Respecting the rich diversity of languages and cultures.\n\nCountries and people think differently about how much the EU may decide. Some want the countries to decide more themselves. Others want the EU to decide more together."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "eu.verdrag"
+       ],
+       "ask": {
+        "nl": "Welk doel noemt de EU zelf?",
+        "th": "EU กล่าวถึงเป้าหมายใดเอง",
+        "en": "Which aim does the EU itself name?"
+       },
+       "opts": [
+        {
+         "t": "Alle talen afschaffen behalve Engels",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De EU wil de verscheidenheid van talen en culturen juist respecteren.",
+          "th": "ไม่ใช่ EU ต้องการเคารพความหลากหลายของภาษาและวัฒนธรรม",
+          "en": "No. The EU wants to respect the diversity of languages and cultures."
+         }
+        },
+        {
+         "t": "Een eigen leger voor elk land",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet bij de doelen.",
+          "th": "ไม่ใช่ ไม่ได้อยู่ในเป้าหมาย",
+          "en": "No. That is not among the aims."
+         }
+        },
+        {
+         "t": "Vrijheid, veiligheid en recht bieden, zonder grenzen binnen de EU",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat staat bij de doelen.",
+          "th": "ถูกต้อง อยู่ในเป้าหมาย",
+          "en": "Right. That is among the aims."
+         }
+        }
+       ],
+       "answer": "Vrijheid, veiligheid en recht bieden, zonder grenzen binnen de EU"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: de EU is geen land maar een verband van 27 landen. Niet heel Europa hoort erbij, niet iedereen heeft de euro, en de EU beslist alleen over wat de landen haar hebben gegeven.",
+      "th": "ตอนนี้คุณเล่าได้ว่า EU ไม่ใช่ประเทศ แต่เป็นกลุ่มของ 27 ประเทศ ไม่ใช่ทั้งยุโรปอยู่ใน EU ไม่ใช่ทุกคนใช้ยูโร และ EU ตัดสินเฉพาะสิ่งที่ประเทศต่าง ๆ มอบให้",
+      "en": "You can now tell: the EU is not a country but a union of 27 countries. Not all of Europe is part of it, not everyone has the euro, and the EU decides only about what the countries have given to it."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

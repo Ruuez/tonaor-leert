@@ -1,0 +1,552 @@
+{
+ "format": 1,
+ "id": "ao-belgie-talen",
+ "type": "les",
+ "version": 1,
+ "order": 26,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "taal",
+ "vorm": "twee dingen naast elkaar",
+ "draden": [
+  "ao-gezellig",
+  "ao-holland",
+  "ao-koning"
+ ],
+ "title": {
+  "nl": "Waarom spreekt België drie talen?",
+  "th": "ทำไมเบลเยียมจึงมีสามภาษา",
+  "en": "Why does Belgium speak three languages?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Languages_of_Belgium",
+   "title": "Wikipedia: Languages of Belgium"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Belgium",
+   "title": "Wikipedia: Belgium"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/German-speaking_Community_of_Belgium",
+   "title": "Wikipedia: German-speaking Community of Belgium"
+  }
+ ],
+ "items": [
+  {
+   "id": "blg.taal",
+   "kind": "word",
+   "w": "taal",
+   "art": "de",
+   "tr": {
+    "th": "ภาษา",
+    "en": "language"
+   },
+   "def": "Woorden waarmee mensen met elkaar praten.",
+   "ex": "Ik leer een nieuwe taal.",
+   "gap": "Ik leer de ___ van mijn buren.",
+   "wrong": [
+    "pan",
+    "jas",
+    "bank"
+   ]
+  },
+  {
+   "id": "blg.officieel",
+   "kind": "word",
+   "w": "officieel",
+   "art": "",
+   "tr": {
+    "th": "เป็นทางการ",
+    "en": "official"
+   },
+   "def": "Door de overheid vastgelegd.",
+   "ex": "Dit is een officieel document.",
+   "gap": "Nederlands is een ___ taal van België.",
+   "wrong": [
+    "gisteren",
+    "tafel",
+    "lopen"
+   ]
+  },
+  {
+   "id": "blg.gemeenschap",
+   "kind": "word",
+   "w": "gemeenschap",
+   "art": "de",
+   "tr": {
+    "th": "ประชาคม / ชุมชน (กลุ่มคนที่ใช้ภาษาเดียวกัน)",
+    "en": "community"
+   },
+   "def": "Een groep mensen die iets samen hebben, zoals een taal.",
+   "ex": "De gemeenschap viert een feest.",
+   "gap": "De ___ bestaat uit mensen met dezelfde taal.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "wolk"
+   ]
+  },
+  {
+   "id": "blg.grens",
+   "kind": "word",
+   "w": "grens",
+   "art": "de",
+   "tr": {
+    "th": "พรมแดน",
+    "en": "border"
+   },
+   "def": "De lijn tussen twee landen of gebieden.",
+   "ex": "Aan de grens moet je soms je paspoort laten zien.",
+   "gap": "Aan de ___ tussen twee landen staat een bord.",
+   "wrong": [
+    "fiets",
+    "kast",
+    "bril"
+   ]
+  },
+  {
+   "id": "blg.tweetalig",
+   "kind": "word",
+   "w": "tweetalig",
+   "art": "",
+   "tr": {
+    "th": "สองภาษา",
+    "en": "bilingual"
+   },
+   "def": "Met twee talen naast elkaar.",
+   "ex": "Brussel is een tweetalige stad.",
+   "gap": "Een ___ bord heeft twee talen.",
+   "wrong": [
+    "gisteren",
+    "tafel",
+    "lopen"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-belgie-talen-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom spreekt België drie talen?",
+    "th": "ทำไมเบลเยียมจึงมีสามภาษา",
+    "en": "Why does Belgium speak three languages?"
+   },
+   "intro": {
+    "nl": "Het buurland van Nederland heeft drie officiële talen. Eerst een schatting, dan zoek je het land op de kaart.",
+    "th": "ประเทศเพื่อนบ้านของเนเธอร์แลนด์มีสามภาษาราชการ ประมาณก่อน แล้วหาประเทศบนแผนที่",
+    "en": "The neighbour of the Netherlands has three official languages. First an estimate, then you find the country on the map."
+   },
+   "can": {
+    "nl": "Vertellen welke talen in België officieel zijn en waarom",
+    "th": "เล่าได้ว่าภาษาใดเป็นภาษาราชการในเบลเยียมและทำไม",
+    "en": "Tell which languages are official in Belgium and why"
+   },
+   "targets": [
+    "blg.taal",
+    "blg.officieel",
+    "blg.gemeenschap",
+    "blg.grens",
+    "blg.tweetalig"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "street",
+    "tone": "lilac",
+    "alt": {
+     "nl": "Drie borden: Grens, Taal en Gemeenschap.",
+     "th": "ป้ายสามป้าย: พรมแดน ภาษา และชุมชน",
+     "en": "Three signs: Border, Language and Community."
+    },
+    "things": [
+     {
+      "kind": "sign",
+      "x": 60,
+      "y": 80,
+      "text": "Grens",
+      "hot": true,
+      "item": "blg.grens",
+      "label": {
+       "nl": "Een grens: de lijn tussen twee landen",
+       "th": "พรมแดน: เส้นระหว่างสองประเทศ",
+       "en": "A border: the line between two countries"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 170,
+      "y": 120,
+      "text": "Taal",
+      "hot": true,
+      "item": "blg.taal",
+      "label": {
+       "nl": "Een taal: woorden om te praten",
+       "th": "ภาษา: คำที่ใช้พูด",
+       "en": "A language: words to talk with"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 280,
+      "y": 80,
+      "text": "Gemeenschap",
+      "hot": true,
+      "item": "blg.gemeenschap",
+      "label": {
+       "nl": "Een gemeenschap: mensen met dezelfde taal",
+       "th": "ชุมชน: ผู้คนที่ใช้ภาษาเดียวกัน",
+       "en": "A community: people with the same language"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "blg.gemeenschap"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel procent van de Belgen hoort bij de Nederlandstalige gemeenschap? Typ een getal.",
+        "th": "ประมาณการ: ชาวเบลเยียมกี่เปอร์เซ็นต์อยู่ในชุมชนที่พูดภาษาดัตช์ พิมพ์ตัวเลข",
+        "en": "Estimate: what percentage of the Belgians belongs to the Dutch-speaking community? Type a number."
+       },
+       "answer": "60",
+       "tol": 10,
+       "err": "getal",
+       "why": {
+        "nl": "Het is ongeveer 60 procent. Ongeveer 40 procent hoort bij de Franse Gemeenschap en ongeveer 1 procent bij de Duitstalige.",
+        "th": "ประมาณ 60 เปอร์เซ็นต์ ประมาณ 40 เปอร์เซ็นต์อยู่ในชุมชนฝรั่งเศส และประมาณ 1 เปอร์เซ็นต์ในชุมชนเยอรมัน",
+        "en": "It is about 60 percent. About 40 percent belongs to the French Community and about 1 percent to the German-speaking one."
+       }
+      }
+     ]
+    },
+    {
+     "type": "look",
+     "min": 3
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "blg.grens"
+     ],
+     "map": "europa",
+     "zoom": [
+      -5,
+      46,
+      14,
+      56
+     ],
+     "hl": [
+      "NL",
+      "FR",
+      "DE",
+      "LU"
+     ],
+     "ask": {
+      "nl": "Vier landen zijn gekleurd. Tussen die landen ligt één land met drie officiële talen. Tik dat land aan.",
+      "th": "ประเทศสี่ประเทศมีสี ระหว่างประเทศเหล่านั้นมีประเทศหนึ่งที่มีสามภาษาราชการ แตะที่ประเทศนั้น",
+      "en": "Four countries are coloured. Between those countries lies one country with three official languages. Tap that country."
+     },
+     "answer": "BE",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed. België grenst aan Nederland, Frankrijk, Duitsland en Luxemburg. Drie van die talen zijn in België officieel: Nederlands, Frans en Duits.",
+      "th": "ถูกต้อง เบลเยียมมีพรมแดนติดเนเธอร์แลนด์ ฝรั่งเศส เยอรมนี และลักเซมเบิร์ก สามภาษาในนั้นเป็นภาษาราชการในเบลเยียม: ดัตช์ ฝรั่งเศส และเยอรมัน",
+      "en": "Right. Belgium borders the Netherlands, France, Germany and Luxembourg. Three of those languages are official in Belgium: Dutch, French and German."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "blg.taal",
+      "blg.officieel",
+      "blg.gemeenschap",
+      "blg.tweetalig"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Languages_of_Belgium",
+       "title": "Wikipedia: Languages of Belgium"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Belgium",
+       "title": "Wikipedia: Belgium"
+      }
+     ],
+     "text": {
+      "nl": "Drie talen, drie gemeenschappen.\n\nBelgië heeft drie officiële talen: Nederlands, Frans en Duits. Daarbij horen drie gemeenschappen: de Vlaamse, Nederlandstalig, met ongeveer 60 procent van de mensen; de Franse, met ongeveer 40 procent; en de Duitstalige, met minder dan 1 procent: ongeveer 79.000 mensen.\n\nVlaanderen ligt in het noorden, Wallonië in het zuiden en Brussel in het midden. Brussel is tweetalig: Nederlands en Frans.",
+      "th": "สามภาษา สามชุมชน\n\nเบลเยียมมีสามภาษาราชการ: ดัตช์ ฝรั่งเศส และเยอรมัน มีสามชุมชนตามนั้น: ชุมชนเฟลมิช พูดภาษาดัตช์ ประมาณ 60 เปอร์เซ็นต์ ชุมชนฝรั่งเศส ประมาณ 40 เปอร์เซ็นต์ และชุมชนที่พูดภาษาเยอรมัน น้อยกว่า 1 เปอร์เซ็นต์ คือประมาณ 79,000 คน\n\nแฟลนเดอร์สอยู่ทางเหนือ วัลโลเนียอยู่ทางใต้ และบรัสเซลส์อยู่ตรงกลาง บรัสเซลส์ใช้สองภาษา: ดัตช์และฝรั่งเศส",
+      "en": "Three languages, three communities.\n\nBelgium has three official languages: Dutch, French and German. With them come three communities: the Flemish, Dutch-speaking, with about 60 percent of the people; the French, with about 40 percent; and the German-speaking, with less than 1 percent: about 79,000 people.\n\nFlanders is in the north, Wallonia in the south and Brussels in the middle. Brussels is bilingual: Dutch and French."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "blg.officieel"
+       ],
+       "ask": {
+        "nl": "Welke talen zijn officieel in België?",
+        "th": "ภาษาใดเป็นภาษาราชการในเบลเยียม",
+        "en": "Which languages are official in Belgium?"
+       },
+       "opts": [
+        {
+         "t": "Nederlands, Frans en Duits",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat zijn de drie officiële talen.",
+          "th": "ถูกต้อง นั่นคือสามภาษาราชการ",
+          "en": "Right. Those are the three official languages."
+         }
+        },
+        {
+         "t": "Alleen Nederlands en Frans",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Duits is ook officieel, ook al spreekt maar ongeveer 1 procent het als eerste taal.",
+          "th": "ไม่ใช่ เยอรมันก็เป็นภาษาราชการ แม้มีเพียงประมาณ 1 เปอร์เซ็นต์ที่ใช้เป็นภาษาแรก",
+          "en": "No. German is also official, even though only about 1 percent speaks it as a first language."
+         }
+        },
+        {
+         "t": "Frans, Duits en Engels",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Engels is geen officiële taal van België. Nederlands wel.",
+          "th": "ไม่ใช่ อังกฤษไม่ใช่ภาษาราชการของเบลเยียม แต่ดัตช์ใช่",
+          "en": "No. English is not an official language of Belgium. Dutch is."
+         }
+        }
+       ],
+       "answer": "Nederlands, Frans en Duits"
+      },
+      {
+       "form": "type",
+       "items": [
+        "blg.tweetalig"
+       ],
+       "ask": {
+        "nl": "Brussel is tweetalig: Frans en een andere taal. Welke? Typ één woord.",
+        "th": "บรัสเซลส์ใช้สองภาษา: ฝรั่งเศสและอีกภาษาหนึ่ง ภาษาอะไร พิมพ์หนึ่งคำ",
+        "en": "Brussels is bilingual: French and another language. Which? Type one word."
+       },
+       "answer": "Nederlands",
+       "accept": [
+        "Vlaams"
+       ],
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Dezelfde taal als in Nederland.",
+         "th": "ภาษาเดียวกับที่ใช้ในเนเธอร์แลนด์",
+         "en": "The same language as in the Netherlands."
+        },
+        {
+         "nl": "Begin zo: Neder…",
+         "th": "ขึ้นต้นแบบนี้: Neder…",
+         "en": "Start like this: Neder…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. In Brussel zijn Nederlands en Frans allebei officieel.",
+        "th": "ถูกต้อง ในบรัสเซลส์ ดัตช์และฝรั่งเศสเป็นภาษาราชการทั้งคู่",
+        "en": "Right. In Brussels Dutch and French are both official."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "blg.grens",
+      "blg.gemeenschap"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Belgium",
+       "title": "Wikipedia: Belgium"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/German-speaking_Community_of_Belgium",
+       "title": "Wikipedia: German-speaking Community of Belgium"
+      }
+     ],
+     "text": {
+      "nl": "Waarom ook Duits?\n\nBelgië werd in 1830 een zelfstandig land. Het oosten, de Oostkantons, hoorde toen niet bij België. Dat gebied hoorde bij Pruisen, en later bij het Duitse Keizerrijk, tot 1920. Na de nederlaag van Duitsland in de Eerste Wereldoorlog kwam het in het Verdrag van Versailles bij België. Daarom is Duits een officiële taal.",
+      "th": "ทำไมจึงมีภาษาเยอรมันด้วย\n\nเบลเยียมเป็นประเทศอิสระในปี 1830 ตอนนั้นทางตะวันออก คือเขตอีสต์แคนตัน ยังไม่ได้เป็นส่วนของเบลเยียม ดินแดนนั้นเป็นของปรัสเซีย และต่อมาเป็นของจักรวรรดิเยอรมัน จนถึงปี 1920 หลังเยอรมนีพ่ายแพ้ในสงครามโลกครั้งที่หนึ่ง ดินแดนนี้ตกเป็นของเบลเยียมตามสนธิสัญญาแวร์ซาย ภาษาเยอรมันจึงเป็นภาษาราชการ",
+      "en": "Why German too?\n\nBelgium became an independent country in 1830. The east, the East Cantons, was not part of Belgium then. That area belonged to Prussia, and later to the German Empire, until 1920. After the defeat of Germany in the First World War it came to Belgium in the Treaty of Versailles. That is why German is an official language."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "blg.grens"
+       ],
+       "ask": {
+        "nl": "Waarom is Duits een officiële taal in België?",
+        "th": "ทำไมภาษาเยอรมันจึงเป็นภาษาราชการในเบลเยียม",
+        "en": "Why is German an official language in Belgium?"
+       },
+       "opts": [
+        {
+         "t": "Een Duits gebied werd in 1920 Belgisch",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Na de Eerste Wereldoorlog kwam het gebied bij België.",
+          "th": "ถูกต้อง หลังสงครามโลกครั้งที่หนึ่ง ดินแดนนี้ตกเป็นของเบลเยียม",
+          "en": "Right. After the First World War the area came to Belgium."
+         }
+        },
+        {
+         "t": "Duitsland gaf het gebied in 1830 aan België",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. In 1830 werd België zelfstandig. Het Duitse gebied kwam pas in 1920.",
+          "th": "ไม่ใช่ ในปี 1830 เบลเยียมเป็นอิสระ ดินแดนเยอรมันมาในปี 1920",
+          "en": "No. In 1830 Belgium became independent. The German area came only in 1920."
+         }
+        },
+        {
+         "t": "Omdat de meeste Belgen Duits spreken",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Ongeveer 1 procent hoort bij de Duitstalige gemeenschap.",
+          "th": "ไม่ใช่ ประมาณ 1 เปอร์เซ็นต์อยู่ในชุมชนที่พูดเยอรมัน",
+          "en": "No. About 1 percent belongs to the German-speaking community."
+         }
+        }
+       ],
+       "answer": "Een Duits gebied werd in 1920 Belgisch"
+      }
+     ]
+    },
+    {
+     "type": "make",
+     "items": [
+      "blg.taal",
+      "blg.gemeenschap"
+     ],
+     "ask": {
+      "nl": "Zeg het in je eigen woorden. Leg in één zin uit hoe het kan dat een klein land drie talen heeft.",
+      "th": "พูดด้วยคำของคุณเอง อธิบายในหนึ่งประโยคว่าประเทศเล็กมีสามภาษาได้อย่างไร",
+      "en": "Say it in your own words. Explain in one sentence how a small country can have three languages."
+     },
+     "frame": "België heeft drie talen, want ...",
+     "model": "België heeft drie talen, want er zijn drie gemeenschappen: een Nederlandstalige, een Franse en een Duitstalige.",
+     "checklist": [
+      {
+       "nl": "Ik heb drie talen of gemeenschappen genoemd.",
+       "th": "ฉันพูดถึงสามภาษาหรือสามชุมชน",
+       "en": "I mentioned three languages or communities."
+      },
+      {
+       "nl": "Ik heb een reden gegeven.",
+       "th": "ฉันให้เหตุผลแล้ว",
+       "en": "I gave a reason."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "blg.officieel"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Languages_of_Belgium",
+       "title": "Wikipedia: Languages of Belgium"
+      }
+     ],
+     "text": {
+      "nl": "In de Grondwet.\n\nDe Belgische Grondwet noemt vier taalgebieden: het Nederlandstalige, het Franstalige, het Duitstalige en het tweetalige gebied Brussel-Hoofdstad. De Duitstalige Gemeenschap is de kleinste: in 2024 telde zij ongeveer 79.000 mensen.",
+      "th": "ในรัฐธรรมนูญ\n\nรัฐธรรมนูญเบลเยียมกล่าวถึงเขตภาษาสี่เขต คือเขตที่พูดดัตช์ เขตที่พูดฝรั่งเศส เขตที่พูดเยอรมัน และเขตสองภาษาของบรัสเซลส์เมืองหลวง ชุมชนที่พูดเยอรมันเล็กที่สุด ในปี 2024 มีประมาณ 79,000 คน",
+      "en": "In the Constitution.\n\nThe Belgian Constitution names four linguistic areas: the Dutch-speaking, the French-speaking, the German-speaking and the bilingual area of Brussels-Capital. The German-speaking Community is the smallest: in 2024 it had about 79,000 people."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "blg.officieel"
+       ],
+       "ask": {
+        "nl": "Hoeveel taalgebieden noemt de Belgische Grondwet?",
+        "th": "รัฐธรรมนูญเบลเยียมกล่าวถึงเขตภาษากี่เขต",
+        "en": "How many linguistic areas does the Belgian Constitution name?"
+       },
+       "opts": [
+        {
+         "t": "Vier",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Vier taalgebieden.",
+          "th": "ถูกต้อง สี่เขตภาษา",
+          "en": "Right. Four linguistic areas."
+         }
+        },
+        {
+         "t": "Drie",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Er zijn drie talen, maar vier taalgebieden: het tweetalige Brussel is het vierde.",
+          "th": "ไม่ใช่ มีสามภาษาแต่สี่เขตภาษา บรัสเซลส์ที่ใช้สองภาษาเป็นเขตที่สี่",
+          "en": "No. There are three languages, but four linguistic areas: bilingual Brussels is the fourth."
+         }
+        },
+        {
+         "t": "Twee",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Het zijn er vier.",
+          "th": "ไม่ใช่ มีสี่เขต",
+          "en": "No. There are four."
+         }
+        }
+       ],
+       "answer": "Vier"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: België heeft drie officiële talen en drie gemeenschappen. Het Duitse gebied kwam in 1920 bij België.",
+      "th": "ตอนนี้คุณเล่าได้ว่า เบลเยียมมีสามภาษาราชการและสามชุมชน ดินแดนเยอรมันมาอยู่กับเบลเยียมในปี 1920",
+      "en": "You can now tell: Belgium has three official languages and three communities. The German area came to Belgium in 1920."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

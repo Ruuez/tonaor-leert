@@ -1,0 +1,558 @@
+{
+ "format": 1,
+ "id": "ao-amsterdam-rijkste",
+ "type": "les",
+ "version": 1,
+ "order": 32,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "geschiedenis",
+ "vorm": "toen en nu",
+ "draden": [
+  "ao-aardappel",
+  "ao-holland",
+  "ao-inflatie"
+ ],
+ "title": {
+  "nl": "Hoe werd Amsterdam zo rijk?",
+  "th": "อัมสเตอร์ดัมร่ำรวยขึ้นมาได้อย่างไร",
+  "en": "How did Amsterdam become so rich?"
+ },
+ "sources": [
+  {
+   "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+   "title": "Wikipedia: Gouden Eeuw (Nederland)"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/History_of_Amsterdam",
+   "title": "Wikipedia: History of Amsterdam"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age",
+   "title": "Wikipedia: Dutch Golden Age"
+  },
+  {
+   "url": "https://www.canonvannederland.nl/en/grachtengordel",
+   "title": "Canon van Nederland: The canal ring"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Amsterdam",
+   "title": "Wikipedia: Amsterdam"
+  }
+ ],
+ "items": [
+  {
+   "id": "ams.handel",
+   "kind": "word",
+   "w": "handel",
+   "art": "de",
+   "tr": {
+    "th": "การค้า",
+    "en": "trade"
+   },
+   "def": "Het kopen en verkopen van spullen.",
+   "ex": "De handel groeide snel.",
+   "gap": "De ___ maakte de stad rijk.",
+   "wrong": [
+    "pan",
+    "jas",
+    "bril"
+   ]
+  },
+  {
+   "id": "ams.haven",
+   "kind": "word",
+   "w": "haven",
+   "art": "de",
+   "tr": {
+    "th": "ท่าเรือ",
+    "en": "harbour, port"
+   },
+   "def": "De plek waar schepen aankomen en vertrekken.",
+   "ex": "Het schip ligt in de haven.",
+   "gap": "In de ___ liggen veel schepen.",
+   "wrong": [
+    "tas",
+    "bus",
+    "wolk"
+   ]
+  },
+  {
+   "id": "ams.aandeel",
+   "kind": "word",
+   "w": "aandeel",
+   "art": "het",
+   "tr": {
+    "th": "หุ้น",
+    "en": "share (in a company)"
+   },
+   "def": "Een stukje van een bedrijf dat je kunt kopen.",
+   "ex": "Hij kocht een aandeel in het bedrijf.",
+   "gap": "Het ___ is een stukje van een bedrijf.",
+   "wrong": [
+    "weekend",
+    "kwartier",
+    "seizoen"
+   ]
+  },
+  {
+   "id": "ams.koopman",
+   "kind": "word",
+   "w": "koopman",
+   "art": "de",
+   "tr": {
+    "th": "พ่อค้า",
+    "en": "merchant"
+   },
+   "def": "Iemand die in spullen handelt.",
+   "ex": "De koopman verkocht specerijen.",
+   "gap": "De ___ verkoopt spullen uit verre landen.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "pen"
+   ]
+  },
+  {
+   "id": "ams.gracht",
+   "kind": "word",
+   "w": "gracht",
+   "art": "de",
+   "tr": {
+    "th": "คลอง (ในเมือง)",
+    "en": "canal (in a town)"
+   },
+   "def": "Een kanaal in een stad.",
+   "ex": "Aan de gracht staan mooie huizen.",
+   "gap": "Aan de ___ staan huizen van rijke kooplieden.",
+   "wrong": [
+    "kassa",
+    "bakker",
+    "fiets"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-amsterdam-rijkste-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Hoe werd Amsterdam zo rijk?",
+    "th": "อัมสเตอร์ดัมร่ำรวยขึ้นมาได้อย่างไร",
+    "en": "How did Amsterdam become so rich?"
+   },
+   "intro": {
+    "nl": "Eerst een schatting. Daarna zie je wat de bronnen zeggen, toen en nu.",
+    "th": "ประมาณก่อน แล้วดูว่าแหล่งข้อมูลกล่าวอะไร ในอดีตและปัจจุบัน",
+    "en": "First an estimate. Then you see what the sources say, then and now."
+   },
+   "can": {
+    "nl": "Vertellen hoe Amsterdam groeide door handel en de VOC en gebeurtenissen op een tijdlijn leggen",
+    "th": "เล่าได้ว่าอัมสเตอร์ดัมเติบโตจากการค้าและ VOC อย่างไร และวางเหตุการณ์บนเส้นเวลาได้",
+    "en": "Tell how Amsterdam grew through trade and the VOC and place events on a timeline"
+   },
+   "targets": [
+    "ams.handel",
+    "ams.haven",
+    "ams.aandeel",
+    "ams.koopman",
+    "ams.gracht"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "apricot",
+    "alt": {
+     "nl": "Een kamer met een tafel en een raam.",
+     "th": "ห้องที่มีโต๊ะและหน้าต่าง",
+     "en": "A room with a table and a window."
+    },
+    "things": [
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56
+     },
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "ams.handel"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel mensen woonden er rond het jaar 1570 in Amsterdam? Typ een getal.",
+        "th": "ประมาณการ: ในราวปี 1570 มีคนอาศัยอยู่ในอัมสเตอร์ดัมกี่คน พิมพ์ตัวเลข",
+        "en": "Estimate: how many people lived in Amsterdam around the year 1570? Type a number."
+       },
+       "answer": "30000",
+       "tol": 15000,
+       "err": "getal",
+       "why": {
+        "nl": "Het waren ongeveer 30.000 inwoners in 1570. In 1622 waren het er 105.000 en in 1688 ongeveer 200.000.",
+        "th": "ประมาณ 30,000 คนในปี 1570 ในปี 1622 มี 105,000 และในปี 1688 ประมาณ 200,000",
+        "en": "About 30,000 inhabitants in 1570. In 1622 there were 105,000 and in 1688 about 200,000."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "ams.handel",
+      "ams.haven",
+      "ams.koopman"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+       "title": "Wikipedia: Gouden Eeuw (Nederland)"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/History_of_Amsterdam",
+       "title": "Wikipedia: History of Amsterdam"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age",
+       "title": "Wikipedia: Dutch Golden Age"
+      }
+     ],
+     "text": {
+      "nl": "Een kleine stad wordt groot.\n\nIn 1585 viel Antwerpen. Daardoor kreeg Amsterdam nieuwe kansen, want kooplieden van Antwerpen verhuisden naar het noorden. In de eerste helft van de 17e eeuw was bijna een derde van de inwoners van Amsterdam een immigrant.\n\nAmsterdam werd de stapelplaats van Europa. Rond 1630 was het een van de belangrijkste havens en handelscentra ter wereld. Er ontstond een grote groep rijke kooplieden.\n\nOf Amsterdam de rijkste stad was, is moeilijk te meten. Wel was het in de 17e eeuw de belangrijkste handelsplaats van Europa en het belangrijkste financiële centrum van de westerse wereld.",
+      "th": "เมืองเล็กกลายเป็นเมืองใหญ่\n\nในปี 1585 แอนต์เวิร์ปล่มสลาย ทำให้อัมสเตอร์ดัมมีโอกาสใหม่ เพราะพ่อค้าจากแอนต์เวิร์ปย้ายไปทางเหนือ ในครึ่งแรกของศตวรรษที่ 17 เกือบหนึ่งในสามของชาวอัมสเตอร์ดัมเป็นผู้อพยพ\n\nอัมสเตอร์ดัมกลายเป็นศูนย์กลางสินค้าของยุโรป ราวปี 1630 เป็นหนึ่งในท่าเรือและศูนย์กลางการค้าที่สำคัญที่สุดในโลก เกิดกลุ่มพ่อค้าที่ร่ำรวยกลุ่มใหญ่\n\nอัมสเตอร์ดัมเป็นเมืองที่รวยที่สุดหรือไม่นั้นวัดยาก แต่ในศตวรรษที่ 17 เป็นศูนย์กลางการค้าที่สำคัญที่สุดของยุโรป และเป็นศูนย์กลางการเงินที่สำคัญที่สุดของโลกตะวันตก",
+      "en": "A small city becomes big.\n\nIn 1585 Antwerp fell. That gave Amsterdam new chances, because merchants from Antwerp moved north. In the first half of the 17th century almost a third of the inhabitants of Amsterdam were immigrants.\n\nAmsterdam became the staple market of Europe. Around 1630 it was one of the most important ports and trade centres in the world. A large group of rich merchants arose.\n\nWhether Amsterdam was the richest city is hard to measure. But in the 17th century it was the most important trading hub of Europe and the leading financial centre of the western world."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "ams.koopman"
+       ],
+       "ask": {
+        "nl": "Wat betekende de val van Antwerpen in 1585 voor Amsterdam?",
+        "th": "การล่มสลายของแอนต์เวิร์ปในปี 1585 มีความหมายอย่างไรต่ออัมสเตอร์ดัม",
+        "en": "What did the fall of Antwerp in 1585 mean for Amsterdam?"
+       },
+       "opts": [
+        {
+         "t": "Nieuwe kansen: kooplieden gingen naar het noorden",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Veel kooplieden uit Antwerpen verhuisden naar Amsterdam.",
+          "th": "ถูกต้อง พ่อค้าจำนวนมากจากแอนต์เวิร์ปย้ายมาอัมสเตอร์ดัม",
+          "en": "Right. Many merchants from Antwerp moved to Amsterdam."
+         }
+        },
+        {
+         "t": "Amsterdam werd door de oorlog bijna helemaal verwoest",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. Het gaf Amsterdam juist nieuwe kansen.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ กลับให้โอกาสใหม่แก่อัมสเตอร์ดัม",
+          "en": "No. That is not in the text. It gave Amsterdam new chances."
+         }
+        },
+        {
+         "t": "Amsterdam verloor zijn handelaren",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het was andersom: handelaren kwamen naar Amsterdam.",
+          "th": "ไม่ใช่ ตรงกันข้าม พ่อค้าเข้ามาอัมสเตอร์ดัม",
+          "en": "No. It was the other way round: merchants came to Amsterdam."
+         }
+        }
+       ],
+       "answer": "Nieuwe kansen: kooplieden gingen naar het noorden"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "ams.aandeel",
+      "ams.handel"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+       "title": "Wikipedia: Gouden Eeuw (Nederland)"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/History_of_Amsterdam",
+       "title": "Wikipedia: History of Amsterdam"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age",
+       "title": "Wikipedia: Dutch Golden Age"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Amsterdam",
+       "title": "Wikipedia: Amsterdam"
+      }
+     ],
+     "text": {
+      "nl": "Geld uit aandelen.\n\nIn 1602 werd de VOC opgericht, de Verenigde Oost-Indische Compagnie. Ze kreeg het Nederlandse monopolie op de handel met Azië, dat bijna twee eeuwen bleef bestaan. De VOC was het eerste internationale bedrijf dat aandelen uitgaf.\n\nMet de handel in aandelen en de Bank van Amsterdam werd de stad een financieel centrum. De Amsterdamse beurs geldt als de oudste moderne effectenmarkt.",
+      "th": "เงินจากหุ้น\n\nในปี 1602 มีการก่อตั้ง VOC คือบริษัทอินเดียตะวันออกของเนเธอร์แลนด์ ได้ผูกขาดการค้ากับเอเชียของเนเธอร์แลนด์ ซึ่งคงอยู่เกือบสองศตวรรษ VOC เป็นบริษัทข้ามชาติแห่งแรกที่ออกหุ้น\n\nด้วยการซื้อขายหุ้นและธนาคารอัมสเตอร์ดัม เมืองนี้กลายเป็นศูนย์กลางการเงิน ตลาดหลักทรัพย์อัมสเตอร์ดัมถือเป็นตลาดหลักทรัพย์สมัยใหม่ที่เก่าแก่ที่สุด",
+      "en": "Money from shares.\n\nIn 1602 the VOC was founded, the Dutch East India Company. It got the Dutch monopoly on trade with Asia, which lasted almost two centuries. The VOC was the first multinational company to issue shares.\n\nWith the trade in shares and the Bank of Amsterdam the city became a financial centre. The Amsterdam exchange counts as the oldest modern securities market."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "ams.aandeel"
+       ],
+       "ask": {
+        "nl": "Wat gaf de VOC uit om geld te krijgen?",
+        "th": "VOC ออกอะไรเพื่อหาเงิน",
+        "en": "What did the VOC issue to get money?"
+       },
+       "opts": [
+        {
+         "t": "Aandelen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De VOC was het eerste internationale bedrijf met aandelen.",
+          "th": "ถูกต้อง VOC เป็นบริษัทข้ามชาติแห่งแรกที่ออกหุ้น",
+          "en": "Right. The VOC was the first multinational company with shares."
+         }
+        },
+        {
+         "t": "Postzegels",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. Het waren aandelen.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ คือหุ้น",
+          "en": "No. That is not in the text. It was shares."
+         }
+        },
+        {
+         "t": "Grachten",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Grachten zijn kanalen in de stad, geen geld.",
+          "th": "ไม่ใช่ คลองคือทางน้ำในเมือง ไม่ใช่เงิน",
+          "en": "No. Canals are waterways in the city, not money."
+         }
+        }
+       ],
+       "answer": "Aandelen"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "ams.handel"
+       ],
+       "ask": {
+        "nl": "Maak af: In 1602 werd de ___ opgericht.",
+        "th": "เติมคำ: ในปี 1602 มีการก่อตั้ง ___",
+        "en": "Complete: In 1602 the ___ was founded."
+       },
+       "answer": "VOC",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Een bedrijf voor de handel met Azië. Drie letters.",
+         "th": "บริษัทเพื่อการค้ากับเอเชีย สามตัวอักษร",
+         "en": "A company for trade with Asia. Three letters."
+        },
+        {
+         "nl": "Het begint met V.",
+         "th": "ขึ้นต้นด้วย V",
+         "en": "It starts with V."
+        }
+       ],
+       "why": {
+        "nl": "Goed. De VOC, in 1602.",
+        "th": "ถูกต้อง VOC ปี 1602",
+        "en": "Right. The VOC, in 1602."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "timeline",
+     "items": [
+      "ams.handel",
+      "ams.koopman"
+     ],
+     "from": 1550,
+     "to": 1700,
+     "scale": "lin",
+     "tol": 10,
+     "marks": [
+      {
+       "y": 1648,
+       "label": {
+        "nl": "Einde van de Tachtigjarige Oorlog",
+        "th": "การสิ้นสุดของสงครามแปดสิบปี",
+        "en": "End of the Eighty Years' War"
+       },
+       "known": true
+      }
+     ],
+     "cards": [
+      {
+       "y": 1585,
+       "label": {
+        "nl": "Antwerpen valt: kooplieden gaan naar Amsterdam",
+        "th": "แอนต์เวิร์ปล่มสลาย: พ่อค้าไปอัมสเตอร์ดัม",
+        "en": "Antwerp falls: merchants go to Amsterdam"
+       }
+      },
+      {
+       "y": 1602,
+       "label": {
+        "nl": "De VOC wordt opgericht",
+        "th": "ก่อตั้ง VOC",
+        "en": "The VOC is founded"
+       }
+      },
+      {
+       "y": 1672,
+       "label": {
+        "nl": "Het Rampjaar: de bloei is voorbij",
+        "th": "ปีแห่งภัยพิบัติ (Rampjaar): ช่วงรุ่งเรืองผ่านพ้นไปแล้ว",
+        "en": "The Rampjaar: the peak is over"
+       }
+      }
+     ],
+     "ask": {
+      "nl": "Het einde van de Tachtigjarige Oorlog (1648) staat al op de lijn. Zet de drie gebeurtenissen erbij. Ongeveer goed is goed genoeg.",
+      "th": "การสิ้นสุดของสงครามแปดสิบปี (1648) อยู่บนเส้นแล้ว วางเหตุการณ์ทั้งสามเพิ่ม ประมาณก็พอ",
+      "en": "The end of the Eighty Years' War (1648) is already on the line. Add the three events. Roughly right is good enough."
+     },
+     "why": {
+      "nl": "Antwerpen viel in 1585, de VOC kwam in 1602 en na het Rampjaar 1672 was de Gouden Eeuw over haar hoogtepunt heen.",
+      "th": "แอนต์เวิร์ปล่มสลายในปี 1585 VOC เกิดในปี 1602 และหลังปีแห่งภัยพิบัติ 1672 ยุคทองก็ผ่านจุดสูงสุดไปแล้ว",
+      "en": "Antwerp fell in 1585, the VOC came in 1602 and after the Rampjaar of 1672 the Golden Age was past its peak."
+     },
+     "err": "tijd"
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "ams.gracht",
+      "ams.koopman"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Gouden_Eeuw_(Nederland)",
+       "title": "Wikipedia: Gouden Eeuw (Nederland)"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/History_of_Amsterdam",
+       "title": "Wikipedia: History of Amsterdam"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age",
+       "title": "Wikipedia: Dutch Golden Age"
+      },
+      {
+       "url": "https://www.canonvannederland.nl/en/grachtengordel",
+       "title": "Canon van Nederland: The canal ring"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Amsterdam",
+       "title": "Wikipedia: Amsterdam"
+      },
+      {
+       "url": "https://nos.nl/artikel/2301505-kritiek-op-ban-gouden-eeuw-rijksmuseum-handhaaft-de-term.html",
+       "title": "NOS: Kritiek op ban Gouden Eeuw, Rijksmuseum handhaaft de term"
+      }
+     ],
+     "text": {
+      "nl": "Toen en nu.\n\nVanaf 1613 breidde Amsterdam zich uit rond de grachten. Rijke kooplieden, bankiers en bestuurders bouwden er grote huizen. De Gouden Bocht van de Herengracht blijft een teken van de rijkdom van die tijd.\n\nNu heeft Amsterdam ongeveer 940.000 inwoners (1 januari 2026), ongeveer negen keer zoveel als in 1622. De grachtengordel staat sinds 2010 op de Werelderfgoedlijst.\n\nDe term Gouden Eeuw is omstreden. Het Amsterdam Museum gebruikt de term sinds 2019 niet meer, omdat de naam de negatieve kanten van die tijd negeert, zoals armoede, oorlog en slavernij. Daar kwam veel reactie op. Het Rijksmuseum houdt de term wel aan: die gaat volgens het museum over een tijd van grote welvaart. Het museum laat ook de schaduwkant zien.",
+      "th": "เมื่อก่อนและตอนนี้\n\nตั้งแต่ปี 1613 อัมสเตอร์ดัมขยายตัวรอบคลอง พ่อค้า นายธนาคาร และผู้บริหารที่ร่ำรวยสร้างบ้านหลังใหญ่ที่นั่น โค้งทองของคลองเฮเรนคราชต์ยังคงเป็นสัญลักษณ์ของความมั่งคั่งในยุคนั้น\n\nปัจจุบันอัมสเตอร์ดัมมีประชากรประมาณ 940,000 คน (1 มกราคม 2026) มากกว่าปี 1622 ประมาณเก้าเท่า วงแหวนคลองอยู่ในรายชื่อมรดกโลกตั้งแต่ปี 2010\n\nคำว่า ยุคทอง เป็นเรื่องถกเถียง พิพิธภัณฑ์อัมสเตอร์ดัมเลิกใช้คำนี้ตั้งแต่ปี 2019 เพราะชื่อนี้มองข้ามด้านลบของยุคนั้น เช่นความยากจน สงคราม และการค้าทาส เรื่องนี้มีปฏิกิริยาตอบรับมากมาย พิพิธภัณฑ์ Rijksmuseum ยังคงใช้คำนี้อยู่ เพราะตามที่พิพิธภัณฑ์กล่าว คำนี้หมายถึงยุคที่มีความมั่งคั่งมาก พิพิธภัณฑ์ยังแสดงด้านมืดของยุคนั้นด้วย",
+      "en": "Then and now.\n\nFrom 1613 Amsterdam expanded around the canals. Rich merchants, bankers and administrators built large houses there. The Golden Bend of the Herengracht remains a sign of the wealth of that time.\n\nNow Amsterdam has about 940,000 inhabitants (1 January 2026), about nine times as many as in 1622. The canal ring has been on the World Heritage list since 2010.\n\nThe term Golden Age is controversial. The Amsterdam Museum has not used the term since 2019, because the name ignores the negative sides of that time, such as poverty, war and slavery. That caused many reactions. The Rijksmuseum does keep the term: according to the museum it is about a time of great prosperity. The museum also shows the dark side."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "ams.gracht"
+       ],
+       "ask": {
+        "nl": "Waarom is de term Gouden Eeuw omstreden geworden?",
+        "th": "ทำไมคำว่า ยุคทอง จึงกลายเป็นเรื่องถกเถียง",
+        "en": "Why has the term Golden Age become controversial?"
+       },
+       "opts": [
+        {
+         "t": "Omdat sommigen vinden dat de naam de negatieve kanten van die tijd negeert, zoals slavernij",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat zegt het Amsterdam Museum. Anderen vinden de term juist goed. Daarom is er discussie.",
+          "th": "ถูกต้อง พิพิธภัณฑ์อัมสเตอร์ดัมกล่าวเช่นนั้น คนอื่นเห็นว่าคำนี้ดี จึงเกิดการถกเถียง",
+          "en": "Right. That is what the Amsterdam Museum says. Others think the term is fine. That is why there is a discussion."
+         }
+        },
+        {
+         "t": "Omdat de periode nooit bestond",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De periode bestond. De discussie gaat over hoe je haar noemt.",
+          "th": "ไม่ใช่ ช่วงเวลานั้นมีอยู่จริง การถกเถียงเกี่ยวกับการเรียกชื่อ",
+          "en": "No. The period existed. The discussion is about what you call it."
+         }
+        },
+        {
+         "t": "Omdat Amsterdam toen arm was",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De bronnen beschrijven Amsterdam juist als een rijk handelscentrum.",
+          "th": "ไม่ใช่ แหล่งข้อมูลบรรยายอัมสเตอร์ดัมว่าเป็นศูนย์กลางการค้าที่ร่ำรวย",
+          "en": "No. The sources describe Amsterdam as a rich trade centre."
+         }
+        }
+       ],
+       "answer": "Omdat sommigen vinden dat de naam de negatieve kanten van die tijd negeert, zoals slavernij"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: na 1585 groeide Amsterdam door handel en de VOC (1602) tot een financieel centrum. Of het de rijkste stad was, is moeilijk te meten. Over die tijd bestaan nu ook andere verhalen.",
+      "th": "ตอนนี้คุณเล่าได้ว่า หลังปี 1585 อัมสเตอร์ดัมเติบโตด้วยการค้าและ VOC (1602) จนเป็นศูนย์กลางการเงิน ส่วนเป็นเมืองที่รวยที่สุดหรือไม่นั้นวัดยาก ตอนนี้ก็มีเรื่องเล่าอื่นเกี่ยวกับยุคนั้นด้วย",
+      "en": "You can now tell: after 1585 Amsterdam grew through trade and the VOC (1602) into a financial centre. Whether it was the richest city is hard to measure. About that time there are now also other stories."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

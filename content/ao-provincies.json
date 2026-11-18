@@ -1,0 +1,615 @@
+{
+ "format": 1,
+ "id": "ao-provincies",
+ "type": "les",
+ "version": 1,
+ "order": 35,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "aardrijkskunde",
+ "vorm": "een plek op de kaart",
+ "draden": [
+  "ao-holland",
+  "ao-zeespiegel",
+  "ao-kamer150"
+ ],
+ "title": {
+  "nl": "Waar ligt welke provincie, en waarom zijn het er twaalf?",
+  "th": "จังหวัดแต่ละจังหวัดอยู่ที่ไหน และทำไมจึงมีสิบสอง",
+  "en": "Where is which province, and why are there twelve?"
+ },
+ "sources": [
+  {
+   "url": "https://nl.wikipedia.org/wiki/Provincies_van_Nederland",
+   "title": "Wikipedia: Provincies van Nederland"
+  },
+  {
+   "url": "https://www.rijksoverheid.nl/themas/overheid-en-democratie/provincies/taken-provincie",
+   "title": "Rijksoverheid: Provincie voert landelijk en eigen beleid uit"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Flevoland",
+   "title": "Wikipedia: Flevoland"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Friesland",
+   "title": "Wikipedia: Friesland"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Zeeland_(provincie)",
+   "title": "Wikipedia: Zeeland (provincie)"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Limburg_(Nederlandse_provincie)",
+   "title": "Wikipedia: Limburg (Nederlandse provincie)"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Drenthe",
+   "title": "Wikipedia: Drenthe"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Gelderland",
+   "title": "Wikipedia: Gelderland"
+  }
+ ],
+ "items": [
+  {
+   "id": "prv.provincie",
+   "kind": "word",
+   "w": "provincie",
+   "art": "de",
+   "tr": {
+    "th": "จังหวัด (ระดับปกครองของเนเธอร์แลนด์)",
+    "en": "province"
+   },
+   "def": "Een deel van een land met een eigen bestuur.",
+   "ex": "Elke provincie heeft een eigen hoofdstad.",
+   "gap": "De ___ is een bestuurslaag tussen het Rijk en de gemeente.",
+   "wrong": [
+    "fiets",
+    "jas",
+    "soep"
+   ]
+  },
+  {
+   "id": "prv.hoofdstad",
+   "kind": "word",
+   "w": "hoofdstad",
+   "art": "de",
+   "tr": {
+    "th": "เมืองเอกของจังหวัด หรือเมืองหลวงของประเทศ",
+    "en": "capital"
+   },
+   "def": "De stad waar het bestuur van een provincie zit; bij een land de belangrijkste stad.",
+   "ex": "In de hoofdstad van de provincie vergadert het bestuur.",
+   "gap": "De ___ van een provincie is de stad waar het bestuur zit.",
+   "wrong": [
+    "kast",
+    "jas",
+    "pan"
+   ]
+  },
+  {
+   "id": "prv.gemeente",
+   "kind": "word",
+   "w": "gemeente",
+   "art": "de",
+   "tr": {
+    "th": "เทศบาล (เมืองหรืออำเภอ)",
+    "en": "municipality"
+   },
+   "def": "Een stad of dorp met een eigen bestuur, het kleinste bestuur in Nederland.",
+   "ex": "Je haalt je paspoort bij de gemeente.",
+   "gap": "De ___ geeft je een paspoort of een rijbewijs.",
+   "wrong": [
+    "pan",
+    "bus",
+    "tas"
+   ]
+  },
+  {
+   "id": "prv.polder",
+   "kind": "word",
+   "w": "polder",
+   "art": "de",
+   "tr": {
+    "th": "โพลเดอร์ (ที่ดินที่เอาน้ำออกแล้ว)",
+    "en": "polder (reclaimed land)"
+   },
+   "def": "Land dat eerst water was en nu droog is.",
+   "ex": "In de polder is het land vlak.",
+   "gap": "De ___ was eerst water en is nu droog land.",
+   "wrong": [
+    "bakker",
+    "lamp",
+    "trein"
+   ]
+  },
+  {
+   "id": "prv.bestuur",
+   "kind": "word",
+   "w": "bestuur",
+   "art": "het",
+   "tr": {
+    "th": "การบริหาร, ผู้บริหาร",
+    "en": "government, administration"
+   },
+   "def": "De mensen die iets regelen en beslissen voor een groep.",
+   "ex": "Het bestuur van de provincie vergadert in de hoofdstad.",
+   "gap": "Het ___ van de provincie beslist over wegen en natuur.",
+   "wrong": [
+    "brood",
+    "raam",
+    "dak"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-provincies-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waar ligt welke provincie, en waarom zijn het er twaalf?",
+    "th": "จังหวัดแต่ละจังหวัดอยู่ที่ไหน และทำไมจึงมีสิบสอง",
+    "en": "Where is which province, and why are there twelve?"
+   },
+   "intro": {
+    "nl": "Eerst een schatting. Daarna zoek je zelf provincies op de kaart, met bij elke een verhaal.",
+    "th": "ประมาณก่อน แล้วหาจังหวัดบนแผนที่ด้วยตัวเอง พร้อมเรื่องราวของแต่ละจังหวัด",
+    "en": "First an estimate. Then you find provinces on the map yourself, with a story for each."
+   },
+   "can": {
+    "nl": "Een paar provincies aanwijzen en vertellen waarom Nederland er twaalf heeft",
+    "th": "ชี้จังหวัดสองสามจังหวัดได้และเล่าได้ว่าทำไมเนเธอร์แลนด์มีสิบสอง",
+    "en": "Point out a few provinces and tell why the Netherlands has twelve"
+   },
+   "targets": [
+    "prv.provincie",
+    "prv.hoofdstad",
+    "prv.gemeente",
+    "prv.polder",
+    "prv.bestuur"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "kind": "map",
+    "map": "nederland",
+    "alt": {
+     "nl": "Kaart van Nederland met de twaalf provincies.",
+     "th": "แผนที่เนเธอร์แลนด์พร้อมสิบสองจังหวัด",
+     "en": "Map of the Netherlands with the twelve provinces."
+    }
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "prv.provincie",
+        "prv.polder"
+       ],
+       "ask": {
+        "nl": "Schat: in welk jaar kwam de jongste provincie van Nederland erbij? Typ een jaartal.",
+        "th": "ประมาณการ: จังหวัดที่อายุน้อยที่สุดของเนเธอร์แลนด์เกิดขึ้นในปีใด พิมพ์ปี",
+        "en": "Estimate: in which year did the youngest province of the Netherlands appear? Type a year."
+       },
+       "answer": "1986",
+       "err": "getal",
+       "tol": 25,
+       "why": {
+        "nl": "Op 1 januari 1986 kwam Flevoland erbij, als twaalfde provincie.",
+        "th": "วันที่ 1 มกราคม 1986 เฟลโวลันด์เพิ่มเข้ามาเป็นจังหวัดที่สิบสอง",
+        "en": "On 1 January 1986 Flevoland was added, as the twelfth province."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "prv.polder",
+      "prv.provincie"
+     ],
+     "map": "nederland",
+     "ask": {
+      "nl": "De jongste provincie ligt in het midden van het land. Het land was eerst water: de Zuiderzee. Tik die provincie aan.",
+      "th": "จังหวัดที่อายุน้อยที่สุดอยู่กลางประเทศ แผ่นดินนี้เดิมเป็นน้ำ คือซุยเดอร์เซ แตะที่จังหวัดนั้น",
+      "en": "The youngest province lies in the middle of the country. The land was water first: the Zuiderzee. Tap that province."
+     },
+     "answer": "flevoland",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed: Flevoland. Het land is voor het grootste deel gewonnen op de Zuiderzee. Het is de jongste en, naar landoppervlak, de kleinste provincie.",
+      "th": "ถูกต้อง: เฟลโวลันด์ แผ่นดินส่วนใหญ่ได้มาจากซุยเดอร์เซ เป็นจังหวัดที่อายุน้อยที่สุด และเล็กที่สุดตามพื้นที่แผ่นดิน",
+      "en": "Right: Flevoland. Most of the land was won from the Zuiderzee. It is the youngest and, by land area, the smallest province."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "prv.provincie",
+      "prv.bestuur"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Provincies_van_Nederland",
+       "title": "Wikipedia: Provincies van Nederland"
+      }
+     ],
+     "text": {
+      "nl": "Waarom twaalf?\n\nNederland heeft twaalf provincies. Dat waren er niet altijd twaalf.\n\nIn 1815 was er één groot koninkrijk met de noordelijke en de zuidelijke Nederlanden. Dat had zeventien provincies. Na de Belgische Revolutie in 1830 maakten de zuidelijke provincies zich los. In 1839 kreeg Nederland het oostelijke deel van Limburg terug. In 1840 werd Holland gesplitst in twee provincies: Noord-Holland en Zuid-Holland. Op 1 januari 1986 kwam Flevoland erbij.\n\nEen provincie is een bestuurslaag tussen het Rijk en de gemeenten.",
+      "th": "ทำไมจึงสิบสอง\n\nเนเธอร์แลนด์มีสิบสองจังหวัด แต่ไม่ได้มีสิบสองมาตลอด\n\nในปี 1815 มีราชอาณาจักรใหญ่หนึ่งเดียว รวมเนเธอร์แลนด์ทางเหนือและทางใต้ มีสิบเจ็ดจังหวัด หลังการปฏิวัติเบลเยียมในปี 1830 จังหวัดทางใต้แยกตัวออกไป ในปี 1839 เนเธอร์แลนด์ได้ส่วนตะวันออกของลิมบวร์กกลับคืน ในปี 1840 ฮอลแลนด์ถูกแบ่งเป็นสองจังหวัด คือนอร์ทฮอลแลนด์ (Noord-Holland) และเซาท์ฮอลแลนด์ (Zuid-Holland) วันที่ 1 มกราคม 1986 เฟลโวลันด์เพิ่มเข้ามา\n\nจังหวัดคือระดับการปกครองระหว่างรัฐบาลกลาง (het Rijk) กับเทศบาล",
+      "en": "Why twelve?\n\nThe Netherlands has twelve provinces. There were not always twelve.\n\nIn 1815 there was one large kingdom with the northern and the southern Netherlands. It had seventeen provinces. After the Belgian Revolution in 1830 the southern provinces broke away. In 1839 the Netherlands got the eastern part of Limburg back. In 1840 Holland was split into two provinces: Noord-Holland and Zuid-Holland. On 1 January 1986 Flevoland was added.\n\nA province is a layer of government between the national government (het Rijk) and the municipalities."
+     },
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "prv.provincie"
+       ],
+       "ask": {
+        "nl": "Hoeveel provincies had het koninkrijk in 1815? Typ een getal.",
+        "th": "ในปี 1815 ราชอาณาจักรมีกี่จังหวัด พิมพ์ตัวเลข",
+        "en": "How many provinces did the kingdom have in 1815? Type a number."
+       },
+       "answer": "17",
+       "err": "getal",
+       "hint": [
+        {
+         "nl": "Meer dan vijftien.",
+         "th": "มากกว่าสิบห้า",
+         "en": "More than fifteen."
+        },
+        {
+         "nl": "Het getal begint met 1 en eindigt op 7.",
+         "th": "ตัวเลขขึ้นต้นด้วย 1 และลงท้ายด้วย 7",
+         "en": "The number starts with 1 and ends in 7."
+        }
+       ],
+       "why": {
+        "nl": "Goed. In 1815 waren het er zeventien.",
+        "th": "ถูกต้อง ในปี 1815 มีสิบเจ็ดจังหวัด",
+        "en": "Right. In 1815 there were seventeen."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "prv.provincie"
+       ],
+       "ask": {
+        "nl": "Wat gebeurde er in 1840?",
+        "th": "เกิดอะไรขึ้นในปี 1840",
+        "en": "What happened in 1840?"
+       },
+       "opts": [
+        {
+         "t": "Flevoland kwam erbij",
+         "r": "no",
+         "err": "tijd",
+         "why": {
+          "nl": "Nee. Flevoland kwam pas in 1986.",
+          "th": "ไม่ใช่ เฟลโวลันด์มาในปี 1986",
+          "en": "No. Flevoland came only in 1986."
+         }
+        },
+        {
+         "t": "Holland werd gesplitst in Noord-Holland en Zuid-Holland",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Sinds 1840 zijn er twee Hollanden.",
+          "th": "ถูกต้อง ตั้งแต่ปี 1840 มีฮอลแลนด์สองจังหวัด",
+          "en": "Right. Since 1840 there are two Hollands."
+         }
+        },
+        {
+         "t": "België maakte zich los van Nederland en werd een eigen land",
+         "r": "no",
+         "err": "tijd",
+         "why": {
+          "nl": "Nee. Dat was al in 1830, tien jaar eerder.",
+          "th": "ไม่ใช่ นั่นคือปี 1830 สิบปีก่อนหน้า",
+          "en": "No. That was in 1830, ten years earlier."
+         }
+        }
+       ],
+       "answer": "Holland werd gesplitst in Noord-Holland en Zuid-Holland"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "prv.provincie"
+     ],
+     "map": "nederland",
+     "ask": {
+      "nl": "In het noorden, boven het IJsselmeer, ligt een provincie met een eigen taal die er officieel is: het Fries. Tik die provincie aan.",
+      "th": "ทางเหนือ เหนือทะเลสาบไอส์เซลเมร์ มีจังหวัดหนึ่งที่มีภาษาของตนเองเป็นภาษาราชการ คือภาษาฟรีเซียน แตะที่จังหวัดนั้น",
+      "en": "In the north, above the IJsselmeer, lies a province with its own language that is official there: Frisian. Tap that province."
+     },
+     "answer": "friesland",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed: Friesland, in het Fries Fryslân. Naast het Nederlands is het Fries er officiële bestuurstaal. Sinds 1997 heet de provincie officieel Fryslân.",
+      "th": "ถูกต้อง: ฟรีสแลนด์ ในภาษาฟรีเซียนคือ Fryslân ภาษาฟรีเซียนเป็นภาษาราชการในการปกครอง ควบคู่กับภาษาดัตช์ ตั้งแต่ปี 1997 ชื่อทางการของจังหวัดคือ Fryslân",
+      "en": "Right: Friesland, in Frisian Fryslân. Besides Dutch, Frisian is an official administrative language there. Since 1997 the province is officially called Fryslân."
+     }
+    },
+    {
+     "type": "do",
+     "form": "timeline",
+     "items": [
+      "prv.provincie"
+     ],
+     "from": 1800,
+     "to": 2030,
+     "scale": "lin",
+     "tol": 25,
+     "marks": [
+      {
+       "y": 1830,
+       "label": {
+        "nl": "Belgische Revolutie: de zuidelijke provincies maken zich los",
+        "th": "การปฏิวัติเบลเยียม: จังหวัดทางใต้แยกตัว",
+        "en": "Belgian Revolution: the southern provinces break away"
+       },
+       "known": true
+      }
+     ],
+     "cards": [
+      {
+       "y": 1815,
+       "label": {
+        "nl": "Eén koninkrijk met zeventien provincies",
+        "th": "ราชอาณาจักรเดียวที่มีสิบเจ็ดจังหวัด",
+        "en": "One kingdom with seventeen provinces"
+       }
+      },
+      {
+       "y": 1840,
+       "label": {
+        "nl": "Holland wordt gesplitst in twee provincies",
+        "th": "ฮอลแลนด์ถูกแบ่งเป็นสองจังหวัด",
+        "en": "Holland is split into two provinces"
+       }
+      },
+      {
+       "y": 1986,
+       "label": {
+        "nl": "Flevoland wordt de twaalfde provincie",
+        "th": "เฟลโวลันด์กลายเป็นจังหวัดที่สิบสอง",
+        "en": "Flevoland becomes the twelfth province"
+       }
+      }
+     ],
+     "ask": {
+      "nl": "Zet de drie gebeurtenissen op de lijn. De Belgische Revolutie (1830) staat er al. Ongeveer goed is goed genoeg.",
+      "th": "วางเหตุการณ์ทั้งสามบนเส้นเวลา การปฏิวัติเบลเยียม (1830) อยู่บนเส้นแล้ว ประมาณก็พอ",
+      "en": "Put the three events on the line. The Belgian Revolution (1830) is already there. Roughly right is good enough."
+     },
+     "why": {
+      "nl": "In 1815 waren er zeventien provincies, in 1840 werd Holland gesplitst en in 1986 kwam Flevoland erbij.",
+      "th": "ในปี 1815 มีสิบเจ็ดจังหวัด ในปี 1840 ฮอลแลนด์ถูกแบ่ง และในปี 1986 เฟลโวลันด์เพิ่มเข้ามา",
+      "en": "In 1815 there were seventeen provinces, in 1840 Holland was split and in 1986 Flevoland was added."
+     },
+     "err": "tijd"
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "prv.polder"
+     ],
+     "map": "nederland",
+     "ask": {
+      "nl": "In het zuidwesten, aan zee, ligt een provincie met veel eilanden. Bijna alles ligt er op of onder zeeniveau. Tik die provincie aan.",
+      "th": "ทางตะวันตกเฉียงใต้ ติดทะเล มีจังหวัดที่มีเกาะมากมาย เกือบทั้งหมดอยู่ระดับน้ำทะเลหรือต่ำกว่า แตะที่จังหวัดนั้น",
+      "en": "In the southwest, by the sea, lies a province with many islands. Almost everything there lies at or below sea level. Tap that province."
+     },
+     "answer": "zeeland",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed: Zeeland. Vrijwel de hele provincie ligt op of onder zeeniveau. In de zestiende en zeventiende eeuw was Middelburg een belangrijke handelsstad.",
+      "th": "ถูกต้อง: เซลันด์ จังหวัดเกือบทั้งหมดอยู่ระดับน้ำทะเลหรือต่ำกว่า ในศตวรรษที่สิบหกและสิบเจ็ด มิดเดลเบิร์กเป็นเมืองการค้าสำคัญ",
+      "en": "Right: Zeeland. Almost the whole province lies at or below sea level. In the sixteenth and seventeenth centuries Middelburg was an important trading city."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "prv.provincie",
+      "prv.gemeente",
+      "prv.bestuur"
+     ],
+     "sources": [
+      {
+       "url": "https://www.rijksoverheid.nl/themas/overheid-en-democratie/provincies/taken-provincie",
+       "title": "Rijksoverheid: Provincie voert landelijk en eigen beleid uit"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Provincies_van_Nederland",
+       "title": "Wikipedia: Provincies van Nederland"
+      }
+     ],
+     "text": {
+      "nl": "Wat doet een provincie?\n\nOver veel zaken mag de provincie zelf beslissen. Bijvoorbeeld waar wegen komen. De provincie legt provinciale wegen, fietspaden en bruggen aan en onderhoudt ze. Ze zorgt voor nieuwe natuur en houdt toezicht op de gemeenten en de waterschappen.\n\nElke vier jaar kiezen mensen de Provinciale Staten. Dat is het parlement van de provincie.",
+      "th": "จังหวัดทำอะไร\n\nจังหวัดตัดสินใจเองในหลายเรื่อง เช่น ถนนจะไปทางไหน จังหวัดสร้างและดูแลถนนของจังหวัด ทางจักรยาน และสะพาน ดูแลให้มีธรรมชาติใหม่ และกำกับดูแลเทศบาลและองค์กรจัดการน้ำ (waterschappen)\n\nทุกสี่ปีประชาชนเลือก Provinciale Staten ซึ่งเป็นสภาของจังหวัด",
+      "en": "What does a province do?\n\nOn many matters the province may decide for itself. For example where roads go. The province builds and maintains provincial roads, cycle paths and bridges. It takes care of new nature and supervises the municipalities and the water boards.\n\nEvery four years people elect the Provincial Council (Provinciale Staten). That is the provincial parliament."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "prv.bestuur"
+       ],
+       "ask": {
+        "nl": "Wat doet een provincie?",
+        "th": "จังหวัดทำอะไร",
+        "en": "What does a province do?"
+       },
+       "opts": [
+        {
+         "t": "Niets: alles wordt in Den Haag besloten",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Over veel zaken beslist de provincie zelf, bijvoorbeeld over wegen.",
+          "th": "ไม่ใช่ จังหวัดตัดสินใจเองในหลายเรื่อง เช่น ถนน",
+          "en": "No. On many matters the province decides itself, for example about roads."
+         }
+        },
+        {
+         "t": "Wegen, fietspaden en nieuwe natuur",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat staat bij de taken van de provincie.",
+          "th": "ถูกต้อง นั่นอยู่ในหน้าที่ของจังหวัด",
+          "en": "Right. That is one of the tasks of the province."
+         }
+        },
+        {
+         "t": "Ze bepaalt wie koning is",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet bij de taken van de provincie.",
+          "th": "ไม่ใช่ นั่นไม่ได้อยู่ในหน้าที่ของจังหวัด",
+          "en": "No. That is not one of the tasks of the province."
+         }
+        }
+       ],
+       "answer": "Wegen, fietspaden en nieuwe natuur"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "prv.bestuur"
+       ],
+       "ask": {
+        "nl": "Maak af: Elke vier jaar kiezen mensen de Provinciale ___.",
+        "th": "เติมคำ: ทุกสี่ปีประชาชนเลือก Provinciale ___",
+        "en": "Complete: Every four years people elect the Provincial ___."
+       },
+       "answer": "Staten",
+       "err": "spelling",
+       "accept": [
+        "staten"
+       ],
+       "hint": [
+        {
+         "nl": "Het is een woord met het meervoud van “staat”.",
+         "th": "เป็นคำพหูพจน์ของ “staat”",
+         "en": "It is the plural of “staat”."
+        },
+        {
+         "nl": "Begin zo: Sta…",
+         "th": "ขึ้นต้นแบบนี้: Sta…",
+         "en": "Start like this: Sta…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. De Provinciale Staten zijn het parlement van de provincie.",
+        "th": "ถูกต้อง Provinciale Staten คือสภาของจังหวัด",
+        "en": "Right. The Provinciale Staten are the parliament of the province."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "prv.provincie"
+     ],
+     "map": "nederland",
+     "ask": {
+      "nl": "In het uiterste zuidoosten ligt een lange, smalle provincie langs de Maas. Het is de enige provincie die aan twee andere landen grenst: België en Duitsland. Tik haar aan.",
+      "th": "ทางตะวันออกเฉียงใต้สุดมีจังหวัดยาวแคบตามแม่น้ำมาส เป็นจังหวัดเดียวที่ติดกับสองประเทศอื่น คือเบลเยียมและเยอรมนี แตะที่จังหวัดนั้น",
+      "en": "In the far southeast lies a long, narrow province along the river Maas. It is the only province that borders two other countries: Belgium and Germany. Tap it."
+     },
+     "answer": "limburg",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed: Limburg. Het is de enige provincie met een grens met twee buitenlanden, België en Duitsland. In 1839 kreeg Nederland het oostelijke deel van Limburg terug.",
+      "th": "ถูกต้อง: ลิมบวร์ก เป็นจังหวัดเดียวที่มีพรมแดนติดสองประเทศ คือเบลเยียมและเยอรมนี ในปี 1839 เนเธอร์แลนด์ได้ส่วนตะวันออกของลิมบวร์กกลับคืน",
+      "en": "Right: Limburg. It is the only province with a border with two foreign countries, Belgium and Germany. In 1839 the Netherlands got the eastern part of Limburg back."
+     }
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "prv.provincie"
+     ],
+     "map": "nederland",
+     "ask": {
+      "nl": "Een provincie in het noorden heeft bijna alle hunebedden: 52 van de 54 die nog in Nederland te zien zijn. Het is de provincie ten zuiden van Groningen. Tik haar aan.",
+      "th": "จังหวัดทางเหนือมีฮูเนอเบดเกือบทั้งหมด 52 จาก 54 แห่งที่ยังเห็นได้ในเนเธอร์แลนด์ อยู่ทางใต้ของโกรนิงเงิน แตะที่จังหวัดนั้น",
+      "en": "A province in the north has almost all the hunebeds: 52 of the 54 that can still be seen in the Netherlands. It is the province south of Groningen. Tap it."
+     },
+     "answer": "drenthe",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed: Drenthe. Hunebedden zijn grafmonumenten van grote zwerfstenen uit de steentijd. 52 liggen in Drenthe, twee in Groningen.",
+      "th": "ถูกต้อง: เดรนเทอ ฮูเนอเบดคืออนุสรณ์สถานหลุมศพจากหินก้อนใหญ่สมัยหิน 52 แห่งอยู่ในเดรนเทอ และสองแห่งในโกรนิงเงิน",
+      "en": "Right: Drenthe. Hunebeds are tomb monuments made of large boulders from the Stone Age. 52 lie in Drenthe, two in Groningen."
+     },
+     "dieper": true
+    },
+    {
+     "type": "do",
+     "form": "map",
+     "items": [
+      "prv.provincie",
+      "prv.hoofdstad"
+     ],
+     "map": "nederland",
+     "ask": {
+      "nl": "De grootste provincie naar landoppervlak ligt in het midden en oosten. Arnhem is de hoofdstad. Tik haar aan.",
+      "th": "จังหวัดที่ใหญ่ที่สุดตามพื้นที่แผ่นดินอยู่ตรงกลางและทางตะวันออก อาร์เนมเป็นเมืองเอกของจังหวัด แตะที่จังหวัดนั้น",
+      "en": "The largest province by land area lies in the middle and east. Arnhem is the capital. Tap it."
+     },
+     "answer": "gelderland",
+     "err": "betekenis",
+     "why": {
+      "nl": "Goed: Gelderland. Naar landoppervlak is Gelderland de grootste provincie. Naar totale oppervlakte, met water erbij, is Friesland de grootste.",
+      "th": "ถูกต้อง: เกลเดอร์ลันด์ ตามพื้นที่แผ่นดิน เกลเดอร์ลันด์ใหญ่ที่สุด แต่ถ้านับรวมพื้นที่น้ำ ฟรีสแลนด์ใหญ่ที่สุด",
+      "en": "Right: Gelderland. By land area Gelderland is the largest province. By total area, including water, Friesland is the largest."
+     },
+     "dieper": true
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: Nederland heeft twaalf provincies. Flevoland is de jongste, sinds 1986. Je weet ook waar een paar provincies liggen en wat een provincie doet.",
+      "th": "ตอนนี้คุณเล่าได้ว่า เนเธอร์แลนด์มีสิบสองจังหวัด เฟลโวลันด์อายุน้อยที่สุด ตั้งแต่ปี 1986 และคุณรู้ด้วยว่าบางจังหวัดอยู่ที่ไหนและจังหวัดทำอะไร",
+      "en": "You can now tell: the Netherlands has twelve provinces. Flevoland is the youngest, since 1986. You also know where a few provinces are and what a province does."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

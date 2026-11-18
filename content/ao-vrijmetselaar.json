@@ -1,0 +1,499 @@
+{
+ "format": 1,
+ "id": "ao-vrijmetselaar",
+ "type": "les",
+ "version": 1,
+ "order": 31,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "levensbeschouwing",
+ "vorm": "een voorwerp en zijn verhaal",
+ "draden": [
+  "ao-monnik",
+  "ao-atheisme",
+  "ao-amsterdam-rijkste"
+ ],
+ "title": {
+  "nl": "Wat doet een vrijmetselaar in de loge?",
+  "th": "ฟรีเมสันทำอะไรในล็อดจ์",
+  "en": "What does a Freemason do in the lodge?"
+ },
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Freemasonry",
+   "title": "Wikipedia: Freemasonry"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Vrijmetselarij",
+   "title": "Wikipedia: Vrijmetselarij"
+  },
+  {
+   "url": "https://www.vrijmetselarij.nl/Ontdek-de-vrijmetselarij/Veelgestelde-vragen",
+   "title": "Orde van Vrijmetselaren (Grootoosten der Nederlanden): veelgestelde vragen (wat vrijmetselaars over zichzelf zeggen)"
+  },
+  {
+   "url": "https://encyclopedia.ushmm.org/content/en/article/freemasonry",
+   "title": "USHMM Holocaust Encyclopedia: Freemasonry (onafhankelijke bron over geschiedenis en complottheorieën)"
+  }
+ ],
+ "items": [
+  {
+   "id": "vrm.loge",
+   "kind": "word",
+   "w": "loge",
+   "art": "de",
+   "tr": {
+    "th": "ล็อดจ์ (ห้องประชุมและกลุ่มท้องถิ่นของฟรีเมสัน)",
+    "en": "lodge"
+   },
+   "def": "De plek en de groep waar vrijmetselaars samenkomen.",
+   "ex": "De loge komt elke maand bijeen.",
+   "gap": "De ___ is het lokale deel van de vrijmetselarij.",
+   "wrong": [
+    "pan",
+    "jas",
+    "bril"
+   ]
+  },
+  {
+   "id": "vrm.passer",
+   "kind": "word",
+   "w": "passer",
+   "art": "de",
+   "tr": {
+    "th": "วงเวียน",
+    "en": "compasses"
+   },
+   "def": "Een gereedschap om cirkels mee te tekenen.",
+   "ex": "Met een passer teken je een cirkel.",
+   "gap": "De ___ is een gereedschap om cirkels te tekenen.",
+   "wrong": [
+    "tas",
+    "bus",
+    "wolk"
+   ]
+  },
+  {
+   "id": "vrm.winkelhaak",
+   "kind": "word",
+   "w": "winkelhaak",
+   "art": "de",
+   "tr": {
+    "th": "ฉากวัดมุมฉาก",
+    "en": "set square (builder's square)"
+   },
+   "def": "Een gereedschap om een rechte hoek te maken.",
+   "ex": "Met een winkelhaak controleer je een rechte hoek.",
+   "gap": "De ___ maakt een rechte hoek.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "pen"
+   ]
+  },
+  {
+   "id": "vrm.genootschap",
+   "kind": "word",
+   "w": "genootschap",
+   "art": "het",
+   "tr": {
+    "th": "สมาคม",
+    "en": "society, fellowship"
+   },
+   "def": "Een groep mensen met een gezamenlijk doel.",
+   "ex": "Het genootschap komt maandelijks samen.",
+   "gap": "Het ___ is een groep mensen met een gezamenlijk doel.",
+   "wrong": [
+    "weekend",
+    "kwartier",
+    "seizoen"
+   ]
+  },
+  {
+   "id": "vrm.symbool",
+   "kind": "word",
+   "w": "symbool",
+   "art": "het",
+   "tr": {
+    "th": "สัญลักษณ์",
+    "en": "symbol"
+   },
+   "def": "Een teken dat iets anders betekent.",
+   "ex": "Dit symbool betekent vrede.",
+   "gap": "Het ___ staat voor iets anders.",
+   "wrong": [
+    "weekend",
+    "kwartier",
+    "seizoen"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-vrijmetselaar-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Wat doet een vrijmetselaar in de loge?",
+    "th": "ฟรีเมสันทำอะไรในล็อดจ์",
+    "en": "What does a Freemason do in the lodge?"
+   },
+   "intro": {
+    "nl": "Een teken met een passer en een winkelhaak. Eerst een schatting, daarna het verhaal erachter.",
+    "th": "เครื่องหมายที่มีวงเวียนและฉาก ประมาณก่อน แล้วดูเรื่องราวเบื้องหลัง",
+    "en": "A sign with a compass and a set square. First an estimate, then the story behind it."
+   },
+   "can": {
+    "nl": "Vertellen wat een vrijmetselaar is en wat er in een loge gebeurt",
+    "th": "เล่าได้ว่าฟรีเมสันคืออะไรและเกิดอะไรขึ้นในล็อดจ์",
+    "en": "Tell what a Freemason is and what happens in a lodge"
+   },
+   "targets": [
+    "vrm.loge",
+    "vrm.passer",
+    "vrm.winkelhaak",
+    "vrm.genootschap",
+    "vrm.symbool"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "lilac",
+    "alt": {
+     "nl": "Een kamer met een tafel en een raam.",
+     "th": "ห้องที่มีโต๊ะและหน้าต่าง",
+     "en": "A room with a table and a window."
+    },
+    "things": [
+     {
+      "kind": "window",
+      "x": 280,
+      "y": 56
+     },
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "vrm.genootschap"
+       ],
+       "ask": {
+        "nl": "Schat: in welk jaar kwamen vier loges in Londen samen in de eerste overkoepelende organisatie? Typ een jaartal.",
+        "th": "ประมาณการ: ในปีใดที่สี่ล็อดจ์รวมกันที่ลอนดอนเป็นองค์กรแม่แห่งแรก พิมพ์ปี",
+        "en": "Estimate: in which year did four lodges in London come together in the first umbrella organisation? Type a year."
+       },
+       "answer": "1717",
+       "tol": 40,
+       "err": "getal",
+       "why": {
+        "nl": "Het was 24 juni 1717. Vier loges in Londen besloten zich te verenigen.",
+        "th": "คือวันที่ 24 มิถุนายน 1717 สี่ล็อดจ์ในลอนดอนตัดสินใจรวมกัน",
+        "en": "It was 24 June 1717. Four lodges in London decided to unite."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "vrm.passer",
+      "vrm.winkelhaak",
+      "vrm.symbool"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Freemasonry",
+       "title": "Wikipedia: Freemasonry"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Vrijmetselarij",
+       "title": "Wikipedia: Vrijmetselarij"
+      }
+     ],
+     "text": {
+      "nl": "Een teken met een passer en een winkelhaak.\n\nDe passer en winkelhaak zijn het bekendste teken van de vrijmetselarij. Ze komen uit het werk van steenhouwers en bouwers: ook een waterpas, een schietlood en een troffel worden als symbool gebruikt.\n\nDe vrijmetselarij zegt vaak af te stammen van de middeleeuwse gilden van steenhouwers. Dat de moderne vrijmetselarij daar rechtstreeks uit voortkomt, is nooit bewezen.",
+      "th": "เครื่องหมายที่มีวงเวียนและฉากวัดมุมฉาก\n\nวงเวียนและฉากเป็นเครื่องหมายที่รู้จักมากที่สุดของฟรีเมสัน มาจากงานของช่างหินและช่างก่อสร้าง เครื่องมือเช่นระดับน้ำ ลูกดิ่ง และเกรียงก็ใช้เป็นสัญลักษณ์ด้วย\n\nฟรีเมสันมักกล่าวว่าสืบมาจากสมาคมช่างหินสมัยกลาง ว่าฟรีเมสันสมัยใหม่สืบตรงมาจากนั้นหรือไม่ ไม่เคยพิสูจน์ได้",
+      "en": "A sign with a compass and a set square.\n\nThe compasses and set square are the best-known sign of Freemasonry. They come from the work of stonemasons and builders: a level, a plumb line and a trowel are also used as symbols.\n\nFreemasonry often says it descends from the medieval guilds of stonemasons. That modern Freemasonry comes directly from them has never been proven."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "vrm.symbool"
+       ],
+       "ask": {
+        "nl": "Uit welk werk komen de symbolen van de vrijmetselarij, zoals de passer en winkelhaak?",
+        "th": "สัญลักษณ์ของฟรีเมสัน เช่นวงเวียนและฉาก มาจากงานอะไร",
+        "en": "From which work do the symbols of Freemasonry, such as the compasses and set square, come?"
+       },
+       "opts": [
+        {
+         "t": "Het werk van steenhouwers en bouwers",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het gaat om gereedschap van steenhouwers.",
+          "th": "ถูกต้อง เป็นเครื่องมือของช่างหิน",
+          "en": "Right. It is about the tools of stonemasons."
+         }
+        },
+        {
+         "t": "Het werk van zeelieden en vissers op zee",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. De symbolen komen uit het bouwen met steen.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ สัญลักษณ์มาจากการก่อสร้างด้วยหิน",
+          "en": "No. That is not in the text. The symbols come from building with stone."
+         }
+        },
+        {
+         "t": "Het werk van dokters",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. De symbolen komen uit het werk van steenhouwers.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ สัญลักษณ์มาจากงานของช่างหิน",
+          "en": "No. That is not in the text. The symbols come from the work of stonemasons."
+         }
+        }
+       ],
+       "answer": "Het werk van steenhouwers en bouwers"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "vrm.winkelhaak"
+       ],
+       "ask": {
+        "nl": "Maak af: De passer en ___ zijn het bekendste teken van de vrijmetselarij.",
+        "th": "เติมคำ: วงเวียนและ ___ เป็นเครื่องหมายที่รู้จักมากที่สุดของฟรีเมสัน",
+        "en": "Complete: The compasses and ___ are the best-known sign of Freemasonry."
+       },
+       "answer": "winkelhaak",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Een gereedschap voor een rechte hoek.",
+         "th": "เครื่องมือสำหรับมุมฉาก",
+         "en": "A tool for a right angle."
+        },
+        {
+         "nl": "Begin zo: winkel…",
+         "th": "ขึ้นต้นแบบนี้: winkel…",
+         "en": "Start like this: winkel…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. De passer en winkelhaak.",
+        "th": "ถูกต้อง วงเวียนและฉาก",
+        "en": "Right. The compasses and set square."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "vrm.loge",
+      "vrm.genootschap"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Freemasonry",
+       "title": "Wikipedia: Freemasonry"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Vrijmetselarij",
+       "title": "Wikipedia: Vrijmetselarij"
+      },
+      {
+       "url": "https://www.vrijmetselarij.nl/Ontdek-de-vrijmetselarij/Veelgestelde-vragen",
+       "title": "Orde van Vrijmetselaren (Grootoosten der Nederlanden): veelgestelde vragen (wat vrijmetselaars over zichzelf zeggen)"
+      }
+     ],
+     "text": {
+      "nl": "Wat gebeurt er in een loge?\n\nEen loge is de besloten ruimte waar vrijmetselaars samenkomen. Het is ook de lokale groep. In de loge houden ze rituelen. Een nieuw lid wordt ingewijd als leerling, later als gezel en als meester. Dat zijn de drie graden. Bij elk gereedschap, zoals de passer, hoort een les over hoe je goed leeft. Leden geven ook geld aan goede doelen.\n\nIn de tempel dragen leden een schootsvel en witte handschoenen. Leden beloven te zwijgen over wat er in de loge gebeurt. Over godsdienst en politiek wordt in de loge niet gesproken. De vrijmetselarij is niet direct religieus of politiek actief en respecteert de wetten van het land.\n\nIs het geheim? Niet helemaal. Loges maken de namen van leden niet zomaar bekend. Leden mogen zelf kiezen of ze zeggen dat ze lid zijn.\n\nWat vrijmetselaars over zichzelf zeggen. De Orde van Vrijmetselaren in Nederland (het Grootoosten der Nederlanden) schrijft op haar eigen website: vrijmetselarij is geen godsdienst en geen politieke organisatie, en het is niet geheim. Wel is een bijeenkomst vertrouwelijk, zodat je vrijuit kunt praten. De rituelen worden niet volledig openbaar gemaakt. De loges van deze Orde zijn er alleen voor mannen. Andere organisaties zijn er voor vrouwen en voor mannen en vrouwen samen.\n\nSommige loges vragen van leden dat ze in een hoger wezen geloven. De Nederlandse Orde zegt dat sommige leden religieus zijn en andere niet. Er is ook liberale vrijmetselarij die geen geloof vraagt.",
+      "th": "เกิดอะไรขึ้นในล็อดจ์\n\nล็อดจ์คือห้องปิดที่ฟรีเมสันมาพบกัน และยังเป็นกลุ่มท้องถิ่นด้วย ในล็อดจ์มีพิธีกรรม สมาชิกใหม่จะได้รับการรับเข้าเป็นผู้ฝึก (leerling) ต่อมาเป็นสหาย (gezel) และเป็นปรมาจารย์ (meester) นี่คือสามขั้น (graden) เครื่องมือแต่ละอย่าง เช่นวงเวียน มีบทเรียนเรื่องการใช้ชีวิตที่ดีผูกอยู่ สมาชิกยังบริจาคเงินให้การกุศลด้วย\n\nในวิหารสมาชิกสวมผ้ากันเปื้อนและถุงมือสีขาว สมาชิกสัญญาว่าจะเงียบเกี่ยวกับสิ่งที่เกิดขึ้นในล็อดจ์ ในล็อดจ์ไม่พูดเรื่องศาสนาและการเมือง ฟรีเมสันไม่ได้ทำกิจกรรมทางศาสนาหรือการเมืองโดยตรง และเคารพกฎหมายของประเทศ\n\nเป็นความลับหรือไม่ ไม่เชิง ล็อดจ์ไม่เปิดเผยชื่อสมาชิกโดยง่าย สมาชิกเลือกเองได้ว่าจะบอกคนอื่นหรือไม่ว่าตนเป็นสมาชิก\n\nฟรีเมสันพูดถึงตัวเองว่าอย่างไร องค์กรฟรีเมสันของเนเธอร์แลนด์ (Grootoosten der Nederlanden) เขียนบนเว็บไซต์ของตนว่า ฟรีเมสันไม่ใช่ศาสนาและไม่ใช่องค์กรการเมือง และไม่ใช่ความลับ แต่การประชุมเป็นเรื่องภายในที่ไว้วางใจกัน เพื่อให้พูดได้อย่างอิสระ พิธีกรรมไม่ได้เปิดเผยทั้งหมด ล็อดจ์ขององค์กรนี้เปิดรับเฉพาะผู้ชาย ส่วนองค์กรอื่นมีไว้สำหรับผู้หญิง และสำหรับผู้ชายกับผู้หญิงด้วยกัน\n\nบางล็อดจ์ขอให้สมาชิกเชื่อในสิ่งสูงสุด องค์กรของเนเธอร์แลนด์บอกว่าสมาชิกบางคนมีศาสนา บางคนไม่มี และยังมีฟรีเมสันแบบเสรีที่ไม่ขอให้เชื่อ",
+      "en": "What happens in a lodge?\n\nA lodge is the closed space where Freemasons meet. It is also the local group. In the lodge they hold rituals. A new member is initiated as apprentice, later as fellow and as master. These are the three degrees. A lesson about how to live well goes with each tool, such as the compasses. Members also give money to charity.\n\nIn the temple members wear an apron and white gloves. Members promise to stay silent about what happens in the lodge. Religion and politics are not talked about in the lodge. Freemasonry is not directly religious or politically active and respects the laws of the country.\n\nIs it secret? Not quite. Lodges do not simply make the names of members public. Members may choose for themselves whether they say they are a member.\n\nWhat Freemasons say about themselves. The Order of Freemasons in the Netherlands (the Grootoosten der Nederlanden) writes on its own website: Freemasonry is not a religion and not a political organisation, and it is not secret. A meeting is confidential, though, so that you can speak freely. The rituals are not made fully public. The lodges of this Order are only for men. Other organisations exist for women and for men and women together.\n\nSome lodges ask members to believe in a supreme being. The Dutch Order says that some members are religious and others are not. There is also liberal Freemasonry, which does not ask for belief."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "vrm.loge"
+       ],
+       "ask": {
+        "nl": "Waarover wordt in de loge niet gesproken?",
+        "th": "ในล็อดจ์ไม่พูดถึงเรื่องอะไร",
+        "en": "What is not talked about in the lodge?"
+       },
+       "opts": [
+        {
+         "t": "Godsdienst en politiek",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat zegt de tekst: daarover wordt in de loge niet gesproken.",
+          "th": "ถูกต้อง ข้อความบอกว่าไม่พูดถึงเรื่องเหล่านั้นในล็อดจ์",
+          "en": "Right. That is what the text says: those are not talked about in the lodge."
+         }
+        },
+        {
+         "t": "Het weer",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het weer wordt in de tekst niet genoemd. Het gaat om godsdienst en politiek.",
+          "th": "ไม่ใช่ ข้อความไม่กล่าวถึงอากาศ เรื่องที่ไม่พูดคือศาสนาและการเมือง",
+          "en": "No. The weather is not mentioned in the text. It is about religion and politics."
+         }
+        },
+        {
+         "t": "Het werk dat de leden overdag doen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. Het gaat om godsdienst en politiek.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ เรื่องที่ไม่พูดคือศาสนาและการเมือง",
+          "en": "No. That is not in the text. It is about religion and politics."
+         }
+        }
+       ],
+       "answer": "Godsdienst en politiek"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "vrm.loge",
+      "vrm.genootschap"
+     ],
+     "ask": {
+      "nl": "Leg de eerste stappen van de geschiedenis in de goede volgorde. Bouw de zin.",
+      "th": "เรียงขั้นแรกของประวัติศาสตร์ให้ถูกลำดับ ต่อประโยค",
+      "en": "Put the first steps of the history in the right order. Build the sentence."
+     },
+     "data": {
+      "parts": [
+       "Eerst verenigden vier loges zich in Londen,",
+       "dan kwam in Den Haag de eerste Nederlandse loge."
+      ],
+      "tr": {
+       "th": "ก่อนอื่นสี่ล็อดจ์รวมกันที่ลอนดอน แล้วล็อดจ์แรกของเนเธอร์แลนด์ก็เกิดที่เดนฮาก",
+       "en": "First four lodges united in London, then the first Dutch lodge came in The Hague."
+      }
+     },
+     "answer": "Eerst verenigden vier loges zich in Londen, dan kwam in Den Haag de eerste Nederlandse loge.",
+     "err": "woordvolgorde",
+     "why": {
+      "nl": "In 1717 verenigden vier loges zich in Londen. De eerste Nederlandse loge werd op 19 november 1734 in Den Haag opgericht.",
+      "th": "ในปี 1717 สี่ล็อดจ์รวมกันที่ลอนดอน ล็อดจ์แรกของเนเธอร์แลนด์ก่อตั้งที่เดนฮากเมื่อวันที่ 19 พฤศจิกายน 1734",
+      "en": "In 1717 four lodges united in London. The first Dutch lodge was founded in The Hague on 19 November 1734."
+     }
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "vrm.genootschap"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Freemasonry",
+       "title": "Wikipedia: Freemasonry"
+      },
+      {
+       "url": "https://encyclopedia.ushmm.org/content/en/article/freemasonry",
+       "title": "USHMM Holocaust Encyclopedia: Freemasonry (onafhankelijke bron over geschiedenis en complottheorieën)"
+      }
+     ],
+     "text": {
+      "nl": "Hoeveel, en wie is ertegen?\n\nSchattingen van het aantal vrijmetselaars in de wereld, begin van deze eeuw, lopen van ongeveer twee tot meer dan zes miljoen.\n\nSommige kerken, zoals de Rooms-Katholieke Kerk en sommige protestantse kerken, en sommige islamitische landen hebben het lidmaatschap afgewezen of verboden. Hun redenen zijn geloof, moraal of politiek.\n\nDat is iets anders dan complottheorieën. Dat zijn verhalen dat vrijmetselaars in het geheim de wereld besturen. De Holocaust Encyclopedia van het Amerikaanse Holocaustmuseum laat zien dat zulke verhalen in de 19e en 20e eeuw vaak met antisemitisme verbonden waren, bijvoorbeeld in de vervalste tekst Protocollen van de Wijzen van Zion uit 1905.",
+      "th": "ฟรีเมสันมีกี่คน และใครคัดค้าน\n\nการประมาณจำนวนฟรีเมสันในโลกช่วงต้นศตวรรษนี้อยู่ระหว่างประมาณสองล้านถึงมากกว่าหกล้านคน\n\nบางศาสนจักร เช่นโรมันคาทอลิกและโปรเตสแตนต์บางนิกาย และบางประเทศอิสลาม ปฏิเสธหรือห้ามการเป็นสมาชิก เหตุผลของพวกเขาคือความเชื่อ ศีลธรรม หรือการเมือง\n\nสิ่งนี้ต่างจากทฤษฎีสมคบคิด ซึ่งเป็นเรื่องเล่าว่าฟรีเมสันปกครองโลกอย่างลับ ๆ สารานุกรมโฮโลคอสต์ของพิพิธภัณฑ์โฮโลคอสต์แห่งสหรัฐฯ แสดงให้เห็นว่าเรื่องเล่าเช่นนี้ในศตวรรษที่ 19 และ 20 มักเกี่ยวโยงกับการต่อต้านชาวยิว เช่นในเอกสารปลอมชื่อ พิธีสารของผู้อาวุโสแห่งไซอัน (Protocols of the Elders of Zion) จากปี 1905",
+      "en": "How many, and who is against it?\n\nEstimates of the number of Freemasons in the world, at the start of this century, run from about two to more than six million.\n\nSome churches, such as the Roman Catholic Church and some Protestant denominations, and some Islamic countries have rejected or banned membership. Their reasons are faith, morality or politics.\n\nThat is something different from conspiracy theories. Those are stories that Freemasons secretly rule the world. The Holocaust Encyclopedia of the United States Holocaust Memorial Museum shows that in the 19th and 20th centuries such stories were often tied to antisemitism, for example in the forged text Protocols of the Elders of Zion from 1905."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "vrm.genootschap"
+       ],
+       "ask": {
+        "nl": "Hoeveel vrijmetselaars waren er wereldwijd volgens schattingen aan het begin van deze eeuw?",
+        "th": "ตามการประมาณต้นศตวรรษนี้ มีฟรีเมสันทั่วโลกกี่คน",
+        "en": "How many Freemasons were there worldwide, according to estimates at the start of this century?"
+       },
+       "opts": [
+        {
+         "t": "Ongeveer twee tot meer dan zes miljoen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Het is een schatting, met een grote marge.",
+          "th": "ถูกต้อง เป็นการประมาณ ที่มีช่วงกว้าง",
+          "en": "Right. It is an estimate, with a wide margin."
+         }
+        },
+        {
+         "t": "Ongeveer tweeduizend",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Dat is veel te weinig. De schattingen lopen in de miljoenen.",
+          "th": "ไม่ใช่ น้อยเกินไปมาก การประมาณอยู่ในหลักล้าน",
+          "en": "No. That is far too few. The estimates run in the millions."
+         }
+        },
+        {
+         "t": "Ongeveer tweehonderd miljoen",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Dat is veel te veel. De schattingen zijn twee tot zes miljoen.",
+          "th": "ไม่ใช่ มากเกินไปมาก การประมาณคือสองถึงหกล้าน",
+          "en": "No. That is far too many. The estimates are two to six million."
+         }
+        }
+       ],
+       "answer": "Ongeveer twee tot meer dan zes miljoen"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: de vrijmetselarij is een genootschap met loges, rituelen en symbolen uit het bouwen. Over godsdienst en politiek wordt in de loge niet gesproken. Een loge is besloten, maar niet geheim: leden mogen zelf zeggen dat ze lid zijn. Over de herkomst bestaan verschillende meningen.",
+      "th": "ตอนนี้คุณเล่าได้ว่า ฟรีเมสันเป็นสมาคมที่มีล็อดจ์ พิธีกรรม และสัญลักษณ์จากการก่อสร้าง ในล็อดจ์ไม่พูดเรื่องศาสนาและการเมือง ล็อดจ์เป็นเรื่องภายใน แต่ไม่ใช่ความลับ สมาชิกบอกเองได้ว่าตนเป็นสมาชิก เรื่องที่มามีความเห็นต่าง ๆ",
+      "en": "You can now tell: Freemasonry is a society with lodges, rituals and symbols from building. Religion and politics are not talked about in the lodge. A lodge is closed but not secret: members may say for themselves that they are members. There are different views on the origin."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

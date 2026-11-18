@@ -250,7 +250,7 @@
        },
        "opts": [
         {
-         "t": "12:00 uur",
+         "t": "12:00 uur ’s middags",
          "r": "no",
          "err": "getal",
          "why": {
@@ -307,7 +307,7 @@
          }
         },
         {
-         "t": "De trein reed te langzaam",
+         "t": "De trein reed op sommige stukken te langzaam, waardoor hij steeds te laat aankwam",
          "r": "no",
          "err": "lezen",
          "why": {
@@ -349,7 +349,7 @@
      },
      "opts": [
       {
-       "t": "De klokken in Bangkok lopen sneller",
+       "t": "De klokken in Bangkok lopen elke dag een beetje sneller dan hier",
        "r": "no",
        "err": "betekenis",
        "why": {
@@ -495,7 +495,7 @@
      },
      "opts": [
       {
-       "t": "Iemand heeft de klok verzet",
+       "t": "Iemand heeft de klok in Bangkok verzet, daarom loopt de tijd daar zes uur voor",
        "r": "no",
        "err": "betekenis",
        "why": {

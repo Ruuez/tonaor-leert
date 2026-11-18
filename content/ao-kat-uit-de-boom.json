@@ -1,0 +1,685 @@
+{
+ "format": 1,
+ "id": "ao-kat-uit-de-boom",
+ "type": "les",
+ "version": 1,
+ "order": 33,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "taal",
+ "vorm": "een woord en zijn herkomst",
+ "draden": [
+  "ao-gezellig",
+  "ao-links-rechts",
+  "ao-coalitie"
+ ],
+ "title": {
+  "nl": "Wat betekent de kat uit de boom kijken?",
+  "th": "สำนวน de kat uit de boom kijken หมายความว่าอะไร",
+  "en": "What does “de kat uit de boom kijken” mean?"
+ },
+ "sources": [
+  {
+   "url": "https://nl.wiktionary.org/wiki/de_kat_uit_de_boom_kijken",
+   "title": "Wiktionary: de kat uit de boom kijken"
+  },
+  {
+   "url": "https://etymologiebank.nl/trefwoord/kat1",
+   "title": "Etymologiebank: kat (met Meijer, 1919, en Stoett)"
+  }
+ ],
+ "items": [
+  {
+   "id": "kud.afwachten",
+   "kind": "word",
+   "w": "afwachten",
+   "art": "",
+   "tr": {
+    "th": "รอดูก่อน",
+    "en": "to wait and see"
+   },
+   "def": "Wachten en kijken wat er gebeurt, zonder zelf iets te doen.",
+   "ex": "Ik ga eerst afwachten wat de baas zegt.",
+   "gap": "Ik ga eerst ___ wat er gebeurt.",
+   "wrong": [
+    "koken",
+    "wassen",
+    "lopen"
+   ]
+  },
+  {
+   "id": "kud.uitdrukking",
+   "kind": "word",
+   "w": "uitdrukking",
+   "art": "de",
+   "tr": {
+    "th": "สำนวน",
+    "en": "expression, saying"
+   },
+   "def": "Een groep woorden met een eigen betekenis, die je niet letterlijk moet begrijpen.",
+   "ex": "Dit is een bekende uitdrukking.",
+   "gap": "De ___ heeft een andere betekenis dan de losse woorden.",
+   "wrong": [
+    "fiets",
+    "jas",
+    "pan"
+   ]
+  },
+  {
+   "id": "kud.letterlijk",
+   "kind": "word",
+   "w": "letterlijk",
+   "art": "",
+   "tr": {
+    "th": "ตามตัวอักษร",
+    "en": "literally"
+   },
+   "def": "Precies zoals de woorden het zeggen.",
+   "ex": "Dat moet je niet letterlijk nemen.",
+   "gap": "Je moet een uitdrukking niet ___ nemen.",
+   "wrong": [
+    "rood",
+    "gisteren",
+    "koud"
+   ]
+  },
+  {
+   "id": "kud.herkomst",
+   "kind": "word",
+   "w": "herkomst",
+   "art": "de",
+   "tr": {
+    "th": "ที่มา",
+    "en": "origin"
+   },
+   "def": "Waar iets vandaan komt.",
+   "ex": "De herkomst van dit woord is oud.",
+   "gap": "De ___ van deze uitdrukking is niet zeker.",
+   "wrong": [
+    "tafel",
+    "lamp",
+    "boom"
+   ]
+  },
+  {
+   "id": "kud.vermoedelijk",
+   "kind": "word",
+   "w": "vermoedelijk",
+   "art": "",
+   "tr": {
+    "th": "น่าจะ, สันนิษฐานว่า",
+    "en": "probably, presumably"
+   },
+   "def": "Misschien wel waar, maar niet zeker.",
+   "ex": "Hij komt vermoedelijk morgen.",
+   "gap": "Hij komt ___ morgen, maar dat weet ik niet zeker.",
+   "wrong": [
+    "gisteren",
+    "nooit",
+    "zeker"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-kat-uit-de-boom-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Wat betekent de kat uit de boom kijken?",
+    "th": "สำนวน de kat uit de boom kijken หมายความว่าอะไร",
+    "en": "What does “de kat uit de boom kijken” mean?"
+   },
+   "intro": {
+    "nl": "Eerst raden wat een uitdrukking betekent. Dan lees je waar ze vandaan komt.",
+    "th": "เดาก่อนว่าสำนวนหมายถึงอะไร แล้วอ่านว่ามาจากไหน",
+    "en": "First guess what an expression means. Then you read where it comes from."
+   },
+   "can": {
+    "nl": "Uitleggen wat de uitdrukking betekent en waar ze vermoedelijk vandaan komt",
+    "th": "อธิบายได้ว่าสำนวนนี้หมายถึงอะไรและน่าจะมาจากไหน",
+    "en": "Explain what the expression means and where it probably comes from"
+   },
+   "targets": [
+    "kud.afwachten",
+    "kud.uitdrukking",
+    "kud.letterlijk",
+    "kud.herkomst",
+    "kud.vermoedelijk"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "street",
+    "tone": "mint",
+    "alt": {
+     "nl": "Een straat met een plant en twee borden: Uitdrukking en Herkomst.",
+     "th": "ถนนที่มีต้นไม้และป้ายสองป้าย: สำนวนและที่มา",
+     "en": "A street with a plant and two signs: Expression and Origin."
+    },
+    "things": [
+     {
+      "kind": "plant",
+      "x": 170,
+      "y": 156,
+      "s": 1.6
+     },
+     {
+      "kind": "sign",
+      "x": 70,
+      "y": 80,
+      "text": "Uitdrukking",
+      "hot": true,
+      "item": "kud.uitdrukking",
+      "label": {
+       "nl": "Uitdrukking: woorden met een eigen betekenis",
+       "th": "สำนวน: คำที่มีความหมายของมันเอง",
+       "en": "Expression: words with a meaning of their own"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 270,
+      "y": 80,
+      "text": "Herkomst",
+      "hot": true,
+      "item": "kud.herkomst",
+      "label": {
+       "nl": "Herkomst: waar iets vandaan komt",
+       "th": "ที่มา: สิ่งหนึ่งมาจากไหน",
+       "en": "Origin: where something comes from"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "kud.uitdrukking"
+       ],
+       "ask": {
+        "nl": "Raad eens: wat betekent “de kat uit de boom kijken”?",
+        "th": "ลองเดาดู: “de kat uit de boom kijken” แปลว่าอะไร",
+        "en": "Have a guess: what does “de kat uit de boom kijken” mean?"
+       },
+       "opts": [
+        {
+         "t": "Een kat helpen die in een boom zit",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Dat is wat de woorden letterlijk zeggen, maar de uitdrukking betekent iets anders. Je leest zo wat.",
+          "th": "นั่นคือความหมายตามตัวอักษร แต่สำนวนนี้มีความหมายอื่น เดี๋ยวคุณจะได้อ่าน",
+          "en": "That is what the words say literally, but the expression means something else. You will read what it means in a moment."
+         }
+        },
+        {
+         "t": "Eerst afwachten hoe iets gaat",
+         "r": "ok",
+         "why": {
+          "nl": "Goed geraden. Je kijkt eerst hoe iets gaat, voordat je zelf iets doet.",
+          "th": "เดาถูก คุณดูก่อนว่าเรื่องจะเป็นอย่างไร ก่อนจะลงมือเอง",
+          "en": "Well guessed. You first see how something goes, before you do something yourself."
+         }
+        },
+        {
+         "t": "Heel goed kunnen kijken",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee, het gaat niet om goede ogen. Het gaat om wachten en kijken. Je leest zo meer.",
+          "th": "ไม่ใช่ ไม่ได้เกี่ยวกับสายตาดี แต่เกี่ยวกับการรอดู เดี๋ยวคุณจะได้อ่านเพิ่ม",
+          "en": "No, it is not about good eyes. It is about waiting and watching. You read more in a moment."
+         }
+        }
+       ],
+       "answer": "Eerst afwachten hoe iets gaat",
+       "guess": true
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "kud.afwachten",
+      "kud.letterlijk"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wiktionary.org/wiki/de_kat_uit_de_boom_kijken",
+       "title": "Wiktionary: de kat uit de boom kijken"
+      }
+     ],
+     "text": {
+      "nl": "Een nieuwe collega.\n\nDe nieuwe collega begint op maandag. In de eerste week zegt de collega weinig en kijkt vooral naar de anderen. Wie is de baas? Wat is hier gewoon?\n\nWe zeggen: de collega kijkt eerst de kat uit de boom. Dat betekent: je wacht af en kijkt hoe iets gaat, voordat je zelf iets doet.\n\nIn het verhaal is er geen kat. Je moet de uitdrukking dus niet letterlijk nemen.",
+      "th": "เพื่อนร่วมงานคนใหม่\n\nเพื่อนร่วมงานคนใหม่เริ่มงานวันจันทร์ ในสัปดาห์แรกเขาพูดน้อยและส่วนใหญ่ดูคนอื่น ใครเป็นหัวหน้า ที่นี่ปกติทำกันอย่างไร\n\nเราพูดว่า เพื่อนร่วมงานคนนั้น kijkt eerst de kat uit de boom หมายความว่า คุณรอดูก่อนว่าเรื่องจะเป็นอย่างไร ก่อนจะลงมือเอง\n\nในเรื่องนี้ไม่มีแมวจริง ๆ ดังนั้นไม่ควรเข้าใจสำนวนนี้ตามตัวอักษร",
+      "en": "A new colleague.\n\nThe new colleague starts on Monday. In the first week the colleague says little and mostly watches the others. Who is the boss? What is usual here?\n\nWe say: the colleague first watches the cat out of the tree (de kat uit de boom kijken). That means: you wait and see how something goes, before you do something yourself.\n\nThere is no cat in the story. So you should not take the expression literally."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "kud.afwachten"
+       ],
+       "ask": {
+        "nl": "Wat doet de nieuwe collega in de eerste week?",
+        "th": "เพื่อนร่วมงานคนใหม่ทำอะไรในสัปดาห์แรก",
+        "en": "What does the new colleague do in the first week?"
+       },
+       "opts": [
+        {
+         "t": "De collega wacht af en kijkt hoe het gaat",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De collega zegt weinig en kijkt eerst.",
+          "th": "ถูกต้อง เขาพูดน้อยและดูก่อน",
+          "en": "Right. The colleague says little and watches first."
+         }
+        },
+        {
+         "t": "De collega neemt meteen de leiding",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De tekst zegt dat de collega weinig zegt en naar de anderen kijkt.",
+          "th": "ไม่ใช่ ข้อความบอกว่าเขาพูดน้อยและดูคนอื่น",
+          "en": "No. The text says the colleague says little and watches the others."
+         }
+        },
+        {
+         "t": "De collega helpt een kat uit een boom",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. In het verhaal is er geen kat. Het is een uitdrukking.",
+          "th": "ไม่ใช่ ในเรื่องไม่มีแมว นี่คือสำนวน",
+          "en": "No. There is no cat in the story. It is an expression."
+         }
+        }
+       ],
+       "answer": "De collega wacht af en kijkt hoe het gaat"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "kud.letterlijk"
+       ],
+       "ask": {
+        "nl": "Maak af: Je moet een uitdrukking niet ___ nemen.",
+        "th": "เติมคำ: คุณไม่ควรเข้าใจสำนวนแบบ ___",
+        "en": "Complete: You should not take an expression ___."
+       },
+       "answer": "letterlijk",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Precies zoals de woorden het zeggen.",
+         "th": "ตรงตามที่คำพูดบอก",
+         "en": "Exactly as the words say it."
+        },
+        {
+         "nl": "Begin zo: letter…",
+         "th": "ขึ้นต้นแบบนี้: letter…",
+         "en": "Start like this: letter…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Letterlijk nemen is: precies zoals de woorden het zeggen.",
+        "th": "ถูกต้อง letterlijk คือ ตรงตามที่คำพูดบอก",
+        "en": "Right. Taking something literally is: exactly as the words say it."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "items": [
+      "kud.afwachten",
+      "kud.uitdrukking"
+     ],
+     "ask": {
+      "nl": "Wie kijkt de kat uit de boom?",
+      "th": "ใครที่ kijkt de kat uit de boom",
+      "en": "Who is watching the cat out of the tree?"
+     },
+     "opts": [
+      {
+       "t": "Iemand ziet een ruzie op straat en loopt er meteen naartoe om te helpen",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Die persoon wacht niet af, maar doet meteen iets.",
+        "th": "ไม่ใช่ คนนี้ไม่รอดู แต่ลงมือทำทันที",
+        "en": "No. That person does not wait, but acts at once."
+       }
+      },
+      {
+       "t": "Iemand roept hard dat het anders moet",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Die persoon doet meteen iets en wacht niet af.",
+        "th": "ไม่ใช่ คนนี้ลงมือทันทีและไม่รอดู",
+        "en": "No. That person acts at once and does not wait."
+       }
+      },
+      {
+       "t": "Iemand bij een nieuwe sportclub kijkt eerst een paar weken alleen mee",
+       "r": "ok",
+       "why": {
+        "nl": "Goed. Die persoon wacht af en kijkt eerst hoe alles gaat.",
+        "th": "ถูกต้อง คนนี้รอดูและดูก่อนว่าทุกอย่างเป็นอย่างไร",
+        "en": "Right. That person waits and first sees how everything goes."
+       }
+      }
+     ],
+     "answer": "Iemand bij een nieuwe sportclub kijkt eerst een paar weken alleen mee",
+     "why": {
+      "nl": "Wie de kat uit de boom kijkt, wacht eerst af en doet nog niets.",
+      "th": "คนที่ kijkt de kat uit de boom จะรอดูก่อนและยังไม่ทำอะไร",
+      "en": "Whoever watches the cat out of the tree waits first and does nothing yet."
+     },
+     "err": "betekenis"
+    },
+    {
+     "type": "read",
+     "items": [
+      "kud.herkomst",
+      "kud.vermoedelijk"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wiktionary.org/wiki/de_kat_uit_de_boom_kijken",
+       "title": "Wiktionary: de kat uit de boom kijken"
+      },
+      {
+       "url": "https://etymologiebank.nl/trefwoord/kat1",
+       "title": "Etymologiebank: kat (met Meijer, 1919, en Stoett)"
+      }
+     ],
+     "text": {
+      "nl": "Waar komt het vandaan?\n\nDe uitdrukking is al sinds de zeventiende eeuw bekend. Waar ze precies vandaan komt, weten we niet zeker. Vaak wordt gezegd dat ze van een hond komt.\n\nEen hond jaagt een kat een boom in. De hond blijft onder de boom staan. Hij blaft en staart naar de kat, maar klimt niet achterna. Hij wacht af. Komt de kat uit de boom, dan springt de hond erop af.\n\nEr is ook een andere verklaring: door strak te kijken laat je de kat uit de boom komen. De herkomst is dus vermoedelijk de hond, maar niet zeker.",
+      "th": "มาจากไหน\n\nสำนวนนี้เป็นที่รู้จักมาตั้งแต่ศตวรรษที่สิบเจ็ด ไม่มีใครรู้แน่ชัดว่ามาจากไหน มักมีคนบอกว่ามาจากสุนัข\n\nสุนัขไล่แมวขึ้นต้นไม้ สุนัขยืนอยู่ใต้ต้นไม้ เห่าและจ้องแมว แต่ไม่ปีนตามขึ้นไป มันรอดู ถ้าแมวลงมาจากต้นไม้ สุนัขก็กระโจนเข้าใส่\n\nมีคำอธิบายอื่นด้วย: การจ้องมองแน่วแน่ทำให้แมวลงมาจากต้นไม้เอง ที่มาจึงน่าจะมาจากสุนัข แต่ไม่แน่ใจ",
+      "en": "Where does it come from?\n\nThe expression has been known since the seventeenth century. We do not know for sure where it comes from. People often say it comes from a dog.\n\nA dog chases a cat up a tree. The dog stays under the tree. It barks and stares at the cat, but does not climb after it. It waits. If the cat comes out of the tree, the dog jumps at it.\n\nThere is also another explanation: by staring hard you make the cat come out of the tree. So the origin is probably the dog, but not certain."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "kud.herkomst"
+       ],
+       "ask": {
+        "nl": "Waar komt de uitdrukking vermoedelijk vandaan?",
+        "th": "สำนวนนี้น่าจะมาจากไหน",
+        "en": "Where does the expression probably come from?"
+       },
+       "opts": [
+        {
+         "t": "Van een kat die uit een boom viel",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. In de verklaring wacht een hond onder de boom en de kat valt niet.",
+          "th": "ไม่ใช่ ในคำอธิบายนี้สุนัขรออยู่ใต้ต้นไม้ และแมวไม่ได้ตกลงมา",
+          "en": "No. In the explanation a dog waits under the tree and the cat does not fall."
+         }
+        },
+        {
+         "t": "Van een boer die elke avond zijn kat in de tuin zocht",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Zo’n verhaal staat niet in de bronnen.",
+          "th": "ไม่ใช่ เรื่องแบบนี้ไม่มีในแหล่งข้อมูล",
+          "en": "No. Such a story is not in the sources."
+         }
+        },
+        {
+         "t": "Van een hond die onder een boom op een kat wacht",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De hond wacht af tot de kat naar beneden komt.",
+          "th": "ถูกต้อง สุนัขรอจนกว่าแมวจะลงมา",
+          "en": "Right. The dog waits until the cat comes down."
+         }
+        }
+       ],
+       "answer": "Van een hond die onder een boom op een kat wacht"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "kud.vermoedelijk"
+       ],
+       "ask": {
+        "nl": "Maak af: De herkomst is ___, maar niet zeker.",
+        "th": "เติมคำ: ที่มาเป็นแบบนี้ ___ แต่ไม่แน่นอน",
+        "en": "Complete: The origin is ___, but not certain."
+       },
+       "answer": "vermoedelijk",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Een woord voor: misschien wel waar.",
+         "th": "คำที่หมายถึง อาจจะจริง",
+         "en": "A word for: maybe true."
+        },
+        {
+         "nl": "Begin zo: vermoed…",
+         "th": "ขึ้นต้นแบบนี้: vermoed…",
+         "en": "Start like this: vermoed…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Vermoedelijk is: misschien wel waar, maar niet zeker.",
+        "th": "ถูกต้อง vermoedelijk คือ อาจจะจริงแต่ไม่แน่ใจ",
+        "en": "Right. Probably is: maybe true, but not certain."
+       }
+      },
+      {
+       "form": "number",
+       "items": [
+        "kud.herkomst"
+       ],
+       "ask": {
+        "nl": "Sinds welke eeuw is de uitdrukking bekend? Typ het nummer van de eeuw.",
+        "th": "สำนวนนี้เป็นที่รู้จักตั้งแต่ศตวรรษที่เท่าไร พิมพ์ตัวเลขของศตวรรษ",
+        "en": "Since which century has the expression been known? Type the number of the century."
+       },
+       "answer": "17",
+       "err": "getal",
+       "hint": [
+        {
+         "nl": "Het is een getal tussen 15 en 20.",
+         "th": "เป็นตัวเลขระหว่าง 15 และ 20",
+         "en": "It is a number between 15 and 20."
+        },
+        {
+         "nl": "Het getal begint met 1 en eindigt op 7.",
+         "th": "ตัวเลขขึ้นต้นด้วย 1 และลงท้ายด้วย 7",
+         "en": "The number starts with 1 and ends in 7."
+        }
+       ],
+       "why": {
+        "nl": "Goed. Al sinds de zeventiende eeuw, dus de 17e.",
+        "th": "ถูกต้อง ตั้งแต่ศตวรรษที่สิบเจ็ด",
+        "en": "Right. Since the seventeenth century, so the 17th."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "items": [
+      "kud.afwachten",
+      "kud.uitdrukking"
+     ],
+     "ask": {
+      "nl": "Wat is bijna het tegenovergestelde van “de kat uit de boom kijken”?",
+      "th": "อะไรเกือบตรงข้ามกับ “de kat uit de boom kijken”",
+      "en": "What is almost the opposite of “de kat uit de boom kijken”?"
+     },
+     "opts": [
+      {
+       "t": "Iets letterlijk nemen",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Dat is iets anders: je begrijpt de woorden precies zoals ze zijn.",
+        "th": "ไม่ใช่ นั่นเป็นอีกเรื่อง คือเข้าใจคำตรงตามตัวอักษร",
+        "en": "No. That is something else: you understand the words exactly as they are."
+       }
+      },
+      {
+       "t": "Het voortouw nemen",
+       "r": "ok",
+       "why": {
+        "nl": "Goed. Wie het voortouw neemt, doet als eerste iets. Wie de kat uit de boom kijkt, wacht eerst af.",
+        "th": "ถูกต้อง คนที่ het voortouw nemen คือทำอะไรก่อนเป็นคนแรก ส่วนคนที่ kijkt de kat uit de boom จะรอดูก่อน",
+        "en": "Right. Whoever takes the lead does something first. Whoever watches the cat out of the tree waits first."
+       }
+      },
+      {
+       "t": "De kat uit de boom kijken",
+       "r": "no",
+       "err": "betekenis",
+       "why": {
+        "nl": "Nee. Dat is dezelfde uitdrukking, en die betekent: afwachten.",
+        "th": "ไม่ใช่ นั่นคือสำนวนเดียวกัน แปลว่า รอดู",
+        "en": "No. That is the same expression, and it means: wait and see."
+       }
+      }
+     ],
+     "answer": "Het voortouw nemen",
+     "why": {
+      "nl": "Het voortouw nemen is het tegenovergestelde: je begint als eerste.",
+      "th": "het voortouw nemen ตรงข้ามกัน คือคุณเริ่มก่อนเป็นคนแรก",
+      "en": "Taking the lead is the opposite: you start first."
+     },
+     "err": "betekenis"
+    },
+    {
+     "type": "make",
+     "items": [
+      "kud.uitdrukking",
+      "kud.afwachten"
+     ],
+     "ask": {
+      "nl": "Schrijf één zin met de uitdrukking, over een situatie waarin jij eerst afwacht.",
+      "th": "เขียนหนึ่งประโยคด้วยสำนวนนี้ เกี่ยวกับสถานการณ์ที่คุณรอดูก่อน",
+      "en": "Write one sentence with the expression, about a situation in which you wait first."
+     },
+     "frame": "Ik kijk eerst de kat uit de boom als ...",
+     "model": "Ik kijk eerst de kat uit de boom als ik op een nieuwe school begin.",
+     "checklist": [
+      {
+       "nl": "Ik heb de uitdrukking gebruikt.",
+       "th": "ฉันใช้สำนวนนี้แล้ว",
+       "en": "I used the expression."
+      },
+      {
+       "nl": "Mijn zin gaat over afwachten.",
+       "th": "ประโยคของฉันเกี่ยวกับการรอดู",
+       "en": "My sentence is about waiting."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "kud.uitdrukking"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wiktionary.org/wiki/de_kat_uit_de_boom_kijken",
+       "title": "Wiktionary: de kat uit de boom kijken"
+      },
+      {
+       "url": "https://etymologiebank.nl/trefwoord/kat1",
+       "title": "Etymologiebank: kat (met Meijer, 1919, en Stoett)"
+      }
+     ],
+     "text": {
+      "nl": "In andere talen.\n\nIn het Engels zeggen ze: watch which way the cat jumps. Dat is bijna hetzelfde: je kijkt welke kant het opgaat. In het Fries zeg je: de kat ut ’e beam sjen. Dat lijkt sterk op het Nederlands.",
+      "th": "ในภาษาอื่น\n\nภาษาอังกฤษพูดว่า watch which way the cat jumps ซึ่งเกือบเหมือนกัน คือดูว่าเรื่องไปทางไหน ภาษาฟรีเซียนพูดว่า de kat ut ’e beam sjen ซึ่งคล้ายภาษาดัตช์มาก",
+      "en": "In other languages.\n\nIn English they say: watch which way the cat jumps. That is almost the same: you see which way it goes. In Frisian you say: de kat ut ’e beam sjen. That looks a lot like Dutch."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "kud.uitdrukking"
+       ],
+       "ask": {
+        "nl": "Welke Engelse uitdrukking lijkt erop?",
+        "th": "สำนวนภาษาอังกฤษใดคล้ายกัน",
+        "en": "Which English expression is similar?"
+       },
+       "opts": [
+        {
+         "t": "watch which way the cat jumps",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Ook daar kijk je eerst welke kant het opgaat.",
+          "th": "ถูกต้อง ที่นั่นก็ดูก่อนว่าเรื่องไปทางไหน",
+          "en": "Right. There too you first see which way it goes."
+         }
+        },
+        {
+         "t": "help the cat out of the tree",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Dat is letterlijk een kat helpen. De uitdrukking in de bron is een andere.",
+          "th": "ไม่ใช่ นั่นคือการช่วยแมวตามตัวอักษร สำนวนในแหล่งข้อมูลเป็นอีกอย่าง",
+          "en": "No. That is literally helping a cat. The expression in the source is another one."
+         }
+        },
+        {
+         "t": "take the bull by the horns",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Dat betekent juist: meteen beginnen. In het Nederlands: de koe bij de hoorns vatten.",
+          "th": "ไม่ใช่ นั่นหมายถึง เริ่มทันที ในภาษาดัตช์คือ de koe bij de hoorns vatten",
+          "en": "No. That means the opposite: start at once. In Dutch: de koe bij de hoorns vatten."
+         }
+        }
+       ],
+       "answer": "watch which way the cat jumps"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: “de kat uit de boom kijken” betekent eerst afwachten. De herkomst is vermoedelijk een hond onder een boom, maar zeker weten we het niet.",
+      "th": "ตอนนี้คุณเล่าได้ว่า “de kat uit de boom kijken” หมายถึง รอดูก่อน ที่มาน่าจะเป็นสุนัขใต้ต้นไม้ แต่เราไม่รู้แน่",
+      "en": "You can now tell: “de kat uit de boom kijken” means to wait and see first. The origin is probably a dog under a tree, but we do not know for sure."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

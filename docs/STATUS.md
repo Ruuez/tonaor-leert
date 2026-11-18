@@ -16,6 +16,10 @@ Bijgewerkt: 14 november 2026.
 - Uitleg (speler, drie ingangen, 32 uitleggen) en het weekdoel (standaard 10 uur, merktekens op 3,5, 7 en 10 uur).
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
+- Tweede reeks losse lessen (volgorde 21 tot 40, zeven met kaart of tijdlijn), cache v2-73:
+  - Alle twintig zijn uitgebracht na review Opus, herstel, nacontrole en de G2-maat voor een losse les. Ook bijgewerkt: zeespiegel, mekong, tijdzones en karma (foute keuzes langer).
+  - De lijst van veertig lessen is in orde (checkLessen). Het geluid is erbij.
+  - Open (klein, in de reviews): Thai van een paar nieuwe zinnen door een Thaise lezer laten nalopen.
 - Herstelronde thema 1 op G2 en nl-buren, cache v2-69:
   - nl-thuis (goed = langste 60% naar 20%) en nl-werk (72% naar 28%) met een nieuwe leestekst van ruim 160 woorden en een eigen zin per regel. Review Opus goed; de kleine punten zijn verwerkt.
   - nl-buren (thema 2, order 70): live na drie reviewrondes (ronde 3 op G2: 25%).
@@ -249,11 +253,11 @@ docs/didactisch-plan.md is het fundament (leeruitkomsten per jaar, leerweg, onde
 | kennis-aardrijkskunde | 1 | 9 | 0 | 0 |
 | kennis-geschiedenis | 2 | 19 | 0 | 0 |
 | kennis-maatschappij | 2 | 16 | 0 | 0 |
-| kennis-nederland | 19 | 193 | 0 | 14 |
+| kennis-nederland | 39 | 348 | 0 | 14 |
 | nt2-I-lezen-1 | 3 | 72 | 0 | 6 |
 | nt2-I-lezen-2 | 8 | 74 | 0 | 4 |
 | nt2-I-lezen-3 | 8 | 146 | 0 | 12 |
-| nt2-I-lezen-4 | 26 | 369 | 0 | 22 |
+| nt2-I-lezen-4 | 46 | 524 | 0 | 22 |
 | nt2-I-lezen-5 | 0 | 0 | 0 | 0 |
 | nt2-I-luisteren-1 | 14 | 377 | 6 | 28 |
 | nt2-I-luisteren-2 | 4 | 110 | 6 | 8 |

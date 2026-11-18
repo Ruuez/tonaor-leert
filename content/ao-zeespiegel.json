@@ -294,7 +294,7 @@
        }
       },
       {
-       "t": "Het wordt groter",
+       "t": "Het wordt groter en de grond komt omhoog",
        "r": "no",
        "err": "model",
        "why": {
@@ -398,7 +398,7 @@
          }
         },
         {
-         "t": "Minder water wegpompen",
+         "t": "Steeds minder water wegpompen, omdat de polder droger wordt",
          "r": "no",
          "err": "model",
          "why": {

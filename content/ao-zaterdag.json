@@ -1,0 +1,671 @@
+{
+ "format": 1,
+ "id": "ao-zaterdag",
+ "type": "les",
+ "version": 1,
+ "order": 36,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "geloof",
+ "vorm": "een dag uit een leven",
+ "draden": [
+  "ao-ramadan",
+  "ao-twaalf-maanden",
+  "ao-atheisme"
+ ],
+ "title": {
+  "nl": "Waarom is zaterdag in het jodendom een rustdag?",
+  "th": "ทำไมวันเสาร์จึงเป็นวันหยุดพักในศาสนายิว",
+  "en": "Why is Saturday a day of rest in Judaism?"
+ },
+ "sources": [
+  {
+   "url": "https://nl.wikipedia.org/wiki/Sjabbat",
+   "title": "Wikipedia: Sjabbat"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Shabbat",
+   "title": "Wikipedia: Shabbat"
+  }
+ ],
+ "items": [
+  {
+   "id": "sjb.rustdag",
+   "kind": "word",
+   "w": "rustdag",
+   "art": "de",
+   "tr": {
+    "th": "วันหยุดพัก",
+    "en": "day of rest"
+   },
+   "def": "Een dag in de week waarop je niet werkt.",
+   "ex": "Voor veel mensen is zondag een rustdag.",
+   "gap": "De ___ is een dag in de week zonder werk.",
+   "wrong": [
+    "bakker",
+    "trein",
+    "fiets"
+   ]
+  },
+  {
+   "id": "sjb.kaars",
+   "kind": "word",
+   "w": "kaars",
+   "art": "de",
+   "tr": {
+    "th": "เทียน",
+    "en": "candle"
+   },
+   "def": "Een stuk was met een pit dat brandt en licht geeft.",
+   "ex": "We steken een kaars aan.",
+   "gap": "De ___ brandt en geeft zacht licht.",
+   "wrong": [
+    "bank",
+    "tas",
+    "fiets"
+   ]
+  },
+  {
+   "id": "sjb.synagoge",
+   "kind": "word",
+   "w": "synagoge",
+   "art": "de",
+   "tr": {
+    "th": "โบสถ์ยิว",
+    "en": "synagogue"
+   },
+   "def": "Het gebouw waar joodse mensen samen bidden.",
+   "ex": "De synagoge is op zaterdagochtend open.",
+   "gap": "In de ___ komen joodse mensen samen om te bidden.",
+   "wrong": [
+    "bakkerij",
+    "garage",
+    "supermarkt"
+   ]
+  },
+  {
+   "id": "sjb.maaltijd",
+   "kind": "word",
+   "w": "maaltijd",
+   "art": "de",
+   "tr": {
+    "th": "มื้ออาหาร",
+    "en": "meal"
+   },
+   "def": "Het eten van één moment, zoals ontbijt of avondeten.",
+   "ex": "Na de dienst volgt een maaltijd.",
+   "gap": "De ___ met het hele gezin duurt lang.",
+   "wrong": [
+    "fiets",
+    "kaart",
+    "jas"
+   ]
+  },
+  {
+   "id": "sjb.gezin",
+   "kind": "word",
+   "w": "gezin",
+   "art": "het",
+   "tr": {
+    "th": "ครอบครัว (พ่อแม่ลูก)",
+    "en": "family (parents and children)"
+   },
+   "def": "Ouders en kinderen die samen wonen.",
+   "ex": "Ons gezin eet samen.",
+   "gap": "Het ___ zit samen aan tafel.",
+   "wrong": [
+    "brood",
+    "raam",
+    "boek"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-zaterdag-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Waarom is zaterdag in het jodendom een rustdag?",
+    "th": "ทำไมวันเสาร์จึงเป็นวันหยุดพักในศาสนายิว",
+    "en": "Why is Saturday a day of rest in Judaism?"
+   },
+   "intro": {
+    "nl": "Eerst een schatting. Dan volg je de sjabbat van vrijdagavond tot zaterdagavond. We beschrijven, we oordelen niet.",
+    "th": "ประมาณก่อน แล้วติดตาม sjabbat ตั้งแต่เย็นวันศุกร์ถึงเย็นวันเสาร์ เราอธิบาย เราไม่ตัดสิน",
+    "en": "First an estimate. Then you follow the sjabbat from Friday evening to Saturday evening. We describe, we do not judge."
+   },
+   "can": {
+    "nl": "Beschrijven hoe de sjabbat verloopt en waarom hij op zaterdag is",
+    "th": "อธิบายได้ว่า sjabbat ดำเนินไปอย่างไรและทำไมจึงเป็นวันเสาร์",
+    "en": "Describe how the sjabbat goes and why it is on Saturday"
+   },
+   "targets": [
+    "sjb.rustdag",
+    "sjb.kaars",
+    "sjb.synagoge",
+    "sjb.maaltijd",
+    "sjb.gezin"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "apricot",
+    "alt": {
+     "nl": "Een kamer met een tafel, een kaars en een bord met Sjabbat.",
+     "th": "ห้องที่มีโต๊ะ เทียน และป้ายเขียนว่า Sjabbat",
+     "en": "A room with a table, a candle and a sign that says Sjabbat."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     },
+     {
+      "kind": "sign",
+      "x": 90,
+      "y": 70,
+      "text": "Sjabbat",
+      "hot": true,
+      "item": "sjb.rustdag",
+      "label": {
+       "nl": "Rustdag: een dag zonder werk",
+       "th": "วันหยุดพัก: วันที่ไม่มีงาน",
+       "en": "Day of rest: a day without work"
+      }
+     },
+     {
+      "kind": "sign",
+      "x": 250,
+      "y": 70,
+      "text": "Kaars",
+      "hot": true,
+      "item": "sjb.kaars",
+      "label": {
+       "nl": "Kaars: ze brandt en geeft licht",
+       "th": "เทียน: ไหม้และให้แสง",
+       "en": "Candle: it burns and gives light"
+      }
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "sjb.rustdag"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel uur duurt de sjabbat? Typ een getal.",
+        "th": "ประมาณการ: วันสะบาโต (sjabbat) ยาวกี่ชั่วโมง พิมพ์ตัวเลข",
+        "en": "Estimate: how many hours does the sjabbat (Sabbath) last? Type a number."
+       },
+       "answer": "25",
+       "err": "getal",
+       "tol": 4,
+       "why": {
+        "nl": "Ongeveer 25 uur: van vrijdagavond bij zonsondergang tot zaterdagavond, als er drie sterren te zien zijn.",
+        "th": "ประมาณ 25 ชั่วโมง ตั้งแต่เย็นวันศุกร์ตอนพระอาทิตย์ตก จนถึงเย็นวันเสาร์เมื่อเห็นดาวสามดวง",
+        "en": "About 25 hours: from Friday evening at sunset until Saturday evening, when three stars can be seen."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "sjb.kaars",
+      "sjb.maaltijd",
+      "sjb.gezin"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Sjabbat",
+       "title": "Wikipedia: Sjabbat"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Shabbat",
+       "title": "Wikipedia: Shabbat"
+      }
+     ],
+     "text": {
+      "nl": "Vrijdagavond.\n\nVoor veel joden is de zevende dag van de week een rustdag. Die dag heet sjabbat. De joodse dag begint ’s avonds. Dus de sjabbat begint op vrijdagavond, een paar minuten voor zonsondergang.\n\nEerst steekt iemand in huis de kaarsen aan, minstens twee. Daarna gaan velen naar de synagoge. Thuis volgt een feestelijke maaltijd met het gezin. Er is wijn en gevlochten brood. Er wordt gezongen.\n\nWat hier staat, is de orthodoxe manier. Voor de sjabbat is alles al klaargemaakt, want er wordt tijdens de sjabbat niet gekookt.",
+      "th": "เย็นวันศุกร์\n\nสำหรับชาวยิวจำนวนมาก วันที่เจ็ดของสัปดาห์เป็นวันหยุดพัก เรียกว่า วันสะบาโต (sjabbat) วันของชาวยิวเริ่มตอนเย็น ดังนั้น sjabbat เริ่มเย็นวันศุกร์ ก่อนพระอาทิตย์ตกไม่กี่นาที\n\nก่อนอื่นมีคนในบ้านจุดเทียน อย่างน้อยสองเล่ม จากนั้นหลายคนไปโบสถ์ยิว ที่บ้านมีมื้ออาหารฉลองกับครอบครัว มีไวน์และขนมปังถัก มีการร้องเพลง\n\nที่เขียนไว้นี่เป็นแบบออร์โทด็อกซ์ ก่อน sjabbat ทุกอย่างเตรียมไว้พร้อมแล้ว เพราะระหว่าง sjabbat ไม่มีการทำอาหาร",
+      "en": "Friday evening.\n\nFor many Jews the seventh day of the week is a day of rest. That day is called sjabbat (Sabbath). The Jewish day begins in the evening. So the sjabbat begins on Friday evening, a few minutes before sunset.\n\nFirst someone in the house lights the candles, at least two. Then many go to the synagogue. At home a festive meal with the family follows. There is wine and braided bread. There is singing.\n\nWhat is written here is the Orthodox way. Everything is prepared before the sjabbat, because there is no cooking during the sjabbat."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "sjb.rustdag"
+       ],
+       "ask": {
+        "nl": "Wanneer begint de sjabbat?",
+        "th": "sjabbat เริ่มเมื่อไร",
+        "en": "When does the sjabbat begin?"
+       },
+       "opts": [
+        {
+         "t": "Zaterdagochtend, een paar minuten nadat de zon opkomt",
+         "r": "no",
+         "err": "tijd",
+         "why": {
+          "nl": "Nee. De joodse dag begint ’s avonds, dus de sjabbat begint al op vrijdagavond.",
+          "th": "ไม่ใช่ วันของชาวยิวเริ่มตอนเย็น ดังนั้น sjabbat เริ่มตั้งแต่เย็นวันศุกร์",
+          "en": "No. The Jewish day begins in the evening, so the sjabbat already begins on Friday evening."
+         }
+        },
+        {
+         "t": "Vrijdagavond, een paar minuten voor zonsondergang",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dan gaan de kaarsen aan.",
+          "th": "ถูกต้อง แล้วจึงจุดเทียน",
+          "en": "Right. Then the candles are lit."
+         }
+        },
+        {
+         "t": "Zondagmiddag",
+         "r": "no",
+         "err": "tijd",
+         "why": {
+          "nl": "Nee. De sjabbat is de zevende dag van de week, dat is zaterdag.",
+          "th": "ไม่ใช่ sjabbat คือวันที่เจ็ดของสัปดาห์ คือวันเสาร์",
+          "en": "No. The sjabbat is the seventh day of the week, which is Saturday."
+         }
+        }
+       ],
+       "answer": "Vrijdagavond, een paar minuten voor zonsondergang"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "sjb.kaars"
+       ],
+       "ask": {
+        "nl": "Maak af: Voor de sjabbat steekt iemand ___ aan.",
+        "th": "เติมคำ: ก่อน sjabbat มีคนจุด ___",
+        "en": "Complete: Before the sjabbat someone lights ___."
+       },
+       "answer": "kaarsen",
+       "err": "spelling",
+       "accept": [
+        "kaars"
+       ],
+       "hint": [
+        {
+         "nl": "Ze branden en geven licht. Het zijn er minstens twee.",
+         "th": "มันไหม้และให้แสง มีอย่างน้อยสองเล่ม",
+         "en": "They burn and give light. There are at least two."
+        },
+        {
+         "nl": "Begin zo: kaar…",
+         "th": "ขึ้นต้นแบบนี้: kaar…",
+         "en": "Start like this: kaar…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. Minstens twee kaarsen.",
+        "th": "ถูกต้อง เทียนอย่างน้อยสองเล่ม",
+        "en": "Right. At least two candles."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "sjb.maaltijd",
+      "sjb.synagoge"
+     ],
+     "ask": {
+      "nl": "Zet de sjabbat in de goede volgorde.",
+      "th": "เรียงลำดับ sjabbat ให้ถูกต้อง",
+      "en": "Put the sjabbat in the right order."
+     },
+     "answer": "Vrijdagavond: de kaarsen gaan aan Vrijdagavond: feestmaaltijd met het gezin Zaterdagochtend: dienst in de synagoge Zaterdagavond: afscheid met hawdala",
+     "data": {
+      "parts": [
+       "Vrijdagavond: de kaarsen gaan aan",
+       "Vrijdagavond: feestmaaltijd met het gezin",
+       "Zaterdagochtend: dienst in de synagoge",
+       "Zaterdagavond: afscheid met hawdala"
+      ],
+      "tr": {
+       "th": "เย็นวันศุกร์: จุดเทียน เย็นวันศุกร์: มื้อฉลองกับครอบครัว เช้าวันเสาร์: พิธีที่โบสถ์ยิว เย็นวันเสาร์: อำลาด้วยพิธีฮัฟดาลา",
+       "en": "Friday evening: the candles are lit. Friday evening: festive meal with the family. Saturday morning: service in the synagogue. Saturday evening: farewell with hawdala."
+      }
+     },
+     "why": {
+      "nl": "Eerst de kaarsen, dan de maaltijd op vrijdagavond. Zaterdagochtend is er een dienst. Zaterdagavond neemt men afscheid van de sjabbat met hawdala.",
+      "th": "ก่อนอื่นจุดเทียน แล้วมื้ออาหารเย็นวันศุกร์ เช้าวันเสาร์มีพิธี เย็นวันเสาร์อำลา sjabbat ด้วยพิธีฮัฟดาลา",
+      "en": "First the candles, then the meal on Friday evening. On Saturday morning there is a service. On Saturday evening people say farewell to the sjabbat with hawdala."
+     },
+     "err": "tijd",
+     "help": 0
+    },
+    {
+     "type": "read",
+     "items": [
+      "sjb.rustdag",
+      "sjb.synagoge"
+     ],
+     "sources": [
+      {
+       "url": "https://nl.wikipedia.org/wiki/Sjabbat",
+       "title": "Wikipedia: Sjabbat"
+      },
+      {
+       "url": "https://en.wikipedia.org/wiki/Shabbat",
+       "title": "Wikipedia: Shabbat"
+      }
+     ],
+     "text": {
+      "nl": "Zaterdag.\n\nOp zaterdagochtend gaan veel joden naar de synagoge. Daar wordt uit de Tora gelezen. Daarna is er weer een maaltijd. De rest van de dag is rustig: men rust, leest, leert en bezoekt familie of vrienden op loopafstand.\n\nOp de sjabbat is “werk” niet alleen betaald werk. Het woord is melacha, en er zijn 39 soorten. Bij orthodoxe joden horen daar bijvoorbeeld bij: koken, schrijven, een auto gebruiken en elektrische apparaten bedienen. Orthodoxe joden houden zich aan al deze regels. Voor liberale joden is de sjabbat ook een feestdag en een rustdag; ieder kiest zelf welke regels hij of zij houdt.",
+      "th": "วันเสาร์\n\nเช้าวันเสาร์ชาวยิวหลายคนไปโบสถ์ยิว ที่นั่นมีการอ่านโตราห์ (Tora) จากนั้นมีมื้ออาหารอีกครั้ง ที่เหลือของวันสงบ คือพักผ่อน อ่านหนังสือ เรียนรู้ และเยี่ยมครอบครัวหรือเพื่อนในระยะเดิน\n\nในวัน sjabbat “งาน” ไม่ได้หมายถึงงานที่ได้เงินเท่านั้น คำนั้นคือ melacha มี 39 ประเภท สำหรับชาวยิวออร์โทด็อกซ์ รวมถึง เช่น ทำอาหาร เขียน ใช้รถยนต์ และใช้เครื่องใช้ไฟฟ้า ชาวยิวออร์โทด็อกซ์ถือกฎเหล่านี้ทั้งหมด สำหรับชาวยิวสายเสรีนิยม sjabbat ก็เป็นวันฉลองและวันหยุดพักเช่นกัน แต่ละคนเลือกเองว่าจะถือกฎข้อไหน",
+      "en": "Saturday.\n\nOn Saturday morning many Jews go to the synagogue. There the Torah (Tora) is read. After that there is another meal. The rest of the day is quiet: people rest, read, study and visit family or friends within walking distance.\n\nOn the sjabbat “work” is not only paid work. The word is melacha, and there are 39 kinds. For Orthodox Jews these include, for example: cooking, writing, using a car and operating electrical devices. Orthodox Jews keep all of these rules. For liberal Jews the sjabbat is also a festive day and a day of rest; each person chooses which rules to keep."
+     },
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "sjb.rustdag"
+       ],
+       "ask": {
+        "nl": "Hoeveel soorten melacha (“werk”) zijn er? Typ een getal.",
+        "th": "melacha (“งาน”) มีกี่ประเภท พิมพ์ตัวเลข",
+        "en": "How many kinds of melacha (“work”) are there? Type a number."
+       },
+       "answer": "39",
+       "err": "getal",
+       "hint": [
+        {
+         "nl": "Het getal is tussen 30 en 40.",
+         "th": "ตัวเลขอยู่ระหว่าง 30 และ 40",
+         "en": "The number is between 30 and 40."
+        },
+        {
+         "nl": "Het getal begint met 3 en eindigt op 9.",
+         "th": "ตัวเลขขึ้นต้นด้วย 3 และลงท้ายด้วย 9",
+         "en": "The number starts with 3 and ends in 9."
+        }
+       ],
+       "why": {
+        "nl": "Goed. Er zijn 39 soorten.",
+        "th": "ถูกต้อง มี 39 ประเภท",
+        "en": "Right. There are 39 kinds."
+       }
+      },
+      {
+       "form": "choose",
+       "items": [
+        "sjb.rustdag"
+       ],
+       "ask": {
+        "nl": "Wat betekent “werk” op de sjabbat volgens de orthodoxe regels?",
+        "th": "ตามกฎของออร์โทด็อกซ์ “งาน” ใน sjabbat หมายถึงอะไร",
+        "en": "What does “work” mean on the sjabbat according to the Orthodox rules?"
+       },
+       "opts": [
+        {
+         "t": "Alleen het betaalde werk op een kantoor of in een winkel",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het gaat om veel meer, zoals koken, schrijven en een auto gebruiken.",
+          "th": "ไม่ใช่ หมายถึงมากกว่านั้น เช่น ทำอาหาร เขียน และใช้รถยนต์",
+          "en": "No. It is about much more, such as cooking, writing and using a car."
+         }
+        },
+        {
+         "t": "Alleen heel zwaar werk",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Ook lichte dingen, zoals schrijven, vallen eronder.",
+          "th": "ไม่ใช่ สิ่งเบา ๆ เช่น การเขียน ก็รวมอยู่ด้วย",
+          "en": "No. Light things, such as writing, are also included."
+         }
+        },
+        {
+         "t": "Veel meer dan betaald werk: 39 soorten activiteit",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Ook koken, schrijven en een auto gebruiken horen erbij.",
+          "th": "ถูกต้อง ทำอาหาร เขียน และใช้รถยนต์ก็รวมอยู่ด้วย",
+          "en": "Right. Cooking, writing and using a car are also part of it."
+         }
+        }
+       ],
+       "answer": "Veel meer dan betaald werk: 39 soorten activiteit"
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "sjb.rustdag"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Shabbat",
+       "title": "Wikipedia: Shabbat"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Sjabbat",
+       "title": "Wikipedia: Sjabbat"
+      }
+     ],
+     "text": {
+      "nl": "Waarom een rustdag op zaterdag?\n\nDe sjabbat is de zevende dag van de week. Dat is zaterdag. In de Tora staan twee redenen. De eerste: volgens de Tora schiep God de wereld in zes dagen en rustte op de zevende dag. De tweede: de sjabbat herinnert aan de bevrijding van de Israëlieten uit de slavernij in Egypte. De sjabbat staat ook in de Tien Geboden.\n\nVoor veel joden, orthodox en liberaal, is de sjabbat een feestdag: een dag zonder het werk van de week, met tijd voor gezin, gebed en rust.",
+      "th": "ทำไมวันหยุดพักจึงเป็นวันเสาร์\n\nsjabbat คือวันที่เจ็ดของสัปดาห์ คือวันเสาร์ ในโตราห์มีสองเหตุผล ข้อแรก ตามโตราห์ พระเจ้าสร้างโลกในหกวันและทรงพักในวันที่เจ็ด ข้อที่สอง sjabbat ระลึกถึงการที่ชาวอิสราเอลโบราณได้รับการปลดปล่อยจากการเป็นทาสในอียิปต์ sjabbat อยู่ในบัญญัติสิบประการด้วย\n\nสำหรับชาวยิวจำนวนมาก ทั้งออร์โทด็อกซ์และสายเสรีนิยม sjabbat เป็นวันฉลอง เป็นวันที่ไม่มีงานของสัปดาห์ มีเวลาให้ครอบครัว การอธิษฐาน และการพักผ่อน",
+      "en": "Why a day of rest on Saturday?\n\nThe sjabbat is the seventh day of the week. That is Saturday. The Torah gives two reasons. The first: according to the Torah, God created the world in six days and rested on the seventh day. The second: the sjabbat commemorates the freeing of the Israelites from slavery in Egypt. The sjabbat is also in the Ten Commandments.\n\nFor many Jews, Orthodox and liberal, the sjabbat is a festive day: a day without the work of the week, with time for family, prayer and rest."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "sjb.rustdag"
+       ],
+       "ask": {
+        "nl": "Waarom is zaterdag voor veel joden een rustdag?",
+        "th": "ทำไมวันเสาร์จึงเป็นวันหยุดพักสำหรับชาวยิวจำนวนมาก",
+        "en": "Why is Saturday a day of rest for many Jews?"
+       },
+       "opts": [
+        {
+         "t": "Omdat de wet in Nederland dat zo bepaalt, en omdat bijna alle winkels en kantoren dan dicht zijn",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De reden staat in de Tora, niet in een Nederlandse wet.",
+          "th": "ไม่ใช่ เหตุผลอยู่ในโตราห์ ไม่ใช่ในกฎหมายเนเธอร์แลนด์",
+          "en": "No. The reason is in the Torah, not in a Dutch law."
+         }
+        },
+        {
+         "t": "Het is de zevende dag: er wordt herinnerd aan de schepping en aan de uittocht uit Egypte",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Dat zijn de twee redenen uit de Tora.",
+          "th": "ถูกต้อง นั่นคือสองเหตุผลจากโตราห์",
+          "en": "Right. Those are the two reasons from the Torah."
+         }
+        },
+        {
+         "t": "Omdat er op zaterdag nooit iets te doen is",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De sjabbat is bewust een rustdag, met gebed, maaltijden en samenzijn.",
+          "th": "ไม่ใช่ sjabbat เป็นวันหยุดพักโดยตั้งใจ มีการอธิษฐาน มื้ออาหาร และการอยู่ร่วมกัน",
+          "en": "No. The sjabbat is a deliberate day of rest, with prayer, meals and being together."
+         }
+        }
+       ],
+       "answer": "Het is de zevende dag: er wordt herinnerd aan de schepping en aan de uittocht uit Egypte"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "sjb.rustdag"
+       ],
+       "ask": {
+        "nl": "Maak af: De sjabbat is de ___ dag van de week.",
+        "th": "เติมคำ: sjabbat คือวันที่ ___ ของสัปดาห์",
+        "en": "Complete: The sjabbat is the ___ day of the week."
+       },
+       "answer": "zevende",
+       "err": "spelling",
+       "accept": [
+        "7e",
+        "7de"
+       ],
+       "hint": [
+        {
+         "nl": "Na de zesde dag.",
+         "th": "หลังวันที่หก",
+         "en": "After the sixth day."
+        },
+        {
+         "nl": "Begin zo: zev…",
+         "th": "ขึ้นต้นแบบนี้: zev…",
+         "en": "Start like this: zev…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. De zevende dag, dat is zaterdag.",
+        "th": "ถูกต้อง วันที่เจ็ด คือวันเสาร์",
+        "en": "Right. The seventh day, which is Saturday."
+       }
+      }
+     ]
+    },
+    {
+     "type": "make",
+     "items": [
+      "sjb.rustdag",
+      "sjb.gezin"
+     ],
+     "ask": {
+      "nl": "Beschrijf in twee zinnen hoe een sjabbat verloopt of wat er niet gebeurt. Beschrijf alleen, geef geen mening.",
+      "th": "อธิบายในสองประโยคว่า sjabbat ดำเนินไปอย่างไร หรืออะไรที่ไม่ทำ อธิบายเท่านั้น อย่าให้ความเห็น",
+      "en": "Describe in two sentences how a sjabbat goes or what does not happen. Only describe, give no opinion."
+     },
+     "frame": "De sjabbat begint op ... Dan ...",
+     "model": "De sjabbat begint op vrijdagavond. Dan steekt iemand de kaarsen aan en eet het gezin samen.",
+     "checklist": [
+      {
+       "nl": "Ik heb iets beschreven wat ik las.",
+       "th": "ฉันอธิบายสิ่งที่ฉันอ่าน",
+       "en": "I described something I read."
+      },
+      {
+       "nl": "Ik heb geen mening gegeven.",
+       "th": "ฉันไม่ได้ให้ความเห็น",
+       "en": "I gave no opinion."
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "sjb.kaars",
+      "sjb.maaltijd"
+     ],
+     "sources": [
+      {
+       "url": "https://en.wikipedia.org/wiki/Shabbat",
+       "title": "Wikipedia: Shabbat"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Sjabbat",
+       "title": "Wikipedia: Sjabbat"
+      }
+     ],
+     "text": {
+      "nl": "Het afscheid.\n\nDe sjabbat eindigt op zaterdagavond, als er drie sterren aan de hemel te zien zijn. Dan volgt de hawdala. Dat betekent “scheiding”: het scheidt de sjabbat van de rest van de week. Er worden zegeningen uitgesproken over een beker wijn, over geurende kruiden en bij een gevlochten kaars. Iedereen ruikt aan de kruiden. Dan begint de nieuwe week.",
+      "th": "การอำลา\n\nsjabbat จบลงในเย็นวันเสาร์ เมื่อเห็นดาวสามดวงบนฟ้า จากนั้นมีพิธีฮัฟดาลา (hawdala) แปลว่า “การแยก” คือแยก sjabbat ออกจากส่วนที่เหลือของสัปดาห์ มีการกล่าวคำอวยพรเหนือถ้วยไวน์ เหนือเครื่องเทศหอม และที่เทียนถัก ทุกคนดมเครื่องเทศ แล้วสัปดาห์ใหม่ก็เริ่มต้น",
+      "en": "The farewell.\n\nThe sjabbat ends on Saturday evening, when three stars can be seen in the sky. Then follows the hawdala. That means “separation”: it separates the sjabbat from the rest of the week. Blessings are said over a cup of wine, over fragrant spices and at a braided candle. Everyone smells the spices. Then the new week begins."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "sjb.kaars"
+       ],
+       "ask": {
+        "nl": "Wat is de hawdala?",
+        "th": "ฮัฟดาลา (hawdala) คืออะไร",
+        "en": "What is the hawdala?"
+       },
+       "opts": [
+        {
+         "t": "Een maaltijd op vrijdagavond",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. De maaltijd op vrijdagavond is er aan het begin. De hawdala is aan het einde.",
+          "th": "ไม่ใช่ มื้ออาหารเย็นวันศุกร์อยู่ตอนต้น ฮัฟดาลาอยู่ตอนท้าย",
+          "en": "No. The meal on Friday evening is at the beginning. The hawdala is at the end."
+         }
+        },
+        {
+         "t": "Een ritueel dat de sjabbat afsluit",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Hawdala betekent “scheiding”: de sjabbat wordt gescheiden van de weekdagen.",
+          "th": "ถูกต้อง hawdala แปลว่า “การแยก” คือแยก sjabbat จากวันธรรมดา",
+          "en": "Right. Hawdala means “separation”: the sjabbat is separated from the weekdays."
+         }
+        },
+        {
+         "t": "Een boek in de synagoge",
+         "r": "no",
+         "err": "betekenis",
+         "why": {
+          "nl": "Nee. Het is een korte ceremonie met wijn, kruiden en een kaars.",
+          "th": "ไม่ใช่ เป็นพิธีสั้น ๆ ด้วยไวน์ เครื่องเทศ และเทียน",
+          "en": "No. It is a short ceremony with wine, spices and a candle."
+         }
+        }
+       ],
+       "answer": "Een ritueel dat de sjabbat afsluit"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: de sjabbat is voor veel joden de rustdag van vrijdagavond tot zaterdagavond. Volgens de Tora herinnert hij aan de schepping en aan de uittocht uit Egypte.",
+      "th": "ตอนนี้คุณเล่าได้ว่า sjabbat เป็นวันหยุดพักของชาวยิวจำนวนมาก ตั้งแต่เย็นวันศุกร์ถึงเย็นวันเสาร์ ระลึกถึงการสร้างโลกและการออกจากอียิปต์",
+      "en": "You can now tell: the sjabbat is the day of rest for many Jews, from Friday evening to Saturday evening. It commemorates the creation and the exodus from Egypt."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}

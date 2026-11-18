@@ -1,0 +1,527 @@
+{
+ "format": 1,
+ "id": "ao-coalitie",
+ "type": "les",
+ "version": 1,
+ "order": 27,
+ "place": "ao",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "gebied": "politiek",
+ "vorm": "een keten van oorzaak en gevolg",
+ "draden": [
+  "ao-kamer150",
+  "ao-links-rechts",
+  "ao-grondrecht"
+ ],
+ "title": {
+  "nl": "Wat is een coalitie, en waarom duurt formeren zo lang?",
+  "th": "รัฐบาลผสมคืออะไร และทำไมการจัดตั้งจึงใช้เวลานาน",
+  "en": "What is a coalition, and why does forming one take so long?"
+ },
+ "sources": [
+  {
+   "url": "https://www.tweedekamer.nl/zo-werkt-de-kamer/wat-gebeurt-er-tijdens-de-verkiezingen-en-kabinetsformatie/een-coalitie-zoeken",
+   "title": "Tweede Kamer: Kabinetsformatie, politieke partijen zoeken een coalitie"
+  },
+  {
+   "url": "https://nl.wikipedia.org/wiki/Kabinetsformatie_in_Nederland",
+   "title": "Wikipedia: Kabinetsformatie in Nederland"
+  },
+  {
+   "url": "https://parlement.com/kabinetsformatie",
+   "title": "Parlement.com: Kabinetsformatie"
+  }
+ ],
+ "items": [
+  {
+   "id": "coa.coalitie",
+   "kind": "word",
+   "w": "coalitie",
+   "art": "de",
+   "tr": {
+    "th": "รัฐบาลผสม (พรรคที่ร่วมกันปกครอง)",
+    "en": "coalition"
+   },
+   "def": "De partijen die samen het land besturen.",
+   "ex": "De coalitie heeft een meerderheid in de Kamer.",
+   "gap": "De ___ bestaat uit partijen die samen regeren.",
+   "wrong": [
+    "fiets",
+    "pan",
+    "jas"
+   ]
+  },
+  {
+   "id": "coa.oppositie",
+   "kind": "word",
+   "w": "oppositie",
+   "art": "de",
+   "tr": {
+    "th": "ฝ่ายค้าน",
+    "en": "opposition"
+   },
+   "def": "De partijen die niet in het kabinet zitten.",
+   "ex": "De oppositie stelt kritische vragen.",
+   "gap": "De ___ doet niet mee aan het kabinet.",
+   "wrong": [
+    "soep",
+    "stoel",
+    "wolk"
+   ]
+  },
+  {
+   "id": "coa.meerderheid",
+   "kind": "word",
+   "w": "meerderheid",
+   "art": "de",
+   "tr": {
+    "th": "เสียงข้างมาก",
+    "en": "majority"
+   },
+   "def": "Meer dan de helft.",
+   "ex": "De meerderheid stemde voor.",
+   "gap": "De ___ is meer dan de helft van de Kamerleden.",
+   "wrong": [
+    "tas",
+    "bus",
+    "pen"
+   ]
+  },
+  {
+   "id": "coa.informateur",
+   "kind": "word",
+   "w": "informateur",
+   "art": "de",
+   "tr": {
+    "th": "ผู้สำรวจ (ผู้ที่หาว่าพรรคใดร่วมกันได้)",
+    "en": "informateur (person who explores which parties can govern together)"
+   },
+   "def": "Iemand die uitzoekt welke partijen samen kunnen regeren.",
+   "ex": "De informateur praat met alle partijen.",
+   "gap": "De ___ zoekt een coalitie.",
+   "wrong": [
+    "bakker",
+    "kassa",
+    "trein"
+   ]
+  },
+  {
+   "id": "coa.regeerakkoord",
+   "kind": "word",
+   "w": "regeerakkoord",
+   "art": "het",
+   "tr": {
+    "th": "ข้อตกลงรัฐบาล",
+    "en": "coalition agreement"
+   },
+   "def": "Een afspraak van de partijen over wat het kabinet gaat doen.",
+   "ex": "Het regeerakkoord is een lang document.",
+   "gap": "Het ___ zegt wat het kabinet gaat doen.",
+   "wrong": [
+    "weekend",
+    "kwartier",
+    "seizoen"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "ao-coalitie-kn",
+   "place": "ao",
+   "subject": "kn",
+   "level": "A2",
+   "title": {
+    "nl": "Wat is een coalitie, en waarom duurt formeren zo lang?",
+    "th": "รัฐบาลผสมคืออะไร และทำไมการจัดตั้งจึงใช้เวลานาน",
+    "en": "What is a coalition, and why does forming one take so long?"
+   },
+   "intro": {
+    "nl": "Eerst een gok over hoe lang het duurde. Daarna zie je hoe de stappen op elkaar volgen.",
+    "th": "เดาก่อนว่าใช้เวลานานแค่ไหน แล้วดูว่าขั้นตอนต่อกันอย่างไร",
+    "en": "First a guess about how long it took. Then you see how the steps follow each other."
+   },
+   "can": {
+    "nl": "Uitleggen wat een coalitie is en waarom een formatie lang kan duren",
+    "th": "อธิบายได้ว่ารัฐบาลผสมคืออะไรและทำไมการจัดตั้งอาจใช้เวลานาน",
+    "en": "Explain what a coalition is and why a formation can take long"
+   },
+   "targets": [
+    "coa.coalitie",
+    "coa.oppositie",
+    "coa.meerderheid",
+    "coa.informateur",
+    "coa.regeerakkoord"
+   ],
+   "goals": [
+    "kennis-nederland",
+    "nt2-I-lezen-4"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "lilac",
+    "alt": {
+     "nl": "Een kamer met een tafel en een brief.",
+     "th": "ห้องที่มีโต๊ะและจดหมาย",
+     "en": "A room with a table and a letter."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156
+     },
+     {
+      "kind": "letter",
+      "x": 170,
+      "y": 120
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "instap",
+     "q": [
+      {
+       "form": "number",
+       "items": [
+        "coa.coalitie"
+       ],
+       "ask": {
+        "nl": "Schat: hoeveel dagen duurde de formatie van 2021 tot 2022? Typ een getal.",
+        "th": "ประมาณการ: การจัดตั้งรัฐบาลปี 2021 ถึง 2022 ใช้เวลากี่วัน พิมพ์ตัวเลข",
+        "en": "Estimate: how many days did the formation of 2021 to 2022 take? Type a number."
+       },
+       "answer": "300",
+       "tol": 80,
+       "err": "getal",
+       "why": {
+        "nl": "Het waren 299 dagen. Dat was de langste formatie. De formatie na de verkiezingen van 2023 duurde 223 dagen.",
+        "th": "ใช้เวลา 299 วัน เป็นการจัดตั้งรัฐบาลที่นานที่สุด การจัดตั้งหลังการเลือกตั้งปี 2023 ใช้เวลา 223 วัน",
+        "en": "It was 299 days. That was the longest formation. The formation after the elections of 2023 took 223 days."
+       }
+      }
+     ]
+    },
+    {
+     "type": "read",
+     "items": [
+      "coa.coalitie",
+      "coa.oppositie",
+      "coa.meerderheid"
+     ],
+     "sources": [
+      {
+       "url": "https://www.tweedekamer.nl/zo-werkt-de-kamer/wat-gebeurt-er-tijdens-de-verkiezingen-en-kabinetsformatie/een-coalitie-zoeken",
+       "title": "Tweede Kamer: Kabinetsformatie, politieke partijen zoeken een coalitie"
+      }
+     ],
+     "text": {
+      "nl": "Waarom heeft Nederland een coalitie?\n\nDe Tweede Kamer heeft 150 zetels. Een besluit heeft meer dan de helft van de stemmen nodig. Met 150 zetels is een meerderheid 76 zetels of meer. Er is nog nooit een partij geweest met meer dan de helft van de zetels. Partijen die samen regeren, vormen een coalitie. Partijen die niet meedoen, vormen de oppositie.\n\nHeeft de coalitie 76 zetels of meer, dan krijgen de plannen van het kabinet waarschijnlijk genoeg steun. Heeft een kabinet minder zetels, dan kunnen andere partijen het gedogen. Die partijen leveren dan geen ministers of staatssecretarissen.",
+      "th": "ทำไมเนเธอร์แลนด์จึงมีรัฐบาลผสม\n\nสภาผู้แทนราษฎรมี 150 ที่นั่ง การตัดสินใจต้องมีคะแนนเสียงเกินครึ่ง จาก 150 ที่นั่ง เสียงข้างมากคือ 76 ที่นั่งขึ้นไป ยังไม่เคยมีพรรคใดได้ที่นั่งเกินครึ่งเลย พรรคที่ปกครองร่วมกันเรียกว่า coalitie พรรคที่ไม่ร่วมเรียกว่า oppositie\n\nถ้ารัฐบาลผสมมี 76 ที่นั่งขึ้นไป แผนของคณะรัฐมนตรีก็น่าจะได้รับการสนับสนุนเพียงพอ ถ้าคณะรัฐมนตรีมีที่นั่งน้อยกว่านั้น พรรคอื่นอาจยอมให้ผ่านโดยไม่ร่วมรัฐบาล พรรคเหล่านั้นไม่ส่งรัฐมนตรีหรือรัฐมนตรีช่วยว่าการ (staatssecretaris)",
+      "en": "Why does the Netherlands have a coalition?\n\nThe Tweede Kamer has 150 seats. A decision needs more than half of the votes. With 150 seats, a majority is 76 seats or more. There has never been a party with more than half of the seats. Parties that govern together form a coalition. Parties that do not join form the opposition.\n\nIf the coalition has 76 seats or more, the plans of the cabinet will probably get enough support. If a cabinet has fewer seats, other parties can tolerate it. Those parties then supply no ministers or state secretaries."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "coa.meerderheid"
+       ],
+       "ask": {
+        "nl": "Hoeveel zetels heb je minstens nodig voor een meerderheid in de Tweede Kamer?",
+        "th": "ต้องมีกี่ที่นั่งอย่างน้อยจึงจะเป็นเสียงข้างมากในสภาผู้แทนราษฎร",
+        "en": "How many seats do you need at least for a majority in the Tweede Kamer?"
+       },
+       "opts": [
+        {
+         "t": "76",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. 150 zetels: meer dan de helft is 76 of meer.",
+          "th": "ถูกต้อง 150 ที่นั่ง เกินครึ่งคือ 76 ขึ้นไป",
+          "en": "Right. 150 seats: more than half is 76 or more."
+         }
+        },
+        {
+         "t": "75",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Bijna. 75 is precies de helft. Je hebt meer dan de helft nodig: 76.",
+          "th": "เกือบถูก 75 คือครึ่งพอดี ต้องมากกว่าครึ่ง คือ 76",
+          "en": "Nearly. 75 is exactly half. You need more than half: 76."
+         }
+        },
+        {
+         "t": "100",
+         "r": "no",
+         "err": "getal",
+         "why": {
+          "nl": "Nee. Zoveel is niet nodig. Meer dan de helft van 150 is 76.",
+          "th": "ไม่ใช่ ไม่ต้องมากขนาดนั้น เกินครึ่งของ 150 คือ 76",
+          "en": "No. You do not need that many. More than half of 150 is 76."
+         }
+        }
+       ],
+       "answer": "76"
+      },
+      {
+       "form": "complete",
+       "items": [
+        "coa.oppositie"
+       ],
+       "ask": {
+        "nl": "Maak af: Partijen die niet in het kabinet zitten, vormen de ___.",
+        "th": "เติมคำ: พรรคที่ไม่ได้อยู่ในคณะรัฐมนตรีเป็น ___",
+        "en": "Complete: Parties that are not in the cabinet form the ___."
+       },
+       "answer": "oppositie",
+       "err": "spelling",
+       "hint": [
+        {
+         "nl": "Ze zijn tegenover de coalitie.",
+         "th": "พวกเขาอยู่ตรงข้ามกับรัฐบาลผสม",
+         "en": "They are opposite the coalition."
+        },
+        {
+         "nl": "Begin zo: oppo…",
+         "th": "ขึ้นต้นแบบนี้: oppo…",
+         "en": "Start like this: oppo…"
+        }
+       ],
+       "why": {
+        "nl": "Goed. De partijen die niet meedoen, vormen de oppositie.",
+        "th": "ถูกต้อง พรรคที่ไม่ร่วมคือฝ่ายค้าน",
+        "en": "Right. The parties that do not join form the opposition."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "coa.meerderheid",
+      "coa.coalitie"
+     ],
+     "ask": {
+      "nl": "Zo komt het dat het lang duurt. Leg de oorzaak en het gevolg in de goede volgorde. Bouw de zin.",
+      "th": "เหตุผลที่ใช้เวลานาน เรียงสาเหตุและผลให้ถูกลำดับ ต่อประโยค",
+      "en": "This is why it takes long. Put cause and effect in the right order. Build the sentence."
+     },
+     "data": {
+      "parts": [
+       "Geen partij heeft 76 zetels,",
+       "dus moeten partijen samen een coalitie vormen,",
+       "dus duurt het onderhandelen vaak lang."
+      ],
+      "tr": {
+       "th": "ไม่มีพรรคใดมี 76 ที่นั่ง ดังนั้นพรรคต่าง ๆ ต้องรวมกันเป็นรัฐบาลผสม ดังนั้นการเจรจาจึงมักใช้เวลานาน",
+       "en": "No party has 76 seats, so parties must form a coalition together, so negotiating often takes long."
+      }
+     },
+     "answer": "Geen partij heeft 76 zetels, dus moeten partijen samen een coalitie vormen, dus duurt het onderhandelen vaak lang.",
+     "err": "woordvolgorde",
+     "why": {
+      "nl": "De duur hangt af van het aantal partijen en hoe verdeeld de uitslag is. Hoe meer partijen er nodig zijn, hoe langer het onderhandelen.",
+      "th": "ระยะเวลาขึ้นอยู่กับจำนวนพรรคและการกระจายของผลการเลือกตั้ง ยิ่งต้องใช้หลายพรรค ยิ่งเจรจานาน",
+      "en": "The duration depends on the number of parties and how divided the result is. The more parties are needed, the longer the negotiating."
+     }
+    },
+    {
+     "type": "read",
+     "items": [
+      "coa.informateur",
+      "coa.regeerakkoord"
+     ],
+     "sources": [
+      {
+       "url": "https://www.tweedekamer.nl/zo-werkt-de-kamer/wat-gebeurt-er-tijdens-de-verkiezingen-en-kabinetsformatie/een-coalitie-zoeken",
+       "title": "Tweede Kamer: Kabinetsformatie, politieke partijen zoeken een coalitie"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Kabinetsformatie_in_Nederland",
+       "title": "Wikipedia: Kabinetsformatie in Nederland"
+      },
+      {
+       "url": "https://parlement.com/kabinetsformatie",
+       "title": "Parlement.com: Kabinetsformatie"
+      }
+     ],
+     "text": {
+      "nl": "Hoe gaat het in stappen?\n\nEerst onderzoekt een verkenner welke partijen samen willen. Dan onderzoekt een informateur een bepaalde coalitie. Dat is een ervaren politicus die met alle fractievoorzitters praat. De Tweede Kamer bepaalt zelf wie het wordt, in een debat over de verkiezingsuitslag.\n\nDe partijen schrijven hun programma in een regeerakkoord. Daarna volgt de formateur, meestal de latere minister-president, die ministers en staatssecretarissen zoekt. Een formatie heeft vier fasen: een coalitie zoeken, een programma maken, de posten verdelen en de personen kiezen.",
+      "th": "ทำเป็นขั้นตอนอย่างไร\n\nก่อนอื่น verkenner สำรวจว่าพรรคใดอยากร่วมกัน แล้ว informateur ตรวจสอบรัฐบาลผสมแบบใดแบบหนึ่ง เป็นนักการเมืองที่มีประสบการณ์ที่คุยกับหัวหน้าพรรคทุกพรรค สภาผู้แทนราษฎรเป็นผู้กำหนดเองว่าใครจะเป็น ในการอภิปรายผลการเลือกตั้ง\n\nพรรคต่าง ๆ เขียนโครงการไว้ใน regeerakkoord ต่อจากนั้นถึงคิว formateur ซึ่งมักเป็นนายกรัฐมนตรีในอนาคต ผู้หารัฐมนตรีและรัฐมนตรีช่วยว่าการ (staatssecretaris) การจัดตั้งรัฐบาลมีสี่ขั้น: หารัฐบาลผสม ทำโครงการ แบ่งตำแหน่ง และเลือกบุคคล",
+      "en": "How does it go in steps?\n\nFirst an explorer (verkenner) finds out which parties want to work together. Then an informateur investigates one specific coalition. That is an experienced politician who talks to all party leaders in the Kamer. The Tweede Kamer itself decides who it will be, in a debate about the election result.\n\nThe parties write their programme in a coalition agreement (regeerakkoord). Then comes the formateur, usually the later prime minister, who looks for ministers and state secretaries. A formation has four phases: finding a coalition, making a programme, dividing the posts and choosing the people."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "coa.informateur"
+       ],
+       "ask": {
+        "nl": "Wie bepaalt wie de informateur wordt?",
+        "th": "ใครเป็นผู้กำหนดว่าใครจะเป็น informateur",
+        "en": "Who decides who the informateur will be?"
+       },
+       "opts": [
+        {
+         "t": "De Tweede Kamer, in een debat",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De Kamer bepaalt het in het debat over de verkiezingsuitslag.",
+          "th": "ถูกต้อง สภากำหนดในการอภิปรายผลการเลือกตั้ง",
+          "en": "Right. The Kamer decides it in the debate about the election result."
+         }
+        },
+        {
+         "t": "De grootste partij, samen met de koning",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat staat niet in de tekst. De Kamer als geheel bepaalt het.",
+          "th": "ไม่ใช่ ไม่มีในข้อความ สภาทั้งหมดเป็นผู้กำหนด",
+          "en": "No. That is not in the text. The Kamer as a whole decides it."
+         }
+        },
+        {
+         "t": "De kiezers",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. De kiezers kiezen de Kamer. De Kamer kiest de informateur.",
+          "th": "ไม่ใช่ ผู้ลงคะแนนเลือกสภา สภาเลือก informateur",
+          "en": "No. The voters choose the Kamer. The Kamer chooses the informateur."
+         }
+        }
+       ],
+       "answer": "De Tweede Kamer, in een debat"
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "build",
+     "items": [
+      "coa.informateur",
+      "coa.regeerakkoord"
+     ],
+     "ask": {
+      "nl": "Leg de stappen van de formatie in de goede volgorde. Bouw de zin.",
+      "th": "เรียงขั้นตอนของการจัดตั้งรัฐบาลให้ถูกลำดับ ต่อประโยค",
+      "en": "Put the steps of the formation in the right order. Build the sentence."
+     },
+     "data": {
+      "parts": [
+       "Eerst zoekt een informateur een coalitie,",
+       "dan schrijven de partijen een regeerakkoord,",
+       "dan verdelen ze de posten."
+      ],
+      "tr": {
+       "th": "ก่อนอื่น informateur หารัฐบาลผสม แล้วพรรคเขียน regeerakkoord แล้วแบ่งตำแหน่ง",
+       "en": "First an informateur looks for a coalition, then the parties write a regeerakkoord, then they divide the posts."
+      }
+     },
+     "answer": "Eerst zoekt een informateur een coalitie, dan schrijven de partijen een regeerakkoord, dan verdelen ze de posten.",
+     "err": "woordvolgorde",
+     "why": {
+      "nl": "Eerst de coalitie, dan het programma, dan de posten, en daarna de personen.",
+      "th": "ก่อนรัฐบาลผสม แล้วโครงการ แล้วตำแหน่ง แล้วจึงบุคคล",
+      "en": "First the coalition, then the programme, then the posts, and then the people."
+     }
+    },
+    {
+     "type": "read",
+     "dieper": true,
+     "items": [
+      "coa.coalitie"
+     ],
+     "sources": [
+      {
+       "url": "https://www.tweedekamer.nl/zo-werkt-de-kamer/wat-gebeurt-er-tijdens-de-verkiezingen-en-kabinetsformatie/een-coalitie-zoeken",
+       "title": "Tweede Kamer: Kabinetsformatie, politieke partijen zoeken een coalitie"
+      },
+      {
+       "url": "https://nl.wikipedia.org/wiki/Kabinetsformatie_in_Nederland",
+       "title": "Wikipedia: Kabinetsformatie in Nederland"
+      },
+      {
+       "url": "https://parlement.com/kabinetsformatie",
+       "title": "Parlement.com: Kabinetsformatie"
+      }
+     ],
+     "text": {
+      "nl": "Hoe lang duurt het?\n\nDe formatie van 2021 en 2022 duurde 299 dagen, de langste tot nu toe. De formatie na de verkiezingen van 2023 duurde 223 dagen en had vier informateurs nodig. Nederlandse formaties duren langer dan in andere landen. Sinds 1945 waren er ongeveer 31 formaties. De formatie na de verkiezingen van oktober 2025 was op 23 februari 2026 klaar.",
+      "th": "ใช้เวลานานเท่าไร\n\nการจัดตั้งรัฐบาลปี 2021 และ 2022 ใช้เวลา 299 วัน นานที่สุดจนถึงตอนนี้ การจัดตั้งหลังการเลือกตั้งปี 2023 ใช้เวลา 223 วัน และต้องใช้ informateur สี่คน การจัดตั้งรัฐบาลของเนเธอร์แลนด์ใช้เวลานานกว่าประเทศอื่น ตั้งแต่ปี 1945 มีการจัดตั้งรัฐบาลประมาณ 31 ครั้ง การจัดตั้งหลังการเลือกตั้งเดือนตุลาคม 2025 เสร็จสิ้นเมื่อวันที่ 23 กุมภาพันธ์ 2026",
+      "en": "How long does it take?\n\nThe formation of 2021 and 2022 took 299 days, the longest so far. The formation after the elections of 2023 took 223 days and needed four informateurs. Dutch formations take longer than in other countries. Since 1945 there have been about 31 formations. The formation after the elections of October 2025 was finished on 23 February 2026."
+     },
+     "q": [
+      {
+       "form": "choose",
+       "items": [
+        "coa.coalitie"
+       ],
+       "ask": {
+        "nl": "Hoeveel dagen duurde de langste formatie tot nu toe?",
+        "th": "การจัดตั้งรัฐบาลที่นานที่สุดจนถึงตอนนี้ใช้เวลากี่วัน",
+        "en": "How many days did the longest formation so far take?"
+       },
+       "opts": [
+        {
+         "t": "299 dagen",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. De formatie van 2021 en 2022.",
+          "th": "ถูกต้อง การจัดตั้งรัฐบาลปี 2021 และ 2022",
+          "en": "Right. The formation of 2021 and 2022."
+         }
+        },
+        {
+         "t": "223 dagen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Dat was de formatie na de verkiezingen van 2023, korter dan de langste.",
+          "th": "ไม่ใช่ นั่นคือการจัดตั้งหลังการเลือกตั้งปี 2023 ซึ่งสั้นกว่าที่นานที่สุด",
+          "en": "No. That was the formation after the elections of 2023, shorter than the longest."
+         }
+        },
+        {
+         "t": "31 dagen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Nee. Het getal 31 is het aantal formaties sinds 1945, geen aantal dagen.",
+          "th": "ไม่ใช่ 31 คือจำนวนครั้งของการจัดตั้งตั้งแต่ปี 1945 ไม่ใช่จำนวนวัน",
+          "en": "No. The number 31 is the number of formations since 1945, not a number of days."
+         }
+        }
+       ],
+       "answer": "299 dagen"
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Kies een draad om verder te lezen, of ga later verder.",
+      "th": "เลือกเรื่องต่อไปเพื่ออ่านต่อ หรือกลับมาอ่านทีหลังก็ได้",
+      "en": "Pick a thread to read on, or continue later."
+     },
+     "real": {
+      "nl": "Je kunt nu vertellen: nog nooit had één partij 76 zetels, dus moeten partijen samen een coalitie vormen. Dat onderhandelen kan lang duren.",
+      "th": "ตอนนี้คุณเล่าได้ว่า ยังไม่เคยมีพรรคใดมี 76 ที่นั่งเลย พรรคต่าง ๆ จึงต้องรวมกันเป็นรัฐบาลผสม การเจรจานี้อาจใช้เวลานาน",
+      "en": "You can now tell: no party has ever had 76 seats, so parties must form a coalition together. That negotiating can take long."
+     }
+    }
+   ]
+  }
+ ],
+ "review": {
+  "model": "claude-opus-5-5",
+  "date": "2026-11-18",
+  "verdict": "goed"
+ }
+}
