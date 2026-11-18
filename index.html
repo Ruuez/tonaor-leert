@@ -759,6 +759,20 @@ en:{
  "garden.tip":"Every word and every skill is a plant. Remembering it well makes it grow. A drop means: review it briefly today.",
  "garden.empty":"Your first plant will grow here soon.",
  "route.title":"My route",
+ "rec.go":"Record",
+ "rec.prepGo":"Start preparing",
+ "rec.prep":"Think about what you will say. Recording starts in {n} seconds.",
+ "rec.startNow":"Start now",
+ "rec.busy":"Recording… Speak now.",
+ "rec.left":"{n} seconds left",
+ "rec.stop":"Stop",
+ "rec.me":"Listen to yourself",
+ "rec.again":"Record again",
+ "rec.ok":"It sounded good",
+ "rec.notYet":"Not yet",
+ "rec.examTip":"Like the exam: you have {n} seconds, the recording stops by itself.",
+ "rec.noMic":"Recording does not work here. Practise with the example.",
+ "rec.empty":"Nothing was recorded. Try again.",
  "en.nlLike":"Looks like the Dutch word {nl}.",
  "en.falseFriend":"Careful: looks like the Dutch word {nl}, but means something else.",
  "strand.low.out":"This week you said or wrote little yourself. Choose a conversation or write a message.",
@@ -1268,6 +1282,20 @@ nl:{
  "garden.tip":"Elk woord en elke vaardigheid is een plantje. Goed onthouden laat het groeien. Een druppel betekent: vandaag even herhalen.",
  "garden.empty":"Hier groeit straks je eerste plantje.",
  "route.title":"<h1>Mijn route</h1>",
+ "rec.go":"Opnemen",
+ "rec.prepGo":"Begin met voorbereiden",
+ "rec.prep":"Denk na over wat je zegt. Het opnemen begint over {n} seconden.",
+ "rec.startNow":"Nu beginnen",
+ "rec.busy":"Opnemen… Spreek nu.",
+ "rec.left":"Nog {n} seconden",
+ "rec.stop":"Stop",
+ "rec.me":"Luister naar jezelf",
+ "rec.again":"Opnieuw opnemen",
+ "rec.ok":"Het klonk goed",
+ "rec.notYet":"Nog niet",
+ "rec.examTip":"Zoals op het examen: je hebt {n} seconden, de opname stopt vanzelf.",
+ "rec.noMic":"Opnemen lukt hier niet. Oefen met het voorbeeld.",
+ "rec.empty":"Er is niets opgenomen. Probeer het nog eens.",
  "en.nlLike":"Lijkt op het Nederlandse woord {nl}.",
  "en.falseFriend":"Let op: lijkt op het Nederlandse woord {nl}, maar betekent iets anders.",
  "strand.low.out":"Deze week weinig zelf gezegd of geschreven. Kies een gesprek of schrijf een bericht.",
@@ -1775,6 +1803,20 @@ th:{
  "garden.tip":"ทุกคำและทุกทักษะคือต้นไม้ จำได้ดีต้นไม้จะโต หยดน้ำหมายถึงวันนี้ควรทบทวน",
  "garden.empty":"ต้นไม้ต้นแรกจะเติบโตที่นี่",
  "route.title":"เส้นทางของฉัน",
+ "rec.go":"อัดเสียง",
+ "rec.prepGo":"เริ่มเตรียมตัว",
+ "rec.prep":"คิดก่อนว่าจะพูดอะไร การอัดเสียงจะเริ่มในอีก {n} วินาที",
+ "rec.startNow":"เริ่มเลย",
+ "rec.busy":"กำลังอัดเสียง… พูดได้เลย",
+ "rec.left":"เหลืออีก {n} วินาที",
+ "rec.stop":"หยุด",
+ "rec.me":"ฟังเสียงตัวเอง",
+ "rec.again":"อัดใหม่",
+ "rec.ok":"ฟังดูดีแล้ว",
+ "rec.notYet":"ยังไม่ดี",
+ "rec.examTip":"เหมือนในการสอบ: คุณมีเวลา {n} วินาที การอัดเสียงจะหยุดเอง",
+ "rec.noMic":"อัดเสียงที่นี่ไม่ได้ ฝึกกับตัวอย่างแทน",
+ "rec.empty":"ไม่ได้อัดอะไรไว้ ลองอีกครั้ง",
  "en.nlLike":"คล้ายคำดัตช์ {nl}",
  "en.falseFriend":"ระวัง: คล้ายคำดัตช์ {nl} แต่ความหมายต่างกัน",
  "strand.low.out":"สัปดาห์นี้คุณพูดหรือเขียนเองน้อย เลือกบทสนทนาหรือเขียนข้อความ",
@@ -1959,6 +2001,7 @@ const MOTOR={
   slotErrShare:.5,    // hooguit dit deel van een open plek op het foutprofiel. Aanname
   // C5 spel: één tot drie minuten (masterplan C5); 60 seconden: aanname
   gameSeconds:60,
+  recMax:60, recKeep:30, speakLen:{short:20,medium:30,long:120}, speakPrep:30,   // werkvormen 4.1: opname hooguit 60 s; de laatste 30 opnamen blijven; examenvorm volgens scenes.md; voorbereidingstijd bij long 30 s (aanname)
   // M12 reeks pogingen per onderdeel: genoeg om de aannames te toetsen (didactisch plan hoofdstuk 6; antwoord ontwerpsessie 14 nov 2026)
   histMax:24, histBloom:6,
   histBudget:300000,  // F1: alle reeksen samen hooguit zoveel tekens (localStorage ~5 MB = ~2,5 miljoen tekens, en de reservekopie verdubbelt). Aanname; antwoord ontwerpsessie
@@ -2537,6 +2580,24 @@ function playAudio(t,slow){if(!PC||!PC.audioHash||!AUD.size)return false;const h
   if(!list)return false;voicePend=null;try{clearTimeout(voiceWait)}catch(e){}try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}try{audioEl().pause()}catch(e){}AQ=list.map(x=>({...x,slow}));audioNext();return true}
 function noteNoAudio(t){if(!AUD.size||STORE!=='ok')return;const k=String(PC&&PC.audioKey?PC.audioKey(t):t).slice(0,200);if(!k)return;const L=Array.isArray(S.audioMiss)?S.audioMiss:[];if(L.includes(k))return;S.audioMiss=L.concat([k]).slice(-AUDIOMISSMAX);save()}
 function audioStop(){AQ=[];ACUR='';try{if(AEL)AEL.pause()}catch(e){}}
+/* Opnemen en terugluisteren (werkvormen 4.1, stap 6 van de werkorder). De opname blijft op het toestel: een eigen IndexedDB-bak,
+   niet in de voortgang en niet in de reservekopie, hooguit MOTOR.recKeep opnamen. Terugluisteren via hetzelfde audio-element als het voorbeeld
+   (klinkt ook met de stilteschakelaar aan). Achter Proefonderdelen tot het ijkmoment. Lukt opnemen niet, dan blijft de stap zoals hij was. */
+const RECDB='leren-opnamen';let RECNOW=null,RECURL='';
+function recOk(){return !!(S.trial&&typeof navigator!=='undefined'&&navigator.mediaDevices&&typeof navigator.mediaDevices.getUserMedia==='function'&&typeof MediaRecorder!=='undefined')}
+function recMime(){try{for(const m of ['audio/mp4','audio/webm;codecs=opus','audio/webm'])if(MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(m))return m}catch(e){}return ''}
+function recAbort(){const r=RECNOW;RECNOW=null;if(!r)return;r.cancel=true;clearTimeout(r.timer);try{if(r.mr.state!=='inactive')r.mr.stop()}catch(e){}try{r.stream.getTracks().forEach(x=>x.stop())}catch(e){}}
+function recStop(){const r=RECNOW;if(r)try{if(r.mr.state!=='inactive')r.mr.stop()}catch(e){}}
+async function recStart(maxSec,onDone){recAbort();audioStop();try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}
+  const stream=await navigator.mediaDevices.getUserMedia({audio:true}),mime=recMime(),mr=mime?new MediaRecorder(stream,{mimeType:mime}):new MediaRecorder(stream),chunks=[],r={mr,stream,cancel:false,timer:null};RECNOW=r;
+  mr.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
+  mr.onstop=()=>{clearTimeout(r.timer);try{stream.getTracks().forEach(x=>x.stop())}catch(e){}if(RECNOW===r)RECNOW=null;if(r.cancel||!chunks.length)return onDone(null);onDone(new Blob(chunks,{type:mr.mimeType||mime||'audio/mp4'}))};
+  mr.start();r.timer=setTimeout(()=>{try{if(mr.state!=='inactive')mr.stop()}catch(e){}},maxSec*1000);return r}
+function recPlay(blob){if(!blob)return;audioStop();try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}const a=audioEl();try{if(RECURL)URL.revokeObjectURL(RECURL)}catch(e){}RECURL=URL.createObjectURL(blob);a.src=RECURL;a.defaultPlaybackRate=a.playbackRate=1;const pl=a.play();if(pl&&pl.catch)pl.catch(()=>{})}
+function recDb(){return new Promise((ok,no)=>{try{const o=indexedDB.open(RECDB,1);o.onupgradeneeded=()=>{o.result.createObjectStore('rec',{keyPath:'k',autoIncrement:true})};o.onsuccess=()=>ok(o.result);o.onerror=()=>no(o.error)}catch(e){no(e)}})}
+async function recSave(blob,exid){if(!blob||STORE!=='ok')return;try{const db=await recDb();await new Promise((ok,no)=>{const tx=db.transaction('rec','readwrite'),st=tx.objectStore('rec');st.add({at:now(),exid:String(exid||'').slice(0,80),type:blob.type,blob});
+  const rq=st.getAllKeys();rq.onsuccess=()=>{const ks=rq.result||[];ks.slice(0,Math.max(0,ks.length-MOTOR.recKeep)).forEach(k=>st.delete(k))};tx.oncomplete=()=>ok();tx.onerror=()=>no(tx.error)});db.close()}catch(e){}}   // lukt bewaren niet (privévenster), dan alleen deze keer terugluisteren
+function recWipe(){try{if(typeof indexedDB!=='undefined')indexedDB.deleteDatabase(RECDB)}catch(e){}}
 function say(t,slow,lang,waited){if(QUIET)return;lang=LANGS[lang]?lang:'nl';t=String(t==null?'':t).replace(/_{2,}/g,'…');   // een open plek leest als een pauze
   if(lang==='nl'&&!waited){const tt=t;if(playAudio(tt,slow))return;noteNoAudio(tt)}
   speakDevice(t,slow,lang,waited)}
@@ -2593,7 +2654,7 @@ const heroArt=()=>`<svg class="art" viewBox="0 0 140 120" aria-hidden="true"><ci
 
 /* ============ navigatie ============ */
 let tab='vandaag',route=null;
-function show(t){audioStop();LES=null;STEER=null;delete app.dataset.strand;tab=t;route=null;delete app.dataset.vak;$('#nav').hidden=false;document.querySelectorAll('#nav [data-tab]').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===t?'page':'false'));app.classList.remove('sess');rerender();window.scrollTo(0,0)}
+function show(t){audioStop();recAbort();LES=null;STEER=null;delete app.dataset.strand;tab=t;route=null;delete app.dataset.vak;$('#nav').hidden=false;document.querySelectorAll('#nav [data-tab]').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===t?'page':'false'));app.classList.remove('sess');rerender();window.scrollTo(0,0)}
 document.querySelectorAll('#nav [data-tab]').forEach(b=>b.onclick=()=>show(b.dataset.tab));
 function rerender(){if(route)return route();({vandaag:vToday,tuin:vGarden,route:vRoute,ik:vMe,emiel:vEmiel}[tab])()}
 function paint(html){app.innerHTML=`<div class="view">${STORE==='newer'?`<div class="note sky small" role="status">${T('newer.banner')}</div>`:''}${html}</div>`;bindCommon()}
@@ -3004,12 +3065,33 @@ H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=(q.hard||!!(STEER&&STEER.b
     done=true;$('#ans').disabled=true;$('#chk').remove();later(()=>{if(q.role==='controle'&&SCN)SCN.ctrl=false;score(false,10);if(!inst)practiced(q,false,SCF[f])});   // tweede keer fout: het antwoord met uitleg, geen dood spoor
     $('#fb').innerHTML=fbBox(false,`${T('scene.answer')} <b lang="nl">${esc(String(as[0]))}</b><br>${scT(qq.why||((qq.opts||[]).find(o=>o.r==='ok')||{}).why)}`,'')+nextBtn()+claimHtml();$('#nx').onclick=next;bindClaim(ci)};
   $('#chk').onclick=chk;$('#ans').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();chk()}};setTimeout(()=>{try{$('#ans').focus()}catch(e){}},50)};
-/* spreken (stap speak): de situatie, het voorbeeld om te horen, de checklist; opnemen en terugluisteren komt in stap 6 */
-H.sc_speak=q=>{const st=q.st,m=plainX(st.model,'nl');
-  scFrame(q,`<div class="card stack">${T('scene.speakTitle')}<p class="prompt">${scT(st.ask)}</p><div class="note sky"><p class="small muted">${T('scene.model')}</p><p>${scT(st.model)}</p>${speakBtns('sp','sps')}</div>
-    <p class="small muted">${T('scene.speakCheck')}</p><ul>${st.checklist.map(c=>`<li>${scT(c)}</li>`).join('')}</ul><button class="btn btn-leaf" id="mk1">${TB('scene.speakOk')}</button><button class="btn btn-ghost" id="mk2">${TB('scene.makeAlmost')}</button></div>`);
-  $('#sp').onclick=()=>say(m);$('#sps').onclick=()=>say(m,true);
-  $('#mk1').onclick=()=>{score(true,15);practiced(q,true,'spreken');next()};$('#mk2').onclick=()=>{score(false,15,8);practiced(q,'retry','spreken');next()}};
+/* spreken (stap speak): de situatie, het voorbeeld om te horen, opnemen en terugluisteren naast het voorbeeld (werkvormen 4.1), de checklist om zelf af te vinken.
+   De app keurt niet (masterplan 16): de leerder kiest klonk goed of nog niet. Examenvorm (scenes.md): geen steuntaal, de tijd zichtbaar, de opname stopt zelf,
+   het voorbeeld pas na de opname; bij long eerst voorbereidingstijd. Zonder opnemen (uit, niet mogelijk, geen toestemming): voorbeeld en checklist zoals voorheen. */
+H.sc_speak=q=>{const st=q.st,m=plainX(st.model,'nl'),ex=!!st.exam,max=ex?(MOTOR.speakLen[st.len]||MOTOR.speakLen.medium):MOTOR.recMax;let can=recOk(),blob=null,mode='idle',left=0,tick=null;
+  const here=()=>Q[qi]===q&&app.classList.contains('sess')&&!!document.getElementById('spk');
+  const stopTick=()=>{clearInterval(tick);tick=null};
+  const ask=ex?`<p class="prompt" lang="nl">${esc(scP(st.ask))}</p>`:`<p class="prompt">${scT(st.ask)}</p>`;
+  const model=()=>`<div class="note sky"><p class="small muted">${T('scene.model')}</p><p>${ex?`<span lang="nl">${esc(m)}</span>`:scT(st.model)}</p>${speakBtns('sp','sps')}</div>`;
+  const bar=()=>`<div class="timer" aria-hidden="true"><i style="width:${Math.max(0,left/max*100)}%"></i></div><p class="num muted small" aria-live="off">${T('rec.left',{n:left})}</p>`;
+  const recPart=()=>!can?'':mode==='prep'?`<div class="stack-sm"><p>${T('rec.prep',{n:left})}</p><button class="btn btn-main" id="rcGo">${TB('rec.startNow')}</button></div>`
+    :mode==='rec'?`<div class="stack-sm"><p class="eyebrow">${T('rec.busy')}</p>${bar()}<button class="btn btn-main" id="rcStop">${TB('rec.stop')}</button></div>`
+    :blob?`<div class="btn-row"><button class="btn btn-ghost" id="rcMe">${TB('rec.me')}</button><button class="btn btn-ghost" id="rcAgain">${TB('rec.again')}</button></div>`
+    :`<button class="btn btn-main" id="rcGo">${TB(ex&&st.len==='long'?'rec.prepGo':'rec.go')}</button>${ex?`<p class="small muted">${T('rec.examTip',{n:max})}</p>`:''}`;
+  const draw=()=>{const showModel=!ex||!can||!!blob,showEnd=!can||(!!blob&&mode==='idle');
+    scFrame(q,`<div class="card stack" id="spk">${T('scene.speakTitle')}${ask}${showModel?model():''}${recPart()}
+      ${showEnd?`<p class="small muted">${T('scene.speakCheck')}</p><ul class="stack-sm" style="list-style:none;padding:0">${st.checklist.map((c,k)=>`<li><label class="row" style="gap:.5rem;align-items:flex-start"><input type="checkbox" id="ck${k}"> <span>${ex?`<span lang="nl">${esc(scP(c))}</span>`:scT(c)}</span></label></li>`).join('')}</ul><button class="btn btn-leaf" id="mk1">${TB(can?'rec.ok':'scene.speakOk')}</button><button class="btn btn-ghost" id="mk2">${TB(can?'rec.notYet':'scene.makeAlmost')}</button>`:''}</div>`);
+    if($('#sp'))$('#sp').onclick=()=>say(m);if($('#sps'))$('#sps').onclick=()=>say(m,true);
+    if($('#rcMe'))$('#rcMe').onclick=()=>recPlay(blob);
+    if($('#rcAgain'))$('#rcAgain').onclick=()=>{audioStop();blob=null;mode='idle';draw()};
+    if($('#rcStop'))$('#rcStop').onclick=()=>recStop();
+    if($('#rcGo'))$('#rcGo').onclick=()=>{if(ex&&st.len==='long'&&mode==='idle'){mode='prep';left=MOTOR.speakPrep;draw();stopTick();tick=setInterval(()=>{if(!here())return stopTick();left--;if(left<=0){stopTick();go()}else{const p=document.querySelector('#spk .stack-sm p');if(p)p.innerHTML=T('rec.prep',{n:left})}},1000);return}stopTick();go()};
+    if($('#mk1'))$('#mk1').onclick=()=>{audioStop();score(true,15);practiced(q,true,'spreken');next()};
+    if($('#mk2'))$('#mk2').onclick=()=>{audioStop();score(false,15,8);practiced(q,'retry','spreken');next()}};
+  const go=()=>{recStart(max,b=>{stopTick();if(!here())return;mode='idle';blob=b;if(b)recSave(b,q.exid);else toast(tx('rec.empty'));draw()}).then(()=>{if(!here())return recAbort();mode='rec';left=max;draw();
+      tick=setInterval(()=>{if(!here()){stopTick();return recAbort()}left=Math.max(0,left-1);const i=document.querySelector('#spk .timer i'),n=document.querySelector('#spk .timer + p');if(i)i.style.width=(left/max*100)+'%';if(n)n.innerHTML=T('rec.left',{n:left})},1000)})
+    .catch(()=>{stopTick();can=false;mode='idle';toast(tx('rec.noMic'));if(here())draw()})};   // geen toestemming of geen microfoon: verder zoals voorheen, geen fout
+  draw()};
 /* spel (stap game): de of het op tempo, 60 seconden, met de woorden van de scène en wat aan de beurt is. Elk antwoord werkt het herhaalmodel bij
    met de vorm 'spel', die niet meetelt voor bloei (masterplan C5: vervangt productief oefenen niet). */
 H.sc_game=q=>{const sc=q.sc,counted=new Set(),ids=new Set([...q.items,...sc.targets]),pool0=NL.filter(w=>(w.art==='de'||w.art==='het')&&ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0),more=NL.filter(w=>(w.art==='de'||w.art==='het')&&!ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0&&thirsty(w.id));
@@ -3485,7 +3567,8 @@ function vMe(){
   $('#syncnow').onclick=()=>{syncUp(true,ok=>{toast(tx(ok?'sync.sent':'sync.offline'));const e=$('#syncst');if(e)e.innerHTML=syncText()});syncDown()};
   bindBackup();
   $('#reset').onclick=()=>{$('#rc').hidden=false};$('#no').onclick=()=>{$('#rc').hidden=true};
-  $('#yes').onclick=()=>{backupNow();NOBAK=null;const keep={code:S.code,code2:S.code2,v2seen:S.v2seen,tl1off:S.tl1off,sup:S.sup,learn:S.learn};S=Object.assign(fresh(),keep);save();onb=0;setThai('altijd');setSize('normaal');applyLang();tab='vandaag';vOnboard()};
+  $('#yes').onclick=()=>{backupNow();NOBAK=null;recWipe();   /* opnamen zijn stemgeluid van de leerder: mee weg bij wissen */
+  const keep={code:S.code,code2:S.code2,v2seen:S.v2seen,tl1off:S.tl1off,sup:S.sup,learn:S.learn};S=Object.assign(fresh(),keep);save();onb=0;setThai('altijd');setSize('normaal');applyLang();tab='vandaag';vOnboard()};
 }
 
 /* ============ meekijken (Emiel) ============ */

@@ -176,7 +176,7 @@ ok('de leerklok kan niet struikelen over het laden', html.includes('function lea
   ok('MO-M6: na twaalf weken geldt het gewone bijsturen', !M.early12() && !M.steerFor('les').hard);
   const q = M.noPairs([{ type: 'recall' }, { type: 'recall' }, { type: 'recog' }, { type: 'hear' }]);
   ok('MO-M6: bij saai dezelfde vorm hooguit één keer achter elkaar, niets valt weg', q.length === 4 && q.every((x, i) => !i || x.type !== q[i - 1].type), q.map(x => x.type).join(','));
-  ok('MO-M6: startLesson en Engels zetten de sturing; show laat hem los', /STEER=steerFor\('les'\)/.test(html) && /STEER=\{\.\.\.steerFor\('engels'\)\}/.test(html) && /function show\(t\)\{audioStop\(\);LES=null;STEER=null;/.test(html));
+  ok('MO-M6: startLesson en Engels zetten de sturing; show laat hem los', /STEER=steerFor\('les'\)/.test(html) && /STEER=\{\.\.\.steerFor\('engels'\)\}/.test(html) && /function show\(t\)\{audioStop\(\);recAbort\(\);LES=null;STEER=null;/.test(html));
   cs.S.days = { [T0 - 10 * D]: 1 }; cs.S.conf = [{ k: 'les', c: 'moeilijk', fun: 'saai', t: T0 }, { k: 'les', c: 'goed', fun: 'saai', t: T0 }];
   ok('MO-M6: saai telt niet als de laatste tik te moeilijk was (codereview 4)', !M.steerFor('les').bored);
   cs.S.conf = [{ k: 'verhaal', c: 'moeilijk', fun: 'saai', t: T0 }, { k: 'verhaal', c: 'moeilijk', fun: 'saai', t: T0 }];
