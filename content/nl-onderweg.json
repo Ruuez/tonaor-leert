@@ -7255,7 +7255,8 @@
         "en": "It is 27 percent. Your guess may be wide: a guess between 17 and 37 percent counts as right."
        },
        "err": "getal",
-       "tol": 10
+       "tol": 10,
+       "guess": true
       },
       {
        "form": "choose",

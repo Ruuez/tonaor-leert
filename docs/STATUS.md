@@ -16,6 +16,24 @@ Bijgewerkt: 14 november 2026.
 - Uitleg (speler, drie ingangen, 32 uitleggen) en het weekdoel (standaard 10 uur, merktekens op 3,5, 7 en 10 uur).
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
+- Werkorder stap 5 vervolg en ijkmoment G2 (docs/ijkmoment-g2.md), cache v2-68:
+  - M5/N-M4: de trede per regel (kiezen, afmaken, een eigen zin).
+    - Een regel bloeit pas als trede 2 in een gesloten productieve vorm op twee dagen goed ging, plus een eigen zin (make of speak). Besluit ontwerpsessie na G2.
+    - De trede en de eigen zin worden bewaard per regel, dus inkorten van de reeks pakt niets af.
+  - N-M2: herkennen groeit met 0,6, met een rem op volle bloei (nooit voor dag 21; besluit A2, herhaalmodel 10b).
+  - SCHEMA 8, alleen toevoegend: gf voor wat al bloeide.
+  - G2 punt 1: de fout in de kennisles van nl-werk is hersteld.
+  - G2 punt 2:
+    - checkG2 in de redactiepoort: goed = langste hooguit 40%, geen gelijke stappenreeks, een lange tekst, guess bij raden, tol bij schatten. De app weigert er niets op.
+    - De schrijvers- en revieweropdracht zijn bijgewerkt.
+    - Raadvragen in alle lesstof hebben guess: true; in de app telt raden niet als fout.
+    - De zin 'Dat past ook' staat nu in I18N.
+  - Codereviews (Opus):
+    - trede: 1 blokkerend (bestaande bloei afgepakt), opgelost met bewaarde trede en gf;
+    - bloei-ombouw: 1 blokkerend (geen regel kon bloeien: een eigen zin telde alleen als hoofddoel), opgelost; een extra groeistap bij de terugkeer op dag 22 is ook opgelost.
+  - Open (lesstof): 31 van de 36 regels hebben nog geen opdracht voor een eigen zin en kunnen nog niet bloeien (test-herhaal meldt het).
+  - Open (lesstof): de herstelronde van thema 1 op G2 (goed = langste 60-74%, geen lange tekst in de meeste hoofdstukken).
+  - Open (lesstof): nl-buren (74%) terug in redactie/uit voor herstel volgens de nieuwe opdracht.
 - Werkorder stap 5, eerste deel (docs/ontwerp-stap5a.md), cache v2-66 en v2-67:
   - N-M1: een woord in een lees- of gesprekstekst aantikken geeft eerst drie betekenissen in de steuntaal, daarna het woord met de omschrijving. Een goede keuze is een ontmoeting, alleen voor een woord in de herhaling. Niet zonder steuntaal.
   - R-M3: in de herhaling nooit twee sommen met dezelfde aanpak achter elkaar (veld `approach`, anders de vorm). Nieuw mag geblokt.

@@ -66,6 +66,17 @@ Je schrijft één hoofdstuk lesstof voor een leer-app Nederlands voor volwassen 
 - **Bronnen** bij de kennisles: `sources: [{ "url": "https://…", "title": "…" }]`.
 - **Thais:** natuurlijk, beleefd en in Thais schrift. Vertaal de betekenis, niet woord voor woord. Nederlandse voorbeeldwoorden in een Thaise uitleg blijven Nederlands.
 
+## Eisen uit ijkmoment G2 (docs/ijkmoment-g2.md; de poort controleert ze)
+
+- **Foute keuzes even lang en even precies als de goede.** Een foute keuze mag de langste zijn. Per hoofdstuk is het goede antwoord bij hooguit 40% van de keuzevragen het langste. De poort meet dat.
+- **Geen stramien.** Twee scènes in een hoofdstuk hebben nooit dezelfde volgorde van stappen. Instap, ophalen en controle blijven. De rest volgt de situatie: begin eens met de luistertekst of met een probleem, laat het gesprek of de regel eens weg, zet twee doe-stappen achter elkaar, of eindig met zelf maken. De instapvragen wisselen van vorm.
+- **Minstens één lange tekst per hoofdstuk.** Een lees- of luistertekst van 150 tot 300 woorden; vanaf thema 3 mag hij tot 450. Stel er vragen bij naar tekstsoort en bedoeling, de hoofdzaak, het verband tussen delen en een conclusie, naast opzoeken.
+- **Raden.** Een vraag die met "Raad" begint, heeft `guess: true`. Die telt niet als fout en niet in het foutprofiel.
+- **Schatten.** Een schatvraag heeft `tol`, geen lijst met goede getallen.
+- **Vanaf thema 2:** per scène een productieve stap (make, speak of een gesloten productieve vorm).
+- **Spreken:** het eerste punt van de checklist is "Komt de inhoud over?", en intonatie staat in de checklist.
+- **Een regel met het Thais vergelijken:** alleen waar het Thais iets vergelijkbaars heeft. Bij een sterk afwijkende moedertaal werkt zo'n uitleg slechter (Andringa e.a. 2011).
+
 ## Klaar
 
 Draai `node redactie/controleer.mjs redactie/uit/<id>.json` tot er nul fouten zijn. Waarschuwingen mogen blijven staan als je ze hebt bekeken. Meld aan het eind: het aantal woorden, wat je niet zeker weet (vooral in het Thais en in de kennisles), en waar het formaat tekortschoot.

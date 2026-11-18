@@ -99,7 +99,7 @@ ok(RC.checkRoute({ ...ROUTE, poorten: [null] }).some(m => /geen poort/.test(m)),
 /* 10. de app: koppeling, opslag, teksten */
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8'), sw = readFileSync(new URL('../sw.js', import.meta.url), 'utf8');
 ok(/<script src="route.js"><\/script>/.test(html) && /'\.\/route\.js'/.test(sw) && /'\.\/content\/route-nt2\.json'/.test(sw), 'route.js en het routepakket in de app en de offline-cache');
-ok(/const SCHEMA=7/.test(html) && /6:s=>\{for\(const k of \['minsV','outside','prog','blockAdj'\]\)/.test(html), 'SCHEMA 7: de stap 6 -> 7 voegt alleen toe');
+ok(+(html.match(/const SCHEMA=(\d+)/) || [])[1] >= 7 && /6:s=>\{for\(const k of \['minsV','outside','prog','blockAdj'\]\)/.test(html), 'SCHEMA 7: de stap 6 -> 7 voegt alleen toe');
 ok(/minsV:\{\},outside:\{\},prog:\{\},blockAdj:\{\}/.test(html), 'nieuwe opslag begint met lege velden');
 ok(/function routeLine\(/.test(html) && /\$\{routeLine\(\)\}/.test(html), 'de datum op Vandaag');
 ok(!/route\.next\.placed":"[^"]*Emiel/.test(html), 'geen naam meer in de tekst bij de volgende mijlpaal');

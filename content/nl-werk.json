@@ -7199,7 +7199,8 @@
          }
         }
        ],
-       "answer": "Meestal minder dan € 1.000"
+       "answer": "Meestal minder dan € 1.000",
+       "guess": true
       },
       {
        "form": "choose",
@@ -7456,19 +7457,19 @@
         "wrk.want"
        ],
        "ask": {
-        "nl": "Waarom staat het aantal uren op de loonstrook?",
-        "th": "ทำไมจำนวนชั่วโมงอยู่บนสลิปเงินเดือน",
-        "en": "Why are the hours on the payslip?"
+        "nl": "Wat zegt de tekst: waarom staat het aantal uren op de loonstrook?",
+        "th": "ข้อความบอกว่าอย่างไร: ทำไมจำนวนชั่วโมงอยู่บนสลิปเงินเดือน",
+        "en": "What does the text say: why are the hours on the payslip?"
        },
        "opts": [
         {
-         "t": "Omdat de uren het loon bepalen",
-         "r": "near",
+         "t": "Zo weet je hoeveel vrije dagen je dit jaar nog hebt",
+         "r": "no",
          "err": "lezen",
          "why": {
-          "nl": "Bijna. Dat staat er niet. De tekst zegt: je kunt controleren of je het goede loon hebt gekregen.",
-          "th": "เกือบถูก ไม่ได้เขียนไว้ ข้อความบอกว่า: คุณตรวจได้ว่าได้รับเงินเดือนถูกต้องไหม",
-          "en": "Almost. That is not stated. The text says: you can check whether you got the right pay."
+          "nl": "Over vrije dagen zegt de tekst hier niets. De tekst zegt: je kunt controleren of je het goede loon hebt gekregen.",
+          "th": "ข้อความไม่ได้พูดถึงวันหยุด ข้อความบอกว่า: คุณตรวจได้ว่าได้รับเงินเดือนถูกต้องไหม",
+          "en": "The text says nothing about days off here. It says: you can check whether you got the right pay."
          }
         },
         {

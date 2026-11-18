@@ -46,18 +46,24 @@ Bron: `onderbouwing-rekenen.md` 2.5.
 2. **Aanpakken:** rk-1 krijgt een expliciete `approach`: r-geld `money`, r-komma `decimal`, r-10 `percent-tenth`, r-25 `percent-fraction`. Wie verschillende aanpakken naast elkaar ziet, leert ze beter uit elkaar houden (`onderbouwing-rekenen.md` 2.5). Hetzelfde label zou ze ten onrechte nooit naast elkaar zetten. Gebouwd: per oefening naar het eerste item. De klok (r-klok) heeft geen `approach` en valt dus terug op de vorm.
 3. **Steuntaal op "altijd":** aantikken blijft, maar toont de betekenis meteen, zonder keuze, en telt niet als ontmoeting. Gebouwd.
 
-## M5 en N-M4: de trede per regel
+## M5, N-M4 en N-M2 (na de codereview en ijkmoment G2)
 
-Bron: `ontwerp-stap2b.md` (M5) en `onderbouwing-nederlands.md` 2.3 (N-M4).
+Bron: `ontwerp-stap2b.md` (M5, besluiten na G2) en `herhaalmodel.md` 10b.
 
-- **Treden:** elke vorm hoort bij een trede (`TIER`).
+- **Treden (`TIER`):**
   - kiezen (1): herkennen, gatzin, luisteren en kiezen, gesprek, lezen, kaart, tijdlijn;
-  - afmaken (2): typen, luisteren en typen, dictee, zin bouwen, schrijven met kader;
-  - zelf maken (3): spreken.
-- **De trede van een regel** is de hoogste trede die beheerst is. Beheerst betekent: `MOTOR.tierN` (3) keer goed bij de eerste poging op die trede of hoger, op `MOTOR.tierDays` (2) verschillende dagen. Beide waarden zijn aannames. De trede wordt berekend uit de reeks pogingen (`it.h`, M12), dus er komt niets bij in de opslag en er is geen migratie nodig.
-- **Oefenen:** `chooseEx` kiest voor een regel een oefening op de trede erboven, en anders de hoogste trede die er is. Na twee fouten op rij op die trede zakt de keuze één trede (M4, hulp terug). Na een goed antwoord gaat hij weer omhoog.
-- **Bloei:** een regel bloeit pas als trede 2 (afmaken) beheerst is. Eén keer zin bouwen is dus niet meer genoeg (N-M4). Trede 3 telt voor de toets per thema (stap 8).
-- **Gevolg voor bestaande voortgang:** een regel die al ver gegroeid was met één keer zin bouwen, groeit niet verder boven `bloomCap` tot trede 2 beheerst is. Er wordt niets afgepakt.
+  - afmaken (2): typen, luisteren en typen, dictee, zin bouwen;
+  - een eigen zin (3): `make` of spreken, met de checklist zelf afgevinkt.
+- **Trede 2:** goed bij de eerste poging in een gesloten productieve vorm, op twee verschillende dagen (`MOTOR.tierN`, `tierDays`).
+- **Trede 3:** trede 2 plus een eigen zin.
+- **Bewaren:** de bereikte trede wordt bewaard (`it.tier`), en een eigen zin ook (`it.own`), zodat het inkorten van de reeks pogingen niets afpakt.
+- **Het huidige antwoord telt mee:** de trede wordt bijgewerkt vóór de groei wordt berekend.
+- **Oefenen:** `chooseEx` kiest de trede erboven. Na twee fouten op rij daar gaat hij één trede terug, totdat er op de lagere trede weer iets goed ging (geen vastlopen).
+- **Bloei van een regel:** trede 2 en een eigen zin.
+- **N-M2:** herkennen groeit met 0,6.
+- **Volle bloei:** nooit vóór dag 21 (A2).
+- **Bestaande bloei:** onderdelen boven 9 dagen krijgen bij migratie 7 naar 8 `gf` en houden hun bloei. Een wachttijd wordt nooit korter.
+- **Opslag:** SCHEMA 8, alleen toevoegend (`gf`, en lui ook `tier` en `own` op een onderdeel).
 
 ## Wat kan breken
 

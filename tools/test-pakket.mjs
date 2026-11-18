@@ -148,4 +148,15 @@ ok('elk pakket in content/ staat in BUILTIN of in de index (de route apart), en 
 ok('pakketcheck.js staat in SHELL en wordt vóór de app geladen', shell.includes('./pakketcheck.js') && html.indexOf('<script src="pakketcheck.js">') < html.indexOf('(async function(){'));
 ok('service worker vraagt eigen bestanden vers op: geen oud pakket uit de browsercache naast nieuwe code', sw.includes("SHELL.map(u=>new Request(u,{cache:'reload'}))") && sw.includes("fetch(r.url,{cache:'no-cache'") && !/fetch(r).then/.test(sw));
 ok('service worker bewaart alleen geslaagde antwoorden', sw.includes('if(res.ok){const cp=res.clone()'));
+// ijkmoment G2: de poort voor nieuwe lesstof (checkG2); de app weigert er niets op (de hoofdstukken van thema 1 halen het nog niet)
+{ const q = (ok_, lens, ask) => ({ form: 'choose', ask: { nl: ask || 'Wat?' }, opts: lens.map((l, i) => ({ t: 'x'.repeat(l), r: i === ok_ ? 'ok' : 'no' })) });
+  const mk = qs => ({ id: 'g2', type: 'hoofdstuk', scenes: [{ id: 'g2-1', steps: [{ type: 'quiz', q: qs }, { type: 'read', text: { nl: Array(160).fill('woord').join(' ') }, q: [] }] }] });
+  const lang = PC.checkG2(mk(Array(10).fill(0).map(() => q(0, [9, 5, 5])))), kort = PC.checkG2(mk(Array(10).fill(0).map(() => q(0, [5, 9, 5]))));
+  ok('G2: goed = langste bij meer dan 40% wordt gemeld, bij weinig niet', lang.issues.some(m => /langste/.test(m)) && !kort.issues.some(m => /langste/.test(m)), lang.issues.join('; '));
+  ok('G2: een raadvraag zonder guess wordt gemeld, met guess niet', PC.checkG2(mk([q(0, [5, 5, 5], 'Raad eens: hoeveel?')])).issues.some(m => /guess/.test(m)) && !PC.checkG2(mk([{ ...q(0, [5, 5, 5], 'Raad eens: hoeveel?'), guess: true }])).issues.some(m => /guess/.test(m)));
+  ok('G2: een hoofdstuk zonder tekst van 150 tot 450 woorden wordt gemeld', PC.checkG2({ id: 'x', type: 'hoofdstuk', scenes: [] }).issues.some(m => /150 tot 450/.test(m)));
+  ok('G2: twee scènes met dezelfde reeks stappen worden gemeld', PC.checkG2({ id: 'x', type: 'hoofdstuk', scenes: [{ id: 'a', steps: [{ type: 'quiz' }, { type: 'talk' }] }, { id: 'b', steps: [{ type: 'quiz' }, { type: 'talk' }] }] }).issues.some(m => /dezelfde reeks/.test(m)));
+  ok('G2: de redactiepoort maakt er fouten van, de app niet', /PC\.checkG2\(p\)\.issues/.test(readFileSync(new URL('redactie/controleer.mjs', ROOT), 'utf8')) && !/checkG2/.test(html));
+  ok('G2: een raadvraag in de app telt niet als fout (geen scFault of practiced) en geeft meteen het antwoord', /const gs=qq\.guess===true/.test(html) && /if\(gs\)\{app\.querySelectorAll\('\[data-o\]'\)[^\n]*return guessed\(/.test(html) && !/const guessed=[^\n]*(scFault|practiced|score)\(/.test(html));
+  ok('G2: de vaste zin "Dat past ook" staat in de vertaaltabel', !/<div class="note sky">Dat past ook!/.test(html) && /"also\.fits":/.test(html)); }
 console.log(fails ? fails + ' FOUT' : 'alles OK');

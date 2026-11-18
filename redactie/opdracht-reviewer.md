@@ -18,6 +18,15 @@ Je beoordeelt één hoofdstuk lesstof (`redactie/uit/<id>.json`) voor een leer-a
 8. **Eén goed antwoord:** ga bij elke gatzin (`gap` van een woord, een `gap`-oefening, een `complete`) en elke keuzevraag na of een ander woord uit het pakket of uit de pakketten die het nodig heeft er even goed in past. Dan rekent de app een goed antwoord fout: blokkerend bij een keuzevraag of zin bouwen, klein bij een getypt woord (zie hieronder). Herstel: een zin die maar één woord toelaat, of `also` (de woorden die ook passen, in beide richtingen). Ga ook na of twee woorden dezelfde vertaling in de steuntaal hebben (bij kiezen van Thais naar Nederlands zijn er dan twee goede antwoorden), en of een omschrijving het woord zelf gebruikt.
 9. **Tekeningen:** past wat er staat bij de tekst (de klok die genoemd wordt, de dingen die aantikbaar zijn)?
 
+## Eisen uit ijkmoment G2 (tel ze na)
+
+- **Lengte:** tel bij hoeveel keuzevragen het goede antwoord het langste is. Boven 40% is dat blokkerend.
+- **Stramien:** hebben twee scènes dezelfde volgorde van stappen? Zijn de instapvragen steeds dezelfde vier?
+- **Lange tekst:** staat er minstens één tekst van 150 tot 300 woorden in, met vragen naar bedoeling, verband en conclusie?
+- **Raden en schatten:** heeft een raadvraag `guess: true`, en een schatvraag `tol`?
+- **Spreken:** is het eerste punt van de checklist "Komt de inhoud over?", en staat intonatie erin?
+- **Vergelijking met het Thais:** staat die alleen waar ze klopt?
+
 ## Uitkomst
 
 ```json

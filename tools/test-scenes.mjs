@@ -26,7 +26,7 @@ ok('controle: onbekend ding in de tekening wordt geweigerd', /onbekend ding/.tes
 ok('controle: een scène zonder doen of maken wordt geweigerd', /doet of maakt/.test(bad(sc => { sc.steps = sc.steps.filter(s => !['do', 'make'].includes(s.type)); })));
 
 // de speler: een scène wordt een rij schermen voor de lesmotor
-const sc0 = scenes[0].sc; const S = app.S || {};
+const sc0 = (scenes.find(o => o.p.id === 'nl-dokter') || scenes[0]).sc; /* een vaste scène met kijken, gesprek en klok */ const S = app.S || {};
 const lineOf = st => { const i = html.indexOf(st); return html.slice(i, html.indexOf('\n', i)); };
 vm.runInContext(lineOf('const ERRS=[') + '\nvar SCN=null;\n' + fnBlock('errNote') + '\n' + fnBlock('errTop') + '\n' + fnBlock('scFault') + '\n' + fnBlock('sceneQ') +
   '\nthis.sq=sceneQ;this.fault=scFault;this.top=errTop;this.setSCN=x=>{SCN=x};this.getQ=()=>({Q,qi});this.setQ=(a,i)=>{Q=a;qi=i};', app);

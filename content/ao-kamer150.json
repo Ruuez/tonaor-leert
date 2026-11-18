@@ -205,7 +205,8 @@
         "nl": "Het waren er 100. Zat je er dichtbij? Mooi. Zat je er ver naast? Dan weet je nu meer. Daarna werden het er 150.",
         "th": "มี 100 คน ถ้าเดาใกล้เคียงก็ยอดเยี่ยม ถ้าห่าง ตอนนี้คุณก็รู้มากขึ้นแล้ว หลังจากนั้นเพิ่มเป็น 150",
         "en": "There were 100. Was your guess close? Nice. Far off? Now you know more. After that it became 150."
-       }
+       },
+       "guess": true
       }
      ]
     },

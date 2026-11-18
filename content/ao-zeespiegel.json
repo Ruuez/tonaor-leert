@@ -267,7 +267,8 @@
         "nl": "Het zijn er ongeveer 26: een kwart. Een gok is geen toets. Zat je dichtbij, mooi. Zat je er ver naast, dan weet je nu meer.",
         "th": "ประมาณ 26 ส่วน คือหนึ่งในสี่ การเดาไม่ใช่การสอบ ถ้าเดาใกล้เคียงก็ดี ถ้าเดาห่างไกล ตอนนี้คุณก็รู้มากขึ้นแล้ว",
         "en": "It is about 26: a quarter. A guess is not a test. If you were close, nice. If you were far off, now you know more."
-       }
+       },
+       "guess": true
       }
      ]
     },

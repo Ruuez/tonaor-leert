@@ -153,4 +153,7 @@ r = run({ [KEY]: raw({ ...CUR, schema: 6, mins: { 5: 30 } }) });
 ok('schema 6 → 7: minsV, outside, prog en blockAdj toegevoegd; mins en items onaangeroerd, met reservekopie', ['minsV', 'outside', 'prog', 'blockAdj'].every(k => r.S[k] && typeof r.S[k] === 'object' && !Array.isArray(r.S[k])) && r.S.mins[5] === 30 && r.S.items.werk.s === 3 && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 6);
 r = run({ [KEY]: raw({ ...CUR, schema: 6, minsV: { 5: { nl: 3, rk: 1, en: 0 } }, outside: { 5: { lezen: 15 } }, prog: [1] }) });
 ok('schema 6 → 7 is herhaalbaar: bestaande tijd per vak en buiten de app blijft, een ongeldig veld wordt leeg', r.S.minsV[5].nl === 3 && r.S.outside[5].lezen === 15 && !Array.isArray(r.S.prog));
+// 8g. stap 7 → 8: strengere bloei-eisen (G2, M5, N-M2): wat al boven de bloeirem stond, krijgt gf en blijft staan
+r = run({ [KEY]: raw({ ...CUR, schema: 7, items: { werk: { s: 30, reps: 9 }, jong: { s: 4, reps: 2 } } }) });
+ok('schema 7 → 8: een onderdeel vanaf 10 dagen krijgt gf, een jong onderdeel niet; verder niets veranderd', r.S.items.werk.gf === 1 && r.S.items.werk.s === 30 && !r.S.items.jong.gf && r.S.items.jong.s === 4 && r.S.schema === SCH);
 console.log(fails ? fails + ' FOUT' : 'alles OK');

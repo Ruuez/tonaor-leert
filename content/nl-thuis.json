@@ -7112,7 +7112,8 @@
          }
         }
        ],
-       "answer": "Binnen 5 dagen na je verhuizing"
+       "answer": "Binnen 5 dagen na je verhuizing",
+       "guess": true
       },
       {
        "form": "number",
@@ -7128,7 +7129,8 @@
         "th": "คุณแจ้งได้ล่วงหน้า 4 สัปดาห์ก่อนย้าย",
         "en": "You may report it 4 weeks before you move."
        },
-       "err": "getal"
+       "err": "getal",
+       "guess": true
       }
      ]
     },

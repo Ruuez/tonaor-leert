@@ -141,6 +141,21 @@ De uitslag per vaardigheid (`S.placement.lv`: woorden, grammatica, luisteren, le
 
 **Na de review van de bouw (Fable, 13 november 2026), besluit eigenaar "alles zo":** (1) ook in volle bloei komt een onderdeel na zijn wachttijd terug; (2) het begin van de wachttijd staat op het item (`t`): na een fout is `t` = nu, zodat fout en direct goed geen groei geeft (migratie vult `t` = `due − s`); (3) een bij-item krijgt alleen de oefening (`exs`), geen vorm; (4) bijsturen onder 65% geeft ook regels en sommen een makkelijkere oefening (lagere afbouwtrede of kiesvorm); (5) de service worker bewaart alleen geslaagde antwoorden; (6) een langere startmeting staat genoteerd bij fase 9.
 
+## 10b. Randgeval bij N-M2: volle bloei te vroeg (18 november 2026)
+
+Met N-M2 (herkennen groeit met 0,6) kwam in de simulatie volle bloei op dag 19 tot 20, tegen de eis "rond dag 23, nooit voor dag 21". Een kleinere stap landde net onder de bloeigrens van 10 dagen. Daar werkt de rem op bloei niet, en de volgende typstap sprong in één keer door.
+
+Daarom, besluit van de ontwerpsessie (A2):
+- **Bloeigrens:** een stap over de bloeigrens (`bloomDays`) mag alleen als `canBloom` waar is. Anders wordt hij afgekapt op `bloomCap`.
+- **Nooit korter:** een wachttijd wordt bij goed nooit korter dan hij was.
+- **Volle bloei:** wachttijd vanaf `fullDays` = 25. Die komt nooit eerder dan `bloomMinDays` (21) dagen na de eerste poging. Is het eerder, dan blijft de wachttijd net onder 25 en komt het onderdeel op dag 22 terug. Dan groeit het door, en de ijking (rond dag 23) blijft.
+- **Bestaande voortgang:** onderdelen die bij de overstap al boven 9 dagen stonden, krijgen `gf` (migratie 7 naar 8). Hun bloei wordt niet afgepakt.
+
+Tests in `test-herhaal`:
+- de simulatie met de vormen om en om: volle bloei nooit voor dag 21, en rond dag 23;
+- een woord dat alleen herkend wordt, bloeit nooit;
+- typen en zin bouwen groeien zoals voorheen.
+
 ## 11. Wat de leerder merkt
 
 - Elke ronde is anders: wat bijna vergeten is komt terug, ook grammatica, klanken en sommen.

@@ -10,7 +10,7 @@ const DAY = 864e5;
 function model() {
   const ctx = { S: { items: {}, introduced: [], log: [] }, T: 0, DAY, Math, Array, Object };
   vm.createContext(ctx);
-  vm.runInContext(MOTORCODE + '\nconst now=()=>T;const today=()=>Math.floor(T/DAY)*DAY;const save=()=>{};' + line('const NOGROW=') + '\n' + line('const HCODE=') + '\n' + line('const HFORM=') + '\n' + fnBlock('histParse') + '\n' + fnBlock('histSet') + '\n' + 'let HISTN=0;' + '\n' + fnBlock('histTrim') + '\n' + fnBlock('histAdd') + '\n' + fnBlock('rests') + '\n' + line('let KIND=') + '\n' + fnBlock('canBloom') + '\n' + fnBlock('item') + '\n' + fnBlock('review') + '\n' + fnBlock('introduce') + '\n' + fnBlock('practiced') + '\n' + fnBlock('stage') + '\n' + fnBlock('thirsty') + '\nthis.api={histParse,histTrim,rests:id=>rests(id),review,introduce,practiced,stage,thirsty,item,canBloom,setKind:(id,k)=>{KIND[id]=k}};', ctx);
+  vm.runInContext(MOTORCODE + '\nconst now=()=>T;const today=()=>Math.floor(T/DAY)*DAY;const save=()=>{};' + line('const NOGROW=') + '\n' + line('const HCODE=') + '\n' + line('const HFORM=') + '\n' + fnBlock('histParse') + '\n' + fnBlock('histSet') + '\n' + 'let HISTN=0;' + '\n' + fnBlock('histTrim') + '\n' + fnBlock('histAdd') + '\n' + fnBlock('rests') + '\n' + line('let KIND=') + '\n' + line('const QFORM=') + '\n' + line('const TIER=') + '\n' + fnBlock('ownOf') + '\n' + fnBlock('ruleTier') + '\n' + fnBlock('bloomAge') + '\n' + fnBlock('canBloom') + '\n' + fnBlock('item') + '\n' + fnBlock('review') + '\n' + fnBlock('introduce') + '\n' + fnBlock('practiced') + '\n' + fnBlock('stage') + '\n' + fnBlock('thirsty') + '\nthis.api={histParse,histTrim,rests:id=>rests(id),review,introduce,practiced,stage,thirsty,item,canBloom,setKind:(id,k)=>{KIND[id]=k}};', ctx);
   return ctx;
 }
 const at = (c, d) => { c.T = d * DAY; };
@@ -78,9 +78,25 @@ ok('EN: eerst typen, dan luisteren, dan herkennen', pick([], 'en', true) === 'en
 ok('zonder spraak op het toestel geen luisteroefening', pick(['herkennen', 'typen'], 'nl', false) === 'recall' && pick(['typen'], 'en', false) === 'enrecog');
 ok('schermen voor luisteren en typen en Engels herkennen bestaan, en tellen als eigen vorm', html.includes('H.hear=q=>') && html.includes('H.enhear=q=>') && html.includes('H.enrecog=q=>') && html.split("review(w.id,res,'luisteren')").length === 3);
 // 8. eis voor bloei per soort (stap 4)
-const grow = (kind, forms, exs) => { const m = model(); m.api.setKind('x', kind); m.S.items.x = { ...m.api.item(), s: 5, due: 0, reps: 5, forms, exs }; at(m, 1); m.api.review('x', true, forms[0] || 'gap'); return m.S.items.x.s > 9; };
+const grow = (kind, forms, exs, h) => { const m = model(); m.api.setKind('x', kind); m.S.items.x = { ...m.api.item(), s: 5, due: 0, reps: 5, forms, exs, ...(h ? { h, hd: 0 } : {}) }; at(m, 1); m.api.review('x', true, forms.find(f => ['typen', 'build', 'luisteren', 'gap'].includes(f)) || forms[0] || 'gap'); return m.S.items.x.s >= 10; };   // voorbij de bloeigrens (bloomDays): de rem op bloei hield hem niet tegen   // een productieve stap: N-M2 laat herkennen trager groeien
 ok('woord: drie vormen nodig', !grow('word', ['herkennen', 'typen'], []) && grow('word', ['herkennen', 'typen', 'luisteren'], []));
-ok('regel: drie verschillende oefeningen, waarvan één keer zin bouwen', !grow('rule', ['gap'], ['a', 'b', 'c']) && !grow('rule', ['build', 'gap'], ['a', 'b']) && grow('rule', ['build', 'gap'], ['a', 'b', 'c']));
+/* M5, N-M4: een regel bloeit pas als trede 2 (afmaken) beheerst is: drie keer goed bij de eerste poging op trede 2 of hoger, op twee dagen */
+{ const m = model(); m.api.setKind('x', 'rule'); m.S.items.x = { ...m.api.item(), s: 3, reps: 3, forms: [], exs: [] }; at(m, 1); m.api.review('x', true, 'make', null, true);
+  ok('regel (codereview B1): een eigen zin telt ook als de regel een bij-item is (passief)', m.S.items.x.own === 1 && m.S.items.x.s === 3); }
+ok('regel (G2): zonder eigen zin geen bloei, ook met trede 2', !grow('rule', ['build', 'gap'], ['a', 'b', 'c'], '0b1,1b1,0b1'));
+ok('regel (G2): trede 2 op twee dagen plus een eigen zin (make) = bloei', !grow('rule', ['gap'], ['a', 'b', 'c'], '0g1,1g1,0w1') && !grow('rule', ['build', 'gap'], ['a', 'b'], '0b1,1b1,0w1') && grow('rule', ['build', 'gap'], ['a', 'b', 'c'], '0b1,1b1,0w1'));
+{ const m = model(); m.api.setKind('x', 'rule'); m.S.items.x = { ...m.api.item(), s: 30, t: 0, due: 30 * 864e5, reps: 9, forms: ['build', 'gap'], exs: ['a', 'b', 'c'], h: '0b1', hd: 0, gf: 1 }; at(m, 31); m.api.review('x', true, 'gap');
+  ok('regel: bestaande bloei (gf uit de migratie) wordt nooit afgepakt', m.S.items.x.s >= 30, String(m.S.items.x.s)); }
+{ const m = model(); m.api.setKind('x', 'rule'); m.S.items.x = { ...m.api.item(), s: 30, t: 0, due: 30 * 864e5, reps: 9, forms: ['build', 'gap'], exs: ['a', 'b', 'c'], h: '0b1', hd: 0 }; at(m, 31); m.api.review('x', true, 'gap');
+  ok('regel: ook zonder gf wordt een lange wachttijd nooit korter (A2)', m.S.items.x.s >= 30, String(m.S.items.x.s)); }
+{ const m = model(); m.api.setKind('x', 'word'); m.S.items.x = { ...m.api.item(), s: 4, t: 0, due: 4 * 864e5, reps: 3, forms: ['herkennen', 'typen', 'luisteren'], exs: [] }; at(m, 4); m.api.review('x', true, 'herkennen'); const kies = m.S.items.x.s;
+  const m2 = model(); m2.api.setKind('x', 'word'); m2.S.items.x = { ...m2.api.item(), s: 4, t: 0, due: 4 * 864e5, reps: 3, forms: ['herkennen', 'typen', 'luisteren'], exs: [] }; at(m2, 4); m2.api.review('x', true, 'typen');
+  ok('N-M2: herkennen groeit met 0,6 (× 1,84), typen zoals voorheen (× 2,4)', Math.abs(kies - 4 * 1.84) < 0.01 && Math.abs(m2.S.items.x.s - 9.6) < 0.01, kies + ' / ' + m2.S.items.x.s); }
+{ const m = model(); m.api.setKind('x', 'word'); m.S.items.x = m.api.item(); at(m, 0); m.api.introduce('x'); for (let d = 0; d <= 120; d += 0.25) { at(m, d); if (m.api.thirsty('x')) m.api.review('x', true, 'herkennen'); }
+  ok('N-M2: een woord dat alleen herkend wordt, bloeit nooit', m.api.stage('x') < 4, 'stadium ' + m.api.stage('x')); }
+ok('regel: één keer zin bouwen is niet genoeg (vroeger wel)', !grow('rule', ['build', 'gap'], ['a', 'b', 'c'], '0g1,0g1,0b1'));
+ok('regel: drie keer goed op één dag is niet genoeg (over tijd, M9)', !grow('rule', ['build', 'gap'], ['a', 'b', 'c'], '0b1,0b1,0b1'));
+ok('regel: goed na een tweede poging telt niet voor de trede', !grow('rule', ['build', 'gap'], ['a', 'b', 'c'], '0b2,1b2,0b2'));
 ok('klank: drie verschillende oefeningen, waarvan één keer luisteren en typen', !grow('sound', ['listen'], ['a', 'b', 'c']) && grow('sound', ['listen', 'luisteren'], ['a', 'b', 'c']));
 ok('rekenvaardigheid: drie verschillende varianten', !grow('skill', ['geld'], ['g#1', 'g#2']) && grow('skill', ['geld'], ['g#1', 'g#2', 'g#3']));
 ok('de app vult de soort per item uit de pakketten', html.includes("KIND[x.id]=x.kind"));
@@ -98,6 +114,10 @@ ok('de app vult de soort per item uit de pakketten', html.includes("KIND[x.id]=x
   }
   ok('rekenvaardigheden met een recept kunnen bloeien', !gaps.some(g => /^(r-geld|r-klok|r-10|r-25)/.test(g)), gaps.filter(g => /^r-/.test(g)).join('; '));
   ok('elk onderdeel kan met de huidige inhoud in volle bloei komen', !gaps.length, gaps.join('; '));
+  /* besluit na G2: een regel bloeit pas na een eigen zin (make of speak met de regel bij de items). Dat is lesstof: hier een melding, geen fout */
+  { const own = new Set(P.flatMap(p => (p.scenes || []).flatMap(sc => (sc.steps || []).filter(st => st && (st.type === 'make' || st.type === 'speak')).flatMap(st => st.items || []))));
+    const rules = P.flatMap(p => (p.items || []).filter(x => x.kind === 'rule').map(x => x.id)), miss = rules.filter(id => !own.has(id));
+    if (miss.length) console.log('     LET OP (lesstof, G2): ' + miss.length + ' van de ' + rules.length + ' regels hebben nog geen opdracht voor een eigen zin (make of speak) en kunnen daardoor nog niet bloeien: ' + miss.slice(0, 8).join(', ') + (miss.length > 8 ? ', …' : '')); }
   if (gaps.length) console.log('     LET OP, nog niet haalbaar met de huidige inhoud (' + gaps.length + '):\n       ' + gaps.join('\n       '));
 }
 // 10. bijsturen binnen een ronde (stap 6, sectie 7)

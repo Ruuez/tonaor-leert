@@ -224,7 +224,8 @@
        "accept": [
         "50.000",
         "50 000"
-       ]
+       ],
+       "guess": true
       },
       {
        "form": "choose",
@@ -273,7 +274,8 @@
         "nl": "Goed. Metaal kun je niet met koolstof dateren. Straks lees je waarom.",
         "th": "ถูกต้อง โลหะวัดอายุด้วยคาร์บอนไม่ได้ เดี๋ยวคุณจะอ่านว่าทำไม",
         "en": "Right. You cannot date metal with carbon. Soon you will read why."
-       }
+       },
+       "guess": true
       }
      ]
     },

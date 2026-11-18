@@ -7177,7 +7177,8 @@
         "en": "The mbo has 4 levels. Your guess may be wide: 3 to 5 counts as good."
        },
        "err": "getal",
-       "tol": 1
+       "tol": 1,
+       "guess": true
       },
       {
        "form": "choose",
@@ -7208,7 +7209,8 @@
          }
         }
        ],
-       "answer": "Ja, je doet ook ervaring op in de praktijk"
+       "answer": "Ja, je doet ook ervaring op in de praktijk",
+       "guess": true
       }
      ]
     },

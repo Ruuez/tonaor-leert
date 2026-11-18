@@ -7596,7 +7596,8 @@
         "en": "It is 15 cents. Your guess may be wide: a guess between 5 and 25 cents counts as good."
        },
        "err": "getal",
-       "tol": 10
+       "tol": 10,
+       "guess": true
       },
       {
        "form": "choose",

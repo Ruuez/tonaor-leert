@@ -29,6 +29,15 @@ Alle waarden van de motor staan sinds deze stap in `MOTOR` (bovenaan het lesblok
 - `review()` schrijft de poging; niets anders verandert. Migratie 6 → 7 maakt de reeks leeg aan (geen terugrekenen uit `S.log`: dat mist de vorm).
 - Het exportbestand (Ik → Voortgang bewaren) bevat de reeksen; een script in `tools/` legt per kwartaal de voorspelde wachttijd naast wat de leerder werkelijk nog wist (didactisch plan hoofdstuk 6).
 
+### Besluiten na ijkmoment G2 (18 november 2026)
+
+- **N-M2:** het gewicht op de groei is per vorm. Herkennen en kiezen bij een gegeven woord krijgen 0,6; zelf maken, typen en afwegen houden 1. Het voorbeeld 1, 1,5 en 2 vervalt, omdat het de ijking van het herhaalmodel verschoof. Dit is een aanname (`onderbouwing-nederlands.md` 2.1: afwegen en zelf maken wegen zwaarder; Shintani e.a. 2013), te toetsen met de bewaarde pogingen (M12). Het randgeval staat in `herhaalmodel.md`, 10b.
+- **Bloei van een regel (M5, N-M4):** een regel geldt als beheerst als aan twee voorwaarden is voldaan.
+  - Trede 2 ging goed in een gesloten productieve vorm (afmaken, typen of zin bouwen; niet kiezen), op twee verschillende dagen.
+  - De leerder heeft minstens één keer trede 3 gedaan: een eigen zin met de regel, via `make` of `speak`, met de checklist afgevinkt. Dat is zelf nakijken, geen oordeel van de app (uitleg 16). Zonder eigen zin is er geen bloei.
+
+  Het foutprofiel kan een regel later weer terugzetten. Onderbouwing: Andringa e.a. 2011 (herkennen en vrij gebruik zijn verschillende dingen) en Shintani e.a. 2013.
+
 ### M5: de trede per regel
 
 - Elke oefenvorm hoort bij een trede: **kiezen** (`gap`, `choose`, `hear`, `listen` met kiezen, keuzes in een gesprek), **afmaken** (`build`, `complete`, `type`, `hear-type`, `make` met een kader met `___`), **zelf maken** (`make` zonder kader, `own`, `speak`).

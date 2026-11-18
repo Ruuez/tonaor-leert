@@ -759,6 +759,7 @@ en:{
  "garden.tip":"Every word and every skill is a plant. Remembering it well makes it grow. A drop means: review it briefly today.",
  "garden.empty":"Your first plant will grow here soon.",
  "route.title":"My route",
+ "also.fits":"That fits too! But here we are looking for another word. Feel free to use a hint.",
  "tik.ask":"What does “{w}” mean?",
  "route.tip":"Your whole way, with the time each part takes at your pace.",
  "route.line":"{gate} · expected {m}",
@@ -1251,6 +1252,7 @@ nl:{
  "garden.tip":"Elk woord en elke vaardigheid is een plantje. Goed onthouden laat het groeien. Een druppel betekent: vandaag even herhalen.",
  "garden.empty":"Hier groeit straks je eerste plantje.",
  "route.title":"<h1>Mijn route</h1>",
+ "also.fits":"Dat past ook! Maar hier zoeken we een ander woord. Neem gerust een hulpje.",
  "tik.ask":"Wat betekent “{w}”?",
  "route.tip":"Je hele weg, met de tijd die elk stuk ongeveer kost in jouw tempo.",
  "route.line":"{gate} · verwacht {m}",
@@ -1741,6 +1743,7 @@ th:{
  "garden.tip":"ทุกคำและทุกทักษะคือต้นไม้ จำได้ดีต้นไม้จะโต หยดน้ำหมายถึงวันนี้ควรทบทวน",
  "garden.empty":"ต้นไม้ต้นแรกจะเติบโตที่นี่",
  "route.title":"เส้นทางของฉัน",
+ "also.fits":"ใช้ได้เหมือนกัน! แต่ตรงนี้เรากำลังหาคำอื่น ใช้ตัวช่วยได้เลย",
  "tik.ask":"“{w}” แปลว่าอะไร",
  "route.tip":"เส้นทางทั้งหมดของคุณ พร้อมเวลาโดยประมาณของแต่ละช่วงตามจังหวะของคุณ",
  "route.line":"{gate} · คาดว่า {m}",
@@ -1872,6 +1875,10 @@ const MOTOR={
   // M1, M2 herhaalmodel (docs/herhaalmodel.md; §3.2 gespreid ophalen, Cepeda e.a. 2006/2008, Settles & Meeder 2016)
   growFrom:.5,        // groei pas vanaf de helft van de wachttijd. Aanname binnen §3.2 (dát er ruimte tussen zit telt, Nakata 2015)
   growGain:1.4,       // groeifactor 1 + 1,4 × deel van de wachttijd: 1,7 op de helft, 2,4 aan de beurt. Aanname binnen §3.2 (tussentijd 10 tot 20% van de bewaartijd)
+  // N-M2 gewicht op de groei per vorm: herkennen en kiezen bij een gegeven woord 0,6; zelf maken, typen en afwegen 1. Aanname (onderbouwing-nederlands 2.1: afwegen en zelf maken
+  // wegen zwaarder; Shintani e.a. 2013), te toetsen met de bewaarde pogingen (M12). Besluit ontwerpsessie 18 november 2026
+  formWeight:{herkennen:.6,listen:.6},
+  bloomMinDays:21, fullDays:25,   // volle bloei (wachttijd vanaf fullDays) nooit eerder dan bloomMinDays na de eerste poging; dan terug op die dag. Aanname (herhaalmodel: rond dag 23, nooit voor 21); randgeval N-M2, besluit ontwerpsessie A2
   firstDays:1,        // eerste wachttijd na de eerste goede poging (dagen). Aanname
   maxDays:120,        // langste wachttijd (dagen). Aanname
   lapseKeep:.4,       // na een fout blijft 40% van de wachttijd over. Aanname
@@ -1903,6 +1910,8 @@ const MOTOR={
   // M12 reeks pogingen per onderdeel: genoeg om de aannames te toetsen (didactisch plan hoofdstuk 6; antwoord ontwerpsessie 14 nov 2026)
   histMax:24, histBloom:6,
   histBudget:300000,  // F1: alle reeksen samen hooguit zoveel tekens (localStorage ~5 MB = ~2,5 miljoen tekens, en de reservekopie verdubbelt). Aanname; antwoord ontwerpsessie
+  // M5, N-M4 de trede per regel (ontwerp-stap2b): beheerst = zoveel keer goed bij de eerste poging op die trede of hoger, op zoveel verschillende dagen (M9 over tijd). Aanname
+  tierN:2, tierDays:2,   // trede 2: goed in een gesloten productieve vorm op twee verschillende dagen (besluit ontwerpsessie na G2, 18 november 2026)
   // H3 rust: zoveel keer achter elkaar goed bij de eerste poging, in zoveel verschillende vormen (masterplan H3)
   restRun:3, restForms:3,
   restDays:3, restSpan:7   // en op minstens zoveel verschillende dagen, met minstens zoveel dagen tussen de eerste en de laatste: gespreid, niet op één dag (§3.2; aanname, antwoord ontwerpsessie)
@@ -2076,10 +2085,20 @@ function exsFor(id,learn){return PACKS.filter(p=>p.learn===learn).flatMap(p=>p.e
 /* de uitleg bij een onderdeel, als die er is */
 function explForItem(id,learn){const o=EXPL_LIST.find(o=>o.learn===learn&&(o.x.items||[]).includes(id));return o?o.x.id:null}
 /* welke oefening: afbouwend voorbeeld (fade 1 voorbeeld, 2 laatste stap zelf, 3 helemaal zelf), dan een vorm die voor bloei nog ontbreekt, dan een oefening die nog niet goed ging */
+/* M5, N-M4 (ontwerp-stap2b): elke oefenvorm hoort bij een trede: 1 kiezen, 2 afmaken (zin bouwen, typen, luisteren en typen, schrijven met kader), 3 zelf maken (spreken).
+   De trede van een regel is de hoogste trede die beheerst is, uit de reeks pogingen (it.h, M12) en de bewaarde trede (it.tier, die nooit daalt) en eigen zin (it.own). */
+const TIER={herkennen:1,gap:1,listen:1,talk:1,read:1,kaart:1,tijdlijn:1,point:1,typen:2,luisteren:2,dictee:2,build:2,make:3,spreken:3};   // 1 kiezen, 2 afmaken (gesloten productief), 3 een eigen zin (make of spreken, checklist zelf afgevinkt)
+function exTier(e){if(e.form==='listen'&&e.data&&e.data.mode==='type')return 2;return TIER[QFORM[e.form]||e.form]||1}
+function ownOf(it){return !!it.own||histParse(it).some(x=>x[2]===1&&TIER[x[1]]===3)}   /* een eigen zin met de regel gemaakt (make of spreken, checklist afgevinkt) */
+function ruleTier(it,extra){const L=histParse(it).concat(extra?[extra]:[]);let best=0;for(let t=1;t<=2;t++){const ok=L.filter(([d,fm,rs])=>rs===1&&(TIER[fm]||0)===t||(t===1&&rs===1&&(TIER[fm]||0)>1));if(ok.length>=MOTOR.tierN&&new Set(ok.map(x=>x[0])).size>=MOTOR.tierDays)best=t}if(best>=2&&it&&ownOf(it))best=3;return Math.max(best,(it&&+it.tier)||0)}   /* trede 2 alleen in een gesloten productieve vorm; trede 3 = trede 2 plus een eigen zin; nooit lager dan de bewaarde trede */
+/* de trede waarop nu geoefend wordt: één boven de beheerste; na twee fouten op rij op die trede één terug (M4 hulp terug, M11) */
+function ruleTarget(it){const tier=ruleTier(it),up=Math.min(3,tier+1),L=histParse(it);let lastFail=-1,fails=0;for(let i=L.length-1;i>=0;i--){if((TIER[L[i][1]]||0)===up){if(L[i][2]===0){fails++;if(lastFail<0)lastFail=i}else break;if(fails>=2)break}}
+  if(fails<2)return up;const after=L.slice(lastFail+1).some(x=>x[2]===1&&(TIER[x[1]]||0)===up-1);return after?up:Math.max(1,up-1)}   /* twee fouten op rij op de trede erboven: één terug, tot er daar weer iets goed ging (codereview M5 4) */
 function chooseEx(id,learn,easy){const it=S.items[id]||{forms:[],exs:[],s:0,reps:0},f=it.forms||[],x=it.exs||[];let c=exsFor(id,learn);if(!c.length)return null;
   {const lf=lastForm(id),o=c.filter(e=>QFORM[e.form]!==lf);if(lf&&o.length)c=o}   /* H2: niet dezelfde vorm als de vorige keer, als er een andere is */
   if(c.some(e=>e.fade)){const lv=easy?Math.min(...c.filter(e=>e.fade).map(e=>e.fade)):!f.includes('voorbeeld')&&c.some(e=>e.fade===1)?1:it.s<1.5?2:3;let best=c.filter(e=>e.fade===lv);for(let l=lv+1;!best.length&&l<=3;l++)best=c.filter(e=>e.fade===l);if(best.length)c=best}
-  const k=KIND[id];if(!easy&&it.reps>0&&it.lapses<4){const need=k==='rule'&&!f.includes('build')?e=>e.form==='build':k==='sound'&&!f.includes('luisteren')?e=>e.data&&e.data.mode==='type':null;if(need&&c.some(need))c=c.filter(need)}
+  const k=KIND[id];if(k==='rule'&&!easy&&it.reps>0&&it.lapses<4){const tg=ruleTarget(it);for(let t=tg;t>=1;t--){const at=c.filter(e=>exTier(e)===t);if(at.length){c=at;break}}}   /* M5: een oefening op de trede erboven, anders de hoogste die er is */
+  if(!easy&&it.reps>0&&it.lapses<4){const need=k==='sound'&&!f.includes('luisteren')?e=>e.data&&e.data.mode==='type':null;if(need&&c.some(need))c=c.filter(need)}
   if(easy||it.lapses>=4||it.reps===0)if(k==='rule'||k==='sound'){const ez=c.filter(e=>e.form!=='build'&&!(e.data&&e.data.mode==='type'));if(ez.length)c=ez}
   if(QUIET){const st=c.filter(e=>e.form!=='listen'&&e.form!=='dictee');if(st.length)c=st;else return null}
   const fresh=c.filter(e=>e.gen||!x.includes(e.id));if(fresh.length)c=fresh;
@@ -2287,7 +2306,7 @@ function fresh(){
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=7,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=8,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2295,7 +2314,8 @@ const MIGRATE={
  3:s=>{for(const it of Object.values(s.items||{})){if(it&&typeof it==='object'&&!Array.isArray(it.exs))it.exs=[];if(it&&typeof it==='object'&&it.t==null&&typeof it.s==='number'&&it.s>0&&typeof it.due==='number')it.t=it.due-it.s*864e5}if(Object.keys(s.days||{}).length&&s.f3pending==null)s.f3pending=1;return s},
  4:s=>{if(!s.world||typeof s.world!=='object'||Array.isArray(s.world))s.world={done:{},at:null};if(!s.world.done||typeof s.world.done!=='object')s.world.done={};return s},
  5:s=>{if(!s.errs||typeof s.errs!=='object'||Array.isArray(s.errs))s.errs={};if(s.world&&typeof s.world==='object'&&(!s.world.ok||typeof s.world.ok!=='object'))s.world.ok={};if(s.world&&typeof s.world==='object'&&(!s.world.best||typeof s.world.best!=='object'))s.world.best={};for(const it of Object.values(s.items||{}))if(it&&typeof it==='object'&&typeof it.h!=='string')it.h='';if(typeof s.trial!=='boolean')s.trial=false;if(typeof s.seenNews!=='string')s.seenNews='';if(typeof s.bkNudge!=='number')s.bkNudge=Date.now();return s},   /* bkNudge: de eerste herinnering aan een kopie na een maand */   // diepte en diagnose: foutprofiel per soort fout, beheerste scènes (alleen toegevoegd)   // concept stap 2: scènes (alleen toegevoegd)   // fase 3: goede oefeningen per item (docs/herhaalmodel.md)
- 6:s=>{for(const k of ['minsV','outside','prog','blockAdj'])if(!s[k]||typeof s[k]!=='object'||Array.isArray(s[k]))s[k]={};return s}   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
+ 6:s=>{for(const k of ['minsV','outside','prog','blockAdj'])if(!s[k]||typeof s[k]!=='object'||Array.isArray(s[k]))s[k]={};return s},
+ 7:s=>{for(const it of Object.values(s.items||{}))if(it&&typeof it==='object'&&typeof it.s==='number'&&it.s>=10)it.gf=1;return s}   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
 function checkState(o){if(!o||typeof o!=='object'||Array.isArray(o)||o.v!==2||!o.items||typeof o.items!=='object'||Array.isArray(o.items))return 'broken';
@@ -2346,6 +2366,7 @@ function review(id,res,form,exid,passive){if(typeof LES!=='undefined'&&LES)retur
      Groei alleen bij gespreid ophalen (sectie 5): pas vanaf de helft van de wachttijd, en naar verhouding:
      op de helft × 1,7, aan de beurt × 2,4. Zo levert vaker oefenen op één dag geen snellere bloei op. */
   const it=S.items[id];if(!it)return;if(!Array.isArray(it.exs))it.exs=[];
+  if(res===true&&KIND[id]==='rule'&&TIER[form]===3)it.own=1;   /* een eigen zin met de regel telt ook als de regel niet het doel van de opdracht is (codereview B1) */
   if(passive&&res!==true)return;
   if(!passive&&it.placed){delete it.placed;if(res===false){it.s=0;it.reps=0;it.due=now();S.introduced=S.introduced.filter(x=>x!==id);S.log.push({t:now(),id,ok:false,pl:1});if(S.log.length>MOTOR.logMax)S.log.shift();save();return}}   // uit de startmeting en toch fout: als nieuw, geen fout (sectie 9)
   if(res===true||res==='retry'){if(form&&!passive&&!it.forms.includes(form))it.forms.push(form);if(exid&&!it.exs.includes(exid)){it.exs.push(exid);if(it.exs.length>10)it.exs.shift()}}
@@ -2353,10 +2374,14 @@ function review(id,res,form,exid,passive){if(typeof LES!=='undefined'&&LES)retur
   if(!passive){
     /* it.t = begin van de huidige wachttijd (laatste fout, groei of inplanning). Na een fout: t = nu, dus direct daarna goed geeft geen groei (review fase 3, punt 2). */
     const t0=typeof it.t==='number'?it.t:it.due-Math.max(0,it.s)*DAY;
+    if(KIND[id]==='rule'&&res===true&&form){if(TIER[form]===3)it.own=1;const tr=ruleTier(it,[Math.floor(now()/DAY),form,1]);if(tr>(+it.tier||0))it.tier=tr}   /* M5: de bereikte trede bewaren; een eigen zin (make, spreken) onthouden (besluit G2) */
     if(res===true){if(it.s<=0){it.s=MOTOR.firstDays;it.t=now();it.due=now()+MOTOR.firstDays*DAY}
-      else{const f=Math.min(1,(now()-t0)/(it.s*DAY));if(f>=MOTOR.growFrom){it.s=Math.min(MOTOR.maxDays,it.s*(1+MOTOR.growGain*f));if(it.s>=MOTOR.bloomDays&&!canBloom(id,it))it.s=MOTOR.bloomCap;it.t=now();it.due=now()+it.s*DAY}else{it.t=t0;it.due=t0+it.s*DAY}}}
+      else if(it.hold&&bloomAge(it)){it.s=Math.max(it.s,Math.min(MOTOR.maxDays,it.hold));delete it.hold;it.t=now();it.due=now()+it.s*DAY}   /* de groei die de rem op volle bloei tegenhield, nu zonder nieuwe vermenigvuldiging (codereview B2) */
+      else{const f=Math.min(1,(now()-t0)/(it.s*DAY));if(f>=MOTOR.growFrom){const s0=it.s;it.s=Math.min(MOTOR.maxDays,it.s*(1+MOTOR.growGain*f*((MOTOR.formWeight&&MOTOR.formWeight[form])||1)));if(it.s>=MOTOR.bloomDays&&!canBloom(id,it))it.s=Math.max(MOTOR.bloomCap,Math.min(s0,it.s));   /* nooit verkorten */
+        if(it.s>=MOTOR.fullDays&&s0<MOTOR.fullDays&&!bloomAge(it)){it.hold=it.s;it.s=Math.max(s0,MOTOR.fullDays-1);it.t=now();it.due=Math.min(now()+it.s*DAY,(it.f1+MOTOR.bloomMinDays+1)*DAY)}   /* volle bloei niet te vroeg (A2): terug op dag 22 met de bewaarde groei */
+        else{it.t=now();it.due=now()+it.s*DAY}}else{it.t=t0;it.due=t0+it.s*DAY}}}
     else if(res==='retry'){it.t=now();it.due=now()+Math.max(0,it.s)*DAY}
-    else{it.lapses++;it.s=Math.max(MOTOR.lapseMin,it.s*MOTOR.lapseKeep);it.t=now();it.due=now()}}
+    else{delete it.hold;it.lapses++;it.s=Math.max(MOTOR.lapseMin,it.s*MOTOR.lapseKeep);it.t=now();it.due=now()}}
   S.log.push({t:now(),id,ok:res===true,...(res==='retry'?{r:1}:{}),...(exid?{ex:exid}:{}),...(passive?{p:1}:{})});if(S.log.length>MOTOR.logMax)S.log.shift();
   if(!passive)histAdd(it,id,form,res);
   if(!passive&&res===true&&it.lapses>=MOTOR.leechLapses){const L=S.log.filter(e=>e.id===id&&!e.p).slice(-MOTOR.leechRecover);if(L.length===MOTOR.leechRecover&&L.every(e=>e.ok))it.lapses=MOTOR.leechBack}   // hardnekkig: na 3 keer achter elkaar goed weer gewoon (sectie 8)
@@ -2365,8 +2390,11 @@ function review(id,res,form,exid,passive){if(typeof LES!=='undefined'&&LES)retur
 /* eis voor doorgroeien boven 9 dagen (docs/herhaalmodel.md sectie 4, besluit 13 november 2026):
    woord: drie vormen; regel: drie verschillende oefeningen, minstens één keer zin bouwen;
    klank: drie verschillende oefeningen, minstens één keer luisteren en typen; rekenvaardigheid: drie verschillende varianten. */
+/* bloei pas als de eerste poging minstens MOTOR.bloomMinDays geleden is (randgeval N-M2, besluit A2); zonder f1 (van vóór de reeks) of al gebloeid: geen rem */
+function bloomAge(it){return !!it.gf||it.f1==null||Math.floor(now()/DAY)-it.f1>=MOTOR.bloomMinDays}   /* M2: volle bloei vraagt tijd */
 function canBloom(id,it){const k=KIND[id]||'word',f=(it.forms||[]).filter(x=>!NOGROW.includes(x)),n=(it.exs||[]).length,B=MOTOR.bloomExs;   /* M9 beheerst pas na meerdere vormen over tijd */
-  return k==='rule'?n>=B&&f.includes('build'):k==='sound'?n>=B&&f.includes('luisteren'):k==='skill'?n>=B:f.length>=MOTOR.bloomForms}
+  if(it.gf)return true;   /* bloeide al vóór deze eis (migratie 7 naar 8): niets afpakken */
+  return k==='rule'?n>=B&&ruleTier(it)>=2&&ownOf(it):k==='sound'?n>=B&&f.includes('luisteren'):k==='skill'?n>=B:f.length>=MOTOR.bloomForms}
 /* een onderdeel is voor het eerst aangeboden (voorbeeld, uitleg, kaart): plannen, maar niet als gekend tellen */
 function introduce(id,form){if(typeof LES!=='undefined'&&LES)return;const it=S.items[id];if(!it)return;if(!S.introduced.includes(id))S.introduced.push(id);if(form&&!it.forms.includes(form))it.forms.push(form);if(it.reps===0){it.reps=1;it.due=now()}save()}
 /* een oefening met items: het eerste item is het doel; alleen dat krijgt een fout */
@@ -2866,12 +2894,14 @@ H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=q.hard&&qq.answer!=null&&S
   if(q.ctx==='read'&&q.sc&&!nos)tikify(app.querySelector('.card'),q);   /* N-M1 */
   if(f==='hear'||f==='hear-type'){setTimeout(()=>say(heard),300);$('#hp').onclick=()=>say(heard);$('#hps').onclick=()=>say(heard,true)}
   const stand=qq.standpunt===true;   /* standpunt: geen goed of fout, alleen de uitleg bij de eigen keuze */
+  const gs=qq.guess===true,okO=(qq.opts||[]).find(o=>o.r==='ok')||{};   /* raden vooraf (G2 2.5): geen fout, niet in het foutprofiel, niet in het herhaalmodel; meteen het antwoord met uitleg */
+  const guessed=(chosenOk)=>{done=true;$('#fb').innerHTML=`<div class="note sky">${chosenOk?'':T('scene.answer')+' <b lang="nl">'+esc(String([].concat(qq.answer!=null?qq.answer:okO.t)[0]||''))+'</b><br>'}${scT(qq.why||okO.why)}</div>`+nextBtn();$('#nx').onclick=next};
   const right=msg=>{if(stand){done=true;$('#fb').innerHTML=`<div class="note sky">${msg}</div>`+nextBtn();$('#nx').onclick=next;return}done=true;if(hint)first=false;score(first,10);if(first&&SCN&&SCN.sc===sc)SCN.good++;if(q.role==='controle'&&SCN)SCN.ctrl=SCN.ctrl!==false&&first;if(q.role==='instap'&&first)scKnow(q);else if(!inst)practiced(q,first?true:'retry',SCF[f]);$('#fb').innerHTML=fbBox(true,msg,'')+nextBtn();$('#nx').onclick=next};
   const wrong=(msg,err)=>{if(first&&nos)$('#ask').innerHTML=scT(qq.ask);first=false;scFault(q,err);$('#fb').innerHTML=fbBox(false,msg,'')};   // na een poging mag de steuntaal erbij
-  if(opts){app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{if(done)return;const o=qq.opts[+b.dataset.o];if(o.r==='ok'){b.classList.add('right');say(o.t);right(scT(o.why))}else{b.classList.add('wrong');b.disabled=true;wrong(scT(o.why),o.err)}});return}
+  if(opts){app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{if(done)return;const o=qq.opts[+b.dataset.o];if(gs){app.querySelectorAll('[data-o]').forEach(x=>{x.disabled=true;if(qq.opts[+x.dataset.o].r==='ok')x.classList.add('right')});if(o.r!=='ok')b.classList.add('wrong');return guessed(o.r==='ok')}if(o.r==='ok'){b.classList.add('right');say(o.t);right(scT(o.why))}else{b.classList.add('wrong');b.disabled=true;wrong(scT(o.why),o.err)}});return}
   const as=[].concat(qq.answer!=null?qq.answer:((qq.opts||[]).find(o=>o.r==='ok')||{}).t,qq.accept||[]),num=scNum,ok=v=>f==='number'?as.some(a=>Math.abs(num(a)-num(v))<=(typeof qq.tol==='number'?qq.tol:1e-9)):as.some(a=>scNorm(a)===scNorm(v)||(typeIt&&scLoose(a,v)));
-  const chk=()=>{const v=$('#ans').value.trim();if(!v||done)return;const cl=$('#claim');if(cl)cl.remove();if(ok(v)){$('#ans').disabled=true;$('#chk').remove();right(scT(qq.why||((qq.opts||[]).find(o=>o.r==='ok')||{}).why));return}
-    {const w0=NL.find(x=>x.id===id),V=scNorm(v).replace(/^(de|het|een) /,''),na=x=>scNorm(x).replace(/^(de|het|een) /,'');if(w0&&na(String(as[0]))===na(w0.w)&&alsoOf(w0).some(a=>{const o=NL.find(x=>x.id===a);return o&&scNorm(o.w).replace(/^(de|het|een) /,'')===V})){$('#fb').innerHTML=`<div class="note sky">Dat past ook! Maar hier zoeken we een ander woord. Neem gerust een hulpje.</div>`;return}}   /* review dokter 6: een woord uit also is in een scènevraag ook geen fout */
+  const chk=()=>{const v=$('#ans').value.trim();if(!v||done)return;if(gs){$('#ans').disabled=true;$('#chk').remove();return guessed(ok(v))}const cl=$('#claim');if(cl)cl.remove();if(ok(v)){$('#ans').disabled=true;$('#chk').remove();right(scT(qq.why||((qq.opts||[]).find(o=>o.r==='ok')||{}).why));return}
+    {const w0=NL.find(x=>x.id===id),V=scNorm(v).replace(/^(de|het|een) /,''),na=x=>scNorm(x).replace(/^(de|het|een) /,'');if(w0&&na(String(as[0]))===na(w0.w)&&alsoOf(w0).some(a=>{const o=NL.find(x=>x.id===a);return o&&scNorm(o.w).replace(/^(de|het|een) /,'')===V})){$('#fb').innerHTML=`<div class="note sky">${T('also.fits')}</div>`;return}}   /* review dokter 6: een woord uit also is in een scènevraag ook geen fout */
     const ci={id:q.exid||id,q:scP(qq.ask),want:String(as[0]),after:()=>{if(q.role==='controle'&&SCN)SCN.ctrl=false}};   // standreview 7: een niet nagekeken antwoord haalt de controle niet
     if(first&&!(typeof LES!=='undefined'&&LES)){if(nos)$('#ask').innerHTML=scT(qq.ask);first=false;const e=qq.err;later(()=>scFault(q,e));$('#fb').innerHTML=fbBox(false,T('scene.again'),'')+claimHtml();bindClaim(ci);return}   // de fout telt pas bij Volgende; de knop kan haar nog wegnemen
     done=true;$('#ans').disabled=true;$('#chk').remove();later(()=>{if(q.role==='controle'&&SCN)SCN.ctrl=false;score(false,10);if(!inst)practiced(q,false,SCF[f])});   // tweede keer fout: het antwoord met uitleg, geen dood spoor
@@ -2966,11 +2996,11 @@ H.recall=q=>{const w=q.w;let tries=0,hint=0;const fullT=`${fw(w)}`,full=artFull(
         $('#fb').innerHTML=`<div class="stack-sm"><p>Goed: <b>${esc(w.w)}</b>. Welk lidwoord hoort erbij?</p><div class="choices"><button class="choice" data-art="de">de ${esc(w.w)}</button><button class="choice" data-art="het">het ${esc(w.w)}</button></div></div>`;
         app.querySelectorAll('[data-art]').forEach(b=>b.onclick=()=>{const ok=b.dataset.art===w.art;done(true,ok,ok?`<b>${full}</b>. ${ctx}`:`Het is <b>${full}</b>: een <b>${w.art}</b>-woord. ${ctx}`,true)});return}
       return done(true,true,`<b>${full}</b>. ${ctx}`+(art&&!w.askArt?` <span class="small muted">Het lidwoord staat al in de zin, dus alleen <b>${esc(w.w)}</b> was genoeg.</span>`:''))}
-    if(alsoOf(w).some(id=>{const o=NL.find(x=>x.id===id);return o&&norm(o.w)===word})){$('#fb').innerHTML=`<div class="note sky">Dat past ook! Maar hier zoeken we een ander woord. Neem gerust een hulpje.</div>`;return}
+    if(alsoOf(w).some(id=>{const o=NL.find(x=>x.id===id);return o&&norm(o.w)===word})){$('#fb').innerHTML=`<div class="note sky">${T('also.fits')}</div>`;return}
     tries++;if(tries>1)return done(false,false,`Het is <b>${esc(w.w)}</b> (${full}). ${ctx}`);
     $('#fb').innerHTML=fbBox(false,'Probeer het nog een keer, of neem een hulpje.','')};
   const check=()=>{if(g)return checkGap();const a=norm(inp.value);if(!a)return;
-    if(alsoOf(w).some(id=>{const o=NL.find(x=>x.id===id);return o&&(norm(o.w)===a||norm(fw(o))===a)})){$('#fb').innerHTML=`<div class="note sky">Dat past ook! Maar hier zoeken we een ander woord. Neem gerust een hulpje.</div>`;return}   /* review dokter 5: also geldt ook zonder gatzin (pijn in / pijn aan) */
+    if(alsoOf(w).some(id=>{const o=NL.find(x=>x.id===id);return o&&(norm(o.w)===a||norm(fw(o))===a)})){$('#fb').innerHTML=`<div class="note sky">${T('also.fits')}</div>`;return}   /* review dokter 5: also geldt ook zonder gatzin (pijn in / pijn aan) */
     tries++;const ok=a===norm(fullT);let msg=null,th=null;
     if(ok){msg=`<b>${full}</b>. ${esc(w.ex)}`;th=ts('recall.yes',{full})}
     else if(a===norm(w.w)){msg=t('recall.addArt',{art:w.art,full});th=ts('recall.addArt',{art:w.art,full})}

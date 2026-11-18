@@ -454,6 +454,40 @@
     seq.forEach(function (x) { kinds[x] = 1; });
     return { seq: seq, kinds: Object.keys(kinds), moments: moments, turns: turns };
   }
+  /* IJkmoment G2 (docs/ijkmoment-g2.md, 2.1-2.5): eisen aan nieuwe lesstof. De redactiepoort (controleer.mjs) maakt er fouten van; de app niet,
+     want de hoofdstukken van thema 1 halen ze nog niet (herstelronde). Geeft { longest: aandeel goed = langste, n: aantal keuzevragen, issues: [] }. */
+  function checkG2(p) {
+    var issues = [], id = (p && p.id) || 'pakket', nl = function (x) { return typeof x === 'string' ? x : (x && typeof x.nl === 'string' ? x.nl : ''); };
+    var words = function (x) { var t = nl(x).replace(/<[^>]*>/g, ' ').trim(); return t ? t.split(/\s+/).length : 0; };
+    var n = 0, longest = 0, seqs = {}, longText = false;
+    var choice = function (opts) {
+      if (!Array.isArray(opts) || opts.length < 2) return;
+      var ok = opts.filter(function (o) { return o && o.r === 'ok'; }); if (ok.length !== 1) return;
+      var len = function (o) { return String((o && (o.t != null ? o.t : nl(o))) || '').length; }, best = len(ok[0]);
+      n++; if (opts.every(function (o) { return o === ok[0] || len(o) <= best; })) longest++;
+    };
+    (p && p.scenes || []).forEach(function (sc) {
+      var w = id + '.' + sc.id, steps = sc.steps || [];
+      var key = steps.map(function (st) { return st && st.type; }).join('>'); if (sc.subject !== 'rk' && sc.subject !== 'kn') { if (seqs[key]) issues.push(w + ': dezelfde reeks stappen als ' + seqs[key] + ' (G2 2.2: geen stramien)'); else seqs[key] = sc.id; }
+      steps.forEach(function (st, k) {
+        if (!st) return;
+        var v = w + '.steps[' + k + ']';
+        if ((st.type === 'read' || st.type === 'listen') && words(st.type === 'read' ? st.text : st.say) >= 150 && words(st.type === 'read' ? st.text : st.say) <= 450) longText = true;
+        (st.q || []).forEach(function (q, i) {
+          if (!q) return; choice(q.opts);
+          var ask = nl(q.ask), u = v + '.q[' + i + ']';
+          if (/^\s*Raad\b/i.test(ask) && q.guess !== true) issues.push(u + ': een raadvraag heeft guess: true (G2 2.5: raden telt niet als fout)');
+          if (/^\s*Schat\b/i.test(ask) && q.form !== 'choose' && !(typeof q.tol === 'number' && q.tol > 0)) issues.push(u + ': een schatvraag heeft tol (G2 2.7)');
+        });
+        (st.turns || []).forEach(function (t) { if (t) choice(t.opts); });
+        if (st.opts) choice(st.opts);
+      });
+    });
+    if (n >= 10 && longest / n > 0.4) issues.push(id + ': bij ' + Math.round(100 * longest / n) + '% van de ' + n + ' keuzevragen is het goede antwoord het langste; hooguit 40% (G2 2.1)');
+    if (p && p.type === 'hoofdstuk' && !longText) issues.push(id + ': geen lees- of luistertekst van 150 tot 450 woorden (G2 2.3)');
+    return { n: n, longest: n ? longest / n : 0, issues: issues };
+  }
+
   function checkChapter(p) {
     var errors = [], err = function (m) { errors.push(m); }, id = (p && p.id) || 'pakket', all = {};
     var scenes = (p && p.scenes) || [];
@@ -594,6 +628,6 @@
     });
     return { errors: errors };
   }
-  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioTexts: audioTexts, withParts: withParts };
+  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioTexts: audioTexts, withParts: withParts };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.PakketCheck = api;
 })(this);

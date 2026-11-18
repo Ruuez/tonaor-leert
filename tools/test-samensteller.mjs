@@ -150,6 +150,17 @@ ok('de leerklok kan niet struikelen over het laden', html.includes('function lea
   ok('Bijsturen op Ik: nieuwe woorden per dag, lengte, stille stand, terug naar standaard; geen oefenvormen uitzetten', ['data-npd', 'data-len', 'data-quiet', 'steerReset'].every(k => html.includes(k)) && !html.includes('data-form-off'));
   ok('na de ronde: te makkelijk, goed, te moeilijk en leuk of saai; gaat mee naar de begeleider', html.includes('data-c=\"makkelijk\"') && html.includes('data-f=\"saai\"') && html.includes('steer:{newPerDay:dayBudget()'));
 }
+// M5, N-M4 (ontwerp-stap2b): de trede per regel uit de reeks pogingen; oefenen op de trede erboven; na twee fouten op rij één terug
+{ const ct = vm.createContext({}); vm.runInContext('const MOTOR={tierN:2,tierDays:2};' + line('const HCODE=') + '\n' + line('const HFORM=') + '\n' + fnBlock('histParse') + '\n' + line('const QFORM=') + '\n' + line('const TIER=') + '\n' + fnBlock('exTier') + '\n' + fnBlock('ownOf') + '\n' + fnBlock('ruleTier') + '\n' + fnBlock('ruleTarget') + '\nthis.t={ruleTier,ruleTarget,exTier};', ct);
+  const T = ct.t, it = h => ({ h, hd: 0 });
+  ok('M5: zonder pogingen trede 0, oefenen op trede 1 (kiezen)', T.ruleTier(it('')) === 0 && T.ruleTarget(it('')) === 1);
+  ok('M5: drie keer kiezen goed op twee dagen: trede 1, oefenen op trede 2 (afmaken)', T.ruleTier(it('0g1,1g1,0g1')) === 1 && T.ruleTarget(it('0g1,1g1,0g1')) === 2);
+  ok('M5: afmaken beheerst: trede 2, oefenen op trede 3 (zelf maken)', T.ruleTier(it('0b1,1b1,0t1')) === 2 && T.ruleTarget(it('0b1,1b1,0t1')) === 3);
+  ok('M5: twee fouten op rij op de trede erboven: één trede terug', T.ruleTarget(it('0g1,1g1,0g1,1b0,0b0')) === 1);
+  ok('M5: na de twee fouten weer goed op die trede: weer omhoog', T.ruleTarget(it('0g1,1g1,0g1,1b0,0b0,1b1')) === 2);
+  ok('M5: de vormen horen bij een trede (gatzin kiezen 1, zin bouwen 2, spreken 3)', T.exTier({ form: 'gap' }) === 1 && T.exTier({ form: 'build' }) === 2 && T.exTier({ form: 'spreken' }) === 3);
+  ok('M5: chooseEx kiest voor een regel de trede erboven, anders de hoogste die er is', /if\(k==='rule'&&!easy&&it\.reps>0&&it\.lapses<4\)\{const tg=ruleTarget\(it\);for\(let t=tg;t>=1;t--\)/.test(html));
+}
 // R-M3 (onderbouwing-rekenen.md 2.5): nooit twee sommen met dezelfde aanpak achter elkaar in herhaling; nieuw mag geblokt
 { const cm = vm.createContext({}); vm.runInContext(fnBlock('mixAppr') + '\nthis.mix=mixAppr;', cm);
   const s = (a, o) => ({ type: 'discount', items: ['r-' + a], _appr: a, ...(o || {}) }), w = id => ({ type: 'recall', w: { id } });
