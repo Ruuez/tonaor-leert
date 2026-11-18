@@ -65,6 +65,16 @@ Bron: `ontwerp-stap2b.md` (M5, besluiten na G2) en `herhaalmodel.md` 10b.
 - **Bestaande bloei:** onderdelen boven 9 dagen krijgen bij migratie 7 naar 8 `gf` en houden hun bloei. Een wachttijd wordt nooit korter.
 - **Opslag:** SCHEMA 8, alleen toevoegend (`gf`, en lui ook `tier` en `own` op een onderdeel).
 
+## MO-M2: punten alleen achteraf
+
+Bron: `onderbouwing-motivatie-en-kennis.md` 2.2. Een beloning die je vooraf verwacht, ondermijnt de eigen motivatie; waardering in woorden achteraf verhoogt haar.
+
+Wat de controle opleverde:
+- **Inhoud en functies:** nergens hangt inhoud of een functie aan een aantal punten.
+- **Punten zakken nooit:** `addPts` telt alleen op, ook bij een gedeeltelijk antwoord. Alleen Alles wissen zet ze op nul, en dat doet de leerder zelf.
+- **Eén overtreding, hersteld:** het scherm Route zei "Kies samen met je begeleider een beloning voor als het lukt". Dat was een beloning die vooraf beloofd werd. Nu staat er: "Kijk daarna samen met je begeleider terug op wat je nu kunt" (waardering achteraf).
+- **Test:** `tools/test-motivatie.mjs` bewaakt dit.
+
 ## Wat kan breken
 
 - **Opslag:** niets. De vorm `tik` komt in de bestaande lijst `forms`.

@@ -16,6 +16,7 @@ Bijgewerkt: 14 november 2026.
 - Uitleg (speler, drie ingangen, 32 uitleggen) en het weekdoel (standaard 10 uur, merktekens op 3,5, 7 en 10 uur).
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
+- MO-M2 (punten alleen achteraf), cache v2-74: er hangt geen inhoud aan punten en ze zakken nooit. Het scherm Route beloofde nog een beloning vooraf; dat is nu terugkijken achteraf. Test: tools/test-motivatie.mjs.
 - Tweede reeks losse lessen (volgorde 21 tot 40, zeven met kaart of tijdlijn), cache v2-73:
   - Alle twintig zijn uitgebracht na review Opus, herstel, nacontrole en de G2-maat voor een losse les. Ook bijgewerkt: zeespiegel, mekong, tijdzones en karma (foute keuzes langer).
   - De lijst van veertig lessen is in orde (checkLessen). Het geluid is erbij.
