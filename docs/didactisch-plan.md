@@ -85,7 +85,7 @@ Per facet: wat het onderzoek zegt, en wat de app daarom doet. Bewijs: **sterk** 
 ### 3.4 Grammatica
 
 - Uitleg met oefening werkt beter dan alleen blootstelling, en het effect blijft (Norris & Ortega 2000; Spada & Tomita 2010; Goo e.a. 2015). *Sterk.*
-- Een korte vergelijking met de moedertaal helpt waar die afwijkt (McManus & Marsden 2017). *Redelijk.*
+- Een korte vergelijking met de moedertaal helpt waar die afwijkt (McManus & Marsden 2017), maar bij een moedertaal die het heel anders doet werkte uitleg slechter (Andringa e.a. 2011). *Tegenstrijdig;* daarom alleen waar het Thais iets vergelijkbaars heeft (`ijkmoment-g2.md` 5).
 - Oefenen met begrijpen en oefenen met zelf maken werken allebei; voor zelf kunnen gebruiken is zelf maken nodig (Shintani e.a. 2013). Kennis wordt vaardigheid door veel oefening die steeds vrijer wordt (DeKeyser 2007).
 - Verbeteren helpt, vooral als de leerder de kans krijgt het zelf goed te zeggen (Lyster & Saito 2010; Li 2010).
 

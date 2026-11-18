@@ -70,19 +70,19 @@ De schoolniveaus 2F en 3F zijn "te vergelijken" met B1 en B2, maar niet gelijk: 
 ### 2.2 Ophalen en spreiden
 
 - Gespreid oefenen heeft bij een tweede taal een middelgroot tot groot effect; langere tussentijden werken beter dan kortere, ook op latere toetsen; gelijke en oplopende tussentijden doen het even goed (Kim & Webb 2022, 48 experimenten, 3.411 deelnemers). **[S]** Dát er ruimte tussen zit, weegt zwaarder dan het patroon (Nakata 2015, 128 studenten). **[S]**
-- **Voor grammatica geldt een grens.** Bij het leren van een nieuwe vormregel deed de groep met ruim drie dagen tussen de oefeningen het beter dan de groep met zeven dagen, ook vier weken later (Suzuki 2017, 60 deelnemers, een kunsttaal). **[S]**
+- **Voor grammatica geldt een grens.** Bij het leren van een nieuwe vormregel deed de groep met ruim drie dagen tussen de oefeningen het beter dan de groep met zeven dagen, ook vier weken later (Suzuki 2017, 60 deelnemers waarvan 54 geanalyseerd, een kunsttaal, vier sessies zelf mondeling maken; 3,3 tegen 7 dagen, d ≈ 0,5, ook na vier weken, voor de regel én de woorden). Verklaring van de auteur: bij een te lange tussentijd lukt het ophalen niet meer; als vuistregel (voorlopig) een tussentijd van ongeveer een vijfde van hoe lang je het wilt onthouden. Twee dagen en het oplopen daarna zijn niet getest. **[T, grotendeels; ijkmoment G2]**
 
 **Gevolg:** voor woorden blijft het herhaalmodel zoals het is. Voor een grammaticaregel houdt de motor de tussentijd in de eerste weken kort (twee tot vier dagen) en laat hem pas daarna oplopen. Dat is een nieuwe waarde, met één studie als onderbouwing: een aanname die getoetst moet worden.
 
 ### 2.3 Grammatica
 
 - Onderwijs dat op taalvormen gericht is geeft grote winst die blijft; uitleg met oefening doet het beter dan alleen blootstelling (Norris & Ortega 2000, 49 studies **[S]**), voor eenvoudige en voor ingewikkelde vormen, ook in spontaan gebruik (Spada & Tomita 2010, 41 studies **[S]**).
-- **Bij leerders van het Nederlands is dat verschil niet gevonden in vrij schrijven:** uitleg en blootstelling waren ongeveer even effectief voor het gebruik van twee structuren in een vrije schrijftaak (Andringa e.a. 2011, 81 leerders van 12 tot 18 jaar). **[S]** Uitleg alleen is dus niet genoeg; het gebruik moet ook veel geoefend worden.
+- **Bij leerders van het Nederlands is dat verschil niet gevonden in vrij schrijven:** uitleg en blootstelling waren ongeveer even effectief voor het gebruik van twee structuren in een vrije schrijftaak (Andringa e.a. 2011, 102 leerlingen van 12 tot 18 jaar in het nieuwkomersonderwijs, 67 met alle metingen; acht computerlessen). Op een toets waarin je fouten herkent, won de groep met uitleg wel. Uitleg met een vergelijking met de moedertaal hielp bij een moedertaal die op het Nederlands lijkt en werkte slechter bij een moedertaal die het anders doet (één structuur). **[T; ijkmoment G2]** Uitleg alleen is dus niet genoeg; het gebruik moet ook veel geoefend worden.
 - Oefenen met begrijpen en oefenen met zelf maken werken allebei. Voor zelf kunnen gebruiken op termijn is zelf maken effectiever (Shintani e.a. 2013, 35 studies). **[S]**
-- Uitleg over hoe de eigen taal het doet, naast uitleg over de doeltaal, verbetert de nauwkeurigheid en de snelheid van begrip (McManus & Marsden 2017, 50 leerders). **[S]**
+- Uitleg over hoe de eigen taal het doet, naast uitleg over de doeltaal, verbetert de nauwkeurigheid en de snelheid van begrip (McManus & Marsden 2017, 50 leerders). **[S]** Andringa e.a. 2011 (hierboven) vonden bij een moedertaal die sterk afwijkt het omgekeerde; het bewijs is tegenstrijdig.
 - Kennis wordt vaardigheid in een volgorde: eerst weten, dan gebruiken met aandacht, dan automatisch; oefening hoort die volgorde te volgen, met vorm en betekenis verbonden (DeKeyser 2010). **[S]**
 
-**Gevolg:** de drie treden blijven, met meer gewicht voor trede twee en drie (zelf maken). Een regel geldt pas als beheerst wanneer hij in een eigen zin goed gaat, niet wanneer hij goed gekozen wordt. Bij elke regel een korte vergelijking met het Thais.
+**Gevolg:** de drie treden blijven, met meer gewicht voor trede twee en drie (zelf maken). Een regel geldt pas als beheerst wanneer hij in een eigen zin goed gaat, niet wanneer hij goed gekozen wordt. Een vergelijking met het Thais alleen waar het Thais iets vergelijkbaars heeft; waar het Thais het anders doet, één zin om op te letten in plaats van een uitleg via het Thais (ijkmoment G2). Uitleg kort, de tijd naar invoer met betekenis en zelf maken.
 
 ### 2.4 Verbeteren
 
@@ -101,7 +101,7 @@ De schoolniveaus 2F en 3F zijn "te vergelijken" met B1 en B2, maar niet gelijk: 
 
 ### 2.6 Spreken en uitspraak
 
-- Bij volwassen leerders van het Nederlands verklaren woordkennis, grammaticakennis, de snelheid waarmee woorden en zinnen beschikbaar zijn, en uitspraak samen ongeveer 76 procent van de verschillen in spreekvaardigheid; dat patroon is hetzelfde voor zwakkere en sterkere sprekers (De Jong e.a. 2012, 181 leerders). **[S]** Goed spreken vraagt dus kennis én snelheid.
+- Bij volwassen leerders van het Nederlands verklaren woordkennis, grammaticakennis, de snelheid waarmee woorden en zinnen beschikbaar zijn, en uitspraak samen ongeveer 76 procent van de verschillen in spreekvaardigheid; dat patroon is hetzelfde voor zwakkere en sterkere sprekers (De Jong e.a. 2012, 181 gevorderde volwassen leerders, taken van 120 seconden tegen een computer, beoordeeld op hoe goed de inhoud overkomt). Woordenschat en intonatie verklaren samen al 75 procent; zinnen snel bouwen weegt mee, losse woordsnelheid minder. Correlatie, geen training. **[T; ijkmoment G2]** Goed spreken vraagt dus kennis én snelheid.
 - Uitspraakonderwijs werkt: d = 0,89 binnen groepen en 0,80 tussen groepen, groter bij langere inzet en met terugkoppeling (Lee e.a. 2015, 86 rapporten). **[S]** Klanken leren onderscheiden aan de hand van veel verschillende stemmen is "zeer effectief" en blijvend (Thomson 2018, 32 studies). **[S]** Bewust weten hoe een klank gemaakt wordt helpt bij de lastigere klanken (Saito 2019, 40 volwassenen). **[S]**
 - Leren aan de hand van taken heeft een sterk positief effect (d = 0,93; Bryfonski & McKay 2019, 52 studies). **[S]**
 
@@ -169,7 +169,7 @@ De schoolniveaus 2F en 3F zijn "te vergelijken" met B1 en B2, maar niet gelijk: 
 |---|---|
 | Geen betrouwbare cijfers over leertijd; geen onderzoek naar Thais en Nederlands | meten bij de leerder zelf: toetsen per onderdeel, het foutprofiel, uren tegenover vooruitgang |
 | Het officiële beoordelingsvoorschrift voor schrijven en spreken is niet gevonden | opvragen of opzoeken in de regeling van de examencommissie; tot dan de criteria uit 2017 |
-| Van de meeste studies is de samenvatting gelezen, niet het hele artikel | bij een volgend ijkmoment de volledige tekst van de vijf zwaarst wegende (Yanagisawa e.a. 2020, Kim & Webb 2022, Suzuki 2017, De Jong e.a. 2012, Andringa e.a. 2011) |
+| Van de meeste studies is de samenvatting gelezen, niet het hele artikel | G2 (18 november 2026): Andringa 2011, De Jong 2012 en Suzuki 2017 volledig gelezen (`ijkmoment-g2.md` 5); Yanagisawa 2020 en Kim & Webb 2022 zijn niet vrij beschikbaar, alleen de samenvatting; ophalen via een bibliotheek kan de eigenaar beslissen |
 | De korte spreiding voor grammatica rust op één studie met een kunsttaal | toetsen met de bewaarde pogingen (M12) |
 | Schrijven en spreken kan de app niet beoordelen | de checklist, de begeleider, een oefenexamen met een menselijke beoordelaar vóór het echte examen |
 | Slagingspercentages van het examen zijn niet gevonden | navragen; ze zeggen hoe ruim de marge moet zijn |
