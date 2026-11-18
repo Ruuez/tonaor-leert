@@ -37,3 +37,28 @@ Stand: 18 november 2026. Hoort bij stap 6 van `werkorder.md`. Het ontwerp per we
 - de microfoon gaat uit;
 - er is één opname bewaard;
 - bij een geweigerde microfoon valt de stap terug op de oude vorm.
+
+## 3.1 De luistertekst (stap `listen`)
+
+**Eisen:** werkvormen 3.1 en 3.2 (meelezen), E-M4 (afbouw), de examenvorm uit `scenes.md`, F7 (geluidsbestanden).
+
+**Voor de leerder:**
+- **Eerst de vraag.** Het fragment speelt niet meer vanzelf: de leerder leest de vraag en tikt op **Luister**.
+- **Afbouw:**
+  - **Meelezen:** in de eerste drie scènes met een luistertekst (`MOTOR.listenFade`, een aanname) staat de tekst erbij, en de zin die klinkt licht op.
+  - **Alleen luisteren:** daarna, met opnieuw afspelen. Na het antwoord verschijnt de tekst, om mee te lezen en opnieuw te horen.
+  - **De zwaardere vorm** is altijd alleen luisteren.
+- **Knoppen** (behalve in de examenvorm): langzaam (0,8), gewoon, iets sneller (1,15) en **Deze zin nog eens**.
+- **Examenvorm** (`exam: true`): 25 seconden leestijd, dan speelt het fragment één keer, zonder knoppen. De tekst komt pas na het antwoord.
+
+**Hoe:**
+- De tekst wordt per zin afgespeeld met dezelfde opdeling als de geluidsbestanden (`PC.audioParts`). Elke zin heeft al een eigen bestand, dus de zin kan oplichten op het moment dat hij begint.
+- Ontbreekt er een bestand, dan leest de stem van het toestel de hele tekst voor, zonder oplichten.
+- De tekst gaat via `esc`.
+
+**Wat kan breken:**
+- De opslag en de koppeling: niets.
+- De les: niets, want luisterteksten zitten alleen in scènes.
+- Dat het fragment niet meer vanzelf speelt, is een bewuste verandering volgens het ontwerp.
+
+**Test:** `tools/test-luisteren.mjs`. In de browser gecontroleerd op 375 px: meelezen met een oplichtende zin; alleen luisteren met de tekst pas na het antwoord.

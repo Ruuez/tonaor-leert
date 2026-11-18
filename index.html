@@ -9,7 +9,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Leren">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}.lsent{border-radius:.3em;transition:background .2s}.lsent.on{background:var(--sky-fill)}@media (prefers-reduced-motion:reduce){.lsent{transition:none}}
+</style>
 <title>Leren</title>
 <meta name="theme-color" content="#f4f6f1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,6 +279,7 @@ body.u-open{overflow:hidden}
 .u-mark{outline:2px solid var(--apricot-ink);outline-offset:1px}
 .u-table{border-collapse:collapse;width:100%;font-size:.95em}.u-table th,.u-table td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left}.u-table th{color:var(--ink-2);font-weight:600}.u-table td.u-hl{background:var(--mint);font-weight:700}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.lsent{border-radius:.3em;transition:background .2s}.lsent.on{background:var(--sky-fill)}@media (prefers-reduced-motion:reduce){.lsent{transition:none}}
 </style>
 
 </head>
@@ -759,6 +761,14 @@ en:{
  "garden.tip":"Every word and every skill is a plant. Remembering it well makes it grow. A drop means: review it briefly today.",
  "garden.empty":"Your first plant will grow here soon.",
  "route.title":"My route",
+ "lis.play":"Listen",
+ "lis.again":"This sentence again",
+ "lis.speed":"Speed",
+ "lis.slow":"Slow",
+ "lis.normal":"Normal",
+ "lis.fast":"A bit faster",
+ "lis.read":"Read the question. The text plays once in {n} seconds.",
+ "lis.once":"Listen well: you hear it once.",
  "rec.go":"Record",
  "rec.prepGo":"Start preparing",
  "rec.prep":"Think about what you will say. Recording starts in {n} seconds.",
@@ -1282,6 +1292,14 @@ nl:{
  "garden.tip":"Elk woord en elke vaardigheid is een plantje. Goed onthouden laat het groeien. Een druppel betekent: vandaag even herhalen.",
  "garden.empty":"Hier groeit straks je eerste plantje.",
  "route.title":"<h1>Mijn route</h1>",
+ "lis.play":"Luister",
+ "lis.again":"Deze zin nog eens",
+ "lis.speed":"Snelheid",
+ "lis.slow":"Langzaam",
+ "lis.normal":"Gewoon",
+ "lis.fast":"Iets sneller",
+ "lis.read":"Lees de vraag. Over {n} seconden hoor je de tekst één keer.",
+ "lis.once":"Luister goed: je hoort het één keer.",
  "rec.go":"Opnemen",
  "rec.prepGo":"Begin met voorbereiden",
  "rec.prep":"Denk na over wat je zegt. Het opnemen begint over {n} seconden.",
@@ -1803,6 +1821,14 @@ th:{
  "garden.tip":"ทุกคำและทุกทักษะคือต้นไม้ จำได้ดีต้นไม้จะโต หยดน้ำหมายถึงวันนี้ควรทบทวน",
  "garden.empty":"ต้นไม้ต้นแรกจะเติบโตที่นี่",
  "route.title":"เส้นทางของฉัน",
+ "lis.play":"ฟัง",
+ "lis.again":"ประโยคนี้อีกครั้ง",
+ "lis.speed":"ความเร็ว",
+ "lis.slow":"ช้า",
+ "lis.normal":"ปกติ",
+ "lis.fast":"เร็วขึ้นนิดหนึ่ง",
+ "lis.read":"อ่านคำถาม อีก {n} วินาทีจะได้ฟังข้อความหนึ่งครั้ง",
+ "lis.once":"ฟังให้ดี คุณจะได้ฟังครั้งเดียว",
  "rec.go":"อัดเสียง",
  "rec.prepGo":"เริ่มเตรียมตัว",
  "rec.prep":"คิดก่อนว่าจะพูดอะไร การอัดเสียงจะเริ่มในอีก {n} วินาที",
@@ -2001,6 +2027,7 @@ const MOTOR={
   slotErrShare:.5,    // hooguit dit deel van een open plek op het foutprofiel. Aanname
   // C5 spel: één tot drie minuten (masterplan C5); 60 seconden: aanname
   gameSeconds:60,
+  listenFade:3, listenRead:25, listenFast:1.15,   // werkvormen 3.1: meelezen in de eerste 3 scènes met een luistertekst; examenvorm 25 s leestijd (scenes.md); iets sneller = 1,15. 3 en 1,15 zijn een aanname
   recMax:60, recKeep:30, speakLen:{short:20,medium:30,long:120}, speakPrep:30,   // werkvormen 4.1: opname hooguit 60 s; de laatste 30 opnamen blijven; examenvorm volgens scenes.md; voorbereidingstijd bij long 30 s (aanname)
   // M12 reeks pogingen per onderdeel: genoeg om de aannames te toetsen (didactisch plan hoofdstuk 6; antwoord ontwerpsessie 14 nov 2026)
   histMax:24, histBloom:6,
@@ -2574,12 +2601,33 @@ function audioEl(){if(!AEL){AEL=new Audio();AEL.setAttribute('playsinline','');A
   AEL.addEventListener('error',()=>audioFail())}return AEL}
 /* een bestand dat niet laadt of niet mag spelen: de rest van de tekst door de stem van het toestel (review geluid K1, K3); na stoppen niets (K2) */
 function audioFail(){if(!ACUR)return;const rest=[ACUR].concat(AQ.map(x=>x.t)).join(' '),slow=AEL&&AEL.playbackRate<1;AQ=[];ACUR='';speakDevice(rest,slow,'nl')}
-function audioNext(){const x=AQ.shift();if(!x)return;const a=audioEl();ACUR=x.t;a.src='audio/nl/'+AUDIOSTEM+'/'+x.h+'.m4a';a.defaultPlaybackRate=a.playbackRate=x.slow?.8:1;const p=a.play();if(p&&p.catch)p.catch(e=>{if(!e||e.name!=='AbortError')audioFail()})}
+function audioNext(){const x=AQ.shift();if(!x)return;const a=audioEl();ACUR=x.t;if(x.on)try{x.on()}catch(e){}a.src='audio/nl/'+AUDIOSTEM+'/'+x.h+'.m4a';a.defaultPlaybackRate=a.playbackRate=x.rate||(x.slow?.8:1);const p=a.play();if(p&&p.catch)p.catch(e=>{if(!e||e.name!=='AbortError')audioFail()})}
 function playAudio(t,slow){if(!PC||!PC.audioHash||!AUD.size)return false;const h=PC.audioHash(t,AUDIOSTEM);let list=null;
   if(AUD.has(h))list=[{h,t}];else{const parts=PC.audioParts(t);if(parts.length>1){const hs=parts.map(x=>({h:PC.audioHash(x,AUDIOSTEM),t:x}));if(hs.every(x=>AUD.has(x.h)))list=hs}}
   if(!list)return false;voicePend=null;try{clearTimeout(voiceWait)}catch(e){}try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}try{audioEl().pause()}catch(e){}AQ=list.map(x=>({...x,slow}));audioNext();return true}
 function noteNoAudio(t){if(!AUD.size||STORE!=='ok')return;const k=String(PC&&PC.audioKey?PC.audioKey(t):t).slice(0,200);if(!k)return;const L=Array.isArray(S.audioMiss)?S.audioMiss:[];if(L.includes(k))return;S.audioMiss=L.concat([k]).slice(-AUDIOMISSMAX);save()}
 function audioStop(){AQ=[];ACUR='';try{if(AEL)AEL.pause()}catch(e){}}
+/* De luistertekst (werkvormen 3.1): eerst de vraag, dan zelf afspelen. Afbouw: meelezen met de zin die klinkt oplichtend (de eerste MOTOR.listenFade
+   scènes met een luistertekst), dan alleen luisteren met opnieuw afspelen en na het antwoord meelezen, en de examenvorm (scenes.md: 25 seconden leestijd,
+   het fragment één keer, niet te pauzeren, de tekst pas na het antwoord). Snelheid langzaam, gewoon, iets sneller en "deze zin nog eens", behalve in de examenvorm. */
+function lisStage(q){if(q.st&&q.st.exam)return 'exam';if(q.hard)return 'luister';const n=SCENES.filter(o=>(((S.world||{}).done)||{})[o.sc.id]&&(o.sc.steps||[]).some(x=>x&&x.type==='listen')).length;return n<MOTOR.listenFade?'mee':'luister'}
+function lisParts(t){t=String(t==null?'':t);const ps=PC&&PC.audioParts?PC.audioParts(t):[];return ps.length?ps:[t]}
+function lisPlay(t,rate,onIdx,from,only){const ps=lisParts(t),a=from||0,b=only?a+1:ps.length;
+  if(PC&&PC.audioHash&&AUD.size){const hs=ps.map(x=>({h:PC.audioHash(x,AUDIOSTEM),t:x}));if(hs.every(x=>AUD.has(x.h))){audioStop();try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}
+    AQ=hs.slice(a,b).map((x,k)=>({...x,rate,on:()=>{if(onIdx)onIdx(a+k)}}));audioNext();return true}}
+  if(onIdx)onIdx(-1);say(ps.slice(a,b).join(' '),rate<1);return false}
+function lisText(t){return `<div class="note lis-text">${lisParts(t).map((x,i)=>`<span class="lsent" data-i="${i}">${esc(x)}</span>`).join(' ')}</div>`}
+function lisHtml(q){const st=q.st,g=lisStage(q);if(g==='exam')return `<div class="note sky" id="lis"><p class="small" id="lisMsg">${T('lis.read',{n:MOTOR.listenRead})}</p></div>`;
+  return `<div class="stack-sm" id="lis">${g==='mee'?lisText(st.say):''}<div class="btn-row"><button class="btn btn-main" id="sp">${TB('lis.play')}</button><button class="btn btn-ghost" id="lisOne" disabled>${TB('lis.again')}</button></div>
+    <div class="seg" role="group" aria-label="${esc(String(t('lis.speed')).replace(/<[^>]*>/g,''))}"><button data-rate=".8" aria-pressed="false">${TB('lis.slow')}</button><button data-rate="1" aria-pressed="true">${TB('lis.normal')}</button><button data-rate="${MOTOR.listenFast}" aria-pressed="false">${TB('lis.fast')}</button></div></div>`}
+function lisBind(q){const st=q.st,g=lisStage(q),card=app.querySelector('.card');let rate=1,cur=0,shown=g==='mee';
+  const here=()=>Q[qi]===q&&!!document.getElementById('lis');
+  const mark=i=>{if(i>=0)cur=i;app.querySelectorAll('.lsent').forEach(e=>e.classList.toggle('on',+e.dataset.i===i));const o=$('#lisOne');if(o&&i>=0)o.disabled=false};
+  const reveal=()=>{if(shown||!here())return;shown=true;const box=$('#lis');box.insertAdjacentHTML('afterbegin',lisText(st.say));if(g==='exam'){box.classList.remove('note','sky');box.classList.add('stack-sm');box.insertAdjacentHTML('beforeend',`<button class="btn btn-ghost" id="sp">${TB('lis.play')}</button>`);$('#sp').onclick=()=>lisPlay(st.say,1,mark)}};
+  const fb=$('#fb');if(fb)new MutationObserver((m,o)=>{if(!here())return o.disconnect();if($('#nx')){o.disconnect();reveal()}}).observe(fb,{childList:true,subtree:true});   // na het antwoord: meelezen
+  if(g==='exam'){let left=MOTOR.listenRead;const tk=setInterval(()=>{if(!here())return clearInterval(tk);left--;const m=$('#lisMsg');if(left>0){if(m)m.innerHTML=T('lis.read',{n:left})}else{clearInterval(tk);if(m)m.innerHTML=T('lis.once');lisPlay(st.say,1,null)}},1000);return}
+  $('#sp').onclick=()=>lisPlay(st.say,rate,mark);$('#lisOne').onclick=()=>lisPlay(st.say,rate,mark,cur,true);
+  app.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>{rate=+b.dataset.rate;app.querySelectorAll('[data-rate]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))})}
 /* Opnemen en terugluisteren (werkvormen 4.1, stap 6 van de werkorder). De opname blijft op het toestel: een eigen IndexedDB-bak,
    niet in de voortgang en niet in de reservekopie, hooguit MOTOR.recKeep opnamen. Terugluisteren via hetzelfde audio-element als het voorbeeld
    (klinkt ook met de stilteschakelaar aan). Achter Proefonderdelen tot het ijkmoment. Lukt opnemen niet, dan blijft de stap zoals hij was. */
@@ -2994,9 +3042,9 @@ H.sc_talk=q=>{const sc=q.sc,tu=q.tu;let first=true,done=false;const opts=shuffle
     if(o.r==='ok'){done=true;b.classList.add('right');score(first,10);practiced(q,first?true:'retry','talk');say(o.t);$('#fb').innerHTML=fbBox(true,scT(o.why),'')+nextBtn();$('#nx').onclick=next}
     else{first=false;b.classList.add('wrong');b.disabled=true;scFault(q,o.err);$('#fb').innerHTML=fbBox(false,scT(o.why),'')}})};
 H.sc_read=q=>{const st=q.st,qq=q.qq;let first=true;
-  scFrame(q,`<div class="card stack">${st.type==='read'?`<div class="note">${scT(st.text)}</div>${scSrc(st)}`:speakBtns('sp','sps')}<p class="prompt">${scT(qq.q)}</p>
+  scFrame(q,`<div class="card stack">${st.type==='read'?`<div class="note">${scT(st.text)}</div>${scSrc(st)}`:lisHtml(q)}<p class="prompt">${scT(qq.q)}</p>
    <div class="choices one">${qq.o.map((o,i)=>`<button class="choice" data-o="${i}">${scT(o)}</button>`).join('')}</div><div id="fb"></div></div>`);
-  if(st.type==='listen'){setTimeout(()=>say(st.say),300);$('#sp').onclick=()=>say(st.say);$('#sps').onclick=()=>say(st.say,true)}
+  if(st.type==='listen')lisBind(q);   /* werkvormen 3.1: niet meer vanzelf; eerst de vraag */
   if(st.type==='read')tikify(app.querySelector('.card'),q);   /* N-M1 */
   app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{const ok=+b.dataset.o===qq.a;b.classList.add(ok?'right':'wrong');
     if(ok){score(first,10);practiced(q,first?true:'retry',st.type);$('#fb').innerHTML=fbBox(true,scT(qq.why),'')+nextBtn();$('#nx').onclick=next}
@@ -3044,11 +3092,11 @@ const scNorm=a=>String(a).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowe
 function scSrc(st){const b=(st&&st.sources)||[];if(!b.length)return '';return `<p class="small muted">${T('scene.source')} ${b.map(x=>{const ti=typeof x==='string'?x:plainX(x.title!=null?x.title:x.t,'nl'),u=x&&typeof x==='object'&&/^https:\/\/[^\s"'<>]+$/.test(x.url||'')?x.url:'';return u?`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(ti)}</a>`:esc(ti)}).join(' · ')}</p>`}
 H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=(q.hard||!!(STEER&&STEER.bored))&&qq.answer!=null&&String(qq.answer).trim().split(/\s+/).length<=3&&(qq.form==='choose'||qq.form==='hear'),   /* lange antwoorden blijven kiezen */f=typeIt?(qq.form==='hear'?'hear-type':'type'):qq.form,help=!!(STEER&&STEER.hard&&!(q.st&&q.st.exam)),nos=!help&&!!(q.hard||sc.nosup||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle'))),   /* MO-M6: twee keer te moeilijk bij scènes: de steuntaal meteen aan, behalve in examenvorm */inst=q.role==='instap'&&S.items[id]&&S.items[id].reps===0;let first=true,done=false;
   let hint=0;const opts=f==='choose'||f==='hear'?shuffle(qq.opts.map((o,i)=>({...o,i}))):null,heard=f==='hear'||f==='hear-type'?(qq.say||((qq.opts||[]).find(o=>o.r==='ok')||{}).t||[].concat(qq.answer)[0]||''):'',hintOk=Array.isArray(qq.hint)&&qq.role!=='controle'&&q.role!=='controle'&&q.role!=='instap'&&!q.hard;
-  scFrame(q,`<div class="card stack">${q.ctx==='read'?`<div class="note">${scT(q.st.text)}</div>${scSrc(q.st)}`:q.ctx==='listen'?speakBtns('sp','sps'):''}${f==='hear'||f==='hear-type'?speakBtns('hp','hps'):''}<p class="prompt" id="ask">${nos?scN(qq.ask):scT(qq.ask)}</p>
+  scFrame(q,`<div class="card stack">${q.ctx==='read'?`<div class="note">${scT(q.st.text)}</div>${scSrc(q.st)}`:q.ctx==='listen'?lisHtml(q):''}${f==='hear'||f==='hear-type'?speakBtns('hp','hps'):''}<p class="prompt" id="ask">${nos?scN(qq.ask):scT(qq.ask)}</p>
    ${opts?`<div class="choices one">${opts.map(o=>`<button class="choice" data-o="${o.i}">${esc(o.t)}</button>`).join('')}</div>`:`<input id="ans" class="input" lang="nl" ${f==='number'?'inputmode="decimal"':''} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">${hintOk?`<div class="hint-row"><button class="hintbtn" id="hint">${T('btn.hint')}</button><span class="hintshow" id="hs" aria-live="polite"></span></div>`:''}<button class="btn btn-leaf" id="chk">${T('btn.check')}</button>`}<div id="fb"></div></div>`);
   if(hintOk&&$('#hint'))$('#hint').onclick=()=>{if(hint>=2)return;$('#hs').innerHTML=scT(qq.hint[hint]);hint++;if(hint>=2)$('#hint').disabled=true};
   if(hintOk&&help&&$('#hint')&&!hint){$('#hs').innerHTML=scT(qq.hint[0]);hint=1;if(qq.hint.length<2)$('#hint').disabled=true}   /* MO-M6: de hint-ladder begint een trede hoger (de eerste hint staat er al; goed telt dan als retry) */   // hint in twee stappen (A6): goed daarna telt als 'retry'
-  if(q.ctx==='listen'){setTimeout(()=>say(q.st.say),300);$('#sp').onclick=()=>say(q.st.say);$('#sps').onclick=()=>say(q.st.say,true)}
+  if(q.ctx==='listen')lisBind(q);   /* werkvormen 3.1 */
   if(q.ctx==='read'&&q.sc&&!nos)tikify(app.querySelector('.card'),q);   /* N-M1 */
   if(f==='hear'||f==='hear-type'){setTimeout(()=>say(heard),300);$('#hp').onclick=()=>say(heard);$('#hps').onclick=()=>say(heard,true)}
   const stand=qq.standpunt===true;   /* standpunt: geen goed of fout, alleen de uitleg bij de eigen keuze */
