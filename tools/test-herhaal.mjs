@@ -83,6 +83,9 @@ ok('woord: drie vormen nodig', !grow('word', ['herkennen', 'typen'], []) && grow
 /* M5, N-M4: een regel bloeit pas als trede 2 (afmaken) beheerst is: drie keer goed bij de eerste poging op trede 2 of hoger, op twee dagen */
 { const m = model(); m.api.setKind('x', 'rule'); m.S.items.x = { ...m.api.item(), s: 3, reps: 3, forms: [], exs: [] }; at(m, 1); m.api.review('x', true, 'make', null, true);
   ok('regel (codereview B1): een eigen zin telt ook als de regel een bij-item is (passief)', m.S.items.x.own === 1 && m.S.items.x.s === 3); }
+{ const m = model(); m.api.setKind('r', 'rule'); m.api.setKind('w', 'word'); m.S.items.r = m.api.item(); m.S.items.w = m.api.item(); at(m, 0); m.api.introduce('r'); m.api.introduce('w'); m.api.review('r', true, 'build'); m.api.review('w', true, 'typen');
+  ok('N-M3: een nieuwe regel komt na 3 dagen terug, een woord na 1', m.S.items.r.s === 3 && m.S.items.w.s === 1, m.S.items.r.s + ' / ' + m.S.items.w.s);
+  at(m, 3); m.api.review('r', false, 'build'); ok('N-M3: na een mislukte poging korter (vandaag nog, daarna minstens een halve dag)', m.S.items.r.s < 3 && m.S.items.r.due <= 3 * 864e5, String(m.S.items.r.s)); }
 ok('regel (G2): zonder eigen zin geen bloei, ook met trede 2', !grow('rule', ['build', 'gap'], ['a', 'b', 'c'], '0b1,1b1,0b1'));
 ok('regel (G2): trede 2 op twee dagen plus een eigen zin (make) = bloei', !grow('rule', ['gap'], ['a', 'b', 'c'], '0g1,1g1,0w1') && !grow('rule', ['build', 'gap'], ['a', 'b'], '0b1,1b1,0w1') && grow('rule', ['build', 'gap'], ['a', 'b', 'c'], '0b1,1b1,0w1'));
 { const m = model(); m.api.setKind('x', 'rule'); m.S.items.x = { ...m.api.item(), s: 30, t: 0, due: 30 * 864e5, reps: 9, forms: ['build', 'gap'], exs: ['a', 'b', 'c'], h: '0b1', hd: 0, gf: 1 }; at(m, 31); m.api.review('x', true, 'gap');

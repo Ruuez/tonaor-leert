@@ -24,6 +24,8 @@ Bijgewerkt: 14 november 2026.
   - Basisregels (uitleg 19, besluit ontwerpsessie): nl.regel.plek2 telt via de eigen zin met inversie in nl-werk (werk-1), nl.regel.heb via die met zijn/hebben in nl-thuis (thu-3).
   - Open: en.regel.s wacht op de eerste Engelse scène. Een make-oefening in een basispakket kan de samensteller niet aan zonder een grote ingreep.
   - De poort G2 blijft in de app een melding, geen weigering (besluit ontwerpsessie); in de redactiepoort weigert hij.
+  - G2 punt 5: tools/dekking.mjs telt per eindterm (tabel hieronder, bij elke release opnieuw). Gaten: lezen-5, schrijven-2 en rekenen-4-procenten hebben nog geen lesstof; examenvorm alleen bij luisteren.
+  - G2 punt 7 (N-M3): een nieuwe regel komt na 3 dagen terug (MOTOR.ruleFirstDays, Suzuki 2017); na een mislukte poging korter. De vergelijking met het Thais alleen waar die past staat in de schrijversopdracht.
   - Redactiepoort: een Latijnse letter vast aan Thaise tekst is een fout.
 - Werkorder stap 5 vervolg en ijkmoment G2 (docs/ijkmoment-g2.md), cache v2-68:
   - M5/N-M4: de trede per regel (kiezen, afmaken, een eigen zin).
@@ -238,6 +240,37 @@ De ervaringstest (`node tools/test-ervaring.mjs --streng`): met thema 1 en de 10
 ## Leidend plan
 
 docs/didactisch-plan.md is het fundament (leeruitkomsten per jaar, leerweg, onderbouwing met bronnen, eisen M1 tot M12 aan de motor). docs/masterplan.md (14 november 2026): de eisen die onverminderd gelden, de catalogus van werkvormen, de stappen 1 tot 13 met wie bouwt en wanneer iets klaar is, en de ijkmomenten G1 tot G5 van de ontwerpsessie. De volgorde daar vervangt de volgorde hieronder en die in docs/bouwplan.md en docs/plan-herzien.md.
+
+## Dekking per eindterm (G2)
+
+<!-- dekking -->
+| Eindterm | Scènes | Vragen | In examenvorm | Toetsvragen |
+|---|---|---|---|---|
+| kennis-aardrijkskunde | 1 | 9 | 0 | 0 |
+| kennis-geschiedenis | 2 | 19 | 0 | 0 |
+| kennis-maatschappij | 2 | 16 | 0 | 0 |
+| kennis-nederland | 19 | 193 | 0 | 14 |
+| nt2-I-lezen-1 | 3 | 72 | 0 | 6 |
+| nt2-I-lezen-2 | 8 | 74 | 0 | 4 |
+| nt2-I-lezen-3 | 8 | 146 | 0 | 12 |
+| nt2-I-lezen-4 | 26 | 369 | 0 | 22 |
+| nt2-I-lezen-5 | 0 | 0 | 0 | 0 |
+| nt2-I-luisteren-1 | 14 | 377 | 6 | 28 |
+| nt2-I-luisteren-2 | 4 | 110 | 6 | 8 |
+| nt2-I-schrijven-1 | 17 | 472 | 0 | 34 |
+| nt2-I-schrijven-2 | 0 | 0 | 0 | 0 |
+| nt2-I-spreken-1 | 20 | 539 | 0 | 40 |
+| nt2-I-spreken-2 | 7 | 165 | 0 | 14 |
+| rekenen-2-grootheden | 3 | 67 | 0 | 6 |
+| rekenen-2-informatie | 4 | 86 | 0 | 8 |
+| rekenen-2-procenten | 1 | 22 | 0 | 2 |
+| rekenen-2-ruimte | 1 | 24 | 0 | 2 |
+| rekenen-2-verhoudingen | 3 | 59 | 0 | 6 |
+| rekenen-4-procenten | 0 | 0 | 0 | 0 |
+| rekenen-steun | 6 | 121 | 0 | 12 |
+
+Geteld door `node tools/dekking.mjs` op 2026-11-18. Toetsvragen = controlevragen aan het eind van een scène; de themaoefentoets volgt in stap 10.
+<!-- /dekking -->
 
 ## Open punten per stap van de werkorder
 
