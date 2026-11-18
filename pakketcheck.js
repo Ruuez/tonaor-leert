@@ -385,6 +385,7 @@
             if (st.type === 'read') tekst(st.text, v + '.text'); else if (typeof st.say !== 'string') err(v + ': say ontbreekt');
             if (!Array.isArray(st.q) || !st.q.length) err(v + ': vragen (q) ontbreken');
             else st.q.forEach(function (qq, qi) { var u = v + '.q[' + qi + ']'; if (qq && qq.form) { vraag(qq, u); return; } tekst(qq.q, u + '.q'); itemsOk(qq.items, u); if (!Array.isArray(qq.o) || qq.o.length < 2) err(u + ': minstens twee keuzes'); else qq.o.forEach(function (o, oi) { tekst(o, u + '.o[' + oi + ']'); }); if (!(Number.isInteger(qq.a) && qq.a >= 0 && qq.a < (qq.o || []).length)) err(u + ': goed antwoord (a) valt buiten de keuzes'); if (!qq.why) err(u + ': why ontbreekt'); else tekst(qq.why, u + '.why'); });
+            (st.q || []).forEach(function (qq, qi) { if (qq && NUMF.indexOf(qq.form) >= 0) err(v + '.q[' + qi + ']: een rekenmodel (' + qq.form + ') kan alleen in quiz of rule, niet bij een tekst'); });   /* codereview stap 6, M1 */
           }
           if (st.type === 'look') { var hot = ((sc.art && sc.art.things) || []).filter(function (t) { return t && t.hot; }).length, mn = st.min == null ? 1 : st.min; if (!Number.isInteger(mn) || mn < 1 || mn > hot) err(v + ': kijken vraagt ' + mn + ' aantikbare dingen, de tekening heeft er ' + hot); }
           if (st.type === 'slot') { if (!(Number.isInteger(st.n) && st.n >= 1 && st.n <= 4)) err(v + ': n moet 1 tot 4 zijn'); if (!Array.isArray(st.kinds) || !st.kinds.length) err(v + ': kinds ontbreekt'); }
@@ -409,7 +410,7 @@
             if (!Array.isArray(st.q) || st.q.length < 3) err(v + ': minstens drie oefeningen'); else { st.q.forEach(function (qq, qi) { vraag(qq, v + '.q[' + qi + ']'); });
               var hp = st.q.map(function (qq) { return qq && qq.help; }); if (hp[hp.length - 1] !== 0 || hp.some(function (h, i) { return i && h > hp[i - 1]; })) err(v + ': de hulp (help) moet afbouwen en eindigen op 0'); } }
           if (st.type === 'extra') { if (ERRS.indexOf(st.err) < 0) err(v + ': err ontbreekt of staat niet in de lijst'); tekst(st.explain, v + '.explain');
-            if (!Array.isArray(st.q) || st.q.length < 2) err(v + ': minstens twee oefeningen'); else st.q.forEach(function (qq, qi) { vraag(qq, v + '.q[' + qi + ']'); }); }
+            if (!Array.isArray(st.q) || st.q.length < 2) err(v + ': minstens twee oefeningen'); else st.q.forEach(function (qq, qi) { if (qq && NUMF.indexOf(qq.form) >= 0) err(v + '.q[' + qi + ']: een rekenmodel (' + qq.form + ') kan niet in extra'); vraag(qq, v + '.q[' + qi + ']'); }); }
           if (st.type === 'end') { if (st.next) tekst(st.next, v + '.next'); if (st.real) tekst(st.real, v + '.real'); }
         });
         if (p.type !== 'les' && (sc.steps || []).some(function (st) { return st && st.dieper; })) err(w + ': dieper kan alleen in een losse les');
@@ -572,6 +573,20 @@
     h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
     return ((h2 >>> 0).toString(16).padStart(8, '0') + (h1 >>> 0).toString(16).padStart(8, '0')).slice(-14);
   }
+  /* Een los woord klinkt in een korte draagzin (geluid.md, issue #31, besluit 18 november 2026): "Het woord is man." Alleen voor woordenschat
+     (een item van soort word, met en zonder lidwoord) en de woorden van een klankpaar (oefening listen); niet voor zinnen, vaste uitdrukkingen,
+     labels of stukjes van een bedrag. Dezelfde regel in de app (welk bestand speelt) en in redactie/geluid.mjs (welk bestand gemaakt wordt). */
+  function audioWordKeys(packs) {
+    var s = {};
+    function add(t) { var k = audioKey(t).toLowerCase(); if (k && k.split(/\s+/).length <= 2 && !/[0-9.!?]/.test(k)) s[k] = 1; }
+    (packs || []).forEach(function (p) {
+      if (!p || p.learn === 'en' || p.type === 'route') return;
+      (p.items || []).forEach(function (x) { if (x && x.kind === 'word' && typeof x.w === 'string') { add(x.w); if (x.art) add(x.art + ' ' + x.w); } });
+      (p.exercises || []).forEach(function (e) { if (e && e.form === 'listen' && e.data) { add(e.data.say); (e.data.opts || []).forEach(add); } });
+    });
+    return s;
+  }
+  function audioSpoken(t, keys) { var k = audioKey(t); return keys && keys[k.toLowerCase()] ? 'Het woord is ' + k + '.' : t; }
   /* zinnen los (zonder lookbehind: oude iOS kent dat niet) */
   function audioParts(s) { return (audioText(s).match(/[^.!?]+(?:[.!?]+["'”’»)\]]*)?/g) || []).map(function (x) { return x.trim(); }).filter(function (x) { return /[A-Za-zÀ-ÿ0-9]/.test(audioKey(x)); }); }   // aanhalingsteken na het slotteken hoort bij de zin
   /* alle Nederlandse teksten die de app uit een pakket kan voorlezen: woord (met lidwoord), voorbeeld, gatzin ingevuld,
@@ -664,6 +679,6 @@
       if (qq.help != null && [0, 1, 2].indexOf(qq.help) < 0) err(u + ': help moet 0, 1 of 2 zijn');
     }
   }
-  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, NUMF: NUMF, numGrade: numGrade, numTol: numTol, stripValue: stripValue, ratioFull: ratioFull, ratioOps: ratioOps, audioTexts: audioTexts, withParts: withParts };
+  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioWordKeys: audioWordKeys, audioSpoken: audioSpoken, NUMF: NUMF, numGrade: numGrade, numTol: numTol, stripValue: stripValue, ratioFull: ratioFull, ratioOps: ratioOps, audioTexts: audioTexts, withParts: withParts };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.PakketCheck = api;
 })(this);

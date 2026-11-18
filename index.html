@@ -10,9 +10,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Leren">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}.lsent{border-radius:.3em;transition:background .2s}.lsent.on{background:var(--sky-fill)}@media (prefers-reduced-motion:reduce){.lsent{transition:none}}
-.nl-line{position:relative;padding:.6rem 0}.nl-line input{width:100%}.nl-real{position:absolute;top:0;bottom:0;width:4px;margin-left:-2px;background:var(--leaf-ink,#3d7a55);border-radius:2px}
-.strip{display:flex;gap:2px}.strip-p{flex:1;height:3rem;border:2px solid var(--sky-fill);background:var(--surface);border-radius:.4rem}.strip-p.on{background:var(--sky-fill)}.strip-top,.strip-bot{text-align:center}
-.rt{border-collapse:collapse;margin:0 auto}.rt th,.rt td{padding:.35rem .5rem;text-align:center}.rt th{text-align:left}.rt-in{width:4.5rem;font:inherit;text-align:center;padding:.3rem;border:2px solid var(--sky-fill);border-radius:.4rem}.rt-in.right{border-color:var(--leaf-ink,#3d7a55)}.rt-in.wrong{border-color:var(--sun-ink,#9a6a1c)}
+.nl-line{position:relative;padding:.6rem 0}.nl-line input{width:100%}.nl-real{position:absolute;top:0;bottom:0;width:4px;margin-left:-2px;background:var(--mint-ink);border-radius:2px}
+.strip{display:flex;flex-wrap:wrap;gap:2px}.strip-p{min-width:2.75rem}.strip-p{flex:1;height:3rem;border:2px solid var(--sky-fill);background:var(--surface);border-radius:.4rem}.strip-p.on{background:var(--sky-fill)}.strip-top,.strip-bot{text-align:center}
+.rt{border-collapse:collapse;margin:0 auto}.rt th,.rt td{padding:.35rem .5rem;text-align:center}.rt th{text-align:left}.rt-in{width:4.5rem;font:inherit;text-align:center;padding:.3rem;border:2px solid var(--sky-fill);border-radius:.4rem}.rt-in.right{border-color:var(--mint-ink)}.rt-in.wrong{border-color:var(--apricot-ink)}
 </style>
 <title>Leren</title>
 <meta name="theme-color" content="#f4f6f1">
@@ -2617,7 +2617,10 @@ function audioEl(){if(!AEL){AEL=new Audio();AEL.setAttribute('playsinline','');A
 /* een bestand dat niet laadt of niet mag spelen: de rest van de tekst door de stem van het toestel (review geluid K1, K3); na stoppen niets (K2) */
 function audioFail(){if(!ACUR)return;const rest=[ACUR].concat(AQ.map(x=>x.t)).join(' '),slow=AEL&&AEL.playbackRate<1;AQ=[];ACUR='';speakDevice(rest,slow,'nl')}
 function audioNext(){const x=AQ.shift();if(!x)return;const a=audioEl();ACUR=x.t;if(x.on)try{x.on()}catch(e){}a.src='audio/nl/'+AUDIOSTEM+'/'+x.h+'.m4a';a.defaultPlaybackRate=a.playbackRate=x.rate||(x.slow?.8:1);const p=a.play();if(p&&p.catch)p.catch(e=>{if(!e||e.name!=='AbortError')audioFail()})}
-function playAudio(t,slow){if(!PC||!PC.audioHash||!AUD.size)return false;const h=PC.audioHash(t,AUDIOSTEM);let list=null;
+function playAudio(t,slow){if(!PC||!PC.audioHash||!AUD.size)return false;if(PC.audioSpoken&&PACKS.length){if(!AWK)AWK=PC.audioWordKeys(PACKS);const w=PC.audioSpoken(t,AWK);if(w!==t)return playAudio1(w,slow)}return playAudio1(t,slow)}
+/* een los woord klinkt in een draagzin, "Het woord is man." (geluid.md, issue #31); de stem van het toestel zegt alleen het woord */
+let AWK=null;
+function playAudio1(t,slow){const h=PC.audioHash(t,AUDIOSTEM);let list=null;
   if(AUD.has(h))list=[{h,t}];else{const parts=PC.audioParts(t);if(parts.length>1){const hs=parts.map(x=>({h:PC.audioHash(x,AUDIOSTEM),t:x}));if(hs.every(x=>AUD.has(x.h)))list=hs}}
   if(!list)return false;voicePend=null;try{clearTimeout(voiceWait)}catch(e){}try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}try{audioEl().pause()}catch(e){}AQ=list.map(x=>({...x,slow}));audioNext();return true}
 function noteNoAudio(t){if(!AUD.size||STORE!=='ok')return;const k=String(PC&&PC.audioKey?PC.audioKey(t):t).slice(0,200);if(!k)return;const L=Array.isArray(S.audioMiss)?S.audioMiss:[];if(L.includes(k))return;S.audioMiss=L.concat([k]).slice(-AUDIOMISSMAX);save()}
@@ -2627,7 +2630,7 @@ function audioStop(){AQ=[];ACUR='';try{if(AEL)AEL.pause()}catch(e){}}
    het fragment één keer, niet te pauzeren, de tekst pas na het antwoord). Snelheid langzaam, gewoon, iets sneller en "deze zin nog eens", behalve in de examenvorm. */
 function lisStage(q){if(q.st&&q.st.exam)return 'exam';if(q.hard)return 'luister';const n=SCENES.filter(o=>(((S.world||{}).done)||{})[o.sc.id]&&(o.sc.steps||[]).some(x=>x&&x.type==='listen')).length;return n<MOTOR.listenFade?'mee':'luister'}
 function lisParts(t){t=String(t==null?'':t);const ps=PC&&PC.audioParts?PC.audioParts(t):[];return ps.length?ps:[t]}
-function lisPlay(t,rate,onIdx,from,only){const ps=lisParts(t),a=from||0,b=only?a+1:ps.length;
+function lisPlay(t,rate,onIdx,from,only){if(QUIET)return false;voicePend=null;try{clearTimeout(voiceWait)}catch(e){}const ps=lisParts(t),a=from||0,b=only?a+1:ps.length;
   if(PC&&PC.audioHash&&AUD.size){const hs=ps.map(x=>({h:PC.audioHash(x,AUDIOSTEM),t:x}));if(hs.every(x=>AUD.has(x.h))){audioStop();try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}
     AQ=hs.slice(a,b).map((x,k)=>({...x,rate,on:()=>{if(onIdx)onIdx(a+k)}}));audioNext();return true}}
   if(onIdx)onIdx(-1);say(ps.slice(a,b).join(' '),rate<1);return false}
@@ -2640,7 +2643,9 @@ function lisBind(q){const st=q.st,g=lisStage(q),card=app.querySelector('.card');
   const mark=i=>{if(i>=0)cur=i;app.querySelectorAll('.lsent').forEach(e=>e.classList.toggle('on',+e.dataset.i===i));const o=$('#lisOne');if(o&&i>=0)o.disabled=false};
   const reveal=()=>{if(shown||!here())return;shown=true;const box=$('#lis');box.insertAdjacentHTML('afterbegin',lisText(st.say));if(g==='exam'){box.classList.remove('note','sky');box.classList.add('stack-sm');box.insertAdjacentHTML('beforeend',`<button class="btn btn-ghost" id="sp">${TB('lis.play')}</button>`);$('#sp').onclick=()=>lisPlay(st.say,1,mark)}};
   const fb=$('#fb');if(fb)new MutationObserver((m,o)=>{if(!here())return o.disconnect();if($('#nx')){o.disconnect();reveal()}}).observe(fb,{childList:true,subtree:true});   // na het antwoord: meelezen
-  if(g==='exam'){let left=MOTOR.listenRead;const tk=setInterval(()=>{if(!here())return clearInterval(tk);left--;const m=$('#lisMsg');if(left>0){if(m)m.innerHTML=T('lis.read',{n:left})}else{clearInterval(tk);if(m)m.innerHTML=T('lis.once');lisPlay(st.say,1,null)}},1000);return}
+  if(g==='exam'){if(q._lisTk)clearInterval(q._lisTk);const lock=on=>app.querySelectorAll('.card .choice,#ans,#chk').forEach(x=>{if(on)x.setAttribute('disabled','');else x.removeAttribute('disabled')});
+    const ready=()=>{const m=$('#lisMsg');if(m)m.innerHTML=`${T('lis.once')}</p><button class="btn btn-main" id="lisGo">${TB('lis.play')}</button><p>`;const b=$('#lisGo');if(b)b.onclick=()=>{q._lisPlayed=true;b.remove();lock(false);lisPlay(st.say,1,null)}};   // codereview M3: afspelen na een tik (iOS), één keer
+    if(q._lisPlayed)return;lock(true);if(q._lisLeft===0)return ready();let left=q._lisLeft==null?MOTOR.listenRead:q._lisLeft;const tk=setInterval(()=>{if(!here())return clearInterval(tk);left--;q._lisLeft=Math.max(0,left);const m=$('#lisMsg');if(left>0){if(m)m.innerHTML=T('lis.read',{n:left})}else{clearInterval(tk);ready()}},1000);q._lisTk=tk;return}   // codereview M4: na een taalwissel loopt dezelfde leestijd door
   $('#sp').onclick=()=>lisPlay(st.say,rate,mark);$('#lisOne').onclick=()=>lisPlay(st.say,rate,mark,cur,true);
   app.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>{rate=+b.dataset.rate;app.querySelectorAll('[data-rate]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))})}
 /* Opnemen en terugluisteren (werkvormen 4.1, stap 6 van de werkorder). De opname blijft op het toestel: een eigen IndexedDB-bak,
@@ -2652,14 +2657,15 @@ function recMime(){try{for(const m of ['audio/mp4','audio/webm;codecs=opus','aud
 function recAbort(){const r=RECNOW;RECNOW=null;if(!r)return;r.cancel=true;clearTimeout(r.timer);try{if(r.mr.state!=='inactive')r.mr.stop()}catch(e){}try{r.stream.getTracks().forEach(x=>x.stop())}catch(e){}}
 function recStop(){const r=RECNOW;if(r)try{if(r.mr.state!=='inactive')r.mr.stop()}catch(e){}}
 async function recStart(maxSec,onDone){recAbort();audioStop();try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}
-  const stream=await navigator.mediaDevices.getUserMedia({audio:true}),mime=recMime(),mr=mime?new MediaRecorder(stream,{mimeType:mime}):new MediaRecorder(stream),chunks=[],r={mr,stream,cancel:false,timer:null};RECNOW=r;
+  const stream=await navigator.mediaDevices.getUserMedia({audio:true}),mime=recMime();let mr;try{mr=mime?new MediaRecorder(stream,{mimeType:mime}):new MediaRecorder(stream)}catch(e){try{stream.getTracks().forEach(x=>x.stop())}catch(_){}throw e}   // codereview: microfoon dicht als de recorder niet start
+  const chunks=[],r={mr,stream,cancel:false,timer:null};RECNOW=r;
   mr.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
   mr.onstop=()=>{clearTimeout(r.timer);try{stream.getTracks().forEach(x=>x.stop())}catch(e){}if(RECNOW===r)RECNOW=null;if(r.cancel||!chunks.length)return onDone(null);onDone(new Blob(chunks,{type:mr.mimeType||mime||'audio/mp4'}))};
-  mr.start();r.timer=setTimeout(()=>{try{if(mr.state!=='inactive')mr.stop()}catch(e){}},maxSec*1000);return r}
+  try{mr.start()}catch(e){recAbort();throw e}r.timer=setTimeout(()=>{try{if(mr.state!=='inactive')mr.stop()}catch(e){}},maxSec*1000);return r}
 function recPlay(blob){if(!blob)return;audioStop();try{if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel()}catch(e){}const a=audioEl();try{if(RECURL)URL.revokeObjectURL(RECURL)}catch(e){}RECURL=URL.createObjectURL(blob);a.src=RECURL;a.defaultPlaybackRate=a.playbackRate=1;const pl=a.play();if(pl&&pl.catch)pl.catch(()=>{})}
 function recDb(){return new Promise((ok,no)=>{try{const o=indexedDB.open(RECDB,1);o.onupgradeneeded=()=>{o.result.createObjectStore('rec',{keyPath:'k',autoIncrement:true})};o.onsuccess=()=>ok(o.result);o.onerror=()=>no(o.error)}catch(e){no(e)}})}
-async function recSave(blob,exid){if(!blob||STORE!=='ok')return;try{const db=await recDb();await new Promise((ok,no)=>{const tx=db.transaction('rec','readwrite'),st=tx.objectStore('rec');st.add({at:now(),exid:String(exid||'').slice(0,80),type:blob.type,blob});
-  const rq=st.getAllKeys();rq.onsuccess=()=>{const ks=rq.result||[];ks.slice(0,Math.max(0,ks.length-MOTOR.recKeep)).forEach(k=>st.delete(k))};tx.oncomplete=()=>ok();tx.onerror=()=>no(tx.error)});db.close()}catch(e){}}   // lukt bewaren niet (privévenster), dan alleen deze keer terugluisteren
+async function recSave(blob,exid){if(!blob||STORE!=='ok')return;let db=null;try{db=await recDb();await new Promise((ok,no)=>{const tx=db.transaction('rec','readwrite'),st=tx.objectStore('rec');st.add({at:now(),exid:String(exid||'').slice(0,80),type:blob.type,blob});
+  const rq=st.getAllKeys();rq.onsuccess=()=>{const ks=rq.result||[];ks.slice(0,Math.max(0,ks.length-MOTOR.recKeep)).forEach(k=>st.delete(k))};tx.oncomplete=()=>ok();tx.onerror=()=>no(tx.error)})}catch(e){}finally{try{if(db)db.close()}catch(e){}}}   // codereview: altijd sluiten, anders blokkeert wissen   // lukt bewaren niet (privévenster), dan alleen deze keer terugluisteren
 function recWipe(){try{if(typeof indexedDB!=='undefined')indexedDB.deleteDatabase(RECDB)}catch(e){}}
 function say(t,slow,lang,waited){if(QUIET)return;lang=LANGS[lang]?lang:'nl';t=String(t==null?'':t).replace(/_{2,}/g,'…');   // een open plek leest als een pauze
   if(lang==='nl'&&!waited){const tt=t;if(playAudio(tt,slow))return;noteNoAudio(tt)}
@@ -3132,7 +3138,7 @@ H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=(q.hard||!!(STEER&&STEER.b
 /* spreken (stap speak): de situatie, het voorbeeld om te horen, opnemen en terugluisteren naast het voorbeeld (werkvormen 4.1), de checklist om zelf af te vinken.
    De app keurt niet (masterplan 16): de leerder kiest klonk goed of nog niet. Examenvorm (scenes.md): geen steuntaal, de tijd zichtbaar, de opname stopt zelf,
    het voorbeeld pas na de opname; bij long eerst voorbereidingstijd. Zonder opnemen (uit, niet mogelijk, geen toestemming): voorbeeld en checklist zoals voorheen. */
-H.sc_speak=q=>{const st=q.st,m=plainX(st.model,'nl'),ex=!!st.exam,max=ex?(MOTOR.speakLen[st.len]||MOTOR.speakLen.medium):MOTOR.recMax;let can=recOk(),blob=null,mode='idle',left=0,tick=null;
+H.sc_speak=q=>{const st=q.st,m=plainX(st.model,'nl'),ex=!!st.exam,max=ex?(MOTOR.speakLen[st.len]||MOTOR.speakLen.medium):MOTOR.recMax;let can=recOk(),blob=null,mode='idle',left=0,tick=null;const checked=new Set();
   const here=()=>Q[qi]===q&&app.classList.contains('sess')&&!!document.getElementById('spk');
   const stopTick=()=>{clearInterval(tick);tick=null};
   const ask=ex?`<p class="prompt" lang="nl">${esc(scP(st.ask))}</p>`:`<p class="prompt">${scT(st.ask)}</p>`;
@@ -3144,16 +3150,18 @@ H.sc_speak=q=>{const st=q.st,m=plainX(st.model,'nl'),ex=!!st.exam,max=ex?(MOTOR.
     :`<button class="btn btn-main" id="rcGo">${TB(ex&&st.len==='long'?'rec.prepGo':'rec.go')}</button>${ex?`<p class="small muted">${T('rec.examTip',{n:max})}</p>`:''}`;
   const draw=()=>{const showModel=!ex||!can||!!blob,showEnd=!can||(!!blob&&mode==='idle');
     scFrame(q,`<div class="card stack" id="spk">${T('scene.speakTitle')}${ask}${showModel?model():''}${recPart()}
-      ${showEnd?`<p class="small muted">${T('scene.speakCheck')}</p><ul class="stack-sm" style="list-style:none;padding:0">${st.checklist.map((c,k)=>`<li><label class="row" style="gap:.5rem;align-items:flex-start"><input type="checkbox" id="ck${k}"> <span>${ex?`<span lang="nl">${esc(scP(c))}</span>`:scT(c)}</span></label></li>`).join('')}</ul><button class="btn btn-leaf" id="mk1">${TB(can?'rec.ok':'scene.speakOk')}</button><button class="btn btn-ghost" id="mk2">${TB(can?'rec.notYet':'scene.makeAlmost')}</button>`:''}</div>`);
+      ${showEnd?`<p class="small muted">${T('scene.speakCheck')}</p><ul class="stack-sm" style="list-style:none;padding:0">${st.checklist.map((c,k)=>`<li><label class="row" style="gap:.5rem;align-items:flex-start"><input type="checkbox" id="ck${k}" data-ck="${k}"${checked.has(k)?' checked':''}> <span>${ex?`<span lang="nl">${esc(scP(c))}</span>`:scT(c)}</span></label></li>`).join('')}</ul><button class="btn btn-leaf" id="mk1">${TB(can?'rec.ok':'scene.speakOk')}</button><button class="btn btn-ghost" id="mk2">${TB(can?'rec.notYet':'scene.makeAlmost')}</button>`:''}</div>`);
     if($('#sp'))$('#sp').onclick=()=>say(m);if($('#sps'))$('#sps').onclick=()=>say(m,true);
+    app.querySelectorAll('[data-ck]').forEach(c=>c.onchange=()=>{c.checked?checked.add(+c.dataset.ck):checked.delete(+c.dataset.ck)});
     if($('#rcMe'))$('#rcMe').onclick=()=>recPlay(blob);
     if($('#rcAgain'))$('#rcAgain').onclick=()=>{audioStop();blob=null;mode='idle';draw()};
     if($('#rcStop'))$('#rcStop').onclick=()=>recStop();
-    if($('#rcGo'))$('#rcGo').onclick=()=>{if(ex&&st.len==='long'&&mode==='idle'){mode='prep';left=MOTOR.speakPrep;draw();stopTick();tick=setInterval(()=>{if(!here())return stopTick();left--;if(left<=0){stopTick();go()}else{const p=document.querySelector('#spk .stack-sm p');if(p)p.innerHTML=T('rec.prep',{n:left})}},1000);return}stopTick();go()};
+    if($('#rcGo'))$('#rcGo').onclick=()=>{if(mode!=='idle'&&mode!=='prep')return;if(ex&&st.len==='long'&&mode==='idle'){mode='prep';left=MOTOR.speakPrep;draw();stopTick();const id=setInterval(()=>{if(!here()||mode!=='prep'){clearInterval(id);return}left--;if(left<=0){clearInterval(id);go()}else{const p=document.querySelector('#spk .stack-sm p');if(p)p.innerHTML=T('rec.prep',{n:left})}},1000);tick=id;return}stopTick();go()};
     if($('#mk1'))$('#mk1').onclick=()=>{audioStop();score(true,15);practiced(q,true,'spreken');next()};
     if($('#mk2'))$('#mk2').onclick=()=>{audioStop();score(false,15,8);practiced(q,'retry','spreken');next()}};
-  const go=()=>{recStart(max,b=>{stopTick();if(!here())return;mode='idle';blob=b;if(b)recSave(b,q.exid);else toast(tx('rec.empty'));draw()}).then(()=>{if(!here())return recAbort();mode='rec';left=max;draw();
-      tick=setInterval(()=>{if(!here()){stopTick();return recAbort()}left=Math.max(0,left-1);const i=document.querySelector('#spk .timer i'),n=document.querySelector('#spk .timer + p');if(i)i.style.width=(left/max*100)+'%';if(n)n.innerHTML=T('rec.left',{n:left})},1000)})
+  const go=()=>{if(mode==='start'||mode==='rec')return;mode='start';const gb=$('#rcGo');if(gb)gb.disabled=true;   // codereview B1: een tweede tik start geen tweede opname
+    recStart(max,b=>{stopTick();if(!here())return;mode='idle';blob=b;if(b)recSave(b,q.exid);else toast(tx('rec.empty'));draw()}).then(()=>{if(!here())return recAbort();mode='rec';left=max;draw();
+      const id=setInterval(()=>{if(!here()||mode!=='rec'){clearInterval(id);if(!here())recAbort();return}left=Math.max(0,left-1);const i=document.querySelector('#spk .timer i'),n=document.querySelector('#spk .timer + p');if(i)i.style.width=(left/max*100)+'%';if(n)n.innerHTML=T('rec.left',{n:left})},1000);tick=id})
     .catch(()=>{stopTick();can=false;mode='idle';toast(tx('rec.noMic'));if(here())draw()})};   // geen toestemming of geen microfoon: verder zoals voorheen, geen fout
   draw()};
 /* Rekenen met een model (werkvormen 1.1-1.3): de getallenlijn (een stip schuiven naar het getal; goed binnen tol, retry binnen tweemaal tol),
@@ -3161,12 +3169,15 @@ H.sc_speak=q=>{const st=q.st,m=plainX(st.model,'nl'),ex=!!st.exam,max=ex?(MOTOR.
    bij de pijl afbouwend met help 2, 1, 0). Gesloten nagekeken met de functies uit pakketcheck (dezelfde code in de test). Tweede kans bij strook en tabel. */
 const NUMFORM={numline:'getallenlijn',strip:'strook',ratio:'tabel'};
 function numFmt(x){return String(Math.round(x*1000)/1000).replace('.',',')}
-function numIn(v){v=String(v==null?'':v).trim().replace(/\s/g,'').replace(/^€/,'').replace(',','.');return v===''||isNaN(+v)?null:+v}
-H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f];let first=true,done=false;
-  const end=(res,msg)=>{done=true;const e=qq.err;score(res===true,10);if(res===false)later(()=>scFault(q,e));practiced(q,res,code);$('#fb').innerHTML=fbBox(res!==false,msg,'')+nextBtn();$('#nx').onclick=next};
+function numIn(v){if(String(v==null?'':v).trim()==='')return null;const n=scNum(v);return isNaN(n)?null:n}   /* codereview: zoals de andere rekenvragen (1.000, 5 euro, min) */
+const NUMEPS=.005;   // een vak is goed tot op twee decimalen
+H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f],sc=q.sc,nos=!!(q.hard||(sc&&sc.nosup)||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle'))),inst=q.role==='instap'&&S.items[q.items[0]]&&S.items[q.items[0]].reps===0;let first=true,done=false;
+  const end=(res,msg)=>{done=true;const e=qq.err;score(res===true,10);if(res===true&&SCN&&SCN.sc===sc)SCN.good++;   // codereview M2: dezelfde rol in de scène als sc_q
+    if(q.role==='controle'&&SCN){if(res===false)later(()=>{SCN.ctrl=false});else SCN.ctrl=SCN.ctrl!==false&&res===true}
+    if(res===false)later(()=>scFault(q,e));if(q.role==='instap'&&res===true)scKnow(q);else if(!(inst&&res===false))practiced(q,res,code);$('#fb').innerHTML=fbBox(res!==false,msg,'')+nextBtn();$('#nx').onclick=next};
   const why=()=>scT(qq.why);
   if(f==='numline'){const span=qq.to-qq.from,pc=x=>Math.max(0,Math.min(100,(x-qq.from)/span*100));let v=null;
-    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${scT(qq.ask)}</p><p class="big num" style="text-align:center" lang="nl">${esc(qq.show)}</p>
+    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${nos?scN(qq.ask):scT(qq.ask)}</p><p class="big num" style="text-align:center" lang="nl">${esc(qq.show)}</p>
       <div class="nl-line"><input type="range" id="nlr" min="${qq.from}" max="${qq.to}" step="${span/400}" value="${qq.from}" aria-label="${esc(String(t('num.line')).replace(/<[^>]*>/g,''))}"><div class="nl-real" id="nlReal" hidden></div></div>
       <div class="row between small muted"><span class="num">${esc(numFmt(qq.from))}</span><span class="num">${esc(numFmt(qq.to))}</span></div>
       <button class="btn btn-main" id="chk" disabled>${TB('num.done')}</button><div id="fb"></div></div>`);
@@ -3175,7 +3186,7 @@ H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f];let first=true,done=false;
       end(r,`${T('num.off',{d:esc(numFmt(Math.round(Math.abs(v-qq.target)*1000)/1000))})}<br>${why()}`)};return}
   if(f==='strip'){const n=qq.parts,on=new Set(),u=qq.unit?esc(qq.unit)+' ':'';
     const draw=()=>{const k=on.size;return `<div class="strip-top num small">${u}${esc(numFmt(PC.stripValue(qq,k)))} / ${u}${esc(numFmt(qq.total))}</div><div class="strip" role="group">${Array.from({length:n},(_,i)=>`<button class="strip-p${on.has(i)?' on':''}" data-p="${i}" aria-pressed="${on.has(i)}" aria-label="${i+1}"></button>`).join('')}</div><div class="strip-bot num small muted">${esc(numFmt(Math.round(k/n*1000)/10))}%</div>`};
-    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${scT(qq.ask)}</p><p class="small muted">${T('strip.tap')}</p><div id="stp">${draw()}</div><button class="btn btn-main" id="chk">${TB('num.done')}</button><div id="fb"></div></div>`);
+    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${nos?scN(qq.ask):scT(qq.ask)}</p><p class="small muted">${T('strip.tap')}</p><div id="stp">${draw()}</div><button class="btn btn-main" id="chk">${TB('num.done')}</button><div id="fb"></div></div>`);
     const bind=()=>app.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{if(done)return;const i=+b.dataset.p;on.has(i)?on.delete(i):on.add(i);$('#stp').innerHTML=draw();bind()});bind();
     $('#chk').onclick=()=>{if(done)return;const good=Math.abs(PC.stripValue(qq,on.size)-qq.answer)<1e-6;
       if(good){$('#chk').remove();return end(first?true:'retry',why())}
@@ -3184,10 +3195,10 @@ H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f];let first=true,done=false;
   if(f==='ratio'){const help=qq.help==null?2:qq.help,ops=PC.ratioOps(qq),full=PC.ratioFull(qq);let qn=0;
     const cell=(c,r,i)=>i===0?`<th scope="row">${esc(c)}</th>`:c==='?'?`<td><input class="rt-in" inputmode="decimal" autocomplete="off" data-r="${r}" data-i="${i}" data-k="${qn++}" aria-label="${esc(qq.rows[r][0])}"></td>`:`<td class="num">${esc(numFmt(c))}</td>`;
     const arrows=help?`<tr class="rt-ops"><td></td>${qq.rows[0].slice(1).map((_,i)=>i<ops.length?`<td class="num small muted">${help===2&&ops[i]?'→ '+esc(ops[i]):'→'}</td>`:'<td></td>').join('')}</tr>`:'';
-    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${scT(qq.ask)}</p><table class="rt">${arrows}${qq.rows.map((row,r)=>`<tr>${row.map((c,i)=>cell(c,r,i)).join('')}</tr>`).join('')}</table>
+    scFrame(q,`<div class="card stack"><p class="prompt" id="ask">${nos?scN(qq.ask):scT(qq.ask)}</p><div style="overflow-x:auto"><table class="rt">${arrows}${qq.rows.map((row,r)=>`<tr>${row.map((c,i)=>cell(c,r,i)).join('')}</tr>`).join('')}</table></div>
       <button class="btn btn-main" id="chk">${TB('num.done')}</button><div id="fb"></div></div>`);
     const ins=[...app.querySelectorAll('.rt-in')];
-    $('#chk').onclick=()=>{if(done)return;let bad=0;ins.forEach(x=>{const want=qq.answers[+x.dataset.k],v=numIn(x.value),ok=v!=null&&Math.abs(v-want)<1e-6;x.classList.toggle('wrong',!ok);x.classList.toggle('right',ok);if(!ok)bad++});
+    $('#chk').onclick=()=>{if(done)return;let bad=0;ins.forEach(x=>{const want=qq.answers[+x.dataset.k],v=numIn(x.value),ok=v!=null&&Math.abs(v-want)<NUMEPS;x.classList.toggle('wrong',!ok);x.classList.toggle('right',ok);if(!ok)bad++});
       if(!bad){$('#chk').remove();ins.forEach(x=>x.disabled=true);return end(first?true:'retry',why())}
       if(first){first=false;$('#fb').innerHTML=fbBox(false,T('scene.again'),'');return}
       $('#chk').remove();ins.forEach(x=>{x.disabled=true;x.value=numFmt(qq.answers[+x.dataset.k])});end(false,`${T('scene.answer')}<br>${why()}`)};

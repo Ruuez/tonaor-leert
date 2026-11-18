@@ -16,7 +16,9 @@ ok(/if\(q\.st&&q\.st\.exam\)return 'exam';if\(q\.hard\)return 'luister';/.test(l
 ok(/listenFade:3, listenRead:25/.test(html), 'meelezen 3 scènes, leestijd 25 seconden (scenes.md)');
 /* 3. examenvorm: geen knoppen, één keer, na de leestijd, tekst pas na het antwoord */
 ok(/if\(g==='exam'\)return `<div class="note sky" id="lis">/.test(lis) && !/if\(g==='exam'\)return `[^`]*data-rate/.test(lis), 'examenvorm zonder afspeel- en snelheidsknoppen');
-ok(/else\{clearInterval\(tk\);if\(m\)m\.innerHTML=T\('lis\.once'\);lisPlay\(st\.say,1,null\)\}/.test(lis), 'examenvorm speelt na de leestijd één keer');
+ok(/else\{clearInterval\(tk\);ready\(\)\}/.test(lis) && /b\.onclick=\(\)=>\{q\._lisPlayed=true;b\.remove\(\);lock\(false\);lisPlay\(st\.say,1,null\)\}/.test(lis), 'examenvorm: na de leestijd een knop, één keer afspelen (iOS speelt alleen na een tik)');
+ok(/if\(q\._lisPlayed\)return;lock\(true\)/.test(lis) && /if\(q\._lisTk\)clearInterval\(q\._lisTk\)/.test(lis), 'examenvorm: niet antwoorden voor het luisteren; een taalwissel start geen tweede teller');
+ok(/function lisPlay\(t,rate,onIdx,from,only\)\{if\(QUIET\)return false;/.test(lis), 'stille stand: geen geluid');
 ok(/if\(\$\('#nx'\)\)\{o\.disconnect\(\);reveal\(\)\}/.test(lis), 'de tekst komt pas na het antwoord (luisteren en examen)');
 /* 4. veilig tonen: elke zin via esc */
 ok(/<span class="lsent" data-i="\$\{i\}">\$\{esc\(x\)\}<\/span>/.test(lis), 'zinnen via esc');

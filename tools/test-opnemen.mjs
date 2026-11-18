@@ -35,7 +35,10 @@ ok(/showModel=!ex\|\|!can\|\|!!blob/.test(sp), 'examenvorm: het voorbeeld pas na
 /* 5. opruimen: een ander scherm stopt de opname en de microfoon */
 ok(/function show\(t\)\{audioStop\(\);recAbort\(\);/.test(html), 'show stopt een lopende opname');
 ok(/getTracks\(\)\.forEach\(x=>x\.stop\(\)\)/.test(cut('function recAbort(', 'function recStop(')), 'recAbort zet de microfoon uit');
-ok(/if\(!here\(\)\)\{stopTick\(\);return recAbort\(\)\}/.test(sp), 'weg van de stap tijdens het opnemen: stoppen');
+ok(/const id=setInterval\(\(\)=>\{if\(!here\(\)\|\|mode!=='rec'\)\{clearInterval\(id\);if\(!here\(\)\)recAbort\(\);return\}/.test(sp), 'weg van de stap tijdens het opnemen: stoppen; elke teller wist zichzelf');
+ok(/const go=\(\)=>\{if\(mode==='start'\|\|mode==='rec'\)return;mode='start';/.test(sp) && /onclick=\(\)=>\{if\(mode!=='idle'&&mode!=='prep'\)return;/.test(sp), 'dubbel tikken start geen tweede opname (codereview B1)');
+ok(/catch\(e\)\{try\{stream\.getTracks\(\)\.forEach\(x=>x\.stop\(\)\)\}catch\(_\)\{\}throw e\}/.test(html), 'start de recorder niet, dan gaat de microfoon dicht');
+ok(/finally\{try\{if\(db\)db\.close\(\)\}catch\(e\)\{\}\}/.test(html), 'de bak gaat altijd dicht, zodat wissen niet blokkeert');
 
 /* 6. teksten in drie talen */
 for (const k of ['rec.go', 'rec.prep', 'rec.left', 'rec.stop', 'rec.me', 'rec.again', 'rec.ok', 'rec.notYet', 'rec.examTip', 'rec.noMic', 'rec.empty', 'rec.busy', 'rec.startNow', 'rec.prepGo'])

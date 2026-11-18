@@ -19,12 +19,13 @@ const check = process.argv.includes('--controleer');
 const dir = join(ROOT, 'audio', 'nl', STEM);
 
 // teksten per pakket
-const sets = readdirSync(join(ROOT, 'content')).filter(f => f.endsWith('.json') && f !== 'index.json')
-  .map(f => JSON.parse(readFileSync(join(ROOT, 'content', f), 'utf8'))).map(p => ({ id: p.id, texts: PC.audioTexts(p) }));
+const packs = readdirSync(join(ROOT, 'content')).filter(f => f.endsWith('.json') && f !== 'index.json').map(f => JSON.parse(readFileSync(join(ROOT, 'content', f), 'utf8')));
+const WK = PC.audioWordKeys(packs);   // een los woord in een draagzin (geluid.md, issue #31)
+const sets = packs.map(p => ({ id: p.id, texts: PC.audioTexts(p).map(t => PC.audioSpoken(t, WK)) }));
 // vaste zinnen die de app zelf voorleest: say('…') en say("…") in index.html
 const html = readFileSync(join(ROOT, 'index.html'), 'utf8'), lit = [];
 for (const m of html.matchAll(/\bsay\((['"])((?:(?!\1)[^\\]|\\.)+)\1/g)) lit.push(m[2].replace(/\\(.)/g, '$1'));
-sets.push({ id: 'app', texts: PC.withParts(lit) });
+sets.push({ id: 'app', texts: PC.withParts(lit).map(t => PC.audioSpoken(t, WK)) });
 
 const want = new Map();   // hash -> tekst
 const lists = sets.filter(s => s.texts.length).map(s => {

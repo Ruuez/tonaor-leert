@@ -24,4 +24,13 @@ if (existsSync(dir)) {
 }
 const html = readFileSync(new URL('index.html', ROOT), 'utf8'), lijn = readFileSync(new URL('redactie/geluid.mjs', ROOT), 'utf8');
 ok('app en lijn gebruiken dezelfde stem', /const AUDIOSTEM='([a-z0-9_-]+)'/.exec(html)[1] === /const STEM = '([a-z0-9_-]+)'/.exec(lijn)[1]);
+/* een los woord in een draagzin (geluid.md, issue #31) */
+{ const PCd = (await import('node:module')).createRequire(import.meta.url)('../pakketcheck.js'), K = { man: 1, 'de man': 1 };
+  const okd = (c, m) => { if (!c) { console.log('FOUT: ' + m); process.exitCode = 1; } };
+  okd(PCd.audioSpoken('man', K) === 'Het woord is man.' && PCd.audioSpoken('de man', K) === 'Het woord is de man.', 'woordenschat krijgt een draagzin');
+  okd(PCd.audioSpoken('Ja.', K) === 'Ja.' && PCd.audioSpoken('De man komt.', K) === 'De man komt.' && PCd.audioSpoken('vijftig cent', K) === 'vijftig cent', 'zinnen, stukjes en onbekende teksten niet');
+  const hh = (await import('node:fs')).readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  okd(/const w=PC\.audioSpoken\(t,AWK\);if\(w!==t\)return playAudio1\(w,slow\)/.test(hh), 'de app speelt het bestand van de draagzin');
+  const gm = (await import('node:fs')).readFileSync(new URL('../redactie/geluid.mjs', import.meta.url), 'utf8');
+  okd(/PC\.audioTexts\(p\)\.map\(t => PC\.audioSpoken\(t, WK\)\)/.test(gm), 'geluid.mjs maakt de draagzin met dezelfde regel'); }
 console.log(fails ? fails + ' FOUT' : 'alles OK');

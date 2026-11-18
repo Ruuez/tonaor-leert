@@ -88,3 +88,31 @@ Stand: 18 november 2026. Hoort bij stap 6 van `werkorder.md`. Het ontwerp per we
 - Een tekening in `uitleg.js` hoort er nog niet bij: de modellen staan in het scherm zelf.
 
 **Test:** `tools/test-rekenmodellen.mjs`. In de browser gecontroleerd op 375 px met proefvragen: alle drie de vormen, goed, de tweede kans, en een antwoord met een komma.
+
+## Codereview van de eerste drie vormen (18 november 2026)
+
+Een onafhankelijke reviewer kreeg alleen de code. Verwerkt:
+- **Opnemen:**
+  - Dubbel tikken start geen tweede opname meer. Voorheen kon de microfoon blijven lopen en braken latere opnames (blokkerend).
+  - Elke teller wist zichzelf.
+  - Start de recorder niet, dan gaat de microfoon dicht.
+  - De opnamebak gaat altijd dicht, zodat Alles wissen niet blokkeert.
+  - Vinkjes blijven staan bij het hertekenen.
+- **Luistertekst:**
+  - In de examenvorm verschijnt na de leestijd een knop om af te spelen. iOS speelt geluid alleen na een tik.
+  - Antwoorden kan pas na het luisteren.
+  - Een taalwissel start geen tweede teller.
+  - De stille stand wordt gerespecteerd.
+- **Rekenvormen:**
+  - Dezelfde rol in de scène als een gewone vraag: controle, instap, record, en zonder steuntaal waar dat hoort.
+  - Getallen worden gelezen zoals bij de andere rekenvragen, tot op twee decimalen.
+  - Een brede tabel scrolt binnen de kaart.
+  - Een strook met veel delen loopt door op een tweede rij.
+  - De kleuren komen uit het palet.
+  - De poort weigert een rekenmodel bij een tekst of in `extra`.
+
+**Open, ligt bij de eigenaar (privacy):** de opnamen worden bewaard (hooguit 30), maar nog niets leest ze terug en er is geen eigen wisknop. De keuzes:
+- niet bewaren: alleen terugluisteren direct na het opnemen;
+- bewaren voor de tijdcapsule (werkvormen 4.5), met een eigen wisknop op Ik.
+
+Tot het besluit blijft het zoals het is: achter Proefonderdelen, en weg bij Alles wissen.

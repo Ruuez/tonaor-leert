@@ -81,3 +81,13 @@ Met bron A is er waarschijnlijk geen goede Thaise stem. Tot de eigenaar over B b
 5. De service worker met de eigen geluidscache.
 6. Getallen uit stukken.
 7. De inspreekhulp en opnemen (`werkvormen.md` 4.1) op hetzelfde afspelen.
+
+## Losse woorden die onduidelijk klinken (issue #31, besluit 18 november 2026)
+
+**Aanleiding:** in issue #31 klinkt "man" in het klankpaar man–maan onduidelijk. Het advies van de ontwerpsessie is besluit van de eigenaar:
+1. **Eerst meten.** Alle geluidsbestanden met een los woord of een korte woordgroep (hooguit twee woorden, geen zin) gaan door een lokale spraakherkenning (faster-whisper medium, Nederlands, alleen op de pc). Er komt een lijst van wat niet als het bedoelde woord verstaan wordt. De uitkomst staat in `STATUS.md`: hoeveel bestanden, welke soort.
+2. **Een los woord in een korte draagzin** ("Het woord is man."), met dezelfde lijn en stem. De oefening blijft hetzelfde. De nieuwe bestanden gaan opnieuw door de herkenning, en de klankparen worden ook met het oor nagelopen in een steekproef.
+3. **Klankparen later door een mens ingesproken,** via de inspreekhulp. Die staat vooraan in stap 6 van de werkorder (opnemen).
+4. **Een betaalde stem** komt alleen ter sprake na de meting, en alleen als die laat zien dat het probleem breder is dan losse woorden. Dat besluit ligt bij de eigenaar.
+
+Op het issue reageert alleen de eigenaar, en alleen de eigenaar sluit het.

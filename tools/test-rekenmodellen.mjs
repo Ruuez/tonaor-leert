@@ -37,6 +37,10 @@ ok(errs(rt).length === 0, 'geldige tabel: geen melding ' + errs(rt).join('; '));
 ok(errs({ ...rt, answers: [8, 9] }).length > 0, 'niet evenredig: melding');
 ok(errs({ ...rt, answers: [8] }).length > 0, 'te weinig antwoorden: melding');
 
+{ const bad = st0 => { const p = sc({}); p.scenes[0].steps = [st0]; return (PC.checkPack(p).errors || []).some(e => /rekenmodel/.test(e)); };
+  ok(bad({ type: 'read', text: 'Een tekst.', q: [{ items: ['w'], ask: 'Vraag', why: 'Uitleg', ...nl }] }), 'een rekenmodel bij een leestekst: melding (codereview M1)');
+  ok(bad({ type: 'extra', err: 'getal', explain: 'Uitleg', q: [{ items: ['w'], ask: 'Vraag', why: 'Uitleg', ...nl }, { items: ['w'], ask: 'Vraag', why: 'Uitleg', ...st }] }), 'een rekenmodel in extra: melding (codereview M1)'); }
+ok(/if\(q\.role==='controle'&&SCN\)\{if\(res===false\)later/.test(html) && /if\(q\.role==='instap'&&res===true\)scKnow\(q\)/.test(html), 'controle en instap zoals sc_q (codereview M2)');
 /* 5. de app */
 ok(/if\(PC&&PC\.NUMF&&PC\.NUMF\.includes\(qq\.form\)\)return \{\.\.\.base,type:'sc_num'/.test(html), 'een vraag met een rekenmodel wordt sc_num');
 ok(/getallenlijn:'e',strook:'f',tabel:'h'/.test(html), 'eigen vormcode in de geschiedenis');
