@@ -183,6 +183,14 @@ ok('de leerklok kan niet struikelen over het laden', html.includes('function lea
   ok('MO-M6: geen sturing voor een soort zonder reactie (verhaal)', !M.steerFor('verhaal').hard && !M.steerFor('verhaal').bored);
   ok('MO-M6: de sturing gaat niet mee in het bericht naar de begeleider (codereview 1)', /feel:feelConf\(\)/.test(html) && !/feel:feel\(\)/.test(html));
 }
+// M6, N-M6: elke werkvorm hoort bij een streng; de klok telt per streng; Vandaag meldt een streng die achterblijft en of er vandaag gelezen of geluisterd is
+{ const cx = vm.createContext({ LES: null }); vm.runInContext(fnBlock('strandOf') + '\nthis.f=strandOf;', cx);
+  const f = cx.f;
+  ok('M6: lezen, luisteren en een verhaal zijn input; gesprek, schrijven en spreken output; een spel en de zwaardere vorm vloeiendheid; de rest taal',
+    f({ type: 'sc_read' }) === 'in' && f({ type: 'sc_q', ctx: 'listen' }) === 'in' && f({ type: 'story' }) === 'in' && f({ type: 'sc_talk' }) === 'out' && f({ type: 'sc_make' }) === 'out' && f({ type: 'sc_speak' }) === 'out' && f({ type: 'sc_game' }) === 'vl' && f({ type: 'sc_q', hard: true }) === 'vl' && f({ type: 'recall' }) === 'taal' && f(null) === 'taal');
+  vm.runInContext('LES={id:"x"}', cx); ok('M6: een losse les (algemene ontwikkeling) is input', f({ type: 'sc_q' }) === 'in');
+  ok('M6: de klok telt per streng (hooguit 12 weken), frame zet de streng, de snelronde is vloeiendheid', html.includes('app.dataset.strand=strandOf(Q[qi]);') && html.includes("app.dataset.vak='nl';app.dataset.strand='vl';") && html.includes('/* M6: tijd per streng (hooguit 12 weken) */'));
+  ok('M6/N-M6: Vandaag meldt een streng onder de drempel en lezen of luisteren vandaag', html.includes('${strandNote()}') && /strandLow:\.125, strandMin:60/.test(html)); }
 // R-M3 (onderbouwing-rekenen.md 2.5): nooit twee sommen met dezelfde aanpak achter elkaar in herhaling; nieuw mag geblokt
 { const cm = vm.createContext({}); vm.runInContext(fnBlock('mixAppr') + '\nthis.mix=mixAppr;', cm);
   const s = (a, o) => ({ type: 'discount', items: ['r-' + a], _appr: a, ...(o || {}) }), w = id => ({ type: 'recall', w: { id } });

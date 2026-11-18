@@ -99,6 +99,23 @@ Besluit van de ontwerpsessie (18 november 2026). Voor de soort ronde bewaart elk
   - Twee keer "saai": de zwaardere vorm (typen bij een kort antwoord) en een voorstel op Vandaag.
 - **Ontdek** (losse lessen) krijgt geen tik. "Meer zoals dit" bij de draden komt later.
 
+## M6 en N-M6: de vier strengen
+
+Bron: `ontwerp-stap2b.md` (M6, N-M6) en het didactisch plan, hoofdstuk 2.
+
+- **Streng per scherm (`strandOf`, gezet in `frame`):**
+  - input: lezen, luisteren, het verhaal en een losse les;
+  - output: een gesprek, zelf maken en spreken;
+  - vloeiendheid: een spel, de zwaardere vorm en de snelronde;
+  - taal: al het andere, waaronder de uitleg.
+- **De klok** telt per dag ook per streng (`S.strand`, hooguit 12 weken bewaard).
+- **Opslag:** SCHEMA 10, alleen toevoegend.
+- **Vandaag:**
+  - Een streng die over 7 dagen onder `MOTOR.strandLow` (12,5%) blijft, krijgt een melding. Dat geldt vanaf `strandMin` (60) minuten; beide waarden zijn aannames.
+  - Anders volgt N-M6: is er vandaag na 5 minuten leren nog niets gelezen of geluisterd, dan komt een knop naar een verhaal.
+- **Begeleider:** ziet bij meekijken de verdeling over de laatste 7 dagen.
+- **Nog niet gebouwd:** dat de app de keuze van de volgende scène of activiteit laat meewegen. Dat is een vervolgstap.
+
 ## Wat kan breken
 
 - **Opslag:** niets. De vorm `tik` komt in de bestaande lijst `forms`.
