@@ -94,7 +94,10 @@ Besluit van de ontwerpsessie (18 november 2026). Voor de soort ronde bewaart elk
   - Vandaag stelt een verhaal voor, alleen als die tikken van de laatste 7 dagen zijn.
 - **Duur:** alleen in de eerste `MOTOR.steerWeeks` (12) weken na de eerste leerdag (`S.days`). Na Alles wissen beginnen die twaalf weken opnieuw.
 - **Begeleider:** ziet het bij meekijken. Het bericht naar de EDGE verandert niet: `steer.feel` blijft de laatste tik zelf (`feelConf`). Het nieuwe veld komt met het widgetpakket in stap 12.
-- **Niet gestuurd:** het verhaal en een losse les vragen geen tik na de ronde. "Te moeilijk" bij een scène wordt ook niet gestuurd, want een scène heeft geen kortere vorm.
+- **Scènes (besluit ontwerpsessie):** de tik na een scène is altijd over te slaan (k = scene).
+  - Twee keer "te moeilijk": de volgende scène krijgt meer steun. De steuntaal staat meteen aan (ook bij nosup, behalve in examenvorm), de eerste hint staat er al, en de extra komt na de eerste fout van dezelfde soort.
+  - Twee keer "saai": de zwaardere vorm (typen bij een kort antwoord) en een voorstel op Vandaag.
+- **Ontdek** (losse lessen) krijgt geen tik. "Meer zoals dit" bij de draden komt later.
 
 ## Wat kan breken
 

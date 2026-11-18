@@ -759,6 +759,7 @@ en:{
  "garden.tip":"Every word and every skill is a plant. Remembering it well makes it grow. A drop means: review it briefly today.",
  "garden.empty":"Your first plant will grow here soon.",
  "route.title":"My route",
+ "conf.skip":"Skip",
  "steer.bored":"Twice boring with {kind}. The next round is more challenging. Or try something else:",
  "steer.kind.les":"the lesson",
  "steer.kind.engels":"English",
@@ -1260,6 +1261,7 @@ nl:{
  "garden.tip":"Elk woord en elke vaardigheid is een plantje. Goed onthouden laat het groeien. Een druppel betekent: vandaag even herhalen.",
  "garden.empty":"Hier groeit straks je eerste plantje.",
  "route.title":"<h1>Mijn route</h1>",
+ "conf.skip":"Overslaan",
  "steer.bored":"Twee keer saai bij {kind}. De volgende ronde wordt uitdagender. Of probeer iets anders:",
  "steer.kind.les":"de les",
  "steer.kind.engels":"Engels",
@@ -1759,6 +1761,7 @@ th:{
  "garden.tip":"ทุกคำและทุกทักษะคือต้นไม้ จำได้ดีต้นไม้จะโต หยดน้ำหมายถึงวันนี้ควรทบทวน",
  "garden.empty":"ต้นไม้ต้นแรกจะเติบโตที่นี่",
  "route.title":"เส้นทางของฉัน",
+ "conf.skip":"ข้าม",
  "steer.bored":"น่าเบื่อสองครั้งกับ{kind} รอบถัดไปจะท้าทายขึ้น หรือลองอย่างอื่น:",
  "steer.kind.les":"บทเรียน",
  "steer.kind.engels":"ภาษาอังกฤษ",
@@ -2169,7 +2172,7 @@ function feel(){if(STEER&&STEER.hard)return 'moeilijk';if(STEER&&STEER.bored)ret
 let STEER=null;
 function confKind(name){return name==='Les thema 1'||name==='Korte les'?'les':name==='Engels'?'engels':name==='Verhaal'?'verhaal':name==='Startmeting'?'start':(typeof LES!=='undefined'&&LES)?'ontdek':'scene'}
 function early12(){const ds=Object.keys(S.days||{}).map(Number).filter(x=>x>0);return !ds.length||now()-Math.min(...ds)<MOTOR.steerWeeks*7*DAY}
-const STEERHARD=['les','engels'],STEERBORED=['les','engels','scene'];   /* alleen waar een reactie bestaat; verhaal en ontdek vragen geen tik na de ronde (codereview MO-M6 2) */
+const STEERHARD=['les','engels','scene'],STEERBORED=['les','engels','scene'];   /* alleen waar een reactie bestaat; verhaal en ontdek vragen geen tik na de ronde (codereview MO-M6 2) */
 function steerFor(kind){if(!early12())return {};const L=(S.conf||[]).filter(c=>c&&c.k===kind).slice(0,2);if(L.length<2)return {};const hard=STEERHARD.includes(kind)&&L.every(c=>c.c==='moeilijk'),bored=STEERBORED.includes(kind)&&!hard&&L[0].c!=='moeilijk'&&L.every(c=>c.fun==='saai');return {hard,bored,recent:now()-(+L[0].t||0)<7*DAY}}
 /* dezelfde vorm hooguit één keer achter elkaar (bij saai); schuift een verplaatsbaar onderdeel ertussen, nooit over een uitleg of kaart heen; niets valt weg */
 function noPairs(q){const real=x=>x&&!['card','conf','end','explain','learn'].includes(x.type),free=n=>{const x=q[n];return real(x)&&!x._probe&&!x._ifUnknown&&!(n>0&&q[n-1].type==='explain')};
@@ -2836,7 +2839,8 @@ function sceneQ(sc,hard){const isLes=LESSEN.some(l=>(l.scenes||[]).includes(sc))
 function nextLes(){const done=(S.world&&S.world.done)||{};return LESSEN.find(l=>!done[l.scenes[0].id])||null}   /* de volgende uit order; een draad start de les direct */
 function startLes(l){if(!l)return toast(tx('pack.none'));startScene(l.scenes[0],false,l)}
 let MAPLOAD=false;   /* kaarten laden: één start tegelijk (codereview kaart 11) */
-function startScene(sc,hard,les,maps){if(!maps&&sc&&mapsOf(sc).some(n=>!KMAPS[n])){if(MAPLOAD)return;MAPLOAD=true;toast(tx('kaart.loading'));loadMaps(mapsOf(sc)).then(()=>{MAPLOAD=false;startScene(sc,hard,les,true)});return}LES=les||null;if(!sc)return toast(tx('pack.none'));S.world=S.world||{done:{},at:null};if(hard==null)hard=!!(S.world.done||{})[sc.id];   // een scène die af is: de zwaardere vorm (B4)
+function startScene(sc,hard,les,maps){if(!maps&&sc&&mapsOf(sc).some(n=>!KMAPS[n])){if(MAPLOAD)return;MAPLOAD=true;toast(tx('kaart.loading'));loadMaps(mapsOf(sc)).then(()=>{MAPLOAD=false;startScene(sc,hard,les,true)});return}LES=les||null;STEER=LES?null:steerFor('scene');   /* MO-M6 bij scènes (besluit ontwerpsessie): te moeilijk = meer steun, saai = de zwaardere vorm */
+  if(!sc)return toast(tx('pack.none'));S.world=S.world||{done:{},at:null};if(hard==null)hard=!!(S.world.done||{})[sc.id];   // een scène die af is: de zwaardere vorm (B4)
   if(LES)hard=false;S.world.at=sc.id;SCN={sc,errs:{},extra:new Set(),ctrl:null,hard:!!hard,good:0};save();runSession(plainX(sc.title,'nl'),sceneQ(sc,hard))}
 const PH=['','scene.look','scene.live','scene.do','scene.can'];
 /* masterplan G5: waar het hoofdstuk voor dient, bij het begin (eerste scène) en op het slot van de laatste scène van de plek */
@@ -2917,7 +2921,7 @@ function errNote(err,id){   /* M5 per fout het soort; recent weegt zwaarder */
   if(!ERRS.includes(err))return;S.errs=S.errs||{};const e=S.errs[err]||{n:0,t:0,ids:[]},t0=now();e.n=+((e.n||0)*Math.pow(.5,(t0-(e.t||t0))/(MOTOR.errHalfDays*DAY))+1).toFixed(3);e.t=t0;if(id)e.ids=[id,...(e.ids||[]).filter(x=>x!==id)].slice(0,MOTOR.errIds);S.errs[err]=e;save()}
 function errTop(){const t0=now();let best=null;for(const [err,e] of Object.entries(S.errs||{})){if(!e||!ERRS.includes(err))continue;const n=(e.n||0)*Math.pow(.5,(t0-(e.t||t0))/(MOTOR.errHalfDays*DAY));if(n>=MOTOR.errSteer&&(!best||n>best.n))best={err,n,ids:(e.ids||[]).slice()}}return best}
 function scFault(q,err){if(typeof LES!=='undefined'&&LES)return;if(!err||!ERRS.includes(err))return;errNote(err,q.items&&q.items[0]);if(!SCN||SCN.sc!==q.sc)return;SCN.errs[err]=(SCN.errs[err]||0)+1;
-  if(SCN.errs[err]<MOTOR.extraAfter||SCN.extra.has(err))return;   /* M11 bij een herhaalde fout uitleg en extra oefening */const ex=q.sc.steps.filter(st=>st.type==='extra'&&st.err===err);if(!ex.length)return;SCN.extra.add(err);
+  if(SCN.errs[err]<(STEER&&STEER.hard?1:MOTOR.extraAfter)||SCN.extra.has(err))return;   /* MO-M6: bij te moeilijk de extra al na de eerste fout */   /* M11 bij een herhaalde fout uitleg en extra oefening */const ex=q.sc.steps.filter(st=>st.type==='extra'&&st.err===err);if(!ex.length)return;SCN.extra.add(err);
   const add=[];ex.forEach(st=>{const k=q.sc.steps.indexOf(st),base={sc:q.sc,st,step:3,vak:q.vak};add.push({...base,type:'sc_extra'});st.q.forEach((qq,i)=>add.push({...base,type:'sc_q',qq,items:qq.items.slice(),exid:q.sc.id+'#x'+k+'.'+i,role:'extra'}))});
   Q.splice(qi+1,0,...add)}
 /* instap goed bij de eerste poging: een nieuw woord maakt de grote sprong (probeDone), en ophalen van dat onderdeel valt weg */
@@ -2932,11 +2936,12 @@ function scNum(v){const t=String(v).toLowerCase().trim(),sg=/^(?:-|min\s+|[−�
 function scLoose(a,v){const A=scNorm(a),V=scNorm(v),noArt=x=>x.replace(/^(de|het|een) /,''),m=/^(\d+(?:[.,]\d+)?) [a-z]+$/.exec(A);const nA=scNum(A),nV=scNum(V),aA=/^(de|het|een) /.exec(A),aV=/^(de|het|een) /.exec(V);return (noArt(A)===noArt(V)&&(!aA||!aV||aA[1]===aV[1]))||(isFinite(nA)&&isFinite(nV)&&Math.abs(nA-nV)<1e-9)||(!!m&&/^\d+(?:[.,]\d+)?$/.test(V)&&scNum(m[1])===scNum(V))}   /* review dokter 5: in de zwaardere vorm (typen i.p.v. kiezen) telt keel voor de keel en 45 voor 45 minuten */
 const scNorm=a=>String(a).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’‘`]/g,"'").replace(/\s+/g,' ').replace(/[.!?]+$/,'').replace(/(\d)\s*[x*×·]\s*(\d)/g,'$1×$2').trim();   /* review dokter 6: × staat niet op het toetsenbord, x of * mag ook */
 function scSrc(st){const b=(st&&st.sources)||[];if(!b.length)return '';return `<p class="small muted">${T('scene.source')} ${b.map(x=>{const ti=typeof x==='string'?x:plainX(x.title!=null?x.title:x.t,'nl'),u=x&&typeof x==='object'&&/^https:\/\/[^\s"'<>]+$/.test(x.url||'')?x.url:'';return u?`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(ti)}</a>`:esc(ti)}).join(' · ')}</p>`}
-H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=q.hard&&qq.answer!=null&&String(qq.answer).trim().split(/\s+/).length<=3&&(qq.form==='choose'||qq.form==='hear'),   /* lange antwoorden blijven kiezen */f=typeIt?(qq.form==='hear'?'hear-type':'type'):qq.form,nos=!!(q.hard||sc.nosup||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle'))),inst=q.role==='instap'&&S.items[id]&&S.items[id].reps===0;let first=true,done=false;
+H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=(q.hard||!!(STEER&&STEER.bored))&&qq.answer!=null&&String(qq.answer).trim().split(/\s+/).length<=3&&(qq.form==='choose'||qq.form==='hear'),   /* lange antwoorden blijven kiezen */f=typeIt?(qq.form==='hear'?'hear-type':'type'):qq.form,help=!!(STEER&&STEER.hard&&!(q.st&&q.st.exam)),nos=!help&&!!(q.hard||sc.nosup||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle'))),   /* MO-M6: twee keer te moeilijk bij scènes: de steuntaal meteen aan, behalve in examenvorm */inst=q.role==='instap'&&S.items[id]&&S.items[id].reps===0;let first=true,done=false;
   let hint=0;const opts=f==='choose'||f==='hear'?shuffle(qq.opts.map((o,i)=>({...o,i}))):null,heard=f==='hear'||f==='hear-type'?(qq.say||((qq.opts||[]).find(o=>o.r==='ok')||{}).t||[].concat(qq.answer)[0]||''):'',hintOk=Array.isArray(qq.hint)&&qq.role!=='controle'&&q.role!=='controle'&&q.role!=='instap'&&!q.hard;
   scFrame(q,`<div class="card stack">${q.ctx==='read'?`<div class="note">${scT(q.st.text)}</div>${scSrc(q.st)}`:q.ctx==='listen'?speakBtns('sp','sps'):''}${f==='hear'||f==='hear-type'?speakBtns('hp','hps'):''}<p class="prompt" id="ask">${nos?scN(qq.ask):scT(qq.ask)}</p>
    ${opts?`<div class="choices one">${opts.map(o=>`<button class="choice" data-o="${o.i}">${esc(o.t)}</button>`).join('')}</div>`:`<input id="ans" class="input" lang="nl" ${f==='number'?'inputmode="decimal"':''} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">${hintOk?`<div class="hint-row"><button class="hintbtn" id="hint">${T('btn.hint')}</button><span class="hintshow" id="hs" aria-live="polite"></span></div>`:''}<button class="btn btn-leaf" id="chk">${T('btn.check')}</button>`}<div id="fb"></div></div>`);
-  if(hintOk&&$('#hint'))$('#hint').onclick=()=>{if(hint>=2)return;$('#hs').innerHTML=scT(qq.hint[hint]);hint++;if(hint>=2)$('#hint').disabled=true};   // hint in twee stappen (A6): goed daarna telt als 'retry'
+  if(hintOk&&$('#hint'))$('#hint').onclick=()=>{if(hint>=2)return;$('#hs').innerHTML=scT(qq.hint[hint]);hint++;if(hint>=2)$('#hint').disabled=true};
+  if(hintOk&&help&&$('#hint')&&!hint){$('#hs').innerHTML=scT(qq.hint[0]);hint=1;if(qq.hint.length<2)$('#hint').disabled=true}   /* MO-M6: de hint-ladder begint een trede hoger (de eerste hint staat er al; goed telt dan als retry) */   // hint in twee stappen (A6): goed daarna telt als 'retry'
   if(q.ctx==='listen'){setTimeout(()=>say(q.st.say),300);$('#sp').onclick=()=>say(q.st.say);$('#sps').onclick=()=>say(q.st.say,true)}
   if(q.ctx==='read'&&q.sc&&!nos)tikify(app.querySelector('.card'),q);   /* N-M1 */
   if(f==='hear'||f==='hear-type'){setTimeout(()=>say(heard),300);$('#hp').onclick=()=>say(heard);$('#hps').onclick=()=>say(heard,true)}
@@ -3141,7 +3146,8 @@ H.discount=q=>{
 H.conf=q=>{let c=null,fun=null;const done=()=>{if(!c||!fun)return;S.conf.unshift({t:now(),c,fun,acc:sessTotal?sessRight/sessTotal:1,name:sessName,k:confKind(sessName)});S.sessions++;save();next()};
   frame(`<div class="card stack">${T('conf.title')}<p class="muted">${T('conf.tip')}</p>
   <div class="seg" role="group" aria-label="${esc(t('conf.level'))}"><button data-c="makkelijk">${TB('conf.easy')}</button><button data-c="goed">${TB('conf.ok')}</button><button data-c="moeilijk">${TB('conf.hard')}</button></div>
-  ${T('conf.funQ')}<div class="seg" role="group" aria-label="${esc(t('conf.fun'))}"><button data-f="leuk">${TB('conf.funYes')}</button><button data-f="saai">${TB('conf.funNo')}</button></div></div>`,'Afsluiten',q.step);
+  ${T('conf.funQ')}<div class="seg" role="group" aria-label="${esc(t('conf.fun'))}"><button data-f="leuk">${TB('conf.funYes')}</button><button data-f="saai">${TB('conf.funNo')}</button></div>${SCN?`<button class="linkish" id="confSkip">${TB('conf.skip')}</button>`:''}</div>`,'Afsluiten',q.step);
+  if($('#confSkip'))$('#confSkip').onclick=()=>next();   /* na een scène altijd over te slaan (besluit ontwerpsessie) */
   app.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{c=b.dataset.c;app.querySelectorAll('[data-c]').forEach(x=>x.setAttribute('aria-pressed',x===b));done()});
   app.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{fun=b.dataset.f;app.querySelectorAll('[data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));done()})};
 H.end=q=>{finishTime();const rn=S.rounds[today()]=(S.rounds[today()]||0)+1,bonus=rn===2?10:rn===3?20:0;if(bonus){addPts(bonus);sp+=bonus}pruneWeeks();save();
