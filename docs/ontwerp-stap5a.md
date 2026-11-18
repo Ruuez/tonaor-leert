@@ -83,6 +83,19 @@ Bron: `onderbouwing-motivatie-en-kennis.md` 2.1.
 - **Scherm van de begeleider (meekijken):** een tabel van de laatste vier weken, per week: dagen met leertijd, minuten, rondes, hoe vaak de leerder doorging, en de tikken "te moeilijk" en "saai". Zo staat wat de leerder doet naast wat de leerder aangeeft.
 - **Het bericht naar de EDGE:** verandert niet.
 
+## MO-M6: sneller bijsturen in de eerste twaalf weken
+
+Besluit van de ontwerpsessie (18 november 2026). Voor de soort ronde bewaart elke tik na een ronde `k`, uit een vaste naam: les, Engels of scène.
+
+- **Twee keer op rij "te moeilijk"** bij de les of Engels: de volgende ronde van die soort is kort en kiest in plaats van typen. Engels heeft geen korte ronde in het pakket, dus daar geldt × `MOTOR.steerShort` (0,6, aanname).
+- **Twee keer op rij "saai"** bij de les, Engels of een scène, en de laatste tik was niet "te moeilijk":
+  - de volgende ronde krijgt één nieuw woord meer en de zwaardere vorm (feel = makkelijk);
+  - dezelfde vorm komt hooguit één keer achter elkaar (`noPairs`);
+  - Vandaag stelt een verhaal voor, alleen als die tikken van de laatste 7 dagen zijn.
+- **Duur:** alleen in de eerste `MOTOR.steerWeeks` (12) weken na de eerste leerdag (`S.days`). Na Alles wissen beginnen die twaalf weken opnieuw.
+- **Begeleider:** ziet het bij meekijken. Het bericht naar de EDGE verandert niet: `steer.feel` blijft de laatste tik zelf (`feelConf`). Het nieuwe veld komt met het widgetpakket in stap 12.
+- **Niet gestuurd:** het verhaal en een losse les vragen geen tik na de ronde. "Te moeilijk" bij een scène wordt ook niet gestuurd, want een scène heeft geen kortere vorm.
+
 ## Wat kan breken
 
 - **Opslag:** niets. De vorm `tik` komt in de bestaande lijst `forms`.

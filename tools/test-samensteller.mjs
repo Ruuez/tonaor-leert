@@ -161,6 +161,28 @@ ok('de leerklok kan niet struikelen over het laden', html.includes('function lea
   ok('M5: de vormen horen bij een trede (gatzin kiezen 1, zin bouwen 2, spreken 3)', T.exTier({ form: 'gap' }) === 1 && T.exTier({ form: 'build' }) === 2 && T.exTier({ form: 'spreken' }) === 3);
   ok('M5: chooseEx kiest voor een regel de trede erboven, anders de hoogste die er is', /if\(k==='rule'&&!easy&&it\.reps>0&&it\.lapses<4\)\{const tg=ruleTarget\(it\);for\(let t=tg;t>=1;t--\)/.test(html));
 }
+// MO-M6 (besluit ontwerpsessie 18 november 2026): in de eerste twaalf weken na twee keer saai of te moeilijk op rij bij dezelfde soort meteen bijsturen
+{ const T0 = Date.UTC(2026, 10, 18), D = 864e5, cs = { S: { conf: [], days: {} }, LES: null, NOW: T0 }; vm.createContext(cs);
+  vm.runInContext('const MOTOR={steerWeeks:12};const DAY=864e5;const now=()=>NOW;\n' + line('const STEERHARD=') + '\n' + fnBlock('confKind') + '\n' + fnBlock('early12') + '\n' + fnBlock('steerFor') + '\n' + fnBlock('noPairs') + '\nthis.m={confKind,steerFor,noPairs,early12};', cs);
+  const M = cs.m; cs.S.days = { [T0 - 10 * D]: 1 };
+  ok('MO-M6: de soort ronde uit de naam (les, Engels, verhaal, scène)', M.confKind('Les thema 1') === 'les' && M.confKind('Korte les') === 'les' && M.confKind('Engels') === 'engels' && M.confKind('Verhaal') === 'verhaal' && M.confKind('Bij de dokter') === 'scene');
+  cs.S.conf = [{ k: 'les', c: 'moeilijk', fun: 'leuk', t: T0 }, { k: 'les', c: 'moeilijk', fun: 'saai', t: T0 }];
+  ok('MO-M6: twee keer te moeilijk bij de les: bijsturen', M.steerFor('les').hard === true && !M.steerFor('les').bored);
+  cs.S.conf = [{ k: 'les', c: 'goed', fun: 'saai' }, { k: 'verhaal', c: 'goed', fun: 'saai' }, { k: 'les', c: 'goed', fun: 'saai' }];
+  ok('MO-M6: twee keer saai bij de les (een andere soort ertussen telt niet mee): bijsturen', M.steerFor('les').bored === true && !M.steerFor('verhaal').bored);
+  cs.S.conf = [{ k: 'les', c: 'moeilijk', fun: 'saai' }, { k: 'les', c: 'goed', fun: 'leuk' }];
+  ok('MO-M6: één keer is niet genoeg', !M.steerFor('les').hard && !M.steerFor('les').bored);
+  cs.S.days = { [T0 - 90 * D]: 1 }; cs.S.conf = [{ k: 'les', c: 'moeilijk', fun: 'saai' }, { k: 'les', c: 'moeilijk', fun: 'saai' }];
+  ok('MO-M6: na twaalf weken geldt het gewone bijsturen', !M.early12() && !M.steerFor('les').hard);
+  const q = M.noPairs([{ type: 'recall' }, { type: 'recall' }, { type: 'recog' }, { type: 'hear' }]);
+  ok('MO-M6: bij saai dezelfde vorm hooguit één keer achter elkaar, niets valt weg', q.length === 4 && q.every((x, i) => !i || x.type !== q[i - 1].type), q.map(x => x.type).join(','));
+  ok('MO-M6: startLesson en Engels zetten de sturing; show laat hem los', /STEER=steerFor\('les'\)/.test(html) && /STEER=\{\.\.\.steerFor\('engels'\)\}/.test(html) && /function show\(t\)\{audioStop\(\);LES=null;STEER=null;/.test(html));
+  cs.S.days = { [T0 - 10 * D]: 1 }; cs.S.conf = [{ k: 'les', c: 'moeilijk', fun: 'saai', t: T0 }, { k: 'les', c: 'goed', fun: 'saai', t: T0 }];
+  ok('MO-M6: saai telt niet als de laatste tik te moeilijk was (codereview 4)', !M.steerFor('les').bored);
+  cs.S.conf = [{ k: 'verhaal', c: 'moeilijk', fun: 'saai', t: T0 }, { k: 'verhaal', c: 'moeilijk', fun: 'saai', t: T0 }];
+  ok('MO-M6: geen sturing voor een soort zonder reactie (verhaal)', !M.steerFor('verhaal').hard && !M.steerFor('verhaal').bored);
+  ok('MO-M6: de sturing gaat niet mee in het bericht naar de begeleider (codereview 1)', /feel:feelConf\(\)/.test(html) && !/feel:feel\(\)/.test(html));
+}
 // R-M3 (onderbouwing-rekenen.md 2.5): nooit twee sommen met dezelfde aanpak achter elkaar in herhaling; nieuw mag geblokt
 { const cm = vm.createContext({}); vm.runInContext(fnBlock('mixAppr') + '\nthis.mix=mixAppr;', cm);
   const s = (a, o) => ({ type: 'discount', items: ['r-' + a], _appr: a, ...(o || {}) }), w = id => ({ type: 'recall', w: { id } });

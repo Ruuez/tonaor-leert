@@ -10,7 +10,7 @@ ok(/S\.points\[today\(\)\]=pts\(\)\+n/.test(fn('addPts')) && !/S\.points\[[^\]]*
 ok(!/pts\(\)\s*[<>]=?|total\s*[<>]=?\s*\d/.test(html), 'geen inhoud of functie hangt aan een puntenaantal (geen vergelijking met punten)');
 const texts = [...html.matchAll(/\n "([a-z0-9.@]+)":("(?:[^"\\]|\\.)*"|\{[^}\n]*\})/g)].map(m => [m[1], m[2]]);
 ok(texts.length > 300, 'de vertaaltabel is gevonden (' + texts.length + ' teksten)');
-const promise = texts.filter(([k, v]) => /beloning|reward|รางวัล|verdien je|verdienen|krijg je [^"]*punt|earn [^"]*point|win [^"]*point/i.test(v));
+const promise = texts.filter(([k, v]) => /beloning|reward|รางวัล|ได้แต้ม|ได้คะแนน|verdien je|verdienen|krijg je [^"]*punt|earn [^"]*point|win [^"]*point/i.test(v));
 ok(!promise.length, 'geen tekst belooft vooraf een beloning of punten: ' + promise.map(x => x[0]).join(', '));
 ok(/"explain\.finished":"\+10 punten\. Goed gedaan!"/.test(html), 'een bedankje achteraf mag (na het afronden van een uitleg)');
 
