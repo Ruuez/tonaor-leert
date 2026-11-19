@@ -17,6 +17,7 @@ Bijgewerkt: 14 november 2026.
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
 - M6/N-M6 (de vier strengen), cache v2-78: de klok telt per streng (SCHEMA 10, alleen toevoegend); Vandaag meldt een streng onder 12,5% in 7 dagen, of dat er vandaag nog niets gelezen of geluisterd is (met een knop naar een verhaal); bij meekijken de verdeling. Nog open: de keuze van de volgende scène laten meewegen. Besluit ontwerpsessie (18 november 2026): de strengen tellen alleen Nederlands; Engels krijgt later zijn eigen vier strengen (onderbouwing-engels), zodra er genoeg Engelse lesstof is; een gezamenlijke verdeling komt er niet. E-M2 (geen Nederlands in de Engelse oefeningen, de brug alleen bij gelijkenis, geen brug na een fout) akkoord.
+- Cache v2-84 (19 november 2026): besluit eigenaar over de opnamen van de spreekstap: bewaren voor de tijdcapsule, met een eigen wisknop op Ik (aantal en Opnamen wissen, met bevestiging; docs/ontwerp-stap6.md).
 - Cache v2-83 (19 november 2026):
   - Losse woorden in een draagzin, met dezelfde stem ("Het woord is man."; issue #31, besluit eigenaar via de ontwerpsessie, docs/geluid.md).
   - Lesstof: nl-klacht en nl-afspraak (thema 2) uitgebracht na review goed, met geluid.

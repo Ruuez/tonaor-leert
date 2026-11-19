@@ -778,6 +778,12 @@ en:{
  "lis.once":"Listen well: you hear it once.",
  "rec.go":"Record",
  "rec.prepGo":"Start preparing",
+ "rec.kept":"Your recordings: {n} on this device. They stay here and go nowhere else.",
+ "rec.wipe":"Delete recordings",
+ "rec.wipeAsk":"Delete all recordings? This cannot be undone.",
+ "rec.wipeYes":"Yes, delete",
+ "rec.wipeNo":"No",
+ "rec.wiped":"Recordings deleted.",
  "rec.prep":"Think about what you will say. Recording starts in {n} seconds.",
  "rec.startNow":"Start now",
  "rec.busy":"Recording… Speak now.",
@@ -1313,6 +1319,12 @@ nl:{
  "lis.once":"Luister goed: je hoort het één keer.",
  "rec.go":"Opnemen",
  "rec.prepGo":"Begin met voorbereiden",
+ "rec.kept":"Je opnamen: {n} op dit toestel. Ze blijven hier en gaan nergens anders heen.",
+ "rec.wipe":"Opnamen wissen",
+ "rec.wipeAsk":"Alle opnamen wissen? Dit kan niet terug.",
+ "rec.wipeYes":"Ja, wissen",
+ "rec.wipeNo":"Nee",
+ "rec.wiped":"Opnamen gewist.",
  "rec.prep":"Denk na over wat je zegt. Het opnemen begint over {n} seconden.",
  "rec.startNow":"Nu beginnen",
  "rec.busy":"Opnemen… Spreek nu.",
@@ -1846,6 +1858,12 @@ th:{
  "lis.once":"ฟังให้ดี คุณจะได้ฟังครั้งเดียว",
  "rec.go":"อัดเสียง",
  "rec.prepGo":"เริ่มเตรียมตัว",
+ "rec.kept":"เสียงที่คุณบันทึก: {n} ไฟล์ในเครื่องนี้ เก็บไว้ที่นี่และไม่ถูกส่งไปที่อื่น",
+ "rec.wipe":"ลบเสียงที่บันทึก",
+ "rec.wipeAsk":"ลบเสียงที่บันทึกทั้งหมดไหม ลบแล้วเอาคืนไม่ได้",
+ "rec.wipeYes":"ใช่ ลบเลย",
+ "rec.wipeNo":"ไม่",
+ "rec.wiped":"ลบเสียงที่บันทึกแล้ว",
  "rec.prep":"คิดก่อนว่าจะพูดอะไร การอัดเสียงจะเริ่มในอีก {n} วินาที",
  "rec.startNow":"เริ่มเลย",
  "rec.busy":"กำลังอัดเสียง… พูดได้เลย",
@@ -2666,6 +2684,8 @@ function recPlay(blob){if(!blob)return;audioStop();try{if(typeof speechSynthesis
 function recDb(){return new Promise((ok,no)=>{try{const o=indexedDB.open(RECDB,1);o.onupgradeneeded=()=>{o.result.createObjectStore('rec',{keyPath:'k',autoIncrement:true})};o.onsuccess=()=>ok(o.result);o.onerror=()=>no(o.error)}catch(e){no(e)}})}
 async function recSave(blob,exid){if(!blob||STORE!=='ok')return;let db=null;try{db=await recDb();await new Promise((ok,no)=>{const tx=db.transaction('rec','readwrite'),st=tx.objectStore('rec');st.add({at:now(),exid:String(exid||'').slice(0,80),type:blob.type,blob});
   const rq=st.getAllKeys();rq.onsuccess=()=>{const ks=rq.result||[];ks.slice(0,Math.max(0,ks.length-MOTOR.recKeep)).forEach(k=>st.delete(k))};tx.oncomplete=()=>ok();tx.onerror=()=>no(tx.error)})}catch(e){}finally{try{if(db)db.close()}catch(e){}}}   // codereview: altijd sluiten, anders blokkeert wissen   // lukt bewaren niet (privévenster), dan alleen deze keer terugluisteren
+/* hoeveel opnamen er op het toestel staan (besluit eigenaar 19 november 2026: bewaren voor de tijdcapsule, met een eigen wisknop op Ik) */
+async function recCount(){if(typeof indexedDB==='undefined')return 0;let db=null;try{db=await recDb();return await new Promise((ok,no)=>{const r=db.transaction('rec','readonly').objectStore('rec').count();r.onsuccess=()=>ok(r.result||0);r.onerror=()=>no(r.error)})}catch(e){return 0}finally{try{if(db)db.close()}catch(e){}}}
 function recWipe(){try{if(typeof indexedDB!=='undefined')indexedDB.deleteDatabase(RECDB)}catch(e){}}
 function say(t,slow,lang,waited){if(QUIET)return;lang=LANGS[lang]?lang:'nl';t=String(t==null?'':t).replace(/_{2,}/g,'…');   // een open plek leest als een pauze
   if(lang==='nl'&&!waited){const tt=t;if(playAudio(tt,slow))return;noteNoAudio(tt)}
@@ -3639,6 +3659,7 @@ function vMe(){
    ${T('me.roundLen')}<div class="seg" role="group" aria-label="${esc(String(t('me.roundLen')).replace(/<[^>]*>/g,''))}">${['kort','normaal','lang'].map(k=>`<button data-len="${k}" aria-pressed="${(S.roundLen||'normaal')===k}">${TB('len.'+k)}</button>`).join('')}</div><p class="small muted">${T('me.roundLen.tip')}</p>
    ${T('me.quiet')}<div class="seg" role="group" aria-label="${esc(String(t('me.quiet')).replace(/<[^>]*>/g,''))}"><button data-quiet="1" aria-pressed="${QUIET}">${TB('me.quiet.on')}</button><button data-quiet="0" aria-pressed="${!QUIET}">${TB('me.quiet.off')}</button></div><p class="small muted">${T('me.quiet.tip')}</p>
    ${T('me.trial')}<div class="seg" role="group" aria-label="${esc(String(t('me.trial')).replace(/<[^>]*>/g,''))}"><button data-trial="1" aria-pressed="${!!S.trial}">${TB('me.quiet.on')}</button><button data-trial="0" aria-pressed="${!S.trial}">${TB('me.quiet.off')}</button></div><p class="small muted">${T('me.trial.tip')}</p>
+   <div id="recRow" class="stack-sm" hidden></div>
    <button class="btn btn-ghost" id="steerReset">${TB('me.steer.reset')}</button></section>
   <section class="card stack">${T('me.weekGoal')}<p class="small muted">${T('me.weekGoal.tip')}</p><div class="seg" role="group" aria-label="${esc(t('week.title'))}">${WEEKGOALS.map(m=>`<button data-wg="${m}" aria-pressed="${weekGoal()===m}">${fmtH(m)} ${esc(t('week.hours'))}</button>`).join('')}</div></section>
   <section class="card stack">${T('me.letters')}<div class="seg" role="group" aria-label="Lettergrootte">${['normaal','groot'].map(k=>`<button data-sz="${k}" aria-pressed="${S.size===k}">${TB('size.'+k)}</button>`).join('')}</div></section>
@@ -3666,6 +3687,10 @@ function vMe(){
   app.querySelectorAll('[data-len]').forEach(b=>b.onclick=()=>{S.roundLen=b.dataset.len;save();vMe()});
   app.querySelectorAll('[data-quiet]').forEach(b=>b.onclick=()=>{QUIET=b.dataset.quiet==='1';if(QUIET){audioStop();try{speechSynthesis.cancel()}catch(e){}}vMe()});
   app.querySelectorAll('[data-trial]').forEach(b=>b.onclick=()=>{S.trial=b.dataset.trial==='1';save();vMe()});   /* Proefonderdelen (aanbeveling 10.25) */
+  recCount().then(n=>{const r=$('#recRow');if(!r||!n)return;r.hidden=false;   /* eigen wisknop voor de opnamen; alleen te zien als er opnamen zijn */
+    r.innerHTML=`<p class="small muted">${T('rec.kept',{n})}</p><button class="btn btn-ghost" id="recDel">${TB('rec.wipe')}</button><div id="recAsk" hidden class="stack-sm"><p>${T('rec.wipeAsk')}</p><div class="btn-row"><button class="btn btn-ghost" id="recNo">${TB('rec.wipeNo')}</button><button class="btn btn-main" id="recYes">${TB('rec.wipeYes')}</button></div></div>`;
+    $('#recDel').onclick=()=>{$('#recAsk').hidden=false};$('#recNo').onclick=()=>{$('#recAsk').hidden=true};
+    $('#recYes').onclick=()=>{recWipe();toast(tx('rec.wiped'));r.hidden=true;r.innerHTML=''}});
   if($('#steerReset'))$('#steerReset').onclick=()=>{S.newPerDay=16;S.roundLen='normaal';QUIET=false;save();vMe()};
   if($('#vsel'))$('#vsel').onchange=e=>{S.voice=Object.assign({},S.voice,{nl:e.target.value});save();say('Zo klinkt deze stem. Goedemorgen, hoe gaat het met je?')};
   $('#vtest').onclick=()=>say('Zo klinkt deze stem. Goedemorgen, hoe gaat het met je?');

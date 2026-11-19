@@ -111,8 +111,7 @@ Een onafhankelijke reviewer kreeg alleen de code. Verwerkt:
   - De kleuren komen uit het palet.
   - De poort weigert een rekenmodel bij een tekst of in `extra`.
 
-**Open, ligt bij de eigenaar (privacy):** de opnamen worden bewaard (hooguit 30), maar nog niets leest ze terug en er is geen eigen wisknop. De keuzes:
-- niet bewaren: alleen terugluisteren direct na het opnemen;
-- bewaren voor de tijdcapsule (werkvormen 4.5), met een eigen wisknop op Ik.
-
-Tot het besluit blijft het zoals het is: achter Proefonderdelen, en weg bij Alles wissen.
+**Besluit eigenaar (privacy, 19 november 2026): bewaren, met een eigen wisknop.**
+- De opnamen blijven op het toestel (hooguit 30) voor de tijdcapsule (werkvormen 4.5).
+- Op Ik staat onder Proefonderdelen hoeveel opnamen er zijn, met de knop Opnamen wissen (pas na bevestiging). Die regel is alleen te zien als er opnamen zijn.
+- Alles wissen wist ze nog steeds. Ze gaan nergens heen (geen koppeling, geen bewaarbestand).

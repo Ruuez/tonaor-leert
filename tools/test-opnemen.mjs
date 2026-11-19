@@ -15,6 +15,9 @@ ok(/if\(!blob\|\|STORE!=='ok'\)return/.test(rec), 'alleen bewaren als de opslag 
 ok(!/fetch\([^)]*blob|ntfy|TLS[^;]*blob/.test(rec), 'een opname gaat nergens heen');
 ok(/\$\('#yes'\)\.onclick=\(\)=>\{backupNow\(\);NOBAK=null;recWipe\(\);/.test(html), 'Alles wissen wist ook de opnamen');
 
+/* 1b. besluit eigenaar 19 november 2026: bewaren voor de tijdcapsule, met een eigen wisknop op Ik (met bevestiging) */
+ok(/async function recCount\(\)/.test(html) && /<div id="recRow" class="stack-sm" hidden><\/div>/.test(html), 'Ik toont hoeveel opnamen er zijn');
+ok(/\$\('#recYes'\)\.onclick=\(\)=>\{recWipe\(\)/.test(html) && /\$\('#recDel'\)\.onclick=\(\)=>\{\$\('#recAsk'\)\.hidden=false\}/.test(html), 'eigen wisknop, pas na bevestiging');
 /* 2. achter Proefonderdelen, en zonder opnemen blijft de stap zoals hij was */
 ok(/function recOk\(\)\{return !!\(S\.trial&&/.test(html), 'opnemen alleen met Proefonderdelen aan');
 const sp = cut('H.sc_speak=q=>{', '/* spel (stap game)');
@@ -41,7 +44,7 @@ ok(/catch\(e\)\{try\{stream\.getTracks\(\)\.forEach\(x=>x\.stop\(\)\)\}catch\(_\
 ok(/finally\{try\{if\(db\)db\.close\(\)\}catch\(e\)\{\}\}/.test(html), 'de bak gaat altijd dicht, zodat wissen niet blokkeert');
 
 /* 6. teksten in drie talen */
-for (const k of ['rec.go', 'rec.prep', 'rec.left', 'rec.stop', 'rec.me', 'rec.again', 'rec.ok', 'rec.notYet', 'rec.examTip', 'rec.noMic', 'rec.empty', 'rec.busy', 'rec.startNow', 'rec.prepGo'])
+for (const k of ['rec.go', 'rec.prep', 'rec.left', 'rec.stop', 'rec.me', 'rec.again', 'rec.ok', 'rec.notYet', 'rec.examTip', 'rec.noMic', 'rec.empty', 'rec.busy', 'rec.startNow', 'rec.prepGo', 'rec.kept', 'rec.wipe', 'rec.wipeAsk', 'rec.wipeYes', 'rec.wipeNo', 'rec.wiped'])
   ok((html.match(new RegExp(' "' + k.replace('.', '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
 
 console.log(fout ? fout + ' FOUT(EN)' : 'test-opnemen: alles OK');
