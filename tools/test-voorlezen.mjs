@@ -57,16 +57,25 @@ ok('iPhone met lijst: Nederlandse stem gekozen', r.spoken[0].voice.name === 'Xan
 ok('geen proeven meer met stille geluidjes of de audiosessie (stilteschakelaar vraagt geluidsbestanden, zie STATUS)', !/silentWav|audioSession|iosPrime|VOICETEST|KEEP=/.test(h) && h.includes('function speakNow(t,slow,lang,v){audioStop();speechSynthesis.cancel();'));
 { // geluidsbestanden (docs/geluid.md): bestand als het er is, zinnen na elkaar, anders de stem van het toestel en op de lijst
   const PCm = (await import('node:module')).createRequire(import.meta.url)('../pakketcheck.js');
-  const played = [], spoken = [], saves = [];
-  function FakeAudio() { this.listeners = {}; this.setAttribute = () => {}; this.pause = () => {}; this.play = () => { played.push(this.src + '@' + this.playbackRate); return Promise.resolve(); }; this.addEventListener = (n, f) => { this.listeners[n] = f; }; }
+  const played = [], spoken = [], saves = []; let failNext = false;
+  function FakeAudio() { this.listeners = {}; this.setAttribute = () => {}; this.pause = () => {}; this.play = () => { played.push(this.src + '@' + this.playbackRate); if (failNext) { failNext = false; return Promise.reject({ name: 'NotSupportedError' }); } return Promise.resolve(); }; this.addEventListener = (n, f) => { this.listeners[n] = f; }; }
   const S = {};
-  const ctx = { PC: PCm, STORE: 'ok', PACKS: [], PACK_TIMEOUT: 300, QUIET: false, S, save: () => saves.push(1), toast() {}, tab: 'vandaag', route: null, app: { classList: { contains: () => false } }, vMe() {}, setTimeout, clearTimeout,
+  const VOXm = new Map();
+  const ctx = { VOX: VOXm, VOXSTEM: 'mens', PC: PCm, STORE: 'ok', PACKS: [], PACK_TIMEOUT: 300, QUIET: false, S, save: () => saves.push(1), toast() {}, tab: 'vandaag', route: null, app: { classList: { contains: () => false } }, vMe() {}, setTimeout, clearTimeout,
     navigator: { userAgent: 'Mozilla/5.0 (Windows NT 10.0)', platform: 'Win32' }, Audio: FakeAudio,
     SpeechSynthesisUtterance: function (t) { this.text = t; },
     speechSynthesis: { getVoices: () => [V('Xander', 'nl-NL')], cancel() {}, speak: u => spoken.push(u.text), addEventListener() {}, removeEventListener() {} } };
   vm.createContext(ctx); vm.runInContext(block, ctx);
   const H = t => PCm.audioHash(t, 'pim');
   vm.runInContext(`AUD=new Set(${JSON.stringify([H('de afspraak'), H('Ik heb een afspraak morgen.')])})`, ctx);
+  { // inspreekhulp (docs/ontwerp-inspreekhulp.md): een ingesproken opname van precies deze tekst wint; speelt die niet, dan het gemaakte bestand
+    VOXm.set(PCm.audioHash('de afspraak', 'mens'), 'blob:mens-1'); const p0 = played.length;
+    ctx.say('de afspraak'); ok('ingesproken opname speelt vóór het gemaakte bestand', played[p0] === 'blob:mens-1@1');
+    vm.runInContext('AEL.listeners.error()', ctx); ok('ingesproken opname speelt niet: het gemaakte bestand', /audio\/nl\/pim\/[0-9a-f]{14}\.m4a@1$/.test(played[p0 + 1] || ''));
+    vm.runInContext('audioStop()', ctx); const p1 = played.length, s1 = spoken.length; failNext = true;
+    ctx.say('de afspraak'); vm.runInContext('AEL.listeners.error()', ctx); await new Promise(r => setTimeout(r, 0));   // in de browser vervalt een error-event van de oude bron zodra src wisselt; de afgewezen play() komt wel
+    ok('dezelfde fout twee keer (play() afgewezen en het error-event): één keer terugvallen, op het gemaakte bestand, niet op de stem van het toestel', played.length === p1 + 2 && /pim/.test(played[p1 + 1]) && spoken.length === s1);
+    vm.runInContext('audioStop()', ctx); VOXm.clear(); played.length = 0; }
   ctx.say('de afspraak.');
   ok('geluid: een tekst met een bestand speelt het bestand, niet de stem van het toestel', played.length === 1 && played[0].includes('audio/nl/pim/' + H('de afspraak') + '.m4a') && !spoken.length);
   ctx.say('de afspraak. Ik heb een afspraak morgen.', true);

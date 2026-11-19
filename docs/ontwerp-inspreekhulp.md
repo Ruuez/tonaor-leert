@@ -19,7 +19,11 @@ Niets aan de oefeningen. Waar een mens een tekst heeft ingesproken, hoort de lee
 - **Afspelen:** `playAudio` kijkt eerst of er een opname van een mens is voor de sleutel van de tekst (`PC.audioHash` van dezelfde genormaliseerde tekst). Is die er, dan speelt die opname. Anders gaat het zoals nu (draagzin, gemaakt bestand, de stem van het toestel). Het langzaam afspelen gaat via `playbackRate`, net als nu.
 - **Opslag:** een aparte bak in IndexedDB (`leren-stemmen`). Die staat los van de opnamen van de leerder (`leren-opnamen`, grens van 30) en los van de voortgang, dus de opslagsleutel `tonaor-leert-v2` en het schema veranderen niet. Alles wissen wist deze bak niet, want het zijn de opnamen van de begeleider en geen gegevens van de leerder. Een eigen wisknop staat in het scherm zelf.
 
-## Open besluit van de eigenaar (privacy): waar de opnamen heen gaan
+## Besluit van de eigenaar (privacy, 19 november 2026): A, alleen op het toestel
+
+Gebouwd in v2-86. De lijst van kernzinnen bestaat uit: de klankparen, het dictee en per hoofdstuk wat de leerder moet verstaan (`say`, per zin), wat de ander zegt in een gesprek (`them`) en het voorbeeld van de spreekstap (`model`). Nu zijn dat 877 zinnen. Daarom is de grens 1000 opnamen in plaats van 300; dat is ongeveer 10 tot 15 MB. Is de grens bereikt, dan bewaart de app niets meer en gooit ook niets stil weg.
+
+De afweging zoals die aan de eigenaar is voorgelegd:
 
 Een stem is een persoonsgegeven. Daarom ligt deze keuze bij de eigenaar en niet bij de ontwerpsessie.
 
@@ -33,7 +37,7 @@ Een stem is een persoonsgegeven. Daarom ligt deze keuze bij de eigenaar en niet 
 
 **Aanbevolen: A.** Het is het kleinst en houdt de stem op het toestel. B kan er later bij, zonder dat A verandert. C alleen als de eigenaar dat bewust kiest, en dan met een stem die daar toestemming voor geeft.
 
-Tot het besluit valt, wordt alleen dit ontwerp vastgelegd en wordt er nog niet gebouwd.
+
 
 ## Wat kan breken
 
@@ -41,7 +45,7 @@ Tot het besluit valt, wordt alleen dit ontwerp vastgelegd en wordt er nog niet g
 - **EDGE-koppeling:** niets, want er gaat geen geluid over de koppeling.
 - **De les van `test-les`:** niets, want de samenstelling verandert niet.
 - **Afspelen:** een opname die mislukt of leeg is, mag nooit stilte geven. Bij een fout valt de app terug op het gemaakte bestand.
-- **Ruimte op het toestel:** 40 zinnen van 3 seconden is ongeveer 0,5 MB. Er komt een grens van 300 opnamen.
+- **Ruimte op het toestel:** 40 zinnen van 3 seconden is ongeveer 0,5 MB. De grens is 1000 opnamen (zie het besluit).
 
 ## Wat het wegneemt
 

@@ -43,7 +43,19 @@ ok(/const go=\(\)=>\{if\(mode==='start'\|\|mode==='rec'\)return;mode='start';/.t
 ok(/catch\(e\)\{try\{stream\.getTracks\(\)\.forEach\(x=>x\.stop\(\)\)\}catch\(_\)\{\}throw e\}/.test(html), 'start de recorder niet, dan gaat de microfoon dicht');
 ok(/finally\{try\{if\(db\)db\.close\(\)\}catch\(e\)\{\}\}/.test(html), 'de bak gaat altijd dicht, zodat wissen niet blokkeert');
 
+/* 5b. de inspreekhulp (docs/ontwerp-inspreekhulp.md; besluit eigenaar 19 november 2026: alleen op het toestel) */
+const vox = cut('function voxKey(', 'function say(');
+ok(/const VOXDB='leren-stemmen',VOXSTEM='mens';let VOX=new Map\(\);[^\n]*\n(?:[^\n]*\n){0,3}const routeP=loadRoute\(\);await loadPacks\(\);/.test(html), 'eigen bak, gedeclareerd vóór het laden (loadVox draait meteen)');
+ok(!/fetch|ntfy|TLS|S\.vox/.test(vox), 'een ingesproken zin gaat nergens heen en staat niet in de voortgang');
+ok(/!VOX\.has\(h\)&&VOX\.size>=MOTOR\.voxKeep\)return 'vol'/.test(vox) && /voxKeep:1000/.test(html), 'hooguit 1000 ingesproken zinnen; daarna niets stil weggooien');
+ok(!/voxWipe\(\)/.test(cut("$('#yes').onclick=", '\n')), 'Alles wissen laat de ingesproken zinnen staan (eigen wisknop)');
+ok(/\$\('#voxYes'\)\.onclick=async\(\)=>\{const ok=await voxWipe\(\)/.test(html) && /\$\('#voxWipe'\)\.onclick=\(\)=>\{\$\('#voxAsk'\)\.hidden=false\}/.test(html), 'wissen pas na bevestiging');
+ok(/\$\{recOk\(\)\?`<button class="btn btn-ghost" id="voxOpen">/.test(html), 'de knop staat alleen op Ik als opnemen kan (Proefonderdelen)');
+ok(/\$\{esc\(it\.t\)\}/.test(html), 'de zin uit het pakket gaat door esc');
+
 /* 6. teksten in drie talen */
+for (const k of ['page.vox', 'vox.open', 'vox.openTip', 'vox.intro', 'vox.rec', 'vox.stop', 'vox.play', 'vox.save', 'vox.del', 'vox.prev', 'vox.next', 'vox.has', 'vox.count', 'vox.saved', 'vox.fail', 'vox.full', 'vox.noMic', 'vox.none', 'vox.where', 'vox.wipe', 'vox.wipeAsk', 'vox.wiped', 'vox.g.pairs', 'vox.g.dictee', 'vox.g.chapter'])
+  ok((html.match(new RegExp(' "' + k.replace(/\./g, '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
 for (const k of ['rec.go', 'rec.prep', 'rec.left', 'rec.stop', 'rec.me', 'rec.again', 'rec.ok', 'rec.notYet', 'rec.examTip', 'rec.noMic', 'rec.empty', 'rec.busy', 'rec.startNow', 'rec.prepGo', 'rec.kept', 'rec.wipe', 'rec.wipeAsk', 'rec.wipeYes', 'rec.wipeNo', 'rec.wiped'])
   ok((html.match(new RegExp(' "' + k.replace('.', '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
 

@@ -17,6 +17,8 @@ Bijgewerkt: 14 november 2026.
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
 - M6/N-M6 (de vier strengen), cache v2-78: de klok telt per streng (SCHEMA 10, alleen toevoegend); Vandaag meldt een streng onder 12,5% in 7 dagen, of dat er vandaag nog niets gelezen of geluisterd is (met een knop naar een verhaal); bij meekijken de verdeling. Nog open: de keuze van de volgende scène laten meewegen. Besluit ontwerpsessie (18 november 2026): de strengen tellen alleen Nederlands; Engels krijgt later zijn eigen vier strengen (onderbouwing-engels), zodra er genoeg Engelse lesstof is; een gezamenlijke verdeling komt er niet. E-M2 (geen Nederlands in de Engelse oefeningen, de brug alleen bij gelijkenis, geen brug na een fout) akkoord.
+- Cache v2-86 (19 november 2026): de inspreekhulp (werkorder stap 6, vooraan; docs/ontwerp-inspreekhulp.md). Op Ik onder Proefonderdelen: Zinnen inspreken (voor een begeleider). 877 kernzinnen (klankparen, dictee, en per hoofdstuk say, them en model), opnemen, terugluisteren, bewaren, wissen. Een ingesproken opname speelt vóór het gemaakte geluid, met het gemaakte bestand als terugval. Besluit eigenaar (privacy): alleen op het toestel, eigen IndexedDB-bak, hooguit 1000, Alles wissen laat ze staan.
+- Cache v2-85 (19 november 2026): geen vaste namen meer in de app (begeleider, iemand thuis).
 - Cache v2-84 (19 november 2026): besluit eigenaar over de opnamen van de spreekstap: bewaren voor de tijdcapsule, met een eigen wisknop op Ik (aantal en Opnamen wissen, met bevestiging; docs/ontwerp-stap6.md).
 - Cache v2-83 (19 november 2026):
   - Losse woorden in een draagzin, met dezelfde stem ("Het woord is man."; issue #31, besluit eigenaar via de ontwerpsessie, docs/geluid.md).
@@ -107,6 +109,17 @@ Bijgewerkt: 14 november 2026.
 - Proefhoofdstuk bij de dokter achter Proefonderdelen, knop Mijn antwoord is ook goed, standreview verwerkt: live sinds 15 november 2026, cache v2-53 (b1e209e), gepusht met akkoord van de eigenaar (in de testfase zo vaak als nodig).
 - Herstel geluid met de stilteschakelaar aan: live sinds 15 november 2026, cache v2-51 (c6f67db) werkte niet; tweede poging (stil geluid loopt mee) live als cache v2-52 (9791c0e), te testen op de iPhone.
 - Release A+B (stap 2 en 2b: motor, compacte geschiedenis, rust, aanvullen, scènespeler achter Proefonderdelen, Wat is nieuw, reservekopie vóór nieuwe vorm, opslag blijvend, de/het met vorm, 100 basiswoorden na review door een groter model): live sinds 15 november 2026, cache v2-50 (a489e40), gepusht door de ontwerpsessie na eigen controle (overgang vorm 4 naar 6 met gelijke voortgang). Het proefhoofdstuk is in deze stand onzichtbaar.
+
+## IJkmoment G4, groep 1 (19 november 2026, docs/ijkmoment-g4.md): opdrachten voor de bouwsessie
+
+In deze volgorde, na de inspreekhulp:
+1. (code) Luistertekst, meelezen en alleen luisteren: keuzes en invulveld pas actief als het afspelen begonnen is; kan er niets klinken (stille stand, geen geluid en geen stem), dan de tekst en de vraag meteen actief. Met een test. **Open.**
+2. (lesstof) Schrijversopdracht: de luistervraag gaat over iets wat alleen in het fragment staat, elke afleider pas na het luisteren uit te sluiten; revieweropdracht: te beantwoorden zonder te luisteren? kla-3 en de andere luistervragen van thema 2 daarlangs. **Open.**
+3. (code) Verhoudingstabel en strook met €: bedragen met twee decimalen in beeld (2,50); nakijken gelijk. **Open.**
+4. (redactie en poort) Vanaf het volgende hoofdstuk: elke rekenscène minstens één rekenmodel, elk hoofdstuk één luistertekst met exam: true in de laatste scène voor de kennisles; de poort meldt het (geen weigering). **Open.**
+5. Opnemen blijft achter Proefonderdelen tot de telefoontest van de eigenaar goed is; daarna eruit zonder nieuw ijkmoment.
+
+G4 groep 2 volgt na rekenen in stappen en slepen (één bericht aan de ontwerpsessie).
 
 ## Open eis: geluid met de stilteschakelaar aan (eigenaar, 15 november 2026)
 

@@ -23,7 +23,7 @@ ok(/if\(\$\('#nx'\)\)\{o\.disconnect\(\);reveal\(\)\}/.test(lis), 'de tekst komt
 /* 4. veilig tonen: elke zin via esc */
 ok(/<span class="lsent" data-i="\$\{i\}">\$\{esc\(x\)\}<\/span>/.test(lis), 'zinnen via esc');
 /* 5. zinnen: dezelfde opdeling als de geluidsbestanden, zodat elke zin een eigen bestand heeft */
-ok(/PC\.audioParts\(t\)/.test(lis) && /hs\.every\(x=>AUD\.has\(x\.h\)\)/.test(lis), 'per zin het geluidsbestand; ontbreekt er een, dan de stem van het toestel');
+ok(/PC\.audioParts\(t\)/.test(lis) && /ps\.map\(srcOf\);if\(hs\.every\(Boolean\)\)/.test(lis), 'per zin het geluidsbestand; ontbreekt er een, dan de stem van het toestel');
 for (const f of ['nl-thuis.json', 'nl-buren.json']) {
   let p; try { p = JSON.parse(readFileSync(new URL('../content/' + f, import.meta.url), 'utf8')); } catch (e) { continue; }
   const texts = []; (p.scenes || []).forEach(sc => (sc.steps || []).forEach(st => { if (st.type === 'listen' && st.say) texts.push(st.say); }));
