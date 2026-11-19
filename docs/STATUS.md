@@ -17,6 +17,17 @@ Bijgewerkt: 14 november 2026.
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
 - M6/N-M6 (de vier strengen), cache v2-78: de klok telt per streng (SCHEMA 10, alleen toevoegend); Vandaag meldt een streng onder 12,5% in 7 dagen, of dat er vandaag nog niets gelezen of geluisterd is (met een knop naar een verhaal); bij meekijken de verdeling. Nog open: de keuze van de volgende scène laten meewegen. Besluit ontwerpsessie (18 november 2026): de strengen tellen alleen Nederlands; Engels krijgt later zijn eigen vier strengen (onderbouwing-engels), zodra er genoeg Engelse lesstof is; een gezamenlijke verdeling komt er niet. E-M2 (geen Nederlands in de Engelse oefeningen, de brug alleen bij gelijkenis, geen brug na een fout) akkoord.
+- Cache v2-83 (19 november 2026):
+  - Losse woorden in een draagzin, met dezelfde stem ("Het woord is man."; issue #31, besluit eigenaar via de ontwerpsessie, docs/geluid.md).
+  - Lesstof: nl-klacht en nl-afspraak (thema 2) uitgebracht na review goed, met geluid.
+  - Vier regels hebben nu een eigen zin: vjd.regel.met, mdl.regel.voelen, kla.regel.zodat en afs.regel.te staan bij de items van een bestaande make- of speak-opdracht die de regel uitlokt (review opus: goed).
+  - De poort kent de rekenvormen numline, strip en ratio.
+- Meting losse woorden (#31, punt 1 en 2): lokale spraakherkenning (Whisper medium, zonder download), met als uitslag goed, alleen lidwoord anders, of anders verstaan.
+  - Meting 1, oude bestanden: woorden 622 goed, 4 lidwoord, 388 anders (38%); klankparen 2 goed, 4 anders (maan → "WAM", man → "Moe", keel → "K.O.", geel → "Geo"); overig (labels, bedragen, zinsdelen; blijft zonder draagzin) 194 goed, 170 anders.
+  - Meting 2, dezelfde 1019 woorden in de draagzin: 921 goed, 2 lidwoord, 96 anders (9%); klankparen 6 van de 6 goed.
+  - Van de 393 woorden die eerst anders klonken, worden er nu 316 goed verstaan; 24 die eerst goed waren, nu niet.
+  - Wat overblijft is grotendeels een spellingsfout van de herkenner (onderpant, reist, mantje, regerakkoord); een paar korte woorden zijn twijfelachtig (zon → "som", bron → "Brom", dam → "done").
+  - Conclusie: het probleem was het losse woord, niet de stem. Een betaalde stem is op grond hiervan niet nodig (punt 4 blijft bij de eigenaar). Een spraakherkenner is strenger dan een mens: de getallen zijn een bovengrens van het probleem.
 - Werkorder stap 6, derde groep: getallenlijn, strook en verhoudingstabel als vraag in een scène (docs/ontwerp-stap6.md, formaat in docs/scenes.md), cache v2-82; nakijken in pakketcheck, poort controleert de velden. Nog geen lesstof die ze gebruikt. Lesstof: nl-medeleven (thema 2) uitgebracht na eindreview goed.
 - Werkorder stap 6, tweede vorm: de luistertekst (docs/ontwerp-stap6.md), cache v2-81: eerst de vraag, dan zelf afspelen; meelezen met oplichtende zin in de eerste 3 scènes met een luistertekst, daarna alleen luisteren (tekst na het antwoord); langzaam/gewoon/iets sneller en deze zin nog eens; examenvorm met 25 seconden leestijd en één keer afspelen. Niet achter Proefonderdelen: de scènes zelf staan daar al achter.
 - Werkorder stap 6, eerste vorm: opnemen en terugluisteren in de stap speak (docs/ontwerp-stap6.md), cache v2-80. Achter Proefonderdelen. Opnamen alleen op het toestel (eigen IndexedDB-bak, hooguit 30, niet in de voortgang of reservekopie, weg bij Alles wissen); de leerder keurt zelf (klonk goed = goed, nog niet = retry); examenvorm met 20/30/120 seconden en 30 seconden voorbereiding bij long (aanname). Zonder microfoon blijft de stap zoals hij was. Nog te doen: proef op de iPhone (microfoon, terugluisteren met de schakelaar op stil). Lesstof: nl-verjaardag (thema 2) uitgebracht na review ronde 2 goed.
@@ -48,14 +59,14 @@ Bijgewerkt: 14 november 2026.
   - SCHEMA 8, alleen toevoegend: gf voor wat al bloeide.
   - G2 punt 1: de fout in de kennisles van nl-werk is hersteld.
   - G2 punt 2:
-    - checkG2 in de redactiepoort: goed = langste hooguit 40%, geen gelijke stappenreeks, een lange tekst, guess bij raden, tol bij schatten. De app weigert er niets op.
+    - checkG2 in de redactiepoort: goed = langste hooguit 40%, geen gelijke stappenreeks, een lange tekst, guess bij raden, tol bij schatten., en sinds 19 november 2026 een eigen zin per regel (besluit ontwerpsessie: elke regel staat bij de items van een stap make of speak; en.regel.s uitgezonderd tot de eerste Engelse scène). De app weigert er niets op; daar blijft het een melding.
     - De schrijvers- en revieweropdracht zijn bijgewerkt.
     - Raadvragen in alle lesstof hebben guess: true; in de app telt raden niet als fout.
     - De zin 'Dat past ook' staat nu in I18N.
   - Codereviews (Opus):
     - trede: 1 blokkerend (bestaande bloei afgepakt), opgelost met bewaarde trede en gf;
     - bloei-ombouw: 1 blokkerend (geen regel kon bloeien: een eigen zin telde alleen als hoofddoel), opgelost; een extra groeistap bij de terugkeer op dag 22 is ook opgelost.
-  - Open (lesstof): 31 van de 36 regels hebben nog geen opdracht voor een eigen zin en kunnen nog niet bloeien (test-herhaal meldt het).
+  - Lesstof: op en.regel.s na hebben alle 63 regels een opdracht voor een eigen zin (19 november 2026; test-herhaal meldt de rest).
   - Open (lesstof): de herstelronde van thema 1 op G2 (goed = langste 60-74%, geen lange tekst in de meeste hoofdstukken).
   - Open (lesstof): nl-buren (74%) terug in redactie/uit voor herstel volgens de nieuwe opdracht.
 - Werkorder stap 5, eerste deel (docs/ontwerp-stap5a.md), cache v2-66 en v2-67:

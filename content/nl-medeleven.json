@@ -5982,7 +5982,8 @@
       "mdl.gecondoleerd",
       "mdl.medeleven",
       "mdl.voelen",
-      "mdl.troosten"
+      "mdl.troosten",
+      "mdl.regel.voelen"
      ],
      "ask": {
       "nl": "Een buur heeft iemand verloren. Zeg dat je medeleven hebt, vraag hoe de buur zich voelt en zeg dat je er bent. Praat ongeveer 30 seconden.",
@@ -6001,9 +6002,9 @@
        "en": "Does the content come across? (you show sympathy, you ask how the other feels and you say you are there)"
       },
       {
-       "nl": "Zeg je gecondoleerd en vraag je hoe voel je je?",
-       "th": "คุณพูด gecondoleerd และถาม hoe voel je je ไหม",
-       "en": "Do you say gecondoleerd and ask hoe voel je je?"
+       "nl": "Zeg je gecondoleerd en vraag je hoe voel je je (met je erbij)?",
+       "th": "คุณพูด gecondoleerd และถาม hoe voel je je (มีคำ je ด้วย) ไหม",
+       "en": "Do you say gecondoleerd and ask hoe voel je je (with je included)?"
       },
       {
        "nl": "Staat het werkwoord direct na de komma (als je wilt, luister ik)?",

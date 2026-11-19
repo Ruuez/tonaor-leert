@@ -6006,7 +6006,8 @@
       "vjd.gefeliciteerd",
       "vjd.compliment",
       "vjd.gezellig",
-      "vjd.taart"
+      "vjd.taart",
+      "vjd.regel.met"
      ],
      "ask": {
       "nl": "Je zit in de kring op een verjaardag. Feliciteer de jarige, geef een compliment en vertel kort waarom je het gezellig vindt. Praat ongeveer 30 seconden.",

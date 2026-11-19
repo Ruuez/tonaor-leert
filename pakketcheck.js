@@ -488,6 +488,12 @@
     if (p && p.type === 'les' && n >= 3 && longest === n) issues.push(id + ': bij alle ' + n + ' keuzevragen is het goede antwoord het langste (G2 2.1, maat voor een losse les)');
     if (n >= 10 && longest / n > 0.4) issues.push(id + ': bij ' + Math.round(100 * longest / n) + '% van de ' + n + ' keuzevragen is het goede antwoord het langste; hooguit 40% (G2 2.1)');
     if (p && p.type === 'hoofdstuk' && !longText) issues.push(id + ': geen lees- of luistertekst van 150 tot 450 woorden (G2 2.3)');
+    /* besluit na G2 (18 november 2026): een regel bloeit pas na een eigen zin, dus elke regel van het pakket staat bij de items van een stap make of speak.
+       en.regel.s is uitgezonderd tot de eerste Engelse scène er is. */
+    if (p && (p.type === 'hoofdstuk' || p.type === 'les')) {
+      var own = {}; (p.scenes || []).forEach(function (sc) { (sc.steps || []).forEach(function (st) { if (st && (st.type === 'make' || st.type === 'speak')) (st.items || []).forEach(function (x) { own[x] = 1; }); }); });
+      (p.items || []).forEach(function (x) { if (x && x.kind === 'rule' && x.id !== 'en.regel.s' && !own[x.id]) issues.push(id + '.' + x.id + ': de regel heeft geen eigen zin (zet hem bij de items van een stap make of speak waarvan het frame de plek van de regel openlaat; besluit na G2)'); });
+    }
     return { n: n, longest: n ? longest / n : 0, issues: issues };
   }
 
