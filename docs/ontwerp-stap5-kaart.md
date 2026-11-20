@@ -1,6 +1,12 @@
 # Ontwerp stap 5: de kaart als thuisscherm, met album
 
-Stand: 20 november 2026, concept voor de ontwerpsessie (nog niet gebouwd). Bronnen: `docs/masterplan.md` (stap 5, eisen D1 tot D5, E5, H1), `docs/concept-leerwereld.md` (de kaart, het album, Onderweg, besluit 3: een neutraal figuurtje met een kleur naar keuze), `docs/route-en-prognose.md`.
+Stand: 20 november 2026. **Akkoord van de ontwerpsessie, gebouwd in v2-90.** Haar antwoorden op de vijf vragen (onderaan) wijken op twee punten af van het oorspronkelijke voorstel hieronder:
+- **Eén schakelaar** (`S.home`: Vandaag of Kaart); Kaart = de tabbladen Kaart en Album samen. Er is geen `S.overview`. De tuin blijft bereikbaar via de knop "Tuin bekijken" bovenaan het album . Migratie 10 → 11 voegt alleen `home:'vandaag'` en `fig:null` toe.
+- **Onderweg direct onder de huidige plek**, als eerste knop, met het aantal onderdelen dat wacht (dezelfde `dorst()` als Vandaag).
+- Verder: rekenscène en kennisles als gele en lila stip; een plek is af als alle stippen gedaan zijn. Vier sterktes in het album, zonder rood of kruis bij een onderdeel dat terugging. De examenregel is `routeLine()`: de eerstvolgende, met bandbreedte, en niets als de berekening nog niets betrouwbaars geeft. Het figuurtje loopt alleen na een gedane scène; met "minder beweging" staat het er meteen.
+- De redactielijn houdt de voorraad op minstens twee plekken vooruit; zakt die eronder, dan krijgt de ontwerpsessie een bericht.
+
+Hieronder het ontwerp zoals het ter beoordeling lag. Bronnen: `docs/masterplan.md` (stap 5, eisen D1 tot D5, E5, H1), `docs/concept-leerwereld.md` (de kaart, het album, Onderweg, besluit 3: een neutraal figuurtje met een kleur naar keuze), `docs/route-en-prognose.md`.
 
 ## Welke eisen het dient
 

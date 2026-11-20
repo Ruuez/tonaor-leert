@@ -153,6 +153,11 @@ r = run({ [KEY]: raw({ ...CUR, schema: 6, mins: { 5: 30 } }) });
 ok('schema 6 → 7: minsV, outside, prog en blockAdj toegevoegd; mins en items onaangeroerd, met reservekopie', ['minsV', 'outside', 'prog', 'blockAdj'].every(k => r.S[k] && typeof r.S[k] === 'object' && !Array.isArray(r.S[k])) && r.S.mins[5] === 30 && r.S.items.werk.s === 3 && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 6);
 r = run({ [KEY]: raw({ ...CUR, schema: 6, minsV: { 5: { nl: 3, rk: 1, en: 0 } }, outside: { 5: { lezen: 15 } }, prog: [1] }) });
 ok('schema 6 → 7 is herhaalbaar: bestaande tijd per vak en buiten de app blijft, een ongeldig veld wordt leeg', r.S.minsV[5].nl === 3 && r.S.outside[5].lezen === 15 && !Array.isArray(r.S.prog));
+// 8j. stap 10 → 11: thuisscherm (Vandaag of Kaart) en kleur van het figuurtje (docs/ontwerp-stap5-kaart.md), alleen toegevoegd
+r = run({ [KEY]: raw({ ...CUR, schema: 10 }) });
+ok('schema 10 → 11: thuisscherm blijft Vandaag, figuurtje zonder kleur, met reservekopie', r.S.home === 'vandaag' && r.S.fig === null && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 10);
+r = run({ [KEY]: raw({ ...CUR, schema: 10, home: 'kaart', fig: 'lilac' }) });
+ok('schema 10 → 11 is herhaalbaar: een gekozen kaart en kleur blijven', r.S.home === 'kaart' && r.S.fig === 'lilac');
 // 8i. stap 9 → 10: M6 tijd per streng, alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 9, beh: { 5: { shown: 1, go: 1 } } }) });
 ok('schema 9 → 10: strand toegevoegd, beh en items onaangeroerd', r.S.strand && typeof r.S.strand === 'object' && !Array.isArray(r.S.strand) && r.S.beh[5].go === 1 && r.S.items.werk.s === 3 && r.S.schema === SCH);

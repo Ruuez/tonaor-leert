@@ -13,6 +13,11 @@
 .nl-line{position:relative;padding:.6rem 0}.nl-line input{width:100%}.nl-real{position:absolute;top:0;bottom:0;width:4px;margin-left:-2px;background:var(--mint-ink);border-radius:2px}
 .strip{display:flex;flex-wrap:wrap;gap:2px}.strip-p{min-width:2.75rem}.strip-p{flex:1;height:3rem;border:2px solid var(--sky-fill);background:var(--surface);border-radius:.4rem}.strip-p.on{background:var(--sky-fill)}.strip-top,.strip-bot{text-align:center}
 .rt{border-collapse:collapse;margin:0 auto}.rt th,.rt td{padding:.35rem .5rem;text-align:center}.rt th{text-align:left}.rt-in{width:4.5rem;font:inherit;text-align:center;padding:.3rem;border:2px solid var(--sky-fill);border-radius:.4rem}.rt-in.right{border-color:var(--mint-ink)}.rt-in.wrong{border-color:var(--apricot-ink)}
+.wereld{position:relative;margin:4px -4px}.wereld-svg{display:block}
+.w-pl{position:absolute;transform:translate(-50%,-46px);width:112px;height:128px;background:none;border:0;padding:0;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.w-pl .w-name{font-size:.78rem;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1px 7px;max-width:120px;line-height:1.25}
+.w-pl.cur .w-name{background:var(--mint);border-color:var(--mint-fill)}.w-pl:focus-visible .w-name{outline:3px solid var(--sky-deep)}
+.figpick{width:40px;height:40px;border-radius:50%;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line)}.figpick[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink)}
 </style>
 <title>Leren</title>
 <meta name="theme-color" content="#f4f6f1">
@@ -298,6 +303,7 @@ body.u-open{overflow:hidden}
 
 <script src="tlsync.js"></script>
 <script src="scene.js"></script>
+<script src="wereld.js"></script>
 <script src="kaart.js"></script>
 <script src="route.js"></script>
 <script src="pakketcheck.js"></script>
@@ -635,6 +641,36 @@ en:{
  "tab.route":"Route",
  "tab.garden":"Garden",
  "tab.today":"Today",
+ "tab.map":"Map",
+ "tab.album":"Album",
+ "me.home":"Home screen",
+ "me.home.tip":"Today: the screen you know. Map: your learning path with places, and the album instead of the garden. You can switch back at any time.",
+ "me.fig":"Colour of your figure",
+ "map.here":"You are here",
+ "map.go":"Continue",
+ "map.count":"{d} of {n} scenes",
+ "map.place":"{name}, {d} of {n} scenes",
+ "map.allDone":"You have played everything. Choose a place to do again.",
+ "map.none":"There are no places yet.",
+ "map.onderweg":"On the way",
+ "map.due":"{n} things are waiting to be practised",
+ "map.onderwegTip":"The lesson of today: practise what is due, and something new.",
+ "map.more":"More",
+ "map.moreSub":"Explanations, activities and messages",
+ "map.play":"Play",
+ "map.again":"Again",
+ "map.done":"Done",
+ "map.later":"After the previous scene",
+ "map.closed":"Still closed. What happens here:",
+ "album.title":"Album",
+ "album.tip":"Everything you can do, per place, and how firmly it sits.",
+ "album.garden":"View the garden",
+ "album.base":"Basic words",
+ "album.todo":"Still to learn here: {n}",
+ "album.s0":"new",
+ "album.s1":"learning",
+ "album.s2":"known",
+ "album.s3":"firm",
  "profile.name.label":"What is your name? (you can leave this empty)",
  "voice.title":"Reading aloud",
  "voice.dutchVoice":"Dutch voice",
@@ -1203,6 +1239,36 @@ nl:{
  "tab.route":"Route",
  "tab.garden":"Tuin",
  "tab.today":"Vandaag",
+ "tab.map":"Kaart",
+ "tab.album":"Album",
+ "me.home":"<h3>Thuisscherm</h3>",
+ "me.home.tip":"Vandaag: het scherm dat je kent. Kaart: je leerpad met plekken, en het album in plaats van de tuin. Je kunt altijd terug.",
+ "me.fig":"Kleur van je figuurtje",
+ "map.here":"Je bent hier",
+ "map.go":"Verder",
+ "map.count":"{d} van {n} scènes",
+ "map.place":"{name}, {d} van {n} scènes",
+ "map.allDone":"Alles gespeeld. Kies een plek om nog eens te doen.",
+ "map.none":"Er zijn nog geen plekken.",
+ "map.onderweg":"<b>Onderweg</b>",
+ "map.due":"{n} onderdelen wachten op herhaling",
+ "map.onderwegTip":"De les van vandaag: ophalen wat aan de beurt is, en iets nieuws.",
+ "map.more":"Meer",
+ "map.moreSub":"Uitleg, activiteiten en berichten",
+ "map.play":"Speel",
+ "map.again":"Nog eens",
+ "map.done":"Gedaan",
+ "map.later":"Na de vorige scène",
+ "map.closed":"Nog dicht. Wat hier gebeurt:",
+ "album.title":"<h1>Album</h1>",
+ "album.tip":"Alles wat je kunt, per plek, en hoe stevig het zit.",
+ "album.garden":"Tuin bekijken",
+ "album.base":"Basiswoorden",
+ "album.todo":"Hier nog te leren: {n}",
+ "album.s0":"nieuw",
+ "album.s1":"bezig",
+ "album.s2":"zit",
+ "album.s3":"stevig",
  "profile.name.label":"Hoe heet je? (mag leeg blijven)",
  "voice.title":"<h3>Voorlezen</h3>",
  "voice.dutchVoice":"Nederlandse stem",
@@ -1769,6 +1835,36 @@ th:{
  "tab.route":"เส้นทาง",
  "tab.garden":"สวน",
  "tab.today":"วันนี้",
+ "tab.map":"แผนที่",
+ "tab.album":"อัลบั้ม",
+ "me.home":"หน้าแรก",
+ "me.home.tip":"วันนี้: หน้าจอที่คุณคุ้นเคย แผนที่: เส้นทางการเรียนที่มีสถานที่ต่าง ๆ และอัลบั้มแทนสวน เปลี่ยนกลับได้ทุกเมื่อ",
+ "me.fig":"สีของตัวละครของคุณ",
+ "map.here":"คุณอยู่ที่นี่",
+ "map.go":"ต่อไป",
+ "map.count":"{d} จาก {n} ฉาก",
+ "map.place":"{name} {d} จาก {n} ฉาก",
+ "map.allDone":"คุณเล่นครบทุกฉากแล้ว เลือกสถานที่เพื่อเล่นอีกครั้ง",
+ "map.none":"ยังไม่มีสถานที่",
+ "map.onderweg":"ระหว่างทาง",
+ "map.due":"มี {n} อย่างรอการทบทวน",
+ "map.onderwegTip":"บทเรียนของวันนี้: ทบทวนสิ่งที่ถึงเวลา และเรียนสิ่งใหม่",
+ "map.more":"เพิ่มเติม",
+ "map.moreSub":"คำอธิบาย กิจกรรม และข้อความ",
+ "map.play":"เล่น",
+ "map.again":"อีกครั้ง",
+ "map.done":"เสร็จแล้ว",
+ "map.later":"หลังฉากก่อนหน้า",
+ "map.closed":"ยังปิดอยู่ ที่นี่จะเกิดอะไรขึ้น:",
+ "album.title":"อัลบั้ม",
+ "album.tip":"ทุกสิ่งที่คุณทำได้ แยกตามสถานที่ และจำได้แน่นแค่ไหน",
+ "album.garden":"ดูสวน",
+ "album.base":"คำพื้นฐาน",
+ "album.todo":"ยังต้องเรียนที่นี่: {n}",
+ "album.s0":"ใหม่",
+ "album.s1":"กำลังเรียน",
+ "album.s2":"จำได้",
+ "album.s3":"แน่นแล้ว",
  "profile.name.label":"คุณชื่ออะไร (เว้นว่างได้)",
  "voice.title":"เสียงอ่าน",
  "voice.dutchVoice":"เสียงภาษาดัตช์",
@@ -2549,7 +2645,7 @@ function vExplain(){const groups=[['nl','rekenen'],['nl','grammatica'],['nl','le
 /* ============ route met tijd (docs/route-en-prognose.md, docs/ontwerp-stap4.md): de route staat in een pakket, het rekenen in route.js ============ */
 const RC=(typeof window!=='undefined'&&window.RouteCalc)||null;let ROUTE=null,RWHAT=null;
 async function loadRoute(){try{const r=await fetch('content/route-nt2.json');if(!r.ok)return;const d=await r.json();if(RC&&!RC.checkRoute(d).length)ROUTE=d}catch(e){}}
-const VOXDB='leren-stemmen',VOXSTEM='mens';let VOX=new Map();const LISH=new WeakSet();   // ingesproken zinnen (inspreekhulp), vóór het laden gedeclareerd: loadVox draait meteen
+const VOXDB='leren-stemmen',VOXSTEM='mens';let VOX=new Map();const LISH=new WeakSet();let FIGWALK=false,KPLACE=null;   // ingesproken zinnen (inspreekhulp), vóór het laden gedeclareerd: loadVox draait meteen
 const routeP=loadRoute();await loadPacks();await routeP;   // de route laadt naast de pakketten
 loadAudioLists();   // geluidsbestanden per pakket (docs/geluid.md); wacht er niet op
 loadVox();   // ingesproken zinnen van een begeleider (docs/ontwerp-inspreekhulp.md); wacht er niet op
@@ -2560,14 +2656,14 @@ function fresh(){
   const items={};[...NL,...EN,...REK].forEach(x=>items[x.id]=item());
   return {v:2,onboarded:false,thai:'altijd',size:'normaal',goal:'normaal',moment:null,items,introduced:[],
     points:{},days:{},mins:{},help:[],answers:[],conf:[],sessions:0,talks:0,story:0,speedBest:0,
-    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
+    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'vandaag',fig:null,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
 }
 /* ============ opslag veilig laden (#30) ============
    S.v blijft 2. S.schema telt de vorm van de opslag (zonder veld = 1). Elke stap n -> n+1 staat in MIGRATE en mag vaker draaien.
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=10,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=11,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2578,7 +2674,8 @@ const MIGRATE={
  6:s=>{for(const k of ['minsV','outside','prog','blockAdj'])if(!s[k]||typeof s[k]!=='object'||Array.isArray(s[k]))s[k]={};return s},
  7:s=>{for(const it of Object.values(s.items||{}))if(it&&typeof it==='object'&&typeof it.s==='number'&&it.s>=10)it.gf=1;return s},
  8:s=>{if(!s.beh||typeof s.beh!=='object'||Array.isArray(s.beh))s.beh={};return s},
- 9:s=>{if(!s.strand||typeof s.strand!=='object'||Array.isArray(s.strand))s.strand={};return s}   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
+ 9:s=>{if(!s.strand||typeof s.strand!=='object'||Array.isArray(s.strand))s.strand={};return s},
+ 10:s=>{if(s.home!=='kaart'&&s.home!=='vandaag')s.home='vandaag';if(!('fig' in s))s.fig=null;return s}   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
 function checkState(o){if(!o||typeof o!=='object'||Array.isArray(o)||o.v!==2||!o.items||typeof o.items!=='object'||Array.isArray(o.items))return 'broken';
@@ -2853,7 +2950,14 @@ const heroArt=()=>`<svg class="art" viewBox="0 0 140 120" aria-hidden="true"><ci
 let tab='vandaag',route=null;
 function show(t){audioStop();recAbort();LES=null;STEER=null;delete app.dataset.strand;tab=t;route=null;delete app.dataset.vak;$('#nav').hidden=false;document.querySelectorAll('#nav [data-tab]').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===t?'page':'false'));app.classList.remove('sess');rerender();window.scrollTo(0,0)}
 document.querySelectorAll('#nav [data-tab]').forEach(b=>b.onclick=()=>show(b.dataset.tab));
-function rerender(){if(route)return route();({vandaag:vToday,tuin:vGarden,route:vRoute,ik:vMe,emiel:vEmiel}[tab])()}
+function rerender(){setNav();if(route)return route();const k=kaartOn();({vandaag:k?vKaart:vToday,tuin:k?vAlbum:vGarden,route:vRoute,ik:vMe,emiel:vEmiel}[tab])()}
+/* stap 5: de eerste twee knoppen van de tabbalk volgen het thuisscherm (Vandaag en Tuin, of Kaart en Album) */
+let NAVORIG=null;
+function kaartOn(){return S.home==='kaart'&&typeof WereldVis!=='undefined'}   // review stap 5 (1): laadt wereld.js niet, dan het oude thuisscherm
+const FIGLIST=['mint','apricot','sky','lilac'];
+function setNav(){const b=document.querySelectorAll('#nav [data-tab]');if(b.length<2)return;if(!NAVORIG)NAVORIG=[b[0].innerHTML,b[1].innerHTML];const k=kaartOn(),key=k?'kaart':'vandaag';if(b[0].dataset.k===key)return;b[0].dataset.k=b[1].dataset.k=key;
+  b[0].innerHTML=k?`${NAVIC.kaart}${esc(t('tab.map'))}<span class="sup" data-i18n="tab.map"></span>`:NAVORIG[0];b[1].innerHTML=k?`${NAVIC.album}${esc(t('tab.album'))}<span class="sup" data-i18n="tab.album"></span>`:NAVORIG[1];fillStatic()}
+const NAVIC={kaart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>',album:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>'};
 function paint(html){app.innerHTML=`<div class="view">${STORE==='newer'?`<div class="note sky small" role="status">${T('newer.banner')}</div>`:''}${html}</div>`;bindCommon()}
 
 /* ============ welkom ============ */
@@ -3388,7 +3492,7 @@ H.sc_tl=q=>{const st=q.st;if(!KV){next();return}const cards=(st.cards||[]).map(c
   paint()};
 H.sc_deeper=q=>{scFrame(q,`<div class="card stack">${T('les.deeper')}<div class="btn-row"><button class="btn btn-leaf" id="dpGo">${TB('les.deeperGo')}</button><button class="btn btn-ghost" id="dpSkip">${TB('les.deeperSkip')}</button></div></div>`);
   $('#dpGo').onclick=next;$('#dpSkip').onclick=()=>{for(let i=qi+1;i<Q.length;i++)if(Q[i]._deep)Q[i]._skip=true;next()}};
-H.sc_end=q=>{if(LES)return lesEnd(q);const sc=q.sc,st=q.st;finishTime();S.world=S.world||{done:{},at:null};S.world.done[sc.id]=now();if(SCN&&SCN.sc===sc&&SCN.ctrl!=null){S.world.ok=S.world.ok||{};S.world.ok[sc.id]=SCN.ctrl}let rec=false;if(SCN&&SCN.sc===sc&&SCN.hard){S.world.best=S.world.best||{};rec=SCN.good>(S.world.best[sc.id]||0);if(rec)S.world.best[sc.id]=SCN.good}const td=today();S.rounds[td]=(S.rounds[td]||0)+1;pruneWeeks();save();
+H.sc_end=q=>{if(LES)return lesEnd(q);FIGWALK=S.home==='kaart';const sc=q.sc,st=q.st;finishTime();S.world=S.world||{done:{},at:null};S.world.done[sc.id]=now();if(SCN&&SCN.sc===sc&&SCN.ctrl!=null){S.world.ok=S.world.ok||{};S.world.ok[sc.id]=SCN.ctrl}let rec=false;if(SCN&&SCN.sc===sc&&SCN.hard){S.world.best=S.world.best||{};rec=SCN.good>(S.world.best[sc.id]||0);if(rec)S.world.best[sc.id]=SCN.good}const td=today();S.rounds[td]=(S.rounds[td]||0)+1;pruneWeeks();save();
   const nx=nextScene(),more=nx&&nx.id!==sc.id&&!(S.world.done[nx.id]);
   const pu=scPurpose(sc,'last');paint(`<div class="card celebrate stack">${T('scene.canTitle')}<p class="prompt">${scT(sc.can)}</p>${pu?`<p class="note sky small">${scT(pu)}</p>`:''}${st.real?`<div class="note">${T('scene.real')}<p>${scT(st.real)}</p></div>`:''}${st.next?`<p class="muted">${scT(st.next)}</p>`:''}${SCN&&SCN.sc===sc&&SCN.hard?`<p class="num">${T(rec?'scene.newRecord':'scene.record',{n:(S.world.best||{})[sc.id]||0})}</p>`:''}</div>
    ${more?`<button class="btn btn-main" id="scNext">${TB('scene.next')}</button>`:''}<button class="btn btn-ghost" id="scHard">${TB('scene.harder')}</button>${contHtml()}<button class="btn btn-ghost" id="home">${T('cont.home')}</button>`);
@@ -3730,6 +3834,68 @@ function vBuddha(){sub('page.buddha',`
   $('#bd').onclick=()=>{addPts(10);toast('+10 punten');vContinue()}}
 
 /* ============ tuin ============ */
+/* ============ stap 5: de kaart als thuisscherm en het album (docs/ontwerp-stap5-kaart.md) ============
+   Een plek = een hoofdstuk (pakket met scènes, volgorde order). Open: elke plek met een gedane scène en de plek van nextScene();
+   de volgende dicht met één regel, verder een silhouet. Niets gaat dicht wat open was (D2). De samensteller en de les veranderen niet. */
+function kPlaces(){const done=(S.world&&S.world.done)||{},by=new Map(),rank=s=>s.n||6;   // dezelfde volgorde als nextScene (review stap 5, 5)
+  SCENES.slice().sort((a,b)=>a.order-b.order||(a.pack<b.pack?-1:a.pack>b.pack?1:0)).forEach(o=>{if(!by.has(o.pack))by.set(o.pack,{pack:o.pack,list:[]});by.get(o.pack).list.push(o.sc)});
+  const arr=[...by.values()],ns=nextScene(),ci=arr.findIndex(p=>p.list.includes(ns));
+  arr.forEach((p,i)=>{p.list.sort((a,b)=>rank(a)-rank(b));const pk=PACKS.find(x=>x.id===p.pack)||{};p.title=pk.title?scP(pk.title):p.pack;p.vak='nl';
+    p.dots=p.list.map(s=>({vak:s.subject||'nl',done:!!done[s.id]}));p.nd=p.dots.filter(d=>d.done).length;
+    p.state=i===ci?'cur':p.nd?(p.nd===p.dots.length?'done':'open'):(i===ci+1?'next':'far')});
+  return arr}
+function kNotes(){const ans=S.answers.filter(a=>!a.seen).length;return `${steerNote()}${strandNote()}${stockOut()?`<p class="note sky small">${T('stock.out')}</p>`:''}${PACK_MISSING.length?`<div class="note" role="status">${T('pack.missing',{list:esc(PACK_MISSING.join(', '))})}</div>`:''}
+  ${ans?`<button class="card row" id="answers" style="background:var(--lilac);border-color:var(--lilac-fill)"><span class="pill pill-lilac" style="background:var(--surface)">${ans}</span>${T('today.answered')}</button>`:''}
+  ${S.unsent?`<button class="card row between" id="send" style="background:var(--lilac);border-color:var(--lilac-fill)"><span>${T('today.unsent')}</span><span class="pill pill-lilac" style="background:var(--surface)">${T('btn.send')}</span></button>`:''}
+  ${!S.placement?`<button class="card row between" id="place"><span>${T('today.placeTodo')}</span><span class="pill pill-apricot">8 min</span></button>`:''}
+  ${S.seenNews!==NEWS?`<div class="note sky stack-sm" id="news">${T('news.title')}<ul>${Array.from({length:NEWS_N},(_,i)=>`<li>${T('news.'+(i+1))}</li>`).join('')}</ul><button class="btn btn-ghost" id="newsOk">${TB('news.ok')}</button></div>`:''}
+  ${bkDue()?`<div class="note sky stack-sm" id="bknudge">${T('bk.nudge')}<div class="row" style="gap:8px"><button class="btn btn-leaf" id="bkNow" style="width:auto">${TB('bk.nudgeNow')}</button><button class="btn btn-ghost" id="bkLater" style="width:auto">${TB('bk.nudgeLater')}</button></div></div>`:''}`}
+function kNotesBind(){if($('#answers'))$('#answers').onclick=()=>show('ik');if($('#steerTry'))$('#steerTry').onclick=()=>startStory();if($('#strandRead'))$('#strandRead').onclick=()=>startStory();
+  if($('#send'))$('#send').onclick=()=>syncUp(true,ok=>{toast(tx(ok?'sync.sent':'sync.offline'));rerender()});
+  if($('#place'))$('#place').onclick=startPlacement;if($('#routeLine'))$('#routeLine').onclick=()=>show('route');
+  if($('#newsOk'))$('#newsOk').onclick=()=>{S.seenNews=NEWS;save();const n=$('#news');if(n)n.remove()};
+  if($('#bkNow'))$('#bkNow').onclick=()=>exportBackup().then(ok=>{S.bkNudge=now();save();show('vandaag')});
+  if($('#bkLater'))$('#bkLater').onclick=()=>{S.bkNudge=now();save();const n=$('#bknudge');if(n)n.remove()}}
+function vKaart(){if(!S.onboarded)return vOnboard();
+  const [h,ht]=hello(),P=kPlaces(),ci=P.findIndex(p=>p.state==='cur'),cur=P[ci],ns=nextScene(),due=[...NL,...EN,...REK].filter(x=>dorst(x.id)).length,allDone=!!P.length&&P.every(p=>p.nd===p.dots.length);
+  const R=WereldVis.render(P.map(p=>({vak:p.vak,state:p.state,dots:p.dots})),S.fig),lbl=p=>esc(String(t('map.place',{name:p.title,d:p.nd,n:p.dots.length})).replace(/<[^>]*>/g,''));
+  const pl=P.map((p,i)=>p.state==='far'?'':`<button class="w-pl${p.state==='cur'?' cur':''}" data-pl="${i}" style="left:${(R.pos[i].x/R.w*100).toFixed(2)}%;top:${(R.pos[i].y/R.h*100).toFixed(2)}%" aria-label="${lbl(p)}"><span class="w-name" aria-hidden="true">${esc(p.title)}</span></button>`).join('');
+  paint(`<header class="top"><div>${bi(`<h1>${h}${nm()?', '+nm():''}</h1>`,ht)}</div>${thaiSwitch()}</header>
+  ${weekCard()}${routeLine()}${kNotes()}
+  ${cur?`<section class="card stack"><span class="eyebrow">${T('map.here')}</span><h2 style="margin:0">${esc(cur.title)}</h2><p class="small muted">${allDone?T('map.allDone'):esc(scP((ns||{}).title))} · ${T('map.count',{d:cur.nd,n:cur.dots.length})}</p>${allDone?'':`<button class="btn btn-main" id="kGo">${TB('map.go')}</button>`}</section>`:`<div class="note">${T('map.none')}</div>`}
+  <button class="card row between" id="kWeg" style="background:var(--sky);border-color:var(--sky-fill);text-align:left"><span style="display:flex;flex-direction:column;gap:2px">${T('map.onderweg')}<span class="small muted">${due?T('map.due',{n:due}):T('map.onderwegTip')}</span></span>${due?`<span class="pill pill-sky num" style="background:var(--surface)">${due}</span>`:''}</button>
+  ${P.length?`<div class="wereld">${R.svg}${pl}</div><div id="kSheet" aria-live="polite"></div>`:''}
+  <div class="tiles2">${LESSEN.length?(l=>l?`<button class="tile sky" id="ontdek"><span class="ic">${icon.book}</span>${T('les.tile')}<span class="small muted">${esc(scP(l.title))}</span></button>`:'')(nextLes()):''}
+   <button class="tile mint" id="kMore"><span class="ic">${icon.bulb}</span>${T('map.more')}<span class="small muted">${T('map.moreSub')}</span></button></div>`);
+  kNotesBind();
+  if($('#kGo'))$('#kGo').onclick=()=>startScene(ns);
+  $('#kWeg').onclick=()=>startLesson(false);
+  if($('#ontdek'))$('#ontdek').onclick=()=>startLes(nextLes());
+  $('#kMore').onclick=()=>{route=vToday;rerender();app.insertAdjacentHTML('afterbegin',`<button class="btn btn-ghost" id="kBack" style="width:auto">← ${TB('tab.map')}</button>`);$('#kBack').onclick=()=>show('vandaag');window.scrollTo(0,0)};
+  app.querySelectorAll('[data-pl]').forEach(b=>b.onclick=()=>kSheet(P[+b.dataset.pl]));
+  /* het figuurtje loopt na een gedane scène van de vorige plek naar de nieuwe; met minder beweging staat het er meteen (CSS) */
+  const g=document.getElementById('wfig');
+  if(FIGWALK&&!allDone&&g&&KPLACE!=null&&ci>=0&&KPLACE!==ci){const a=WereldVis.figAt(KPLACE),b=WereldVis.figAt(ci);if(a&&b){g.style.transition='none';g.style.transform=`translate(${a.x}px,${a.y}px)`;g.getBoundingClientRect();requestAnimationFrame(()=>{g.style.transition='transform 1.2s ease-in-out';g.style.transform=`translate(${b.x}px,${b.y}px)`})}}
+  FIGWALK=false;KPLACE=ci>=0?ci:KPLACE}
+function kSheet(p){const el=$('#kSheet');if(!el||!p)return;const done=(S.world&&S.world.done)||{};
+  if(p.state==='next'){el.innerHTML=`<section class="card stack"><h3 style="margin:0">${esc(p.title)}</h3><p class="small muted">${T('map.closed')}</p><p>${esc(scP((p.list[0]||{}).intro))}</p></section>`}
+  else{const first=p.list.find(s=>!done[s.id]);
+    el.innerHTML=`<section class="card stack"><h3 style="margin:0">${esc(p.title)}</h3><ul class="list">${p.list.map((s,i)=>`<li class="row between"><span>${esc(scP(s.title))}${done[s.id]?` <span class="pill pill-mint small">${T('map.done')}</span>`:''}</span>${done[s.id]?`<button class="btn btn-ghost" style="width:auto" data-ksc="${i}">${TB('map.again')}</button>`:s===first?`<button class="btn btn-main" style="width:auto" data-ksc="${i}">${TB('map.play')}</button>`:`<span class="small muted">${T('map.later')}</span>`}</li>`).join('')}</ul></section>`;
+    el.querySelectorAll('[data-ksc]').forEach(b=>b.onclick=()=>startScene(p.list[+b.dataset.ksc]))}
+  try{el.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}}
+/* het album: wat je kunt, per plek, in vier sterktes uit dezelfde stage() als de tuin (0 nieuw; 1-2 bezig; 3 zit; 4-5 stevig). Geen rood. */
+const ALBS=['album.s0','album.s1','album.s2','album.s3'];   // vier sterktes; FIGWALK in sc_end: het figuurtje loopt alleen na een gedane scène
+function vAlbum(){const P=kPlaces().filter(p=>p.state!=='far'&&p.state!=='next'),inPack=new Set(),seen=id=>S.items[id]&&S.items[id].reps>0,s4=id=>{const g=stage(id);return g===0?0:g<=2?1:g===3?2:3},PILL=['pill-sky','pill-lilac','pill-apricot','pill-mint'],by=[0,0,0,0],say1=[];
+  P.forEach(p=>{const pk=PACKS.find(x=>x.id===p.pack);if(pk)(pk.items||[]).forEach(x=>inPack.add(x.id))});   // review stap 5 (8): alleen de plekken die het album toont
+  const li=(id,label,sayT)=>{const k=s4(id);by[k]++;let a='';if(sayT){say1.push(sayT);a=` data-asay="${say1.length-1}"`}return `<li class="row between"><button class="linkish" style="text-align:left"${a}>${esc(label)}</button><span class="pill ${PILL[k]} small">${T(ALBS[k])}</span></li>`};
+  const secs=P.map(p=>{const pk=PACKS.find(x=>x.id===p.pack)||{},its=(pk.items||[]).filter(x=>['word','phrase','rule','sound'].includes(x.kind)&&S.items[x.id]),got=its.filter(x=>seen(x.id)),todo=its.length-got.length;
+    return `<details class="card"${p.state==='cur'?' open':''}><summary><b>${esc(p.title)}</b> <span class="small muted num">${got.length}</span></summary><ul class="list">${got.map(x=>x.kind==='rule'||x.kind==='sound'?li(x.id,scP(x.title||{})||x.id,''):li(x.id,(x.art?x.art+' ':'')+(x.w||x.id),(x.art?x.art+' ':'')+(x.w||''))).join('')}</ul>${todo?`<p class="small muted">${T('album.todo',{n:todo})}</p>`:''}</details>`}).join('');
+  const base=[...NL.filter(x=>!inPack.has(x.id)&&seen(x.id)).map(x=>li(x.id,fw(x),fw(x))),...REK.filter(x=>seen(x.id)).map(x=>li(x.id,String(x.label||x.id).replace(/<[^>]*>/g,''),'')),...EN.filter(x=>seen(x.id)).map(x=>li(x.id,x.w,''))];
+  paint(`<header class="top"><div>${T('album.title')}</div>${thaiSwitch()}</header><p class="muted">${T('album.tip')}</p><button class="btn btn-ghost" id="toGarden">${TB('album.garden')}</button>
+  <div class="legend">${by.map((n,k)=>`<span class="pill ${PILL[k]} num">${n} ${T(ALBS[k])}</span>`).join('')}</div>
+  ${secs}${base.length?`<details class="card"><summary><b>${T('album.base')}</b> <span class="small muted num">${base.length}</span></summary><ul class="list">${base.join('')}</ul></details>`:''}`);
+  app.querySelectorAll('[data-asay]').forEach(b=>b.onclick=()=>say(say1[+b.dataset.asay]));
+  $('#toGarden').onclick=()=>{route=vGarden;rerender();window.scrollTo(0,0)}}
 function vGarden(){
   const all=[...NL.map(x=>({id:x.id,bed:'nl',l:`${fw(x)}`,sup:L_(x),say:`${fw(x)}. ${x.ex}`,lang:'nl'})),...REK.map(x=>({id:x.id,bed:'rek',l:x.label,sup:L_(x),xid:explForItem(x.id,'nl')})),
     ...PACKS.flatMap(p=>(p.items||[]).filter(x=>(x.kind==='rule'||x.kind==='sound')&&S.items[x.id]).map(x=>({id:x.id,bed:'regel',l:esc((x.title||{})[p.learn==='en'?'en':'nl']||x.id),sup:L_(x.title||{}),lang:p.learn,xid:explForItem(x.id,p.learn)}))),...EN.map(x=>({id:x.id,bed:'en',l:x.w,sup:L_(x),say:`${x.w}. ${x.ex}`,lang:'en'}))];
@@ -3822,6 +3988,8 @@ function vMe(){
    ${recOk()?`<button class="btn btn-ghost" id="voxOpen">${TB('vox.open')}</button><p class="small muted">${T('vox.openTip')}</p>`:''}
    <button class="btn btn-ghost" id="steerReset">${TB('me.steer.reset')}</button></section>
   <section class="card stack">${T('me.weekGoal')}<p class="small muted">${T('me.weekGoal.tip')}</p><div class="seg" role="group" aria-label="${esc(t('week.title'))}">${WEEKGOALS.map(m=>`<button data-wg="${m}" aria-pressed="${weekGoal()===m}">${fmtH(m)} ${esc(t('week.hours'))}</button>`).join('')}</div></section>
+  <section class="card stack">${T('me.home')}<p class="small muted">${T('me.home.tip')}</p><div class="seg" role="group" aria-label="${esc(String(t('me.home')).replace(/<[^>]*>/g,''))}"><button data-home="vandaag" aria-pressed="${S.home!=='kaart'}">${TB('tab.today')}</button><button data-home="kaart" aria-pressed="${S.home==='kaart'}">${TB('tab.map')}</button></div>
+   ${S.home==='kaart'?`<p class="small muted">${T('me.fig')}</p><div class="row" role="group" style="gap:10px">${FIGLIST.map((c,i)=>`<button class="figpick" data-fig="${c}" aria-pressed="${(S.fig||'sky')===c}" aria-label="${i+1}" style="background:var(--${c}-deep)"></button>`).join('')}</div>`:''}</section>
   <section class="card stack">${T('me.letters')}<div class="seg" role="group" aria-label="Lettergrootte">${['normaal','groot'].map(k=>`<button data-sz="${k}" aria-pressed="${S.size===k}">${TB('size.'+k)}</button>`).join('')}</div></section>
   ${voiceCard()}
   <section class="card stack">${T('me.extras')}<div class="seg" role="group" aria-label="Extra's">${['boeddhisme','liedje'].map(k=>`<button data-ex="${k}" aria-pressed="${!!S.extras[k]}">${TB('extra.opt.'+k)}</button>`).join('')}</div></section>
@@ -3843,6 +4011,8 @@ function vMe(){
   app.querySelectorAll('[data-th]').forEach(b=>b.onclick=()=>{setThai(b.dataset.th);vMe()});
   app.querySelectorAll('[data-sz]').forEach(b=>b.onclick=()=>{setSize(b.dataset.sz);vMe()});
   app.querySelectorAll('[data-wg]').forEach(b=>b.onclick=()=>{S.weekGoal=+b.dataset.wg;S.weekGoalSet=true;save();vMe()});
+  app.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>{S.home=b.dataset.home==='kaart'?'kaart':'vandaag';save();setNav();vMe()});   /* stap 5: thuisscherm; terug kan altijd */
+  app.querySelectorAll('[data-fig]').forEach(b=>b.onclick=()=>{if(FIGLIST.includes(b.dataset.fig))S.fig=b.dataset.fig;save();vMe()});
   app.querySelectorAll('[data-npd]').forEach(b=>b.onclick=()=>{S.newPerDay=+b.dataset.npd;save();vMe()});
   app.querySelectorAll('[data-len]').forEach(b=>b.onclick=()=>{S.roundLen=b.dataset.len;save();vMe()});
   app.querySelectorAll('[data-quiet]').forEach(b=>b.onclick=()=>{QUIET=b.dataset.quiet==='1';if(QUIET){audioStop();try{speechSynthesis.cancel()}catch(e){}}vMe()});
