@@ -162,7 +162,8 @@ ok('purpose staat bij het begin en op het slot van de laatste scène (scPurpose)
 ok('H3 rust pas over tijd: drie dagen en zeven dagen ertussen (MOTOR.restDays, restSpan)', html.includes('h[h.length-1][0]-h[0][0]>=MOTOR.restSpan') && html.includes('.size>=MOTOR.restDays'));
 { const cx = { NL: [{ id: 'a', also: ['b'] }, { id: 'b' }, { id: 'c' }] }; vm.createContext(cx); vm.runInContext(fnBlock('alsoOf') + '\nthis.f=alsoOf;', cx);
   ok('also werkt in beide richtingen (review 3: pijn aan / pijn in)', JSON.stringify(cx.f(cx.NL[0])) === '["b"]' && JSON.stringify(cx.f(cx.NL[1])) === '["a"]' && cx.f(cx.NL[2]).length === 0); }
-ok('Proefonderdelen: de scènetegel alleen met de schakelaar aan; standaard uit (aanbeveling 10.25)', html.includes('${SCENES.length&&S.trial?') && html.includes('explainVoice:true,trial:false,') && html.includes("if(typeof s.trial!=='boolean')s.trial=false"));
+ok('besluit eigenaar 20 november 2026 (proefweek geschrapt): scènetegel en Ontdek standaard zichtbaar, niet meer achter Proefonderdelen', html.includes('${SCENES.length?`<button class="tile mint" id="scene">') && html.includes('${LESSEN.length?(l=>') && !/(SCENES|LESSEN)\.length&&S\.trial/.test(html));
+ok('Proefonderdelen blijft voor opnemen (wacht op de telefoontest); de schakelaar zelf staat standaard uit',html.includes('explainVoice:true,trial:false,') && html.includes("if(typeof s.trial!=='boolean')s.trial=false"));
 { const cx = {}; vm.createContext(cx); vm.runInContext(lineOf('const normS=') + '\n' + lineOf('const norm=') + '\nthis.n=norm;this.s=normS;', cx);
   ok('tolerant typen (10.29): hoofdletter, spatie, accent en trema geen fout; het dictee blijft streng', cx.n('  Ruïne ') === cx.n('ruine') && cx.n('Café') === 'cafe' && cx.s('ruïne') !== cx.s('ruine')); }
 ok('korte ronde: de melding komt aan (de vlag gaat mee met de rij die compose teruggeeft)', html.includes('if(q._short)out._short=q._short;return out'));
