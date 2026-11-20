@@ -155,9 +155,14 @@ r = run({ [KEY]: raw({ ...CUR, schema: 6, minsV: { 5: { nl: 3, rk: 1, en: 0 } },
 ok('schema 6 → 7 is herhaalbaar: bestaande tijd per vak en buiten de app blijft, een ongeldig veld wordt leeg', r.S.minsV[5].nl === 3 && r.S.outside[5].lezen === 15 && !Array.isArray(r.S.prog));
 // 8j. stap 10 → 11: thuisscherm (Vandaag of Kaart) en kleur van het figuurtje (docs/ontwerp-stap5-kaart.md), alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 10 }) });
-ok('schema 10 → 11: thuisscherm blijft Vandaag, figuurtje zonder kleur, met reservekopie', r.S.home === 'vandaag' && r.S.fig === null && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 10);
+ok('schema 10 → 12: figuurtje zonder kleur; daarna (besluit eigenaar) één keer de kaart als thuisscherm; met reservekopie', r.S.home === 'kaart' && r.S.homeSet === true && r.S.fig === null && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 10);
 r = run({ [KEY]: raw({ ...CUR, schema: 10, home: 'kaart', fig: 'lilac' }) });
-ok('schema 10 → 11 is herhaalbaar: een gekozen kaart en kleur blijven', r.S.home === 'kaart' && r.S.fig === 'lilac');
+ok('schema 10 → 12: een gekozen kaart en kleur blijven', r.S.home === 'kaart' && r.S.fig === 'lilac');
+// 8k. stap 11 → 12: besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm
+r = run({ [KEY]: raw({ ...CUR, schema: 11, home: 'vandaag', fig: 'mint' }) });
+ok('schema 11 → 12: Vandaag wordt één keer Kaart (homeSet), de kleur blijft, met reservekopie', r.S.home === 'kaart' && r.S.homeSet === true && r.S.fig === 'mint' && JSON.parse(r.ls._[KEY + '.bak']).home === 'vandaag');
+r = run({ [KEY]: raw({ ...CUR, schema: 11, home: 'vandaag', homeSet: true }) });
+ok('schema 11 → 12 is herhaalbaar: met homeSet blijft een gekozen Vandaag staan', r.S.home === 'vandaag');
 // 8i. stap 9 → 10: M6 tijd per streng, alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 9, beh: { 5: { shown: 1, go: 1 } } }) });
 ok('schema 9 → 10: strand toegevoegd, beh en items onaangeroerd', r.S.strand && typeof r.S.strand === 'object' && !Array.isArray(r.S.strand) && r.S.beh[5].go === 1 && r.S.items.werk.s === 3 && r.S.schema === SCH);

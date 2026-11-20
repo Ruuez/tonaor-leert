@@ -354,8 +354,8 @@ en:{
  "bk.nudgeLater":"Later",
  "news.title":"What is new",
  "news.ok":"Got it",
- "news.1":"The story with scenes is now on Today, next to the lesson.",
- "news.2":"Discover: short lessons about the Netherlands and the world, also on Today.",
+ "news.1":"The map is now your home screen. Do you prefer Today? Choose it on Me.",
+ "news.2":"The album shows what you can do, per place. The garden is still there.",
  "news.3":"With a listening text you first tap Listen. Then you can answer.",
  "round.short":"A short round today: not much is due.",
  "round.shortStock":"A short round today: you have seen all the new material and not much is due.",
@@ -960,8 +960,8 @@ nl:{
  "bk.nudgeLater":"Later",
  "news.title":"<p><b>Wat is nieuw</b></p>",
  "news.ok":"Begrepen",
- "news.1":"Het verhaal met scènes staat nu op Vandaag, naast de les.",
- "news.2":"Ontdek: korte lessen over Nederland en de wereld, ook op Vandaag.",
+ "news.1":"De kaart is nu je thuisscherm. Liever Vandaag? Dat kies je op Ik.",
+ "news.2":"Het album laat zien wat je kunt, per plek. De tuin is er nog.",
  "news.3":"Bij een luistertekst tik je eerst op Luister. Daarna kun je antwoorden.",
  "round.short":"Vandaag een korte ronde: er is weinig aan de beurt.",
  "round.shortStock":"Vandaag een korte ronde: je hebt alle nieuwe lesstof gezien en er is weinig aan de beurt.",
@@ -1562,8 +1562,8 @@ th:{
  "bk.nudgeLater":"ไว้ทีหลัง",
  "news.title":"มีอะไรใหม่",
  "news.ok":"เข้าใจแล้ว",
- "news.1":"เรื่องเล่าที่มีฉากอยู่ในหน้า วันนี้ แล้ว ข้างบทเรียน",
- "news.2":"ค้นพบ: บทเรียนสั้น ๆ เกี่ยวกับเนเธอร์แลนด์และโลก อยู่ในหน้า วันนี้ ด้วย",
+ "news.1":"ตอนนี้แผนที่เป็นหน้าแรกของคุณ ชอบหน้า วันนี้ มากกว่า? เลือกได้ที่หน้า ฉัน",
+ "news.2":"อัลบั้มแสดงสิ่งที่คุณทำได้ แยกตามสถานที่ สวนยังอยู่",
  "news.3":"ในบทฟัง ให้แตะ ฟัง ก่อน แล้วจึงตอบได้",
  "round.short":"วันนี้รอบสั้น มีสิ่งที่ต้องทบทวนไม่มาก",
  "round.shortStock":"วันนี้รอบสั้น คุณเห็นบทเรียนใหม่ครบแล้ว และมีสิ่งที่ต้องทบทวนไม่มาก",
@@ -2306,7 +2306,7 @@ function noSameForm(q,learn){let speak=false;try{speak=typeof window!=='undefine
     out.push(x)}   /* geen andere vorm beschikbaar: dan toch (een tekort aan lesstof, geen reden om het onderdeel over te slaan) */
   return out}
 /* Wat is nieuw (aanbeveling 1.3): verhoog NEWS bij een release die de leerder merkt, en zet de punten in I18N (news.1 …). Een nieuwe installatie ziet het niet. */
-const NEWS='2026-11-20',NEWS_N=3;
+const NEWS='2026-11-21',NEWS_N=3;
 let QUIET=false;   // stille stand: zonder voorlezen en luisteroefeningen, alleen voor deze sessie (Bijsturen op Ik)
 let SCENES=[],LESSEN=[],LES=null;   // LES: de les die nu loopt (geen herhaling, geen foutprofiel, geen punten)   // scènes uit de pakketten: {sc, learn}
 let PACKS=[],PACK_MISSING=[],NL=[],EN=[],REK=[],SENT=[],PAIRS=[],DICTEE=null,STORY=null,PLACE=[];
@@ -2672,14 +2672,14 @@ function fresh(){
   const items={};[...NL,...EN,...REK].forEach(x=>items[x.id]=item());
   return {v:2,onboarded:false,thai:'altijd',size:'normaal',goal:'normaal',moment:null,items,introduced:[],
     points:{},days:{},mins:{},help:[],answers:[],conf:[],sessions:0,talks:0,story:0,speedBest:0,
-    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'vandaag',fig:null,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
+    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
 }
 /* ============ opslag veilig laden (#30) ============
    S.v blijft 2. S.schema telt de vorm van de opslag (zonder veld = 1). Elke stap n -> n+1 staat in MIGRATE en mag vaker draaien.
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=11,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=12,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2691,7 +2691,8 @@ const MIGRATE={
  7:s=>{for(const it of Object.values(s.items||{}))if(it&&typeof it==='object'&&typeof it.s==='number'&&it.s>=10)it.gf=1;return s},
  8:s=>{if(!s.beh||typeof s.beh!=='object'||Array.isArray(s.beh))s.beh={};return s},
  9:s=>{if(!s.strand||typeof s.strand!=='object'||Array.isArray(s.strand))s.strand={};return s},
- 10:s=>{if(s.home!=='kaart'&&s.home!=='vandaag')s.home='vandaag';if(!('fig' in s))s.fig=null;return s}   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
+ 10:s=>{if(s.home!=='kaart'&&s.home!=='vandaag')s.home='vandaag';if(!('fig' in s))s.fig=null;return s},
+ 11:s=>{if(!s.homeSet){s.home='kaart';s.homeSet=true}return s}   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
 function checkState(o){if(!o||typeof o!=='object'||Array.isArray(o)||o.v!==2||!o.items||typeof o.items!=='object'||Array.isArray(o.items))return 'broken';
@@ -4047,7 +4048,7 @@ function vMe(){
   app.querySelectorAll('[data-th]').forEach(b=>b.onclick=()=>{setThai(b.dataset.th);vMe()});
   app.querySelectorAll('[data-sz]').forEach(b=>b.onclick=()=>{setSize(b.dataset.sz);vMe()});
   app.querySelectorAll('[data-wg]').forEach(b=>b.onclick=()=>{S.weekGoal=+b.dataset.wg;S.weekGoalSet=true;save();vMe()});
-  app.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>{S.home=b.dataset.home==='kaart'?'kaart':'vandaag';save();setNav();vMe()});   /* stap 5: thuisscherm; terug kan altijd */
+  app.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>{S.home=b.dataset.home==='kaart'?'kaart':'vandaag';S.homeSet=true;save();setNav();vMe()});   /* stap 5: thuisscherm; terug kan altijd */
   app.querySelectorAll('[data-fig]').forEach(b=>b.onclick=()=>{if(FIGLIST.includes(b.dataset.fig))S.fig=b.dataset.fig;save();vMe()});
   app.querySelectorAll('[data-npd]').forEach(b=>b.onclick=()=>{S.newPerDay=+b.dataset.npd;save();vMe()});
   app.querySelectorAll('[data-len]').forEach(b=>b.onclick=()=>{S.roundLen=b.dataset.len;save();vMe()});

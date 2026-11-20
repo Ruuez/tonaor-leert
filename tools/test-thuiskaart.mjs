@@ -35,10 +35,10 @@ ok(W.figAt(1).x === r.pos[1].x && W.figAt(1).y === r.pos[1].y - 52, 'figAt klopt
   ok(p[0].state === 'cur' && p[2].state === 'done', 'een plek met een gedane scène blijft open, ook voorbij de huidige (D2)'); }
 
 /* 3. de app: schakelaar, tabbalk, kaart, album */
-ok(/const SCHEMA=11/.test(html) && /10:s=>\{if\(s\.home!=='kaart'&&s\.home!=='vandaag'\)s\.home='vandaag';if\(!\('fig' in s\)\)s\.fig=null;return s\}/.test(html), 'migratie 10 → 11: alleen toegevoegd, standaard Vandaag');
-ok(/explainVoice:true,trial:false,home:'vandaag',fig:null,/.test(html), 'een nieuwe leerder begint op Vandaag (de eigenaar beslist na G3)');
+ok(/const SCHEMA=12/.test(html) && /10:s=>\{if\(s\.home!=='kaart'&&s\.home!=='vandaag'\)s\.home='vandaag';if\(!\('fig' in s\)\)s\.fig=null;return s\}/.test(html) && /11:s=>\{if\(!s\.homeSet\)\{s\.home='kaart';s\.homeSet=true\}return s\}/.test(html), 'migratie 10 → 11 → 12: de kaart wordt één keer het thuisscherm (besluit eigenaar), daarna niet meer aangeraakt');
+ok(/explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,/.test(html) && /S\.home=b\.dataset\.home==='kaart'\?'kaart':'vandaag';S\.homeSet=true;save\(\)/.test(html), 'een nieuwe leerder begint op de kaart; een keuze op Ik blijft gelden');
 ok(/function rerender\(\)\{setNav\(\);if\(route\)return route\(\);const k=kaartOn\(\);\(\{vandaag:k\?vKaart:vToday,tuin:k\?vAlbum:vGarden,/.test(html), 'het thuisscherm volgt de schakelaar; de tuin en Vandaag blijven bestaan');
-ok(/data-home="vandaag"/.test(html) && /S\.home=b\.dataset\.home==='kaart'\?'kaart':'vandaag';save\(\);setNav\(\);vMe\(\)/.test(html), 'schakelaar op Ik, terug kan altijd');
+ok(/data-home="vandaag"/.test(html) && /S\.home=b\.dataset\.home==='kaart'\?'kaart':'vandaag';S\.homeSet=true;save\(\);setNav\(\);vMe\(\)/.test(html), 'schakelaar op Ik, terug kan altijd');
 ok(/if\(FIGLIST\.includes\(b\.dataset\.fig\)\)S\.fig=b\.dataset\.fig/.test(html), 'alleen een kleur uit het palet');
 ok(/function kaartOn\(\)\{return S\.home==='kaart'&&typeof WereldVis!=='undefined'\}/.test(html) && !/WereldVis\.FIGS/.test(html), 'laadt wereld.js niet, dan het oude thuisscherm en een werkend Ik (review stap 5, 1)');
 ok(/\$\{steerNote\(\)\}\$\{strandNote\(\)\}/.test(html) && /id="kBack"/.test(html), 'bijsturen ook op de kaart; terug vanuit Meer (review stap 5, 6 en 7)');
