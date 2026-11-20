@@ -44,7 +44,7 @@ ok(/function kaartOn\(\)\{return S\.home==='kaart'&&typeof WereldVis!=='undefine
 ok(/\$\{steerNote\(\)\}\$\{strandNote\(\)\}/.test(html) && /id="kBack"/.test(html), 'bijsturen ook op de kaart; terug vanuit Meer (review stap 5, 6 en 7)');
 const vk = cut('function vKaart(', 'function kSheet(');
 ok(/if\(!S\.onboarded\)return vOnboard\(\)/.test(vk), 'kaart: eerst de start, zoals Vandaag');
-ok(/\$\{kWeek\(\)\}<div class="kroute">\$\{routeLine\(\)\}<\/div>/.test(vk) && /<div id="kWeekFull" hidden>\$\{weekCard\(\)\}<\/div>/.test(html), 'G3: smalle weekring (tik: het hele blok), examenregel met bandbreedte (E5) klein eronder');
+ok(/\$\{kWeek\(\)\}\$\{kRoute\(\)\}/.test(vk) && /function kRoute\(\)\{if\(!RC\|\|!ROUTE\|\|!S\.onboarded\)return '';/.test(html) && /a=mo\(sn\[0\]\),b=mo\(sn\[2\]\)/.test(html) && /a===b\?t\('map\.exam1',\{m:a\}\):t\('map\.exam',\{a,b\}\)/.test(html) &&/<div id="kWeekFull" hidden>\$\{weekCard\(\)\}<\/div>/.test(html), 'G3: smalle weekring (tik: het hele blok), examenregel met bandbreedte (E5) in één regel in de leertaal eronder');
 ok(vk.indexOf('${kWeek()}') < vk.indexOf('id="kGo"') && vk.indexOf('id="kGo"') < vk.indexOf('id="kWeg"') && vk.indexOf('id="kWeg"') < vk.indexOf('id="kMore"') && vk.indexOf('id="kMore"') < vk.indexOf('${kNotes()}') && vk.indexOf('${kNotes()}') < vk.indexOf('class="wereld"'), 'G3: Verder, Onderweg, dan Ontdek en Meer, dan de meldingen, en pas dan het pad (positie op 375×667: browsercontrole in STATUS)');
 ok(/const KFAR=2;/.test(html) && /P=P0\.slice\(0,Math\.min\(P0\.length,vis\+1\+KFAR\)\),rest=P0\.length-P\.length/.test(vk) && /T\('map\.rest',\{n:rest\}\)/.test(vk), 'G3: hooguit twee silhouetten na de dichte plek, dan "nog n plekken"');
 ok(/\$\('#kWeg'\)\.onclick=\(\)=>startLesson\(false\)/.test(vk) && /\$\('#kGo'\)\)\$\('#kGo'\)\.onclick=\(\)=>startScene\(ns\)/.test(vk), 'Onderweg is de bestaande les; Verder is nextScene()');
@@ -61,7 +61,7 @@ ok(/PILL=\['pill-sky','pill-lilac','pill-apricot','pill-mint'\]/.test(va) && !/r
 ok(/\$\('#toGarden'\)\.onclick=\(\)=>\{route=vGarden;rerender\(\)/.test(va), 'album: de tuin blijft bereikbaar');
 ok(/esc\(label\)/.test(va), 'album: labels via esc');
 ok(/'\.\/wereld\.js'/.test(sw) && /<script src="wereld\.js"><\/script>/.test(html), 'wereld.js geladen en offline beschikbaar');
-for (const k of ['tab.map', 'tab.album', 'me.home', 'me.home.tip', 'me.fig', 'map.here', 'map.go', 'map.count', 'map.place', 'map.allDone', 'map.none', 'map.onderweg', 'map.due', 'map.onderwegTip', 'map.more', 'map.moreSub', 'map.play', 'map.again', 'map.done', 'map.later', 'map.closed', 'map.rest', 'map.close', 'album.title', 'album.tip', 'album.garden', 'album.base', 'album.todo', 'album.s0', 'album.s1', 'album.s2', 'album.s3'])
+for (const k of ['tab.map', 'tab.album', 'me.home', 'me.home.tip', 'me.fig', 'map.here', 'map.go', 'map.count', 'map.place', 'map.allDone', 'map.none', 'map.onderweg', 'map.due', 'map.onderwegTip', 'map.more', 'map.moreSub', 'map.play', 'map.again', 'map.done', 'map.later', 'map.closed', 'map.rest', 'map.close', 'map.exam', 'map.exam1', 'album.title', 'album.tip', 'album.garden', 'album.base', 'album.todo', 'album.s0', 'album.s1', 'album.s2', 'album.s3'])
   ok((html.match(new RegExp(' "' + k.replace(/\./g, '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
 
 console.log(fout ? fout + ' FOUT(EN)' : 'test-thuiskaart: alles OK');

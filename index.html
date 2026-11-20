@@ -666,6 +666,8 @@ en:{
  "map.done":"Done",
  "map.later":"After the previous scene",
  "map.closed":"Still closed. What happens here:",
+ "map.exam":"Exam: between {a} and {b}",
+ "map.exam1":"Exam: {m}",
  "map.rest":{"one":"{n} more place further on","other":"{n} more places further on"},
  "map.close":"Close",
  "album.title":"Album",
@@ -1266,6 +1268,8 @@ nl:{
  "map.done":"Gedaan",
  "map.later":"Na de vorige scène",
  "map.closed":"Nog dicht. Wat hier gebeurt:",
+ "map.exam":"Examen: tussen {a} en {b}",
+ "map.exam1":"Examen: {m}",
  "map.rest":{"one":"Nog {n} plek verderop","other":"Nog {n} plekken verderop"},
  "map.close":"Sluiten",
  "album.title":"<h1>Album</h1>",
@@ -1864,6 +1868,8 @@ th:{
  "map.done":"เสร็จแล้ว",
  "map.later":"หลังฉากก่อนหน้า",
  "map.closed":"ยังปิดอยู่ ที่นี่จะเกิดอะไรขึ้น:",
+ "map.exam":"สอบ: ระหว่าง {a} ถึง {b}",
+ "map.exam1":"สอบ: {m}",
  "map.rest":"อีก {n} สถานที่ข้างหน้า",
  "map.close":"ปิด",
  "album.title":"อัลบั้ม",
@@ -3870,6 +3876,9 @@ function kNotesBind(){if($('#answers'))$('#answers').onclick=()=>show('ik');if($
 /* G3 (docs/ijkmoment-g3.md): Verder en Onderweg op 375×667 zonder scrollen in beeld; een smalle weekring (tik: het hele blok) */
 function kWeek(){const g=weekGoal(),wm=weekMins();
   return `<button class="card row between kweek" id="kWeek" aria-expanded="false" aria-controls="kWeekFull"><span class="row" style="gap:10px;align-items:center"><span class="wring" aria-hidden="true">${ring(wm/g,t('week.title'),MILES.map(m=>m/g))}</span><span class="small num" style="line-height:1.3">${T('week.ring',hm(wm))}</span></span><span class="pill pill-mint" aria-hidden="true">›</span></button><div id="kWeekFull" hidden>${weekCard()}</div>`}
+/* G3 na v2-91: de examenregel op de kaart in één regel, in de leertaal (de bandbreedte uit dezelfde berekening als routeLine); de programmanaam en de steuntaal staan op Route */
+function kRoute(){if(!RC||!ROUTE||!S.onboarded)return '';try{const c=rCalc(null),n=c.next;if(!n)return '';const sn=rSnap(c)[n.g.id];if(!sn)return '';const l=learnL(),L=LANG[l]||LANG.nl,mo=x=>{try{return new Date(x).toLocaleDateString(L.tag,{month:'short',year:'numeric'})}catch(e){return rMonth(x,l)}},a=mo(sn[0]),b=mo(sn[2]);
+  return `<button class="card row between kroute1" id="routeLine" style="background:var(--sky);border-color:var(--sky-fill);text-align:left;padding:8px 14px"><span class="small">${esc(String(a===b?t('map.exam1',{m:a}):t('map.exam',{a,b})).replace(/<[^>]*>/g,''))}</span><span class="pill pill-sky" style="background:var(--surface)" aria-hidden="true">›</span></button>`}catch(e){return ''}}
 const KFAR=2;   // G3: hooguit twee silhouetten na de dichte plek
 function vKaart(){if(!S.onboarded)return vOnboard();
   const [h,ht]=hello(),P0=kPlaces(),ci=P0.findIndex(p=>p.state==='cur'),cur=P0[ci],ns=nextScene(),due=[...NL,...EN,...REK].filter(x=>dorst(x.id)).length,allDone=!!P0.length&&P0.every(p=>p.nd===p.dots.length);
@@ -3877,7 +3886,7 @@ function vKaart(){if(!S.onboarded)return vOnboard();
   const R=WereldVis.render(P.map(p=>({vak:p.vak,state:p.state,dots:p.dots})),S.fig),lbl=p=>esc(String(t('map.place',{name:p.title,d:p.nd,n:p.dots.length})).replace(/<[^>]*>/g,''));
   const pl=P.map((p,i)=>p.state==='far'?'':`<button class="w-pl${p.state==='cur'?' cur':''}" data-pl="${i}" style="left:${(R.pos[i].x/R.w*100).toFixed(2)}%;top:${(R.pos[i].y/R.h*100).toFixed(2)}%" aria-label="${lbl(p)}"><span class="w-name" aria-hidden="true">${esc(p.title)}</span></button>`).join('');
   paint(`<header class="top"><div>${bi(`<h1>${h}${nm()?', '+nm():''}</h1>`,ht)}</div>${thaiSwitch()}</header>
-  ${kWeek()}<div class="kroute">${routeLine()}</div>
+  ${kWeek()}${kRoute()}
   ${cur?`<section class="card row between kcur"><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="eyebrow">${esc(t('map.here'))}</span><b>${esc(cur.title)}</b><span class="small muted">${allDone?T('map.allDone'):esc(scP((ns||{}).title))} · ${T('map.count',{d:cur.nd,n:cur.dots.length})}</span></span>${allDone?'':`<button class="btn btn-main" id="kGo" style="width:auto;flex:none">${TB('map.go')}</button>`}</section>`:`<div class="note">${T('map.none')}</div>`}
   <button class="card row between" id="kWeg" style="background:var(--sky);border-color:var(--sky-fill);text-align:left"><span style="display:flex;flex-direction:column;gap:2px">${T('map.onderweg')}<span class="small muted">${due?T('map.due',{n:due}):T('map.onderwegTip')}</span></span>${due?`<span class="pill pill-sky num" style="background:var(--surface)">${due}</span>`:''}</button>
   <div class="tiles2">${LESSEN.length?(l=>l?`<button class="tile sky" id="ontdek"><span class="ic">${icon.book}</span>${T('les.tile')}<span class="small muted">${esc(scP(l.title))}</span></button>`:'')(nextLes()):''}
