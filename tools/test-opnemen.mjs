@@ -53,6 +53,15 @@ ok(/\$\('#voxYes'\)\.onclick=async\(\)=>\{const ok=await voxWipe\(\)/.test(html)
 ok(/\$\{recOk\(\)\?`<button class="btn btn-ghost" id="voxOpen">/.test(html), 'de knop staat alleen op Ik als opnemen kan (Proefonderdelen)');
 ok(/\$\{esc\(it\.t\)\}/.test(html), 'de zin uit het pakket gaat door esc');
 
+/* 5c. spraakdagboek: echt opnemen (geen verwijzing meer naar een iPhone-app die er niet is) */
+const dia = cut('function vDiary(', 'function vVideo(');
+ok(!/iPhone-app|iPhone app|แอป iPhone/.test(html),'geen verwijzing naar een iPhone-app');
+ok(/const can=recOk\(\)/.test(dia) && /recStart\(MOTOR\.recMax,/.test(dia) && /recSave\(b,'dagboek'\)/.test(dia), 'dagboek neemt op met de gewone recorder, achter Proefonderdelen, en bewaart in de eigen bak');
+ok(/if\(mode!=='idle'\)return;mode='start'/.test(dia) && /if\(!here\(\)\)recAbort\(\)/.test(dia), 'dagboek: dubbel tikken start geen tweede opname; weg van het scherm stopt de opname');
+ok(!/fetch|ntfy|TLS|S\.log\.push\(\{[^}]*blob/.test(dia), 'een dagboekopname gaat nergens heen en staat niet in de voortgang');
+for (const k of ['diary.off', 'diary.noMic', 'diary.keep', 'diary.saved'])
+  ok((html.match(new RegExp(' "' + k.replace(/\./g, '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
+
 /* 6. teksten in drie talen */
 for (const k of ['page.vox', 'vox.open', 'vox.openTip', 'vox.intro', 'vox.rec', 'vox.stop', 'vox.play', 'vox.save', 'vox.del', 'vox.prev', 'vox.next', 'vox.has', 'vox.count', 'vox.saved', 'vox.fail', 'vox.full', 'vox.noMic', 'vox.none', 'vox.where', 'vox.wipe', 'vox.wipeAsk', 'vox.wiped', 'vox.g.pairs', 'vox.g.dictee', 'vox.g.chapter'])
   ok((html.match(new RegExp(' "' + k.replace(/\./g, '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
