@@ -42,3 +42,5 @@ Test bij 1 tot 3: de positie van Verder en Onderweg op 375 × 667 in `tools/test
 De kaart werkt en neemt niets weg. Na de drie aanpassingen hierboven adviseer ik de kaart het standaard thuisscherm te maken, voor nieuwe en bestaande installaties. Het oude thuisscherm en de tuin blijven op Ik te kiezen. De cijfers per week (meekijken) lopen door: valt de leertijd in de twee weken erna duidelijk terug, dan stelt de ontwerpsessie bij.
 
 Dat besluit is van de eigenaar.
+
+**Besluit eigenaar (21 november 2026): de kaart wordt standaard**, voor nieuwe en bestaande installaties, na de aanpassingen (live als v2-91 en v2-92, nagekeken op 375 × 667). Het oude thuisscherm en de tuin blijven op Ik te kiezen.
