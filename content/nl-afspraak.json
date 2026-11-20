@@ -3488,85 +3488,85 @@
         "afs.voicemail"
        ],
        "ask": {
-        "nl": "Wat voor tekst is dit?",
-        "th": "นี่คือข้อความประเภทไหน",
-        "en": "What kind of text is this?"
+        "nl": "Waarvoor heeft u een afspraak?",
+        "th": "คุณมีนัดเรื่องอะไร",
+        "en": "What is the appointment for?"
        },
        "opts": [
         {
-         "t": "Een brief van een winkel met een prijs",
+         "t": "Voor een nieuw rijbewijs",
          "r": "no",
          "why": {
-          "nl": "Je hoort geen prijs en geen winkel.",
-          "th": "ไม่ได้ยินราคาหรือร้านค้า",
-          "en": "You hear no price and no shop."
+          "nl": "Je hoort paspoort, niet rijbewijs.",
+          "th": "คุณได้ยิน paspoort ไม่ใช่ rijbewijs",
+          "en": "You hear paspoort, not rijbewijs."
          },
          "err": "lezen"
         },
         {
-         "t": "Een ingesproken bericht van de gemeente",
+         "t": "Voor een verhuizing doorgeven",
+         "r": "no",
+         "why": {
+          "nl": "Je hoort niets over een verhuizing.",
+          "th": "คุณไม่ได้ยินเรื่องการย้ายบ้าน",
+          "en": "You hear nothing about a move."
+         },
+         "err": "lezen"
+        },
+        {
+         "t": "Voor een nieuw paspoort",
          "r": "ok",
          "why": {
-          "nl": "Goed. De gemeente laat een bericht achter.",
-          "th": "ถูกต้อง เทศบาลฝากข้อความไว้",
-          "en": "Good. The council leaves a message."
+          "nl": "Goed. Je hoort: u heeft een afspraak voor een nieuw paspoort.",
+          "th": "ถูกต้อง คุณได้ยิน: u heeft een afspraak voor een nieuw paspoort",
+          "en": "Good. You hear: u heeft een afspraak voor een nieuw paspoort."
          }
-        },
-        {
-         "t": "Een gesprek tussen twee buren in de lift",
-         "r": "no",
-         "why": {
-          "nl": "Er praat maar één stem, en het gaat over de gemeente.",
-          "th": "มีเสียงเดียว และเรื่องเกี่ยวกับเทศบาล",
-          "en": "Only one voice speaks, and it is about the council."
-         },
-         "err": "lezen"
         }
        ],
-       "answer": "Een ingesproken bericht van de gemeente"
+       "answer": "Voor een nieuw paspoort"
       },
       {
        "form": "choose",
        "items": [
-        "dok.verzetten"
+        "afs.loket"
        ],
        "ask": {
-        "nl": "Waarom is dit bericht er?",
-        "th": "ทำไมจึงมีข้อความนี้",
-        "en": "Why is this message there?"
+        "nl": "Waar is de afspraak?",
+        "th": "นัดหมายอยู่ที่ไหน",
+        "en": "Where is the appointment?"
        },
        "opts": [
         {
-         "t": "De afspraak moet naar een andere dag",
-         "r": "ok",
-         "why": {
-          "nl": "Goed. De gemeente moet de afspraak verzetten.",
-          "th": "ถูกต้อง เทศบาลต้องเลื่อนการนัด",
-          "en": "Good. The council has to move the appointment."
-         }
-        },
-        {
-         "t": "De afspraak is al vorige week geweest",
+         "t": "Bij het politiebureau",
          "r": "no",
          "why": {
-          "nl": "De nieuwe afspraak is op 14 mei.",
-          "th": "การนัดใหม่คือวันที่ 14 พฤษภาคม",
-          "en": "The new appointment is on 14 May."
+          "nl": "Je hoort: kom naar het loket in het gebouw.",
+          "th": "คุณได้ยิน: kom naar het loket in het gebouw",
+          "en": "You hear: kom naar het loket in het gebouw."
          },
          "err": "lezen"
         },
         {
-         "t": "De gemeente wil een cadeau sturen",
+         "t": "Bij het loket in het gebouw",
+         "r": "ok",
+         "why": {
+          "nl": "Goed. Je hoort: kom naar het loket in het gebouw.",
+          "th": "ถูกต้อง คุณได้ยิน: kom naar het loket in het gebouw",
+          "en": "Good. You hear: kom naar het loket in het gebouw."
+         }
+        },
+        {
+         "t": "Bij de balie van de bibliotheek",
          "r": "no",
          "why": {
-          "nl": "Over een cadeau hoor je niets.",
-          "th": "ไม่ได้ยินเรื่องของขวัญ",
-          "en": "You hear nothing about a present."
+          "nl": "Je hoort: kom naar het loket in het gebouw.",
+          "th": "คุณได้ยิน: kom naar het loket in het gebouw",
+          "en": "You hear: kom naar het loket in het gebouw."
          },
          "err": "lezen"
         }
        ],
-       "answer": "De afspraak moet naar een andere dag"
+       "answer": "Bij het loket in het gebouw"
       },
       {
        "form": "choose",
@@ -3696,30 +3696,10 @@
        ],
        "ask": {
         "nl": "De nieuwe datum past niet. Wat moet je doen?",
-        "th": "วันใหม่ไม่สะดวก คุณต้องทำอย่างไร",
+        "th": "วันนัดใหม่ไม่สะดวก คุณต้องทำอะไร",
         "en": "The new date does not suit. What must you do?"
        },
        "opts": [
-        {
-         "t": "Niets doen, want de afspraak gaat altijd door",
-         "r": "no",
-         "why": {
-          "nl": "Je moet bellen vóór vrijdag.",
-          "th": "คุณต้องโทรก่อนวันศุกร์",
-          "en": "You must call before Friday."
-         },
-         "err": "lezen"
-        },
-        {
-         "t": "Naar het loket gaan en daar wachten tot het open is",
-         "r": "no",
-         "why": {
-          "nl": "Dat zegt het bericht niet.",
-          "th": "ข้อความไม่ได้บอกอย่างนั้น",
-          "en": "The message does not say that."
-         },
-         "err": "lezen"
-        },
         {
          "t": "Vóór vrijdag terugbellen",
          "r": "ok",
@@ -3728,6 +3708,26 @@
           "th": "ถูกต้อง คุณโทรกลับหาเทศบาลก่อนวันศุกร์",
           "en": "Good. You call the council back before Friday."
          }
+        },
+        {
+         "t": "Vóór donderdag een brief sturen",
+         "r": "no",
+         "why": {
+          "nl": "Je hoort: bel ons dan vóór vrijdag terug.",
+          "th": "คุณได้ยิน: bel ons dan vóór vrijdag terug",
+          "en": "You hear: bel ons dan vóór vrijdag terug."
+         },
+         "err": "lezen"
+        },
+        {
+         "t": "Naar het loket gaan en een nieuwe afspraak maken",
+         "r": "no",
+         "why": {
+          "nl": "Je moet eerst bellen. Dat zegt het bericht.",
+          "th": "คุณต้องโทรก่อน ข้อความบอกไว้อย่างนั้น",
+          "en": "You must call first. That is what the message says."
+         },
+         "err": "lezen"
         }
        ],
        "answer": "Vóór vrijdag terugbellen"
@@ -3744,7 +3744,7 @@
        },
        "opts": [
         {
-         "t": "Van acht tot drie uur in de middag",
+         "t": "Van acht tot drie uur",
          "r": "no",
          "why": {
           "nl": "Je hoort van negen tot vijf.",

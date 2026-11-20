@@ -164,4 +164,16 @@ ok('service worker bewaart alleen geslaagde antwoorden', sw.includes('if(res.ok)
   ok('G2: de redactiepoort maakt er fouten van, de app niet', /PC\.checkG2\(p\)\.issues/.test(readFileSync(new URL('redactie/controleer.mjs', ROOT), 'utf8')) && !/checkG2/.test(html));
   ok('G2: een raadvraag in de app telt niet als fout (geen scFault of practiced) en geeft meteen het antwoord', /const gs=qq\.guess===true/.test(html) && /if\(gs\)\{app\.querySelectorAll\('\[data-o\]'\)[^\n]*return guessed\(/.test(html) && !/const guessed=[^\n]*(scFault|practiced|score)\(/.test(html));
   ok('G2: de vaste zin "Dat past ook" staat in de vertaaltabel', !/<div class="note sky">Dat past ook!/.test(html) && /"also\.fits":/.test(html)); }
+{ // ijkmoment G4 opdracht 4: rekenmodel per rekenscène en één examen-luistertekst in de laatste scène Nederlands vóór de kennisles; een melding, geen weigering
+  const L = (exam) => ({ type: 'listen', exam }), Q = f => ({ type: 'quiz', q: [{ form: f }] });
+  const mk = (s5, rk, s3) => ({ id: 'x', type: 'hoofdstuk', scenes: [{ id: 'a3', subject: 'nl', n: 3, steps: s3 || [] }, { id: 'a5', subject: 'nl', n: 5, steps: s5 }, { id: 'rk', subject: 'rk', steps: rk }, { id: 'kn', subject: 'kn', steps: [] }] });
+  const is = p => PC.checkG4(p).issues;
+  ok('G4: met rekenmodel en examen in de laatste scène Nederlands: geen melding', is(mk([L(true)], [Q('ratio')])).length === 0);
+  ok('G4: rekenscène zonder rekenmodel: melding', is(mk([L(true)], [Q('number')])).some(m => /rekenmodel/.test(m)));
+  ok('G4: een rekenmodel als stap do telt ook', is(mk([L(true)], [{ type: 'do', form: 'strip' }])).length === 0);
+  ok('G4: geen examen-luistertekst: melding', is(mk([L(false)], [Q('ratio')])).some(m => /geen luistertekst/.test(m)));
+  ok('G4: examen in een eerdere scène: melding over de plek', is(mk([], [Q('ratio')], [L(true)])).some(m => /laatste scène/.test(m)));
+  ok('G4: twee examenteksten: melding', is(mk([L(true)], [Q('ratio')], [L(true)])).some(m => /één per hoofdstuk/.test(m)));
+  ok('G4: een losse les wordt niet gemeld', PC.checkG4({ id: 'l', type: 'les', scenes: [{ id: 'r', subject: 'rk', steps: [] }] }).issues.length === 0);
+  ok('G4: de redactiepoort meldt het als waarschuwing, niet als fout', /PC\.checkG4\(p\)\.issues\) warn\.push\('G4: '/.test(readFileSync(new URL('redactie/controleer.mjs', ROOT), 'utf8'))); }
 console.log(fails ? fails + ' FOUT' : 'alles OK');

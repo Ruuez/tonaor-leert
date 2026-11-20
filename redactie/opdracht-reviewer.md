@@ -25,6 +25,7 @@ Je beoordeelt één hoofdstuk lesstof (`redactie/uit/<id>.json`) voor een leer-a
 - **Lange tekst:** staat er minstens één tekst van 150 tot 300 woorden in, met vragen naar bedoeling, verband en conclusie?
 - **Raden en schatten:** heeft een raadvraag `guess: true`, en een schatvraag `tol`?
 - **Spreken:** is het eerste punt van de checklist "Komt de inhoud over?", en staat intonatie erin?
+- **Luisteren (ijkmoment G4):** is elke luistervraag te beantwoorden zonder te luisteren, uit de inleiding, de titel, de plaat of de vorige stappen? Valt een afleider al af zonder het fragment? Dan blokkerend.
 - **Vergelijking met het Thais:** staat die alleen waar ze klopt?
 
 ## Uitkomst

@@ -3660,45 +3660,45 @@
       {
        "form": "choose",
        "items": [
-        "kla.reparatie"
+        "kla.lek"
        ],
        "ask": {
-        "nl": "Waar gaat het bericht over?",
-        "th": "ข้อความนี้เกี่ยวกับอะไร",
-        "en": "What is the message about?"
+        "nl": "Wat belooft de verhuurder?",
+        "th": "เจ้าของบ้านเช่าสัญญาว่าอย่างไร",
+        "en": "What does the landlord promise?"
        },
        "opts": [
         {
-         "t": "De monteur komt langs voor een reparatie",
+         "t": "De monteur komt alleen voor de verwarming",
+         "r": "no",
+         "why": {
+          "nl": "Je hoort ook iets over het lek.",
+          "th": "คุณได้ยินเรื่องรอยรั่วด้วย",
+          "en": "You also hear something about the leak."
+         },
+         "err": "lezen"
+        },
+        {
+         "t": "Het lek moet je zelf laten repareren",
+         "r": "no",
+         "why": {
+          "nl": "Je hoort: het lek repareert de monteur ook.",
+          "th": "คุณได้ยิน: het lek repareert de monteur ook",
+          "en": "You hear: het lek repareert de monteur ook."
+         },
+         "err": "lezen"
+        },
+        {
+         "t": "De monteur komt ook voor het lek",
          "r": "ok",
          "why": {
-          "nl": "Goed. De verhuurder zegt wanneer de monteur komt.",
-          "th": "ถูกต้อง เจ้าของบ้านเช่าบอกว่าช่างจะมาเมื่อไร",
-          "en": "Good. The landlord says when the repairer comes."
+          "nl": "Goed. Je hoort: het lek in de badkamer repareert de monteur ook.",
+          "th": "ถูกต้อง คุณได้ยิน: het lek in de badkamer repareert de monteur ook",
+          "en": "Good. You hear: het lek in de badkamer repareert de monteur ook."
          }
-        },
-        {
-         "t": "De huur wordt volgende maand hoger voor alle huurders",
-         "r": "no",
-         "why": {
-          "nl": "Over de huur hoor je niets.",
-          "th": "คุณไม่ได้ยินเรื่องค่าเช่า",
-          "en": "You hear nothing about the rent."
-         },
-         "err": "lezen"
-        },
-        {
-         "t": "De verwarming is al weer gemaakt en het werkt goed",
-         "r": "no",
-         "why": {
-          "nl": "De verwarming wordt morgen pas gerepareerd.",
-          "th": "เครื่องทำความร้อนจะซ่อมพรุ่งนี้",
-          "en": "The heating will only be repaired tomorrow."
-         },
-         "err": "lezen"
         }
        ],
-       "answer": "De monteur komt langs voor een reparatie"
+       "answer": "De monteur komt ook voor het lek"
       },
       {
        "form": "number",
@@ -3731,70 +3731,70 @@
         "kla.verhuurder"
        ],
        "ask": {
-        "nl": "Waarom moet er iemand thuis zijn?",
-        "th": "ทำไมต้องมีคนอยู่บ้าน",
-        "en": "Why must somebody be at home?"
+        "nl": "Wat vraagt de verhuurder van jou?",
+        "th": "เจ้าของบ้านเช่าขออะไรจากคุณ",
+        "en": "What does the landlord ask of you?"
        },
        "opts": [
         {
-         "t": "Omdat de verhuurder het huis wil laten zien aan een nieuwe huurder",
-         "r": "no",
-         "why": {
-          "nl": "Dat hoor je niet. De monteur moet binnenkomen.",
-          "th": "คุณไม่ได้ยินเรื่องนั้น ช่างต้องเข้าไปข้างใน",
-          "en": "You do not hear that. The repairer must get in."
-         },
-         "err": "lezen"
-        },
-        {
-         "t": "Omdat de buren een pakje komen brengen voor de huurder",
-         "r": "no",
-         "why": {
-          "nl": "Over de buren hoor je niets.",
-          "th": "คุณไม่ได้ยินเรื่องเพื่อนบ้าน",
-          "en": "You hear nothing about the neighbours."
-         },
-         "err": "lezen"
-        },
-        {
-         "t": "Zodat de monteur binnen kan komen",
+         "t": "Zorgen dat er morgen iemand thuis is",
          "r": "ok",
          "why": {
-          "nl": "Goed. Je hoort: zodat de monteur binnen kan komen.",
-          "th": "ถูกต้อง คุณได้ยิน: zodat de monteur binnen kan komen",
-          "en": "Good. You hear: zodat de monteur binnen kan komen."
+          "nl": "Goed. Je hoort: wilt u zorgen dat er iemand thuis is?",
+          "th": "ถูกต้อง คุณได้ยิน: wilt u zorgen dat er iemand thuis is",
+          "en": "Good. You hear: wilt u zorgen dat er iemand thuis is?"
          }
+        },
+        {
+         "t": "Zelf een andere monteur zoeken",
+         "r": "no",
+         "why": {
+          "nl": "De verhuurder heeft de monteur al gebeld.",
+          "th": "เจ้าของบ้านเช่าโทรหาช่างแล้ว",
+          "en": "The landlord has already called the repairer."
+         },
+         "err": "lezen"
+        },
+        {
+         "t": "Een nieuwe afspraak met de monteur maken",
+         "r": "no",
+         "why": {
+          "nl": "De monteur komt morgen al. Je hoort: de monteur komt morgen om negen uur.",
+          "th": "ช่างจะมาพรุ่งนี้อยู่แล้ว คุณได้ยิน: de monteur komt morgen om negen uur",
+          "en": "The repairer already comes tomorrow. You hear: de monteur komt morgen om negen uur."
+         },
+         "err": "lezen"
         }
        ],
-       "answer": "Zodat de monteur binnen kan komen"
+       "answer": "Zorgen dat er morgen iemand thuis is"
       },
       {
        "form": "complete",
        "items": [
-        "kla.lek"
+        "kla.reparatie"
        ],
        "ask": {
-        "nl": "De monteur repareert ook het ___ in de badkamer. Typ één woord.",
-        "th": "ช่างซ่อม ___ ในห้องน้ำด้วย พิมพ์หนึ่งคำ",
-        "en": "The repairer also repairs the ___ in the bathroom. Type one word."
+        "nl": "De monteur komt morgen om negen uur ___ voor de reparatie. Typ één woord.",
+        "th": "ช่างจะมา ___ เพื่อซ่อมพรุ่งนี้ตอนเก้าโมง พิมพ์หนึ่งคำ",
+        "en": "The repairer comes ___ tomorrow at nine o’clock for the repair. Type one word."
        },
-       "answer": "lek",
+       "answer": "langs",
        "why": {
-        "nl": "Je hoort: het <b>lek</b> in de badkamer.",
-        "th": "คุณได้ยิน: het <b>lek</b> in de badkamer",
-        "en": "You hear: het <b>lek</b> in de badkamer."
+        "nl": "Je hoort: de monteur komt morgen om negen uur <b>langs</b> voor de reparatie.",
+        "th": "คุณได้ยิน: de monteur komt morgen om negen uur <b>langs</b> voor de reparatie",
+        "en": "You hear: de monteur komt morgen om negen uur <b>langs</b> voor de reparatie."
        },
        "err": "lezen",
        "hint": [
         {
-         "nl": "Het woord heeft 3 letters.",
-         "th": "คำนี้มี 3 ตัวอักษร",
-         "en": "The word has 3 letters."
+         "nl": "Het woord heeft 5 letters.",
+         "th": "คำนี้มี 5 ตัวอักษร",
+         "en": "The word has 5 letters."
         },
         {
-         "nl": "Begin zo: le…",
-         "th": "เริ่มอย่างนี้: le…",
-         "en": "Begin like this: le…"
+         "nl": "Begin zo: la…",
+         "th": "เริ่มอย่างนี้: la…",
+         "en": "Begin like this: la…"
         }
        ]
       },
@@ -3810,17 +3810,17 @@
        },
        "opts": [
         {
-         "t": "Niets doen, want de monteur heeft zelf een sleutel van het huis",
+         "t": "Morgen om negen uur de monteur bellen",
          "r": "no",
          "why": {
-          "nl": "Dat hoor je niet. Je moet terugbellen.",
-          "th": "คุณไม่ได้ยินเรื่องนั้น คุณต้องโทรกลับ",
-          "en": "You do not hear that. You must call back."
+          "nl": "Je moet de verhuurder bellen, vandaag nog.",
+          "th": "คุณต้องโทรหาเจ้าของบ้านเช่า วันนี้เลย",
+          "en": "You must call the landlord, today."
          },
          "err": "lezen"
         },
         {
-         "t": "De verhuurder vandaag nog terugbellen",
+         "t": "Vandaag nog terugbellen",
          "r": "ok",
          "why": {
           "nl": "Goed. Je hoort: bel mij dan vandaag nog terug.",
@@ -3829,17 +3829,17 @@
          }
         },
         {
-         "t": "Wachten tot de verwarming vanzelf weer werkt",
+         "t": "Morgen na de reparatie terugbellen",
          "r": "no",
          "why": {
-          "nl": "De verwarming werkt pas na de reparatie.",
-          "th": "เครื่องทำความร้อนจะใช้ได้หลังการซ่อมเท่านั้น",
-          "en": "The heating works only after the repair."
+          "nl": "Je hoort: vandaag nog, niet morgen.",
+          "th": "คุณได้ยิน: วันนี้เลย ไม่ใช่พรุ่งนี้",
+          "en": "You hear: today, not tomorrow."
          },
          "err": "lezen"
         }
        ],
-       "answer": "De verhuurder vandaag nog terugbellen"
+       "answer": "Vandaag nog terugbellen"
       }
      ]
     },

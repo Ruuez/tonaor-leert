@@ -497,6 +497,27 @@
     return { n: n, longest: n ? longest / n : 0, issues: issues };
   }
 
+  /* ijkmoment G4 (opdracht 4), vanaf het volgende hoofdstuk: elke rekenscène gebruikt een rekenmodel (getallenlijn, strook of tabel), en het hoofdstuk
+     heeft één luistertekst in examenvorm, in de laatste scène Nederlands vóór de kennisles. Een melding voor de redactielijn, geen weigering. */
+  function checkG4(p) {
+    var issues = [], id = (p && p.id) || 'pakket', scenes = (p && p.scenes) || [];
+    if (!p || p.type !== 'hoofdstuk') return { issues: issues };
+    var model = function (sc) { return (sc.steps || []).some(function (st) { return st && (NUMF.indexOf(st.form) >= 0 || (st.q || []).some(function (q) { return q && NUMF.indexOf(q.form) >= 0; })); }); };
+    var exam = function (sc) { return (sc.steps || []).filter(function (st) { return st && st.type === 'listen' && st.exam === true; }).length; };
+    scenes.forEach(function (sc) { if (sc && sc.subject === 'rk' && !model(sc)) issues.push(id + '.' + sc.id + ': de rekenscène gebruikt geen rekenmodel (getallenlijn, strook of tabel) (G4 2.4)'); });
+    var kn = -1; scenes.forEach(function (sc, i) { if (kn < 0 && sc && sc.subject === 'kn') kn = i; });
+    var before = scenes.slice(0, kn < 0 ? scenes.length : kn).filter(function (sc) { return sc && sc.subject === 'nl'; }), last = before[before.length - 1];
+    var n = scenes.reduce(function (s, sc) { return s + (sc ? exam(sc) : 0); }, 0);
+    if (!n) issues.push(id + ': geen luistertekst in examenvorm (exam: true) (G4 2.4)');
+    else if (n > 1) issues.push(id + ': ' + n + ' luisterteksten in examenvorm; één per hoofdstuk (G4 2.4)');
+    var eur = function (s) { return /€|euro/i.test(String(s == null ? '' : s)); }, dec = function (v) { return typeof v === 'number' && Math.abs(v * 100 - Math.round(v * 100)) > 1e-6; };
+    scenes.forEach(function (sc) { (sc && sc.steps || []).forEach(function (st) { [st].concat(st && st.q || []).forEach(function (q) { if (!q) return;
+      if (q.form === 'strip' && eur(q.unit) && [q.total, q.answer].some(dec)) issues.push(id + '.' + sc.id + ': een bedrag in de strook heeft meer dan twee decimalen (G4 2.3)');
+      if (q.form === 'ratio' && Array.isArray(q.rows)) { var k = 0; q.rows.forEach(function (row) { var e = eur(row && row[0]); (row || []).slice(1).forEach(function (c) { var v = c === '?' ? (q.answers || [])[k++] : c; if (e && dec(v)) issues.push(id + '.' + sc.id + ': een bedrag in de tabel heeft meer dan twee decimalen (G4 2.3)'); }); }); } }); }); });
+    if (n && last && !exam(last)) issues.push(id + '.' + last.id + ': de luistertekst in examenvorm hoort in de laatste scène Nederlands vóór de kennisles (G4 2.4)');
+    return { issues: issues };
+  }
+
   function checkChapter(p) {
     var errors = [], err = function (m) { errors.push(m); }, id = (p && p.id) || 'pakket', all = {};
     var scenes = (p && p.scenes) || [];
@@ -685,6 +706,6 @@
       if (qq.help != null && [0, 1, 2].indexOf(qq.help) < 0) err(u + ': help moet 0, 1 of 2 zijn');
     }
   }
-  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioWordKeys: audioWordKeys, audioSpoken: audioSpoken, NUMF: NUMF, numGrade: numGrade, numTol: numTol, stripValue: stripValue, ratioFull: ratioFull, ratioOps: ratioOps, audioTexts: audioTexts, withParts: withParts };
+  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkG4: checkG4, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioWordKeys: audioWordKeys, audioSpoken: audioSpoken, NUMF: NUMF, numGrade: numGrade, numTol: numTol, stripValue: stripValue, ratioFull: ratioFull, ratioOps: ratioOps, audioTexts: audioTexts, withParts: withParts };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.PakketCheck = api;
 })(this);

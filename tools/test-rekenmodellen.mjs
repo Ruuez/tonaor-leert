@@ -46,6 +46,14 @@ ok(/if\(PC&&PC\.NUMF&&PC\.NUMF\.includes\(qq\.form\)\)return \{\.\.\.base,type:'
 ok(/getallenlijn:'e',strook:'f',tabel:'h'/.test(html), 'eigen vormcode in de geschiedenis');
 ok(/const r=PC\.numGrade\(qq,v\)/.test(html) && /PC\.stripValue\(qq,on\.size\)/.test(html) && /PC\.ratioOps\(qq\)/.test(html), 'de app kijkt na met dezelfde functies');
 ok(/if\(res===false\)later\(\(\)=>scFault\(q,e\)\)/.test(html), 'een fout telt in het foutprofiel, pas bij Volgende');
+/* 5b. ijkmoment G4 opdracht 3: bedragen in euro met twee decimalen in beeld; nakijken gelijk */
+{ const src = html.slice(html.indexOf('function numFmt('), html.indexOf('function numIn('));
+  const f = new Function(src + ';return {numFmt,isEur}')();
+  ok(f.numFmt(2.5, true) === '2,50' && f.numFmt(3, true) === '3,00' && f.numFmt(7.505, true) === '7,51' && f.numFmt(2.5) === '2,5' && f.numFmt(0.125) === '0,125', 'euro: 2,50 en 3,00; zonder euro zoals voorheen');
+  ok(f.isEur('€') && f.isEur('prijs (€)') && !f.isEur('uur') && !f.isEur(undefined), 'een rij of eenheid met € is een bedrag'); }
+ok(/numFmt\(c,isEur\(qq\.rows\[r\]\[0\]\)\)/.test(html) && /numFmt\(qq\.answers\[\+x\.dataset\.k\],isEur\(qq\.rows\[\+x\.dataset\.r\]\[0\]\)\)/.test(html), 'tabel: een rij met € toont bedragen, ook bij het goede antwoord');
+ok(/eu=isEur\(qq\.unit\)/.test(html) && /numFmt\(PC\.stripValue\(qq,k\),eu\)/.test(html) && /numFmt\(qq\.answer,eu\)/.test(html), 'strook met € toont bedragen');
+ok(/Math\.abs\(v-want\)<NUMEPS/.test(html) && /Math\.abs\(PC\.stripValue\(qq,on\.size\)-qq\.answer\)<1e-6/.test(html), 'nakijken ongewijzigd: 7,5 en 7,50 zijn allebei goed');
 for (const k of ['num.done', 'num.line', 'num.off', 'strip.tap']) ok((html.match(new RegExp(' "' + k.replace('.', '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
 
 console.log(fout ? fout + ' FOUT(EN)' : 'test-rekenmodellen: alles OK');

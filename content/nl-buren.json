@@ -2103,42 +2103,42 @@
         "bur.omgooien"
        ],
        "ask": {
-        "nl": "Waarom belt de buur?",
-        "th": "ทำไมเพื่อนบ้านโทรมา",
-        "en": "Why does the neighbour call?"
+        "nl": "Wanneer is het gebeurd?",
+        "th": "เรื่องนี้เกิดขึ้นเมื่อไร",
+        "en": "When did it happen?"
        },
        "opts": [
         {
-         "t": "De buur wil de fiets van jou lenen",
+         "t": "Gisteravond",
          "r": "no",
          "err": "lezen",
          "why": {
-          "nl": "Je hoort niets over lenen. Je hoort: omgegooid.",
-          "th": "ไม่ได้ยินเรื่องยืม ได้ยินว่า: omgegooid",
-          "en": "You hear nothing about lenen. You hear: omgegooid."
+          "nl": "Je hoort vanmorgen, niet gisteravond.",
+          "th": "คุณได้ยิน vanmorgen ไม่ใช่ gisteravond",
+          "en": "You hear vanmorgen (this morning), not gisteravond."
          }
         },
         {
-         "t": "De buur is boos op jou",
-         "r": "no",
-         "err": "lezen",
-         "why": {
-          "nl": "De buur zegt sorry. De buur is dus niet boos.",
-          "th": "เพื่อนบ้านขอโทษ จึงไม่ได้โกรธ",
-          "en": "The neighbour says sorry. So the neighbour is not angry."
-         }
-        },
-        {
-         "t": "De buur heeft de fiets omgegooid",
+         "t": "Vanmorgen",
          "r": "ok",
          "why": {
-          "nl": "Goed. De buur zegt: ik heb uw fiets omgegooid.",
-          "th": "ถูกต้อง เพื่อนบ้านพูดว่า: ฉันทำจักรยานของคุณล้ม",
-          "en": "Good. The neighbour says: I knocked over your bike."
+          "nl": "Goed. Je hoort: vanmorgen.",
+          "th": "ถูกต้อง คุณได้ยิน: vanmorgen",
+          "en": "Good. You hear: vanmorgen."
+         }
+        },
+        {
+         "t": "Vanmiddag",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Je hoort vanmorgen, niet vanmiddag.",
+          "th": "คุณได้ยิน vanmorgen ไม่ใช่ vanmiddag",
+          "en": "You hear vanmorgen (this morning), not vanmiddag."
          }
         }
        ],
-       "answer": "De buur heeft de fiets omgegooid"
+       "answer": "Vanmorgen"
       },
       {
        "form": "choose",
@@ -2161,23 +2161,23 @@
          }
         },
         {
-         "t": "De fiets",
-         "r": "near",
-         "err": "lezen",
-         "why": {
-          "nl": "Bijna. De fiets is omgegooid, maar kapot is de lamp van de fiets.",
-          "th": "เกือบถูก จักรยานถูกทำล้ม แต่ที่เสียคือโคมไฟของจักรยาน",
-          "en": "Almost. The bike was knocked over, but what is broken is the lamp of the bike."
-         }
-        },
-        {
-         "t": "De bel van de deur in de hal",
+         "t": "De bel van de fiets",
          "r": "no",
          "err": "lezen",
          "why": {
-          "nl": "Over een bel wordt niets gezegd.",
-          "th": "ไม่ได้พูดถึงกริ่ง",
-          "en": "Nothing is said about a bell."
+          "nl": "Je hoort lamp, niet bel.",
+          "th": "คุณได้ยิน lamp ไม่ใช่ bel",
+          "en": "You hear lamp, not bel."
+         }
+        },
+        {
+         "t": "Het slot van de fiets",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Je hoort lamp, niet slot.",
+          "th": "คุณได้ยิน lamp ไม่ใช่ slot",
+          "en": "You hear lamp, not slot."
          }
         }
        ],
@@ -2186,29 +2186,29 @@
       {
        "form": "complete",
        "items": [
-        "bur.spijt"
+        "bur.goedmaken"
        ],
        "ask": {
-        "nl": "De buur zegt: Het ___ me. Typ één woord.",
-        "th": "เพื่อนบ้านพูดว่า: Het ___ me. พิมพ์หนึ่งคำ",
-        "en": "The neighbour says: Het ___ me. Type one word."
+        "nl": "Ik probeer ___ bij u langs te komen. Typ één woord.",
+        "th": "ฉันพยายามแวะมาหาคุณ ___ พิมพ์หนึ่งคำ",
+        "en": "I try to come by your place ___. Type one word."
        },
-       "answer": "spijt",
+       "answer": "vanavond",
        "why": {
-        "nl": "De buur zegt sorry: Het <b>spijt</b> me.",
-        "th": "เพื่อนบ้านขอโทษ: Het <b>spijt</b> me",
-        "en": "The neighbour says sorry: Het <b>spijt</b> me."
+        "nl": "Je hoort: ik probeer <b>vanavond</b> bij u langs te komen.",
+        "th": "คุณได้ยิน: ik probeer <b>vanavond</b> bij u langs te komen",
+        "en": "You hear: ik probeer <b>vanavond</b> bij u langs te komen."
        },
        "hint": [
         {
-         "nl": "Het woord heeft 5 letters.",
-         "th": "คำนี้มี 5 ตัวอักษร",
-         "en": "The word has 5 letters."
+         "nl": "Het woord heeft 8 letters.",
+         "th": "คำนี้มี 8 ตัวอักษร",
+         "en": "The word has 8 letters."
         },
         {
-         "nl": "Begin zo: sp…",
-         "th": "เริ่มอย่างนี้: sp…",
-         "en": "Start like this: sp…"
+         "nl": "Begin zo: va…",
+         "th": "เริ่มอย่างนี้: va…",
+         "en": "Begin like this: va…"
         }
        ]
       },
@@ -2219,41 +2219,41 @@
        ],
        "ask": {
         "nl": "Wat wil de buur doen met de schade?",
-        "th": "เพื่อนบ้านอยากทำอะไรกับความเสียหาย",
+        "th": "เพื่อนบ้านต้องการทำอย่างไรกับความเสียหาย",
         "en": "What does the neighbour want to do about the damage?"
        },
        "opts": [
         {
-         "t": "Vergeten",
+         "t": "De lamp zelf repareren",
          "r": "no",
          "err": "lezen",
          "why": {
-          "nl": "De buur wil het juist goedmaken, niet vergeten.",
-          "th": "เพื่อนบ้านอยากชดเชย ไม่ใช่ลืม",
-          "en": "The neighbour wants to make up for it, not forget it."
+          "nl": "Je hoort: ik wil de schade betalen. Dat is geld geven, niet zelf repareren.",
+          "th": "คุณได้ยิน: ik wil de schade betalen คือจ่ายเงิน ไม่ใช่ซ่อมเอง",
+          "en": "You hear: ik wil de schade betalen. That is paying, not repairing it yourself."
          }
         },
         {
-         "t": "Betalen",
+         "t": "De schade betalen",
          "r": "ok",
          "why": {
           "nl": "Goed. De buur zegt: ik wil de schade betalen.",
-          "th": "ถูกต้อง เพื่อนบ้านพูดว่า: ฉันอยากจ่ายค่าเสียหาย",
+          "th": "ถูกต้อง เพื่อนบ้านพูดว่า: ik wil de schade betalen",
           "en": "Good. The neighbour says: I want to pay for the damage."
          }
         },
         {
-         "t": "Verkopen",
+         "t": "Een nieuwe fiets geven",
          "r": "no",
          "err": "lezen",
          "why": {
-          "nl": "Over verkopen wordt niets gezegd.",
-          "th": "ไม่ได้พูดถึงการขาย",
-          "en": "Nothing is said about selling."
+          "nl": "Je hoort betalen, geen nieuwe fiets.",
+          "th": "คุณได้ยิน betalen ไม่ใช่ให้จักรยานคันใหม่",
+          "en": "You hear betalen (pay), not a new bike."
          }
         }
        ],
-       "answer": "Betalen"
+       "answer": "De schade betalen"
       },
       {
        "form": "number",
@@ -2261,9 +2261,9 @@
         "nlb.uur"
        ],
        "ask": {
-        "nl": "Hoe laat vraagt de buur of u thuis bent? Typ het uur.",
-        "th": "เพื่อนบ้านถามว่าคุณอยู่บ้านกี่โมง พิมพ์ชั่วโมง",
-        "en": "At what time does the neighbour ask if you are at home? Type the hour."
+        "nl": "Welk uur noemt de buur? Typ het uur.",
+        "th": "เพื่อนบ้านพูดถึงกี่โมง พิมพ์ตัวเลขชั่วโมง",
+        "en": "Which hour does the neighbour mention? Type the hour."
        },
        "answer": "7",
        "why": {
@@ -2284,38 +2284,38 @@
         "bur.goedmaken"
        ],
        "ask": {
-        "nl": "Wat probeert de buur vanavond te doen?",
-        "th": "เพื่อนบ้านพยายามทำอะไรคืนนี้",
-        "en": "What does the neighbour try to do tonight?"
+        "nl": "Wat probeert de buur te doen?",
+        "th": "เพื่อนบ้านพยายามทำอะไร",
+        "en": "What does the neighbour try to do?"
        },
        "opts": [
-        {
-         "t": "Jouw fiets kopen",
-         "r": "no",
-         "err": "lezen",
-         "why": {
-          "nl": "Over kopen wordt niets gezegd.",
-          "th": "ไม่ได้พูดถึงการซื้อ",
-          "en": "Nothing is said about buying."
-         }
-        },
-        {
-         "t": "Jou bellen",
-         "r": "near",
-         "err": "lezen",
-         "why": {
-          "nl": "Bijna. De buur belt nu al. Vanavond komt de buur langs.",
-          "th": "เกือบถูก เพื่อนบ้านโทรมาแล้วตอนนี้ คืนนี้จะแวะมา",
-          "en": "Almost. The neighbour is already calling now. Tonight the neighbour comes by."
-         }
-        },
         {
          "t": "Bij jou langskomen",
          "r": "ok",
          "why": {
-          "nl": "Goed. De buur probeert langs te komen.",
-          "th": "ถูกต้อง เพื่อนบ้านพยายามแวะมา",
-          "en": "Good. The neighbour tries to come by."
+          "nl": "Goed. Je hoort: ik probeer vanavond bij u langs te komen.",
+          "th": "ถูกต้อง คุณได้ยิน: ik probeer vanavond bij u langs te komen",
+          "en": "Good. You hear: ik probeer vanavond bij u langs te komen."
+         }
+        },
+        {
+         "t": "Je vanavond opbellen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Je hoort: ik probeer vanavond bij u langs te komen.",
+          "th": "คุณได้ยิน: ik probeer vanavond bij u langs te komen",
+          "en": "You hear: ik probeer vanavond bij u langs te komen."
+         }
+        },
+        {
+         "t": "De lamp komen ophalen",
+         "r": "no",
+         "err": "lezen",
+         "why": {
+          "nl": "Je hoort niets over ophalen.",
+          "th": "คุณไม่ได้ยินเรื่องมารับของ",
+          "en": "You hear nothing about picking something up."
          }
         }
        ],

@@ -20,6 +20,14 @@ ok(/else\{clearInterval\(tk\);ready\(\)\}/.test(lis) && /b\.onclick=\(\)=>\{q\._
 ok(/if\(q\._lisPlayed\)return;lock\(true\)/.test(lis) && /if\(q\._lisTk\)clearInterval\(q\._lisTk\)/.test(lis), 'examenvorm: niet antwoorden voor het luisteren; een taalwissel start geen tweede teller');
 ok(/function lisPlay\(t,rate,onIdx,from,only\)\{if\(QUIET\)return false;/.test(lis), 'stille stand: geen geluid');
 ok(/if\(\$\('#nx'\)\)\{o\.disconnect\(\);reveal\(\)\}/.test(lis), 'de tekst komt pas na het antwoord (luisteren en examen)');
+/* 3b. ijkmoment G4, opdracht 1: in meelezen en luisteren pas antwoorden als het afspelen begonnen is; kan er niets klinken, dan de tekst en meteen antwoorden */
+ok(/if\(!q\._lisHeard\)\{if\(!lisCan\(st\.say\)\)mute\(\);else lock\(true\)\}/.test(lis), 'eerst afspelen, dan pas de keuzes en het invulveld');
+ok(/\$\('#sp'\)\.onclick=\(\)=>\{const f=lisPlay\(st\.say,rate,mark\);if\(!f&&lisNoNl\(\)\)mute\(\);else heard\(\)\}/.test(lis) && /speechSynthesis\.getVoices\(\)\.length>0/.test(lis), 'na de tik op afspelen actief; geen stem (gevulde lijst): de tekst erbij');
+ok(/x\.dataset\.lislock='1'/.test(lis) && /else if\(x\.dataset\.lislock\)\{x\.disabled=false/.test(lis), 'de vergrendeling haalt alleen weg wat ze zelf zette: een foute keuze blijft uit (review G4 1)');
+ok(/const heard=\(\)=>\{if\(q\._lisHeard\)return;q\._lisHeard=true;LISH\.add\(st\)/.test(lis) && /if\(LISH\.has\(st\)\)q\._lisHeard=true/.test(lis) && /let VOX=new Map\(\);const LISH=new WeakSet\(\);/.test(html), 'één keer afspelen geldt voor alle vragen bij de tekst (review G4 2)');
+ok(/mute=\(\)=>\{reveal\(\);heard\(\)\}/.test(lis) && /function lisCan\(t\)\{if\(QUIET\)return false;/.test(html), 'stille stand of geen geluid: tekst tonen en meteen antwoorden');
+ok(/const lock=on=>[^\n]*\n  if\(g==='exam'\)/.test(lis), 'dezelfde vergrendeling als de examenvorm');
+
 /* 4. veilig tonen: elke zin via esc */
 ok(/<span class="lsent" data-i="\$\{i\}">\$\{esc\(x\)\}<\/span>/.test(lis), 'zinnen via esc');
 /* 5. zinnen: dezelfde opdeling als de geluidsbestanden, zodat elke zin een eigen bestand heeft */
