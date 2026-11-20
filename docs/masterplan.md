@@ -32,7 +32,7 @@ Wat wel vervangen is, en door wat:
 
 | Was | Wordt | Wat blijft |
 |---|---|---|
-| De tuin als hoofdscherm en beloning (bouwplan fase 7 en 8) | de kaart en het album, na de proefweek | de gegevens per onderdeel, groei zichtbaar maken, mijlpalen, verrassingen, afspraken met de begeleider |
+| De tuin als hoofdscherm en beloning (bouwplan fase 7 en 8) | de kaart en het album, na G3 (de proefweek is geschrapt) | de gegevens per onderdeel, groei zichtbaar maken, mijlpalen, verrassingen, afspraken met de begeleider |
 | De vaste les als enige vorm | scènes, met de les als korte ronde "Onderweg" | het herhaalmodel en de samensteller, ongewijzigd |
 | De volgorde in `docs/plan-herzien.md` en `docs/bouwplan.md` | de stappen in dit plan | de inhoud van de fasen en sporen |
 | De routekaart zonder tijd | de route met tijd en examendatum | de leerroute zelf |
@@ -160,8 +160,8 @@ Elke stap is los uit te brengen en heeft een toets waaraan hij moet voldoen. Les
 | 3 | Redactielijn in bedrijf: proefhoofdstuk door de review, lesstof los van de code, uitbrengen, inplannen | beheer voert uit | drie hoofdstukken achter elkaar "goed" zonder ingrijpen; voorraad van twee weken | **G2:** steekproef op de eerste drie hoofdstukken |
 | 2b | De motor langs het didactisch plan: wat van M1 tot M12 bestaat, wat deels en wat ontbreekt; elke waarde op één plek met bron of "aanname"; de vier strengen en de tijd per vak meten (M6, M7), pogingen bewaren om de aannames te toetsen (M12) | beheer | een overzicht per M-eis in `docs/STATUS.md`; M5, M6, M10 en M12 gebouwd en getest | **G1** |
 | 3b | Eindtermen: `docs/eindtermen.md` uit de officiële bronnen, en het veld waarmee lesstof en toetsen ernaar verwijzen | beheer, met een goedkoper model voor het bronnenonderzoek; elke eindterm met zijn bron | G1 en G2; de dekkingstabel per eindterm bestaat | **G2:** de ontwerpsessie legt een steekproef naast de bronnen |
-| 4 | Proefweek en meten | de leerder; beheer levert de cijfers | cijfers naast de week ervoor: minuten, scènes per dag, doorgaan, aandeel goed, leuk of saai | **G3:** advies aan de eigenaar over de kaart |
-| 5 | Kaart als thuisscherm, album, route met tijd en examendatum | beheer | E5; niets van de bestaande voortgang verloren | – |
+| 4 | ~~Proefweek en meten~~ vervalt (besluit eigenaar, 20 november 2026: "de proefweek mag je overslaan, ga door met ontwikkelen"). De scènes en Ontdek komen uit Proefonderdelen; het meten loopt gewoon door (tabel bij meekijken), zodat achteraf vergeleken kan worden | beheer | scènes en Ontdek zichtbaar zonder Proefonderdelen; Proefonderdelen bevat alleen nog wat een telefoontest wacht | ~~G3~~ vervalt; de kaart krijgt een eigen ijkmoment (stap 5) |
+| 5 | Kaart als thuisscherm, album, route met tijd en examendatum | beheer | E5; niets van de bestaande voortgang verloren; het huidige thuisscherm en de tuin blijven te kiezen op Ik | **G3 (nieuw):** de ontwerpsessie speelt de kaart als leerder op 375 px en geeft de eigenaar advies; de eigenaar beslist of de kaart standaard wordt |
 | 6 | Ontbrekende werkvormen: opnemen en terugluisteren, luisterteksten, zin afmaken en eigen zin, koppelen, fout zoeken, slepen; daarna de spellen | beheer, naar een ontwerp per groep | C2 en C3 gehaald voor elk nieuw hoofdstuk | **G4:** per groep één keer |
 | 7 | Rekenen en Engels als eigen route, met de uitlegcatalogus | beheer; lesstof via de redactielijn | R1 tot R4 en Engels tot A2 gedekt in de dekkingstabel | – |
 | 8 | Toetsen die bijsturen (E4), zwaardere herhaling van scènes (B4) | beheer, naar ontwerp | de toets verandert aantoonbaar wat de leerder daarna krijgt | **G5** |
@@ -177,7 +177,7 @@ Waarom deze volgorde: eerst bewijzen dat de vorm werkt en diep genoeg is (1 tot 
 
 - **De ontwerpsessie (het sterkste model)** stuurt: dit plan, de eisen, de formaten, de opdrachten van de redactielijn, de tekenstijl en nieuwe bouwstenen, één ontwerp per groep werkvormen en spellen, en de ijkmomenten G1 tot G5 plus een maandelijkse steekproef. Zij bouwt niet in de app en schrijft geen lesstof in bulk.
 - **De bouwsessie (beheer)** voert uit: alle code, tests en releases; zij draait de redactielijn (schrijver en reviewer zijn andere, goedkopere modellen), houdt `docs/STATUS.md` en de dekkingstabel bij, en schrijft per stap een kort ontwerp dat naar de eisen hierboven verwijst. Loopt zij ergens op vast dat een eis raakt, dan vraagt zij de ontwerpsessie, niet de eigenaar.
-- **De eigenaar** beslist over: pushen van code, beveiliging en privacy, geld, wat niet terug te draaien is, en de overgang naar de kaart na de proefweek. Lesstof en het herstel van fouten in lesstof gaan zonder hem (`docs/automatische-redactie.md`).
+- **De eigenaar** beslist over: pushen van code, beveiliging en privacy, geld, wat niet terug te draaien is, en de overgang naar de kaart (na G3; de proefweek is geschrapt). Lesstof en het herstel van fouten in lesstof gaan zonder hem (`docs/automatische-redactie.md`).
 
 Bij een ijkmoment krijgt de ontwerpsessie de code en de lesstof, niet de conclusies van de bouwer. De uitkomst is een lijst met wat een eis niet haalt; de bouwsessie herstelt; pas dan gaat de stap door.
 

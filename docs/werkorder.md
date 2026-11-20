@@ -28,8 +28,9 @@ Hier wordt wel op hem gewacht; alles wat hier niet staat, gaat door.
 | Besluit | Keuze | Waarom |
 |---|---|---|
 | Het proefhoofdstuk zichtbaar maken | zodra het de poort haalt en de review "goed" geeft | zo is het ontworpen |
-| De kaart als thuisscherm (masterplan stap 5) | bouwen naast het huidige thuisscherm, met een schakelaar op Ik; standaard blijft het huidige scherm tot de proefweek de drempel haalt (hieronder) | niets weggooien wat werkt |
-| Drempel na de proefweek | de kaart wordt standaard als in een week met scènes de leertijd niet lager is dan in de week ervoor, de leerder vaker "leuk" dan "saai" tikt, en na minstens de helft van de scènes zelf doorgaat. Anders blijft het huidige scherm standaard en legt de ontwerpsessie uit wat er verbeterd wordt | meten in plaats van menen |
+| De kaart als thuisscherm (masterplan stap 5) | bouwen naast het huidige thuisscherm, met een schakelaar op Ik; na de bouw speelt de ontwerpsessie haar als leerder (G3, nieuw) en geeft de eigenaar advies; de eigenaar beslist of de kaart standaard wordt. Het oude thuisscherm en de tuin blijven te kiezen | niets weggooien wat werkt; terug te draaien met de schakelaar |
+| ~~Drempel na de proefweek~~ | vervalt: de eigenaar heeft de proefweek geschrapt (20 november 2026). De cijfers per week (meekijken) blijven lopen; valt de leertijd na de overstap duidelijk terug, dan stelt de ontwerpsessie bij | doorbouwen, achteraf meten |
+| Scènes en Ontdek | uit Proefonderdelen, standaard zichtbaar naast de les (besluit ontwerpsessie na het schrappen van de proefweek). Achter Proefonderdelen blijft alleen wat een telefoontest wacht: opnemen, spraakdagboek, inspreekhulp | de lesstof is gereviewd; de les blijft bestaan |
 | De tuin | blijft bereikbaar naast het album | niets weggooien wat werkt |
 | Lesstof uitbrengen door de redactielijn | ja, na de poort en een review "goed"; via de releaseprocedure hieronder | `automatische-redactie.md` |
 | Thaise steunregels | uitbrengen als "niet nagekeken", met de meldknop | anders ligt alles stil |
