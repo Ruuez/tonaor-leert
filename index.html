@@ -13,6 +13,10 @@
 .nl-line{position:relative;padding:.6rem 0}.nl-line input{width:100%}.nl-real{position:absolute;top:0;bottom:0;width:4px;margin-left:-2px;background:var(--mint-ink);border-radius:2px}
 .strip{display:flex;flex-wrap:wrap;gap:2px}.strip-p{min-width:2.75rem}.strip-p{flex:1;height:3rem;border:2px solid var(--sky-fill);background:var(--surface);border-radius:.4rem}.strip-p.on{background:var(--sky-fill)}.strip-top,.strip-bot{text-align:center}
 .rt{border-collapse:collapse;margin:0 auto}.rt th,.rt td{padding:.35rem .5rem;text-align:center}.rt th{text-align:left}.rt-in{width:4.5rem;font:inherit;text-align:center;padding:.3rem;border:2px solid var(--sky-fill);border-radius:.4rem}.rt-in.right{border-color:var(--mint-ink)}.rt-in.wrong{border-color:var(--apricot-ink)}
+#app .kweek{padding:8px 14px}#app .kweek .wring,#app .kweek .wring .ring{width:40px;height:40px}#app .kroute .card{padding:6px 14px;font-size:.84rem;line-height:1.3}#app .kcur{gap:12px;align-items:center;padding:12px 14px}#app .kcur .small{line-height:1.3}#app .kmap{gap:12px}
+.ksheet{position:fixed;left:0;right:0;bottom:0;z-index:60;max-height:70vh;max-height:70dvh;overflow:auto;overscroll-behavior:contain;animation:ksup .25s ease-out;background:var(--surface);border-top:1px solid var(--line);border-radius:18px 18px 0 0;padding:14px 16px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -8px 28px rgba(0,0,0,.14);max-width:560px;margin:0 auto}
+.ksheet[hidden]{display:none}@keyframes ksup{from{transform:translateY(100%)}to{transform:none}}.ksheet .ksx{width:44px;height:44px;flex:none;padding:0;font-size:1.4rem}.ksheet h3{min-width:0}.ksheet .klock{flex:none;color:var(--ink-2,#777);display:inline-flex}.ksl{list-style:none;margin:8px 0 0;padding:0}.ksl li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}.ksl li>span{min-width:0}
+.ksl .kb{width:auto;flex:none;padding:6px 12px;font-size:.85rem;min-height:0}.kok{color:var(--mint-ink);font-weight:700;margin-right:6px}
 .wereld{position:relative;margin:4px -4px}.wereld-svg{display:block}
 .w-pl{position:absolute;transform:translate(-50%,-46px);width:112px;height:128px;background:none;border:0;padding:0;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .w-pl .w-name{font-size:.78rem;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1px 7px;max-width:120px;line-height:1.25}
@@ -662,6 +666,8 @@ en:{
  "map.done":"Done",
  "map.later":"After the previous scene",
  "map.closed":"Still closed. What happens here:",
+ "map.rest":{"one":"{n} more place further on","other":"{n} more places further on"},
+ "map.close":"Close",
  "album.title":"Album",
  "album.tip":"Everything you can do, per place, and how firmly it sits.",
  "album.garden":"View the garden",
@@ -1260,6 +1266,8 @@ nl:{
  "map.done":"Gedaan",
  "map.later":"Na de vorige scène",
  "map.closed":"Nog dicht. Wat hier gebeurt:",
+ "map.rest":{"one":"Nog {n} plek verderop","other":"Nog {n} plekken verderop"},
+ "map.close":"Sluiten",
  "album.title":"<h1>Album</h1>",
  "album.tip":"Alles wat je kunt, per plek, en hoe stevig het zit.",
  "album.garden":"Tuin bekijken",
@@ -1856,6 +1864,8 @@ th:{
  "map.done":"เสร็จแล้ว",
  "map.later":"หลังฉากก่อนหน้า",
  "map.closed":"ยังปิดอยู่ ที่นี่จะเกิดอะไรขึ้น:",
+ "map.rest":"อีก {n} สถานที่ข้างหน้า",
+ "map.close":"ปิด",
  "album.title":"อัลบั้ม",
  "album.tip":"ทุกสิ่งที่คุณทำได้ แยกตามสถานที่ และจำได้แน่นแค่ไหน",
  "album.garden":"ดูสวน",
@@ -2645,7 +2655,7 @@ function vExplain(){const groups=[['nl','rekenen'],['nl','grammatica'],['nl','le
 /* ============ route met tijd (docs/route-en-prognose.md, docs/ontwerp-stap4.md): de route staat in een pakket, het rekenen in route.js ============ */
 const RC=(typeof window!=='undefined'&&window.RouteCalc)||null;let ROUTE=null,RWHAT=null;
 async function loadRoute(){try{const r=await fetch('content/route-nt2.json');if(!r.ok)return;const d=await r.json();if(RC&&!RC.checkRoute(d).length)ROUTE=d}catch(e){}}
-const VOXDB='leren-stemmen',VOXSTEM='mens';let VOX=new Map();const LISH=new WeakSet();let FIGWALK=false,KPLACE=null;   // ingesproken zinnen (inspreekhulp), vóór het laden gedeclareerd: loadVox draait meteen
+const VOXDB='leren-stemmen',VOXSTEM='mens';let VOX=new Map();const LISH=new WeakSet();let FIGWALK=false,KPLACE=null,KSOFF=null;   // ingesproken zinnen (inspreekhulp), vóór het laden gedeclareerd: loadVox draait meteen
 const routeP=loadRoute();await loadPacks();await routeP;   // de route laadt naast de pakketten
 loadAudioLists();   // geluidsbestanden per pakket (docs/geluid.md); wacht er niet op
 loadVox();   // ingesproken zinnen van een begeleider (docs/ontwerp-inspreekhulp.md); wacht er niet op
@@ -2958,7 +2968,8 @@ const FIGLIST=['mint','apricot','sky','lilac'];
 function setNav(){const b=document.querySelectorAll('#nav [data-tab]');if(b.length<2)return;if(!NAVORIG)NAVORIG=[b[0].innerHTML,b[1].innerHTML];const k=kaartOn(),key=k?'kaart':'vandaag';if(b[0].dataset.k===key)return;b[0].dataset.k=b[1].dataset.k=key;
   b[0].innerHTML=k?`${NAVIC.kaart}${esc(t('tab.map'))}<span class="sup" data-i18n="tab.map"></span>`:NAVORIG[0];b[1].innerHTML=k?`${NAVIC.album}${esc(t('tab.album'))}<span class="sup" data-i18n="tab.album"></span>`:NAVORIG[1];fillStatic()}
 const NAVIC={kaart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>',album:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>'};
-function paint(html){app.innerHTML=`<div class="view">${STORE==='newer'?`<div class="note sky small" role="status">${T('newer.banner')}</div>`:''}${html}</div>`;bindCommon()}
+function paint(html){{const ks=document.getElementById('kSheet');if(ks){ks.remove();kSheetOff()}}   /* stap 5: het plekblad hoort bij de kaart */
+  app.innerHTML=`<div class="view">${STORE==='newer'?`<div class="note sky small" role="status">${T('newer.banner')}</div>`:''}${html}</div>`;bindCommon()}
 
 /* ============ welkom ============ */
 let onb=0;
@@ -3856,33 +3867,49 @@ function kNotesBind(){if($('#answers'))$('#answers').onclick=()=>show('ik');if($
   if($('#newsOk'))$('#newsOk').onclick=()=>{S.seenNews=NEWS;save();const n=$('#news');if(n)n.remove()};
   if($('#bkNow'))$('#bkNow').onclick=()=>exportBackup().then(ok=>{S.bkNudge=now();save();show('vandaag')});
   if($('#bkLater'))$('#bkLater').onclick=()=>{S.bkNudge=now();save();const n=$('#bknudge');if(n)n.remove()}}
+/* G3 (docs/ijkmoment-g3.md): Verder en Onderweg op 375×667 zonder scrollen in beeld; een smalle weekring (tik: het hele blok) */
+function kWeek(){const g=weekGoal(),wm=weekMins();
+  return `<button class="card row between kweek" id="kWeek" aria-expanded="false" aria-controls="kWeekFull"><span class="row" style="gap:10px;align-items:center"><span class="wring" aria-hidden="true">${ring(wm/g,t('week.title'),MILES.map(m=>m/g))}</span><span class="small num" style="line-height:1.3">${T('week.ring',hm(wm))}</span></span><span class="pill pill-mint" aria-hidden="true">›</span></button><div id="kWeekFull" hidden>${weekCard()}</div>`}
+const KFAR=2;   // G3: hooguit twee silhouetten na de dichte plek
 function vKaart(){if(!S.onboarded)return vOnboard();
-  const [h,ht]=hello(),P=kPlaces(),ci=P.findIndex(p=>p.state==='cur'),cur=P[ci],ns=nextScene(),due=[...NL,...EN,...REK].filter(x=>dorst(x.id)).length,allDone=!!P.length&&P.every(p=>p.nd===p.dots.length);
+  const [h,ht]=hello(),P0=kPlaces(),ci=P0.findIndex(p=>p.state==='cur'),cur=P0[ci],ns=nextScene(),due=[...NL,...EN,...REK].filter(x=>dorst(x.id)).length,allDone=!!P0.length&&P0.every(p=>p.nd===p.dots.length);
+  let vis=-1;P0.forEach((p,i)=>{if(p.state!=='far')vis=i});const P=P0.slice(0,Math.min(P0.length,vis+1+KFAR)),rest=P0.length-P.length;
   const R=WereldVis.render(P.map(p=>({vak:p.vak,state:p.state,dots:p.dots})),S.fig),lbl=p=>esc(String(t('map.place',{name:p.title,d:p.nd,n:p.dots.length})).replace(/<[^>]*>/g,''));
   const pl=P.map((p,i)=>p.state==='far'?'':`<button class="w-pl${p.state==='cur'?' cur':''}" data-pl="${i}" style="left:${(R.pos[i].x/R.w*100).toFixed(2)}%;top:${(R.pos[i].y/R.h*100).toFixed(2)}%" aria-label="${lbl(p)}"><span class="w-name" aria-hidden="true">${esc(p.title)}</span></button>`).join('');
   paint(`<header class="top"><div>${bi(`<h1>${h}${nm()?', '+nm():''}</h1>`,ht)}</div>${thaiSwitch()}</header>
-  ${weekCard()}${routeLine()}${kNotes()}
-  ${cur?`<section class="card stack"><span class="eyebrow">${T('map.here')}</span><h2 style="margin:0">${esc(cur.title)}</h2><p class="small muted">${allDone?T('map.allDone'):esc(scP((ns||{}).title))} · ${T('map.count',{d:cur.nd,n:cur.dots.length})}</p>${allDone?'':`<button class="btn btn-main" id="kGo">${TB('map.go')}</button>`}</section>`:`<div class="note">${T('map.none')}</div>`}
+  ${kWeek()}<div class="kroute">${routeLine()}</div>
+  ${cur?`<section class="card row between kcur"><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="eyebrow">${esc(t('map.here'))}</span><b>${esc(cur.title)}</b><span class="small muted">${allDone?T('map.allDone'):esc(scP((ns||{}).title))} · ${T('map.count',{d:cur.nd,n:cur.dots.length})}</span></span>${allDone?'':`<button class="btn btn-main" id="kGo" style="width:auto;flex:none">${TB('map.go')}</button>`}</section>`:`<div class="note">${T('map.none')}</div>`}
   <button class="card row between" id="kWeg" style="background:var(--sky);border-color:var(--sky-fill);text-align:left"><span style="display:flex;flex-direction:column;gap:2px">${T('map.onderweg')}<span class="small muted">${due?T('map.due',{n:due}):T('map.onderwegTip')}</span></span>${due?`<span class="pill pill-sky num" style="background:var(--surface)">${due}</span>`:''}</button>
-  ${P.length?`<div class="wereld">${R.svg}${pl}</div><div id="kSheet" aria-live="polite"></div>`:''}
   <div class="tiles2">${LESSEN.length?(l=>l?`<button class="tile sky" id="ontdek"><span class="ic">${icon.book}</span>${T('les.tile')}<span class="small muted">${esc(scP(l.title))}</span></button>`:'')(nextLes()):''}
-   <button class="tile mint" id="kMore"><span class="ic">${icon.bulb}</span>${T('map.more')}<span class="small muted">${T('map.moreSub')}</span></button></div>`);
+   <button class="tile mint" id="kMore"><span class="ic">${icon.bulb}</span>${T('map.more')}<span class="small muted">${T('map.moreSub')}</span></button></div>
+  ${kNotes()}
+  ${P.length?`<div class="wereld">${R.svg}${pl}</div>${rest?`<p class="small muted" style="text-align:center">${T('map.rest',{n:rest})}</p>`:''}`:''}`);
+  {const v=app.querySelector('.view');if(v)v.classList.add('kmap')}   // G3: iets minder ruimte tussen de blokken
   kNotesBind();
+  $('#kWeek').onclick=()=>{const f=$('#kWeekFull'),o=f.hidden;f.hidden=!o;$('#kWeek').setAttribute('aria-expanded',String(o))};
   if($('#kGo'))$('#kGo').onclick=()=>startScene(ns);
   $('#kWeg').onclick=()=>startLesson(false);
   if($('#ontdek'))$('#ontdek').onclick=()=>startLes(nextLes());
   $('#kMore').onclick=()=>{route=vToday;rerender();app.insertAdjacentHTML('afterbegin',`<button class="btn btn-ghost" id="kBack" style="width:auto">← ${TB('tab.map')}</button>`);$('#kBack').onclick=()=>show('vandaag');window.scrollTo(0,0)};
-  app.querySelectorAll('[data-pl]').forEach(b=>b.onclick=()=>kSheet(P[+b.dataset.pl]));
+  app.querySelectorAll('[data-pl]').forEach(b=>b.onclick=()=>kSheet(P[+b.dataset.pl],b));
   /* het figuurtje loopt na een gedane scène van de vorige plek naar de nieuwe; met minder beweging staat het er meteen (CSS) */
   const g=document.getElementById('wfig');
-  if(FIGWALK&&!allDone&&g&&KPLACE!=null&&ci>=0&&KPLACE!==ci){const a=WereldVis.figAt(KPLACE),b=WereldVis.figAt(ci);if(a&&b){g.style.transition='none';g.style.transform=`translate(${a.x}px,${a.y}px)`;g.getBoundingClientRect();requestAnimationFrame(()=>{g.style.transition='transform 1.2s ease-in-out';g.style.transform=`translate(${b.x}px,${b.y}px)`})}}
+  if(FIGWALK&&!allDone&&g&&KPLACE!=null&&ci>=0&&KPLACE!==ci&&KPLACE<P.length){const a=WereldVis.figAt(KPLACE),b=WereldVis.figAt(ci);if(a&&b){g.style.transition='none';g.style.transform=`translate(${a.x}px,${a.y}px)`;g.getBoundingClientRect();requestAnimationFrame(()=>{g.style.transition='transform 1.2s ease-in-out';g.style.transform=`translate(${b.x}px,${b.y}px)`})}}
   FIGWALK=false;KPLACE=ci>=0?ci:KPLACE}
-function kSheet(p){const el=$('#kSheet');if(!el||!p)return;const done=(S.world&&S.world.done)||{};
-  if(p.state==='next'){el.innerHTML=`<section class="card stack"><h3 style="margin:0">${esc(p.title)}</h3><p class="small muted">${T('map.closed')}</p><p>${esc(scP((p.list[0]||{}).intro))}</p></section>`}
+/* G3: het plekblad schuift van onderen in beeld, met een sluitknop; de pagina scrolt niet. Per scène één regel: titel links, kleine knop rechts. */
+function kSheetOff(){if(KSOFF){document.removeEventListener('keydown',KSOFF[0]);document.removeEventListener('pointerdown',KSOFF[1]);KSOFF=null}}
+function kSheet(p,from){if(!p)return;let el=document.getElementById('kSheet');if(!el){el=document.createElement('div');el.id='kSheet';el.className='ksheet';el.setAttribute('role','dialog');el.setAttribute('aria-labelledby','kSheetT');document.body.appendChild(el)}   // aan body: een bewegend ouderelement breekt position:fixed
+  const done=(S.world&&S.world.done)||{};
+  const head=`<div class="row between"><h3 id="kSheetT" style="margin:0">${esc(p.title)}</h3><button class="btn btn-ghost ksx" id="kClose" aria-label="${esc(String(t('map.close')).replace(/<[^>]*>/g,''))}">×</button></div>`;
+  if(p.state==='next')el.innerHTML=`${head}<p class="small muted">${T('map.closed')}</p><p>${esc(scP((p.list[0]||{}).intro))}</p>`;
   else{const first=p.list.find(s=>!done[s.id]);
-    el.innerHTML=`<section class="card stack"><h3 style="margin:0">${esc(p.title)}</h3><ul class="list">${p.list.map((s,i)=>`<li class="row between"><span>${esc(scP(s.title))}${done[s.id]?` <span class="pill pill-mint small">${T('map.done')}</span>`:''}</span>${done[s.id]?`<button class="btn btn-ghost" style="width:auto" data-ksc="${i}">${TB('map.again')}</button>`:s===first?`<button class="btn btn-main" style="width:auto" data-ksc="${i}">${TB('map.play')}</button>`:`<span class="small muted">${T('map.later')}</span>`}</li>`).join('')}</ul></section>`;
+    el.innerHTML=`${head}<ul class="ksl">${p.list.map((s,i)=>`<li><span>${done[s.id]?'<span class="kok" aria-hidden="true">✓</span>':''}${esc(scP(s.title))}</span>${done[s.id]?`<button class="btn btn-ghost kb" data-ksc="${i}">${TB('map.again')}</button>`:s===first?`<button class="btn btn-main kb" data-ksc="${i}">${TB('map.play')}</button>`:`<span class="klock" role="img" aria-label="${esc(String(t('map.later')).replace(/<[^>]*>/g,''))}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>`}</li>`).join('')}</ul>`;
     el.querySelectorAll('[data-ksc]').forEach(b=>b.onclick=()=>startScene(p.list[+b.dataset.ksc]))}
-  try{el.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}}
+  kSheetOff();el.hidden=false;el.setAttribute('aria-modal','true');
+  const close=()=>{kSheetOff();el.hidden=true;const f=from&&from.isConnected?from:$('#kGo');try{if(f)f.focus({preventScroll:true})}catch(e){}};   // review: focus terug, ook als de plek opnieuw getekend is
+  const k=KSOFF=[e=>{if(e.key==='Escape')close()},e=>{if(!el.hidden&&!el.contains(e.target)&&!(e.target.closest&&e.target.closest('[data-pl]')))close()}];   // Escape of tikken naast het blad sluit; één set listeners tegelijk
+  document.addEventListener('keydown',k[0]);setTimeout(()=>{if(KSOFF===k)document.addEventListener('pointerdown',k[1])},0);
+  $('#kClose').onclick=close;try{$('#kClose').focus({preventScroll:true})}catch(e){}}
 /* het album: wat je kunt, per plek, in vier sterktes uit dezelfde stage() als de tuin (0 nieuw; 1-2 bezig; 3 zit; 4-5 stevig). Geen rood. */
 const ALBS=['album.s0','album.s1','album.s2','album.s3'];   // vier sterktes; FIGWALK in sc_end: het figuurtje loopt alleen na een gedane scène
 function vAlbum(){const P=kPlaces().filter(p=>p.state!=='far'&&p.state!=='next'),inPack=new Set(),seen=id=>S.items[id]&&S.items[id].reps>0,s4=id=>{const g=stage(id);return g===0?0:g<=2?1:g===3?2:3},PILL=['pill-sky','pill-lilac','pill-apricot','pill-mint'],by=[0,0,0,0],say1=[];
