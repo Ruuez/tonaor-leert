@@ -19,6 +19,7 @@
 .ksl .kb{width:auto;flex:none;padding:6px 12px;font-size:.85rem;min-height:0}.kok{color:var(--mint-ink);font-weight:700;margin-right:6px}
 .sp-list{margin:0;padding-left:20px;display:grid;gap:4px}.sp-ic{display:inline-flex;vertical-align:middle;color:var(--apricot-ink)}
 .s-drag{touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.s-sel .s-halo{opacity:1}.s-sel{cursor:grabbing}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .gcards{display:grid;grid-template-columns:1fr 1fr;gap:8px}.gcard{min-height:68px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font:inherit;font-size:.9rem;padding:6px;color:var(--ink)}.gcard.open{background:var(--sky)}.gcard.on{background:var(--mint);border-color:var(--mint-fill)}
 .gcoins{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.gcoins button{border:0;font:inherit;cursor:pointer}
 .wereld{position:relative;margin:4px -4px}.wereld-svg{display:block}
@@ -694,6 +695,10 @@ en:{
  "game.sum":"Laid: {s}",
  "game.reset":"Start again",
  "game.ready":"Done",
+ "game.youSet":"You set: {t}",
+ "game.changeAsk":"It costs {p}. You pay with {b}. Lay the change.",
+ "game.coins":"Coins and notes laid: {n}",
+ "game.sumWas":"You laid {s}; it was {c}.",
  "proef.end":"This was a trial. Nothing has been counted.",
  "proef.scenes":"Trial scenes for a review. After switching on Trial parts, open the app again.",
  "steps.of":"Step {k} of {n}",
@@ -1328,6 +1333,10 @@ nl:{
  "game.sum":"Gelegd: {s}",
  "game.reset":"Opnieuw",
  "game.ready":"Klaar",
+ "game.youSet":"Jij zette: {t}",
+ "game.changeAsk":"Het kost {p}. Je betaalt met {b}. Leg het wisselgeld.",
+ "game.coins":"Gelegd: {n} munten en briefjes",
+ "game.sumWas":"Je legde {s}; het was {c}.",
  "proef.end":"<h3>Dit was een proef.</h3><p>Er is niets meegeteld.</p>",
  "proef.scenes":"Proefscènes voor een beoordeling. Na het aanzetten van Proefonderdelen de app opnieuw openen.",
  "steps.of":"Stap {k} van {n}",
@@ -1960,6 +1969,10 @@ th:{
  "game.sum":"วางแล้ว: {s}",
  "game.reset":"เริ่มใหม่",
  "game.ready":"เสร็จ",
+ "game.youSet":"คุณตั้งเป็น: {t}",
+ "game.changeAsk":"ราคา {p} คุณจ่ายด้วย {b} วางเงินทอน",
+ "game.coins":"วางแล้ว: เหรียญและธนบัตร {n}",
+ "game.sumWas":"คุณวาง {s} ที่ถูกคือ {c}",
  "proef.end":"<b>นี่เป็นการทดลอง</b> ไม่มีการนับคะแนน",
  "proef.scenes":"ฉากทดลองสำหรับการประเมิน หลังเปิดส่วนทดลองแล้ว ให้เปิดแอปใหม่",
  "steps.of":"ขั้นที่ {k} จาก {n}",
@@ -2352,7 +2365,7 @@ const MOTOR={
   extraAfter:2,       // extra oefening na de zoveelste fout van dezelfde soort in een scène. Aanname (docs/scenes.md)
   slotErrShare:.5,    // hooguit dit deel van een open plek op het foutprofiel. Aanname
   // C5 spel: één tot drie minuten (masterplan C5); 60 seconden: aanname
-  gameSeconds:60, gameTurns:{dehet:10,klank:10,klok:8,geld:6,koppel:3}, gameMin:5, gameDefMax:40, gameHintN:2, gameKlank:[500,35,150] /* spellen: beurten per spel (koppel: rondes van 3 paren), minimaal 5 onderdelen, omschrijving hooguit 40 tekens, vorm vooraf de eerste 2 keer, pauze klankduel 500 ms min 35 per beurt tot 150 (aanname, te toetsen bij G4) */,
+  gameSeconds:60, gameTurns:{dehet:10,klank:10,klok:8,geld:6,koppel:3}, gameMin:5, gameDefMax:40, gameHintN:2, gameKlank:[500,35,150], gameGeldInstap:2 /* spellen: beurten per spel (koppel: rondes van 3 paren), minimaal 5 onderdelen, omschrijving hooguit 40 tekens, vorm vooraf de eerste 2 keer, pauze klankduel 500 ms min 35 per beurt tot 150 (aanname, te toetsen bij G4) */,
   listenFade:3, listenRead:25, listenFast:1.15,   // werkvormen 3.1: meelezen in de eerste 3 scènes met een luistertekst; examenvorm 25 s leestijd (scenes.md); iets sneller = 1,15. 3 en 1,15 zijn een aanname
   recMax:60, stepsFade:[2,5],   // rekenen in stappen: vanaf 2 keer zonder vraag en gegevens, vanaf 5 keer alleen rekenen en klopt (aanname, te toetsen bij G4 groep 2)
   recKeep:30, voxKeep:1000, voxMax:10,   // inspreekhulp (docs/ontwerp-inspreekhulp.md): hooguit 1000 ingesproken zinnen (alle kernzinnen passen), 10 s per zin
@@ -2778,14 +2791,14 @@ function fresh(){
   const items={};[...NL,...EN,...REK].forEach(x=>items[x.id]=item());
   return {v:2,onboarded:false,thai:'altijd',size:'normaal',goal:'normaal',moment:null,items,introduced:[],
     points:{},days:{},mins:{},help:[],answers:[],conf:[],sessions:0,talks:0,story:0,speedBest:0,
-    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,gameBest:{},seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
+    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,gameBest:{},dhOk:{},seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
 }
 /* ============ opslag veilig laden (#30) ============
    S.v blijft 2. S.schema telt de vorm van de opslag (zonder veld = 1). Elke stap n -> n+1 staat in MIGRATE en mag vaker draaien.
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=13,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=14,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2799,7 +2812,8 @@ const MIGRATE={
  9:s=>{if(!s.strand||typeof s.strand!=='object'||Array.isArray(s.strand))s.strand={};return s},
  10:s=>{if(s.home!=='kaart'&&s.home!=='vandaag')s.home='vandaag';if(!('fig' in s))s.fig=null;return s},
  11:s=>{if(!s.homeSet){s.home='kaart';s.homeSet=true}return s},
- 12:s=>{if(!s.gameBest||typeof s.gameBest!=='object'||Array.isArray(s.gameBest))s.gameBest={};return s}   // spellen: record per spel (seconden); speedBest blijft staan   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
+ 12:s=>{if(!s.gameBest||typeof s.gameBest!=='object'||Array.isArray(s.gameBest))s.gameBest={};return s},
+ 13:s=>{if(!s.dhOk||typeof s.dhOk!=='object'||Array.isArray(s.dhOk))s.dhOk={};return s}   // de of het: per woord de goede beurten in het spel (afbouw van de vorm over de dagen)   // spellen: record per spel (seconden); speedBest blijft staan   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
 function checkState(o){if(!o||typeof o!=='object'||Array.isArray(o)||o.v!==2||!o.items||typeof o.items!=='object'||Array.isArray(o.items))return 'broken';
@@ -3907,8 +3921,8 @@ function gDefOk(w){const d=String(w.def||'');return !!d&&d.length<=MOTOR.gameDef
 /* de pool per spel; null = te weinig (het spel valt weg) */
 function gPool(kind,want){want=want||new Set();const n=MOTOR.gameMin;
   if(kind==='dehet'){const p=gPick(NL.filter(w=>w.art==='de'||w.art==='het'),want,12,w=>w.id);return p.length>=n?p:null}
-  if(kind==='klank'){if(QUIET)return null;const L=PACKS.filter(p=>p.learn==='nl'&&p.type!=='proef').flatMap(p=>p.exercises||[]).filter(e=>e.form==='listen'&&e.data&&e.data.mode!=='type'&&Array.isArray(e.data.opts)&&e.data.opts.length===2&&(e.items||[])[0]).map(e=>({id:e.items[0],exid:e.id,say:e.data.say,opts:e.data.opts}));
-    const p=gPick(L,want,12,x=>x.id,x=>x.exid);return p.length>=n?p:null}   /* per paar: één klank heeft vaak meer paren */
+  if(kind==='klank'){if(QUIET)return null;const L=PACKS.filter(p=>p.learn==='nl'&&p.type!=='proef').flatMap(p=>p.exercises||[]).filter(e=>e.form==='listen'&&e.data&&e.data.mode!=='type'&&Array.isArray(e.data.opts)&&e.data.opts.length===2&&(e.items||[])[0]&&lisCan(e.data.say)).map(e=>({id:e.items[0],exid:e.id,say:e.data.say,opts:e.data.opts}));
+    const p=shuffle(gPick(L,want,12,x=>x.id,x=>x.exid));return p.length>=n?p:null}   /* per paar: één klank heeft vaak meer paren */
   if(kind==='koppel'){const p=gPick(NL.filter(gDefOk),want,9,w=>w.id);return p.length>=n?p:null}
   if(kind==='klok'){const id=gSkill('setclock')||gSkill('clock');return id||(typeof PRF!=='undefined'&&PRF)?[{id}]:null}
   if(kind==='geld'){const id=gSkill('money');return id||(typeof PRF!=='undefined'&&PRF)?[{id}]:null}
@@ -3925,12 +3939,12 @@ function gamePlay(kind,pool,q){if(q&&q._P)pool=q._P;const N=(MOTOR.gameTurns||{}
   const credit=id=>{if(!id||G.counted.has(id))return;G.counted.add(id);if(!(typeof PRF!=='undefined'&&PRF)&&!(typeof LES!=='undefined'&&LES)&&S.items[id])review(id,true,'spel',null,true)};   /* review: geen exid, zodat een spel nooit als variant voor bloei telt (C5) */
   const miss=()=>{G.miss++};
   const turn=()=>{const p=pool;
-    if(kind==='dehet'){let w=p[Math.floor(Math.random()*p.length)];if(p.length>1)while(w===G.cur)w=p[Math.floor(Math.random()*p.length)];return w}
-    if(kind==='klank')return p[G.k%p.length];
+    if(kind==='dehet'){const last=G.last||(G.last=[]),free=p.filter(x=>!last.includes(x.id)),from=free.length?free:p,w=from[Math.floor(Math.random()*from.length)];last.push(w.id);if(last.length>3)last.shift();return w}   /* G4: niet hetzelfde woord binnen drie beurten */
+    if(kind==='klank'){const x=p[G.k%p.length];return {...x,opts:shuffle(x.opts),heard:false}}
     if(kind==='koppel'){const ws=shuffle(p).slice(0,3);return shuffle(ws.flatMap(w=>[{id:w.id,ty:'w',x:w.w,w},{id:w.id,ty:'d',x:w.def,w}]))}
-    if(kind==='klok'){let h,m;do{h=Math.floor(Math.random()*12);m=[0,15,30,45][Math.floor(Math.random()*4)]}while(h===0&&m===0);return {h,m,sh:12,sm:0}}   /* nooit de beginstand 12:00 */
-    if(kind==='geld'){const e=1+Math.floor(Math.random()*19),c=5*Math.floor(Math.random()*20);return {c:e*100+c,laid:[]}}};
-  const hintFirst=w=>GMISS.has(w.id)||(GSEEN.get(w.id)||0)<MOTOR.gameHintN;   // de vorm vooraf: de eerste keren, en na een misser
+    if(kind==='klok'){const used=G.used||(G.used=new Set());let h,m;do{h=Math.floor(Math.random()*12);m=[0,15,30,45][Math.floor(Math.random()*4)]}while((h===0&&m===0)||used.has(h*60+m));used.add(h*60+m);return {h,m,sh:12,sm:0}}   /* nooit de beginstand, geen tijd twee keer */   /* nooit de beginstand 12:00 */
+    if(kind==='geld'){const e=1+Math.floor(Math.random()*19),ct=5*Math.floor(Math.random()*20),price=e*100+ct;if(G.k<MOTOR.gameGeldInstap)return {c:price,laid:[],mode:'leg'};const pay=[500,1000,2000,5000].find(v=>v>price);return {price,pay,c:pay-price,laid:[],mode:'terug'}}};   /* G4: eerst leggen (instap), dan echt wisselgeld */
+  const hintFirst=w=>{const pr=(typeof PRF!=='undefined'&&PRF)||(typeof LES!=='undefined'&&LES);return pr?(GMISS.has(w.id)||(GSEEN.get(w.id)||0)<MOTOR.gameHintN):((S.dhOk||{})[w.id]||0)<MOTOR.gameHintN};   /* G4: over de dagen (S.dhOk); een misser zet de teller op 0 */   // de vorm vooraf: de eerste keren, en na een misser
   const head=()=>`<div class="row between"><span class="pill pill-mint num">${T('game.turn',{k:Math.min(G.k+1,N),n:N})}</span><span class="pill pill-sky num" id="gclk" aria-hidden="true">0:00</span></div>`;
   const next1=()=>{G.k++;G.sel=[];G.done=new Set();G.seen=new Set();G.tok=(G.tok||0)+1;G.lock=true;setTimeout(()=>{G.lock=false},300);if(G.k>=N)return end();G.cur=turn();draw()};   /* lock: een tweede tik telt niet voor de nieuwe beurt (review) */
   const draw=()=>{if(G.k>N)return;
@@ -3938,14 +3952,14 @@ function gamePlay(kind,pool,q){if(q&&q._P)pool=q._P;const N=(MOTOR.gameTurns||{}
       $('#go').onclick=()=>{G.started=true;G.t0=now();G.cur=turn();GCUR=G;draw();clearInterval(G.iv);G.iv=setInterval(()=>{const c=document.getElementById('gclk');if(!c||G.k>=N||GCUR!==G){clearInterval(G.iv);return}c.textContent=gTime(Math.round((now()-G.t0)/1000))},1000)};return}
     const c=G.cur;let body='';
     if(kind==='dehet'){const pv=G.prev?`<p class="small muted">${artFull(G.prev)}</p>`:'';body=`${pv}<p class="eyebrow">de of het?</p><p class="speed">${hintFirst(c)?`<span class="artw art-${c.art}" aria-hidden="true"></span>`:''}${esc(c.w)}</p>${supSpan(L_(c))}<div class="choices"><button class="choice" data-a="de">de</button><button class="choice" data-a="het">het</button></div>`}
-    if(kind==='klank')body=`<button class="speak" id="gsay">${icon.play}${TB('btn.listen')}</button><div class="choices">${c.opts.map((o,i)=>`<button class="choice" data-k="${i}">${esc(o)}</button>`).join('')}</div>`;
+    if(kind==='klank')body=`<button class="speak" id="gsay">${icon.play}${TB('btn.listen')}</button><div class="choices">${c.opts.map((o,i)=>`<button class="choice" data-k="${i}" ${c.heard?'':'disabled'}>${esc(o)}</button>`).join('')}</div>`;   /* G4: pas kiezen als het woord klinkt */
     if(kind==='koppel')body=`<div class="gcards">${c.map((x,i)=>`<button class="gcard${G.done.has(x.id)?' on':''}${G.sel.includes(i)?' open':''}" data-c="${i}" aria-label="${G.done.has(x.id)||G.sel.includes(i)?esc(x.x):i+1}" aria-pressed="${G.done.has(x.id)||G.sel.includes(i)}">${G.done.has(x.id)||G.sel.includes(i)?esc(x.x):'?'}</button>`).join('')}</div>`;
-    if(kind==='klok')body=`<p class="prompt">${T('game.clockAsk')} <b lang="nl">${esc(tijdNL(c.h,c.m))}</b></p>${clockSvg(c.sh,c.sm)}<p class="small muted" aria-live="polite">${esc(tijdNL(c.sh%12,c.sm))}</p><div class="row" style="justify-content:center;gap:8px;flex-wrap:wrap"><button class="btn btn-ghost" style="width:auto" id="ghm">− ${esc(t('scene.hour'))}</button><button class="btn btn-ghost" style="width:auto" id="ghp">+ ${esc(t('scene.hour'))}</button><button class="btn btn-ghost" style="width:auto" id="gmm">− 15 min</button><button class="btn btn-ghost" style="width:auto" id="gmp">+ 15 min</button></div><button class="btn btn-leaf" id="gok">${TB('btn.check')}</button>`;
-    if(kind==='geld'){const s=c.laid.reduce((a,b)=>a+b,0);body=`<p class="prompt">${T('game.moneyAsk')} <b class="num">${gEuro(c.c)}</b></p><div class="gcoins">${GCOINS.map(v=>`<button class="${v>=500?'bill':'coin'}${v<100?' small':''}" data-v="${v}">${v>=100?'€ '+v/100:v+' ct'}</button>`).join('')}</div><p class="num">${T('game.sum',{s:gEuro(s)})}</p><div class="btn-row"><button class="btn btn-ghost" id="greset">${TB('game.reset')}</button><button class="btn btn-leaf" id="gok">${TB('game.ready')}</button></div>`}
+    if(kind==='klok')body=`<p class="prompt">${T('game.clockAsk')} <b lang="nl">${esc(tijdNL(c.h,c.m))}</b></p>${clockSvg(c.sh,c.sm)}<p class="sr" aria-live="polite">${esc(tijdNL(c.sh%12,c.sm))}</p>${c.shown?`<p class="small muted">${T('game.youSet',{t:esc(c.shown)})}</p>`:''}<div class="row" style="justify-content:center;gap:8px;flex-wrap:wrap"><button class="btn btn-ghost" style="width:auto" id="ghm">− ${esc(t('scene.hour'))}</button><button class="btn btn-ghost" style="width:auto" id="ghp">+ ${esc(t('scene.hour'))}</button><button class="btn btn-ghost" style="width:auto" id="gmm">− 15 min</button><button class="btn btn-ghost" style="width:auto" id="gmp">+ 15 min</button></div><button class="btn btn-leaf" id="gok">${TB('btn.check')}</button>`;
+    if(kind==='geld'){const s=c.laid.reduce((a,b)=>a+b,0);body=`${c.mode==='terug'?`<p class="prompt">${T('game.changeAsk',{p:gEuro(c.price),b:gEuro(c.pay)})}</p>`:`<p class="prompt">${T('game.moneyAsk')} <b class="num">${gEuro(c.c)}</b></p>`}<div class="gcoins">${GCOINS.map(v=>`<button class="${v>=500?'bill':'coin'}${v<100?' small':''}" data-v="${v}">${v>=100?'€ '+v/100:v+' ct'}</button>`).join('')}</div><p class="num">${c.mode==='terug'&&!c.check?T('game.coins',{n:c.laid.length}):T('game.sum',{s:gEuro(s)})}</p><div class="btn-row"><button class="btn btn-ghost" id="greset">${TB('game.reset')}</button><button class="btn btn-leaf" id="gok">${TB('game.ready')}</button></div>`}
     frameG(`<div class="card stack" style="text-align:center">${head()}${body}</div>`);
     {const e=document.getElementById('gclk');if(e)e.textContent=gTime(Math.round((now()-G.t0)/1000))}
-    if(kind==='dehet')app.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{if(G.lock)return;if(b.dataset.a===c.art){credit(c.id);GMISS.delete(c.id);GSEEN.set(c.id,(GSEEN.get(c.id)||0)+1)}else{miss();GMISS.add(c.id);toast(`${c.art} ${c.w}`)}G.prev=c;next1()});
-    if(kind==='klank'){const sayIt=()=>say(c.say),tk=G.tok;$('#gsay').onclick=sayIt;setTimeout(()=>{if(here()&&GCUR===G&&G.tok===tk)sayIt()},Math.max(MOTOR.gameKlank[2],MOTOR.gameKlank[0]-G.k*MOTOR.gameKlank[1]));
+    if(kind==='dehet')app.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{if(G.lock)return;const free=(typeof PRF!=='undefined'&&PRF)||(typeof LES!=='undefined'&&LES);if(b.dataset.a===c.art){credit(c.id);GMISS.delete(c.id);GSEEN.set(c.id,(GSEEN.get(c.id)||0)+1);if(!free){S.dhOk=S.dhOk||{};S.dhOk[c.id]=(S.dhOk[c.id]||0)+1}}else{miss();GMISS.add(c.id);if(!free){S.dhOk=S.dhOk||{};S.dhOk[c.id]=0}toast(`${c.art} ${c.w}`)}G.prev=c;next1()});
+    if(kind==='klank'){const sayIt=()=>{say(c.say);if(!c.heard){c.heard=true;app.querySelectorAll('[data-k]').forEach(b=>b.disabled=false)}},tk=G.tok;$('#gsay').onclick=sayIt;setTimeout(()=>{if(here()&&GCUR===G&&G.tok===tk)sayIt()},Math.max(MOTOR.gameKlank[2],MOTOR.gameKlank[0]-G.k*MOTOR.gameKlank[1]));
       app.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{if(G.lock)return;if(c.opts[+b.dataset.k]===c.say)credit(c.id);else{miss();toast(c.say)}next1()})}
     if(kind==='koppel')app.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{if(G.busy)return;const i=+b.dataset.c,x=c[i];if(G.done.has(x.id)||G.sel.includes(i))return;G.sel.push(i);say(x.x);
       if(G.sel.length<2)return draw();const [a,b2]=G.sel.map(j=>c[j]);
@@ -3953,9 +3967,9 @@ function gamePlay(kind,pool,q){if(q&&q._P)pool=q._P;const N=(MOTOR.gameTurns||{}
       const seen=G.seen||(G.seen=new Set()),knew=[a,b2].some(x=>seen.has(c.findIndex((y,j)=>y.id===x.id&&y.ty!==x.ty)));if(knew)miss();G.sel.forEach(j=>seen.add(j));   /* review: een misser alleen als de andere helft al eens open lag */
       G.busy=true;draw();const tk=G.tok;setTimeout(()=>{if(G.tok!==tk||GCUR!==G)return;G.busy=false;G.sel=[];if(here())draw()},900)});
     if(kind==='klok'){const r=()=>draw();$('#ghm').onclick=()=>{c.sh=(c.sh+10)%12+1;r()};$('#ghp').onclick=()=>{c.sh=c.sh%12+1;r()};$('#gmm').onclick=()=>{c.sm=(c.sm+45)%60;r()};$('#gmp').onclick=()=>{c.sm=(c.sm+15)%60;r()};
-      $('#gok').onclick=()=>{if(G.lock)return;if(c.sh%12===c.h%12&&c.sm===c.m){credit(pool[0].id);next1()}else{miss();toast(tijdNL(c.h,c.m))}}}
+      $('#gok').onclick=()=>{if(G.lock)return;if(c.sh%12===c.h%12&&c.sm===c.m){credit(pool[0].id);next1()}else{miss();c.shown=tijdNL(c.sh%12,c.sm);draw()}}}   /* G4: pas na Controleer de gezette tijd in woorden, zodat de wijzers tellen */
     if(kind==='geld'){app.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{c.laid.push(+b.dataset.v);draw()});$('#greset').onclick=()=>{c.laid=[];draw()};
-      $('#gok').onclick=()=>{if(G.lock)return;const s=c.laid.reduce((a,b)=>a+b,0);if(s===c.c){credit(pool[0].id);next1()}else{miss();c.laid=[];toast(gEuro(c.c));draw()}}}};
+      $('#gok').onclick=()=>{if(G.lock)return;const s=c.laid.reduce((a,b)=>a+b,0);if(s===c.c){credit(pool[0].id);next1()}else{miss();c.check=true;toast(T('game.sumWas',{s:gEuro(s),c:gEuro(c.c)}).replace(/<[^>]*>/g,' '));c.laid=[];c.check=false;draw()}}}};
   const end=()=>{const secs=Math.max(1,Math.round((now()-G.t0)/1000)),pr=(typeof PRF!=='undefined'&&PRF)||(typeof LES!=='undefined'&&LES),best=gBest(kind),rec=!pr&&G.miss<=1&&(!best||secs<best);GCUR=null;clearInterval(G.iv);
     if(rec&&!pr){S.gameBest=S.gameBest||{};S.gameBest[kind]=secs}if(!pr)save();
     if(q){score(true,Math.max(2,(N-G.miss)*2));if(SCN&&SCN.sc===q.sc)SCN.game=Math.max(SCN.game||0,N-G.miss)}else if(!pr)addPts(Math.max(2,(N-G.miss)*2));
@@ -4148,6 +4162,7 @@ function vKaart(){if(!S.onboarded)return vOnboard();
   ${cur?`<section class="card row between kcur"><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="eyebrow">${esc(t('map.here'))}</span><b>${esc(cur.title)}</b><span class="small muted">${allDone?T('map.allDone'):esc(scP((ns||{}).title))} · ${T('map.count',{d:cur.nd,n:cur.dots.length})}</span></span>${allDone?'':`<button class="btn btn-main" id="kGo" style="width:auto;flex:none">${TB('map.go')}</button>`}</section>`:`<div class="note">${T('map.none')}</div>`}
   <button class="card row between" id="kWeg" style="background:var(--sky);border-color:var(--sky-fill);text-align:left"><span style="display:flex;flex-direction:column;gap:2px">${T('map.onderweg')}<span class="small muted">${due?T('map.due',{n:due}):T('map.onderwegTip')}</span></span>${due?`<span class="pill pill-sky num" style="background:var(--surface)">${due}</span>`:''}</button>
   <div class="tiles2">${LESSEN.length?(l=>l?`<button class="tile sky" id="ontdek"><span class="ic">${icon.book}</span>${T('les.tile')}<span class="small muted">${esc(scP(l.title))}</span></button>`:'')(nextLes()):''}
+   ${gBestKind()?`<button class="tile apricot" id="kGame"><span class="ic">${icon.bolt}</span>${T('game.tile')}<span class="small muted">${esc(String(t(GNAME[gBestKind()])).replace(/<[^>]*>/g,''))}</span></button>`:''}
    <button class="tile mint" id="kMore"><span class="ic">${icon.bulb}</span>${T('map.more')}<span class="small muted">${T('map.moreSub')}</span></button></div>
   ${kNotes()}
   ${P.length?`<div class="wereld">${R.svg}${pl}</div>${rest?`<p class="small muted" style="text-align:center">${T('map.rest',{n:rest})}</p>`:''}`:''}`);
@@ -4157,6 +4172,7 @@ function vKaart(){if(!S.onboarded)return vOnboard();
   if($('#kGo'))$('#kGo').onclick=()=>startScene(ns);
   $('#kWeg').onclick=()=>startLesson(false);
   if($('#ontdek'))$('#ontdek').onclick=()=>startLes(nextLes());
+  if($('#kGame'))$('#kGame').onclick=startSpeed;
   $('#kMore').onclick=()=>{route=vToday;rerender();app.insertAdjacentHTML('afterbegin',`<button class="btn btn-ghost" id="kBack" style="width:auto">← ${TB('tab.map')}</button>`);$('#kBack').onclick=()=>show('vandaag');window.scrollTo(0,0)};
   app.querySelectorAll('[data-pl]').forEach(b=>b.onclick=()=>kSheet(P[+b.dataset.pl],b));
   /* het figuurtje loopt na een gedane scène van de vorige plek naar de nieuwe; met minder beweging staat het er meteen (CSS) */

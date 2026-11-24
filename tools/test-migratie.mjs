@@ -158,6 +158,9 @@ r = run({ [KEY]: raw({ ...CUR, schema: 10 }) });
 ok('schema 10 → 12: figuurtje zonder kleur; daarna (besluit eigenaar) één keer de kaart als thuisscherm; met reservekopie', r.S.home === 'kaart' && r.S.homeSet === true && r.S.fig === null && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 10);
 r = run({ [KEY]: raw({ ...CUR, schema: 10, home: 'kaart', fig: 'lilac' }) });
 ok('schema 10 → 12: een gekozen kaart en kleur blijven', r.S.home === 'kaart' && r.S.fig === 'lilac');
+// 8m. stap 13 → 14: de of het, goede beurten per woord in het spel (ijkmoment G4), alleen toegevoegd
+r = run({ [KEY]: raw({ ...CUR, schema: 13, gameBest: { klok: 40 } }) });
+ok('schema 13 → 14: dhOk leeg, gameBest blijft, met reservekopie', r.S.dhOk && !Object.keys(r.S.dhOk).length && r.S.gameBest.klok === 40 && JSON.parse(r.ls._[KEY + '.bak']).schema === 13);
 // 8l. stap 12 → 13: spellen, record per spel (docs/ontwerp-spellen.md), alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 12, speedBest: 14 }) });
 ok('schema 12 → 13: gameBest leeg, speedBest blijft, met reservekopie', r.S.gameBest && !Object.keys(r.S.gameBest).length && r.S.speedBest === 14 && JSON.parse(r.ls._[KEY + '.bak']).schema === 12);
