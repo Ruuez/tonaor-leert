@@ -76,3 +76,67 @@ Opnemen is niet in de browser gespeeld: de browser van de ontwerpsessie heeft ge
 ## 5. Volgende groep
 
 G4 voor groep 2 (rekenen in stappen en slepen) komt zodra die vormen gebouwd zijn, en daarna de spellen.
+
+---
+
+# IJkmoment G4, groep 2: rekenen in stappen en slepen
+
+Stand: 24 november 2026, cache v2-94. Uitgevoerd door de ontwerpsessie.
+
+**Wat is bekeken:**
+- het ontwerp (`ontwerp-stap6-groep2.md`) met de antwoorden van de ontwerpsessie;
+- de code (`H.sc_steps`, `H.sc_drag`, `stepsCheck`, `stepsLevel`, `stepsPlan`, `dragCheck`);
+- alle 25 tests (groen);
+- de proefscènes uit `content/proef-g4b.json`, gespeeld op 375 px als leerder. Bij slepen: slepen met de vinger nagebootst, een misser, tik en tik, twee missers en sorteren. Bij rekenen in stappen: niveau 0, 1 en 2, met een fout bij een keuze en bij het getal.
+
+Slepen met een echte vinger op iOS is niet getest; dat hoort op de telefoon.
+
+## 1. Wat goed is
+
+- **Slepen:**
+  - Een ding op de goede plek klikt vast. Bij een misser gaat het terug, met de naam van de plek ("Dat is de tafel").
+  - Na twee missers gaat het ding zelf naar zijn plek.
+  - Tik en tik werkt hetzelfde. Sorteren (twee dingen naar de tafel) werkt.
+  - Het ding heeft `touch-action:none` en geen tekstselectie of vergrootglas.
+- **Rekenen in stappen:**
+  - De redenering groeit zichtbaar: een beantwoorde deelvraag blijft klein staan met een vinkje.
+  - De keuzes bij het model hebben een teken (: × + −). Het getal leest de komma goed (14 wordt 14,00).
+  - Bij een fout keuzeantwoord volgt een uitleg die de denkfout benoemt ("Je weet al dat je er vier koopt").
+  - De afbouw zichtbaar per niveau: 4 deelvragen, dan 3, dan 2, met "kan het kloppen?" altijd als laatste.
+- **De proefstand telt nergens mee:** na afloop staat er niets van de proef in de opslag. Dat is goed, want Proefonderdelen staat op de telefoon van de leerder aan.
+- **Op 375 px:** alles past, de knoppen zijn groot genoeg.
+
+## 2. Bevindingen
+
+**2.1 Een fout getal krijgt geen gerichte uitleg.** Bij de korting (€ 80, 25%) typte ik 20: de korting in plaats van de prijs. Dat is de meest voorkomende denkfout bij deze som. De app zegt alleen "Nog niet. Probeer het nog een keer." Het formaat kent bij `rekenen` geen verwachte foute antwoorden. Daardoor kan het foutprofiel (R-M4) niet zien wát er misging.
+
+**2.2 "Kan het kloppen?" herhaalt de som in plaats van te schatten.** De goede keuzes zeggen "ongeveer 4 keer € 3,50 is ongeveer € 14" of "het is minder dan € 80". Dat controleert niets. Schatten betekent: afronden en een grens geven ("4 keer ongeveer € 4 is ongeveer € 16, dus € 14 kan").
+
+**2.3 Het goede antwoord is vaak het langste.** Bij het model en bij "kan het kloppen?" is de goede keuze in twee van de drie vragen duidelijk langer. Dezelfde maat als G2 (goed = langste hooguit 40%) geldt ook hier.
+
+**2.4 Bij niveau 2 moet de rekenvraag op zichzelf staan.** Op het hoogste niveau blijven alleen `rekenen` en `klopt` over. De rekenvraag moet dan de echte vraag zijn ("Hoe laat kom je aan?"), niet een hulpvraag ("Hoeveel minuten na 10.00 uur?").
+
+**2.5 De gekozen ding bij tik en tik heeft geen status voor VoiceOver.** Het label wordt voorgelezen, maar het ding krijgt geen `aria-pressed`. Een blinde gebruiker hoort niet dat het gekozen is.
+
+**2.6 Klein (alleen de proef):** "de kast" is getekend als een open plank. Een label moet passen bij wat er getekend is.
+
+## 3. Besluiten (ontwerpsessie)
+
+1. **Bij 2.1:** de deelvraag `rekenen` krijgt een optioneel veld `wrong`: hooguit twee verwachte foute getallen, elk met `why` en een eigen `err`.
+   - De app geeft bij zo'n getal die uitleg en telt de soort fout.
+   - De poort controleert dat `wrong` niet gelijk is aan `answer` of `accept`.
+   - De schrijversopdracht vraagt bij elke `rekenen` het meest waarschijnlijke foute getal.
+2. **Bij 2.2:** de schrijversopdracht vraagt bij `klopt` een goede keuze met een afgeronde schatting en een grens.
+   - De foute keuzes zijn een echte controlefout: verkeerde orde van grootte, of de verkeerde kant op.
+   - De reviewer controleert het.
+3. **Bij 2.3:** de G2-maat (goed = langste hooguit 40%) telt ook voor de keuzes in `steps`, in de redactiepoort. In de app blijft het een melding.
+4. **Bij 2.4:** schrijversopdracht en reviewer: `rekenen` moet de echte vraag van de situatie zijn, zodat hij op niveau 2 alleen kan staan.
+5. **Bij 2.5:** het gekozen ding krijgt `aria-pressed="true"`, en de rest `false`.
+6. **Bij 2.6:** de lijn let erop dat een label past bij de tekening. Er is geen code nodig.
+7. **Daarna:** de redactielijn mag beide vormen gebruiken, vanaf het volgende hoofdstuk.
+   - In elk hoofdstuk minstens één `steps` in de rekenscène en één `drag` waar het past.
+   - Een echte telefoontest van slepen met de vinger gaat mee met de opnametest van de eigenaar. Tik en tik blijft de terugval.
+
+## 4. Volgende groep
+
+Daarna de spellen: één ontwerp voor de groep, en G4 als ze gebouwd zijn.
