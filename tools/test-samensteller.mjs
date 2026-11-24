@@ -212,6 +212,6 @@ ok('de leerklok kan niet struikelen over het laden', html.includes('function lea
   ok('R-M3: een som schuift niet over een uitleg heen naar voren', q5[2].type === 'explain', q5.map(x => x._appr || x.type).join(' '));
   const q4 = cm.mix([s('geld'), s('geld')]);
   ok('R-M3: niets om ertussen te zetten: de volgorde blijft (niets valt weg)', q4.length === 2);
-  ok('R-M3: elke som kent zijn aanpak (veld approach, anders de vorm)', /function apprOf\(r,e\)\{if\(r&&KIND\[\(r\.items\|\|\[\]\)\[0\]\]==='skill'\)r\._appr=e\.approach\|\|e\.form/.test(html) && /breakTriples\(mixAppr\(noSameForm\(q,learn\)\)\)/.test(html));
+  ok('R-M3: elke som kent zijn aanpak (veld approach, anders de vorm)', /function apprOf\(r,e\)\{if\(r&&KIND\[\(r\.items\|\|\[\]\)\[0\]\]==='skill'\)r\._appr=e\.approach\|\|e\.form/.test(html) && /breakTriples\(mixAppr\(noSameForm\(oneSteps\(q\),learn\)\)\)/.test(html));
 }
 console.log(fails ? fails + ' FOUT' : 'alles OK');

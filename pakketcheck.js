@@ -6,7 +6,7 @@
   'use strict';
   var SUP = ['th', 'en'];
   var LEARN = ['nl', 'en'];
-  var FORMS = ['learn', 'recog', 'recall', 'build', 'gap', 'listen', 'dictee', 'mc', 'clock', 'money', 'discount'];
+  var FORMS = ['learn', 'recog', 'recall', 'build', 'gap', 'listen', 'dictee', 'mc', 'clock', 'money', 'discount', 'steps'];
   var RESERVED = ['hear-type', 'complete', 'own', 'write', 'situation', 'match', 'spot'];
   var TOP = ['format', 'id', 'type', 'version', 'scenes', 'place', 'goals', 'purpose', 'review', 'learn', 'level', 'order', 'quality', 'requires', 'title', 'items', 'texts', 'cards', 'exercises', 'explain', 'lesson', 'lessonShort', 'tests', 'gebied', 'vorm', 'draden', 'sources'];   // de laatste vier: een losse les algemene ontwikkeling
   var TAGS = /<\/?(b|i|u)>/g;
@@ -228,6 +228,7 @@
           opts(d.o); if ((d.o || []).indexOf(d.a) < 0) err(w + ': goed antwoord staat niet tussen de keuzes');
           tekst(d.alt, w + '.alt', true); break;
         case 'discount': if (['worked', 'part', 'own'].indexOf(d.mode) < 0) err(w + ': mode moet worked, part of own zijn'); break;
+        case 'steps': stepsCheck(d, w, err, function (x, u) { tekst(x, u, true); }); break;   /* werkvormen 1.4: een oefening voor de korte ronde, data = { ask, q } */
       }
     }
     var useCount = {};
@@ -321,13 +322,13 @@
     });
     // kwaliteit per thema (alleen voor een Nederlands thema met woorden; een woordenlijst is geen thema)
     if (p.purpose != null) tekst(p.purpose, id + '.purpose');   /* masterplan G5: waar het hoofdstuk voor dient */
-    if (p.type != null && ['thema', 'woordenlijst', 'hoofdstuk', 'les'].indexOf(p.type) < 0) err(id + ': type kent alleen thema, woordenlijst, hoofdstuk en les');
+    if (p.type != null && ['thema', 'woordenlijst', 'hoofdstuk', 'les', 'proef'].indexOf(p.type) < 0) err(id + ': type kent alleen thema, woordenlijst, hoofdstuk, les en proef');
     // scènes (docs/scenes.md): vaste stappen, gesprekken met één goede keuze en een reden bij elke keuze, de tekening uit de catalogus
     if (p.scenes != null) {
       var SV = root.SceneVis || null; if (!SV && typeof require === 'function') { try { SV = require('./scene.js'); } catch (e) { SV = null; } }
       var KV = root.KaartVis || null; if (!KV && typeof require === 'function') { try { KV = require('./kaart.js'); } catch (e) { KV = null; } }   // kaart en tijdlijn (docs/kaart-en-tijdlijn.md)
       var KD = function (n) { if (!KV || KV.MAPS.indexOf(n) < 0 || typeof require !== 'function' || typeof window !== 'undefined') return null; try { return require('./kaart/' + n + '.json'); } catch (e) { return null; } };   // in Node ook ids en maat (codereview kaart 6); in de app laadt de kaart pas bij de les
-      var GAMES = ['dehet'], STEP = ['look', 'talk', 'read', 'listen', 'slot', 'explain', 'do', 'make', 'end', 'quiz', 'rule', 'extra', 'speak', 'game'], ERRS = ['lidwoord', 'woordvolgorde', 'werkwoordsvorm', 'tijd', 'voorzetsel', 'spelling', 'klank', 'betekenis', 'beleefdheid', 'getal', 'rekenstap', 'lezen', 'model'], DOFORM = ['setclock', 'point', 'money', 'clock', 'discount', 'gap', 'build', 'listen', 'map', 'timeline'];
+      var GAMES = ['dehet'], STEP = ['look', 'talk', 'read', 'listen', 'slot', 'explain', 'do', 'make', 'end', 'quiz', 'rule', 'extra', 'speak', 'game'], ERRS = ['lidwoord', 'woordvolgorde', 'werkwoordsvorm', 'tijd', 'voorzetsel', 'spelling', 'klank', 'betekenis', 'beleefdheid', 'getal', 'rekenstap', 'lezen', 'model'], DOFORM = ['setclock', 'point', 'money', 'clock', 'discount', 'gap', 'build', 'listen', 'map', 'timeline', 'drag'];
       var allItems = {}; [p].concat(reqPacks).forEach(function (o) { (o.items || []).forEach(function (x) { allItems[x.id] = 1; }); });   // masterplan uitleg 19: een bestaand woord als doel alleen uit een pakket in requires (hetzelfde item, dezelfde voortgang)
       var allExpl = {}; [p].concat(others || []).forEach(function (o) { (o.explain || []).forEach(function (x) { if (x && x.id) allExpl[x.id] = 1; }); });
       var errOk = function (o, u) { if (o.err != null && ERRS.indexOf(o.err) < 0) err(u + ': err ' + o.err + ' staat niet in de lijst'); else if (o.r !== 'ok' && o.err == null) q(u + ': soort fout (err) ontbreekt bij een foute keuze'); };
@@ -335,6 +336,7 @@
       // een vraag (quiz, rule, extra, en nieuwe vragen in read en listen): docs/scenes.md, "De stappen voor diepte en diagnose"
       var vraag = function (qq, u, nlOnly) { if (!qq || typeof qq !== 'object') { err(u + ': geen vraag'); return; }
         var EXF = ['build', 'gap', 'listen', 'money', 'clock', 'discount'], TYP = ['type', 'hear-type', 'complete'];
+        if (qq.form === 'steps') { itemsOk(qq.items, u); stepsCheck(qq, u, err, tekst); if (qq.proefLevel != null && (p.type !== 'proef' || [0, 1, 2].indexOf(qq.proefLevel) < 0)) err(u + ': proefLevel (0, 1 of 2) kan alleen in een proefpakket'); if (!qq.why) err(u + ': why ontbreekt'); else tekst(qq.why, u + '.why'); return; }   /* werkvormen 1.4 */
         if (NUMF.indexOf(qq.form) >= 0) { itemsOk(qq.items, u); tekst(qq.ask, u + '.ask'); if (!qq.why) err(u + ': why ontbreekt'); else tekst(qq.why, u + '.why'); if (qq.err != null && ERRS.indexOf(qq.err) < 0) err(u + ': err ' + qq.err + ' staat niet in de lijst'); numCheck(qq, u, err); return; }   /* werkvormen 1.1-1.3 */
         if (['choose', 'hear', 'number'].concat(TYP, EXF).indexOf(qq.form) < 0) { err(u + ': vorm ' + qq.form + (['own', 'match', 'spot', 'dictee', 'mc', 'write', 'situation'].indexOf(qq.form) >= 0 ? ' is nog niet in een scène te gebruiken (stap 6)' : ' bestaat niet')); return; }
         if (qq.hint != null && (!Array.isArray(qq.hint) || qq.hint.length !== 2)) err(u + ': hint moet twee stappen hebben'); else if (qq.hint) qq.hint.forEach(function (h, i) { tekst(h, u + '.hint[' + i + ']'); });
@@ -396,6 +398,7 @@
             if (st.form === 'setclock' && !/^\d{1,2}:\d{2}$/.test(String(st.answer))) err(v + ': answer als u:mm');
             if (st.form === 'map' && KV) { if (st.answer == null) err(v + ': answer (een gebied of een plek) ontbreekt'); KV.checkMapSpec(st, KD(st.map)).forEach(function (m) { err(v + ': ' + m); }); }
             if (st.form === 'timeline' && KV) KV.checkTimeline(st, st.cards || [], st.tol).forEach(function (m) { err(v + ': ' + m); });
+            if (st.form === 'drag') dragCheck(st, sc.art, v, err);   /* stap 6 groep 2: slepen en sorteren */
             if (st.form === 'point' && (!sc.art || !(sc.art.things || []).some(function (t) { return t && t.hot && t.item === st.answer; }))) err(v + ': answer moet het item van een aantikbaar ding zijn');
             if (['money', 'clock', 'discount'].indexOf(st.form) >= 0 && !st.gen) err(v + ': een som in een scène heeft gen nodig');
             if (st.gen) genCheck({ form: st.form, gen: st.gen }, v, true); else if (['gap', 'build', 'listen'].indexOf(st.form) >= 0) { if (!st.data) err(v + ': data ontbreekt'); else exData({ form: st.form, data: st.data }, v, st.data); }
@@ -418,7 +421,7 @@
         if (sc.steps[sc.steps.length - 1].type !== 'end') err(w + ': de laatste stap is end');
       });
     }
-    if (p.learn === 'nl' && words.length && p.type !== 'woordenlijst' && p.type !== 'hoofdstuk' && p.type !== 'les') {
+    if (p.learn === 'nl' && words.length && p.type !== 'woordenlijst' && p.type !== 'hoofdstuk' && p.type !== 'les' && p.type !== 'proef') {
       var texts = p.texts || [];
       if (words.length < 40 || words.length > 60) q(id + ': ' + words.length + ' doelwoorden (eis: 40 tot 60)');
       if (texts.length < 3) q(id + ': ' + texts.length + ' tekst(en) (eis: minstens drie)');
@@ -683,6 +686,47 @@
   // verhoudingstabel: de volle tabel (de vraagtekens rij voor rij uit answers) en de bewerking tussen twee kolommen (uit de eerste rij)
   function ratioFull(qq) { var k = 0; return qq.rows.map(function (r) { return r.map(function (c, i) { return i && c === '?' ? qq.answers[k++] : c; }); }); }
   function ratioOps(qq) { var f = ratioFull(qq)[0], out = []; for (var i = 1; i < f.length - 1; i++) { var a = f[i], b = f[i + 1], m = b / a; out.push(!a || !b ? '' : Math.abs(m - Math.round(m)) < 1e-9 && m >= 1 ? '×' + Math.round(m) : Math.abs(1 / m - Math.round(1 / m)) < 1e-9 ? ':' + Math.round(1 / m) : ''); } return out; }
+  /* werkvormen 1.4, rekenen in stappen (docs/ontwerp-stap6-groep2.md): 2 tot 4 deelvragen uit de vaste aanpak, altijd rekenen en als laatste klopt */
+  var STEPN = ['vraag', 'gegevens', 'model', 'rekenen', 'klopt'], STEPERRS = ['lidwoord', 'woordvolgorde', 'werkwoordsvorm', 'tijd', 'voorzetsel', 'spelling', 'klank', 'betekenis', 'beleefdheid', 'getal', 'rekenstap', 'lezen', 'model'];
+  function stepsCheck(qq, u, err, tekst) {
+    var s = qq && qq.q; if (qq.ask == null) err(u + ': ask (de situatie) ontbreekt'); else tekst(qq.ask, u + '.ask');
+    if (!Array.isArray(s) || s.length < 2 || s.length > 4) { err(u + ': twee tot vier deelvragen (q)'); return; }
+    var seen = {}, prev = -1;
+    s.forEach(function (d, i) { var w = u + '.q[' + i + ']';
+      if (!d || STEPN.indexOf(d.step) < 0) { err(w + ': step moet vraag, gegevens, model, rekenen of klopt zijn'); return; }
+      if (seen[d.step]) err(w + ': stap ' + d.step + ' komt twee keer voor'); seen[d.step] = 1;
+      if (STEPN.indexOf(d.step) <= prev) err(w + ': de stappen staan in de vaste volgorde (vraag, gegevens, model, rekenen, klopt)'); prev = STEPN.indexOf(d.step);
+      tekst(d.ask, w + '.ask'); if (d.why != null) tekst(d.why, w + '.why');
+      if (d.step === 'rekenen') { if (!num(d.answer)) err(w + ': answer (een getal) ontbreekt'); if (d.accept != null && (!Array.isArray(d.accept) || !d.accept.every(num))) err(w + ': accept is een lijst getallen'); if (d.opts) err(w + ': rekenen is een getal, geen keuze'); }
+      else { var o = d.opts; if (!Array.isArray(o) || o.length < 2 || o.length > 4) err(w + ': twee tot vier keuzes');
+        else { if (o.filter(function (x) { return x && x.r === 'ok'; }).length !== 1) err(w + ': precies één keuze is ok');
+          o.forEach(function (x, k) { var wk = w + '.opts[' + k + ']'; if (!x || typeof x.t !== 'string' || !x.t.trim() || x.t.length > 70) err(wk + ': t ontbreekt of is langer dan 70 tekens'); if (x && x.r !== 'ok' && x.r !== 'no') err(wk + ': r moet ok of no zijn'); if (x && x.err != null && STEPERRS.indexOf(x.err) < 0) err(wk + ': err ' + x.err + ' staat niet in de lijst'); if (x && x.why != null) tekst(x.why, wk + '.why'); if (d.step === 'model' && x && x.model != null && ['strook', 'tabel', 'lijn', 'keer', 'delen', 'plus', 'min'].indexOf(x.model) < 0) err(wk + ': model moet strook, tabel, lijn, keer, delen, plus of min zijn'); }); } } });
+    if (!seen.rekenen) err(u + ': de deelvraag rekenen ontbreekt');
+    if (!s.length || !s[s.length - 1] || s[s.length - 1].step !== 'klopt') err(u + ': de laatste deelvraag is klopt (kan het kloppen?)');
+  }
+  /* afbouw (onderbouwing-rekenen 2.8, besluit ontwerpsessie): niveau 0 alles, 1 zonder vraag en gegevens, 2 alleen rekenen en klopt; ging de vorige keer fout, dan één niveau terug */
+  function stepsLevel(reps, lastFalse, fade) { fade = fade || [2, 5]; var l = reps >= fade[1] ? 2 : reps >= fade[0] ? 1 : 0; return lastFalse ? Math.max(0, l - 1) : l; }
+  function stepsPlan(qq, level) { var drop = level >= 2 ? ['vraag', 'gegevens', 'model'] : level >= 1 ? ['vraag', 'gegevens'] : []; return (qq.q || []).filter(function (d) { return d && drop.indexOf(d.step) < 0; }); }
+  /* de soort fout van een deelvraag: de err van de foute keuze, anders per stap */
+  function stepsErr(d, opt) { if (opt && opt.err) return opt.err; return d.step === 'vraag' || d.step === 'gegevens' ? 'lezen' : d.step === 'model' ? 'model' : 'rekenstap'; }
+  /* de hele vraag voor het herhaalmodel: alles in één keer true; ergens een tweede poging 'retry'; ergens het antwoord getoond false */
+  function stepsRes(marks) { return marks.some(function (m) { return m === false; }) ? false : marks.some(function (m) { return m === 'retry'; }) ? 'retry' : true; }
+  /* slepen en sorteren: 1 tot 3 paren ding → plek; een plek mag vaker voorkomen (sorteren in bakken), een ding niet; beide aantikbaar */
+  function dragCheck(st, art, v, err) {
+    var th = (art && art.things) || [], ps = st.pairs, used = {};
+    if (!Array.isArray(ps) || ps.length < 1 || ps.length > 3) { err(v + ': één tot drie paren (pairs)'); return; }
+    ps.forEach(function (x, i) { var w = v + '.pairs[' + i + ']';
+      if (!x || !Number.isInteger(x.thing) || !Number.isInteger(x.to)) { err(w + ': thing en to zijn plekken in art.things'); return; }
+      var a = th[x.thing], b = th[x.to];
+      if (!a || !a.hot || !a.item) err(w + ': thing moet een aantikbaar ding met item zijn');
+      if (!b || !b.hot) err(w + ': to moet een aantikbare plek zijn');
+      if (x.thing === x.to) err(w + ': thing en to zijn hetzelfde');
+      if (used['t' + x.thing]) err(w + ': hetzelfde ding twee keer'); used['t' + x.thing] = 1;
+      if (ps.some(function (y) { return y && y.to === x.thing; })) err(w + ': een ding dat versleept wordt, kan geen plek zijn'); });
+    var a0 = ps[0] && th[ps[0].thing]; if (a0 && Array.isArray(st.items) && st.items[0] !== a0.item) err(v + ': items[0] is het item van het eerste ding');
+  }
+  /* nakijken van één neerzetten: goed als dit ding bij deze plek hoort */
+  function dragDrop(st, thing, to) { var x = (st.pairs || []).find(function (y) { return y.thing === thing; }); return !!x && x.to === to; }
   function numCheck(qq, u, err) {
     if (qq.form === 'numline') {
       if (!num(qq.from) || !num(qq.to) || qq.from >= qq.to) err(u + ': getallenlijn heeft from < to nodig');
@@ -706,6 +750,6 @@
       if (qq.help != null && [0, 1, 2].indexOf(qq.help) < 0) err(u + ': help moet 0, 1 of 2 zijn');
     }
   }
-  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkG4: checkG4, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioWordKeys: audioWordKeys, audioSpoken: audioSpoken, NUMF: NUMF, numGrade: numGrade, numTol: numTol, stripValue: stripValue, ratioFull: ratioFull, ratioOps: ratioOps, audioTexts: audioTexts, withParts: withParts };
+  var api = { safeText: safeText, checkPack: checkPack, checkChapter: checkChapter, checkG2: checkG2, checkG4: checkG4, stepsCheck: stepsCheck, stepsLevel: stepsLevel, stepsPlan: stepsPlan, stepsErr: stepsErr, stepsRes: stepsRes, dragCheck: dragCheck, dragDrop: dragDrop, STEPN: STEPN, checkLes: checkLes, checkLessen: checkLessen, sceneForms: sceneForms, FORMS: FORMS, SUBJECTS: SUBJECTS, audioText: audioText, audioKey: audioKey, audioHash: audioHash, audioParts: audioParts, audioWordKeys: audioWordKeys, audioSpoken: audioSpoken, NUMF: NUMF, numGrade: numGrade, numTol: numTol, stripValue: stripValue, ratioFull: ratioFull, ratioOps: ratioOps, audioTexts: audioTexts, withParts: withParts };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.PakketCheck = api;
 })(this);

@@ -18,9 +18,11 @@ const err = [], warn = [];
   const others = readdirSync(dir).filter(f => f.endsWith('.json') && f !== 'index.json').map(f => { try { return JSON.parse(readFileSync(new URL(f, dir), 'utf8')); } catch (e) { return null; } }).filter(o => o && o.id !== p.id);
   const r = PC.checkPack(p, others); for (const m of r.errors) err.push('pakketcheck: ' + m); for (const m of r.quality || []) (/also verwijst naar/.test(m) ? err : warn).push('pakketcheck: ' + m);   // in de redactielijn is een losse also een fout; in de app een melding
   if (p.type === 'les') { for (const m of PC.checkLes(p).errors) err.push('les: ' + m); if (!(p.review && p.review.verdict === 'goed' && p.review.model && /^\d{4}-\d{2}-\d{2}$/.test(p.review.date || ''))) err.push('les: review ontbreekt (oordeel goed door een groter model dan de schrijver, met model en datum)'); }
-  else for (const m of PC.checkChapter(p).errors) err.push('hoofdstuk: ' + m);
+  else if (p.type !== 'proef') for (const m of PC.checkChapter(p).errors) err.push('hoofdstuk: ' + m);
   if (p.type === 'hoofdstuk' || p.type === 'les') for (const m of PC.checkG2(p).issues.filter(m => p.type === 'hoofdstuk' || !/150 tot 450/.test(m))) err.push('G2: ' + m);
   for (const m of PC.checkG4(p).issues) warn.push('G4: ' + m); }   // ijkmoment G4: een melding, geen weigering   /* ijkmoment G2: goed = langste, stramien, lange tekst, raden, schatten   // werkvormen, hints, lees- en luistertekst, spreken, spel, goals (masterplan A6, B1, B2, C1, C2, G2) */
+/* een proefpakket (type proef, voor een ijkmoment) komt nooit bij de leerder: alleen pakketcheck, geen hoofdstukeisen */
+if (p.type === 'proef') { console.log(file + ': ' + err.length + ' fouten, ' + warn.length + ' waarschuwingen (proefpakket: alleen pakketcheck)'); for (const e of err) console.log('  FOUT  ' + e); for (const x of warn) console.log('  let op  ' + x); process.exit(err.length ? 1 : 0); }
 const ID = /^[A-Za-z0-9._-]+$/, LANGS = ['nl', 'th', 'en'];
 /* een Latijnse letter vast aan een Thais teken is een tikfout (twee keer gevonden in de redactie, 18 november 2026) */
 { const mix = /[ก-๛][A-Za-z]|[A-Za-z][ก-๛]/; const walk = (o, w) => { if (typeof o === 'string') { const m = mix.exec(o); if (m) err.push(w + ': Latijnse letter vast aan Thais (' + o.slice(Math.max(0, m.index - 6), m.index + 8) + ')'); } else if (Array.isArray(o)) o.forEach((v, i) => walk(v, w + '[' + i + ']')); else if (o && typeof o === 'object') for (const k in o) walk(o[k], w + '.' + k); }; walk(p, p.id || 'pakket'); }
@@ -44,7 +46,7 @@ const opt = (q, w) => {
 let itemIdsRef = null, useRef = null;
 const question = (q, w, sid, nosup) => {
   if (!q || typeof q !== 'object') { E(w, 'vraag ontbreekt'); return 0; }
-  if (!['choose', 'hear', 'type', 'number', 'hear-type', 'complete', 'build', 'gap', 'listen', 'money', 'clock', 'discount', 'numline', 'strip', 'ratio'].includes(q.form)) E(w, 'vorm ' + q.form + ' kan (nog) niet in een scène');   // de gegevens van build, gap enz. controleert pakketcheck
+  if (!['choose', 'hear', 'type', 'number', 'hear-type', 'complete', 'build', 'gap', 'listen', 'money', 'clock', 'discount', 'numline', 'strip', 'ratio', 'steps'].includes(q.form)) E(w, 'vorm ' + q.form + ' kan (nog) niet in een scène');   // de gegevens van build, gap enz. controleert pakketcheck
   if (!Array.isArray(q.items) || !q.items.length) E(w, 'items ontbreekt'); else for (const t of q.items) { if (!itemIdsRef(t)) E(w, 'item bestaat niet: ' + t); else useRef(t, sid); }
   if (q.ask != null || !['build', 'gap', 'listen', 'money', 'clock', 'discount'].includes(q.form)) txt(q.ask, w + '.ask', nosup ? ['nl'] : LANGS);   // een bestaande oefenvorm heeft zijn vraag in data
   if (q.form === 'choose' || q.form === 'hear') {
@@ -55,6 +57,8 @@ const question = (q, w, sid, nosup) => {
     o.forEach((x, k) => opt(x, w + '.opts[' + k + ']'));
   } else if (['type', 'number', 'hear-type', 'complete'].includes(q.form)) { if (q.answer == null || String(q.answer).trim() === '') E(w, 'answer ontbreekt'); txt(q.why, w + '.why'); }
   else txt(q.why, w + '.why');
+  if (q.form === 'steps') (q.q || []).forEach((d, k) => { const wd = w + '.q[' + k + ']'; if (!d) return; txt(d.ask, wd + '.ask'); thai(d.ask, wd + '.ask'); if (d.why != null) { txt(d.why, wd + '.why'); thai(d.why, wd + '.why'); }   /* stap 6 groep 2: de deelvragen in drie talen */
+    (d.opts || []).forEach((o, j) => { const wo = wd + '.opts[' + j + ']'; if (typeof o.t !== 'string' || !o.t.trim() || o.t.length > 70) E(wo, 't ontbreekt of is langer dan 70 tekens'); names(o.t, wo); if (o.why != null) { txt(o.why, wo + '.why'); thai(o.why, wo + '.why'); } if (o.r !== 'ok' && o.err != null && !ERRS.includes(o.err)) E(wo, 'err staat niet in de lijst'); }); });
   return 1;
 };
 
@@ -156,7 +160,7 @@ for (const s of scenes) {
         o.forEach((q, k) => opt(q, wt + '.opts[' + k + ']'));
       });
     }
-    if (x.type === 'do') { txt(x.ask, ws + '.ask'); txt(x.why, ws + '.why'); if (x.answer == null && !x.gen && !x.opts && !(x.form === 'build' && x.data && Array.isArray(x.data.parts)) && x.form !== 'timeline') E(ws, 'answer, opts of gen ontbreekt'); if (x.form === 'map' || x.form === 'timeline') for (const m of kaartCheck(x)) E(ws, m); }   // zin bouwen in een do-stap: de blokken zijn het antwoord (gelijk aan pakketcheck)
+    if (x.type === 'do') { txt(x.ask, ws + '.ask'); txt(x.why, ws + '.why'); if (x.answer == null && !x.gen && !x.opts && !(x.form === 'build' && x.data && Array.isArray(x.data.parts)) && x.form !== 'timeline' && x.form !== 'drag') E(ws, 'answer, opts of gen ontbreekt'); if (x.form === 'map' || x.form === 'timeline') for (const m of kaartCheck(x)) E(ws, m); }   // zin bouwen in een do-stap: de blokken zijn het antwoord (gelijk aan pakketcheck)
     if (x.type === 'make') { txt(x.ask, ws + '.ask'); if (typeof x.frame !== 'string' && !Array.isArray(x.frame)) E(ws, 'frame (schrijfkader) ontbreekt'); if (typeof x.model !== 'string') E(ws, 'model (voorbeeldantwoord) ontbreekt'); if (!Array.isArray(x.checklist) || x.checklist.length < 2) E(ws, 'checklist met minstens twee punten ontbreekt'); }
     if (x.type === 'read') { if (!x.text || typeof x.text.nl !== 'string') E(ws, 'text.nl ontbreekt'); if (!LES && (!Array.isArray(x.q) || x.q.length < 2)) E(ws, 'minstens twee vragen'); if (s.subject === 'kn' && (!Array.isArray(x.sources) || !x.sources.length)) E(ws, 'een kennisles heeft bronnen nodig (sources)'); }
     if (x.type === 'end') { txt(x.next, ws + '.next'); txt(x.real, ws + '.real'); }

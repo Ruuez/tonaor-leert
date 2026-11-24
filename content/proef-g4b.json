@@ -1,0 +1,682 @@
+{
+ "format": 1,
+ "id": "proef-g4b",
+ "type": "proef",
+ "version": 1,
+ "order": 900,
+ "place": "proef",
+ "requires": [],
+ "learn": "nl",
+ "level": "A2",
+ "title": {
+  "nl": "Proef: rekenen in stappen en slepen",
+  "th": "ทดลอง: คิดเลขเป็นขั้น และการลาก",
+  "en": "Trial: maths in steps and dragging"
+ },
+ "items": [
+  {
+   "id": "proef.medicijn",
+   "kind": "word",
+   "w": "medicijn",
+   "art": "het",
+   "tr": {
+    "th": "ยา",
+    "en": "medicine"
+   },
+   "def": "Iets wat je inneemt als je ziek bent.",
+   "ex": "Het medicijn ligt in de kast.",
+   "gap": "Het ___ ligt in de kast.",
+   "wrong": [
+    "brood",
+    "glas",
+    "papier"
+   ]
+  },
+  {
+   "id": "proef.kast",
+   "kind": "word",
+   "w": "kast",
+   "art": "de",
+   "tr": {
+    "th": "ตู้",
+    "en": "cupboard"
+   },
+   "def": "Een meubel met planken waar je spullen in zet.",
+   "ex": "De borden staan in de kast.",
+   "gap": "De borden staan in de ___.",
+   "wrong": [
+    "tafel",
+    "stoel",
+    "deur"
+   ]
+  },
+  {
+   "id": "proef.tafel",
+   "kind": "word",
+   "w": "tafel",
+   "art": "de",
+   "tr": {
+    "th": "โต๊ะ",
+    "en": "table"
+   },
+   "def": "Een meubel met poten waar je aan eet.",
+   "ex": "We eten aan de tafel.",
+   "gap": "We eten aan de ___.",
+   "wrong": [
+    "kast",
+    "deur",
+    "muur"
+   ]
+  },
+  {
+   "id": "proef.brood",
+   "kind": "word",
+   "w": "brood",
+   "art": "het",
+   "tr": {
+    "th": "ขนมปัง",
+    "en": "bread"
+   },
+   "def": "Eten van meel dat je bij de bakker koopt.",
+   "ex": "Ik koop een brood bij de bakker.",
+   "gap": "Het ___ ligt bij de bakker.",
+   "wrong": [
+    "appel",
+    "fiets",
+    "stoel"
+   ]
+  },
+  {
+   "id": "proef.appel",
+   "kind": "word",
+   "w": "appel",
+   "art": "de",
+   "tr": {
+    "th": "แอปเปิล",
+    "en": "apple"
+   },
+   "def": "Een ronde vrucht die groen of rood is.",
+   "ex": "Ik eet elke dag een appel.",
+   "gap": "De ___ is rood.",
+   "wrong": [
+    "brood",
+    "tafel",
+    "kast"
+   ]
+  },
+  {
+   "id": "proef.per-stuk",
+   "kind": "rule",
+   "title": {
+    "nl": "De prijs van een aantal",
+    "th": "ราคาของหลายชิ้น",
+    "en": "The price of a number of items"
+   }
+  },
+  {
+   "id": "proef.korting",
+   "kind": "rule",
+   "title": {
+    "nl": "Korting in procenten",
+    "th": "ส่วนลดเป็นเปอร์เซ็นต์",
+    "en": "Discount in percent"
+   }
+  },
+  {
+   "id": "proef.reistijd",
+   "kind": "rule",
+   "title": {
+    "nl": "Tijd optellen",
+    "th": "บวกเวลา",
+    "en": "Adding time"
+   }
+  }
+ ],
+ "scenes": [
+  {
+   "id": "proef-sl",
+   "place": "proef",
+   "subject": "nl",
+   "level": "A2",
+   "title": {
+    "nl": "Opruimen",
+    "th": "เก็บของ",
+    "en": "Tidying up"
+   },
+   "intro": {
+    "nl": "Je ruimt de keuken op. Alles moet op zijn plek.",
+    "th": "คุณกำลังเก็บห้องครัว ทุกอย่างต้องอยู่ที่ของมัน",
+    "en": "You are tidying the kitchen. Everything must go in its place."
+   },
+   "can": {
+    "nl": "Spullen op de goede plek leggen",
+    "th": "วางของในที่ที่ถูกต้อง",
+    "en": "Put things in the right place"
+   },
+   "targets": [
+    "proef.medicijn",
+    "proef.kast",
+    "proef.tafel",
+    "proef.brood",
+    "proef.appel"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "mint",
+    "alt": {
+     "nl": "Een keuken met een kast, een tafel, een medicijn, een brood en appels.",
+     "th": "ห้องครัวที่มีตู้ โต๊ะ ยา ขนมปัง และแอปเปิล",
+     "en": "A kitchen with a cupboard, a table, medicine, a loaf of bread and apples."
+    },
+    "things": [
+     {
+      "kind": "shelf",
+      "x": 70,
+      "y": 80,
+      "hot": true,
+      "label": {
+       "nl": "de kast",
+       "th": "ตู้",
+       "en": "the cupboard"
+      },
+      "item": "proef.kast"
+     },
+     {
+      "kind": "table",
+      "x": 240,
+      "y": 156,
+      "hot": true,
+      "label": {
+       "nl": "de tafel",
+       "th": "โต๊ะ",
+       "en": "the table"
+      },
+      "item": "proef.tafel"
+     },
+     {
+      "kind": "medicine",
+      "x": 150,
+      "y": 190,
+      "hot": true,
+      "label": {
+       "nl": "het medicijn",
+       "th": "ยา",
+       "en": "the medicine"
+      },
+      "item": "proef.medicijn"
+     },
+     {
+      "kind": "bread",
+      "x": 190,
+      "y": 196,
+      "hot": true,
+      "label": {
+       "nl": "het brood",
+       "th": "ขนมปัง",
+       "en": "the bread"
+      },
+      "item": "proef.brood"
+     },
+     {
+      "kind": "apples",
+      "x": 110,
+      "y": 196,
+      "hot": true,
+      "label": {
+       "nl": "de appels",
+       "th": "แอปเปิล",
+       "en": "the apples"
+      },
+      "item": "proef.appel"
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "look"
+    },
+    {
+     "type": "do",
+     "form": "drag",
+     "items": [
+      "proef.medicijn"
+     ],
+     "ask": {
+      "nl": "Leg het medicijn in de kast.",
+      "th": "เอายาไปไว้ในตู้",
+      "en": "Put the medicine in the cupboard."
+     },
+     "pairs": [
+      {
+       "thing": 2,
+       "to": 0
+      }
+     ],
+     "why": {
+      "nl": "Een medicijn bewaar je in de <b>kast</b>.",
+      "th": "เก็บยาไว้ใน <b>kast</b>",
+      "en": "You keep medicine in the <b>kast</b>."
+     }
+    },
+    {
+     "type": "do",
+     "form": "drag",
+     "items": [
+      "proef.brood",
+      "proef.appel"
+     ],
+     "ask": {
+      "nl": "Zet het brood en de appels op de tafel.",
+      "th": "วางขนมปังและแอปเปิลบนโต๊ะ",
+      "en": "Put the bread and the apples on the table."
+     },
+     "pairs": [
+      {
+       "thing": 3,
+       "to": 1
+      },
+      {
+       "thing": 4,
+       "to": 1
+      }
+     ],
+     "why": {
+      "nl": "Het eten staat nu op de <b>tafel</b>.",
+      "th": "อาหารอยู่บน <b>tafel</b> แล้ว",
+      "en": "The food is now on the <b>tafel</b>."
+     }
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Dit was een proef.",
+      "th": "นี่เป็นการทดลอง",
+      "en": "This was a trial."
+     },
+     "real": {
+      "nl": "Ruim thuis iets op en zeg waar het ligt.",
+      "th": "เก็บของที่บ้านแล้วบอกว่ามันอยู่ที่ไหน",
+      "en": "Tidy something at home and say where it is."
+     }
+    }
+   ],
+   "n": 1
+  },
+  {
+   "id": "proef-sp",
+   "place": "proef",
+   "subject": "rk",
+   "level": "A2",
+   "title": {
+    "nl": "Rekenen in stappen",
+    "th": "คิดเลขเป็นขั้น",
+    "en": "Maths in steps"
+   },
+   "intro": {
+    "nl": "Drie sommen uit het dagelijks leven, elk in stappen: eerst alle stappen, dan minder, dan alleen rekenen en controleren.",
+    "th": "โจทย์สามข้อจากชีวิตประจำวัน แต่ละข้อเป็นขั้น ๆ: ครั้งแรกทุกขั้น แล้วน้อยลง แล้วแค่คิดเลขและตรวจ",
+    "en": "Three everyday sums, each in steps: first all steps, then fewer, then only calculating and checking."
+   },
+   "can": {
+    "nl": "Een som in stappen oplossen",
+    "th": "แก้โจทย์เป็นขั้น ๆ",
+    "en": "Solve a sum in steps"
+   },
+   "targets": [
+    "proef.per-stuk",
+    "proef.korting",
+    "proef.reistijd"
+   ],
+   "steps": [
+    {
+     "type": "quiz",
+     "role": "ophalen",
+     "q": [
+      {
+       "form": "steps",
+       "items": [
+        "proef.per-stuk"
+       ],
+       "proefLevel": 0,
+       "ask": {
+        "nl": "Een kaartje voor de bus kost € 3,50. Je koopt er vier.",
+        "th": "ตั๋วรถบัสราคา 3.50 ยูโร คุณซื้อสี่ใบ",
+        "en": "A bus ticket costs € 3.50. You buy four."
+       },
+       "q": [
+        {
+         "step": "vraag",
+         "ask": {
+          "nl": "Wat moet je uitrekenen?",
+          "th": "ต้องคำนวณอะไร",
+          "en": "What do you have to work out?"
+         },
+         "opts": [
+          {
+           "t": "Wat vier kaartjes samen kosten",
+           "r": "ok",
+           "why": {
+            "nl": "Je koopt er vier: je wilt de prijs van alles samen.",
+            "th": "คุณซื้อสี่ใบ: อยากรู้ราคารวม",
+            "en": "You buy four: you want the total price."
+           }
+          },
+          {
+           "t": "Hoeveel één kaartje kost",
+           "r": "no",
+           "err": "lezen",
+           "why": {
+            "nl": "Dat staat er al: € 3,50.",
+            "th": "บอกไว้แล้ว: 3.50 ยูโร",
+            "en": "That is given already: € 3.50."
+           }
+          },
+          {
+           "t": "Hoeveel kaartjes je kunt kopen",
+           "r": "no",
+           "err": "lezen",
+           "why": {
+            "nl": "Je weet al dat je er vier koopt.",
+            "th": "รู้อยู่แล้วว่าซื้อสี่ใบ",
+            "en": "You already know you buy four."
+           }
+          }
+         ]
+        },
+        {
+         "step": "model",
+         "ask": {
+          "nl": "Hoe reken je het uit?",
+          "th": "คำนวณอย่างไร",
+          "en": "How do you work it out?"
+         },
+         "opts": [
+          {
+           "t": "Keer: 4 × € 3,50",
+           "r": "ok",
+           "model": "keer"
+          },
+          {
+           "t": "Plus: € 3,50 + 4",
+           "r": "no",
+           "err": "model",
+           "model": "plus",
+           "why": {
+            "nl": "Vier keer hetzelfde bedrag is keer, geen plus.",
+            "th": "จำนวนเงินเท่ากันสี่ครั้งคือคูณ ไม่ใช่บวก",
+            "en": "Four times the same amount is times, not plus."
+           }
+          },
+          {
+           "t": "Delen: € 3,50 : 4",
+           "r": "no",
+           "err": "model",
+           "model": "delen"
+          }
+         ]
+        },
+        {
+         "step": "rekenen",
+         "ask": {
+          "nl": "Wat kosten vier kaartjes samen? In euro.",
+          "th": "สี่ใบรวมราคาเท่าไร เป็นยูโร",
+          "en": "What do four tickets cost together? In euro."
+         },
+         "answer": 14
+        },
+        {
+         "step": "klopt",
+         "ask": {
+          "nl": "Kan dat kloppen?",
+          "th": "เป็นไปได้ไหม",
+          "en": "Can that be right?"
+         },
+         "opts": [
+          {
+           "t": "Ja, ongeveer 4 keer € 3,50 is ongeveer € 14",
+           "r": "ok"
+          },
+          {
+           "t": "Nee, het moet minder dan € 3,50 zijn",
+           "r": "no",
+           "err": "rekenstap"
+          }
+         ]
+        }
+       ],
+       "why": {
+        "nl": "4 × € 3,50 = € 14,00.",
+        "th": "4 × 3.50 = 14.00 ยูโร",
+        "en": "4 × € 3.50 = € 14.00."
+       }
+      },
+      {
+       "form": "steps",
+       "items": [
+        "proef.korting"
+       ],
+       "proefLevel": 1,
+       "ask": {
+        "nl": "Een jas kost € 80. Je krijgt 25% korting.",
+        "th": "เสื้อโค้ทราคา 80 ยูโร ได้ส่วนลด 25%",
+        "en": "A coat costs € 80. You get 25% off."
+       },
+       "q": [
+        {
+         "step": "vraag",
+         "ask": {
+          "nl": "Wat moet je uitrekenen?",
+          "th": "ต้องคำนวณอะไร",
+          "en": "What do you have to work out?"
+         },
+         "opts": [
+          {
+           "t": "Wat je moet betalen",
+           "r": "ok"
+          },
+          {
+           "t": "Hoeveel procent korting je krijgt",
+           "r": "no",
+           "err": "lezen"
+          }
+         ]
+        },
+        {
+         "step": "model",
+         "ask": {
+          "nl": "Welk model past?",
+          "th": "แบบไหนเหมาะ",
+          "en": "Which model fits?"
+         },
+         "opts": [
+          {
+           "t": "De strook: 25% is een kwart",
+           "r": "ok",
+           "model": "strook"
+          },
+          {
+           "t": "Min: € 80 − 25",
+           "r": "no",
+           "err": "model",
+           "model": "min",
+           "why": {
+            "nl": "25% is geen 25 euro, maar een kwart van € 80.",
+            "th": "25% ไม่ใช่ 25 ยูโร แต่เป็นหนึ่งในสี่ของ 80 ยูโร",
+            "en": "25% is not 25 euro but a quarter of € 80."
+           }
+          }
+         ]
+        },
+        {
+         "step": "rekenen",
+         "ask": {
+          "nl": "Wat moet je betalen? In euro.",
+          "th": "ต้องจ่ายเท่าไร เป็นยูโร",
+          "en": "What do you pay? In euro."
+         },
+         "answer": 60
+        },
+        {
+         "step": "klopt",
+         "ask": {
+          "nl": "Kan dat kloppen?",
+          "th": "เป็นไปได้ไหม",
+          "en": "Can that be right?"
+         },
+         "opts": [
+          {
+           "t": "Ja, het is minder dan € 80",
+           "r": "ok"
+          },
+          {
+           "t": "Nee, het moet meer dan € 80 zijn",
+           "r": "no",
+           "err": "rekenstap"
+          }
+         ]
+        }
+       ],
+       "why": {
+        "nl": "Een kwart van € 80 is € 20. € 80 − € 20 = € 60.",
+        "th": "หนึ่งในสี่ของ 80 คือ 20 ยูโร 80 − 20 = 60 ยูโร",
+        "en": "A quarter of € 80 is € 20. € 80 − € 20 = € 60."
+       }
+      },
+      {
+       "form": "steps",
+       "items": [
+        "proef.reistijd"
+       ],
+       "proefLevel": 2,
+       "ask": {
+        "nl": "De trein vertrekt om 9.40 uur. De reis duurt 35 minuten.",
+        "th": "รถไฟออกเวลา 9.40 น. การเดินทางใช้เวลา 35 นาที",
+        "en": "The train leaves at 9.40. The journey takes 35 minutes."
+       },
+       "q": [
+        {
+         "step": "vraag",
+         "ask": {
+          "nl": "Wat moet je uitrekenen?",
+          "th": "ต้องคำนวณอะไร",
+          "en": "What do you have to work out?"
+         },
+         "opts": [
+          {
+           "t": "Hoe laat je aankomt",
+           "r": "ok"
+          },
+          {
+           "t": "Hoe lang de reis duurt",
+           "r": "no",
+           "err": "lezen"
+          }
+         ]
+        },
+        {
+         "step": "rekenen",
+         "ask": {
+          "nl": "Hoeveel minuten na 10.00 uur kom je aan?",
+          "th": "ถึงกี่นาทีหลัง 10.00 น.",
+          "en": "How many minutes after 10.00 do you arrive?"
+         },
+         "answer": 15
+        },
+        {
+         "step": "klopt",
+         "ask": {
+          "nl": "Kan dat kloppen?",
+          "th": "เป็นไปได้ไหม",
+          "en": "Can that be right?"
+         },
+         "opts": [
+          {
+           "t": "Ja, 20 minuten tot 10 uur en dan nog 15",
+           "r": "ok"
+          },
+          {
+           "t": "Nee, je komt voor 10 uur aan",
+           "r": "no",
+           "err": "rekenstap"
+          }
+         ]
+        }
+       ],
+       "why": {
+        "nl": "9.40 + 20 minuten = 10.00. Nog 15 minuten: 10.15 uur.",
+        "th": "9.40 + 20 นาที = 10.00 อีก 15 นาที: 10.15 น.",
+        "en": "9.40 + 20 minutes = 10.00. Another 15 minutes: 10.15."
+       }
+      }
+     ]
+    },
+    {
+     "type": "do",
+     "form": "drag",
+     "items": [
+      "proef.brood"
+     ],
+     "ask": {
+      "nl": "Zet het brood op de tafel.",
+      "th": "วางขนมปังบนโต๊ะ",
+      "en": "Put the bread on the table."
+     },
+     "pairs": [
+      {
+       "thing": 1,
+       "to": 0
+      }
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Dit was een proef.",
+      "th": "นี่เป็นการทดลอง",
+      "en": "This was a trial."
+     },
+     "real": {
+      "nl": "Reken bij de kassa eerst uit wat het ongeveer kost.",
+      "th": "ที่แคชเชียร์ ลองคิดก่อนว่าราคาประมาณเท่าไร",
+      "en": "At the till, first work out roughly what it costs."
+     }
+    }
+   ],
+   "art": {
+    "bg": "shop",
+    "tone": "apricot",
+    "alt": {
+     "nl": "Een winkel met een tafel en een brood.",
+     "th": "ร้านที่มีโต๊ะและขนมปัง",
+     "en": "A shop with a table and a loaf of bread."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 230,
+      "y": 156,
+      "hot": true,
+      "label": {
+       "nl": "de tafel",
+       "th": "โต๊ะ",
+       "en": "the table"
+      },
+      "item": "proef.tafel"
+     },
+     {
+      "kind": "bread",
+      "x": 100,
+      "y": 196,
+      "hot": true,
+      "label": {
+       "nl": "het brood",
+       "th": "ขนมปัง",
+       "en": "the bread"
+      },
+      "item": "proef.brood"
+     }
+    ]
+   }
+  }
+ ]
+}

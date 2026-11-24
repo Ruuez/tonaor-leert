@@ -17,6 +17,8 @@
 .ksheet{position:fixed;left:0;right:0;bottom:0;z-index:60;max-height:70vh;max-height:70dvh;overflow:auto;overscroll-behavior:contain;animation:ksup .25s ease-out;background:var(--surface);border-top:1px solid var(--line);border-radius:18px 18px 0 0;padding:14px 16px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -8px 28px rgba(0,0,0,.14);max-width:560px;margin:0 auto}
 .ksheet[hidden]{display:none}@keyframes ksup{from{transform:translateY(100%)}to{transform:none}}.ksheet .ksx{width:44px;height:44px;flex:none;padding:0;font-size:1.4rem}.ksheet h3{min-width:0}.ksheet .klock{flex:none;color:var(--ink-2,#777);display:inline-flex}.ksl{list-style:none;margin:8px 0 0;padding:0}.ksl li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}.ksl li>span{min-width:0}
 .ksl .kb{width:auto;flex:none;padding:6px 12px;font-size:.85rem;min-height:0}.kok{color:var(--mint-ink);font-weight:700;margin-right:6px}
+.sp-list{margin:0;padding-left:20px;display:grid;gap:4px}.sp-ic{display:inline-flex;vertical-align:middle;color:var(--apricot-ink)}
+.s-drag{touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.s-sel .s-halo{opacity:1}.s-sel{cursor:grabbing}
 .wereld{position:relative;margin:4px -4px}.wereld-svg{display:block}
 .w-pl{position:absolute;transform:translate(-50%,-46px);width:112px;height:128px;background:none;border:0;padding:0;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .w-pl .w-name{font-size:.78rem;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1px 7px;max-width:120px;line-height:1.25}
@@ -666,6 +668,14 @@ en:{
  "map.done":"Done",
  "map.later":"After the previous scene",
  "map.closed":"Still closed. What happens here:",
+ "proef.end":"This was a trial. Nothing has been counted.",
+ "proef.scenes":"Trial scenes for a review. After switching on Trial parts, open the app again.",
+ "steps.of":"Step {k} of {n}",
+ "steps.answer":"Your answer",
+ "steps.shown":"(the answer)",
+ "drag.tip":"Drag it to the right place, or tap it and then tap the place.",
+ "drag.chosen":"Chosen: {thing}. Now tap the place.",
+ "drag.wrong":"That is {place}. Try again.",
  "map.exam":"Exam: between {a} and {b}",
  "map.exam1":"Exam: {m}",
  "map.rest":{"one":"{n} more place further on","other":"{n} more places further on"},
@@ -1268,6 +1278,14 @@ nl:{
  "map.done":"Gedaan",
  "map.later":"Na de vorige scène",
  "map.closed":"Nog dicht. Wat hier gebeurt:",
+ "proef.end":"<h3>Dit was een proef.</h3><p>Er is niets meegeteld.</p>",
+ "proef.scenes":"Proefscènes voor een beoordeling. Na het aanzetten van Proefonderdelen de app opnieuw openen.",
+ "steps.of":"Stap {k} van {n}",
+ "steps.answer":"Je antwoord",
+ "steps.shown":"(het antwoord)",
+ "drag.tip":"Sleep het naar de goede plek, of tik erop en tik dan op de plek.",
+ "drag.chosen":"Gekozen: {thing}. Tik nu op de plek.",
+ "drag.wrong":"Dat is {place}. Probeer het nog eens.",
  "map.exam":"Examen: tussen {a} en {b}",
  "map.exam1":"Examen: {m}",
  "map.rest":{"one":"Nog {n} plek verderop","other":"Nog {n} plekken verderop"},
@@ -1868,6 +1886,14 @@ th:{
  "map.done":"เสร็จแล้ว",
  "map.later":"หลังฉากก่อนหน้า",
  "map.closed":"ยังปิดอยู่ ที่นี่จะเกิดอะไรขึ้น:",
+ "proef.end":"<b>นี่เป็นการทดลอง</b> ไม่มีการนับคะแนน",
+ "proef.scenes":"ฉากทดลองสำหรับการประเมิน หลังเปิดส่วนทดลองแล้ว ให้เปิดแอปใหม่",
+ "steps.of":"ขั้นที่ {k} จาก {n}",
+ "steps.answer":"คำตอบของคุณ",
+ "steps.shown":"(คำตอบ)",
+ "drag.tip":"ลากไปวางที่ที่ถูกต้อง หรือแตะที่มันแล้วแตะที่ที่จะวาง",
+ "drag.chosen":"เลือกแล้ว: {thing} ตอนนี้แตะที่ที่จะวาง",
+ "drag.wrong":"นั่นคือ {place} ลองอีกครั้ง",
  "map.exam":"สอบ: ระหว่าง {a} ถึง {b}",
  "map.exam1":"สอบ: {m}",
  "map.rest":"อีก {n} สถานที่ข้างหน้า",
@@ -2254,7 +2280,8 @@ const MOTOR={
   // C5 spel: één tot drie minuten (masterplan C5); 60 seconden: aanname
   gameSeconds:60,
   listenFade:3, listenRead:25, listenFast:1.15,   // werkvormen 3.1: meelezen in de eerste 3 scènes met een luistertekst; examenvorm 25 s leestijd (scenes.md); iets sneller = 1,15. 3 en 1,15 zijn een aanname
-  recMax:60, recKeep:30, voxKeep:1000, voxMax:10,   // inspreekhulp (docs/ontwerp-inspreekhulp.md): hooguit 1000 ingesproken zinnen (alle kernzinnen passen), 10 s per zin
+  recMax:60, stepsFade:[2,5],   // rekenen in stappen: vanaf 2 keer zonder vraag en gegevens, vanaf 5 keer alleen rekenen en klopt (aanname, te toetsen bij G4 groep 2)
+  recKeep:30, voxKeep:1000, voxMax:10,   // inspreekhulp (docs/ontwerp-inspreekhulp.md): hooguit 1000 ingesproken zinnen (alle kernzinnen passen), 10 s per zin
   speakLen:{short:20,medium:30,long:120}, speakPrep:30,   // werkvormen 4.1: opname hooguit 60 s; de laatste 30 opnamen blijven; examenvorm volgens scenes.md; voorbereidingstijd bij long 30 s (aanname)
   // M12 reeks pogingen per onderdeel: genoeg om de aannames te toetsen (didactisch plan hoofdstuk 6; antwoord ontwerpsessie 14 nov 2026)
   histMax:24, histBloom:6,
@@ -2271,7 +2298,7 @@ const NOGROW=['voorbeeld','check','spel'];   /* spel: wel wachttijd, geen vorm v
    Een poging = dagen sinds de vorige poging (base 36) + vormcode (één letter) + uitkomst (1 goed, 2 goed na een poging of hint, 0 fout), gescheiden door een komma.
    De dagen tellen vanaf it.hd (de dag van de eerste poging in de reeks). Afgekapt op MOTOR.histMax (MOTOR.histBloom in volle bloei);
    wat afvalt staat in f1 (eerste dag ooit), na (pogingen) en nk (goed). Alle reeksen samen hooguit MOTOR.histBudget tekens (histTrim). */
-const HCODE={getallenlijn:'e',strook:'f',tabel:'h',typen:'t',herkennen:'k',luisteren:'l',build:'b',gap:'g',listen:'i',dictee:'d',geld:'m',klok:'c',korting:'p',talk:'s',make:'w',spreken:'o',point:'a',read:'r',rekenen:'n',spel:'x',voorbeeld:'v',check:'q',tik:'j',luisteren2:'u'};
+const HCODE={getallenlijn:'e',strook:'f',tabel:'h',typen:'t',herkennen:'k',luisteren:'l',build:'b',gap:'g',listen:'i',dictee:'d',geld:'m',klok:'c',korting:'p',talk:'s',make:'w',spreken:'o',point:'a',read:'r',rekenen:'n',spel:'x',voorbeeld:'v',check:'q',tik:'j',luisteren2:'u',stappen:'y',slepen:'S'};   // stap 6 groep 2: rekenen in stappen, slepen (de kleine letters zijn op)
 const HFORM=Object.fromEntries(Object.entries(HCODE).map(([k,v])=>[v,k]));
 function histParse(it){const out=[];if(!it||typeof it.h!=='string'||!it.h)return out;let d=+it.hd||0;
   for(const p of it.h.split(',')){if(p.length<3)continue;d+=parseInt(p.slice(0,-2),36)||0;out.push([d,HFORM[p[p.length-2]]||'',+p[p.length-1]])}return out}
@@ -2308,7 +2335,7 @@ function noSameForm(q,learn){let speak=false;try{speak=typeof window!=='undefine
 /* Wat is nieuw (aanbeveling 1.3): verhoog NEWS bij een release die de leerder merkt, en zet de punten in I18N (news.1 …). Een nieuwe installatie ziet het niet. */
 const NEWS='2026-11-21',NEWS_N=3;
 let QUIET=false;   // stille stand: zonder voorlezen en luisteroefeningen, alleen voor deze sessie (Bijsturen op Ik)
-let SCENES=[],LESSEN=[],LES=null;   // LES: de les die nu loopt (geen herhaling, geen foutprofiel, geen punten)   // scènes uit de pakketten: {sc, learn}
+let SCENES=[],LESSEN=[],PROEF=[],LES=null;   // LES: de les die nu loopt (geen herhaling, geen foutprofiel, geen punten)   // scènes uit de pakketten: {sc, learn}
 let PACKS=[],PACK_MISSING=[],NL=[],EN=[],REK=[],SENT=[],PAIRS=[],DICTEE=null,STORY=null,PLACE=[];
 const EXS={},CARDP={},PACKBY={};
 async function loadPacks(){
@@ -2324,7 +2351,8 @@ async function loadPacks(){
   const ALL=BUILTIN.concat(extra),got=(await pBase).concat(await Promise.all(extra.map(one)));
   const seenId=new Set(),ok=got.map((p,i)=>{if(!p)return null;if(seenId.has(p.id)){PACK_MISSING.push(name(ALL[i]));return null}seenId.add(p.id);return p}).filter(Boolean);   /* twee pakketten met dezelfde id: het tweede valt weg en wordt gemeld (review 3a, K5) */
   got.forEach((p,i)=>{if(!p)PACK_MISSING.push(name(ALL[i]))});
-  ok.forEach(p=>{const others=ok.filter(o=>o!==p),miss=(p.requires||[]).some(r=>!others.some(o=>o.id===r));
+  const trialRaw=(()=>{try{const o=JSON.parse(localStorage.getItem(KEY)||'null');return !!(o&&o.trial)}catch(e){return false}})();   // stap 6 groep 2: een proefpakket alleen met Proefonderdelen aan (de opslag laadt pas hierna; alleen lezen)
+  ok.forEach(p=>{if(p.type==='proef'&&!trialRaw)return;const others=ok.filter(o=>o!==p),miss=(p.requires||[]).some(r=>!others.some(o=>o.id===r));
     const res=PC.checkPack(p,others,{lenient:miss});
     if(res.errors.length){PACK_MISSING.push(typeof p.id==='string'&&/^[A-Za-z0-9._-]+$/.test(p.id)?p.id:'?');try{console.warn('Pakket ongeldig',res.errors)}catch(e){}}else PACKS.push(p)});
   PACKS.sort((a,b)=>a.order-b.order);
@@ -2343,12 +2371,13 @@ let _h0=0;   // hoofdstukken die de hoofdstukcontrole (nog) niet halen: niet zic
 function buildLists(){
   /* een hoofdstuk verschijnt pas als het de hoofdstukcontrole haalt (masterplan: lesstof door de poort en de review); zo komt een half hoofdstuk nooit bij de leerder */
   HIDDEN=PACKS.filter(p=>(p.type==='hoofdstuk'&&(!PC||!PC.checkChapter||PC.checkChapter(p).errors.length))||(p.type==='les'&&(!PC||!PC.checkLes||PC.checkLes(p).errors.length||!(p.review&&p.review.verdict==='goed'&&p.review.model&&/^\d{4}-\d{2}-\d{2}$/.test(p.review.date||''))))).map(p=>p.id);PACKS=PACKS.filter(p=>!HIDDEN.includes(p.id));   /* codereview B3: ook de woorden niet */
-  CHAPTER=new Set(PACKS.filter(p=>p.type==='hoofdstuk'||p.type==='les').flatMap(   /* ook woorden uit een losse les: geen grind, nooit nieuw in de gewone les (codereview lessen 1) */p=>(p.items||[]).map(x=>x.id)));
+  CHAPTER=new Set(PACKS.filter(p=>p.type==='hoofdstuk'||p.type==='les'||p.type==='proef').flatMap(   /* ook woorden uit een losse les: geen grind, nooit nieuw in de gewone les (codereview lessen 1) */p=>(p.items||[]).map(x=>x.id)));
   {const ids=new Set(PACKS.flatMap(p=>(p.items||[]).map(x=>x.id)));   /* masterplan uitleg 22: een scène met een doel dat geen item heeft (een pakket uit requires ontbreekt) wordt niet getoond; de rest blijft speelbaar */
   const refs=sc=>{const r=(sc.targets||[]).slice();((sc.art&&sc.art.things)||[]).forEach(t=>{if(t&&t.item)r.push(t.item)});(sc.steps||[]).forEach(st=>{(st.items||[]).forEach(x=>r.push(x));(st.q||[]).forEach(q=>((q&&q.items)||[]).forEach(x=>r.push(x)));(st.turns||[]).forEach(t=>((t&&t.items)||[]).forEach(x=>r.push(x)))});return r};   /* ook woorden in vragen, gesprekken en de tekening (review uitleg 20-22, punt 4) */
   LESSEN=PACKS.filter(p=>p.type==='les'&&Array.isArray(p.scenes)&&p.scenes.length&&p.scenes.every(sc=>refs(sc).every(t=>typeof t!=='string'||ids.has(t)))).sort((a,b)=>a.order-b.order);   /* losse lessen algemene ontwikkeling (docs/algemene-ontwikkeling.md, Formaat van een losse les) */
-  SCENES=PACKS.filter(p=>p.type!=='les').flatMap(p=>(p.scenes||[]).filter(sc=>refs(sc).every(t=>typeof t!=='string'||ids.has(t))).map(sc=>({sc,learn:p.learn,purpose:p.purpose||null,pack:p.id,order:typeof p.order==='number'?p.order:999})))}
-  const items=k=>PACKS.flatMap(p=>(p.items||[]).filter(x=>x.kind===k||(k==='word'&&x.kind==='phrase')).map(x=>({x,p})));   // phrase: een vaste zin, als woord zonder lidwoord
+  PROEF=PACKS.filter(p=>p.type==='proef').flatMap(p=>(p.scenes||[]).filter(sc=>refs(sc).every(t=>typeof t!=='string'||ids.has(t))));   /* proefscènes voor een ijkmoment: alleen via Ik, nooit op de kaart of in de route */
+  SCENES=PACKS.filter(p=>p.type!=='les'&&p.type!=='proef').flatMap(p=>(p.scenes||[]).filter(sc=>refs(sc).every(t=>typeof t!=='string'||ids.has(t))).map(sc=>({sc,learn:p.learn,purpose:p.purpose||null,pack:p.id,order:typeof p.order==='number'?p.order:999})))}
+  const items=k=>PACKS.filter(p=>p.type!=='proef').flatMap(p=>(p.items||[]).filter(x=>x.kind===k||(k==='word'&&x.kind==='phrase')).map(x=>({x,p})));   // phrase: een vaste zin, als woord zonder lidwoord
   // woord, voorbeeldzin, gatzin en lidwoord toont het scherm met esc() of leest het voor: RAW. Vertalingen staan rauw in de HTML: SAFE.
   NL=items('word').filter(o=>o.p.learn==='nl').map(({x,p})=>{const o={id:x.id,pack:p.id,art:x.art?RAW(x.art):'',w:RAW(x.w),th:SAFE(x.tr.th),en:SAFE(x.tr.en),ex:RAW(x.ex),gap:RAW(x.gap)};if(x.askArt)o.askArt=1;if(x.also)o.also=x.also.slice();if(Array.isArray(x.wrong))o.wrong=x.wrong.map(RAW);if(x.def)o.def=RAW(x.def);return o});
   EN=items('word').filter(o=>o.p.learn==='en').map(({x})=>({id:x.id,w:RAW(x.w),nl:RAW(x.tr.nl),th:SAFE(x.tr.th),ex:RAW(x.ex),nlLike:x.nlLike?RAW(x.nlLike):'',ff:x.falseFriend===true}));   /* E-M2: nlLike en falseFriend */
@@ -2416,6 +2445,7 @@ function exQ0(e,step,learn){const d=e.data;
     // klok: vraag en uitleg rauw (SAFE), opties met esc() (RAW)
     case 'clock':return {type:'clock',step,c:flatT(flatT({h:d.h,m:d.m,o:d.o.map(RAW),a:RAW(d.a)},'q',d.q),'why',e.fb&&e.fb.ok)};
     case 'discount':return {type:'discount',step,k:d.mode==='part'?'partial':d.mode};
+    case 'steps':return {type:'sc_steps',step,qq:{form:'steps',items:(e.items||[]).slice(),ask:d.ask,q:d.q,unit:d.unit,why:e.fb&&e.fb.ok}};   // werkvormen 1.4 in de korte ronde
   }return null}
 /* welke oefenvorm een woord bij het ophalen krijgt: eerst typen, dan de vorm die het nog mist (luisteren, bij Engels ook herkennen).
    Zonder spraak op het toestel blijft het typen. docs/herhaalmodel.md sectie 4 en 6. */
@@ -2551,9 +2581,11 @@ function compose(recipe,learn){const used=new Set(),later=[];NEWPLAN=0;recipe=(r
   if(later.length){const real=x=>!['card','conf','end','explain'].includes(x.type);let i=q.map(x=>x.type).lastIndexOf('learn')+1,cnt=0,k=0;   // kiesvragen voor nieuwe woorden: na drie echte onderdelen, daarna telkens twee ertussen
     while(k<later.length){const conf=q.findIndex(x=>x.type==='conf'),at=conf<0?q.length:conf;if(i>=at){q.splice(at,0,...later.slice(k));break}
       if(real(q[i])&&q[i-1].type!=='explain')cnt++;if(cnt>=(k===0?3:2)&&(i+1>=q.length||q[i+1].type!=='explain'||true)){if(q[i].type==='explain'){i++;continue}q.splice(i+1,0,later[k]);k++;cnt=0;i+=2;continue}i++}}
-  {let out=breakTriples(mixAppr(noSameForm(q,learn)));if(STEER&&STEER.bored)out=noPairs(out);if(q._short)out._short=q._short;return out}}   /* H2; R-M3 */
+  {let out=breakTriples(mixAppr(noSameForm(oneSteps(q),learn)));if(STEER&&STEER.bored)out=noPairs(out);if(q._short)out._short=q._short;return out}}   /* H2; R-M3 */
 /* R-M3: nooit twee sommen met dezelfde aanpak achter elkaar in herhaling. Een nieuwe som (eerste keer) mag wel: dan leer je de aanpak eerst geblokt.
    Schuift een verplaatsbaar onderdeel ertussen (zoals breakTriples); een uitleg blijft bij de oefening erna. Lukt dat niet, dan blijft de volgorde. */
+/* besluit ontwerpsessie (stap 6 groep 2): hooguit één vraag rekenen in stappen per ronde; die is lang */
+function oneSteps(q){let n=0;return q.filter(x=>!(x&&x.type==='sc_steps'&&n++>0))}
 function mixAppr(q){const real=x=>x&&!['card','conf','end','explain','learn'].includes(x.type),free=(n)=>{const x=q[n];return real(x)&&!x._probe&&!x._ifUnknown&&!(n>0&&q[n-1].type==='explain')};
   for(let i=1;i<q.length;i++){if(!real(q[i])||!q[i]._appr||q[i]._new)continue;let p=i-1;while(p>=0&&!real(q[p]))p--;if(p<0||q[p]._appr!==q[i]._appr||q[p]._new)continue;
     let j=-1;for(let n=i+1;n<q.length;n++){if(q[n].type==='explain'||q[n].type==='card')break;if(free(n)&&q[n]._appr!==q[i]._appr){j=n;break}}if(j<0)continue;   /* nooit over een uitleg of kaart heen naar voren (codereview R-M3 5) */const [m]=q.splice(j,1);let at=i;while(at>0&&q[at-1].type==='explain')at--;q.splice(at,0,m)}
@@ -2573,7 +2605,7 @@ function todayMins(){return S.mins[today()]||0}
 function hm(m){m=Math.round(m);return {u:Math.floor(m/60),m:m%60,g:fmtH(weekGoal())}}
 function fmtH(m){return (Math.round(m/6)/10).toString().replace('.',',')}
 function weekStreak(){const g=weekGoal();let n=0,m=monday();if(weekMins(m)>=g)n=1;for(let k=1;k<520;k++){if(weekMins(m-k*7*DAY)>=g)n++;else break}return n}
-function learning(){try{return app.classList.contains('sess')||!!UX||(!!route&&route!==vExplain&&route!==vContinue)}catch(e){return false}}   // tijdens het laden bestaat route nog niet
+function learning(){try{if(typeof PRF!=='undefined'&&PRF)return false;return app.classList.contains('sess')||!!UX||(!!route&&route!==vExplain&&route!==vContinue)}catch(e){return false}}   // tijdens het laden bestaat route nog niet
 let lastAct=now(),tickN=0;
 ['pointerdown','keydown','input','touchstart','wheel'].forEach(ev=>document.addEventListener(ev,()=>{lastAct=now()},{passive:true,capture:true}));
 setInterval(()=>{if(STORE!=='ok'||document.visibilityState!=='visible'||now()-lastAct>12e4||!learning())return;
@@ -2661,7 +2693,7 @@ function vExplain(){const groups=[['nl','rekenen'],['nl','grammatica'],['nl','le
 /* ============ route met tijd (docs/route-en-prognose.md, docs/ontwerp-stap4.md): de route staat in een pakket, het rekenen in route.js ============ */
 const RC=(typeof window!=='undefined'&&window.RouteCalc)||null;let ROUTE=null,RWHAT=null;
 async function loadRoute(){try{const r=await fetch('content/route-nt2.json');if(!r.ok)return;const d=await r.json();if(RC&&!RC.checkRoute(d).length)ROUTE=d}catch(e){}}
-const VOXDB='leren-stemmen',VOXSTEM='mens';let VOX=new Map();const LISH=new WeakSet();let FIGWALK=false,KPLACE=null,KSOFF=null;   // ingesproken zinnen (inspreekhulp), vóór het laden gedeclareerd: loadVox draait meteen
+const VOXDB='leren-stemmen',VOXSTEM='mens';let VOX=new Map();const LISH=new WeakSet();let FIGWALK=false,KPLACE=null,KSOFF=null,PRF=false;   // PRF: een proefscène van Ik; telt nergens mee   // ingesproken zinnen (inspreekhulp), vóór het laden gedeclareerd: loadVox draait meteen
 const routeP=loadRoute();await loadPacks();await routeP;   // de route laadt naast de pakketten
 loadAudioLists();   // geluidsbestanden per pakket (docs/geluid.md); wacht er niet op
 loadVox();   // ingesproken zinnen van een begeleider (docs/ontwerp-inspreekhulp.md); wacht er niet op
@@ -2711,7 +2743,7 @@ let STORE='ok',S,NOBAK=null;   /* NOBAK: de ruwe oude opslag als de reservekopie
   if(st==='newer'){STORE='newer';S=o;return}
   /* Lukt de reservekopie niet, dan is de opslag vol of onbereikbaar: dan lukt wegschrijven ook niet, dus de oude opslag blijft staan. */
   if(schemaOf(o)<SCHEMA){const bakOk=putStore(BAK,raw);let m;try{m=migrate(o)}catch(e){STORE='broken';S=fresh();return}S=fillDefaults(m);if(bakOk)putStore(KEY,JSON.stringify(S));else NOBAK=raw}else S=fillDefaults(o)})();   /* besluit eigenaar: zonder reservekopie geen nieuwe vorm wegschrijven (NOBAK, zie save) */
-[...NL,...EN,...REK,...PACKS.flatMap(p=>p.items||[]).filter(x=>x.kind==='rule'||x.kind==='sound')].forEach(x=>{if(!S.items[x.id])S.items[x.id]=item()});
+[...NL,...EN,...REK,...PACKS.filter(p=>p.type!=='proef').flatMap(p=>p.items||[]).filter(x=>x.kind==='rule'||x.kind==='sound')].forEach(x=>{if(!S.items[x.id])S.items[x.id]=item()});   /* een proefpakket komt nooit in de voortgang */
 PACKS.forEach(p=>(p.items||[]).forEach(x=>{if(x&&x.id&&x.kind)KIND[x.id]=x.kind==='phrase'?'word':x.kind}));
 /* eenmalig bij de overstap op fase 3: wie al lessen deed, heeft de regels en klanken uit de vaste les al gehad. Die tellen als geïntroduceerd en zijn aan de beurt. */
 if(STORE==='ok'&&S.f3pending){Object.keys(KIND).filter(id=>(KIND[id]==='rule'||KIND[id]==='sound')&&S.items[id]&&S.items[id].reps===0).forEach(id=>{S.items[id].reps=1;S.items[id].due=now();if(!S.introduced.includes(id))S.introduced.push(id)});delete S.f3pending;setTimeout(()=>save(),0)}   // opslaan pas na het opstarten (save() gebruikt later gedeclareerde variabelen)
@@ -2775,7 +2807,7 @@ function canBloom(id,it){const k=KIND[id]||'word',f=(it.forms||[]).filter(x=>!NO
 /* een onderdeel is voor het eerst aangeboden (voorbeeld, uitleg, kaart): plannen, maar niet als gekend tellen */
 function introduce(id,form){if(typeof LES!=='undefined'&&LES)return;const it=S.items[id];if(!it)return;if(!S.introduced.includes(id))S.introduced.push(id);if(form&&!it.forms.includes(form))it.forms.push(form);if(it.reps===0){it.reps=1;it.due=now()}save()}
 /* een oefening met items: het eerste item is het doel; alleen dat krijgt een fout */
-function practiced(q,res,form){if(typeof LES!=='undefined'&&LES)return;const ids=(q&&q.items)||[];ids.forEach((id,i)=>{if(!S.introduced.includes(id)&&S.items[id])S.introduced.push(id);review(id,res,form,q.exid,i>0)})}
+function practiced(q,res,form){if(typeof LES!=='undefined'&&LES)return;if(typeof PRF!=='undefined'&&PRF)return;const ids=(q&&q.items)||[];ids.forEach((id,i)=>{if(!S.introduced.includes(id)&&S.items[id])S.introduced.push(id);review(id,res,form,q.exid,i>0)})}
 const leeches=()=>Object.entries(S.items).filter(([,v])=>v.lapses>=4).map(([k])=>k);
 const pts=()=>S.points[today()]||0;
 function addPts(n){S.points[today()]=pts()+n;S.days[today()]=1;save();syncUp()}
@@ -2965,7 +2997,7 @@ const heroArt=()=>`<svg class="art" viewBox="0 0 140 120" aria-hidden="true"><ci
 
 /* ============ navigatie ============ */
 let tab='vandaag',route=null;
-function show(t){audioStop();recAbort();LES=null;STEER=null;delete app.dataset.strand;tab=t;route=null;delete app.dataset.vak;$('#nav').hidden=false;document.querySelectorAll('#nav [data-tab]').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===t?'page':'false'));app.classList.remove('sess');rerender();window.scrollTo(0,0)}
+function show(t){audioStop();recAbort();LES=null;STEER=null;PRF=false;delete app.dataset.strand;tab=t;route=null;delete app.dataset.vak;$('#nav').hidden=false;document.querySelectorAll('#nav [data-tab]').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===t?'page':'false'));app.classList.remove('sess');rerender();window.scrollTo(0,0)}
 document.querySelectorAll('#nav [data-tab]').forEach(b=>b.onclick=()=>show(b.dataset.tab));
 function rerender(){setNav();if(route)return route();const k=kaartOn();({vandaag:k?vKaart:vToday,tuin:k?vAlbum:vGarden,route:vRoute,ik:vMe,emiel:vEmiel}[tab])()}
 /* stap 5: de eerste twee knoppen van de tabbalk volgen het thuisscherm (Vandaag en Tuin, of Kaart en Album) */
@@ -3139,7 +3171,7 @@ function retryLater(q){   /* M3 terug in een andere vorm, niet direct erna */
 if(!q||q._probe||q._retry)return;const id=q.w?q.w.id:q.items&&q.items[0];if(!id||RETRIED.has(id))return;
   let r=null;if(q.w&&OTHER[q.type])r={type:OTHER[q.type],step:q.step,w:q.w};else if(q.items&&q.exid)r=easierEx(q);if(!r)return;
   RETRIED.add(id);r._retry=1;const conf=Q.findIndex((x,i)=>i>qi&&x.type==='conf'),at=conf<0?Q.length:conf;Q.splice(Math.min(qi+MOTOR.retryGap,at),0,r)}
-function score(ok,n,part){if(typeof LES!=='undefined'&&LES)return;sessTotal++;SESS.push(!!ok);if(!ok)retryLater(Q[qi]);if(ok){sessRight++;sp+=n;addPts(n)}else if(part>0){sp+=part;addPts(part)}}
+function score(ok,n,part){if(typeof LES!=='undefined'&&LES)return;if(typeof PRF!=='undefined'&&PRF)return;sessTotal++;SESS.push(!!ok);if(!ok)retryLater(Q[qi]);if(ok){sessRight++;sp+=n;addPts(n)}else if(part>0){sp+=part;addPts(part)}}
 /* fbBox(ok, tekst in de leertaal, tekst in de steuntaal); fbK(ok, sleutel, variabelen) haalt beide uit I18N */
 function fbBox(ok,msg,msgSup){let offer='';if(!ok&&app.classList.contains('sess')&&Q[qi]&&Q[qi]._sceneErr&&!Q[qi]._faulted){Q[qi]._faulted=1;const fq=Q[qi];later(()=>scFault(fq,fq._sceneErr))}   /* telt bij Volgende, zodat Mijn antwoord is ook goed haar nog kan wegnemen (standreview 1) */   /* hooguit één keer per vraag (codereview A2) */if(!ok&&app.classList.contains('sess')&&Q[qi]){const q=Q[qi];q._wrong=(q._wrong||0)+1;const x=q._wrong>=2&&explFor(q);if(x)offer=`<button class="linkish u-offer" data-uopen="${esc(x)}">${TB('explain.offer')}</button>`}const k=ok?'fb.ok':'fb.no',s=ts(k);return `<div class="fb ${ok?'fb-ok':'fb-no'}" role="status"><strong>${t(k)}${nlOnly()||!s?'':` <span ${supAttr()}>${s}</span>`}</strong>${msg?bi(msg,msgSup||''):''}${offer}</div>`}
 function fbK(ok,k,vars){return fbBox(ok,t(k,vars),ts(k,vars))}
@@ -3232,7 +3264,8 @@ function nextScene(){const all=SCENES.slice().sort((a,b)=>a.order-b.order||(a.pa
 function sceneQ(sc,hard){const isLes=LESSEN.some(l=>(l.scenes||[]).includes(sc)),q=[],vak=sc.subject||'nl',ph={look:1,talk:2,read:2,listen:2,slot:3,explain:3,do:3,make:3,rule:3,end:4},qph={instap:1,ophalen:1,controle:4};
   q.push({type:'sc_intro',sc,step:1,vak,hard:!!hard});
   const EXF=['build','gap','listen','money','clock','discount'];
-  const ask=(base,qq,exid,o)=>{if(PC&&PC.NUMF&&PC.NUMF.includes(qq.form))return {...base,type:'sc_num',qq,items:qq.items.slice(),exid,hard:!!hard,...o};   // werkvormen 1.1-1.3
+  const ask=(base,qq,exid,o)=>{if(qq.form==='steps')return {...base,type:'sc_steps',qq,items:qq.items.slice(),exid,hard:!!hard,...o};   // werkvormen 1.4
+    if(PC&&PC.NUMF&&PC.NUMF.includes(qq.form))return {...base,type:'sc_num',qq,items:qq.items.slice(),exid,hard:!!hard,...o};   // werkvormen 1.1-1.3
     if(!EXF.includes(qq.form))return {...base,type:'sc_q',qq,items:qq.items.slice(),exid,hard:!!hard,...o};   // een vraag (docs/scenes.md, diepte en diagnose)
     const e={id:exid,form:qq.form,items:qq.items.slice(),...(qq.gen?{gen:qq.gen}:{data:qq.data}),fb:{ok:qq.why},hint:qq.hint},x=exQ(e,base.step,'nl',qq.items[0]);   // een bestaande oefenvorm: hetzelfde scherm als in de les
     if(!x)return null;return {...x,sc,st:base.st,vak,_sceneErr:qq.err||null,...(qq.ask?{_ask:qq.ask}:{}),...o}};   // review dokter 7: de vraag van de scène staat boven de oefening
@@ -3256,6 +3289,7 @@ function sceneQ(sc,hard){const isLes=LESSEN.some(l=>(l.scenes||[]).includes(sc))
     else if(st.type==='do'){if(st.form==='map')q.push({...base,type:'sc_map',items:(st.items||[]).slice(),exid:sc.id+'#d'+k});else if(st.form==='timeline')q.push({...base,type:'sc_tl',items:(st.items||[]).slice(),exid:sc.id+'#d'+k});
       else if(st.form==='setclock')q.push({...base,type:'sc_clock',items:st.items.slice(),exid:sc.id+'#d'+k});
       else if(st.form==='point')q.push({...base,type:'sc_point',items:st.items.slice(),exid:sc.id+'#d'+k});
+      else if(st.form==='drag')q.push({...base,type:'sc_drag',items:st.items.slice(),exid:sc.id+'#d'+k});   // stap 6 groep 2
       else{const e={id:sc.id+'.d'+k,form:st.form,items:st.items.slice(),...(st.gen?{gen:st.gen}:{data:st.data})},x=exQ(e,step,'nl',st.items[0]);if(x){x.vak=vak;if(st.ask)x._ask=st.ask;q.push(x)}}}   /* review dokter 5: de vraag van de stap (Heb je genoeg?) staat boven de oefening */
     else if(st.type==='make')q.push({...base,type:'sc_make',items:st.items.slice(),exid:sc.id+'#m'+k});
     else if(st.type==='end'){if(!isLes)q.push({type:'conf',step:4,vak});   /* een les stuurt de gewone les niet bij (codereview lessen 6) */
@@ -3328,6 +3362,75 @@ H.sc_clock=q=>{const st=q.st,[ah,am]=String(st.answer).split(':').map(Number);le
     $('#hm').onclick=()=>{h=(h+10)%12+1;draw()};$('#hp').onclick=()=>{h=h%12+1;draw()};$('#mm').onclick=()=>{m=(m+55)%60;draw()};$('#mp').onclick=()=>{m=(m+5)%60;draw()};
     $('#chk').onclick=()=>{const ok=h%12===ah%12&&m===am;if(ok){score(first,10);practiced(q,first?true:'retry','klok');$('#fb').innerHTML=fbBox(true,scT(st.why),'');$('#chk').outerHTML=nextBtn();$('#nx').onclick=next}else{first=false;$('#fb').innerHTML=fbK(false,'clock.tip')}}};
   draw()};
+/* werkvormen 1.4, rekenen in stappen (docs/ontwerp-stap6-groep2.md): 2 tot 4 gesloten deelvragen uit de vaste aanpak, één tegelijk.
+   Afbouw per herhaalitem uit de bewaarde pogingen (PC.stepsLevel); klopt blijft altijd. Per deelvraag een tweede kans; daarna het antwoord en door. */
+const MODELIC={strook:'<svg viewBox="0 0 28 14" width="28" height="14"><rect x="1" y="2" width="26" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 2v10M19 2v10" stroke="currentColor" stroke-width="1.4"/></svg>',
+  tabel:'<svg viewBox="0 0 28 14" width="28" height="14"><rect x="1" y="1" width="26" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1 7h26M10 1v12M19 1v12" stroke="currentColor" stroke-width="1.2"/></svg>',
+  lijn:'<svg viewBox="0 0 28 14" width="28" height="14"><path d="M1 9h26M3 5v8M14 5v8M25 5v8" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>',
+  keer:'<b>×</b>',delen:'<b>:</b>',plus:'<b>+</b>',min:'<b>−</b>'};
+function stepsLv(q){const id=(q.items||[])[0],h=histParse(S.items[id]||{}).filter(x=>x[1]==='stappen'),last=h[h.length-1];return PC.stepsLevel(h.filter(x=>x[2]>0).length,!!last&&last[2]===0,MOTOR.stepsFade)}   // review: alleen geslaagde pogingen in deze vorm tellen
+H.sc_steps=q=>{const qq=q.qq,nos=!!q.hard,tx1=x=>nos?scN(x):scT(x);
+  if(q._lv==null)q._lv=Number.isInteger(qq.proefLevel)?qq.proefLevel:stepsLv(q);   /* proefLevel: alleen in een proefpakket (de poort) */const plan=PC.stepsPlan(qq,q._lv),st=q._st||(q._st={k:0,marks:[],ans:[],tries:0,opts:{},f:{}});   // blijft bij opnieuw tekenen (taalwissel)
+  const eur=isEur(qq.unit)||/€/.test(plainX(qq.ask,'nl')),d=plan[st.k];
+  const prev=plan.slice(0,st.k).map((x,i)=>`<li><span class="small muted">${tx1(x.ask)}</span> <b class="num">${esc(st.ans[i])}</b>${st.marks[i]===false?` <span class="small muted">${T('steps.shown')}</span>`:' <span aria-hidden="true">✓</span>'}</li>`).join('');
+  let cur='';
+  if(d&&!st.fin){const bar=`<p class="eyebrow">${T('steps.of',{k:st.k+1,n:plan.length})}</p>`;
+    if(d.step==='rekenen')cur=`${bar}<p class="prompt">${tx1(d.ask)}</p><input id="ans" class="input num" inputmode="decimal" autocomplete="off" aria-label="${esc(String(t('steps.answer')).replace(/<[^>]*>/g,''))}"><button class="btn btn-main" id="chk">${TB('btn.check')}</button>`;
+    else{const o=st.opts[st.k]||(st.opts[st.k]=shuffle(d.opts.map((x,i)=>({...x,i}))));
+      cur=`${bar}<p class="prompt">${tx1(d.ask)}</p><div class="choices one">${o.map(x=>`<button class="choice" data-o="${x.i}">${d.step==='model'&&MODELIC[x.model]?`<span class="sp-ic" aria-hidden="true">${MODELIC[x.model]}</span> `:''}${esc(x.t)}</button>`).join('')}</div>`}}
+  scFrame(q,`<div class="card stack"><div class="note sky">${tx1(qq.ask)}</div>${prev?`<ol class="sp-list">${prev}</ol>`:''}${cur}<div id="fb"></div></div>`);
+  if(st.fin){$('#fb').innerHTML=fbBox(st.res!==false,qq.why?tx1(qq.why):'','')+nextBtn();$('#nx').onclick=next;return}
+  const fin=()=>{st.fin=true;const res=st.res=PC.stepsRes(st.marks);score(res===true,10);if(res===true&&SCN&&SCN.sc===q.sc)SCN.good++;
+    if(q.role==='controle'&&SCN){if(res===false)later(()=>{SCN.ctrl=false});else SCN.ctrl=SCN.ctrl!==false&&res===true}
+    const inst=q.role==='instap'&&S.items[(q.items||[])[0]]&&S.items[q.items[0]].reps===0;if(q.role==='instap'&&res===true)scKnow(q);else if(!(inst&&res===false))practiced(q,res,'stappen');H.sc_steps(q)};   // zoals sc_num: een nieuw onderdeel telt bij de instap niet als fout
+  const good=(mark,shown)=>{st.marks[st.k]=mark;st.ans[st.k]=shown;st.k++;st.tries=0;if(st.k>=plan.length)return fin();H.sc_steps(q);try{const a=$('#ans');if(a)a.focus()}catch(e){}};
+  const bad=(opt,right,msg)=>{if(!st.f[st.k]){st.f[st.k]=1;const e=PC.stepsErr(d,opt);later(()=>scFault(q,e))}   // het foutprofiel: de soort fout van deze stap, één keer per deelvraag
+    if(!st.tries){st.tries=1;$('#fb').innerHTML=fbBox(false,msg||T('scene.again'),'');return}
+    good(false,right)};   // tweede keer fout: het goede antwoord staat in de lijst, de leerder gaat door
+  app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{if(st.fin)return;const o=d.opts[+b.dataset.o];if(!o)return;
+    if(o.r==='ok')good(st.tries?'retry':true,o.t);else{b.disabled=true;bad(o,(d.opts.find(x=>x.r==='ok')||{}).t||'',o.why?tx1(o.why):d.why?tx1(d.why):'')}});
+  if($('#chk')){const go=()=>{if(st.fin)return;const raw=$('#ans').value;if(!String(raw).trim())return;const v=scNum(raw);if(isNaN(v))return bad(null,numFmt(d.answer,eur),T('scene.again'));
+      if([d.answer,...(d.accept||[])].some(a=>Math.abs(v-a)<NUMEPS))good(st.tries?'retry':true,numFmt(v,eur));else bad(null,numFmt(d.answer,eur),d.why?tx1(d.why):'')};
+    $('#chk').onclick=go;$('#ans').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();go()}}}};
+/* stap 6 groep 2: iets op zijn plek slepen, of sorteren in bakken (een plek mag vaker voorkomen). Tik en tik is altijd de tweede weg:
+   met VoiceOver, het toetsenbord, of als slepen hapert. Een misser: terug, met de naam van die plek; twee missers bij hetzelfde ding: de app zet het neer. */
+H.sc_drag=q=>{const sc=q.sc,st=q.st,th=(sc.art&&sc.art.things)||[],D=q._d||(q._d={pos:{},miss:{},done:{},sel:null,fin:false});
+  const movers=st.pairs.map(p=>p.thing),targets=[...new Set(st.pairs.map(p=>p.to))];
+  scFrame(q,`<div class="card stack"><h2>${scT(st.ask)}</h2><p class="small muted">${T('drag.tip')}</p>${scArt(sc)}<div id="fb" aria-live="polite"></div></div>`);
+  const svg=app.querySelector('.s-svg'),G=i=>svg&&svg.querySelector(`.s-hot[data-i="${i}"]`);if(!svg)return next();
+  const base=i=>{const t=th[i]||{},s=Math.max(.4,Math.min(2.6,+t.s||1));return {x:+t.x||0,y:+t.y||0,sc:`scale(${t.flip?-s:s} ${s})`}};
+  const put=(i,x,y)=>{const e=G(i);if(e){e.__xy={x,y};e.setAttribute('transform',`translate(${x} ${y}) ${base(i).sc}`)}};   /* __xy: waar het ding nu staat, ook tijdens het slepen */
+  const toSvg=(cx,cy)=>{const m=svg.getScreenCTM();if(!m)return {x:0,y:0};const p=svg.createSVGPoint();p.x=cx;p.y=cy;const r=p.matrixTransform(m.inverse());return {x:r.x,y:r.y}};
+  const mid=e=>{const r=e.getBoundingClientRect();return toSvg(r.left+r.width/2,r.top+r.height/2)};
+  svg.style.touchAction='none';   // review: WebKit past touch-action op een SVG-onderdeel niet betrouwbaar toe
+  movers.forEach(i=>{const e=G(i);if(!e)return;e.classList.add('s-drag');if(D.pos[i])put(i,D.pos[i].x,D.pos[i].y);if(D.done[i])e.classList.add('on','s-placed')});
+  const fbEnd=()=>{$('#fb').innerHTML=fbBox(D.res!==false,st.why?scT(st.why):'','')+nextBtn();$('#nx').onclick=next};
+  if(D.fin)return fbEnd();   // review: na een taalwissel staat de Verder-knop er weer
+  const finish=()=>{if(D.fin)return;D.fin=true;const marks=movers.map(i=>D.done[i]==='auto'?false:D.miss[i]?'retry':true),res=D.res=PC.stepsRes(marks);
+    score(res===true,10);if(res===true&&SCN&&SCN.sc===sc)SCN.good++;practiced(q,res,'slepen');fbEnd()};
+  const land=(i,to,auto)=>{const e=G(i),t=G(to);if(!e||!t)return;const a=mid(e),b=mid(t),cur=e.__xy||D.pos[i]||base(i),n=st.pairs.filter(p=>p.to===to&&D.done[p.thing]).length,off=(n%3-1)*28;   // sorteren: naast elkaar in dezelfde bak
+    D.pos[i]={x:cur.x+(b.x-a.x)+off,y:cur.y+(b.y-a.y)};put(i,D.pos[i].x,D.pos[i].y);D.done[i]=auto?'auto':true;e.classList.add('on','s-placed');e.classList.remove('s-sel');say(scP((th[to]||{}).label));
+    if(movers.every(m=>D.done[m]))finish()};
+  const back=i=>{const p=D.pos[i]||base(i);put(i,p.x,p.y)};
+  const drop=(i,to)=>{if(D.fin||D.done[i])return;D.sel=null;app.querySelectorAll('.s-sel').forEach(x=>x.classList.remove('s-sel'));
+    if(to==null||to===i){back(i);return}
+    if(PC.dragDrop(st,i,to)){land(i,to,false);if(!D.fin)$('#fb').innerHTML=fbBox(true,scT((th[to]||{}).label),'');return}
+    back(i);D.miss[i]=(D.miss[i]||0)+1;if(D.miss[i]===1)later(()=>scFault(q,'betekenis'));
+    if(D.miss[i]>=2){const p=st.pairs.find(x=>x.thing===i);if(p)land(i,p.to,true);if(!D.fin)$('#fb').innerHTML=fbBox(false,scT((th[p.to]||{}).label),'')}
+    else $('#fb').innerHTML=fbBox(false,T('drag.wrong',{place:l=>esc(plainX((th[to]||{}).label,l))}),'')};
+  const hotAt=(cx,cy,skip)=>{for(const el of document.elementsFromPoint(cx,cy)){const h=el.closest&&el.closest('.s-hot');if(h&&+h.dataset.i!==skip&&!movers.includes(+h.dataset.i))return +h.dataset.i}return null};   /* sorteren: een ding dat al in de bak ligt, is geen doel */
+  const tap=i=>{if(D.fin)return;if(movers.includes(i)&&!D.done[i]){D.sel=i;app.querySelectorAll('.s-sel').forEach(x=>x.classList.remove('s-sel'));const e=G(i);if(e)e.classList.add('s-sel');say(scP((th[i]||{}).label));$('#fb').innerHTML=`<p class="small">${T('drag.chosen',{thing:l=>esc(plainX((th[i]||{}).label,l))})}</p>`;return}
+    if(D.sel!=null&&!movers.includes(i))drop(D.sel,i)};
+  svg.querySelectorAll('.s-hot').forEach(e=>{const i=+e.dataset.i;
+    e.onkeydown=ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();tap(i)}};
+    e.onpointerdown=ev=>{if(D.fin)return;if(!movers.includes(i)||D.done[i])return;e.__pd=Date.now();q._t=1;ev.preventDefault();const s0={x:ev.clientX,y:ev.clientY},p0=D.pos[i]||base(i),k=svg.viewBox.baseVal.width/svg.getBoundingClientRect().width;let moved=false,over=null;
+      try{e.setPointerCapture(ev.pointerId)}catch(_){}
+      e.onpointermove=m=>{const dx=(m.clientX-s0.x)*k,dy=(m.clientY-s0.y)*k;if(!moved&&Math.hypot(dx,dy)<4)return;moved=true;e.classList.add('s-sel');put(i,p0.x+dx,p0.y+dy);
+        const h=hotAt(m.clientX,m.clientY,i);if(h!==over){if(over!=null){const o=G(over);if(o&&!o.classList.contains('s-placed'))o.classList.remove('on')}over=h;if(h!=null){const o=G(h);if(o)o.classList.add('on')}}};
+      e.onpointerup=u=>{e.onpointermove=e.onpointerup=e.onpointercancel=null;if(over!=null){const o=G(over);if(o&&!o.classList.contains('s-placed'))o.classList.remove('on')}
+        if(!moved)return tap(i);e.classList.remove('s-sel');drop(i,hotAt(u.clientX,u.clientY,i))};
+      e.onpointercancel=()=>{e.onpointermove=e.onpointerup=e.onpointercancel=null;back(i)}};
+    e.onclick=()=>{if(Date.now()-(e.__pd||0)<700)return;tap(i)}})};   // VoiceOver en een gewone tik op een plek: een klik zonder slepen
 H.sc_point=q=>{const sc=q.sc,st=q.st;let first=true,done=false;
   scFrame(q,`<div class="card stack"><h2>${scT(st.ask)}</h2>${scArt(sc)}<div id="fb"></div></div>`);
   app.querySelectorAll('.s-hot').forEach(g=>g.onclick=()=>{if(done)return;const th=sc.art.things[+g.dataset.i];const ok=th&&th.item===st.answer;g.classList.add('on');
@@ -3346,13 +3449,13 @@ H.sc_make=q=>{const st=q.st,fr=[].concat(st.frame),pre=fr.every(x=>/___/.test(pl
 function errNote(err,id){   /* M5 per fout het soort; recent weegt zwaarder */
   if(!ERRS.includes(err))return;S.errs=S.errs||{};const e=S.errs[err]||{n:0,t:0,ids:[]},t0=now();e.n=+((e.n||0)*Math.pow(.5,(t0-(e.t||t0))/(MOTOR.errHalfDays*DAY))+1).toFixed(3);e.t=t0;if(id)e.ids=[id,...(e.ids||[]).filter(x=>x!==id)].slice(0,MOTOR.errIds);S.errs[err]=e;save()}
 function errTop(){const t0=now();let best=null;for(const [err,e] of Object.entries(S.errs||{})){if(!e||!ERRS.includes(err))continue;const n=(e.n||0)*Math.pow(.5,(t0-(e.t||t0))/(MOTOR.errHalfDays*DAY));if(n>=MOTOR.errSteer&&(!best||n>best.n))best={err,n,ids:(e.ids||[]).slice()}}return best}
-function scFault(q,err){if(typeof LES!=='undefined'&&LES)return;if(!err||!ERRS.includes(err))return;errNote(err,q.items&&q.items[0]);if(!SCN||SCN.sc!==q.sc)return;SCN.errs[err]=(SCN.errs[err]||0)+1;
+function scFault(q,err){if(typeof LES!=='undefined'&&LES)return;if(typeof PRF!=='undefined'&&PRF)return;if(!err||!ERRS.includes(err))return;errNote(err,q.items&&q.items[0]);if(!SCN||SCN.sc!==q.sc)return;SCN.errs[err]=(SCN.errs[err]||0)+1;
   if(SCN.errs[err]<(STEER&&STEER.hard?1:MOTOR.extraAfter)||SCN.extra.has(err))return;   /* MO-M6: bij te moeilijk de extra al na de eerste fout */   /* M11 bij een herhaalde fout uitleg en extra oefening */const ex=q.sc.steps.filter(st=>st.type==='extra'&&st.err===err);if(!ex.length)return;SCN.extra.add(err);
   const add=[];ex.forEach(st=>{const k=q.sc.steps.indexOf(st),base={sc:q.sc,st,step:3,vak:q.vak};add.push({...base,type:'sc_extra'});st.q.forEach((qq,i)=>add.push({...base,type:'sc_q',qq,items:qq.items.slice(),exid:q.sc.id+'#x'+k+'.'+i,role:'extra'}))});
   Q.splice(qi+1,0,...add)}
 /* instap goed bij de eerste poging: een nieuw woord maakt de grote sprong (probeDone), en ophalen van dat onderdeel valt weg */
 function scKnow(q){if(typeof LES!=='undefined'&&LES)return;const id=q.items[0],it=S.items[id],w=NL.find(x=>x.id===id);KNOWN.add(id);if(w&&it&&it.reps===0)probeDone(w,true);else practiced(q,true,SCF[q.qq.form])}
-const SCF={choose:'herkennen',hear:'luisteren','hear-type':'luisteren',type:'typen',complete:'typen',number:'rekenen'};
+const SCF={steps:'stappen',choose:'herkennen',hear:'luisteren','hear-type':'luisteren',type:'typen',complete:'typen',number:'rekenen'};
 const scN=x=>x&&typeof x==='object'?`<span lang="nl">${SAFE(plainX(x,'nl'))}</span>`:TKx(x,'nl');   // zonder steuntaal (nosup, instap, controle)
 /* een getal zoals een Nederlander het typt: € 1.250,50 · 6,60 · 6 euro 60 · 25 cent · 1.000 (codereview B2). NaN als het geen getal is. */
 function scNum(v){const t=String(v).toLowerCase().trim(),sg=/^(?:-|min\s+|[−–])\s*(?=[€\d])/.exec(t);if(sg){const n=scNum(t.slice(sg[0].length));return isNaN(n)?NaN:-n}   /* een minteken of 'min' vooraan: negatief (codereview lessen 12) */
@@ -3510,7 +3613,7 @@ H.sc_tl=q=>{const st=q.st;if(!KV){next();return}const cards=(st.cards||[]).map(c
   paint()};
 H.sc_deeper=q=>{scFrame(q,`<div class="card stack">${T('les.deeper')}<div class="btn-row"><button class="btn btn-leaf" id="dpGo">${TB('les.deeperGo')}</button><button class="btn btn-ghost" id="dpSkip">${TB('les.deeperSkip')}</button></div></div>`);
   $('#dpGo').onclick=next;$('#dpSkip').onclick=()=>{for(let i=qi+1;i<Q.length;i++)if(Q[i]._deep)Q[i]._skip=true;next()}};
-H.sc_end=q=>{if(LES)return lesEnd(q);FIGWALK=S.home==='kaart';const sc=q.sc,st=q.st;finishTime();S.world=S.world||{done:{},at:null};S.world.done[sc.id]=now();if(SCN&&SCN.sc===sc&&SCN.ctrl!=null){S.world.ok=S.world.ok||{};S.world.ok[sc.id]=SCN.ctrl}let rec=false;if(SCN&&SCN.sc===sc&&SCN.hard){S.world.best=S.world.best||{};rec=SCN.good>(S.world.best[sc.id]||0);if(rec)S.world.best[sc.id]=SCN.good}const td=today();S.rounds[td]=(S.rounds[td]||0)+1;pruneWeeks();save();
+H.sc_end=q=>{if(LES)return lesEnd(q);FIGWALK=S.home==='kaart';if(PRF){FIGWALK=false;paint(`<div class="card celebrate stack">${T('proef.end')}</div><button class="btn btn-main" id="home">${TB('btn.next')}</button>`);$('#home').onclick=()=>show('ik');return}const sc=q.sc,st=q.st;finishTime();S.world=S.world||{done:{},at:null};S.world.done[sc.id]=now();if(SCN&&SCN.sc===sc&&SCN.ctrl!=null){S.world.ok=S.world.ok||{};S.world.ok[sc.id]=SCN.ctrl}let rec=false;if(SCN&&SCN.sc===sc&&SCN.hard){S.world.best=S.world.best||{};rec=SCN.good>(S.world.best[sc.id]||0);if(rec)S.world.best[sc.id]=SCN.good}const td=today();S.rounds[td]=(S.rounds[td]||0)+1;pruneWeeks();save();
   const nx=nextScene(),more=nx&&nx.id!==sc.id&&!(S.world.done[nx.id]);
   const pu=scPurpose(sc,'last');paint(`<div class="card celebrate stack">${T('scene.canTitle')}<p class="prompt">${scT(sc.can)}</p>${pu?`<p class="note sky small">${scT(pu)}</p>`:''}${st.real?`<div class="note">${T('scene.real')}<p>${scT(st.real)}</p></div>`:''}${st.next?`<p class="muted">${scT(st.next)}</p>`:''}${SCN&&SCN.sc===sc&&SCN.hard?`<p class="num">${T(rec?'scene.newRecord':'scene.record',{n:(S.world.best||{})[sc.id]||0})}</p>`:''}</div>
    ${more?`<button class="btn btn-main" id="scNext">${TB('scene.next')}</button>`:''}<button class="btn btn-ghost" id="scHard">${TB('scene.harder')}</button>${contHtml()}<button class="btn btn-ghost" id="home">${T('cont.home')}</button>`);
@@ -3633,7 +3736,8 @@ H.discount=q=>{
     if(ok){score(first,own?20:15);review(tid,first,'korting',q.exid);if(first)grown.push(tid);$('#fb').innerHTML=fbBox(true,t(it.k+'.ok',G)+(dot?' '+t('disc.comma',{a:it.a}):''),ts(it.k+'.ok',G)+(dot?' '+ts('disc.comma',{a:it.a}):''));$('#chk').outerHTML=nextBtn();$('#nx').onclick=next;$('#ans').disabled=true}
     else{first=false;tries++;if(tries>=3){review(tid,false,'korting',q.exid);$('#fb').innerHTML=G?fbBox(false,t(it.k+'.together',G),ts(it.k+'.together',G)):fbK(false,it.k+'.together');$('#chk').outerHTML=nextBtn('btn-main');$('#nx').onclick=next;$('#ans').disabled=true;return}const mk=own&&Math.abs(v-(G?G.d:16))<.01?(G?'disc.gen.isDiscount':'disc.isDiscount'):!own&&Math.abs(v-(G?G.pay:30))<.01?'disc.isPrice':'disc.hintAgain';$('#fb').innerHTML=G&&mk==='disc.gen.isDiscount'?fbBox(false,t(mk,G),ts(mk,G)):fbK(false,mk)}};
   $('#chk').onclick=check;$('#ans').onkeydown=e=>{if(e.key==='Enter')check()}};
-H.conf=q=>{let c=null,fun=null;const done=()=>{if(!c||!fun)return;S.conf.unshift({t:now(),c,fun,acc:sessTotal?sessRight/sessTotal:1,name:sessName,k:confKind(sessName)});S.sessions++;save();next()};
+H.conf=q=>{if(typeof PRF!=='undefined'&&PRF)return next();   /* proefscène: geen zekerheidsscherm */
+  let c=null,fun=null;const done=()=>{if(!c||!fun)return;S.conf.unshift({t:now(),c,fun,acc:sessTotal?sessRight/sessTotal:1,name:sessName,k:confKind(sessName)});S.sessions++;save();next()};
   frame(`<div class="card stack">${T('conf.title')}<p class="muted">${T('conf.tip')}</p>
   <div class="seg" role="group" aria-label="${esc(t('conf.level'))}"><button data-c="makkelijk">${TB('conf.easy')}</button><button data-c="goed">${TB('conf.ok')}</button><button data-c="moeilijk">${TB('conf.hard')}</button></div>
   ${T('conf.funQ')}<div class="seg" role="group" aria-label="${esc(t('conf.fun'))}"><button data-f="leuk">${TB('conf.funYes')}</button><button data-f="saai">${TB('conf.funNo')}</button></div>${SCN?`<button class="linkish" id="confSkip">${TB('conf.skip')}</button>`:''}</div>`,'Afsluiten',q.step);
@@ -4022,7 +4126,7 @@ function vMe(){
    ${T('me.quiet')}<div class="seg" role="group" aria-label="${esc(String(t('me.quiet')).replace(/<[^>]*>/g,''))}"><button data-quiet="1" aria-pressed="${QUIET}">${TB('me.quiet.on')}</button><button data-quiet="0" aria-pressed="${!QUIET}">${TB('me.quiet.off')}</button></div><p class="small muted">${T('me.quiet.tip')}</p>
    ${T('me.trial')}<div class="seg" role="group" aria-label="${esc(String(t('me.trial')).replace(/<[^>]*>/g,''))}"><button data-trial="1" aria-pressed="${!!S.trial}">${TB('me.quiet.on')}</button><button data-trial="0" aria-pressed="${!S.trial}">${TB('me.quiet.off')}</button></div><p class="small muted">${T('me.trial.tip')}</p>
    <div id="recRow" class="stack-sm" hidden></div>
-   ${recOk()?`<button class="btn btn-ghost" id="voxOpen">${TB('vox.open')}</button><p class="small muted">${T('vox.openTip')}</p>`:''}
+   ${recOk()?`<button class="btn btn-ghost" id="voxOpen">${TB('vox.open')}</button><p class="small muted">${T('vox.openTip')}</p>`:''}${S.trial?`<p class="small muted">${T('proef.scenes')}</p>${PROEF.map((sc,i)=>`<button class="btn btn-ghost" data-proef="${i}">${esc(scP(sc.title))}</button>`).join('')}`:''}
    <button class="btn btn-ghost" id="steerReset">${TB('me.steer.reset')}</button></section>
   <section class="card stack">${T('me.weekGoal')}<p class="small muted">${T('me.weekGoal.tip')}</p><div class="seg" role="group" aria-label="${esc(t('week.title'))}">${WEEKGOALS.map(m=>`<button data-wg="${m}" aria-pressed="${weekGoal()===m}">${fmtH(m)} ${esc(t('week.hours'))}</button>`).join('')}</div></section>
   <section class="card stack">${T('me.home')}<p class="small muted">${T('me.home.tip')}</p><div class="seg" role="group" aria-label="${esc(String(t('me.home')).replace(/<[^>]*>/g,''))}"><button data-home="vandaag" aria-pressed="${S.home!=='kaart'}">${TB('tab.today')}</button><button data-home="kaart" aria-pressed="${S.home==='kaart'}">${TB('tab.map')}</button></div>
@@ -4058,6 +4162,7 @@ function vMe(){
     r.innerHTML=`<p class="small muted">${T('rec.kept',{n})}</p><button class="btn btn-ghost" id="recDel">${TB('rec.wipe')}</button><div id="recAsk" hidden class="stack-sm"><p>${T('rec.wipeAsk')}</p><div class="btn-row"><button class="btn btn-ghost" id="recNo">${TB('rec.wipeNo')}</button><button class="btn btn-main" id="recYes">${TB('rec.wipeYes')}</button></div></div>`;
     $('#recDel').onclick=()=>{$('#recAsk').hidden=false};$('#recNo').onclick=()=>{$('#recAsk').hidden=true};
     $('#recYes').onclick=()=>{recWipe();toast(tx('rec.wiped'));r.hidden=true;r.innerHTML=''}});
+  app.querySelectorAll('[data-proef]').forEach(b=>b.onclick=()=>{const sc=PROEF[+b.dataset.proef];if(sc){PRF=true;startScene(sc)}});
   if($('#voxOpen'))$('#voxOpen').onclick=()=>{const L=voxList();VI=Math.max(0,L.findIndex(x=>!VOX.has(voxKey(x.t))));VBLOB=null;route=vVox;rerender();window.scrollTo(0,0)};
   if($('#steerReset'))$('#steerReset').onclick=()=>{S.newPerDay=16;S.roundLen='normaal';QUIET=false;save();vMe()};
   if($('#vsel'))$('#vsel').onchange=e=>{S.voice=Object.assign({},S.voice,{nl:e.target.value});save();say('Zo klinkt deze stem. Goedemorgen, hoe gaat het met je?')};

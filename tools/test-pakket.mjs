@@ -6,10 +6,11 @@ const ALL = readdirSync(new URL('content/', ROOT)).filter(f => f.endsWith('.json
 const ROUTES = ALL.filter(f => { try { return JSON.parse(readFileSync(new URL('content/' + f, ROOT), 'utf8')).type === 'route'; } catch (e) { return false; } });   // de route is geen lespakket (docs/ontwerp-stap4.md)
 const files = ALL.filter(f => !ROUTES.includes(f));
 const HIDDEN = files.map(f => JSON.parse(readFileSync(new URL('content/' + f, ROOT), 'utf8'))).filter(p => p.type === 'hoofdstuk' && PC.checkChapter(p).errors.length).map(p => p.id);   // haalt de hoofdstukcontrole niet: niet in de app (codereview B3)
-const NLWORDS = files.map(f => JSON.parse(readFileSync(new URL('content/' + f, ROOT), 'utf8'))).filter(p => p.learn === 'nl' && !HIDDEN.includes(p.id)).reduce((a, p) => a + (p.items || []).filter(x => x.kind === 'word' || x.kind === 'phrase').length, 0);
+const NLWORDS = files.map(f => JSON.parse(readFileSync(new URL('content/' + f, ROOT), 'utf8'))).filter(p => p.learn === 'nl' && !HIDDEN.includes(p.id) && p.type !== 'proef').reduce((a, p) => a + (p.items || []).filter(x => x.kind === 'word' || x.kind === 'phrase').length, 0);
 const packs = files.map(f => JSON.parse(readFileSync(new URL('content/' + f, ROOT), 'utf8')));
 const clone = o => JSON.parse(JSON.stringify(o));
 const IDX = JSON.parse(readFileSync(new URL('content/index.json', ROOT), 'utf8')).packs;
+const IDXP = IDX.filter(u => !/proef-/.test(u)).length;   // een proefpakket laadt alleen met Proefonderdelen aan
 
 // 1. alle pakketten zonder fouten; kwaliteitsmeldingen als lijst
 for (const p of packs) {
@@ -80,7 +81,7 @@ let q = null; app.runSession = (n, x) => { q = x; }; app.api.startLesson(false);
 ok('zonder rekenpakket: Nederlands laadt nog (ook het hoofdstuk, met meldingen), les zonder rekenoefeningen', g.NL.length === NLWORDS && !q.some(x => ['money', 'clock', 'discount'].includes(x.type)) && q.some(x => x.type === 'build'));
 app = await boot({ missing: ['content/nl-t1.json', 'content/en-t1.json', 'content/rk-1.json'] }); g = app.api.get();
 q = null; app.runSession = (n, x) => { q = x; }; app.api.startLesson(false);
-ok('geen enkel pakket: app start, meldt het bij een tik op de les en start geen lege les', g.PACK_MISSING.length === 3 && g.PACKS.length === builtin().length + IDX.length - 3 - HIDDEN.length && q === null && app.toasts.includes('pack.none'));
+ok('geen enkel pakket: app start, meldt het bij een tik op de les en start geen lege les', g.PACK_MISSING.length === 3 && g.PACKS.length === builtin().length + IDXP - 3 - HIDDEN.length && q === null && app.toasts.includes('pack.none'));
 ok('melding op Vandaag als een pakket ontbreekt', /PACK_MISSING\.length\?`<div class="note" role="status">\$\{T\('pack\.missing'/.test(html));
 
 // geen naambotsing: een functie of variabele uit het pakketblok mag elders in de app niet nog eens gedefinieerd worden
@@ -127,7 +128,7 @@ ok('elk pakket in content/ staat in BUILTIN of in de index (de route apart), en 
   a = await boot({ override: { 'content/index.json': { v: 1, packs: ['https://elders.example/x.json', 'content/../sw.json', 'content/nl-dokter.json', 'content/nl-dokter.json', 'content/rk-1.json'] } } }); g2 = a.api.get();
   ok('index: vreemde paden en dubbele overgeslagen, het hoofdstuk geladen', g2.PACKS.some(p => p.id === 'nl-dokter') && g2.PACKS.length === bi.length + 1 && !g2.PACK_MISSING.length, g2.PACK_MISSING.join() + ' / ' + g2.PACKS.length);
   a = await boot({ missing: ['content/nl-dokter.json'] }); g2 = a.api.get();
-  ok('index: een pakket uit de index dat niet laadt, wordt gemeld; de basis laadt', g2.PACK_MISSING.includes('nl-dokter') && g2.PACKS.length === bi.length + IDX.length - 1 && !g2.PACKS.some(p => p.id === 'nl-dokter'));
+  ok('index: een pakket uit de index dat niet laadt, wordt gemeld; de basis laadt', g2.PACK_MISSING.includes('nl-dokter') && g2.PACKS.length === bi.length + IDXP - 1 && !g2.PACKS.some(p => p.id === 'nl-dokter'));
   { const full = (await boot()).api.get(), ch = full.PACKS.find(p => p.type === 'hoofdstuk' && (p.scenes || []).some(sc => (sc.targets || []).some(t => !(p.items || []).some(x => x.id === t))));
     const req = ch.requires.find(r => (ch.scenes || []).some(sc => (sc.targets || []).some(t => !(ch.items || []).some(x => x.id === t))));
     const g3 = (await boot({ missing: ['content/' + req + '.json'] })).api.get(), own = new Set((ch.items || []).map(x => x.id));
