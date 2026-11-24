@@ -20,7 +20,10 @@
     "nl": "Geld tellen",
     "th": "นับเงิน",
     "en": "Counting money"
-   }
+   },
+   "goals": [
+    "rekenen-2-steun-geld"
+   ]
   },
   {
    "id": "r-klok",
@@ -29,7 +32,10 @@
     "nl": "Hoe laat is het?",
     "th": "กี่โมงแล้ว",
     "en": "What time is it?"
-   }
+   },
+   "goals": [
+    "rekenen-2-steun-tijd"
+   ]
   },
   {
    "id": "r-10",
@@ -38,7 +44,10 @@
     "nl": "10% = 1/10",
     "th": "10% = หนึ่งในสิบ",
     "en": "10% = one tenth"
-   }
+   },
+   "goals": [
+    "rekenen-2-procenten"
+   ]
   },
   {
    "id": "r-25",
@@ -47,7 +56,10 @@
     "nl": "25% = 1/4",
     "th": "25% = หนึ่งในสี่",
     "en": "25% = one quarter"
-   }
+   },
+   "goals": [
+    "rekenen-2-procenten"
+   ]
   },
   {
    "id": "r-komma",
@@ -56,7 +68,11 @@
     "nl": "€ 9,50 (komma)",
     "th": "ใช้จุลภาคแทนจุดทศนิยม",
     "en": "A comma instead of a decimal point"
-   }
+   },
+   "goals": [
+    "rekenen-2-steun-geld",
+    "rekenen-2-steun"
+   ]
   }
  ],
  "texts": [],

@@ -98,6 +98,7 @@
     // items
     (p.items || []).forEach(function (x) {
       var w = id + '.' + x.id;
+      if (x.goals != null && (!Array.isArray(x.goals) || !x.goals.every(function (c) { return typeof c === 'string' && /^(rekenen|en|nt2|kennis)-/.test(c); }))) q(w + ': goals is een lijst codes uit docs/eindtermen.md (rekenen-, en-, nt2- of kennis-)');   /* stap 7: de leerlijn */
       if (['word', 'phrase', 'rule', 'sound', 'skill'].indexOf(x.kind) < 0) { err(w + ': onbekende soort ' + x.kind); return; }
       if (x.kind === 'word' || x.kind === 'phrase') {
         str(x.w, w + '.w'); tr(x.tr, w);

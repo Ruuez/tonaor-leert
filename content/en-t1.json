@@ -6,6 +6,10 @@
  "level": "A1-A2",
  "order": 20,
  "quality": "legacy",
+ "goals": [
+  "en-A2-gesprekken",
+  "en-A2-spreken"
+ ],
  "requires": [],
  "title": {
   "nl": "Engels · Thema 1",
@@ -21,7 +25,11 @@
     "nl": "werken",
     "th": "ทำงาน"
    },
-   "ex": "I work in a factory."
+   "ex": "I work in a factory.",
+   "goals": [
+    "en-A2-gesprekken",
+    "en-A2-spreken"
+   ]
   },
   {
    "id": "en-colleague",
@@ -32,7 +40,11 @@
     "th": "เพื่อนร่วมงาน"
    },
    "ex": "My colleague is very kind.",
-   "nlLike": "de collega"
+   "nlLike": "de collega",
+   "goals": [
+    "en-A2-gesprekken",
+    "en-A2-spreken"
+   ]
   },
   {
    "id": "en-break",
@@ -42,7 +54,10 @@
     "nl": "de pauze",
     "th": "เวลาพัก"
    },
-   "ex": "We have a break at ten."
+   "ex": "We have a break at ten.",
+   "goals": [
+    "en-A2-gesprekken"
+   ]
   },
   {
    "id": "en-schedule",
@@ -52,7 +67,11 @@
     "nl": "het rooster",
     "th": "ตารางงาน"
    },
-   "ex": "The schedule is on the wall."
+   "ex": "The schedule is on the wall.",
+   "goals": [
+    "en-A2-gesprekken",
+    "en-A2-spreken"
+   ]
   },
   {
    "id": "en-factory",
@@ -62,7 +81,11 @@
     "nl": "de fabriek",
     "th": "โรงงาน"
    },
-   "ex": "The factory is near Hoorn."
+   "ex": "The factory is near Hoorn.",
+   "goals": [
+    "en-A2-gesprekken",
+    "en-A2-spreken"
+   ]
   },
   {
    "id": "en-information",
@@ -73,7 +96,10 @@
     "th": "ข้อมูล"
    },
    "ex": "I need more information.",
-   "nlLike": "de informatie"
+   "nlLike": "de informatie",
+   "goals": [
+    "en-A2-gesprekken"
+   ]
   },
   {
    "id": "en-appointment",
@@ -83,7 +109,10 @@
     "nl": "de afspraak",
     "th": "นัดหมาย"
    },
-   "ex": "I have an appointment at three."
+   "ex": "I have an appointment at three.",
+   "goals": [
+    "en-A2-gesprekken"
+   ]
   },
   {
    "id": "en-money",
@@ -93,7 +122,10 @@
     "nl": "het geld",
     "th": "เงิน"
    },
-   "ex": "Do you have some money?"
+   "ex": "Do you have some money?",
+   "goals": [
+    "en-A2-gesprekken"
+   ]
   },
   {
    "id": "en.regel.s",
