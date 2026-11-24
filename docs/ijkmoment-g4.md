@@ -140,3 +140,59 @@ Slepen met een echte vinger op iOS is niet getest; dat hoort op de telefoon.
 ## 4. Volgende groep
 
 Daarna de spellen: één ontwerp voor de groep, en G4 als ze gebouwd zijn.
+
+---
+
+# IJkmoment G4, de spellen
+
+Stand: 24 november 2026, cache v2-96. Uitgevoerd door de ontwerpsessie.
+
+**Wat is bekeken:**
+- het ontwerp (`ontwerp-spellen.md`) met de antwoorden van de ontwerpsessie;
+- de code in het blok "stap 6: de spellen" (`gPool`, `gamePlay`, `startGame`, `vGames`);
+- alle 26 tests (groen);
+- de proefscène "Vijf spellen", gespeeld op 375 px: alle vijf spellen tot het eind, met missers, plus de tegel Spelletje met Of kies zelf.
+
+## 1. Wat goed is
+
+- **Het kader:**
+  - de beurten in plaats van aftellen;
+  - een rustige klok;
+  - aan het eind de tijd en een vriendelijke regel ("Maak hem nog eens met hooguit één misser");
+  - de proefstand bewaart niets.
+- **Duur:** de spellen duren 20 tot 55 seconden bij snel spelen. Bij een leerder die nadenkt is dat één tot drie minuten (C5).
+- **Koppelen:** de kaarten passen 2 × 3 op 375 px; een paar blijft open; de omschrijvingen zijn kort.
+- **Of kies zelf:** toont de vijf spellen en zegt eerlijk "Nog te weinig voor dit spel".
+- **De drie afwijkingen die app beheer meldde zijn goed:** geen exid bij een spel (C5), een misser bij koppelen pas als de andere helft al open lag, en klok in hele uren en kwartieren zolang er geen geluid per 5 minuten is.
+
+## 2. Bevindingen
+
+**2.1 Zet de klok is op te lossen zonder de klok te lezen.** Onder de klok staat de ingestelde tijd in woorden ("twaalf uur"). Ik tikte tot die tekst gelijk was aan de opdracht en had acht keer goed zonder één keer naar de wijzers te kijken. Ook kwamen "twee uur" en "zeven uur" twee keer voor in acht beurten.
+
+**2.2 Bij het klankduel kun je kiezen vóór het woord klinkt.** Dat is hetzelfde punt als 2.1 van groep 1: raden in plaats van luisteren. Bij een spel kost een misser niets en telt de tijd, dus snel raden loont. De volgorde van de paren ligt ook vast. Er zijn maar drie klankparen in de lesstof, dus in tien beurten komt elk woord drie keer terug.
+
+**2.3 "Wisselgeld" is bedrag leggen.** De leerder legt het bedrag en een teller ("Gelegd: € 10,60") telt mee. Er wordt geen wisselgeld uitgerekend, en de teller doet het optellen.
+
+**2.4 De vorm bij de of het bouwt alleen af binnen één spel.** Bij tien beurten en een kleine voorraad staat de vorm dus bijna altijd vooraf. De hulp verdwijnt over de dagen nooit. Daarnaast kwam hetzelfde woord drie keer voor in tien beurten.
+
+**2.5 Op de kaart is een spel twee tikken ver** (Meer, dan Spelletje).
+
+## 3. Besluiten (ontwerpsessie)
+
+1. **Bij 2.1:**
+   - De tijd in woorden onder de klok verschijnt pas na Controleer, als terugkoppeling.
+   - Geen tijd twee keer in één spel.
+2. **Bij 2.2:**
+   - Bij het klankduel worden de keuzes pas actief zodra het woord begonnen is. Kan er niets klinken, dan valt het spel weg (zoals nu in de stille stand).
+   - De volgorde wordt gehusseld.
+   - **Lesstof:** de redactielijn maakt minstens twaalf klankparen voor de lastige klanken (a/aa, e/ee, i/ie, o/oo, u/uu, ui/ou, eu/u, ij/ei-paren, g/k, v/f, z/s, w/v), met geluid in de draagzin. Elk paar komt in beide richtingen.
+3. **Bij 2.3:** Wisselgeld wordt echt wisselgeld.
+   - **De eerste twee beurten per spel:** "Leg € 13,60" met de teller (instap).
+   - **Daarna:** "Het kost € 13,60. Je betaalt met € 20. Leg het wisselgeld." De teller verschijnt pas na Klaar.
+   - Het nakijken blijft het gelegde bedrag.
+4. **Bij 2.4:**
+   - De hulp bij de of het bouwt af over de dagen. Er komt een klein veld bij met per woord het aantal goede beurten in het spel (SCHEMA 14, alleen toevoegend).
+   - De vorm staat vooraf tot twee goede beurten; na een misser op dat woord weer vooraf.
+   - Hetzelfde woord niet binnen drie beurten.
+5. **Bij 2.5:** de tegel Spelletje (met Of kies zelf) komt ook op de kaart, naast Ontdek.
+6. **Na deze punten:** de redactielijn mag alle vijf spellen kiezen voor de stap `game`, passend bij de situatie (C2). Een nieuw ijkmoment is niet nodig; de ontwerpsessie kijkt de release na.
