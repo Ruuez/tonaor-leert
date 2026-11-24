@@ -24,8 +24,8 @@
     "en": "medicine"
    },
    "def": "Iets wat je inneemt als je ziek bent.",
-   "ex": "Het medicijn ligt in de kast.",
-   "gap": "Het ___ ligt in de kast.",
+   "ex": "Het medicijn ligt op de plank.",
+   "gap": "Het ___ ligt op de plank.",
    "wrong": [
     "brood",
     "glas",
@@ -35,15 +35,15 @@
   {
    "id": "proef.kast",
    "kind": "word",
-   "w": "kast",
+   "w": "plank",
    "art": "de",
    "tr": {
-    "th": "ตู้",
-    "en": "cupboard"
+    "th": "ชั้นวาง",
+    "en": "shelf"
    },
-   "def": "Een meubel met planken waar je spullen in zet.",
-   "ex": "De borden staan in de kast.",
-   "gap": "De borden staan in de ___.",
+   "def": "Een plat stuk hout aan de muur waar je spullen op zet.",
+   "ex": "Het medicijn ligt op de plank.",
+   "gap": "Het medicijn ligt op de ___.",
    "wrong": [
     "tafel",
     "stoel",
@@ -175,9 +175,9 @@
       "y": 80,
       "hot": true,
       "label": {
-       "nl": "de kast",
-       "th": "ตู้",
-       "en": "the cupboard"
+       "nl": "de plank",
+       "th": "ชั้นวาง",
+       "en": "the shelf"
       },
       "item": "proef.kast"
      },
@@ -242,9 +242,9 @@
       "proef.medicijn"
      ],
      "ask": {
-      "nl": "Leg het medicijn in de kast.",
-      "th": "เอายาไปไว้ในตู้",
-      "en": "Put the medicine in the cupboard."
+      "nl": "Leg het medicijn op de plank.",
+      "th": "วางยาไว้บนชั้นวาง",
+      "en": "Put the medicine on the shelf."
      },
      "pairs": [
       {
@@ -253,9 +253,9 @@
       }
      ],
      "why": {
-      "nl": "Een medicijn bewaar je in de <b>kast</b>.",
-      "th": "เก็บยาไว้ใน <b>kast</b>",
-      "en": "You keep medicine in the <b>kast</b>."
+      "nl": "Een medicijn bewaar je hoog op de <b>plank</b>.",
+      "th": "เก็บยาไว้สูง ๆ บน <b>plank</b>",
+      "en": "You keep medicine high up on the <b>plank</b>."
      }
     },
     {
@@ -433,11 +433,16 @@
          },
          "opts": [
           {
-           "t": "Ja, ongeveer 4 keer € 3,50 is ongeveer € 14",
+           "t": "Ja: 4 keer ongeveer € 4 is ongeveer € 16, dus € 14 kan",
            "r": "ok"
           },
           {
-           "t": "Nee, het moet minder dan € 3,50 zijn",
+           "t": "Nee: het moet ongeveer € 140 zijn",
+           "r": "no",
+           "err": "rekenstap"
+          },
+          {
+           "t": "Nee: het moet minder zijn dan € 3,50",
            "r": "no",
            "err": "rekenstap"
           }
@@ -514,7 +519,27 @@
           "th": "ต้องจ่ายเท่าไร เป็นยูโร",
           "en": "What do you pay? In euro."
          },
-         "answer": 60
+         "answer": 60,
+         "wrong": [
+          {
+           "v": 20,
+           "err": "lezen",
+           "why": {
+            "nl": "€ 20 is de korting. Je moet betalen: € 80 min de korting.",
+            "th": "20 ยูโรคือส่วนลด ต้องจ่าย: 80 ยูโร ลบส่วนลด",
+            "en": "€ 20 is the discount. You pay € 80 minus the discount."
+           }
+          },
+          {
+           "v": 55,
+           "err": "model",
+           "why": {
+            "nl": "25% is geen 25 euro, maar een kwart van € 80.",
+            "th": "25% ไม่ใช่ 25 ยูโร แต่เป็นหนึ่งในสี่ของ 80 ยูโร",
+            "en": "25% is not 25 euro but a quarter of € 80."
+           }
+          }
+         ]
         },
         {
          "step": "klopt",

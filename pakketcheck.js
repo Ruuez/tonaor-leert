@@ -479,7 +479,7 @@
         var v = w + '.steps[' + k + ']';
         if ((st.type === 'read' || st.type === 'listen') && words(st.type === 'read' ? st.text : st.say) >= 150 && words(st.type === 'read' ? st.text : st.say) <= 450) longText = true;
         (st.q || []).forEach(function (q, i) {
-          if (!q) return; choice(q.opts);
+          if (!q) return; choice(q.opts); (q.q || []).forEach(function (d) { if (d) choice(d.opts); });   /* G4 groep 2: ook de keuzes in rekenen in stappen */
           var ask = nl(q.ask), u = v + '.q[' + i + ']';
           if (/^\s*Raad\b/i.test(ask) && q.guess !== true) issues.push(u + ': een raadvraag heeft guess: true (G2 2.5: raden telt niet als fout)');
           if (/^\s*Schat\b/i.test(ask) && q.form !== 'choose' && !(typeof q.tol === 'number' && q.tol > 0)) issues.push(u + ': een schatvraag heeft tol (G2 2.7)');
@@ -507,6 +507,8 @@
     if (!p || p.type !== 'hoofdstuk') return { issues: issues };
     var model = function (sc) { return (sc.steps || []).some(function (st) { return st && (NUMF.indexOf(st.form) >= 0 || (st.q || []).some(function (q) { return q && NUMF.indexOf(q.form) >= 0; })); }); };
     var exam = function (sc) { return (sc.steps || []).filter(function (st) { return st && st.type === 'listen' && st.exam === true; }).length; };
+    var hasSteps = function (sc) { return (sc.steps || []).some(function (st) { return st && (st.q || []).some(function (q) { return q && q.form === 'steps'; }); }); };   /* G4 groep 2: vanaf het volgende hoofdstuk minstens één steps per rekenscène */
+    scenes.forEach(function (sc) { if (sc && sc.subject === 'rk' && !hasSteps(sc)) issues.push(id + '.' + sc.id + ': de rekenscène heeft geen vraag rekenen in stappen (G4 groep 2)'); });
     scenes.forEach(function (sc) { if (sc && sc.subject === 'rk' && !model(sc)) issues.push(id + '.' + sc.id + ': de rekenscène gebruikt geen rekenmodel (getallenlijn, strook of tabel) (G4 2.4)'); });
     var kn = -1; scenes.forEach(function (sc, i) { if (kn < 0 && sc && sc.subject === 'kn') kn = i; });
     var before = scenes.slice(0, kn < 0 ? scenes.length : kn).filter(function (sc) { return sc && sc.subject === 'nl'; }), last = before[before.length - 1];
@@ -697,7 +699,9 @@
       if (seen[d.step]) err(w + ': stap ' + d.step + ' komt twee keer voor'); seen[d.step] = 1;
       if (STEPN.indexOf(d.step) <= prev) err(w + ': de stappen staan in de vaste volgorde (vraag, gegevens, model, rekenen, klopt)'); prev = STEPN.indexOf(d.step);
       tekst(d.ask, w + '.ask'); if (d.why != null) tekst(d.why, w + '.why');
-      if (d.step === 'rekenen') { if (!num(d.answer)) err(w + ': answer (een getal) ontbreekt'); if (d.accept != null && (!Array.isArray(d.accept) || !d.accept.every(num))) err(w + ': accept is een lijst getallen'); if (d.opts) err(w + ': rekenen is een getal, geen keuze'); }
+      if (d.step === 'rekenen') { if (!num(d.answer)) err(w + ': answer (een getal) ontbreekt'); if (d.accept != null && (!Array.isArray(d.accept) || !d.accept.every(num))) err(w + ': accept is een lijst getallen'); if (d.opts) err(w + ': rekenen is een getal, geen keuze');
+        if (d.wrong != null) { if (!Array.isArray(d.wrong) || d.wrong.length > 2) err(w + ': wrong is een lijst van hooguit twee verwachte foute getallen');   /* G4 groep 2: het meest waarschijnlijke foute getal met eigen uitleg */
+          else d.wrong.forEach(function (x, k) { var wk = w + '.wrong[' + k + ']'; if (!x || !num(x.v)) { err(wk + ': v (een getal) ontbreekt'); return; } if ([d.answer].concat(d.accept || []).some(function (a) { return num(a) && Math.abs(a - x.v) < 0.005; })) err(wk + ': een fout getal mag niet gelijk zijn aan answer of accept'); if (STEPERRS.indexOf(x.err) < 0) err(wk + ': err ontbreekt of staat niet in de lijst'); if (x.why == null) err(wk + ': why ontbreekt'); else tekst(x.why, wk + '.why'); }); } }
       else { var o = d.opts; if (!Array.isArray(o) || o.length < 2 || o.length > 4) err(w + ': twee tot vier keuzes');
         else { if (o.filter(function (x) { return x && x.r === 'ok'; }).length !== 1) err(w + ': precies één keuze is ok');
           o.forEach(function (x, k) { var wk = w + '.opts[' + k + ']'; if (!x || typeof x.t !== 'string' || !x.t.trim() || x.t.length > 70) err(wk + ': t ontbreekt of is langer dan 70 tekens'); if (x && x.r !== 'ok' && x.r !== 'no') err(wk + ': r moet ok of no zijn'); if (x && x.err != null && STEPERRS.indexOf(x.err) < 0) err(wk + ': err ' + x.err + ' staat niet in de lijst'); if (x && x.why != null) tekst(x.why, wk + '.why'); if (d.step === 'model' && x && x.model != null && ['strook', 'tabel', 'lijn', 'keer', 'delen', 'plus', 'min'].indexOf(x.model) < 0) err(wk + ': model moet strook, tabel, lijn, keer, delen, plus of min zijn'); }); } } });

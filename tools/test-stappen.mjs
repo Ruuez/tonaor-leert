@@ -54,4 +54,16 @@ ok(/MODELIC\[x\.model\]/.test(sc), 'bij model een klein plaatje van strook, tabe
 ok(/function oneSteps\(q\)\{let n=0;return q\.filter\(x=>!\(x&&x\.type==='sc_steps'&&n\+\+>0\)\)\}/.test(html) && /noSameForm\(oneSteps\(q\),learn\)/.test(html), 'korte ronde: hooguit één vraag rekenen in stappen');
 ok(/case 'steps':return \{type:'sc_steps',step,qq:\{form:'steps'/.test(html) && PC.FORMS.includes('steps'), 'een oefening steps in een pakket komt in de korte ronde');
 for (const k of ['steps.of', 'steps.answer', 'steps.shown']) ok((html.match(new RegExp(' "' + k.replace('.', '\\.') + '":', 'g')) || []).length === 3, k + ' in en, nl en th');
+/* 5. G4 groep 2: verwachte foute getallen, de G2-maat over de keuzes, de melding in de poort */
+{ const withW = w => ({ ...good(), q: good().q.map(d => d.step === 'rekenen' ? { ...d, wrong: w } : d) });
+  ok(errs(withW([{ v: 3.5, err: 'lezen', why: T('Dat is één kaartje.') }])).length === 0, 'wrong: een verwacht fout getal met err en why mag');
+  ok(errs(withW([{ v: 14, err: 'lezen', why: T('x') }])).some(m => /niet gelijk zijn aan answer/.test(m)), 'wrong gelijk aan answer: geweigerd');
+  ok(errs(withW([{ v: 1, err: 'lezen', why: T('x') }, { v: 2, err: 'lezen', why: T('x') }, { v: 3, err: 'lezen', why: T('x') }])).some(m => /hooguit twee/.test(m)), 'hooguit twee foute getallen');
+  ok(errs(withW([{ v: 1, err: 'onzin', why: T('x') }])).some(m => /err ontbreekt of staat niet in de lijst/.test(m)) && errs(withW([{ v: 1, err: 'lezen' }])).some(m => /why ontbreekt/.test(m)), 'wrong heeft een err uit de lijst en een why');
+  ok(/const wr=\(d\.wrong\|\|\[\]\)\.find\(x=>Math\.abs\(v-x\.v\)<NUMEPS\);bad\(wr\?\{err:wr\.err\}:null,numFmt\(d\.answer,eur\),wr&&wr\.why\?tx1\(wr\.why\)/.test(sc0()), 'de app toont de uitleg bij dat getal en telt die soort fout');
+  const long = { t: 'een heel lang goed antwoord dat langer is dan de rest', r: 'ok' }, sh = { t: 'kort', r: 'no', err: 'lezen' };
+  const pk = { id: 'x', type: 'hoofdstuk', scenes: [{ id: 'r', subject: 'rk', steps: [{ type: 'quiz', q: Array(10).fill(0).map(() => ({ form: 'steps', q: [{ step: 'vraag', opts: [long, sh] }, { step: 'rekenen', answer: 1 }, { step: 'klopt', opts: [long, sh] }] })) }] }] };
+  ok(PC.checkG2(pk).issues.some(m => /is het goede antwoord het langste/.test(m)), 'G2-maat: ook de keuzes in rekenen in stappen tellen mee');
+  ok(PC.checkG4(pk).issues.every(m => !/geen vraag rekenen in stappen/.test(m)) && PC.checkG4({ ...pk, scenes: [{ id: 'r', subject: 'rk', steps: [] }] }).issues.some(m => /geen vraag rekenen in stappen/.test(m)), 'de poort meldt een rekenscène zonder stappenvraag'); }
+function sc0() { return cut('H.sc_steps=q=>{', 'H.sc_drag=q=>{'); }
 console.log(fout ? fout + ' FOUT(EN)' : 'test-stappen: alles OK');

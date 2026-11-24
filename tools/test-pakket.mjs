@@ -168,7 +168,7 @@ ok('service worker bewaart alleen geslaagde antwoorden', sw.includes('if(res.ok)
 { // ijkmoment G4 opdracht 4: rekenmodel per rekenscène en één examen-luistertekst in de laatste scène Nederlands vóór de kennisles; een melding, geen weigering
   const L = (exam) => ({ type: 'listen', exam }), Q = f => ({ type: 'quiz', q: [{ form: f }] });
   const mk = (s5, rk, s3) => ({ id: 'x', type: 'hoofdstuk', scenes: [{ id: 'a3', subject: 'nl', n: 3, steps: s3 || [] }, { id: 'a5', subject: 'nl', n: 5, steps: s5 }, { id: 'rk', subject: 'rk', steps: rk }, { id: 'kn', subject: 'kn', steps: [] }] });
-  const is = p => PC.checkG4(p).issues;
+  const is = p => PC.checkG4(p).issues.filter(m => !/rekenen in stappen/.test(m));   // de melding over steps: test-stappen
   ok('G4: met rekenmodel en examen in de laatste scène Nederlands: geen melding', is(mk([L(true)], [Q('ratio')])).length === 0);
   ok('G4: rekenscène zonder rekenmodel: melding', is(mk([L(true)], [Q('number')])).some(m => /rekenmodel/.test(m)));
   ok('G4: een rekenmodel als stap do telt ook', is(mk([L(true)], [{ type: 'do', form: 'strip' }])).length === 0);

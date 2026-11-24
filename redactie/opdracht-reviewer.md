@@ -26,6 +26,7 @@ Je beoordeelt één hoofdstuk lesstof (`redactie/uit/<id>.json`) voor een leer-a
 - **Raden en schatten:** heeft een raadvraag `guess: true`, en een schatvraag `tol`?
 - **Spreken:** is het eerste punt van de checklist "Komt de inhoud over?", en staat intonatie erin?
 - **Luisteren (ijkmoment G4):** is elke luistervraag te beantwoorden zonder te luisteren, uit de inleiding, de titel, de plaat of de vorige stappen? Valt een afleider al af zonder het fragment? Dan blokkerend.
+- **Rekenen in stappen (G4 groep 2):** is `rekenen` de echte vraag van de situatie? Heeft hij het meest waarschijnlijke foute getal als `wrong`, met uitleg? Schat de goede keuze bij `klopt` met een afgerond getal en een grens, en zijn de foute keuzes echte controlefouten? Bij slepen: past het label van een plek bij de tekening?
 - **Vergelijking met het Thais:** staat die alleen waar ze klopt?
 
 ## Uitkomst

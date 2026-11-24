@@ -39,4 +39,5 @@ const st = p.scenes.flatMap(s => s.steps), drags = st.filter(x => x.form === 'dr
 ok(drags.some(x => x.pairs.length === 1) && drags.some(x => new Set(x.pairs.map(y => y.to)).size < x.pairs.length), 'een proef voor slepen én voor sorteren');
 ok([0, 1, 2].every(l => steps.some(q => q.proefLevel === l)), 'een vraag rekenen in stappen op elk afbouwniveau');
 ok(/if\(p\.type==='proef'&&!trialRaw\)return;/.test(html) && /SCENES=PACKS\.filter\(p=>p\.type!=='les'&&p\.type!=='proef'\)/.test(html) && /\$\{S\.trial\?`<p class="small muted">\$\{T\('proef\.scenes'\)\}/.test(html), 'proef: alleen met Proefonderdelen geladen, alleen te starten op Ik');
+ok(/movers\.forEach\(m=>\{const x=G\(m\);if\(x\)x\.setAttribute\('aria-pressed',String\(m===i\)\)\}\)/.test(d) && /e\.setAttribute\('aria-pressed','false'\)/.test(d), 'tik en tik: het gekozen ding aria-pressed true, de rest false (G4 groep 2)');
 console.log(fout ? fout + ' FOUT(EN)' : 'test-slepen: alles OK');

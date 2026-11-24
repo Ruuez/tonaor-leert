@@ -3390,7 +3390,7 @@ H.sc_steps=q=>{const qq=q.qq,nos=!!q.hard,tx1=x=>nos?scN(x):scT(x);
   app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{if(st.fin)return;const o=d.opts[+b.dataset.o];if(!o)return;
     if(o.r==='ok')good(st.tries?'retry':true,o.t);else{b.disabled=true;bad(o,(d.opts.find(x=>x.r==='ok')||{}).t||'',o.why?tx1(o.why):d.why?tx1(d.why):'')}});
   if($('#chk')){const go=()=>{if(st.fin)return;const raw=$('#ans').value;if(!String(raw).trim())return;const v=scNum(raw);if(isNaN(v))return bad(null,numFmt(d.answer,eur),T('scene.again'));
-      if([d.answer,...(d.accept||[])].some(a=>Math.abs(v-a)<NUMEPS))good(st.tries?'retry':true,numFmt(v,eur));else bad(null,numFmt(d.answer,eur),d.why?tx1(d.why):'')};
+      if([d.answer,...(d.accept||[])].some(a=>Math.abs(v-a)<NUMEPS))good(st.tries?'retry':true,numFmt(v,eur));else{const wr=(d.wrong||[]).find(x=>Math.abs(v-x.v)<NUMEPS);bad(wr?{err:wr.err}:null,numFmt(d.answer,eur),wr&&wr.why?tx1(wr.why):d.why?tx1(d.why):'')}};   /* G4 groep 2: een verwacht fout getal krijgt zijn eigen uitleg en soort fout */
     $('#chk').onclick=go;$('#ans').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();go()}}}};
 /* stap 6 groep 2: iets op zijn plek slepen, of sorteren in bakken (een plek mag vaker voorkomen). Tik en tik is altijd de tweede weg:
    met VoiceOver, het toetsenbord, of als slepen hapert. Een misser: terug, met de naam van die plek; twee missers bij hetzelfde ding: de app zet het neer. */
@@ -3403,7 +3403,7 @@ H.sc_drag=q=>{const sc=q.sc,st=q.st,th=(sc.art&&sc.art.things)||[],D=q._d||(q._d
   const toSvg=(cx,cy)=>{const m=svg.getScreenCTM();if(!m)return {x:0,y:0};const p=svg.createSVGPoint();p.x=cx;p.y=cy;const r=p.matrixTransform(m.inverse());return {x:r.x,y:r.y}};
   const mid=e=>{const r=e.getBoundingClientRect();return toSvg(r.left+r.width/2,r.top+r.height/2)};
   svg.style.touchAction='none';   // review: WebKit past touch-action op een SVG-onderdeel niet betrouwbaar toe
-  movers.forEach(i=>{const e=G(i);if(!e)return;e.classList.add('s-drag');if(D.pos[i])put(i,D.pos[i].x,D.pos[i].y);if(D.done[i])e.classList.add('on','s-placed')});
+  movers.forEach(i=>{const e=G(i);if(!e)return;e.classList.add('s-drag');e.setAttribute('aria-pressed','false');if(D.pos[i])put(i,D.pos[i].x,D.pos[i].y);if(D.done[i])e.classList.add('on','s-placed')});
   const fbEnd=()=>{$('#fb').innerHTML=fbBox(D.res!==false,st.why?scT(st.why):'','')+nextBtn();$('#nx').onclick=next};
   if(D.fin)return fbEnd();   // review: na een taalwissel staat de Verder-knop er weer
   const finish=()=>{if(D.fin)return;D.fin=true;const marks=movers.map(i=>D.done[i]==='auto'?false:D.miss[i]?'retry':true),res=D.res=PC.stepsRes(marks);
@@ -3412,14 +3412,14 @@ H.sc_drag=q=>{const sc=q.sc,st=q.st,th=(sc.art&&sc.art.things)||[],D=q._d||(q._d
     D.pos[i]={x:cur.x+(b.x-a.x)+off,y:cur.y+(b.y-a.y)};put(i,D.pos[i].x,D.pos[i].y);D.done[i]=auto?'auto':true;e.classList.add('on','s-placed');e.classList.remove('s-sel');say(scP((th[to]||{}).label));
     if(movers.every(m=>D.done[m]))finish()};
   const back=i=>{const p=D.pos[i]||base(i);put(i,p.x,p.y)};
-  const drop=(i,to)=>{if(D.fin||D.done[i])return;D.sel=null;app.querySelectorAll('.s-sel').forEach(x=>x.classList.remove('s-sel'));
+  const drop=(i,to)=>{if(D.fin||D.done[i])return;D.sel=null;app.querySelectorAll('.s-sel').forEach(x=>x.classList.remove('s-sel'));movers.forEach(m=>{const x=G(m);if(x)x.setAttribute('aria-pressed','false')});
     if(to==null||to===i){back(i);return}
     if(PC.dragDrop(st,i,to)){land(i,to,false);if(!D.fin)$('#fb').innerHTML=fbBox(true,scT((th[to]||{}).label),'');return}
     back(i);D.miss[i]=(D.miss[i]||0)+1;if(D.miss[i]===1)later(()=>scFault(q,'betekenis'));
     if(D.miss[i]>=2){const p=st.pairs.find(x=>x.thing===i);if(p)land(i,p.to,true);if(!D.fin)$('#fb').innerHTML=fbBox(false,scT((th[p.to]||{}).label),'')}
     else $('#fb').innerHTML=fbBox(false,T('drag.wrong',{place:l=>esc(plainX((th[to]||{}).label,l))}),'')};
   const hotAt=(cx,cy,skip)=>{for(const el of document.elementsFromPoint(cx,cy)){const h=el.closest&&el.closest('.s-hot');if(h&&+h.dataset.i!==skip&&!movers.includes(+h.dataset.i))return +h.dataset.i}return null};   /* sorteren: een ding dat al in de bak ligt, is geen doel */
-  const tap=i=>{if(D.fin)return;if(movers.includes(i)&&!D.done[i]){D.sel=i;app.querySelectorAll('.s-sel').forEach(x=>x.classList.remove('s-sel'));const e=G(i);if(e)e.classList.add('s-sel');say(scP((th[i]||{}).label));$('#fb').innerHTML=`<p class="small">${T('drag.chosen',{thing:l=>esc(plainX((th[i]||{}).label,l))})}</p>`;return}
+  const tap=i=>{if(D.fin)return;if(movers.includes(i)&&!D.done[i]){D.sel=i;app.querySelectorAll('.s-sel').forEach(x=>x.classList.remove('s-sel'));movers.forEach(m=>{const x=G(m);if(x)x.setAttribute('aria-pressed',String(m===i))});const e=G(i);if(e)e.classList.add('s-sel');say(scP((th[i]||{}).label));$('#fb').innerHTML=`<p class="small">${T('drag.chosen',{thing:l=>esc(plainX((th[i]||{}).label,l))})}</p>`;return}
     if(D.sel!=null&&!movers.includes(i))drop(D.sel,i)};
   svg.querySelectorAll('.s-hot').forEach(e=>{const i=+e.dataset.i;
     e.onkeydown=ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();tap(i)}};
