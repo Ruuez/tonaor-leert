@@ -621,6 +621,7 @@ en:{
  "learn.artTip":"This is a {art} word. Always learn the article with it.",
  "help.sent":"Sent to your coach",
  "fb.no":"Almost.",
+ "fb.idk":"Here is the answer.",
  "fb.ok":"Well done!",
  "sync.offline":"No connection. It will be sent automatically later.",
  "sync.sent":"Sent to your coach",
@@ -1315,6 +1316,7 @@ nl:{
  "learn.artTip":"Dit is een <b>{art}</b>-woord. Leer het lidwoord altijd mee.",
  "help.sent":"Verstuurd naar je begeleider",
  "fb.no":"Bijna.",
+ "fb.idk":"Dit is het antwoord.",
  "fb.ok":"Goed!",
  "sync.offline":"Geen verbinding. Het gaat later vanzelf.",
  "sync.sent":"Verstuurd naar je begeleider",
@@ -2012,6 +2014,7 @@ th:{
  "learn.artTip":"คำนี้ใช้ {art} จำไปพร้อมกับคำเสมอ",
  "help.sent":"ส่งถึงผู้ดูแลการเรียนแล้ว",
  "fb.no":"เกือบแล้ว",
+ "fb.idk":"นี่คือคำตอบ",
  "fb.ok":"ถูกต้อง",
  "sync.offline":"ไม่มีการเชื่อมต่อ จะส่งให้อัตโนมัติภายหลัง",
  "sync.sent":"ส่งแล้ว",
@@ -2788,6 +2791,20 @@ function early12(){const ds=Object.keys(S.days||{}).map(Number).filter(x=>x>0);r
 const STEERHARD=['les','engels','scene'],STEERBORED=['les','engels','scene'];   /* alleen waar een reactie bestaat; verhaal en ontdek vragen geen tik na de ronde (codereview MO-M6 2) */
 function steerFor(kind){if(!early12())return {};const L=(S.conf||[]).filter(c=>c&&c.k===kind).slice(0,2);if(L.length<2)return {};const hard=STEERHARD.includes(kind)&&L.every(c=>c.c==='moeilijk'),bored=STEERBORED.includes(kind)&&!hard&&L[0].c!=='moeilijk'&&L.every(c=>c.fun==='saai');return {hard,bored,recent:now()-(+L[0].t||0)<7*DAY}}
 /* dezelfde vorm hooguit één keer achter elkaar (bij saai); schuift een verplaatsbaar onderdeel ertussen, nooit over een uitleg of kaart heen; niets valt weg */
+/* beginnersstart (docs/ontwerp-start.md 3.5): tonen, dan kiezen, dan typen. Een onderdeel dat nog nooit goed ging, komt in de les als kiesvraag. */
+function starterArea(id,learn){return learn==='en'||EN.some(x=>x.id===id)?'engels':KIND[id]==='rule'?'grammatica':KIND[id]==='skill'?'rekenen':'woorden'}
+function starterEasy(q,learn){const on=typeof starterOn==='function'?starterOn:()=>false;if(typeof LES!=='undefined'&&LES)return q;
+  for(let i=0;i<q.length;i++){const x=q[i];if(!x||x._probe||x._ifUnknown||x.type==='learn'||x.sc)continue;const id=x.w?x.w.id:x.items&&x.items[0];if(!id)continue;
+    const it=S.items[id];if(it&&(it.forms||[]).length)continue;if(!on(starterArea(id,learn)))continue;
+    if(x.w&&EASIER[x.type])x.type=EASIER[x.type];else if(!x.w&&x.exid&&TIER[QFORM[x.type]]>1){const e=easierEx(x);if(e)q[i]=e}}
+  return q}
+/* beginnersstart: bij elk typscherm in de les ook Weet ik niet; het scherm toont dan zelf het antwoord (zoals na een tweede fout) */
+let IDKNOW=false;   /* Weet ik niet: de kop zegt dan niet Bijna */
+function starterIdk(q){try{if(!q||q.sc||q._probe||(typeof LES!=='undefined'&&LES))return;const a=$('#ans'),c=$('#chk');if(!a||!c||$('#dunno')||$('#idk'))return;if(a.inputMode==='decimal'||a.type==='number'||a.classList.contains('num'))return;   /* een getalscherm (korting, geld): geen Weet ik niet, 'qqq' is daar geen antwoord */const id=q.w?q.w.id:q.items&&q.items[0];if(!id||!(typeof starterOn==='function'&&starterOn(starterArea(id,q.w&&EN.includes(q.w)?'en':'nl'))))return;
+  const b=document.createElement('button');b.className='linkish muted';b.id='idk';b.innerHTML=T('probe.dunno');c.after(b);
+  b.onclick=()=>{b.remove();IDKNOW=true;try{for(let i=0;i<6&&!$('#nx');i++){const x=$('#ans'),k=$('#chk');if(!x||!k||x.disabled)break;x.value='qqq';k.click()}}finally{IDKNOW=false}
+    {const cl=$('#claim');if(cl)cl.remove()}   /* geen 'mijn antwoord is ook goed' na Weet ik niet */
+    if(!$('#nx')){const fb=$('#fb');if(fb){fb.insertAdjacentHTML('beforeend',nextBtn());$('#nx').onclick=next}}}}catch(e){}}   /* vangnet: nooit een dood spoor */
 function noPairs(q){const real=x=>x&&!['card','conf','end','explain','learn'].includes(x.type),free=n=>{const x=q[n];return real(x)&&!x._probe&&!x._ifUnknown&&!(n>0&&q[n-1].type==='explain')};
   for(let i=1;i<q.length;i++){if(!real(q[i])||q[i]._probe||q[i]._ifUnknown)continue;let p=i-1;while(p>=0&&!real(q[p]))p--;if(p<0||q[p].type!==q[i].type)continue;
     let j=-1;for(let n=i+1;n<q.length;n++){if(q[n].type==='explain'||q[n].type==='card')break;if(free(n)&&q[n].type!==q[i].type&&!(q[n].type===(q[i+1]||{}).type)){j=n;break}}if(j<0)continue;const [m]=q.splice(j,1);let at=i;while(at>0&&q[at-1].type==='explain')at--;q.splice(at,0,m)}
@@ -2839,7 +2856,7 @@ function compose(recipe,learn){const used=new Set(),later=[];NEWPLAN=0;recipe=(r
   if(later.length){const real=x=>!['card','conf','end','explain'].includes(x.type);let i=q.map(x=>x.type).lastIndexOf('learn')+1,cnt=0,k=0;   // kiesvragen voor nieuwe woorden: na drie echte onderdelen, daarna telkens twee ertussen
     while(k<later.length){const conf=q.findIndex(x=>x.type==='conf'),at=conf<0?q.length:conf;if(i>=at){q.splice(at,0,...later.slice(k));break}
       if(real(q[i])&&q[i-1].type!=='explain')cnt++;if(cnt>=(k===0?3:2)&&(i+1>=q.length||q[i+1].type!=='explain'||true)){if(q[i].type==='explain'){i++;continue}q.splice(i+1,0,later[k]);k++;cnt=0;i+=2;continue}i++}}
-  {let out=breakTriples(mixAppr(noSameForm(oneSteps(q),learn)));if(STEER&&STEER.bored)out=noPairs(out);if(q._short)out._short=q._short;return out}}   /* H2; R-M3 */
+  {let out=starterEasy(breakTriples(mixAppr(noSameForm(oneSteps(q),learn))),learn);if(STEER&&STEER.bored)out=noPairs(out);if(q._short)out._short=q._short;return out}}   /* H2; R-M3 */
 /* R-M3: nooit twee sommen met dezelfde aanpak achter elkaar in herhaling. Een nieuwe som (eerste keer) mag wel: dan leer je de aanpak eerst geblokt.
    Schuift een verplaatsbaar onderdeel ertussen (zoals breakTriples); een uitleg blijft bij de oefening erna. Lukt dat niet, dan blijft de volgorde. */
 /* besluit ontwerpsessie (stap 6 groep 2): hooguit één vraag rekenen in stappen per ronde; die is lang */
@@ -3421,7 +3438,7 @@ function easierEx(q){try{const base=q.exid.split('#')[0],P=PACKS.find(p=>(p.exer
   const n=exQ(e,q.step,P.learn==='en'?'en':'nl',id);if(n)n._easy=1;return n}catch(err){return null}}
 function next(){flushPend();audioStop();qi++;adapt();window.scrollTo(0,0);step()}
 let KNOWN=new Set(),RETRIED=new Set();
-function step(){voicePend=null;while(Q[qi]&&(Q[qi]._skip||(Q[qi]._ifUnknown&&Q[qi].w&&KNOWN.has(Q[qi].w.id))||(Q[qi]._skipKnown&&KNOWN.has(Q[qi]._rule||(Q[qi].items||[])[0]))))qi++;const q=Q[qi];if(!q)return show('vandaag');H[q.type](q)}
+function step(){voicePend=null;while(Q[qi]&&(Q[qi]._skip||(Q[qi]._ifUnknown&&Q[qi].w&&KNOWN.has(Q[qi].w.id))||(Q[qi]._skipKnown&&KNOWN.has(Q[qi]._rule||(Q[qi].items||[])[0]))))qi++;const q=Q[qi];if(!q)return show('vandaag');H[q.type](q);starterIdk(q)}
 /* na een fout: het onderdeel één keer terug in deze ronde, minstens vijf onderdelen later, in een andere vorm (advies ontwerpsessie B) */
 const OTHER={recall:'recog',recog:'recall',hear:'recog',enrecall:'enrecog',enrecog:'enrecall',enhear:'enrecog'};
 function retryLater(q){   /* M3 terug in een andere vorm, niet direct erna */
@@ -3430,7 +3447,7 @@ if(!q||q._probe||q._retry)return;const id=q.w?q.w.id:q.items&&q.items[0];if(!id|
   RETRIED.add(id);r._retry=1;const conf=Q.findIndex((x,i)=>i>qi&&x.type==='conf'),at=conf<0?Q.length:conf;Q.splice(Math.min(qi+MOTOR.retryGap,at),0,r)}
 function score(ok,n,part){if(typeof LES!=='undefined'&&LES)return;if(typeof PRF!=='undefined'&&PRF)return;sessTotal++;SESS.push(!!ok);if(!ok)retryLater(Q[qi]);if(ok){sessRight++;sp+=n;addPts(n)}else if(part>0){sp+=part;addPts(part)}}
 /* fbBox(ok, tekst in de leertaal, tekst in de steuntaal); fbK(ok, sleutel, variabelen) haalt beide uit I18N */
-function fbBox(ok,msg,msgSup){let offer='';if(!ok&&app.classList.contains('sess')&&Q[qi]&&Q[qi]._sceneErr&&!Q[qi]._faulted){Q[qi]._faulted=1;const fq=Q[qi];later(()=>scFault(fq,fq._sceneErr))}   /* telt bij Volgende, zodat Mijn antwoord is ook goed haar nog kan wegnemen (standreview 1) */   /* hooguit één keer per vraag (codereview A2) */if(!ok&&app.classList.contains('sess')&&Q[qi]){const q=Q[qi];q._wrong=(q._wrong||0)+1;const x=q._wrong>=2&&explFor(q);if(x)offer=`<button class="linkish u-offer" data-uopen="${esc(x)}">${TB('explain.offer')}</button>`}const k=ok?'fb.ok':'fb.no',s=ts(k);return `<div class="fb ${ok?'fb-ok':'fb-no'}" role="status"><strong>${t(k)}${nlOnly()||!s?'':` <span ${supAttr()}>${s}</span>`}</strong>${msg?bi(msg,msgSup||''):''}${offer}</div>`}
+function fbBox(ok,msg,msgSup){let offer='';if(!ok&&app.classList.contains('sess')&&Q[qi]&&Q[qi]._sceneErr&&!Q[qi]._faulted){Q[qi]._faulted=1;const fq=Q[qi];later(()=>scFault(fq,fq._sceneErr))}   /* telt bij Volgende, zodat Mijn antwoord is ook goed haar nog kan wegnemen (standreview 1) */   /* hooguit één keer per vraag (codereview A2) */if(!ok&&app.classList.contains('sess')&&Q[qi]){const q=Q[qi];q._wrong=(q._wrong||0)+1;const x=q._wrong>=2&&explFor(q);if(x)offer=`<button class="linkish u-offer" data-uopen="${esc(x)}">${TB('explain.offer')}</button>`}const k=ok?'fb.ok':IDKNOW?'fb.idk':'fb.no',s=ts(k);return `<div class="fb ${ok?'fb-ok':'fb-no'}" role="status"><strong>${t(k)}${nlOnly()||!s?'':` <span ${supAttr()}>${s}</span>`}</strong>${msg?bi(msg,msgSup||''):''}${offer}</div>`}
 function fbK(ok,k,vars){return fbBox(ok,t(k,vars),ts(k,vars))}
 const supSpan=(s,st)=>s?`<span class="sup" ${supAttr()}${st?` style="${st}"`:''}>${s}</span>`:'';
 const helpBtn=ctx=>`<span hidden data-hctx="${esc(ctx)}"></span>`;   /* stap 8: de hulpknop is opgegaan in Vraag het; de omschrijving blijft als context voor de vraag aan de begeleider */
@@ -4406,30 +4423,31 @@ function vKaart(){if(!S.onboarded)return vOnboard();
   const R=WereldVis.render(P.map(p=>({vak:p.vak,state:p.state,dots:p.dots})),S.fig),lbl=p=>esc(String(t('map.place',{name:p.title,d:p.nd,n:p.dots.length})).replace(/<[^>]*>/g,''));
   const pl=P.map((p,i)=>p.state==='far'?'':`<button class="w-pl${p.state==='cur'?' cur':''}" data-pl="${i}" style="left:${(R.pos[i].x/R.w*100).toFixed(2)}%;top:${(R.pos[i].y/R.h*100).toFixed(2)}%" aria-label="${lbl(p)}"><span class="w-name" aria-hidden="true">${esc(p.title)}</span></button>`).join('');
   const day1=!!cur&&!!S.startLevel&&!Object.keys((S.world&&S.world.done)||{}).length,dueFirst=due>0&&!day1,hint=!day1&&!!S.startLevel&&!S.kHint;if(hint){S.kHint=1;save()}
-  const wk1=!!S.startLevel&&typeof S.startT==='number'&&now()-S.startT>=MOTOR.askDays*DAY,pOffer=wk1&&S.startLevel==='niets'&&!S.placement&&!S.placeOffer,gAsk=wk1&&!pOffer&&!S.weekGoalSet&&!S.goalAsk&&!(typeof S.placeOffer==='number'&&S.placeOffer>1&&now()-S.placeOffer<DAY);   /* na een week: één keer de meting aanbieden (Nog niets), daarna één keer het weekdoel vragen */   /* start: dag 1 alleen de groet en de eerste plek; daarna één keer aanwijzen wat erbij kwam */
+  const wk1=!!S.startLevel&&typeof S.startT==='number'&&now()-S.startT>=MOTOR.askDays*DAY,pOffer=wk1&&S.startLevel==='niets'&&!S.placement&&!S.placeOffer,stE=!!S.starter&&typeof S.startT==='number',tilesOn=!stE||Object.keys((S.world&&S.world.done)||{}).length>=3||today()>new Date(S.startT).setHours(0,0,0,0),weekOn=!stE||wk1,   /* starter: eerst alleen Onderweg en Wanneer leer je; tegels vanaf dag 2 of na drie scènes; weekring en examenregel na de eerste week */
+    gAsk=wk1&&!pOffer&&!S.weekGoalSet&&!S.goalAsk&&!(typeof S.placeOffer==='number'&&S.placeOffer>1&&now()-S.placeOffer<DAY);   /* na een week: één keer de meting aanbieden (Nog niets), daarna één keer het weekdoel vragen */   /* start: dag 1 alleen de groet en de eerste plek; daarna één keer aanwijzen wat erbij kwam */
   const weg=`<button class="card row between" id="kWeg" style="background:var(--sky);border-color:var(--sky-fill);text-align:left"><span style="display:flex;flex-direction:column;gap:2px">${dueFirst?T('map.dueFirst'):T('map.onderweg')}<span class="small muted">${due?T('map.due',{n:due}):T('map.onderwegTip')}</span></span>${due?`<span class="pill pill-sky num" style="background:var(--surface)">${due}</span>`:''}</button>`;
   if(day1){paint(`<header class="top"><div>${bi(`<h1>${h}${nm()?', '+nm():''}</h1>`,ht)}</div>${thaiSwitch()}</header>${cur?`<section class="card stack kcur"><b>${scT(cur.raw)}</b><button class="btn btn-main" id="kGo">${TB('map.begin')}</button></section>`:''}${P.length?`<div class="wereld">${R.svg}${pl}</div>`:''}`);if($('#kGo'))$('#kGo').onclick=()=>startScene(ns);app.querySelectorAll('[data-pl]').forEach(b=>b.onclick=()=>kSheet(P[+b.dataset.pl],b));KPLACE=ci>=0?ci:KPLACE;return}
   paint(`<header class="top"><div>${bi(`<h1>${h}${nm()?', '+nm():''}</h1>`,ht)}</div>${thaiSwitch()}</header>
   ${hint?`<div class="note sky" role="status">${T('map.newHint')}</div>`:''}${pOffer?`<section class="note sky stack-sm" id="pOffer">${T('place.offer')}<div class="row" style="gap:8px"><button class="btn btn-leaf" id="pOfferYes" style="width:auto">${TB('place.offerYes')}</button><button class="btn btn-ghost" id="pOfferNo" style="width:auto">${TB('offer.later')}</button></div></section>`:gAsk?`<section class="card stack" id="gAsk"><p>${T('goal.ask')}</p><p class="small muted">${T('goal.askTip')}</p><div class="seg" role="group" aria-label="${esc(strip(t('goal.ask')))}">${WEEKGOALS.map(m=>`<button data-gq="${m}" aria-pressed="false">${fmtH(m)} ${esc(t('week.hours'))}</button>`).join('')}</div><button class="linkish muted" id="gAskNo">${T('offer.later')}</button></section>`:''}${S.startLevel&&!S.moment?`<section class="card stack">${String(T('onb.when')).replace(/h1>/g,'h2>')}<div class="chips" role="group" aria-label="${esc(String(t('onb.when')).replace(/<[^>]*>/g,''))}">${['ochtend','pauze','middag','avond'].map(k=>`<button data-km="${k}" aria-pressed="false">${TB('moment.'+k)}</button>`).join('')}</div></section>`:''}
   ${dueFirst?weg:''}
-  ${kWeek()}${kRoute()}
+  ${weekOn?kWeek()+kRoute():''}
   ${cur?`<section class="card row between kcur"><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="eyebrow">${esc(t('map.here'))}</span><b>${esc(cur.title)}</b><span class="small muted">${allDone?T('map.allDone'):esc(scP((ns||{}).title))} · ${T('map.count',{d:cur.nd,n:cur.dots.length})}</span></span>${allDone?'':`<button class="btn btn-main" id="kGo" style="width:auto;flex:none">${TB('map.go')}</button>`}</section>`:`<div class="note">${T('map.none')}</div>`}
   ${dueFirst?'':weg}
-  <div class="tiles2 ktiles">${LESSEN.length?(l=>l?`<button class="tile sky" id="ontdek"><span class="ic">${icon.book}</span>${T('les.tile')}<span class="small muted">${esc(scP(l.title))}</span></button>`:'')(nextLes()):''}
+  ${tilesOn?`<div class="tiles2 ktiles">${LESSEN.length?(l=>l?`<button class="tile sky" id="ontdek"><span class="ic">${icon.book}</span>${T('les.tile')}<span class="small muted">${esc(scP(l.title))}</span></button>`:'')(nextLes()):''}
    ${gBestKind()?`<button class="tile apricot" id="kGame"><span class="ic">${icon.bolt}</span>${T('game.tile')}<span class="small muted">${esc(String(t(GNAME[gBestKind()])).replace(/<[^>]*>/g,''))}</span></button>`:''}
-   <button class="tile apricot" id="kRk"><span class="ic">${icon.bolt}</span>${T('lijn.title.rk')}</button><button class="tile sky" id="kEn"><span class="ic">${icon.globe}</span>${T('lijn.title.en')}</button></div>
+   <button class="tile apricot" id="kRk"><span class="ic">${icon.bolt}</span>${T('lijn.title.rk')}</button><button class="tile sky" id="kEn"><span class="ic">${icon.globe}</span>${T('lijn.title.en')}</button></div>`:''}
    <button class="btn btn-ghost" id="kMore">${TB('map.more')}</button>
   ${kNotes()}
   ${P.length?`<div class="wereld">${R.svg}${pl}</div>${rest?`<p class="small muted" style="text-align:center">${T('map.rest',{n:rest})}</p>`:''}`:''}`);
   {const v=app.querySelector('.view');if(v)v.classList.add('kmap')}   // G3: iets minder ruimte tussen de blokken
   kNotesBind();
-  $('#kWeek').onclick=()=>{const f=$('#kWeekFull'),o=f.hidden;f.hidden=!o;$('#kWeek').setAttribute('aria-expanded',String(o))};
+  if($('#kWeek'))$('#kWeek').onclick=()=>{const f=$('#kWeekFull'),o=f.hidden;f.hidden=!o;$('#kWeek').setAttribute('aria-expanded',String(o))};
   if($('#kGo'))$('#kGo').onclick=()=>startScene(ns);
   if($('#pOfferYes'))$('#pOfferYes').onclick=()=>{S.placeOffer=now();save();startPlacement()};if($('#pOfferNo'))$('#pOfferNo').onclick=()=>{S.placeOffer=now();save();vKaart()};
   app.querySelectorAll('[data-gq]').forEach(b=>b.onclick=()=>{S.weekGoal=+b.dataset.gq;S.weekGoalSet=true;S.goalAsk=1;save();vKaart()});if($('#gAskNo'))$('#gAskNo').onclick=()=>{S.goalAsk=1;save();vKaart()};
   $('#kWeg').onclick=()=>startLesson(false);app.querySelectorAll('[data-km]').forEach(b=>b.onclick=()=>{S.moment=b.dataset.km;save();vKaart()});   /* Wanneer leer je: na de eerste les */
   if($('#ontdek'))$('#ontdek').onclick=()=>startLes(nextLes());
-  if($('#kGame'))$('#kGame').onclick=startSpeed;$('#kRk').onclick=()=>openLijn('rk');$('#kEn').onclick=()=>openLijn('en');
+  if($('#kGame'))$('#kGame').onclick=startSpeed;if($('#kRk'))$('#kRk').onclick=()=>openLijn('rk');if($('#kEn'))$('#kEn').onclick=()=>openLijn('en');
   $('#kMore').onclick=()=>{route=vToday;rerender();app.insertAdjacentHTML('afterbegin',`<button class="btn btn-ghost" id="kBack" style="width:auto">← ${TB('tab.map')}</button>`);$('#kBack').onclick=()=>show('vandaag');window.scrollTo(0,0)};
   app.querySelectorAll('[data-pl]').forEach(b=>b.onclick=()=>kSheet(P[+b.dataset.pl],b));
   /* het figuurtje loopt na een gedane scène van de vorige plek naar de nieuwe; met minder beweging staat het er meteen (CSS) */

@@ -93,6 +93,17 @@ ok(/\{const cl=\$\('#claim'\);if\(cl\)cl\.remove\(\)\}later\(\(\)=>\{if\(q\.role
 { const SCQ = cut('H.sc_q=q=>', '\nH.'), d = SCQ.indexOf('const gs=');
   ok(d > 0 && !/\bgs\b/.test(SCQ.slice(0, d)), 'sc_q: gs wordt niet gebruikt vóór de declaratie (anders crasht een typvraag voor een starter)'); }
 
+/* 7c. de les en de kaart voor een starter (speelronde ontwerpsessie op v2-102) */
+{ const SE = cut('function starterEasy(', '\nfunction ');
+  ok(html.includes('let out=starterEasy(breakTriples(mixAppr(noSameForm(oneSteps(q),learn))),learn);'), 'de les gaat voor een starter door starterEasy');
+  ok(SE.includes('if(it&&(it.forms||[]).length)continue;') && SE.includes('if(x.w&&EASIER[x.type])x.type=EASIER[x.type]') && SE.includes('TIER[QFORM[x.type]]>1'), 'tonen, kiezen, typen: wat nog nooit goed ging, komt als kiesvorm; typen pas na één keer goed');
+  ok(SE.includes("if(typeof LES!=='undefined'&&LES)return q;"), 'een losse les blijft zoals hij is'); }
+ok(html.includes('H[q.type](q);starterIdk(q)}') && cut('function starterIdk(', '\nfunction ').includes("x.value='qqq';k.click()"), 'in de les voor een starter bij elk typscherm Weet ik niet (het scherm toont zelf het antwoord)');
+ok(VK.includes("tilesOn=!stE||Object.keys((S.world&&S.world.done)||{}).length>=3||today()>new Date(S.startT).setHours(0,0,0,0),weekOn=!stE||wk1") && VK.includes("${weekOn?kWeek()+kRoute():''}") && VK.includes('${tilesOn?`<div class="tiles2 ktiles">'), 'kaart voor een starter: tegels vanaf dag 2 of na drie scènes, weekring en examenregel na de eerste week');
+ok(VK.includes("stE=!!S.starter&&typeof S.startT==='number'"), 'alleen voor starters; bestaande leerders houden alles');
+
+{ const SI = cut('function starterIdk(', '\nfunction ');
+  ok(SI.includes("{const cl=$('#claim');if(cl)cl.remove()}") && SI.includes("if(a.inputMode==='decimal'||a.type==='number'||a.classList.contains('num'))return;") && SI.includes("if(!$('#nx')){const fb=$('#fb');if(fb){fb.insertAdjacentHTML('beforeend',nextBtn());"), 'Weet ik niet: geen claimknop erna, niet op getalschermen, en altijd een Verder (codereview)'); }
 /* 8. opslag */
 ok(/starter:null,startLevel:null,kHint:0/.test(html), 'nieuwe opslag: starter en startLevel leeg tot de keuze');
 console.log(fout ? fout + ' FOUT(EN)' : 'test-start: alles OK');
