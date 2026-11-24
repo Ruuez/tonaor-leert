@@ -17,6 +17,30 @@ Bijgewerkt: 14 november 2026.
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
 - M6/N-M6 (de vier strengen), cache v2-78: de klok telt per streng (SCHEMA 10, alleen toevoegend); Vandaag meldt een streng onder 12,5% in 7 dagen, of dat er vandaag nog niets gelezen of geluisterd is (met een knop naar een verhaal); bij meekijken de verdeling. Nog open: de keuze van de volgende scène laten meewegen. Besluit ontwerpsessie (18 november 2026): de strengen tellen alleen Nederlands; Engels krijgt later zijn eigen vier strengen (onderbouwing-engels), zodra er genoeg Engelse lesstof is; een gezamenlijke verdeling komt er niet. E-M2 (geen Nederlands in de Engelse oefeningen, de brug alleen bij gelijkenis, geen brug na een fout) akkoord.
+- Cache v2-101 (24 november 2026): de makkelijke start (docs/ontwerp-start.md).
+  - De start bestaat uit drie schermen: de taal, een kort welkom, en "hoeveel Nederlands ken je al?".
+    - Nog niets: direct de eerste les.
+    - Een beetje: een korte meting die per onderdeel stopt na twee keer niet weten. Een gestopt onderdeel telt als 0.
+    - Veel: de volledige meting.
+  - Na de meting staat er "Hier begin je" in plaats van 0%-balken, gevolgd door de eerste les.
+  - Beginnersstart van 14 dagen (S.starter, SCHEMA 16, alleen toevoegend; bestaande leerders null, hun les is ongewijzigd):
+    - geen instapvraag over nooit geziene stof;
+    - steuntaal bij instap en controle;
+    - een nieuw woord eerst tonen.
+  - Bij Een beetje geldt de beginnersstart alleen voor het vak of onderwerp van de scène met een uitslag onder 0,34. Wie de meting afbreekt, krijgt de beginnersstart overal.
+  - Kaart op dag 1: alleen de groet, de eerste plek met Begin, en het pad. Daarna één keer "Nieuw: Onderweg" en een vraag naar het leermoment.
+  - In nl-t1 en en-t1 zijn de vaste plaatsnamen vervangen; daarom is de les van test-les opnieuw vastgelegd en het geluid opnieuw gemaakt.
+  - Test: tools/test-start.mjs; migratietest 15 naar 16.
+  - Codereview verwerkt:
+    - starterOn per vak;
+    - een afgebroken meting;
+    - de tekst "hooguit 15" en een teller zonder sprongen;
+    - een gestopt onderdeel telt als 0;
+    - dag 1 alleen als er een plek is;
+    - lang per taal in het welkom;
+    - aria en geen tweede h1 bij het leermoment;
+    - een opmerking uit de code die zichtbaar werd.
+  - Browsercontrole op 375 px: alle drie de routes.
 - Cache v2-100 (24 november 2026): werkorder stap 8 (docs/ontwerp-stap8-melden.md). Eén knop Vraag het bovenaan elk oefenscherm (niet op eindschermen) met een blad: de uitleg bij de stap, Vraag je begeleider (de bestaande hulpvraag), Fout melden (zes soorten, toelichting hooguit 200 tekens met de waarschuwing geen namen of telefoonnummers). Besluit eigenaar (privacy, B): een melding gaat versleuteld als hulpvraag met de soort naar de begeleider en blijft in de wachtrij op het toestel (Mijn meldingen op Ik, bewaard/verstuurd, wissen met bevestiging). Geen naam; buiten STORE ok niets bewaard of verstuurd (en dat wordt gezegd). Punten 2 per plek, hooguit 10 per dag, niet in proef of les. SCHEMA 15 (reports, reportPts). Codereview verwerkt (inert achter het blad, steuntaal in het blad opent geen vertaalmelding, plek per scherm). Test: test-melden.
 - Cache v2-99 (24 november 2026): werkorder stap 7, de leerlijn per vak (docs/ontwerp-stap7-leerlijnen.md, akkoord ontwerpsessie). Tegels Rekenen en Engels op de kaart (2x2 met Ontdek en Spelletje; Onderweg op 375x667 499 px) en onder Meer. Rekenen: zes onderwerpen met namen voor de leerder (Geld en tijd, Getallen, Meten, Verhoudingen en procenten, Tabellen en grafieken, Ruimte en vorm), indeling via goals op items of de goals van een rekenscène (alleen rekenvaardigheden en -regels), Komt nog als één regel. Engels: de Engelse les bovenaan, thema per pakket met merktekens lezen/luisteren/spreken/schrijven. Oefen per onderwerp: hooguit acht, alleen bekend met een oefening, telt als losse herhaling, geen ronde van de dag, minuten bij het eigen vak. Poort: goals is een melding. Lesstof: goals in rk-1 en en-t1 (redactielijn). Codereview verwerkt. Test: test-leerlijn.
 - Cache v2-98 (24 november 2026): lesstof, twaalf extra klankparen (content/nl-klanken.json, redactielijn: schrijver en reviewer sonnet, één herstelronde): slap/slaap, les/lees, vis/vies, zon/zoon, boer/buur, huid/hout, keus/kus, zijn/zien, gat/kat, wijn/fijn, ben/pen, weer/veer; per paar twee keer luisteren (beide richtingen) en één keer horen en opschrijven, met geluid. Afwijking van de gevraagde contrasten op advies van de reviewer: v/f en z/s zijn in het Nederlands van Nederland zwak (veel sprekers zeggen v als f en z als s), daarom w/f (wijn/fijn) en b/p (ben/pen); u/uu als oe/uu (boer/buur, het enige echte minimale paar op A1-A2); ij tegenover ie (zijn/zien), omdat ij en ei hetzelfde klinken. Test samensteller: de belofte alles binnen zeven dagen geldt voor de basis, de extra klankparen komen geleidelijk.

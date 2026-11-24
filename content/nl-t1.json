@@ -90,7 +90,7 @@
     "th": "โรงงาน",
     "en": "factory"
    },
-   "ex": "De fabriek staat in Zwaag.",
+   "ex": "De fabriek staat in de stad.",
    "gap": "Ik maak onderdelen voor auto’s. Ik werk in een ___.",
    "askArt": true
   },
@@ -183,7 +183,7 @@
     "th": "บ้าน",
     "en": "house"
    },
-   "ex": "Ons huis staat in Hoorn.",
+   "ex": "Ons huis staat in het dorp.",
    "gap": "Mijn ___ heeft drie kamers en een kleine tuin.",
    "askArt": true
   },
@@ -322,14 +322,14 @@
    "paras": [
     [
      {
-      "nl": "Mali woont in Hoorn.",
-      "th": "มะลิอาศัยอยู่ที่ฮอร์น",
-      "en": "Mali lives in Hoorn."
+      "nl": "Mali woont in een dorp.",
+      "th": "มะลิอาศัยอยู่ในหมู่บ้านแห่งหนึ่ง",
+      "en": "Mali lives in a village."
      },
      {
-      "nl": "Ze werkt in een fabriek in Zwaag.",
-      "th": "เธอทำงานที่โรงงานแห่งหนึ่งในซวาก",
-      "en": "She works in a factory in Zwaag."
+      "nl": "Ze werkt in een fabriek in de stad.",
+      "th": "เธอทำงานที่โรงงานแห่งหนึ่งในเมือง",
+      "en": "She works in a factory in the city."
      },
      {
       "nl": "Haar dienst begint om zes uur.",
@@ -452,12 +452,12 @@
        "slot": 3
       },
       {
-       "t": "in Zwaag."
+       "t": "in de stad."
       }
      ],
      "tr": {
-      "th": "ฉัน ทำงาน พรุ่งนี้ ที่ซวาก",
-      "en": "I work tomorrow in Zwaag."
+      "th": "ฉัน ทำงาน พรุ่งนี้ ในเมือง",
+      "en": "I work in the city tomorrow."
      }
     },
     {
@@ -475,7 +475,7 @@
        "slot": 1
       },
       {
-       "t": "in Zwaag."
+       "t": "in de stad."
       }
      ],
      "tr": {
@@ -496,7 +496,7 @@
      }
     }
    ],
-   "say": "Ik werk morgen in Zwaag. Morgen werk ik in Zwaag."
+   "say": "Ik werk morgen in de stad. Morgen werk ik in de stad."
   }
  ],
  "exercises": [
@@ -512,12 +512,12 @@
      "Morgen",
      "werk",
      "ik",
-     "in Zwaag."
+     "in de stad."
     ],
     "verb": "werk",
     "tr": {
-     "th": "พรุ่งนี้ฉันทำงานที่ซวาก",
-     "en": "Tomorrow I work in Zwaag."
+     "th": "พรุ่งนี้ฉันทำงานในเมือง",
+     "en": "Tomorrow I work in the city."
     }
    }
   },
@@ -800,7 +800,11 @@
    "items": [],
    "skill": "woorden",
    "data": {
-    "q": "Wat betekent <b>de dienst</b>?",
+    "q": {
+     "nl": "Wat betekent <b>de dienst</b>?",
+     "th": "คำว่า <b>de dienst</b> หมายความว่าอะไร?",
+     "en": "What does <b>de dienst</b> mean?"
+    },
     "a": 0,
     "o": [
      {
@@ -828,7 +832,11 @@
    "items": [],
    "skill": "woorden",
    "data": {
-    "q": "Wat betekent <b>het salaris</b>?",
+    "q": {
+     "nl": "Wat betekent <b>het salaris</b>?",
+     "th": "คำว่า <b>het salaris</b> หมายความว่าอะไร?",
+     "en": "What does <b>het salaris</b> mean?"
+    },
     "a": 1,
     "o": [
      {
@@ -856,7 +864,11 @@
    "items": [],
    "skill": "woorden",
    "data": {
-    "q": "Wat betekent <b>de leidinggevende</b>?",
+    "q": {
+     "nl": "Wat betekent <b>de leidinggevende</b>?",
+     "th": "คำว่า <b>de leidinggevende</b> หมายความว่าอะไร?",
+     "en": "What does <b>de leidinggevende</b> mean?"
+    },
     "a": 2,
     "o": [
      {
@@ -884,12 +896,16 @@
    "items": [],
    "skill": "grammatica",
    "data": {
-    "q": "Welke zin is goed?",
+    "q": {
+     "nl": "Welke zin is goed?",
+     "th": "ประโยคไหนถูกต้อง?",
+     "en": "Which sentence is correct?"
+    },
     "a": 1,
     "o": [
-     "Morgen ik werk in Zwaag.",
-     "Morgen werk ik in Zwaag.",
-     "Morgen werk in Zwaag ik."
+     "Morgen ik werk in de stad.",
+     "Morgen werk ik in de stad.",
+     "Morgen werk in de stad ik."
     ]
    }
   },
@@ -899,7 +915,11 @@
    "items": [],
    "skill": "grammatica",
    "data": {
-    "q": "Kies het goede woord: <i>Hij ___ in Hoorn.</i>",
+    "q": {
+     "nl": "Kies het goede woord: <i>Hij ___ in het dorp.</i>",
+     "th": "เลือกคำที่ถูกต้อง: <i>Hij ___ in het dorp.</i>",
+     "en": "Choose the right word: <i>Hij ___ in het dorp.</i>"
+    },
     "a": 1,
     "o": [
      "woon",
@@ -914,7 +934,11 @@
    "items": [],
    "skill": "grammatica",
    "data": {
-    "q": "Kies het goede woord: <i>Ik blijf thuis, omdat ik ziek ___.</i>",
+    "q": {
+     "nl": "Kies het goede woord: <i>Ik blijf thuis, omdat ik ziek ___.</i>",
+     "th": "เลือกคำที่ถูกต้อง: <i>Ik blijf thuis, omdat ik ziek ___.</i>",
+     "en": "Choose the right word: <i>Ik blijf thuis, omdat ik ziek ___.</i>"
+    },
     "a": 0,
     "o": [
      "ben",
@@ -929,7 +953,11 @@
    "items": [],
    "skill": "luisteren",
    "data": {
-    "q": "Wanneer is de afspraak?",
+    "q": {
+     "nl": "Wanneer is de afspraak?",
+     "th": "นัดหมายคือเมื่อไหร่?",
+     "en": "When is the appointment?"
+    },
     "a": 0,
     "o": [
      "Morgen om 9.30 uur",
@@ -945,7 +973,11 @@
    "items": [],
    "skill": "luisteren",
    "data": {
-    "q": "Wanneer is de winkel dicht?",
+    "q": {
+     "nl": "Wanneer is de winkel dicht?",
+     "th": "ร้านปิดเมื่อไหร่?",
+     "en": "When is the shop closed?"
+    },
     "a": 1,
     "o": [
      "Op zaterdag",
@@ -961,7 +993,11 @@
    "items": [],
    "skill": "lezen",
    "data": {
-    "q": "Hoe laat begint de vroege dienst vanaf maandag?",
+    "q": {
+     "nl": "Hoe laat begint de vroege dienst vanaf maandag?",
+     "th": "กะเช้าเริ่มกี่โมงตั้งแต่วันจันทร์?",
+     "en": "What time does the early shift start from Monday?"
+    },
     "a": 1,
     "o": [
      "Om zes uur",
@@ -977,7 +1013,11 @@
    "items": [],
    "skill": "rekenen",
    "data": {
-    "q": "Je koopt brood van € 2,75 en melk van € 1,30. Hoeveel betaal je?",
+    "q": {
+     "nl": "Je koopt brood van € 2,75 en melk van € 1,30. Hoeveel betaal je?",
+     "th": "คุณซื้อขนมปังราคา € 2,75 และนมราคา € 1,30 ต้องจ่ายทั้งหมดเท่าไหร่?",
+     "en": "You buy bread for € 2,75 and milk for € 1,30. How much do you pay?"
+    },
     "a": 1,
     "o": [
      "€ 3,05",
@@ -992,7 +1032,11 @@
    "items": [],
    "skill": "rekenen",
    "data": {
-    "q": "Een tas kost € 30,00. Je krijgt 50% korting. Wat betaal je?",
+    "q": {
+     "nl": "Een tas kost € 30,00. Je krijgt 50% korting. Wat betaal je?",
+     "th": "กระเป๋าราคา € 30,00 คุณได้ส่วนลด 50% ต้องจ่ายเท่าไหร่?",
+     "en": "A bag costs € 30,00. You get 50% off. What do you pay?"
+    },
     "a": 0,
     "o": [
      "€ 15,00",
@@ -1007,7 +1051,11 @@
    "items": [],
    "skill": "rekenen",
    "data": {
-    "q": "Een recept is voor 4 personen en vraagt 200 gram rijst. Hoeveel rijst heb je nodig voor 6 personen?",
+    "q": {
+     "nl": "Een recept is voor 4 personen en vraagt 200 gram rijst. Hoeveel rijst heb je nodig voor 6 personen?",
+     "th": "สูตรอาหารสำหรับ 4 คน ใช้ข้าว 200 กรัม ถ้าทำสำหรับ 6 คนต้องใช้ข้าวกี่กรัม?",
+     "en": "A recipe is for 4 people and needs 200 grams of rice. How much rice do you need for 6 people?"
+    },
     "a": 1,
     "o": [
      "250 gram",
@@ -1022,7 +1070,11 @@
    "items": [],
    "skill": "rekenen",
    "data": {
-    "q": "Welk getal is het grootst?",
+    "q": {
+     "nl": "Welk getal is het grootst?",
+     "th": "ตัวเลขไหนมากที่สุด?",
+     "en": "Which number is the largest?"
+    },
     "a": 1,
     "o": [
      "0,75",
@@ -1037,7 +1089,11 @@
    "items": [],
    "skill": "engels",
    "data": {
-    "q": "What does <b>appointment</b> mean?",
+    "q": {
+     "nl": "What does <b>appointment</b> mean?",
+     "th": "คำว่า <b>appointment</b> หมายความว่าอะไร?",
+     "en": "What does <b>appointment</b> mean?"
+    },
     "a": 0,
     "lang": "en",
     "o": [
@@ -1066,7 +1122,11 @@
    "items": [],
    "skill": "engels",
    "data": {
-    "q": "Choose: <i>She ___ in a factory.</i>",
+    "q": {
+     "nl": "Choose: <i>She ___ in a factory.</i>",
+     "th": "เลือกคำที่ถูกต้อง: <i>She ___ in a factory.</i>",
+     "en": "Choose: <i>She ___ in a factory.</i>"
+    },
     "a": 1,
     "lang": "en",
     "o": [

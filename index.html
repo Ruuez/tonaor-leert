@@ -21,6 +21,7 @@
 .s-drag{touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.s-sel .s-halo{opacity:1}.s-sel{cursor:grabbing}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .ktiles .tile{min-height:0;padding:10px 12px}
+.onb-hi{font-size:1.15rem;font-weight:700;text-align:center}.onb-lang{font-size:1.25rem;padding:14px}.onb-sup{font-size:1.2rem;font-weight:600;margin:0}
 .gcards{display:grid;grid-template-columns:1fr 1fr;gap:8px}.gcard{min-height:68px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font:inherit;font-size:.9rem;padding:6px;color:var(--ink)}.gcard.open{background:var(--sky)}.gcard.on{background:var(--mint);border-color:var(--mint-fill)}
 .gcoins{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.gcoins button{border:0;font:inherit;cursor:pointer}
 .wereld{position:relative;margin:4px -4px}.wereld-svg{display:block}
@@ -664,7 +665,7 @@ en:{
  "map.none":"There are no places yet.",
  "map.onderweg":"On the way",
  "map.due":"{n} things are waiting to be practised",
- "map.onderwegTip":"The lesson of today: practise what is due, and something new.",
+ "map.onderwegTip":"Review and new words (10 minutes)",
  "map.more":"More",
  "map.moreSub":"Explanations, activities and messages",
  "map.play":"Play",
@@ -696,6 +697,19 @@ en:{
  "game.sum":"Laid: {s}",
  "game.reset":"Start again",
  "game.ready":"Done",
+ "onb2.hi":"Welcome",
+ "onb2.l1":"You learn Dutch, maths and English.",
+ "onb2.l2":"A little every day. Skipping a day is fine.",
+ "onb2.l3":"You cannot do anything wrong: a mistake is practice.",
+ "onb2.level":"How much Dutch do you know already?",
+ "onb2.lv.niets":"Nothing yet",
+ "onb2.lv.beetje":"A little",
+ "onb2.lv.veel":"I can have a conversation",
+ "place.begin":"You start with {area}. That is what we will work on now.",
+ "place.here":"You start here",
+ "map.begin":"Start",
+ "map.newHint":"New: On the way. Here you practise what you have learned.",
+ "map.dueFirst":"First a quick review",
  "ask.btn":"Ask",
  "ask.title":"Ask",
  "ask.coach":"Ask your coach",
@@ -857,7 +871,7 @@ en:{
  "speed.tip":"60 seconds: get as many right as possible. Try to beat your own record.",
  "btn.start":"Start",
  "place.title":"Starting test",
- "place.tip":"15 short questions. Don't know something? Then choose I don't know. That helps the app just as much as an answer.",
+ "place.tip":"At most 15 short questions. Don't know something? Then choose I don't know. That helps the app just as much as an answer.",
  "place.dontKnow":"I don't know",
  "place.thanks":"Thank you!",
  "place.result":"This is what your start looks like. From now on every bar will grow.",
@@ -1343,7 +1357,7 @@ nl:{
  "map.none":"Er zijn nog geen plekken.",
  "map.onderweg":"<b>Onderweg</b>",
  "map.due":"{n} onderdelen wachten op herhaling",
- "map.onderwegTip":"De les van vandaag: ophalen wat aan de beurt is, en iets nieuws.",
+ "map.onderwegTip":"Herhalen en nieuwe woorden (10 minuten)",
  "map.more":"Meer",
  "map.moreSub":"Uitleg, activiteiten en berichten",
  "map.play":"Speel",
@@ -1375,6 +1389,19 @@ nl:{
  "game.sum":"Gelegd: {s}",
  "game.reset":"Opnieuw",
  "game.ready":"Klaar",
+ "onb2.hi":"Welkom",
+ "onb2.l1":"Je leert Nederlands, rekenen en Engels.",
+ "onb2.l2":"Elke dag een beetje. Een dag overslaan mag.",
+ "onb2.l3":"Je kunt niets fout doen: een fout is oefenen.",
+ "onb2.level":"Hoeveel Nederlands ken je al?",
+ "onb2.lv.niets":"Nog niets",
+ "onb2.lv.beetje":"Een beetje",
+ "onb2.lv.veel":"Ik kan al een gesprek voeren",
+ "place.begin":"Je begint bij {area}. Daar gaan we nu mee aan de slag.",
+ "place.here":"Hier begin je",
+ "map.begin":"Begin",
+ "map.newHint":"Nieuw: Onderweg. Hier herhaal je wat je geleerd hebt.",
+ "map.dueFirst":"<b>Eerst even herhalen</b>",
  "ask.btn":"Vraag het",
  "ask.title":"Vraag het",
  "ask.coach":"Vraag je begeleider",
@@ -1536,7 +1563,7 @@ nl:{
  "speed.tip":"60 seconden, zoveel mogelijk goed. Probeer je eigen record te verbeteren.",
  "btn.start":"Start",
  "place.title":"<h2>Startmeting</h2>",
- "place.tip":"15 korte vragen. Weet je iets niet? Kies dan <b>Weet ik niet</b>. Dat helpt de app net zo goed als een antwoord.",
+ "place.tip":"Hooguit 15 korte vragen. Weet je iets niet? Kies dan <b>Weet ik niet</b>. Dat helpt de app net zo goed als een antwoord.",
  "place.dontKnow":"Weet ik niet",
  "place.thanks":"<h2>Dank je wel!</h2>",
  "place.result":"Zo ziet je start eruit. Elke balk gaat vanaf nu groeien.",
@@ -2020,7 +2047,7 @@ th:{
  "map.none":"ยังไม่มีสถานที่",
  "map.onderweg":"ระหว่างทาง",
  "map.due":"มี {n} อย่างรอการทบทวน",
- "map.onderwegTip":"บทเรียนของวันนี้: ทบทวนสิ่งที่ถึงเวลา และเรียนสิ่งใหม่",
+ "map.onderwegTip":"ทบทวนและคำใหม่ (10 นาที)",
  "map.more":"เพิ่มเติม",
  "map.moreSub":"คำอธิบาย กิจกรรม และข้อความ",
  "map.play":"เล่น",
@@ -2052,6 +2079,19 @@ th:{
  "game.sum":"วางแล้ว: {s}",
  "game.reset":"เริ่มใหม่",
  "game.ready":"เสร็จ",
+ "onb2.hi":"ยินดีต้อนรับ",
+ "onb2.l1":"คุณเรียนภาษาดัตช์ คณิตศาสตร์ และภาษาอังกฤษ",
+ "onb2.l2":"ทุกวันนิดหน่อย ข้ามวันได้",
+ "onb2.l3":"คุณทำอะไรผิดไม่ได้ ความผิดพลาดคือการฝึก",
+ "onb2.level":"คุณรู้ภาษาดัตช์มากแค่ไหนแล้ว",
+ "onb2.lv.niets":"ยังไม่รู้เลย",
+ "onb2.lv.beetje":"นิดหน่อย",
+ "onb2.lv.veel":"ฉันพูดคุยได้แล้ว",
+ "place.begin":"คุณเริ่มที่ {area} ตอนนี้เราจะเริ่มฝึกเรื่องนี้",
+ "place.here":"คุณเริ่มที่นี่",
+ "map.begin":"เริ่ม",
+ "map.newHint":"ใหม่: ระหว่างทาง ที่นี่คุณทบทวนสิ่งที่เรียนไปแล้ว",
+ "map.dueFirst":"ทบทวนก่อนสักหน่อย",
  "ask.btn":"ถาม",
  "ask.title":"ถาม",
  "ask.coach":"ถามผู้ดูแลของคุณ",
@@ -2213,7 +2253,7 @@ th:{
  "speed.tip":"60 วินาที ตอบให้ถูกมากที่สุด ลองทำลายสถิติของตัวเอง",
  "btn.start":"เริ่ม",
  "place.title":"การวัดระดับ",
- "place.tip":"15 คำถามสั้นๆ ถ้าไม่รู้ ให้เลือก \"ไม่รู้\" ก็ช่วยแอปได้เหมือนการตอบ",
+ "place.tip":"ไม่เกิน 15 คำถามสั้นๆ ถ้าไม่รู้ ให้เลือก \"ไม่รู้\" ก็ช่วยแอปได้เหมือนการตอบ",
  "place.dontKnow":"ไม่รู้",
  "place.thanks":"ขอบคุณ!",
  "place.result":"นี่คือจุดเริ่มต้นของคุณ ทุกแถบจะเติบโตจากนี้ไป",
@@ -2489,7 +2529,7 @@ const MOTOR={
   extraAfter:2,       // extra oefening na de zoveelste fout van dezelfde soort in een scène. Aanname (docs/scenes.md)
   slotErrShare:.5,    // hooguit dit deel van een open plek op het foutprofiel. Aanname
   // C5 spel: één tot drie minuten (masterplan C5); 60 seconden: aanname
-  gameSeconds:60, gameTurns:{dehet:10,klank:10,klok:8,geld:6,koppel:3}, gameMin:5, gameDefMax:40, gameHintN:2, gameKlank:[500,35,150], gameGeldInstap:2, lijnMax:8, repNoteMax:200, repKeep:100, repPts:2, repDay:10 /* rep: fout melden, toelichting hooguit 200 tekens, hooguit 100 bewaard, 2 punten per plek, hooguit 10 per dag;  lijnMax: Oefen per onderwerp hooguit acht (leerlijn, besluit ontwerpsessie);  spellen: beurten per spel (koppel: rondes van 3 paren), minimaal 5 onderdelen, omschrijving hooguit 40 tekens, vorm vooraf de eerste 2 keer, pauze klankduel 500 ms min 35 per beurt tot 150 (aanname, te toetsen bij G4) */,
+  gameSeconds:60, gameTurns:{dehet:10,klank:10,klok:8,geld:6,koppel:3}, gameMin:5, gameDefMax:40, gameHintN:2, gameKlank:[500,35,150], gameGeldInstap:2, lijnMax:8, repNoteMax:200, repKeep:100, repPts:2, repDay:10, starterDays:14, starterLow:.34, placeStop:2 /* start: beginnersstart 14 dagen, voor onderdelen onder 0,34 bij Een beetje, meting stopt na 2 keer niet weten;  rep: fout melden, toelichting hooguit 200 tekens, hooguit 100 bewaard, 2 punten per plek, hooguit 10 per dag;  lijnMax: Oefen per onderwerp hooguit acht (leerlijn, besluit ontwerpsessie);  spellen: beurten per spel (koppel: rondes van 3 paren), minimaal 5 onderdelen, omschrijving hooguit 40 tekens, vorm vooraf de eerste 2 keer, pauze klankduel 500 ms min 35 per beurt tot 150 (aanname, te toetsen bij G4) */,
   listenFade:3, listenRead:25, listenFast:1.15,   // werkvormen 3.1: meelezen in de eerste 3 scènes met een luistertekst; examenvorm 25 s leestijd (scenes.md); iets sneller = 1,15. 3 en 1,15 zijn een aanname
   recMax:60, stepsFade:[2,5],   // rekenen in stappen: vanaf 2 keer zonder vraag en gegevens, vanaf 5 keer alleen rekenen en klopt (aanname, te toetsen bij G4 groep 2)
   recKeep:30, voxKeep:1000, voxMax:10,   // inspreekhulp (docs/ontwerp-inspreekhulp.md): hooguit 1000 ingesproken zinnen (alle kernzinnen passen), 10 s per zin
@@ -2602,7 +2642,7 @@ function buildLists(){
   STORY=tx?{title:SAFE(tx.title.nl),th:SAFE(tx.title.th),en:SAFE(tx.title.en),lines:tx.paras.flat().map(s=>[RAW(s.nl),SAFE(s.th),SAFE(s.en)]),
     q:exList('nl',e=>e.form==='mc'&&e.text===tx.id).map(e=>({q:SAFE(e.data.q.nl),th:SAFE(e.data.q.th),en:SAFE(e.data.q.en),o:e.data.o.map(RAW),a:e.data.a}))}:null;
   // startmeting: vraag rauw (SAFE), opties en leestekst met esc() (RAW), say voorgelezen (RAW)
-  PLACE=PACKS.flatMap(p=>((p.tests&&p.tests.placement)||[]).map(id=>({e:EXS[id],p}))).filter(o=>o.e).map(({e,p})=>{const d=e.data,q=SAFE(typeof d.q==='string'?d.q:d.q.nl),o={sk:e.skill,q:d.lang==='en'?`<span lang="en">${q}</span>`:q,a:d.a};
+  PLACE=PACKS.flatMap(p=>((p.tests&&p.tests.placement)||[]).map(id=>({e:EXS[id],p}))).filter(o=>o.e).map(({e,p})=>{const d=e.data,q=typeof d.q==='string'?SAFE(d.q):TKx(d.q,'nl'),o={sk:e.skill,q:d.lang==='en'?`<span lang="en">${q}</span>`:q,a:d.a};   /* start: de vraag ook in de steuntaal (TKx maakt hem veilig) */
     if(d.show==='sup'){o.oNl=d.o.map(x=>RAW(x.nl));o.th=d.o.map(x=>RAW(x.th));o.en=d.o.map(x=>RAW(x.en))}else o.o=d.o.map(RAW);
     if(d.say)o.say=RAW(d.say);if(e.text){const t=(p.texts||[]).find(t=>t.id===e.text);if(t)o.text=t.paras.flat().map(s=>typeof s==='string'?s:s.nl).join(' ')}return o});
 
@@ -2724,6 +2764,7 @@ function pairOf(id){const key=NL.length+'/'+EN.length;if(!PAIRMAP||PAIRKEY!==key
 function pairBlocked(id){const o=pairOf(id);if(!o)return false;const it=S.items[o];return !!it&&typeof it.f1==='number'&&Math.floor(now()/DAY)-it.f1<MOTOR.pairDays}
 function newWords(cap,step,words,q,later){const busy=Object.keys(S.items).filter(id=>thirsty(id)&&!rests(id)).length>MOTOR.busyMax;if(busy){if((S.newLog||{})[today()]||NEWPLAN)return;cap=Math.min(cap,MOTOR.busyNew)}   /* H4: ook bij veel herhaling elke dag iets nieuws (hooguit MOTOR.busyNew) */
   const inQ=new Set(q.filter(x=>x.w).map(x=>x.w.id)),nw=words.filter(w=>!S.introduced.includes(w.id)&&!inQ.has(w.id)&&!CHAPTER.has(w.id)&&!pairBlocked(w.id)).slice(0,Math.max(0,Math.min(cap,newLeft()-NEWPLAN)));NEWPLAN+=nw.length;
+  if((typeof starterOn==='function'?starterOn:()=>false)(nw[0]&&EN.includes(nw[0])?'engels':'woorden')){nw.forEach(w=>q.push({type:'learn',step,w,_new:1}));nw.forEach(w=>later.push({type:'recog',step,w,_new:1}));nw.forEach(w=>later.push({type:'recall',step,w,_new:1}));return}   /* beginnersstart: eerst tonen, dan kiezen, dan typen (geen raadvraag vooraf) */
   nw.forEach(w=>{q.push({type:'recall',step,w,_probe:1,_new:1});q.push({type:'learn',step,w,_ifUnknown:1,_new:1})});   // vraag en leerkaart om en om
   let speak=false;try{speak=typeof window!=='undefined'&&!!window.speechSynthesis&&!QUIET}catch(e){}
   shuffle(nw).forEach((w,i)=>later.push({type:i%2?(speak?'hear':'recall'):'recog',step,w,_ifUnknown:1,_new:1}))}   // tweede ontmoeting in wisselende vorm
@@ -2915,14 +2956,14 @@ function fresh(){
   const items={};[...NL,...EN,...REK].forEach(x=>items[x.id]=item());
   return {v:2,onboarded:false,thai:'altijd',size:'normaal',goal:'normaal',moment:null,items,introduced:[],
     points:{},days:{},mins:{},help:[],answers:[],conf:[],sessions:0,talks:0,story:0,speedBest:0,
-    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,gameBest:{},dhOk:{},reports:[],reportPts:{},seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
+    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,gameBest:{},dhOk:{},reports:[],reportPts:{},starter:null,startLevel:null,kHint:0,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
 }
 /* ============ opslag veilig laden (#30) ============
    S.v blijft 2. S.schema telt de vorm van de opslag (zonder veld = 1). Elke stap n -> n+1 staat in MIGRATE en mag vaker draaien.
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=15,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=16,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2938,6 +2979,7 @@ const MIGRATE={
  11:s=>{if(!s.homeSet){s.home='kaart';s.homeSet=true}return s},
  12:s=>{if(!s.gameBest||typeof s.gameBest!=='object'||Array.isArray(s.gameBest))s.gameBest={};return s},
  13:s=>{if(!s.dhOk||typeof s.dhOk!=='object'||Array.isArray(s.dhOk))s.dhOk={};return s},
+ 15:s=>{if(!('starter' in s))s.starter=null;if(!('startLevel' in s))s.startLevel=null;if(!('kHint' in s))s.kHint=0;return s},   // de makkelijke start: bestaande leerders null, dus voor hen verandert niets
  14:s=>{if(!Array.isArray(s.reports))s.reports=[];if(!s.reportPts||typeof s.reportPts!=='object'||Array.isArray(s.reportPts))s.reportPts={};return s}   // fout melden: de wachtrij op het toestel en de meldpunten per dag   // de of het: per woord de goede beurten in het spel (afbouw van de vorm over de dagen)   // spellen: record per spel (seconden); speedBest blijft staan   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
@@ -3226,37 +3268,29 @@ function paint(html){{const ks=document.getElementById('kSheet');if(ks){ks.remov
 
 /* ============ welkom ============ */
 let onb=0;
-function vOnboard(){
+function vOnboard(){   /* de makkelijke start (docs/ontwerp-start.md): taal, kort welkom, hoeveel Nederlands; dan direct de eerste les of een korte meting */
   $('#nav').hidden=true;app.classList.add('sess');
+  const sup=S.thai!=='uit',big=k=>sup?`<p class="onb-sup" ${supAttr()}>${esc(String(ts(k)).replace(/<[^>]*>/g,''))}</p><p class="small muted" lang="nl">${esc(String(t(k)).replace(/<[^>]*>/g,''))}</p>`:`<p class="onb-sup" lang="nl">${esc(String(t(k)).replace(/<[^>]*>/g,''))}</p>`;   // op de startschermen de steuntaal groot, het Nederlands klein eronder
   const pages=[
-   ()=>`<svg class="onb-art" viewBox="0 0 320 170" aria-hidden="true"><rect width="320" height="170" rx="24" fill="var(--mint)"/><circle cx="250" cy="50" r="26" fill="var(--apricot-fill)"/><path d="M0 140c80-30 200-30 320 0v30H0z" fill="var(--mint-fill)" opacity=".8"/>${[60,110,160,210].map((x,i)=>`<g transform="translate(${x} ${120-(i%2)*10})"><path d="M0 30V0" stroke="var(--mint-ink)" stroke-width="3" stroke-linecap="round"/><path d="M0 15c-8-2-12-6-12-12 8 0 12 5 12 12z" fill="var(--mint-ink)" opacity=".5"/><circle cx="0" cy="-5" r="7" fill="${['var(--lilac-fill)','var(--sky-fill)','var(--apricot-fill)','var(--lilac-fill)'][i]}"/></g>`).join('')}</svg>
-     ${T('onb.welcome')}
-     <p>${T('onb.intro')}</p>
-     <p class="muted">${T('onb.garden')}</p>
-     <div class="stack-sm"><span class="small muted">${T('me.supLang')}</span>${langPicker()}</div>
-     <div class="stack-sm">${nameField()}</div>`,
-   ()=>`${T('onb.when')}
-     <p>${T('onb.when.tip')}</p>
-     <div class="chips" role="group" aria-label="Moment">${['ochtend','pauze','middag','avond'].map(k=>`<button data-m="${k}" aria-pressed="${S.moment===k}">${TB('moment.'+k)}</button>`).join('')}</div>
-     <div class="note sky">${T('plan.mine',{moment:S.moment?momentText(S.moment):'…'})}</div>`,
-   ()=>`${T('onb.howMuch')}
-     <div class="seg" role="group" aria-label="${esc(t('sup.show'))}">${[['altijd','show.always'],['tik','show.tap'],['uit','show.off']].map(([k,l])=>`<button data-th="${k}" aria-pressed="${S.thai===k}">${TB(l)}</button>`).join('')}</div>
-     <p class="muted small">${T('onb.howMuch.tip')}</p>`,
-   ()=>`${T('onb.place')}
-     <p>${T('onb.place.tip')}</p>
-     <div class="note">${T('onb.place.note')}</div>`
+   ()=>`<p class="onb-hi">${['nl','th','en'].map(l=>`<span lang="${LANG[l]?LANG[l].tag:l}">${esc(String(tr('onb2.hi',l)||'').replace(/<[^>]*>/g,''))}</span>`).join(' · ')}</p><div class="stack-sm">${SUPPORT.map(k=>`<button class="btn btn-ghost onb-lang" data-onl="${k}" lang="${LANG[k].tag}">${LANG[k].name[k]}</button>`).join('')}<button class="btn btn-ghost onb-lang" data-onl="nl" lang="nl">Nederlands</button></div>`,
+   ()=>`<div class="stack">${[['onb2.l1','📚'],['onb2.l2','🌱'],['onb2.l3','🙂']].map(([k,i])=>`<div class="row" style="gap:12px;align-items:flex-start"><span aria-hidden="true" style="font-size:1.6rem">${i}</span><div>${big(k)}</div></div>`).join('')}</div><div class="stack-sm">${nameField()}</div>`,
+   ()=>`${big('onb2.level')}<div class="stack-sm">${['niets','beetje','veel'].map(k=>`<button class="btn btn-ghost onb-lang" data-lv="${k}">${sup?`<span ${supAttr()}>${esc(String(ts('onb2.lv.'+k)).replace(/<[^>]*>/g,''))}</span> <span class="small muted" lang="nl">${esc(String(t('onb2.lv.'+k)).replace(/<[^>]*>/g,''))}</span>`:esc(String(t('onb2.lv.'+k)).replace(/<[^>]*>/g,''))}</button>`).join('')}</div>`
   ];
+  if(onb>2)onb=2;
   paint(`<div class="card stack" style="padding:22px">${pages[onb]()}</div>
    <div class="dots" aria-hidden="true">${pages.map((_,i)=>`<i class="${i===onb?'on':''}"></i>`).join('')}</div>
-   ${onb<3?`<button class="btn btn-leaf" id="nx">${T('btn.next')}</button>`:`<button class="btn btn-main" id="go">${T('onb.startTest')}</button><button class="linkish" id="later">${T('onb.later')}</button>`}
+   ${onb===1?`<button class="btn btn-leaf" id="nx">${TB('btn.next')}</button>`:''}
    ${onb>0?`<button class="linkish muted" id="bk">${T('btn.back')}</button>`:''}`);
-  app.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{S.moment=b.dataset.m;save();vOnboard()});
-  app.querySelectorAll('[data-th]').forEach(b=>b.onclick=()=>{setThai(b.dataset.th);vOnboard()});
-  if($('#nx'))$('#nx').onclick=()=>{onb++;vOnboard();window.scrollTo(0,0)};
+  app.querySelectorAll('[data-onl]').forEach(b=>b.onclick=()=>{const k=b.dataset.onl;if(k==='nl')setThai('uit');else{setSup(k);if(S.thai==='uit')setThai('altijd')}onb=1;vOnboard();window.scrollTo(0,0)});
+  app.querySelectorAll('[data-lv]').forEach(b=>b.onclick=()=>{const lv=b.dataset.lv;S.startLevel=lv;S.starter=lv==='veel'?null:now();if(S.thai!=='uit')setThai(lv==='veel'?'tik':'altijd');S.onboarded=true;save();
+    if(lv==='niets'){show('vandaag');const sc=nextScene();if(sc)startScene(sc)}else startPlacement()});   // Nog niets: direct de eerste les; anders eerst een korte meting
+  if($('#nx'))$('#nx').onclick=()=>{const n=$('#pname');if(n){S.profile=S.profile||{};S.profile.name=String(n.value||'').trim().slice(0,40);save()}onb++;vOnboard();window.scrollTo(0,0)};
   if($('#bk'))$('#bk').onclick=()=>{onb--;vOnboard()};
-  if($('#go'))$('#go').onclick=()=>{S.onboarded=true;save();startPlacement()};
-  if($('#later'))$('#later').onclick=()=>{S.onboarded=true;save();show('vandaag')};
 }
+/* de beginnersstart: twee weken; bij Een beetje alleen voor de onderdelen met een lage uitslag */
+const STARTAREA={nl:['woorden','grammatica','luisteren','lezen'],kn:['woorden','luisteren','lezen'],grammatica:['grammatica'],leestekens:['grammatica'],rk:['rekenen'],rekenen:['rekenen'],en:['engels']};   /* vak of onderwerp van een scène: de onderdelen van de startmeting */
+function starterOn(area){if(!S.starter||now()-S.starter>MOTOR.starterDays*DAY)return false;if(S.startLevel==='niets')return true;if(S.startLevel!=='beetje')return false;if(!S.placement||!S.placement.lv)return true;   /* meting afgebroken: dan geldt de beginnersstart overal */
+  const lv=S.placement.lv,low=k=>(lv[k]||0)<MOTOR.starterLow;return (STARTAREA[area]||(area?[area]:['woorden','grammatica','luisteren','lezen'])).some(low)}
 
 /* ============ vandaag ============ */
 function weekDots(){const d=new Date(),dow=(d.getDay()+6)%7,mon=today()-dow*DAY,names=['ma','di','wo','do','vr','za','zo'];let done=0,html='';
@@ -3488,7 +3522,8 @@ function sceneQ(sc,hard){const isLes=LESSEN.some(l=>(l.scenes||[]).includes(sc))
   const push=x=>{if(x)q.push(x)};
   sc.steps.forEach((st,k)=>{try{const step=ph[st.type]||3,base={sc,st,step,vak};   /* codereview B5: een kapotte stap valt weg, de scène niet */
     if(st.type==='look')q.push({...base,type:'sc_look'});
-    else if(st.type==='quiz')st.q.forEach((qq,i)=>push(ask({...base,step:qph[st.role]||3},qq,sc.id+'#z'+k+'.'+i,{role:st.role,_skipKnown:st.role==='ophalen'})));   // instap goed: ophalen van dat onderdeel valt weg
+    else if(st.type==='quiz')st.q.forEach((qq,i)=>{if(st.role==='instap'&&(typeof starterOn==='function'?starterOn:()=>false)(sc.subject||vak)&&!(qq.items||[]).some(id=>S.items[id]&&S.items[id].reps>0))return;   /* beginnersstart: niets op te halen wat nog nooit gezien is */
+      push(ask({...base,step:qph[st.role]||3},qq,sc.id+'#z'+k+'.'+i,{role:st.role,_skipKnown:st.role==='ophalen'}))});   // instap goed: ophalen van dat onderdeel valt weg
     else if(st.type==='rule'){q.push({...base,type:'sc_rule',items:st.items.slice(),_skipKnown:1});st.q.forEach((qq,i)=>push(ask(base,qq,sc.id+'#r'+k+'.'+i,{role:'rule',_skipKnown:1,_rule:st.items[0]})))}
     else if(st.type==='speak')q.push({...base,type:'sc_speak',items:st.items.slice(),exid:sc.id+'#s'+k});
     else if(st.type==='game')q.push({...base,type:'sc_game',items:st.items.slice(),exid:sc.id+'#g'+k});
@@ -3530,7 +3565,7 @@ H.sc_intro=q=>{const sc=q.sc,pu=scPurpose(sc,'first');scFrame(q,`<div class="car
 function tikPack(sc){return PACKS.find(p=>(p.scenes||[]).includes(sc))||null}
 function tikWords(pack){const L=supL(),m={},list=[];if(pack){(pack.requires||[]).forEach(id=>{const r=PACKS.find(o=>o.id===id&&o.learn===pack.learn);if(r)list.push(...(r.items||[]))});list.push(...(pack.items||[]))}   /* ook woorden uit eerdere pakketten (requires): die kunnen nog onbekend zijn */
   list.forEach(x=>{if(x&&(x.kind==='word'||x.kind==='phrase')&&typeof x.w==='string'&&!/\s/.test(x.w.trim())&&x.tr&&x.tr[L])m[x.w.trim().toLowerCase()]=x});return m}
-function tikNoSup(q){return !!(q.hard||(q.sc&&q.sc.nosup)||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle')))}   /* gelijk aan nos in sc_q: waar de steuntaal bewust uit staat, ook niet via aantikken (codereview N-M1 2) */
+function tikNoSup(q){return !!(q.hard||(q.sc&&q.sc.nosup)||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle')&&!(typeof starterOn==='function'?starterOn:()=>false)((q.sc&&q.sc.subject)||q.vak||'nl')))}   /* gelijk aan nos in sc_q: waar de steuntaal bewust uit staat, ook niet via aantikken (codereview N-M1 2) */
 function tikify(root,q){if(!root||!q||nlOnly()||tikNoSup(q))return;const sc=q.sc,skip=q.items,pack=tikPack(sc),W=tikWords(pack);root._tkDone=root._tkDone||new Set();(skip||[]).forEach(id=>{for(const k in W)if(W[k].id===id)delete W[k]});   /* skip: wat de vraag zelf oefent, anders verraadt aantikken het antwoord */if(!Object.keys(W).length)return;
   root.querySelectorAll('.nl,[lang="nl"]').forEach(el=>{if(el.closest('.sup,button,.tikp'))return;
     const walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),nodes=[];let n;while((n=walk.nextNode()))if(!n.parentElement.closest('button,.sup'))nodes.push(n);
@@ -3681,7 +3716,7 @@ function scNum(v){const t=String(v).toLowerCase().trim(),sg=/^(?:-|min\s+|[−�
 function scLoose(a,v){const A=scNorm(a),V=scNorm(v),noArt=x=>x.replace(/^(de|het|een) /,''),m=/^(\d+(?:[.,]\d+)?) [a-z]+$/.exec(A);const nA=scNum(A),nV=scNum(V),aA=/^(de|het|een) /.exec(A),aV=/^(de|het|een) /.exec(V);return (noArt(A)===noArt(V)&&(!aA||!aV||aA[1]===aV[1]))||(isFinite(nA)&&isFinite(nV)&&Math.abs(nA-nV)<1e-9)||(!!m&&/^\d+(?:[.,]\d+)?$/.test(V)&&scNum(m[1])===scNum(V))}   /* review dokter 5: in de zwaardere vorm (typen i.p.v. kiezen) telt keel voor de keel en 45 voor 45 minuten */
 const scNorm=a=>String(a).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’‘`]/g,"'").replace(/\s+/g,' ').replace(/[.!?]+$/,'').replace(/(\d)\s*[x*×·]\s*(\d)/g,'$1×$2').trim();   /* review dokter 6: × staat niet op het toetsenbord, x of * mag ook */
 function scSrc(st){const b=(st&&st.sources)||[];if(!b.length)return '';return `<p class="small muted">${T('scene.source')} ${b.map(x=>{const ti=typeof x==='string'?x:plainX(x.title!=null?x.title:x.t,'nl'),u=x&&typeof x==='object'&&/^https:\/\/[^\s"'<>]+$/.test(x.url||'')?x.url:'';return u?`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(ti)}</a>`:esc(ti)}).join(' · ')}</p>`}
-H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=(q.hard||!!(STEER&&STEER.bored))&&qq.answer!=null&&String(qq.answer).trim().split(/\s+/).length<=3&&(qq.form==='choose'||qq.form==='hear'),   /* lange antwoorden blijven kiezen */f=typeIt?(qq.form==='hear'?'hear-type':'type'):qq.form,help=!!(STEER&&STEER.hard&&!(q.st&&q.st.exam)),nos=!help&&!!(q.hard||sc.nosup||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle'))),   /* MO-M6: twee keer te moeilijk bij scènes: de steuntaal meteen aan, behalve in examenvorm */inst=q.role==='instap'&&S.items[id]&&S.items[id].reps===0;let first=true,done=false;
+H.sc_q=q=>{const sc=q.sc,qq=q.qq,id=q.items[0],typeIt=(q.hard||!!(STEER&&STEER.bored))&&qq.answer!=null&&String(qq.answer).trim().split(/\s+/).length<=3&&(qq.form==='choose'||qq.form==='hear'),   /* lange antwoorden blijven kiezen */f=typeIt?(qq.form==='hear'?'hear-type':'type'):qq.form,help=!!(STEER&&STEER.hard&&!(q.st&&q.st.exam)),nos=!help&&!!(q.hard||sc.nosup||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle')&&!(typeof starterOn==='function'?starterOn:()=>false)((q.sc&&q.sc.subject)||q.vak||'nl'))),   /* MO-M6: twee keer te moeilijk bij scènes: de steuntaal meteen aan, behalve in examenvorm */inst=q.role==='instap'&&S.items[id]&&S.items[id].reps===0;let first=true,done=false;
   let hint=0;const opts=f==='choose'||f==='hear'?shuffle(qq.opts.map((o,i)=>({...o,i}))):null,heard=f==='hear'||f==='hear-type'?(qq.say||((qq.opts||[]).find(o=>o.r==='ok')||{}).t||[].concat(qq.answer)[0]||''):'',hintOk=Array.isArray(qq.hint)&&qq.role!=='controle'&&q.role!=='controle'&&q.role!=='instap'&&!q.hard;
   scFrame(q,`<div class="card stack">${q.ctx==='read'?`<div class="note">${scT(q.st.text)}</div>${scSrc(q.st)}`:q.ctx==='listen'?lisHtml(q):''}${f==='hear'||f==='hear-type'?speakBtns('hp','hps'):''}<p class="prompt" id="ask">${nos?scN(qq.ask):scT(qq.ask)}</p>
    ${opts?`<div class="choices one">${opts.map(o=>`<button class="choice" data-o="${o.i}">${esc(o.t)}</button>`).join('')}</div>`:`<input id="ans" class="input" lang="nl" ${f==='number'?'inputmode="decimal"':''} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">${hintOk?`<div class="hint-row"><button class="hintbtn" id="hint">${T('btn.hint')}</button><span class="hintshow" id="hs" aria-live="polite"></span></div>`:''}<button class="btn btn-leaf" id="chk">${T('btn.check')}</button>`}<div id="fb"></div></div>`);
@@ -3741,7 +3776,7 @@ function numFmt(x,eur){return eur?(+(Math.round(x+'e2')+'e-2')).toFixed(2).repla
 function isEur(s){return /€|euro/i.test(String(s==null?'':s))}
 function numIn(v){if(String(v==null?'':v).trim()==='')return null;const n=scNum(v);return isNaN(n)?null:n}   /* codereview: zoals de andere rekenvragen (1.000, 5 euro, min) */
 const NUMEPS=.005;   // een vak is goed tot op twee decimalen
-H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f],sc=q.sc,nos=!!(q.hard||(sc&&sc.nosup)||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle'))),inst=q.role==='instap'&&S.items[q.items[0]]&&S.items[q.items[0]].reps===0;let first=true,done=false;
+H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f],sc=q.sc,nos=!!(q.hard||(sc&&sc.nosup)||(!(typeof LES!=='undefined'&&LES)&&(q.role==='instap'||q.role==='controle')&&!(typeof starterOn==='function'?starterOn:()=>false)((q.sc&&q.sc.subject)||q.vak||'nl'))),inst=q.role==='instap'&&S.items[q.items[0]]&&S.items[q.items[0]].reps===0;let first=true,done=false;
   const end=(res,msg)=>{done=true;const e=qq.err;score(res===true,10);if(res===true&&SCN&&SCN.sc===sc)SCN.good++;   // codereview M2: dezelfde rol in de scène als sc_q
     if(q.role==='controle'&&SCN){if(res===false)later(()=>{SCN.ctrl=false});else SCN.ctrl=SCN.ctrl!==false&&res===true}
     if(res===false)later(()=>scFault(q,e));if(q.role==='instap'&&res===true)scKnow(q);else if(!(inst&&res===false))practiced(q,res,code);$('#fb').innerHTML=fbBox(res!==false,msg,'')+nextBtn();$('#nx').onclick=next};
@@ -4202,11 +4237,12 @@ function startPlacement(){if(!PLACE.length)return toast(tx('pack.none'));
   PL={};const q=[{type:'card',label:'Startmeting',btn:'btn-main',html:`${T('place.title')}<p>${T('place.tip')}</p>`}];
   PLACE.forEach(p=>q.push({type:'place',p}));q.push({type:'placeend'});runSession('Startmeting',q);
 }
-H.place=q=>{const sl=!nlOnly()&&Array.isArray(L_(q.p)),p={...q.p,o:nlOnly()&&q.p.oNl?q.p.oNl:sl?L_(q.p):(q.p.o||q.p.oNl)};
+H.place=q=>{{const r0=PL[q.p.sk];if(S.startLevel!=='veel'&&r0&&r0.miss>=MOTOR.placeStop)return next()}   /* start: een onderdeel stopt na twee keer niet weten of fout */
+  const sl=!nlOnly()&&Array.isArray(L_(q.p)),p={...q.p,o:nlOnly()&&q.p.oNl?q.p.oNl:sl?L_(q.p):(q.p.o||q.p.oNl)};
   frame(`<div class="card stack">${p.text?`<div class="example">${esc(p.text)}</div>`:''}${p.say?speakBtns('sp','sps'):''}<p class="prompt" style="font-size:1.25rem">${p.q}</p>
-  <div class="choices one">${p.o.map((o,i)=>`<button class="choice" data-i="${i}"${sl&&supL()!=='en'?' '+supAttr():''}>${esc(o)}</button>`).join('')}<button class="choice" data-i="-1" style="font-size:1rem;color:var(--ink-2)">${T('place.dontKnow')}</button></div></div>`,`Startmeting · ${qi} van ${PLACE.length}`);
+  <div class="choices one">${p.o.map((o,i)=>`<button class="choice" data-i="${i}"${sl&&supL()!=='en'?' '+supAttr():''}>${esc(o)}</button>`).join('')}<button class="choice" data-i="-1" style="font-size:1rem;color:var(--ink-2)">${T('place.dontKnow')}</button></div></div>`,`Startmeting · ${Object.values(PL).reduce((a,x)=>a+x.n,0)+1}`);   /* start: geen teller die verspringt als een onderdeel stopt */
   if(p.say){setTimeout(()=>say(p.say),350);$('#sp').onclick=()=>say(p.say);$('#sps').onclick=()=>say(p.say,true)}
-  app.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{const r=PL[p.sk]||(PL[p.sk]={g:0,n:0});r.n++;if(+b.dataset.i===p.a)r.g++;next()})};
+  app.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{const r=PL[p.sk]||(PL[p.sk]={g:0,n:0,miss:0});r.n++;if(+b.dataset.i===p.a)r.g++;else r.miss=(r.miss||0)+1;next()})};
 /* startmeting gebruiken (docs/herhaalmodel.md sectie 9): bij een hoge score (vanaf 0,67) komen de basisonderdelen van die vaardigheid
    binnen als plantje (s 2, over 2 dagen gecontroleerd), met placed. Alleen onderdelen zonder voortgang; bestaande voortgang blijft staan. */
 function placeFromLevels(lv){const hi=k=>((lv||{})[k]||0)>=.67,ids=(learn,kinds)=>PACKS.filter(p=>p.learn===learn).flatMap(p=>p.items||[]).filter(x=>kinds.includes(x.kind)).map(x=>x.id);
@@ -4216,15 +4252,17 @@ function placeFromLevels(lv){const hi=k=>((lv||{})[k]||0)>=.67,ids=(learn,kinds)
   if(hi('luisteren'))ids('nl',['sound']).forEach(mark);
   if(hi('rekenen'))REK.forEach(x=>mark(x.id));
   if(hi('engels')){EN.slice(0,4).forEach(w=>mark(w.id));ids('en',['rule','sound']).forEach(mark)}}
-H.placeend=q=>{const lv={};Object.keys(PL).forEach(k=>lv[k]=PL[k].g/PL[k].n);S.placement={t:now(),lv};
+H.placeend=q=>{   /* start: geen 0%-balken, maar Hier begin je; de zin over groeiende balken alleen als er een balk is */
+  const lv={};Object.keys(PL).forEach(k=>lv[k]=S.startLevel!=='veel'&&PL[k].miss>=MOTOR.placeStop?0:PL[k].g/PL[k].n);   /* een gestopt onderdeel telt als 0 */S.placement={t:now(),lv};
   placeFromLevels(lv);
   addPts(20);finishTime();save();
   const names=['woorden','grammatica','luisteren','lezen','rekenen','engels'];
-  frame(`<div class="card stack">${T('place.thanks')}<p>${T('place.result')}</p>
-   ${names.map(k=>`<div class="skill"><span>${T('skill.'+k)}</span><span class="track"><i style="width:${Math.max(6,(lv[k]||0)*100)}%;background:${k==='engels'?'var(--sky-fill)':k==='rekenen'?'var(--apricot-fill)':'var(--mint-fill)'}"></i></span><span class="num small muted">${Math.round((lv[k]||0)*100)}%</span></div>`).join('')}
+  frame(`<div class="card stack">${T('place.thanks')}${names.some(k=>lv[k]>0)?`<p>${T('place.result')}</p>`:''}
+   ${(k=>k?`<p class="prompt">${T('place.begin',{area:l=>esc(String(tr('skill.'+k,l)||t('skill.'+k)).replace(/<[^>]*>/g,''))})}</p>`:'')(names.find(k=>!(lv[k]>0)))}
+   ${names.map(k=>`<div class="skill"><span>${T('skill.'+k)}</span>${lv[k]>0?`<span class="track"><i style="width:${Math.max(6,lv[k]*100)}%;background:${k==='engels'?'var(--sky-fill)':k==='rekenen'?'var(--apricot-fill)':'var(--mint-fill)'}"></i></span><span class="num small muted">${Math.round(lv[k]*100)}%</span>`:`<span class="pill pill-mint small">${T('place.here')}</span>`}</div>`).join('')}
    <div class="note sky">${T('place.result.note')}</div></div>
    <button class="btn btn-main" id="home">${T('place.toFirst')}</button>`,'Klaar');
-  petals();$('#home').onclick=()=>show('vandaag')};
+  petals();$('#home').onclick=()=>{show('vandaag');const sc=nextScene();if(sc)startScene(sc)}};   /* start: Naar mijn eerste les start de eerste scène */
 
 /* ============ losse schermen ============ */
 function sub(k,html){{const st={'page.talk':'out','page.diary':'out','page.watch':'in','page.buddha':'in'}[k];if(st)app.dataset.strand=st;else delete app.dataset.strand}   /* M6: activiteiten buiten een sessie (codereview M6 1) */
@@ -4352,10 +4390,15 @@ function vKaart(){if(!S.onboarded)return vOnboard();
   let vis=-1;P0.forEach((p,i)=>{if(p.state!=='far')vis=i});const P=P0.slice(0,Math.min(P0.length,vis+1+KFAR)),rest=P0.length-P.length;
   const R=WereldVis.render(P.map(p=>({vak:p.vak,state:p.state,dots:p.dots})),S.fig),lbl=p=>esc(String(t('map.place',{name:p.title,d:p.nd,n:p.dots.length})).replace(/<[^>]*>/g,''));
   const pl=P.map((p,i)=>p.state==='far'?'':`<button class="w-pl${p.state==='cur'?' cur':''}" data-pl="${i}" style="left:${(R.pos[i].x/R.w*100).toFixed(2)}%;top:${(R.pos[i].y/R.h*100).toFixed(2)}%" aria-label="${lbl(p)}"><span class="w-name" aria-hidden="true">${esc(p.title)}</span></button>`).join('');
+  const day1=!!cur&&!!S.startLevel&&!Object.keys((S.world&&S.world.done)||{}).length,dueFirst=due>0&&!day1,hint=!day1&&!!S.startLevel&&!S.kHint;if(hint){S.kHint=1;save()}   /* start: dag 1 alleen de groet en de eerste plek; daarna één keer aanwijzen wat erbij kwam */
+  const weg=`<button class="card row between" id="kWeg" style="background:var(--sky);border-color:var(--sky-fill);text-align:left"><span style="display:flex;flex-direction:column;gap:2px">${dueFirst?T('map.dueFirst'):T('map.onderweg')}<span class="small muted">${due?T('map.due',{n:due}):T('map.onderwegTip')}</span></span>${due?`<span class="pill pill-sky num" style="background:var(--surface)">${due}</span>`:''}</button>`;
+  if(day1){paint(`<header class="top"><div>${bi(`<h1>${h}${nm()?', '+nm():''}</h1>`,ht)}</div>${thaiSwitch()}</header>${cur?`<section class="card stack kcur"><b>${esc(cur.title)}</b><button class="btn btn-main" id="kGo">${TB('map.begin')}</button></section>`:''}${P.length?`<div class="wereld">${R.svg}${pl}</div>`:''}`);if($('#kGo'))$('#kGo').onclick=()=>startScene(ns);app.querySelectorAll('[data-pl]').forEach(b=>b.onclick=()=>kSheet(P[+b.dataset.pl],b));KPLACE=ci>=0?ci:KPLACE;return}
   paint(`<header class="top"><div>${bi(`<h1>${h}${nm()?', '+nm():''}</h1>`,ht)}</div>${thaiSwitch()}</header>
+  ${hint?`<div class="note sky" role="status">${T('map.newHint')}</div>`:''}${S.startLevel&&!S.moment?`<section class="card stack">${String(T('onb.when')).replace(/h1>/g,'h2>')}<div class="chips" role="group" aria-label="${esc(String(t('onb.when')).replace(/<[^>]*>/g,''))}">${['ochtend','pauze','middag','avond'].map(k=>`<button data-km="${k}" aria-pressed="false">${TB('moment.'+k)}</button>`).join('')}</div></section>`:''}
+  ${dueFirst?weg:''}
   ${kWeek()}${kRoute()}
   ${cur?`<section class="card row between kcur"><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="eyebrow">${esc(t('map.here'))}</span><b>${esc(cur.title)}</b><span class="small muted">${allDone?T('map.allDone'):esc(scP((ns||{}).title))} · ${T('map.count',{d:cur.nd,n:cur.dots.length})}</span></span>${allDone?'':`<button class="btn btn-main" id="kGo" style="width:auto;flex:none">${TB('map.go')}</button>`}</section>`:`<div class="note">${T('map.none')}</div>`}
-  <button class="card row between" id="kWeg" style="background:var(--sky);border-color:var(--sky-fill);text-align:left"><span style="display:flex;flex-direction:column;gap:2px">${T('map.onderweg')}<span class="small muted">${due?T('map.due',{n:due}):T('map.onderwegTip')}</span></span>${due?`<span class="pill pill-sky num" style="background:var(--surface)">${due}</span>`:''}</button>
+  ${dueFirst?'':weg}
   <div class="tiles2 ktiles">${LESSEN.length?(l=>l?`<button class="tile sky" id="ontdek"><span class="ic">${icon.book}</span>${T('les.tile')}<span class="small muted">${esc(scP(l.title))}</span></button>`:'')(nextLes()):''}
    ${gBestKind()?`<button class="tile apricot" id="kGame"><span class="ic">${icon.bolt}</span>${T('game.tile')}<span class="small muted">${esc(String(t(GNAME[gBestKind()])).replace(/<[^>]*>/g,''))}</span></button>`:''}
    <button class="tile apricot" id="kRk"><span class="ic">${icon.bolt}</span>${T('lijn.title.rk')}</button><button class="tile sky" id="kEn"><span class="ic">${icon.globe}</span>${T('lijn.title.en')}</button></div>
@@ -4366,7 +4409,7 @@ function vKaart(){if(!S.onboarded)return vOnboard();
   kNotesBind();
   $('#kWeek').onclick=()=>{const f=$('#kWeekFull'),o=f.hidden;f.hidden=!o;$('#kWeek').setAttribute('aria-expanded',String(o))};
   if($('#kGo'))$('#kGo').onclick=()=>startScene(ns);
-  $('#kWeg').onclick=()=>startLesson(false);
+  $('#kWeg').onclick=()=>startLesson(false);app.querySelectorAll('[data-km]').forEach(b=>b.onclick=()=>{S.moment=b.dataset.km;save();vKaart()});   /* Wanneer leer je: na de eerste les */
   if($('#ontdek'))$('#ontdek').onclick=()=>startLes(nextLes());
   if($('#kGame'))$('#kGame').onclick=startSpeed;$('#kRk').onclick=()=>openLijn('rk');$('#kEn').onclick=()=>openLijn('en');
   $('#kMore').onclick=()=>{route=vToday;rerender();app.insertAdjacentHTML('afterbegin',`<button class="btn btn-ghost" id="kBack" style="width:auto">← ${TB('tab.map')}</button>`);$('#kBack').onclick=()=>show('vandaag');window.scrollTo(0,0)};

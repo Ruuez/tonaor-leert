@@ -161,6 +161,11 @@ ok('schema 10 → 12: een gekozen kaart en kleur blijven', r.S.home === 'kaart' 
 // 8n. stap 14 → 15: fout melden, de wachtrij op het toestel (docs/ontwerp-stap8-melden.md), alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 14, dhOk: { w: 2 } }) });
 ok('schema 14 → 15: reports leeg, reportPts leeg, dhOk blijft, met reservekopie', Array.isArray(r.S.reports) && !r.S.reports.length && r.S.reportPts && r.S.dhOk.w === 2 && JSON.parse(r.ls._[KEY + '.bak']).schema === 14);
+// 8o. stap 15 → 16: de makkelijke start (docs/ontwerp-start.md), alleen toegevoegd; bestaande leerders krijgen geen beginnersstart
+r = run({ [KEY]: raw({ ...CUR, schema: 15, reports: [{ t: 1 }] }) });
+ok('schema 15 → 16: starter en startLevel null, kHint 0, meldingen blijven, met reservekopie', r.S.starter === null && r.S.startLevel === null && r.S.kHint === 0 && r.S.reports.length === 1 && JSON.parse(r.ls._[KEY + '.bak']).schema === 15);
+r = run({ [KEY]: raw({ ...CUR, schema: 15, starter: 5, startLevel: 'niets', kHint: 1 }) });
+ok('schema 15 → 16 is herhaalbaar: een gekozen start blijft', r.S.starter === 5 && r.S.startLevel === 'niets' && r.S.kHint === 1);
 // 8m. stap 13 → 14: de of het, goede beurten per woord in het spel (ijkmoment G4), alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 13, gameBest: { klok: 40 } }) });
 ok('schema 13 → 14: dhOk leeg, gameBest blijft, met reservekopie', r.S.dhOk && !Object.keys(r.S.dhOk).length && r.S.gameBest.klok === 40 && JSON.parse(r.ls._[KEY + '.bak']).schema === 13);
