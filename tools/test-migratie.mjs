@@ -158,6 +158,9 @@ r = run({ [KEY]: raw({ ...CUR, schema: 10 }) });
 ok('schema 10 → 12: figuurtje zonder kleur; daarna (besluit eigenaar) één keer de kaart als thuisscherm; met reservekopie', r.S.home === 'kaart' && r.S.homeSet === true && r.S.fig === null && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 10);
 r = run({ [KEY]: raw({ ...CUR, schema: 10, home: 'kaart', fig: 'lilac' }) });
 ok('schema 10 → 12: een gekozen kaart en kleur blijven', r.S.home === 'kaart' && r.S.fig === 'lilac');
+// 8n. stap 14 → 15: fout melden, de wachtrij op het toestel (docs/ontwerp-stap8-melden.md), alleen toegevoegd
+r = run({ [KEY]: raw({ ...CUR, schema: 14, dhOk: { w: 2 } }) });
+ok('schema 14 → 15: reports leeg, reportPts leeg, dhOk blijft, met reservekopie', Array.isArray(r.S.reports) && !r.S.reports.length && r.S.reportPts && r.S.dhOk.w === 2 && JSON.parse(r.ls._[KEY + '.bak']).schema === 14);
 // 8m. stap 13 → 14: de of het, goede beurten per woord in het spel (ijkmoment G4), alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 13, gameBest: { klok: 40 } }) });
 ok('schema 13 → 14: dhOk leeg, gameBest blijft, met reservekopie', r.S.dhOk && !Object.keys(r.S.dhOk).length && r.S.gameBest.klok === 40 && JSON.parse(r.ls._[KEY + '.bak']).schema === 13);

@@ -696,6 +696,28 @@ en:{
  "game.sum":"Laid: {s}",
  "game.reset":"Start again",
  "game.ready":"Done",
+ "ask.btn":"Ask",
+ "ask.title":"Ask",
+ "ask.coach":"Ask your coach",
+ "ask.report":"Report a mistake",
+ "rep.tip":"What is wrong? Thank you for telling us.",
+ "rep.k.tr":"The translation is wrong",
+ "rep.k.ok":"My answer was right",
+ "rep.k.uitleg":"The explanation is wrong or unclear",
+ "rep.k.typo":"A typo",
+ "rep.k.beeld":"Picture or sound",
+ "rep.k.anders":"Something else",
+ "rep.note":"Explanation (not required). Do not write names or phone numbers.",
+ "rep.thanks":"Thank you. Your report is saved and sent to your coach.",
+ "rep.thanksPts":"Thank you. Your report is saved. +{n}",
+ "rep.mine":"My reports",
+ "rep.where":"Your reports are on this device and go, encrypted, to your coach. No name is sent.",
+ "rep.s.kept":"saved",
+ "rep.fail":"This cannot be saved right now.",
+ "rep.pick":"Choose what is wrong first.",
+ "rep.s.sent":"sent",
+ "rep.wipe":"Delete my reports",
+ "rep.wipeAsk":"Delete all reports on this device? What was already sent stays with your coach.",
  "lijn.title.rk":"Maths",
  "lijn.title.en":"English",
  "lijn.sub":"Your learning path",
@@ -1353,6 +1375,28 @@ nl:{
  "game.sum":"Gelegd: {s}",
  "game.reset":"Opnieuw",
  "game.ready":"Klaar",
+ "ask.btn":"Vraag het",
+ "ask.title":"Vraag het",
+ "ask.coach":"Vraag je begeleider",
+ "ask.report":"Fout melden",
+ "rep.tip":"Wat klopt er niet? Fijn dat je het meldt.",
+ "rep.k.tr":"De vertaling klopt niet",
+ "rep.k.ok":"Mijn antwoord was goed",
+ "rep.k.uitleg":"De uitleg klopt niet of is onduidelijk",
+ "rep.k.typo":"Een typfout",
+ "rep.k.beeld":"Tekening of geluid",
+ "rep.k.anders":"Iets anders",
+ "rep.note":"Toelichting (hoeft niet). Zet er geen namen of telefoonnummers in.",
+ "rep.thanks":"Dank je. Je melding is bewaard en gaat naar je begeleider.",
+ "rep.thanksPts":"Dank je. Je melding is bewaard. +{n}",
+ "rep.mine":"<h3>Mijn meldingen</h3>",
+ "rep.where":"Je meldingen staan op dit toestel en gaan versleuteld naar je begeleider. Er gaat geen naam mee.",
+ "rep.s.kept":"bewaard",
+ "rep.fail":"Dit kan nu niet bewaard worden.",
+ "rep.pick":"Kies eerst wat er niet klopt.",
+ "rep.s.sent":"verstuurd",
+ "rep.wipe":"Mijn meldingen wissen",
+ "rep.wipeAsk":"Alle meldingen op dit toestel wissen? Wat al verstuurd is, blijft bij je begeleider.",
  "lijn.title.rk":"Rekenen",
  "lijn.title.en":"Engels",
  "lijn.sub":"Je leerlijn",
@@ -2008,6 +2052,28 @@ th:{
  "game.sum":"วางแล้ว: {s}",
  "game.reset":"เริ่มใหม่",
  "game.ready":"เสร็จ",
+ "ask.btn":"ถาม",
+ "ask.title":"ถาม",
+ "ask.coach":"ถามผู้ดูแลของคุณ",
+ "ask.report":"แจ้งข้อผิดพลาด",
+ "rep.tip":"อะไรไม่ถูกต้อง ขอบคุณที่แจ้ง",
+ "rep.k.tr":"คำแปลไม่ถูกต้อง",
+ "rep.k.ok":"คำตอบของฉันถูก",
+ "rep.k.uitleg":"คำอธิบายผิดหรือไม่ชัดเจน",
+ "rep.k.typo":"พิมพ์ผิด",
+ "rep.k.beeld":"ภาพหรือเสียง",
+ "rep.k.anders":"อย่างอื่น",
+ "rep.note":"คำอธิบาย (ไม่จำเป็น) อย่าใส่ชื่อหรือเบอร์โทรศัพท์",
+ "rep.thanks":"ขอบคุณ บันทึกการแจ้งแล้วและส่งไปยังผู้ดูแลของคุณ",
+ "rep.thanksPts":"ขอบคุณ บันทึกการแจ้งแล้ว +{n}",
+ "rep.mine":"การแจ้งของฉัน",
+ "rep.where":"การแจ้งของคุณอยู่ในเครื่องนี้และส่งแบบเข้ารหัสไปยังผู้ดูแลของคุณ ไม่มีการส่งชื่อ",
+ "rep.s.kept":"บันทึกแล้ว",
+ "rep.fail":"ตอนนี้ยังบันทึกไม่ได้",
+ "rep.pick":"เลือกก่อนว่าอะไรไม่ถูกต้อง",
+ "rep.s.sent":"ส่งแล้ว",
+ "rep.wipe":"ลบการแจ้งของฉัน",
+ "rep.wipeAsk":"ลบการแจ้งทั้งหมดในเครื่องนี้หรือไม่ สิ่งที่ส่งไปแล้วจะยังอยู่กับผู้ดูแลของคุณ",
  "lijn.title.rk":"คณิตศาสตร์",
  "lijn.title.en":"ภาษาอังกฤษ",
  "lijn.sub":"เส้นทางการเรียนของคุณ",
@@ -2423,7 +2489,7 @@ const MOTOR={
   extraAfter:2,       // extra oefening na de zoveelste fout van dezelfde soort in een scène. Aanname (docs/scenes.md)
   slotErrShare:.5,    // hooguit dit deel van een open plek op het foutprofiel. Aanname
   // C5 spel: één tot drie minuten (masterplan C5); 60 seconden: aanname
-  gameSeconds:60, gameTurns:{dehet:10,klank:10,klok:8,geld:6,koppel:3}, gameMin:5, gameDefMax:40, gameHintN:2, gameKlank:[500,35,150], gameGeldInstap:2, lijnMax:8 /* lijnMax: Oefen per onderwerp hooguit acht (leerlijn, besluit ontwerpsessie);  spellen: beurten per spel (koppel: rondes van 3 paren), minimaal 5 onderdelen, omschrijving hooguit 40 tekens, vorm vooraf de eerste 2 keer, pauze klankduel 500 ms min 35 per beurt tot 150 (aanname, te toetsen bij G4) */,
+  gameSeconds:60, gameTurns:{dehet:10,klank:10,klok:8,geld:6,koppel:3}, gameMin:5, gameDefMax:40, gameHintN:2, gameKlank:[500,35,150], gameGeldInstap:2, lijnMax:8, repNoteMax:200, repKeep:100, repPts:2, repDay:10 /* rep: fout melden, toelichting hooguit 200 tekens, hooguit 100 bewaard, 2 punten per plek, hooguit 10 per dag;  lijnMax: Oefen per onderwerp hooguit acht (leerlijn, besluit ontwerpsessie);  spellen: beurten per spel (koppel: rondes van 3 paren), minimaal 5 onderdelen, omschrijving hooguit 40 tekens, vorm vooraf de eerste 2 keer, pauze klankduel 500 ms min 35 per beurt tot 150 (aanname, te toetsen bij G4) */,
   listenFade:3, listenRead:25, listenFast:1.15,   // werkvormen 3.1: meelezen in de eerste 3 scènes met een luistertekst; examenvorm 25 s leestijd (scenes.md); iets sneller = 1,15. 3 en 1,15 zijn een aanname
   recMax:60, stepsFade:[2,5],   // rekenen in stappen: vanaf 2 keer zonder vraag en gegevens, vanaf 5 keer alleen rekenen en klopt (aanname, te toetsen bij G4 groep 2)
   recKeep:30, voxKeep:1000, voxMax:10,   // inspreekhulp (docs/ontwerp-inspreekhulp.md): hooguit 1000 ingesproken zinnen (alle kernzinnen passen), 10 s per zin
@@ -2849,14 +2915,14 @@ function fresh(){
   const items={};[...NL,...EN,...REK].forEach(x=>items[x.id]=item());
   return {v:2,onboarded:false,thai:'altijd',size:'normaal',goal:'normaal',moment:null,items,introduced:[],
     points:{},days:{},mins:{},help:[],answers:[],conf:[],sessions:0,talks:0,story:0,speedBest:0,
-    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,gameBest:{},dhOk:{},seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
+    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,gameBest:{},dhOk:{},reports:[],reportPts:{},seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
 }
 /* ============ opslag veilig laden (#30) ============
    S.v blijft 2. S.schema telt de vorm van de opslag (zonder veld = 1). Elke stap n -> n+1 staat in MIGRATE en mag vaker draaien.
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=14,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=15,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2871,7 +2937,8 @@ const MIGRATE={
  10:s=>{if(s.home!=='kaart'&&s.home!=='vandaag')s.home='vandaag';if(!('fig' in s))s.fig=null;return s},
  11:s=>{if(!s.homeSet){s.home='kaart';s.homeSet=true}return s},
  12:s=>{if(!s.gameBest||typeof s.gameBest!=='object'||Array.isArray(s.gameBest))s.gameBest={};return s},
- 13:s=>{if(!s.dhOk||typeof s.dhOk!=='object'||Array.isArray(s.dhOk))s.dhOk={};return s}   // de of het: per woord de goede beurten in het spel (afbouw van de vorm over de dagen)   // spellen: record per spel (seconden); speedBest blijft staan   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
+ 13:s=>{if(!s.dhOk||typeof s.dhOk!=='object'||Array.isArray(s.dhOk))s.dhOk={};return s},
+ 14:s=>{if(!Array.isArray(s.reports))s.reports=[];if(!s.reportPts||typeof s.reportPts!=='object'||Array.isArray(s.reportPts))s.reportPts={};return s}   // fout melden: de wachtrij op het toestel en de meldpunten per dag   // de of het: per woord de goede beurten in het spel (afbouw van de vorm over de dagen)   // spellen: record per spel (seconden); speedBest blijft staan   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
 function checkState(o){if(!o||typeof o!=='object'||Array.isArray(o)||o.v!==2||!o.items||typeof o.items!=='object'||Array.isArray(o.items))return 'broken';
@@ -3294,7 +3361,8 @@ function scPh(q){const ph=[];Q.forEach(x=>{if(x&&x.sc===q.sc&&x.step&&!ph.includ
 function frame(inner,label,stepNo,ofN){app.dataset.vak=vakOf(Q[qi],stepNo);app.dataset.strand=strandOf(Q[qi]);if(Q[qi]&&Q[qi]._ask&&inner.startsWith('<div class="card stack">'))inner='<div class="card stack"><p class="prompt">'+scT(Q[qi]._ask)+'</p>'+inner.slice(24);if(Q[qi]&&Q[qi].sc&&Q[qi].step){const r=scPh(Q[qi]);if(r.n>0){stepNo=r.n;ofN=r.m}}
   const p=Math.round(qi/Math.max(1,Q.length-1)*100);
   paint(`<div class="sess-top"><button class="close" id="quit" aria-label="Stoppen">×</button><div class="bar" role="progressbar" aria-label="Voortgang" aria-valuenow="${p}" aria-valuemin="0" aria-valuemax="100"><i style="width:${p}%"></i></div>${thaiSwitch()}</div>
-  <div class="stage-label"><span class="eyebrow">${stepNo?`Stap ${stepNo} van ${ofN||(Q.some(x=>x.type==="sc_end")?4:5)} · `:''}${label}</span>${(x=>x?`<button class="u-btn" data-uopen="${esc(x)}">${TB('explain.open')}</button>`:'')(explFor(Q[qi]))}<span class="pill pill-apricot num">+${sp}</span></div>${inner}`);
+  <div class="stage-label"><span class="eyebrow">${stepNo?`Stap ${stepNo} van ${ofN||(Q.some(x=>x.type==="sc_end")?4:5)} · `:''}${label}</span>${['sc_end','lijn_end','placeend','end','conf'].includes((Q[qi]||{}).type)?'':`<button class="u-btn" id="askIt">${TB('ask.btn')}</button>`}<span class="pill pill-apricot num">+${sp}</span></div>${inner}`);
+  if($('#askIt'))$('#askIt').onclick=askOpen;   /* stap 8: Vraag het (uitleg, begeleider, fout melden) */
   $('#quit').onclick=()=>{flushPend();finishTime();if(sp>0)toast('Opgeslagen. Je punten blijven staan.');show('vandaag')};
   // #22: onthoud of er al iets met deze vraag gedaan is; dan tekent een taalwissel hem niet opnieuw (geen dubbele punten, geen reset van pogingen)
   const q=Q[qi],v=app.querySelector('.view');if(q&&v){const t=e=>{if(!e.target.closest('button[data-thai],#quit'))q._t=1};v.addEventListener('click',t,true);v.addEventListener('input',t,true)}
@@ -3324,9 +3392,9 @@ function score(ok,n,part){if(typeof LES!=='undefined'&&LES)return;if(typeof PRF!
 function fbBox(ok,msg,msgSup){let offer='';if(!ok&&app.classList.contains('sess')&&Q[qi]&&Q[qi]._sceneErr&&!Q[qi]._faulted){Q[qi]._faulted=1;const fq=Q[qi];later(()=>scFault(fq,fq._sceneErr))}   /* telt bij Volgende, zodat Mijn antwoord is ook goed haar nog kan wegnemen (standreview 1) */   /* hooguit één keer per vraag (codereview A2) */if(!ok&&app.classList.contains('sess')&&Q[qi]){const q=Q[qi];q._wrong=(q._wrong||0)+1;const x=q._wrong>=2&&explFor(q);if(x)offer=`<button class="linkish u-offer" data-uopen="${esc(x)}">${TB('explain.offer')}</button>`}const k=ok?'fb.ok':'fb.no',s=ts(k);return `<div class="fb ${ok?'fb-ok':'fb-no'}" role="status"><strong>${t(k)}${nlOnly()||!s?'':` <span ${supAttr()}>${s}</span>`}</strong>${msg?bi(msg,msgSup||''):''}${offer}</div>`}
 function fbK(ok,k,vars){return fbBox(ok,t(k,vars),ts(k,vars))}
 const supSpan=(s,st)=>s?`<span class="sup" ${supAttr()}${st?` style="${st}"`:''}>${s}</span>`:'';
-const helpBtn=ctx=>`<button class="help" data-help="${esc(ctx)}">${T('help.ask')}</button>`;
+const helpBtn=ctx=>`<span hidden data-hctx="${esc(ctx)}"></span>`;   /* stap 8: de hulpknop is opgegaan in Vraag het; de omschrijving blijft als context voor de vraag aan de begeleider */
 /* vertaling klopt niet: tik op een steunregel (niet in een knop), bevestig, en de melding gaat als hulpvraag naar de begeleider */
-document.addEventListener('click',e=>{const s=e.target.closest&&e.target.closest('.sup');if(!s||s.closest('button,a,#nav,.ulayer'))return;
+document.addEventListener('click',e=>{const s=e.target.closest&&e.target.closest('.sup');if(!s||s.closest('button,a,#nav,.ulayer,#kSheet'))return;
   const nl=((s.closest('.bi')||{}).querySelector?.call(s.closest('.bi'),'.nl')||s.previousElementSibling||{}).textContent||'',sup=s.textContent||'';if(!sup.trim())return;
   let p=document.getElementById('vflag');if(p)p.remove();p=document.createElement('div');p.id='vflag';p.className='vflag';p.setAttribute('role','dialog');
   p.innerHTML=`<span>${TB('vflag.ask')}</span><button class="btn btn-ghost" id="vflagYes">${TB('vflag.btn')}</button><button class="close" id="vflagNo" aria-label="${esc(t('explain.close'))}">×</button>`;document.body.appendChild(p);
@@ -4078,6 +4146,37 @@ function lijnOefen(ids,learn){const known=ids.filter(id=>lijnCan(id,learn)),pick
   if(!q.length)return toast(tx('lijn.none'));q.push({type:'lijn_end',step:0,vak:learn==='en'?'en':'rk'});runSession(t('lijn.oefen'),q)}
 H.lijn_end=q=>{finishTime();frame(`<div class="card celebrate stack"><h2>${T('lijn.done')}</h2></div><button class="btn btn-main" id="lijnBack">${TB('btn.next')}</button>`,t('lijn.oefen'),0);$('#lijnBack').onclick=()=>{show(tab);route=vLijn;rerender()}};
 function openLijn(vak){LIJNVAK=vak==='en'?'en':'rk';route=vLijn;rerender();window.scrollTo(0,0)}
+/* ============ werkorder stap 8: Vraag het en fout melden (docs/ontwerp-stap8-melden.md, akkoord ontwerpsessie) ============
+   Eén knop Vraag het bovenaan elk oefenscherm, met een blad: (a) de uitleg bij de stap als die er is, (b) Vraag je begeleider (de bestaande hulpvraag),
+   (c) Fout melden. Een melding blijft op het toestel (S.reports), zonder naam; waar hij heen mag, beslist de eigenaar (nog open). */
+const REPKINDS=['tr','ok','uitleg','typo','beeld','anders'];
+function sheetOpen(html,head){let el=document.getElementById('kSheet');if(!el){el=document.createElement('div');el.id='kSheet';el.className='ksheet';el.setAttribute('role','dialog');el.setAttribute('aria-labelledby','kSheetT');document.body.appendChild(el)}
+  kSheetOff();el.innerHTML=`<div class="row between"><h3 id="kSheetT" style="margin:0">${T(head||'ask.title')}</h3><button class="btn btn-ghost ksx" id="kClose" aria-label="${esc(String(t('map.close')).replace(/<[^>]*>/g,''))}">×</button></div>${html}`;el.hidden=false;el.setAttribute('aria-modal','true');try{app.inert=true}catch(e){}   /* review: de pagina erachter niet bereikbaar zolang het blad open is */
+  const close=()=>{kSheetOff();el.hidden=true;const f=$('#askIt');try{if(f)f.focus({preventScroll:true})}catch(e){}};
+  const k=KSOFF=[e=>{if(e.key==='Escape')close()},e=>{if(!el.hidden&&!el.contains(e.target)&&!(e.target.closest&&e.target.closest('#askIt')))close()}];
+  document.addEventListener('keydown',k[0]);setTimeout(()=>{if(KSOFF===k)document.addEventListener('pointerdown',k[1])},0);$('#kClose').onclick=close;try{$('#kClose').focus({preventScroll:true})}catch(e){}return {el,close}}
+/* waar de leerder is: pakket, scène, stap, onderdeel (geen naam, geen antwoord) */
+function askPlace(q){if(!q)return {};const sc=q.sc||null,pk=sc?PACKS.find(p=>(p.scenes||[]).includes(sc)):null;return {pack:pk?pk.id:(q.pack||''),sc:sc?sc.id:'',st:q.st&&q.st.type||q.type||'',item:(q.items||[])[0]||(q.w&&q.w.id)||'',exid:q.exid||''}}
+function askCtx(q){const h=app.querySelector('[data-hctx]');if(h)return h.dataset.hctx;const p=askPlace(q);return [p.sc||p.pack,p.st,p.item].filter(Boolean).join(' · ')}
+function askOpen(){const q=Q[qi],x=explFor(q);
+  const S1=sheetOpen(`<div class="stack-sm">${x?`<button class="btn btn-ghost" data-uopen="${esc(x)}">${TB('explain.open')}</button>`:''}<button class="btn btn-ghost" id="askCoach">${TB('ask.coach')}</button><button class="btn btn-ghost" id="askBug">${TB('ask.report')}</button></div>`);
+  S1.el.querySelectorAll('[data-uopen]').forEach(b=>b.addEventListener('click',()=>S1.close()));
+  $('#askCoach').onclick=()=>{if(STORE!=='ok'){toast(tx('rep.fail'));return S1.close()}S.help.unshift({t:now(),ctx:askCtx(q),open:true});S.unsent=true;save();syncUp(true);toast(tx('help.sent'));S1.close()};   // de bestaande hulpvraag, ongewijzigd
+  $('#askBug').onclick=()=>{if(STORE!=='ok'){toast(tx('rep.fail'));return S1.close()}reportForm(q,null)}}
+function reportForm(q,kind0){const S2=sheetOpen(`<p class="small muted">${T('rep.tip')}</p><div class="stack-sm" role="radiogroup" aria-label="${esc(String(t('ask.report')).replace(/<[^>]*>/g,''))}">${REPKINDS.map(k=>`<label class="row" style="gap:8px"><input type="radio" name="repk" value="${k}" ${k===kind0?'checked':''}> ${T('rep.k.'+k)}</label>`).join('')}</div>
+   <label for="repNote" class="small muted">${T('rep.note')}</label><textarea id="repNote" class="input" maxlength="${MOTOR.repNoteMax}"></textarea><p id="repErr" class="small" role="alert" hidden>${T('rep.pick')}</p><button class="btn btn-leaf" id="repSave">${TB('btn.save')}</button>`,'ask.report');
+  S2.el.querySelectorAll('[name="repk"]').forEach(r=>r.onchange=()=>{$('#repErr').hidden=true});
+  $('#repSave').onclick=()=>{const k=(S2.el.querySelector('[name="repk"]:checked')||{}).value;if(!REPKINDS.includes(k)){$('#repErr').hidden=false;return}const pts=reportSave(q,k,$('#repNote').value);S2.close();toast(tx(pts==null?'rep.fail':pts?'rep.thanksPts':'rep.thanks',{n:pts}))}}
+/* bewaren op het toestel; punten: 2 per plek, één keer, hooguit 10 per dag (besluit ontwerpsessie); niets in de proefstand */
+function reportSave(q,kind,note){if(STORE!=='ok')return null;const p=askPlace(q),place=p.exid||[p.sc,p.st,p.item,q&&q.type,typeof qi==='number'?qi:''].join('|'),d=today();
+  S.reports=Array.isArray(S.reports)?S.reports:[];const known=S.reports.some(r=>r.place===place);
+  S.reports.unshift({t:now(),kind,note:String(note||'').slice(0,MOTOR.repNoteMax),place,pack:p.pack,sc:p.sc,st:p.st,item:p.item,lang:supL(),state:'kept'});if(S.reports.length>MOTOR.repKeep)S.reports.length=MOTOR.repKeep;
+  let pts=0;const pr=(typeof PRF!=='undefined'&&PRF)||(typeof LES!=='undefined'&&LES);S.reportPts=S.reportPts&&S.reportPts.d===d?S.reportPts:{d,n:0};
+  if(!known&&!pr&&S.reportPts.n+MOTOR.repPts<=MOTOR.repDay){pts=MOTOR.repPts;S.reportPts.n+=pts;addPts(pts)}
+  /* besluit eigenaar (privacy, B): de melding gaat versleuteld over de bestaande koppeling naar de begeleider, als hulpvraag met de soort erbij; geen naam */
+  const rep=S.reports[0];S.help.unshift({t:rep.t,ctx:repCtx(rep),open:true});S.unsent=true;save();syncUp(true,ok=>{if(ok&&rep.state==='kept'){rep.state='sent';save()}});return pts}
+function repCtx(x){return ['Fout melden: '+String(tr('rep.k.'+(REPKINDS.includes(x.kind)?x.kind:'anders'),'nl')||x.kind).replace(/<[^>]*>/g,''),[x.sc||x.pack,x.st,x.item].filter(Boolean).join(' · '),x.note?'"'+x.note+'"':''].filter(Boolean).join(' · ')}
+function repWipe(){S.reports=[];save()}
 function startSpeed(){
   app.dataset.vak='nl';app.dataset.strand='vl';{const k=gBestKind();if(k)return startGame(k)}   /* stap 6: de tegel start het spel dat nu het meest oplevert; zonder spel de oude snelronde */
      /* de/het-snelronde is Nederlands, ook na een les die met rekenen eindigde */
@@ -4277,7 +4376,7 @@ function vKaart(){if(!S.onboarded)return vOnboard();
   if(FIGWALK&&!allDone&&g&&KPLACE!=null&&ci>=0&&KPLACE!==ci&&KPLACE<P.length){const a=WereldVis.figAt(KPLACE),b=WereldVis.figAt(ci);if(a&&b){g.style.transition='none';g.style.transform=`translate(${a.x}px,${a.y}px)`;g.getBoundingClientRect();requestAnimationFrame(()=>{g.style.transition='transform 1.2s ease-in-out';g.style.transform=`translate(${b.x}px,${b.y}px)`})}}
   FIGWALK=false;KPLACE=ci>=0?ci:KPLACE}
 /* G3: het plekblad schuift van onderen in beeld, met een sluitknop; de pagina scrolt niet. Per scène één regel: titel links, kleine knop rechts. */
-function kSheetOff(){if(KSOFF){document.removeEventListener('keydown',KSOFF[0]);document.removeEventListener('pointerdown',KSOFF[1]);KSOFF=null}}
+function kSheetOff(){try{app.inert=false}catch(e){}if(KSOFF){document.removeEventListener('keydown',KSOFF[0]);document.removeEventListener('pointerdown',KSOFF[1]);KSOFF=null}}
 function kSheet(p,from){if(!p)return;let el=document.getElementById('kSheet');if(!el){el=document.createElement('div');el.id='kSheet';el.className='ksheet';el.setAttribute('role','dialog');el.setAttribute('aria-labelledby','kSheetT');document.body.appendChild(el)}   // aan body: een bewegend ouderelement breekt position:fixed
   const done=(S.world&&S.world.done)||{};
   const head=`<div class="row between"><h3 id="kSheetT" style="margin:0">${esc(p.title)}</h3><button class="btn btn-ghost ksx" id="kClose" aria-label="${esc(String(t('map.close')).replace(/<[^>]*>/g,''))}">×</button></div>`;
@@ -4397,6 +4496,7 @@ function vMe(){
   <section class="card stack">${T('me.weekGoal')}<p class="small muted">${T('me.weekGoal.tip')}</p><div class="seg" role="group" aria-label="${esc(t('week.title'))}">${WEEKGOALS.map(m=>`<button data-wg="${m}" aria-pressed="${weekGoal()===m}">${fmtH(m)} ${esc(t('week.hours'))}</button>`).join('')}</div></section>
   <section class="card stack">${T('me.home')}<p class="small muted">${T('me.home.tip')}</p><div class="seg" role="group" aria-label="${esc(String(t('me.home')).replace(/<[^>]*>/g,''))}"><button data-home="vandaag" aria-pressed="${S.home!=='kaart'}">${TB('tab.today')}</button><button data-home="kaart" aria-pressed="${S.home==='kaart'}">${TB('tab.map')}</button></div>
    ${S.home==='kaart'?`<p class="small muted">${T('me.fig')}</p><div class="row" role="group" style="gap:10px">${FIGLIST.map((c,i)=>`<button class="figpick" data-fig="${c}" aria-pressed="${(S.fig||'sky')===c}" aria-label="${i+1}" style="background:var(--${c}-deep)"></button>`).join('')}</div>`:''}</section>
+  ${(S.reports||[]).length?`<section class="card stack">${T('rep.mine')}<p class="small muted">${T('rep.where')}</p><ul class="list">${S.reports.slice(0,20).map(x=>`<li class="stack-sm"><span class="small muted num">${esc(new Date(x.t).toLocaleDateString('nl-NL',{day:'numeric',month:'short'}))} · ${esc(x.sc||x.pack||'')}</span><span>${T(REPKINDS.includes(x.kind)?'rep.k.'+x.kind:'rep.k.anders')}${x.note?` <span class="small">“${esc(x.note)}”</span>`:''}</span><span class="pill ${x.state==='sent'?'pill-mint':'pill-sky'} small">${T(x.state==='sent'?'rep.s.sent':'rep.s.kept')}</span></li>`).join('')}</ul><button class="btn btn-ghost" id="repWipe">${TB('rep.wipe')}</button><div id="repAsk" hidden class="stack-sm"><p>${T('rep.wipeAsk')}</p><div class="btn-row"><button class="btn btn-ghost" id="repNo">${TB('rec.wipeNo')}</button><button class="btn btn-main" id="repYes">${TB('rec.wipeYes')}</button></div></div></section>`:''}
   <section class="card stack">${T('me.letters')}<div class="seg" role="group" aria-label="Lettergrootte">${['normaal','groot'].map(k=>`<button data-sz="${k}" aria-pressed="${S.size===k}">${TB('size.'+k)}</button>`).join('')}</div></section>
   ${voiceCard()}
   <section class="card stack">${T('me.extras')}<div class="seg" role="group" aria-label="Extra's">${['boeddhisme','liedje'].map(k=>`<button data-ex="${k}" aria-pressed="${!!S.extras[k]}">${TB('extra.opt.'+k)}</button>`).join('')}</div></section>
@@ -4428,6 +4528,7 @@ function vMe(){
     r.innerHTML=`<p class="small muted">${T('rec.kept',{n})}</p><button class="btn btn-ghost" id="recDel">${TB('rec.wipe')}</button><div id="recAsk" hidden class="stack-sm"><p>${T('rec.wipeAsk')}</p><div class="btn-row"><button class="btn btn-ghost" id="recNo">${TB('rec.wipeNo')}</button><button class="btn btn-main" id="recYes">${TB('rec.wipeYes')}</button></div></div>`;
     $('#recDel').onclick=()=>{$('#recAsk').hidden=false};$('#recNo').onclick=()=>{$('#recAsk').hidden=true};
     $('#recYes').onclick=()=>{recWipe();toast(tx('rec.wiped'));r.hidden=true;r.innerHTML=''}});
+  if($('#repWipe')){$('#repWipe').onclick=()=>{$('#repAsk').hidden=false};$('#repNo').onclick=()=>{$('#repAsk').hidden=true};$('#repYes').onclick=()=>{repWipe();vMe()}}   /* meldingen wissen, met bevestiging */
   app.querySelectorAll('[data-proef]').forEach(b=>b.onclick=()=>{const sc=PROEF[+b.dataset.proef];if(sc){PRF=true;startScene(sc)}});
   if($('#voxOpen'))$('#voxOpen').onclick=()=>{const L=voxList();VI=Math.max(0,L.findIndex(x=>!VOX.has(voxKey(x.t))));VBLOB=null;route=vVox;rerender();window.scrollTo(0,0)};
   if($('#steerReset'))$('#steerReset').onclick=()=>{S.newPerDay=16;S.roundLen='normaal';QUIET=false;save();vMe()};
