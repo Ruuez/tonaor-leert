@@ -1,0 +1,1338 @@
+{
+ "format": 1,
+ "id": "nl-klanken",
+ "version": 1,
+ "learn": "nl",
+ "level": "A1",
+ "order": 15,
+ "requires": [],
+ "title": {
+  "nl": "Klanken die op elkaar lijken",
+  "th": "เสียงที่คล้ายกัน",
+  "en": "Sounds that are alike"
+ },
+ "items": [
+  {
+   "id": "nl.klank.slap",
+   "kind": "sound",
+   "title": {
+    "nl": "slap – slaap",
+    "th": "slap – slaap",
+    "en": "slap – slaap"
+   },
+   "pair": [
+    "slap",
+    "slaap"
+   ]
+  },
+  {
+   "id": "nl.klank.les",
+   "kind": "sound",
+   "title": {
+    "nl": "les – lees",
+    "th": "les – lees",
+    "en": "les – lees"
+   },
+   "pair": [
+    "les",
+    "lees"
+   ]
+  },
+  {
+   "id": "nl.klank.vis",
+   "kind": "sound",
+   "title": {
+    "nl": "vis – vies",
+    "th": "vis – vies",
+    "en": "vis – vies"
+   },
+   "pair": [
+    "vis",
+    "vies"
+   ]
+  },
+  {
+   "id": "nl.klank.zon",
+   "kind": "sound",
+   "title": {
+    "nl": "zon – zoon",
+    "th": "zon – zoon",
+    "en": "zon – zoon"
+   },
+   "pair": [
+    "zon",
+    "zoon"
+   ]
+  },
+  {
+   "id": "nl.klank.boer",
+   "kind": "sound",
+   "title": {
+    "nl": "boer – buur",
+    "th": "boer – buur",
+    "en": "boer – buur"
+   },
+   "pair": [
+    "boer",
+    "buur"
+   ]
+  },
+  {
+   "id": "nl.klank.huid",
+   "kind": "sound",
+   "title": {
+    "nl": "huid – hout",
+    "th": "huid – hout",
+    "en": "huid – hout"
+   },
+   "pair": [
+    "huid",
+    "hout"
+   ]
+  },
+  {
+   "id": "nl.klank.keus",
+   "kind": "sound",
+   "title": {
+    "nl": "keus – kus",
+    "th": "keus – kus",
+    "en": "keus – kus"
+   },
+   "pair": [
+    "keus",
+    "kus"
+   ]
+  },
+  {
+   "id": "nl.klank.zijn",
+   "kind": "sound",
+   "title": {
+    "nl": "zijn – zien",
+    "th": "zijn – zien",
+    "en": "zijn – zien"
+   },
+   "pair": [
+    "zijn",
+    "zien"
+   ]
+  },
+  {
+   "id": "nl.klank.gat",
+   "kind": "sound",
+   "title": {
+    "nl": "gat – kat",
+    "th": "gat – kat",
+    "en": "gat – kat"
+   },
+   "pair": [
+    "gat",
+    "kat"
+   ]
+  },
+  {
+   "id": "nl.klank.wijn",
+   "kind": "sound",
+   "title": {
+    "nl": "wijn – fijn",
+    "th": "wijn – fijn",
+    "en": "wijn – fijn"
+   },
+   "pair": [
+    "wijn",
+    "fijn"
+   ]
+  },
+  {
+   "id": "nl.klank.ben",
+   "kind": "sound",
+   "title": {
+    "nl": "ben – pen",
+    "th": "ben – pen",
+    "en": "ben – pen"
+   },
+   "pair": [
+    "ben",
+    "pen"
+   ]
+  },
+  {
+   "id": "nl.klank.weer",
+   "kind": "sound",
+   "title": {
+    "nl": "weer – veer",
+    "th": "weer – veer",
+    "en": "weer – veer"
+   },
+   "pair": [
+    "weer",
+    "veer"
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "id": "nl.typ.slap",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.slap"
+   ],
+   "data": {
+    "say": "slap",
+    "opts": [
+     "slap",
+     "slaap"
+    ],
+    "tr": {
+     "th": [
+      "อ่อนแรง หย่อน",
+      "การนอนหลับ"
+     ],
+     "en": [
+      "limp, weak",
+      "sleep"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>slap</b>. Lang: <b>slaap</b>. Houd de klinker bij <b>aa</b> langer vast.",
+     "th": "เสียงสั้น slap เสียงยาว slaap ลากเสียงสระ aa ให้ยาวขึ้น",
+     "en": "Short: slap. Long: slaap. Hold the vowel in slaap longer."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.slap",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.slap"
+   ],
+   "data": {
+    "say": "slap",
+    "opts": [
+     "slap",
+     "slaap"
+    ],
+    "tr": {
+     "th": [
+      "อ่อนแรง หย่อน",
+      "การนอนหลับ"
+     ],
+     "en": [
+      "limp, weak",
+      "sleep"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>slap</b>. Lang: <b>slaap</b>. Houd de klinker bij <b>aa</b> langer vast.",
+     "th": "เสียงสั้น slap เสียงยาว slaap ลากเสียงสระ aa ให้ยาวขึ้น",
+     "en": "Short: slap. Long: slaap. Hold the vowel in slaap longer."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.slaap",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.slap"
+   ],
+   "data": {
+    "say": "slaap",
+    "opts": [
+     "slap",
+     "slaap"
+    ],
+    "tr": {
+     "th": [
+      "อ่อนแรง หย่อน",
+      "การนอนหลับ"
+     ],
+     "en": [
+      "limp, weak",
+      "sleep"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>slap</b>. Lang: <b>slaap</b>. Houd de klinker bij <b>aa</b> langer vast.",
+     "th": "เสียงสั้น slap เสียงยาว slaap ลากเสียงสระ aa ให้ยาวขึ้น",
+     "en": "Short: slap. Long: slaap. Hold the vowel in slaap longer."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.les",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.les"
+   ],
+   "data": {
+    "say": "les",
+    "opts": [
+     "les",
+     "lees"
+    ],
+    "tr": {
+     "th": [
+      "บทเรียน",
+      "อ่าน"
+     ],
+     "en": [
+      "lesson",
+      "read"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>les</b>. Lang: <b>lees</b>. Bij <b>ee</b> klinkt de klank langer en strakker.",
+     "th": "เสียงสั้น les เสียงยาว lees เสียง ee ยาวกว่าและตึงกว่า",
+     "en": "Short: les. Long: lees. The ee sound is longer and tighter."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.les",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.les"
+   ],
+   "data": {
+    "say": "les",
+    "opts": [
+     "les",
+     "lees"
+    ],
+    "tr": {
+     "th": [
+      "บทเรียน",
+      "อ่าน"
+     ],
+     "en": [
+      "lesson",
+      "read"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>les</b>. Lang: <b>lees</b>. Bij <b>ee</b> klinkt de klank langer en strakker.",
+     "th": "เสียงสั้น les เสียงยาว lees เสียง ee ยาวกว่าและตึงกว่า",
+     "en": "Short: les. Long: lees. The ee sound is longer and tighter."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.lees",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.les"
+   ],
+   "data": {
+    "say": "lees",
+    "opts": [
+     "les",
+     "lees"
+    ],
+    "tr": {
+     "th": [
+      "บทเรียน",
+      "อ่าน"
+     ],
+     "en": [
+      "lesson",
+      "read"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>les</b>. Lang: <b>lees</b>. Bij <b>ee</b> klinkt de klank langer en strakker.",
+     "th": "เสียงสั้น les เสียงยาว lees เสียง ee ยาวกว่าและตึงกว่า",
+     "en": "Short: les. Long: lees. The ee sound is longer and tighter."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.vis",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.vis"
+   ],
+   "data": {
+    "say": "vis",
+    "opts": [
+     "vis",
+     "vies"
+    ],
+    "tr": {
+     "th": [
+      "ปลา",
+      "สกปรก น่ารังเกียจ"
+     ],
+     "en": [
+      "fish",
+      "dirty, gross"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "In <b>vis</b> is de i kort en los. In <b>vies</b> is de ie langer en strak, met brede lippen.",
+     "th": "ใน vis เสียง i สั้นและผ่อนคลาย ใน vies เสียง ie ยาวและตึงกว่า ริมฝีปากยืดกว้าง",
+     "en": "In vis the i is short and relaxed. In vies the ie is longer and tight, with your lips spread wide."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.vis",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.vis"
+   ],
+   "data": {
+    "say": "vis",
+    "opts": [
+     "vis",
+     "vies"
+    ],
+    "tr": {
+     "th": [
+      "ปลา",
+      "สกปรก น่ารังเกียจ"
+     ],
+     "en": [
+      "fish",
+      "dirty, gross"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "In <b>vis</b> is de i kort en los. In <b>vies</b> is de ie langer en strak, met brede lippen.",
+     "th": "ใน vis เสียง i สั้นและผ่อนคลาย ใน vies เสียง ie ยาวและตึงกว่า ริมฝีปากยืดกว้าง",
+     "en": "In vis the i is short and relaxed. In vies the ie is longer and tight, with your lips spread wide."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.vies",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.vis"
+   ],
+   "data": {
+    "say": "vies",
+    "opts": [
+     "vis",
+     "vies"
+    ],
+    "tr": {
+     "th": [
+      "ปลา",
+      "สกปรก น่ารังเกียจ"
+     ],
+     "en": [
+      "fish",
+      "dirty, gross"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "In <b>vis</b> is de i kort en los. In <b>vies</b> is de ie langer en strak, met brede lippen.",
+     "th": "ใน vis เสียง i สั้นและผ่อนคลาย ใน vies เสียง ie ยาวและตึงกว่า ริมฝีปากยืดกว้าง",
+     "en": "In vis the i is short and relaxed. In vies the ie is longer and tight, with your lips spread wide."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.zon",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.zon"
+   ],
+   "data": {
+    "say": "zon",
+    "opts": [
+     "zon",
+     "zoon"
+    ],
+    "tr": {
+     "th": [
+      "ดวงอาทิตย์",
+      "ลูกชาย"
+     ],
+     "en": [
+      "sun",
+      "son"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>zon</b>, met de mond wat opener. Lang: <b>zoon</b>, met ronde lippen en langer.",
+     "th": "เสียงสั้น zon ปากเปิดกว้างกว่าเล็กน้อย เสียงยาว zoon ห่อริมฝีปากและลากยาวกว่า",
+     "en": "Short: zon, with the mouth a bit more open. Long: zoon, with rounded lips and longer."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.zon",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.zon"
+   ],
+   "data": {
+    "say": "zon",
+    "opts": [
+     "zon",
+     "zoon"
+    ],
+    "tr": {
+     "th": [
+      "ดวงอาทิตย์",
+      "ลูกชาย"
+     ],
+     "en": [
+      "sun",
+      "son"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>zon</b>, met de mond wat opener. Lang: <b>zoon</b>, met ronde lippen en langer.",
+     "th": "เสียงสั้น zon ปากเปิดกว้างกว่าเล็กน้อย เสียงยาว zoon ห่อริมฝีปากและลากยาวกว่า",
+     "en": "Short: zon, with the mouth a bit more open. Long: zoon, with rounded lips and longer."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.zoon",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.zon"
+   ],
+   "data": {
+    "say": "zoon",
+    "opts": [
+     "zon",
+     "zoon"
+    ],
+    "tr": {
+     "th": [
+      "ดวงอาทิตย์",
+      "ลูกชาย"
+     ],
+     "en": [
+      "sun",
+      "son"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Kort: <b>zon</b>, met de mond wat opener. Lang: <b>zoon</b>, met ronde lippen en langer.",
+     "th": "เสียงสั้น zon ปากเปิดกว้างกว่าเล็กน้อย เสียงยาว zoon ห่อริมฝีปากและลากยาวกว่า",
+     "en": "Short: zon, with the mouth a bit more open. Long: zoon, with rounded lips and longer."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.boer",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.boer"
+   ],
+   "data": {
+    "say": "boer",
+    "opts": [
+     "boer",
+     "buur"
+    ],
+    "tr": {
+     "th": [
+      "ชาวนา",
+      "เพื่อนบ้าน"
+     ],
+     "en": [
+      "farmer",
+      "neighbour"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "<b>boer</b>: lippen rond, tong achter. <b>buur</b>: zeg ie en rond dan je lippen, zonder je tong te bewegen.",
+     "th": "boer: ริมฝีปากห่อ ลิ้นอยู่ด้านหลัง buur: ออกเสียง ie แล้วห่อริมฝีปากโดยไม่ขยับลิ้น",
+     "en": "boer: rounded lips, tongue back. buur: say ie, then round your lips without moving your tongue."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.boer",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.boer"
+   ],
+   "data": {
+    "say": "boer",
+    "opts": [
+     "boer",
+     "buur"
+    ],
+    "tr": {
+     "th": [
+      "ชาวนา",
+      "เพื่อนบ้าน"
+     ],
+     "en": [
+      "farmer",
+      "neighbour"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "<b>boer</b>: lippen rond, tong achter. <b>buur</b>: zeg ie en rond dan je lippen, zonder je tong te bewegen.",
+     "th": "boer: ริมฝีปากห่อ ลิ้นอยู่ด้านหลัง buur: ออกเสียง ie แล้วห่อริมฝีปากโดยไม่ขยับลิ้น",
+     "en": "boer: rounded lips, tongue back. buur: say ie, then round your lips without moving your tongue."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.buur",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.boer"
+   ],
+   "data": {
+    "say": "buur",
+    "opts": [
+     "boer",
+     "buur"
+    ],
+    "tr": {
+     "th": [
+      "ชาวนา",
+      "เพื่อนบ้าน"
+     ],
+     "en": [
+      "farmer",
+      "neighbour"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "<b>boer</b>: lippen rond, tong achter. <b>buur</b>: zeg ie en rond dan je lippen, zonder je tong te bewegen.",
+     "th": "boer: ริมฝีปากห่อ ลิ้นอยู่ด้านหลัง buur: ออกเสียง ie แล้วห่อริมฝีปากโดยไม่ขยับลิ้น",
+     "en": "boer: rounded lips, tongue back. buur: say ie, then round your lips without moving your tongue."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.huid",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.huid"
+   ],
+   "data": {
+    "say": "huid",
+    "opts": [
+     "huid",
+     "hout"
+    ],
+    "tr": {
+     "th": [
+      "ผิวหนัง",
+      "ไม้"
+     ],
+     "en": [
+      "skin",
+      "wood"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>ui</b> staat je tong voor en zijn je lippen rond. Bij <b>ou</b> gaat je tong naar achter en eindig je met kleine, ronde lippen.",
+     "th": "ที่ ui ลิ้นอยู่ด้านหน้าและริมฝีปากห่อ ที่ ou ลิ้นถอยไปด้านหลังและจบด้วยริมฝีปากห่อเล็ก ๆ",
+     "en": "With ui your tongue is forward and your lips are rounded. With ou your tongue moves back and you end with small, rounded lips."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.huid",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.huid"
+   ],
+   "data": {
+    "say": "huid",
+    "opts": [
+     "huid",
+     "hout"
+    ],
+    "tr": {
+     "th": [
+      "ผิวหนัง",
+      "ไม้"
+     ],
+     "en": [
+      "skin",
+      "wood"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>ui</b> staat je tong voor en zijn je lippen rond. Bij <b>ou</b> gaat je tong naar achter en eindig je met kleine, ronde lippen.",
+     "th": "ที่ ui ลิ้นอยู่ด้านหน้าและริมฝีปากห่อ ที่ ou ลิ้นถอยไปด้านหลังและจบด้วยริมฝีปากห่อเล็ก ๆ",
+     "en": "With ui your tongue is forward and your lips are rounded. With ou your tongue moves back and you end with small, rounded lips."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.hout",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.huid"
+   ],
+   "data": {
+    "say": "hout",
+    "opts": [
+     "huid",
+     "hout"
+    ],
+    "tr": {
+     "th": [
+      "ผิวหนัง",
+      "ไม้"
+     ],
+     "en": [
+      "skin",
+      "wood"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>ui</b> staat je tong voor en zijn je lippen rond. Bij <b>ou</b> gaat je tong naar achter en eindig je met kleine, ronde lippen.",
+     "th": "ที่ ui ลิ้นอยู่ด้านหน้าและริมฝีปากห่อ ที่ ou ลิ้นถอยไปด้านหลังและจบด้วยริมฝีปากห่อเล็ก ๆ",
+     "en": "With ui your tongue is forward and your lips are rounded. With ou your tongue moves back and you end with small, rounded lips."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.keus",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.keus"
+   ],
+   "data": {
+    "say": "keus",
+    "opts": [
+     "keus",
+     "kus"
+    ],
+    "tr": {
+     "th": [
+      "ตัวเลือก",
+      "จูบ"
+     ],
+     "en": [
+      "choice",
+      "kiss"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>eu</b> zeg je ee met ronde lippen en houd je het lang. Bij <b>u</b> is de klank kort en los.",
+     "th": "ที่ eu ให้ออกเสียง ee พร้อมห่อริมฝีปากและลากยาว ส่วน u เสียงสั้นและผ่อนคลาย",
+     "en": "With eu you say ee with rounded lips and hold it. With u the sound is short and relaxed."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.keus",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.keus"
+   ],
+   "data": {
+    "say": "keus",
+    "opts": [
+     "keus",
+     "kus"
+    ],
+    "tr": {
+     "th": [
+      "ตัวเลือก",
+      "จูบ"
+     ],
+     "en": [
+      "choice",
+      "kiss"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>eu</b> zeg je ee met ronde lippen en houd je het lang. Bij <b>u</b> is de klank kort en los.",
+     "th": "ที่ eu ให้ออกเสียง ee พร้อมห่อริมฝีปากและลากยาว ส่วน u เสียงสั้นและผ่อนคลาย",
+     "en": "With eu you say ee with rounded lips and hold it. With u the sound is short and relaxed."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.kus",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.keus"
+   ],
+   "data": {
+    "say": "kus",
+    "opts": [
+     "keus",
+     "kus"
+    ],
+    "tr": {
+     "th": [
+      "ตัวเลือก",
+      "จูบ"
+     ],
+     "en": [
+      "choice",
+      "kiss"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>eu</b> zeg je ee met ronde lippen en houd je het lang. Bij <b>u</b> is de klank kort en los.",
+     "th": "ที่ eu ให้ออกเสียง ee พร้อมห่อริมฝีปากและลากยาว ส่วน u เสียงสั้นและผ่อนคลาย",
+     "en": "With eu you say ee with rounded lips and hold it. With u the sound is short and relaxed."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.zijn",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.zijn"
+   ],
+   "data": {
+    "say": "zijn",
+    "opts": [
+     "zijn",
+     "zien"
+    ],
+    "tr": {
+     "th": [
+      "เป็น อยู่ คือ",
+      "เห็น ดู"
+     ],
+     "en": [
+      "to be",
+      "to see"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>zijn</b> glijdt je mond open (ij). Bij <b>zien</b> blijft je mond stil, met brede lippen (ie). De ij klinkt hetzelfde als ei.",
+     "th": "ที่ zijn ปากเลื่อนเปิด (ij) ที่ zien ปากนิ่ง ริมฝีปากยืดกว้าง (ie) เสียง ij ออกเสียงเหมือน ei",
+     "en": "With zijn your mouth glides open (ij). With zien your mouth stays still, lips spread wide (ie). The ij sounds the same as ei."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.zijn",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.zijn"
+   ],
+   "data": {
+    "say": "zijn",
+    "opts": [
+     "zijn",
+     "zien"
+    ],
+    "tr": {
+     "th": [
+      "เป็น อยู่ คือ",
+      "เห็น ดู"
+     ],
+     "en": [
+      "to be",
+      "to see"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>zijn</b> glijdt je mond open (ij). Bij <b>zien</b> blijft je mond stil, met brede lippen (ie). De ij klinkt hetzelfde als ei.",
+     "th": "ที่ zijn ปากเลื่อนเปิด (ij) ที่ zien ปากนิ่ง ริมฝีปากยืดกว้าง (ie) เสียง ij ออกเสียงเหมือน ei",
+     "en": "With zijn your mouth glides open (ij). With zien your mouth stays still, lips spread wide (ie). The ij sounds the same as ei."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.zien",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.zijn"
+   ],
+   "data": {
+    "say": "zien",
+    "opts": [
+     "zijn",
+     "zien"
+    ],
+    "tr": {
+     "th": [
+      "เป็น อยู่ คือ",
+      "เห็น ดู"
+     ],
+     "en": [
+      "to be",
+      "to see"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>zijn</b> glijdt je mond open (ij). Bij <b>zien</b> blijft je mond stil, met brede lippen (ie). De ij klinkt hetzelfde als ei.",
+     "th": "ที่ zijn ปากเลื่อนเปิด (ij) ที่ zien ปากนิ่ง ริมฝีปากยืดกว้าง (ie) เสียง ij ออกเสียงเหมือน ei",
+     "en": "With zijn your mouth glides open (ij). With zien your mouth stays still, lips spread wide (ie). The ij sounds the same as ei."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.gat",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.gat"
+   ],
+   "data": {
+    "say": "gat",
+    "opts": [
+     "gat",
+     "kat"
+    ],
+    "tr": {
+     "th": [
+      "รู",
+      "แมว"
+     ],
+     "en": [
+      "hole",
+      "cat"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "De <b>g</b> in gat is schurend, diep in je keel. De <b>k</b> in kat is kort en hard.",
+     "th": "g ใน gat เป็นเสียงเสียดแทรกลึกในลำคอ ส่วน k ใน kat สั้นและแข็ง",
+     "en": "The g in gat is scraping, deep in your throat. The k in kat is short and hard."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.gat",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.gat"
+   ],
+   "data": {
+    "say": "gat",
+    "opts": [
+     "gat",
+     "kat"
+    ],
+    "tr": {
+     "th": [
+      "รู",
+      "แมว"
+     ],
+     "en": [
+      "hole",
+      "cat"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "De <b>g</b> in gat is schurend, diep in je keel. De <b>k</b> in kat is kort en hard.",
+     "th": "g ใน gat เป็นเสียงเสียดแทรกลึกในลำคอ ส่วน k ใน kat สั้นและแข็ง",
+     "en": "The g in gat is scraping, deep in your throat. The k in kat is short and hard."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.kat",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.gat"
+   ],
+   "data": {
+    "say": "kat",
+    "opts": [
+     "gat",
+     "kat"
+    ],
+    "tr": {
+     "th": [
+      "รู",
+      "แมว"
+     ],
+     "en": [
+      "hole",
+      "cat"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "De <b>g</b> in gat is schurend, diep in je keel. De <b>k</b> in kat is kort en hard.",
+     "th": "g ใน gat เป็นเสียงเสียดแทรกลึกในลำคอ ส่วน k ใน kat สั้นและแข็ง",
+     "en": "The g in gat is scraping, deep in your throat. The k in kat is short and hard."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.wijn",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.wijn"
+   ],
+   "data": {
+    "say": "wijn",
+    "opts": [
+     "wijn",
+     "fijn"
+    ],
+    "tr": {
+     "th": [
+      "ไวน์",
+      "ดี สบาย"
+     ],
+     "en": [
+      "wine",
+      "fine, nice"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>f</b> raakt je onderlip je tanden en hoor je ruis. Bij <b>w</b> raak je je tanden niet; het is zachter.",
+     "th": "f: ริมฝีปากล่างแตะฟันและมีเสียงลม w: ไม่แตะฟัน นุ่มกว่า",
+     "en": "With f your lower lip touches your teeth and you hear friction. With w it does not; it is softer."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.wijn",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.wijn"
+   ],
+   "data": {
+    "say": "wijn",
+    "opts": [
+     "wijn",
+     "fijn"
+    ],
+    "tr": {
+     "th": [
+      "ไวน์",
+      "ดี สบาย"
+     ],
+     "en": [
+      "wine",
+      "fine, nice"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>f</b> raakt je onderlip je tanden en hoor je ruis. Bij <b>w</b> raak je je tanden niet; het is zachter.",
+     "th": "f: ริมฝีปากล่างแตะฟันและมีเสียงลม w: ไม่แตะฟัน นุ่มกว่า",
+     "en": "With f your lower lip touches your teeth and you hear friction. With w it does not; it is softer."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.fijn",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.wijn"
+   ],
+   "data": {
+    "say": "fijn",
+    "opts": [
+     "wijn",
+     "fijn"
+    ],
+    "tr": {
+     "th": [
+      "ไวน์",
+      "ดี สบาย"
+     ],
+     "en": [
+      "wine",
+      "fine, nice"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>f</b> raakt je onderlip je tanden en hoor je ruis. Bij <b>w</b> raak je je tanden niet; het is zachter.",
+     "th": "f: ริมฝีปากล่างแตะฟันและมีเสียงลม w: ไม่แตะฟัน นุ่มกว่า",
+     "en": "With f your lower lip touches your teeth and you hear friction. With w it does not; it is softer."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.ben",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.ben"
+   ],
+   "data": {
+    "say": "ben",
+    "opts": [
+     "ben",
+     "pen"
+    ],
+    "tr": {
+     "th": [
+      "เป็น",
+      "ปากกา"
+     ],
+     "en": [
+      "am",
+      "pen"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>b</b> trilt je stem, bij <b>p</b> blaas je een korte stoot lucht.",
+     "th": "b: เสียงสั่นที่คอ p: ลมพุ่งออกสั้น ๆ",
+     "en": "With b your voice buzzes, with p you blow a short puff of air."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.ben",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.ben"
+   ],
+   "data": {
+    "say": "ben",
+    "opts": [
+     "ben",
+     "pen"
+    ],
+    "tr": {
+     "th": [
+      "เป็น",
+      "ปากกา"
+     ],
+     "en": [
+      "am",
+      "pen"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>b</b> trilt je stem, bij <b>p</b> blaas je een korte stoot lucht.",
+     "th": "b: เสียงสั่นที่คอ p: ลมพุ่งออกสั้น ๆ",
+     "en": "With b your voice buzzes, with p you blow a short puff of air."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.pen",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.ben"
+   ],
+   "data": {
+    "say": "pen",
+    "opts": [
+     "ben",
+     "pen"
+    ],
+    "tr": {
+     "th": [
+      "เป็น",
+      "ปากกา"
+     ],
+     "en": [
+      "am",
+      "pen"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>b</b> trilt je stem, bij <b>p</b> blaas je een korte stoot lucht.",
+     "th": "b: เสียงสั่นที่คอ p: ลมพุ่งออกสั้น ๆ",
+     "en": "With b your voice buzzes, with p you blow a short puff of air."
+    }
+   }
+  },
+  {
+   "id": "nl.typ.weer",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.weer"
+   ],
+   "data": {
+    "say": "weer",
+    "opts": [
+     "weer",
+     "veer"
+    ],
+    "tr": {
+     "th": [
+      "สภาพอากาศ อีกครั้ง",
+      "ขนนก"
+     ],
+     "en": [
+      "weather, again",
+      "feather"
+     ]
+    },
+    "mode": "type"
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>v</b> hoor je wat ruis; bij <b>w</b> raak je je tanden bijna niet.",
+     "th": "ที่ v ได้ยินเสียงลมเล็กน้อย ที่ w แทบไม่แตะฟัน",
+     "en": "With v you hear some friction; with w you hardly touch your teeth."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.weer",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.weer"
+   ],
+   "data": {
+    "say": "weer",
+    "opts": [
+     "weer",
+     "veer"
+    ],
+    "tr": {
+     "th": [
+      "สภาพอากาศ อีกครั้ง",
+      "ขนนก"
+     ],
+     "en": [
+      "weather, again",
+      "feather"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>v</b> hoor je wat ruis; bij <b>w</b> raak je je tanden bijna niet.",
+     "th": "ที่ v ได้ยินเสียงลมเล็กน้อย ที่ w แทบไม่แตะฟัน",
+     "en": "With v you hear some friction; with w you hardly touch your teeth."
+    }
+   }
+  },
+  {
+   "id": "nl.luister.veer",
+   "form": "listen",
+   "pool": "klanken",
+   "items": [
+    "nl.klank.weer"
+   ],
+   "data": {
+    "say": "veer",
+    "opts": [
+     "weer",
+     "veer"
+    ],
+    "tr": {
+     "th": [
+      "สภาพอากาศ อีกครั้ง",
+      "ขนนก"
+     ],
+     "en": [
+      "weather, again",
+      "feather"
+     ]
+    }
+   },
+   "fb": {
+    "ok": {
+     "nl": "Bij <b>v</b> hoor je wat ruis; bij <b>w</b> raak je je tanden bijna niet.",
+     "th": "ที่ v ได้ยินเสียงลมเล็กน้อย ที่ w แทบไม่แตะฟัน",
+     "en": "With v you hear some friction; with w you hardly touch your teeth."
+    }
+   }
+  }
+ ]
+}
