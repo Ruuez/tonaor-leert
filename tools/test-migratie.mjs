@@ -158,6 +158,11 @@ r = run({ [KEY]: raw({ ...CUR, schema: 10 }) });
 ok('schema 10 → 12: figuurtje zonder kleur; daarna (besluit eigenaar) één keer de kaart als thuisscherm; met reservekopie', r.S.home === 'kaart' && r.S.homeSet === true && r.S.fig === null && r.S.schema === SCH && JSON.parse(r.ls._[KEY + '.bak']).schema === 10);
 r = run({ [KEY]: raw({ ...CUR, schema: 10, home: 'kaart', fig: 'lilac' }) });
 ok('schema 10 → 12: een gekozen kaart en kleur blijven', r.S.home === 'kaart' && r.S.fig === 'lilac');
+// 8l. stap 12 → 13: spellen, record per spel (docs/ontwerp-spellen.md), alleen toegevoegd
+r = run({ [KEY]: raw({ ...CUR, schema: 12, speedBest: 14 }) });
+ok('schema 12 → 13: gameBest leeg, speedBest blijft, met reservekopie', r.S.gameBest && !Object.keys(r.S.gameBest).length && r.S.speedBest === 14 && JSON.parse(r.ls._[KEY + '.bak']).schema === 12);
+r = run({ [KEY]: raw({ ...CUR, schema: 12, gameBest: { klok: 40 } }) });
+ok('schema 12 → 13 is herhaalbaar: een record blijft', r.S.gameBest.klok === 40);
 // 8k. stap 11 → 12: besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm
 r = run({ [KEY]: raw({ ...CUR, schema: 11, home: 'vandaag', fig: 'mint' }) });
 ok('schema 11 → 12: Vandaag wordt één keer Kaart (homeSet), de kleur blijft, met reservekopie', r.S.home === 'kaart' && r.S.homeSet === true && r.S.fig === 'mint' && JSON.parse(r.ls._[KEY + '.bak']).home === 'vandaag');

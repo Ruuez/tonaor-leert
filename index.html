@@ -19,6 +19,8 @@
 .ksl .kb{width:auto;flex:none;padding:6px 12px;font-size:.85rem;min-height:0}.kok{color:var(--mint-ink);font-weight:700;margin-right:6px}
 .sp-list{margin:0;padding-left:20px;display:grid;gap:4px}.sp-ic{display:inline-flex;vertical-align:middle;color:var(--apricot-ink)}
 .s-drag{touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.s-sel .s-halo{opacity:1}.s-sel{cursor:grabbing}
+.gcards{display:grid;grid-template-columns:1fr 1fr;gap:8px}.gcard{min-height:68px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font:inherit;font-size:.9rem;padding:6px;color:var(--ink)}.gcard.open{background:var(--sky)}.gcard.on{background:var(--mint);border-color:var(--mint-fill)}
+.gcoins{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.gcoins button{border:0;font:inherit;cursor:pointer}
 .wereld{position:relative;margin:4px -4px}.wereld-svg{display:block}
 .w-pl{position:absolute;transform:translate(-50%,-46px);width:112px;height:128px;background:none;border:0;padding:0;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .w-pl .w-name{font-size:.78rem;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1px 7px;max-width:120px;line-height:1.25}
@@ -668,6 +670,30 @@ en:{
  "map.done":"Done",
  "map.later":"After the previous scene",
  "map.closed":"Still closed. What happens here:",
+ "game.tile":"A game",
+ "game.choose":"Or choose yourself",
+ "game.chooseTitle":"Choose a game",
+ "game.n.dehet":"De or het",
+ "game.n.klank":"Sound duel",
+ "game.n.koppel":"Matching",
+ "game.n.klok":"Set the clock",
+ "game.n.geld":"Change",
+ "game.t.dehet":"Choose de or het. The shape helps at first.",
+ "game.t.klank":"Listen and choose the word you hear.",
+ "game.t.koppel":"Turn over two cards: a word and its meaning.",
+ "game.t.klok":"Set the hands to the time.",
+ "game.t.geld":"Lay the amount with coins and notes.",
+ "game.turn":"{k} of {n}",
+ "game.record":"Your record: {t}",
+ "game.newRecord":"New record!",
+ "game.again1":"Do it again with at most one slip.",
+ "game.oldRecord":"Previous record (60 seconds): {n}",
+ "game.none":"Not enough yet for this game.",
+ "game.clockAsk":"Set the clock to:",
+ "game.moneyAsk":"Lay:",
+ "game.sum":"Laid: {s}",
+ "game.reset":"Start again",
+ "game.ready":"Done",
  "proef.end":"This was a trial. Nothing has been counted.",
  "proef.scenes":"Trial scenes for a review. After switching on Trial parts, open the app again.",
  "steps.of":"Step {k} of {n}",
@@ -1278,6 +1304,30 @@ nl:{
  "map.done":"Gedaan",
  "map.later":"Na de vorige scène",
  "map.closed":"Nog dicht. Wat hier gebeurt:",
+ "game.tile":"Spelletje",
+ "game.choose":"Of kies zelf",
+ "game.chooseTitle":"Kies een spel",
+ "game.n.dehet":"De of het",
+ "game.n.klank":"Klankduel",
+ "game.n.koppel":"Koppelen",
+ "game.n.klok":"Zet de klok",
+ "game.n.geld":"Wisselgeld",
+ "game.t.dehet":"Kies de of het. De vorm helpt je in het begin.",
+ "game.t.klank":"Luister en kies het woord dat je hoort.",
+ "game.t.koppel":"Draai twee kaarten om: een woord en wat het betekent.",
+ "game.t.klok":"Zet de wijzers op de tijd.",
+ "game.t.geld":"Leg het bedrag met munten en briefjes.",
+ "game.turn":"{k} van {n}",
+ "game.record":"Je record: {t}",
+ "game.newRecord":"Nieuw record!",
+ "game.again1":"Maak hem nog eens met hooguit één misser.",
+ "game.oldRecord":"Vorig record (60 seconden): {n}",
+ "game.none":"Nog te weinig voor dit spel.",
+ "game.clockAsk":"Zet de klok op:",
+ "game.moneyAsk":"Leg:",
+ "game.sum":"Gelegd: {s}",
+ "game.reset":"Opnieuw",
+ "game.ready":"Klaar",
  "proef.end":"<h3>Dit was een proef.</h3><p>Er is niets meegeteld.</p>",
  "proef.scenes":"Proefscènes voor een beoordeling. Na het aanzetten van Proefonderdelen de app opnieuw openen.",
  "steps.of":"Stap {k} van {n}",
@@ -1886,6 +1936,30 @@ th:{
  "map.done":"เสร็จแล้ว",
  "map.later":"หลังฉากก่อนหน้า",
  "map.closed":"ยังปิดอยู่ ที่นี่จะเกิดอะไรขึ้น:",
+ "game.tile":"เกม",
+ "game.choose":"หรือเลือกเอง",
+ "game.chooseTitle":"เลือกเกม",
+ "game.n.dehet":"de หรือ het",
+ "game.n.klank":"ดวลเสียง",
+ "game.n.koppel":"จับคู่",
+ "game.n.klok":"ตั้งนาฬิกา",
+ "game.n.geld":"เงินทอน",
+ "game.t.dehet":"เลือก de หรือ het ตอนแรกรูปทรงจะช่วยคุณ",
+ "game.t.klank":"ฟังแล้วเลือกคำที่คุณได้ยิน",
+ "game.t.koppel":"เปิดไพ่สองใบ: คำและความหมายของมัน",
+ "game.t.klok":"ตั้งเข็มนาฬิกาให้ตรงกับเวลา",
+ "game.t.geld":"วางเงินให้ครบจำนวนด้วยเหรียญและธนบัตร",
+ "game.turn":"{k} จาก {n}",
+ "game.record":"สถิติของคุณ: {t}",
+ "game.newRecord":"สถิติใหม่!",
+ "game.again1":"ลองอีกครั้งโดยพลาดไม่เกินหนึ่งครั้ง",
+ "game.oldRecord":"สถิติเดิม (60 วินาที): {n}",
+ "game.none":"ยังมีไม่พอสำหรับเกมนี้",
+ "game.clockAsk":"ตั้งนาฬิกาเป็น:",
+ "game.moneyAsk":"วาง:",
+ "game.sum":"วางแล้ว: {s}",
+ "game.reset":"เริ่มใหม่",
+ "game.ready":"เสร็จ",
  "proef.end":"<b>นี่เป็นการทดลอง</b> ไม่มีการนับคะแนน",
  "proef.scenes":"ฉากทดลองสำหรับการประเมิน หลังเปิดส่วนทดลองแล้ว ให้เปิดแอปใหม่",
  "steps.of":"ขั้นที่ {k} จาก {n}",
@@ -2278,7 +2352,7 @@ const MOTOR={
   extraAfter:2,       // extra oefening na de zoveelste fout van dezelfde soort in een scène. Aanname (docs/scenes.md)
   slotErrShare:.5,    // hooguit dit deel van een open plek op het foutprofiel. Aanname
   // C5 spel: één tot drie minuten (masterplan C5); 60 seconden: aanname
-  gameSeconds:60,
+  gameSeconds:60, gameTurns:{dehet:10,klank:10,klok:8,geld:6,koppel:3}, gameMin:5, gameDefMax:40, gameHintN:2, gameKlank:[500,35,150] /* spellen: beurten per spel (koppel: rondes van 3 paren), minimaal 5 onderdelen, omschrijving hooguit 40 tekens, vorm vooraf de eerste 2 keer, pauze klankduel 500 ms min 35 per beurt tot 150 (aanname, te toetsen bij G4) */,
   listenFade:3, listenRead:25, listenFast:1.15,   // werkvormen 3.1: meelezen in de eerste 3 scènes met een luistertekst; examenvorm 25 s leestijd (scenes.md); iets sneller = 1,15. 3 en 1,15 zijn een aanname
   recMax:60, stepsFade:[2,5],   // rekenen in stappen: vanaf 2 keer zonder vraag en gegevens, vanaf 5 keer alleen rekenen en klopt (aanname, te toetsen bij G4 groep 2)
   recKeep:30, voxKeep:1000, voxMax:10,   // inspreekhulp (docs/ontwerp-inspreekhulp.md): hooguit 1000 ingesproken zinnen (alle kernzinnen passen), 10 s per zin
@@ -2704,14 +2778,14 @@ function fresh(){
   const items={};[...NL,...EN,...REK].forEach(x=>items[x.id]=item());
   return {v:2,onboarded:false,thai:'altijd',size:'normaal',goal:'normaal',moment:null,items,introduced:[],
     points:{},days:{},mins:{},help:[],answers:[],conf:[],sessions:0,talks:0,story:0,speedBest:0,
-    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
+    placement:null,extras:{boeddhisme:true,liedje:true},log:[],profile:{name:''},learn:'nl',sup:'th',explained:{},explainVoice:true,trial:false,home:'kaart',homeSet:true,fig:null,gameBest:{},seenNews:NEWS,bkNudge:Date.now(),weekGoal:600,weekGoalSet:false,rounds:{},weekSeen:{},newPerDay:16,newLog:{},roundLen:'normaal',errs:{},world:{ok:{},best:{},done:{},at:null},minsV:{},outside:{},prog:{},blockAdj:{},beh:{},strand:{},schema:SCHEMA};
 }
 /* ============ opslag veilig laden (#30) ============
    S.v blijft 2. S.schema telt de vorm van de opslag (zonder veld = 1). Elke stap n -> n+1 staat in MIGRATE en mag vaker draaien.
    Vóór een migratie gaat de ruwe opslag ongewijzigd naar BAK (één generatie); ook vóór Alles wissen en vóór Terugzetten.
    STORE: 'ok' = normaal | 'broken' = onleesbaar of onbekend: herstelscherm, niets wegschrijven | 'newer' = van een nieuwere app: alleen lezen.
    Buiten 'ok' schrijft de app niets weg en verstuurt ze geen voortgang. Onleesbare opslag wordt pas vervangen na een kopie in BROKEN. */
-const SCHEMA=12,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
+const SCHEMA=13,BAK=KEY+'.bak',BROKEN=KEY+'.kapot';
 const MIGRATE={
  1:s=>{if(!s.profile||typeof s.profile!=='object')s.profile={name:''};if(!LEARN.includes(s.learn))s.learn='nl';if(!SUPPORT.includes(s.sup))s.sup='th';
    if(s.v2ok&&!s.v2seen)s.v2seen=Date.now();delete s.v2ok;if(s.v2seen)s.tl1off=true;return s},
@@ -2724,7 +2798,8 @@ const MIGRATE={
  8:s=>{if(!s.beh||typeof s.beh!=='object'||Array.isArray(s.beh))s.beh={};return s},
  9:s=>{if(!s.strand||typeof s.strand!=='object'||Array.isArray(s.strand))s.strand={};return s},
  10:s=>{if(s.home!=='kaart'&&s.home!=='vandaag')s.home='vandaag';if(!('fig' in s))s.fig=null;return s},
- 11:s=>{if(!s.homeSet){s.home='kaart';s.homeSet=true}return s}   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
+ 11:s=>{if(!s.homeSet){s.home='kaart';s.homeSet=true}return s},
+ 12:s=>{if(!s.gameBest||typeof s.gameBest!=='object'||Array.isArray(s.gameBest))s.gameBest={};return s}   // spellen: record per spel (seconden); speedBest blijft staan   // besluit eigenaar 21 november 2026 (ijkmoment G3): de kaart wordt één keer het thuisscherm; daarna beslist alleen de keuze op Ik   // stap 5 (docs/ontwerp-stap5-kaart.md): thuisscherm Vandaag of Kaart, kleur van het figuurtje; alleen toegevoegd   // M6: tijd per streng per dag; alleen toegevoegd   // MO-M4: gedrag per dag (doorgaan-scherm getoond, doorgegaan); alleen toegevoegd   // de bloei-eisen worden strenger (G2, M5, N-M2): wat al bloeide (vanaf 10 dagen) blijft staan (alleen toegevoegd)   // route met tijd (docs/ontwerp-stap4.md): tijd per vak, tijd buiten de app, de vastgelegde verwachting per week, de bijstelling per baan (alleen toegevoegd)
 };
 function schemaOf(o){return o.schema==null?1:o.schema}
 function checkState(o){if(!o||typeof o!=='object'||Array.isArray(o)||o.v!==2||!o.items||typeof o.items!=='object'||Array.isArray(o.items))return 'broken';
@@ -3099,7 +3174,7 @@ function vToday(){
     ${SCENES.length?`<button class="tile mint" id="scene"><span class="ic">${icon.book}</span>${T('scene.tile')}<span class="small muted">${(ns=>{const pk=ns&&PACKS.find(p=>(p.scenes||[]).includes(ns));return (pk&&pk.title?esc(scP(pk.title))+': ':'')+esc(scP((ns||{}).title))})(nextScene())} · ${SCENES.filter(o=>((S.world||{}).done||{})[o.sc.id]).length}/${SCENES.length}</span></button>`:''}
     ${EXPL_LIST.length?`<button class="tile apricot" id="uitleg"><span class="ic">${icon.bulb}</span>${T('explain.tile')}<span class="small muted">${T('explain.tile.sub',{done:EXPL_LIST.filter(o=>S.explained[o.x.id]).length,n:EXPL_LIST.length})}</span></button>`:''}
     <button class="tile lilac" id="story"><span class="ic">${icon.book}</span>${T('extra.story')}<span class="small muted">${T('extra.story.sub')}</span></button>
-    <button class="tile apricot" id="speed"><span class="ic">${icon.bolt}</span>${T('extra.speed')}<span class="small muted num">${T('speed.record',{n:S.speedBest})}</span></button>
+    <button class="tile apricot" id="speed"><span class="ic">${icon.bolt}</span>${T('game.tile')}<span class="small muted">${(k=>k?esc(String(t(GNAME[k])).replace(/<[^>]*>/g,'')):'')(gBestKind())}</span></button><button class="linkish small" id="gameChoose">${T('game.choose')}</button>
     <button class="tile mint" id="talk"><span class="ic">${icon.chat}</span>${T('extra.talk')}<span class="small muted">${T('extra.talk.sub')}</span></button>
     ${enDay?`<button class="tile sky" id="video"><span class="ic">${icon.tv}</span>${T('extra.watch')}<span class="small muted">${T('extra.watch.sub')}</span></button>`:`<button class="tile sky" id="en"><span class="ic">${icon.globe}</span>${T('extra.english')}<span class="small muted">${T('extra.english.sub')}</span></button>`}
     ${S.extras.boeddhisme?`<button class="tile lilac" id="buddha"><span class="ic">${icon.lotus}</span>${T('extra.buddha')}<span class="small muted">${T('extra.buddha.sub')}</span></button>`:''}
@@ -3116,7 +3191,7 @@ function vToday(){
   if($('#scene'))$('#scene').onclick=()=>startScene(nextScene());
   if($('#ontdek'))$('#ontdek').onclick=()=>startLes(nextLes());
   if($('#uitleg'))$('#uitleg').onclick=()=>{route=vExplain;rerender();window.scrollTo(0,0)};
-  $('#speed').onclick=startSpeed;
+  $('#speed').onclick=startSpeed;$('#gameChoose').onclick=()=>{route=vGames;rerender();window.scrollTo(0,0)};
   $('#talk').onclick=()=>{route=vTalk;rerender();window.scrollTo(0,0)};
   $('#diary').onclick=()=>{route=vDiary;rerender();window.scrollTo(0,0)};
   $('#video').onclick=()=>{route=vVideo;rerender();window.scrollTo(0,0)};
@@ -3560,7 +3635,8 @@ H.sc_num=q=>{const qq=q.qq,f=qq.form,code=NUMFORM[f],sc=q.sc,nos=!!(q.hard||(sc&
   next()};
 /* spel (stap game): de of het op tempo, 60 seconden, met de woorden van de scène en wat aan de beurt is. Elk antwoord werkt het herhaalmodel bij
    met de vorm 'spel', die niet meetelt voor bloei (masterplan C5: vervangt productief oefenen niet). */
-H.sc_game=q=>{const sc=q.sc,counted=new Set(),ids=new Set([...q.items,...sc.targets]),pool0=NL.filter(w=>(w.art==='de'||w.art==='het')&&ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0),more=NL.filter(w=>(w.art==='de'||w.art==='het')&&!ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0&&thirsty(w.id));
+H.sc_game=q=>{if(GKINDS.includes(q.st.kind)){const p=q._P||gPool(q.st.kind,new Set([...q.items,...q.sc.targets]));if(!p)return next();return gamePlay(q.st.kind,p,q)}   /* stap 6: de spellen; hieronder de oude snelronde als terugval */
+  const sc=q.sc,counted=new Set(),ids=new Set([...q.items,...sc.targets]),pool0=NL.filter(w=>(w.art==='de'||w.art==='het')&&ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0),more=NL.filter(w=>(w.art==='de'||w.art==='het')&&!ids.has(w.id)&&S.items[w.id]&&S.items[w.id].reps>0&&thirsty(w.id));
   const pool=[...pool0,...more.slice(0,Math.max(0,12-pool0.length))];if(!pool.length)return next();
   let good=0,left=MOTOR.gameSeconds,cur=null,timer=null,started=false,last=null;const pick=()=>{let n=pool[Math.floor(Math.random()*pool.length)];if(pool.length>1)while(n===last)n=pool[Math.floor(Math.random()*pool.length)];last=n;return n};
   const done=()=>{clearInterval(timer);score(good>0,Math.min(30,good*2));if(SCN&&SCN.sc===sc)SCN.game=Math.max(SCN.game||0,good);
@@ -3816,8 +3892,85 @@ H.storyq=q=>{const x=q.x;let first=true;
     if(ok){score(first,10);$('#fb').innerHTML=fbBox(true,'','')+nextBtn('btn-main');$('#nx').onclick=next}else{first=false;$('#fb').innerHTML=fbK(false,'story.again')}})};
 
 /* ============ snelronde ============ */
+/* ============ stap 6: de spellen (docs/ontwerp-spellen.md, akkoord ontwerpsessie) ============
+   Beurten in plaats van aftellen (MOTOR.gameTurns); een klok die alleen de tijd toont; record = de snelste tijd met hooguit één misser.
+   Een misser is geen fout. De eerste goede beurt per onderdeel telt als review(id,true,'spel',…); spel staat in NOGROW (C5).
+   Onderdelen: eerst de bekende doelen van de scène, dan wat aan de beurt is, dan ander bekends. In de proefstand: alles (telt toch niet mee). */
+const GKINDS=['dehet','klank','koppel','klok','geld'],GNAME={dehet:'game.n.dehet',klank:'game.n.klank',koppel:'game.n.koppel',klok:'game.n.klok',geld:'game.n.geld'},GTIP={dehet:'game.t.dehet',klank:'game.t.klank',koppel:'game.t.koppel',klok:'game.t.klok',geld:'game.t.geld'};
+const GCOINS=[2000,1000,500,200,100,50,20,10,5];
+let GMISS=new Set(),GSEEN=new Map(),GCUR=null;   // de of het: hoe vaak een woord in deze sessie goed ging, en een misser; een spel telt passief (geen geschiedenis), dus de hulp afbouwen kan alleen per sessie   // de of het: een woord dat in deze sessie mis ging, krijgt de volgende keer de vorm weer vooraf (misser is geen fout, dus niet in de opslag)
+function gKnown(id){return (typeof PRF!=='undefined'&&PRF)||!!(S.items[id]&&S.items[id].reps>0)}
+function gPick(list,want,n,idOf,keyOf){keyOf=keyOf||idOf;const pr=typeof PRF!=='undefined'&&PRF,a=list.filter(x=>want.has(idOf(x))&&gKnown(idOf(x))),b=list.filter(x=>!want.has(idOf(x))&&gKnown(idOf(x))&&(pr||thirsty(idOf(x)))),c=list.filter(x=>gKnown(idOf(x)));
+  const out=[],seen=new Set();for(const x of [...shuffle(a),...shuffle(b),...shuffle(c)]){const id=keyOf(x);if(seen.has(id))continue;seen.add(id);out.push(x);if(out.length>=n)break}return out}
+function gSkill(form){const e=PACKS.filter(p=>p.type!=='proef').flatMap(p=>p.exercises||[]).find(e=>e.form===form&&(e.items||[])[0]&&S.items[e.items[0]]&&gKnown(e.items[0]));return e?e.items[0]:null}   /* alleen een vaardigheid die al is aangeboden */
+function gDefOk(w){const d=String(w.def||'');return !!d&&d.length<=MOTOR.gameDefMax}
+/* de pool per spel; null = te weinig (het spel valt weg) */
+function gPool(kind,want){want=want||new Set();const n=MOTOR.gameMin;
+  if(kind==='dehet'){const p=gPick(NL.filter(w=>w.art==='de'||w.art==='het'),want,12,w=>w.id);return p.length>=n?p:null}
+  if(kind==='klank'){if(QUIET)return null;const L=PACKS.filter(p=>p.learn==='nl'&&p.type!=='proef').flatMap(p=>p.exercises||[]).filter(e=>e.form==='listen'&&e.data&&e.data.mode!=='type'&&Array.isArray(e.data.opts)&&e.data.opts.length===2&&(e.items||[])[0]).map(e=>({id:e.items[0],exid:e.id,say:e.data.say,opts:e.data.opts}));
+    const p=gPick(L,want,12,x=>x.id,x=>x.exid);return p.length>=n?p:null}   /* per paar: één klank heeft vaak meer paren */
+  if(kind==='koppel'){const p=gPick(NL.filter(gDefOk),want,9,w=>w.id);return p.length>=n?p:null}
+  if(kind==='klok'){const id=gSkill('setclock')||gSkill('clock');return id||(typeof PRF!=='undefined'&&PRF)?[{id}]:null}
+  if(kind==='geld'){const id=gSkill('money');return id||(typeof PRF!=='undefined'&&PRF)?[{id}]:null}
+  return null}
+/* hoeveel een spel nu oplevert: onderdelen die aan de beurt zijn (voor de tegel) */
+function gWorth(kind){const p=gPool(kind);if(!p)return -1;return p.filter(x=>x.id&&thirsty(x.id)).length}
+function gBest(kind){const b=(S.gameBest||{})[kind];return typeof b==='number'&&b>0?b:null}
+function gTime(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function gEuro(c){return '€ '+Math.floor(c/100)+','+String(c%100).padStart(2,'0')}
+/* het spel zelf: q = de vraag in een scène (of null voor de tegel op Vandaag) */
+function gamePlay(kind,pool,q){if(q&&q._P)pool=q._P;const N=(MOTOR.gameTurns||{})[kind]||8,G=(q&&q._G)||{k:0,miss:0,t0:0,started:false,counted:new Set(),prev:null,cur:null,sel:[],done:new Set(),busy:false};if(q){q._G=G;q._P=pool}   // blijft bij opnieuw tekenen (taalwissel)
+  const here=()=>!!document.getElementById('gwrap'),exid=q?q.exid:'spel#'+kind;
+  const frameG=inner=>{const html=`<div id="gwrap" class="stack">${inner}</div>`;if(q)scFrame(q,html);else{paint(`<div class="sess-top"><button class="close" id="quit" aria-label="Stoppen">×</button><span class="eyebrow" style="flex:1">${esc(String(t(GNAME[kind])).replace(/<[^>]*>/g,''))}</span></div>${html}`);$('#quit').onclick=()=>{G.k=N+1;GCUR=null;clearInterval(G.iv);show('vandaag')}}};
+  const credit=id=>{if(!id||G.counted.has(id))return;G.counted.add(id);if(!(typeof PRF!=='undefined'&&PRF)&&!(typeof LES!=='undefined'&&LES)&&S.items[id])review(id,true,'spel',null,true)};   /* review: geen exid, zodat een spel nooit als variant voor bloei telt (C5) */
+  const miss=()=>{G.miss++};
+  const turn=()=>{const p=pool;
+    if(kind==='dehet'){let w=p[Math.floor(Math.random()*p.length)];if(p.length>1)while(w===G.cur)w=p[Math.floor(Math.random()*p.length)];return w}
+    if(kind==='klank')return p[G.k%p.length];
+    if(kind==='koppel'){const ws=shuffle(p).slice(0,3);return shuffle(ws.flatMap(w=>[{id:w.id,ty:'w',x:w.w,w},{id:w.id,ty:'d',x:w.def,w}]))}
+    if(kind==='klok'){let h,m;do{h=Math.floor(Math.random()*12);m=[0,15,30,45][Math.floor(Math.random()*4)]}while(h===0&&m===0);return {h,m,sh:12,sm:0}}   /* nooit de beginstand 12:00 */
+    if(kind==='geld'){const e=1+Math.floor(Math.random()*19),c=5*Math.floor(Math.random()*20);return {c:e*100+c,laid:[]}}};
+  const hintFirst=w=>GMISS.has(w.id)||(GSEEN.get(w.id)||0)<MOTOR.gameHintN;   // de vorm vooraf: de eerste keren, en na een misser
+  const head=()=>`<div class="row between"><span class="pill pill-mint num">${T('game.turn',{k:Math.min(G.k+1,N),n:N})}</span><span class="pill pill-sky num" id="gclk" aria-hidden="true">0:00</span></div>`;
+  const next1=()=>{G.k++;G.sel=[];G.done=new Set();G.seen=new Set();G.tok=(G.tok||0)+1;G.lock=true;setTimeout(()=>{G.lock=false},300);if(G.k>=N)return end();G.cur=turn();draw()};   /* lock: een tweede tik telt niet voor de nieuwe beurt (review) */
+  const draw=()=>{if(G.k>N)return;
+    if(!G.started){frameG(`<div class="card stack">${T(GNAME[kind])}<p>${T(GTIP[kind])}</p>${gBest(kind)?`<p class="num small muted">${T('game.record',{t:gTime(gBest(kind))})}</p>`:''}<button class="btn btn-main" id="go">${TB('btn.start')}</button></div>`);
+      $('#go').onclick=()=>{G.started=true;G.t0=now();G.cur=turn();GCUR=G;draw();clearInterval(G.iv);G.iv=setInterval(()=>{const c=document.getElementById('gclk');if(!c||G.k>=N||GCUR!==G){clearInterval(G.iv);return}c.textContent=gTime(Math.round((now()-G.t0)/1000))},1000)};return}
+    const c=G.cur;let body='';
+    if(kind==='dehet'){const pv=G.prev?`<p class="small muted">${artFull(G.prev)}</p>`:'';body=`${pv}<p class="eyebrow">de of het?</p><p class="speed">${hintFirst(c)?`<span class="artw art-${c.art}" aria-hidden="true"></span>`:''}${esc(c.w)}</p>${supSpan(L_(c))}<div class="choices"><button class="choice" data-a="de">de</button><button class="choice" data-a="het">het</button></div>`}
+    if(kind==='klank')body=`<button class="speak" id="gsay">${icon.play}${TB('btn.listen')}</button><div class="choices">${c.opts.map((o,i)=>`<button class="choice" data-k="${i}">${esc(o)}</button>`).join('')}</div>`;
+    if(kind==='koppel')body=`<div class="gcards">${c.map((x,i)=>`<button class="gcard${G.done.has(x.id)?' on':''}${G.sel.includes(i)?' open':''}" data-c="${i}" aria-label="${G.done.has(x.id)||G.sel.includes(i)?esc(x.x):i+1}" aria-pressed="${G.done.has(x.id)||G.sel.includes(i)}">${G.done.has(x.id)||G.sel.includes(i)?esc(x.x):'?'}</button>`).join('')}</div>`;
+    if(kind==='klok')body=`<p class="prompt">${T('game.clockAsk')} <b lang="nl">${esc(tijdNL(c.h,c.m))}</b></p>${clockSvg(c.sh,c.sm)}<p class="small muted" aria-live="polite">${esc(tijdNL(c.sh%12,c.sm))}</p><div class="row" style="justify-content:center;gap:8px;flex-wrap:wrap"><button class="btn btn-ghost" style="width:auto" id="ghm">− ${esc(t('scene.hour'))}</button><button class="btn btn-ghost" style="width:auto" id="ghp">+ ${esc(t('scene.hour'))}</button><button class="btn btn-ghost" style="width:auto" id="gmm">− 15 min</button><button class="btn btn-ghost" style="width:auto" id="gmp">+ 15 min</button></div><button class="btn btn-leaf" id="gok">${TB('btn.check')}</button>`;
+    if(kind==='geld'){const s=c.laid.reduce((a,b)=>a+b,0);body=`<p class="prompt">${T('game.moneyAsk')} <b class="num">${gEuro(c.c)}</b></p><div class="gcoins">${GCOINS.map(v=>`<button class="${v>=500?'bill':'coin'}${v<100?' small':''}" data-v="${v}">${v>=100?'€ '+v/100:v+' ct'}</button>`).join('')}</div><p class="num">${T('game.sum',{s:gEuro(s)})}</p><div class="btn-row"><button class="btn btn-ghost" id="greset">${TB('game.reset')}</button><button class="btn btn-leaf" id="gok">${TB('game.ready')}</button></div>`}
+    frameG(`<div class="card stack" style="text-align:center">${head()}${body}</div>`);
+    {const e=document.getElementById('gclk');if(e)e.textContent=gTime(Math.round((now()-G.t0)/1000))}
+    if(kind==='dehet')app.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{if(G.lock)return;if(b.dataset.a===c.art){credit(c.id);GMISS.delete(c.id);GSEEN.set(c.id,(GSEEN.get(c.id)||0)+1)}else{miss();GMISS.add(c.id);toast(`${c.art} ${c.w}`)}G.prev=c;next1()});
+    if(kind==='klank'){const sayIt=()=>say(c.say),tk=G.tok;$('#gsay').onclick=sayIt;setTimeout(()=>{if(here()&&GCUR===G&&G.tok===tk)sayIt()},Math.max(MOTOR.gameKlank[2],MOTOR.gameKlank[0]-G.k*MOTOR.gameKlank[1]));
+      app.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{if(G.lock)return;if(c.opts[+b.dataset.k]===c.say)credit(c.id);else{miss();toast(c.say)}next1()})}
+    if(kind==='koppel')app.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{if(G.busy)return;const i=+b.dataset.c,x=c[i];if(G.done.has(x.id)||G.sel.includes(i))return;G.sel.push(i);say(x.x);
+      if(G.sel.length<2)return draw();const [a,b2]=G.sel.map(j=>c[j]);
+      if(a.id===b2.id&&a.ty!==b2.ty){G.done.add(a.id);credit(a.id);G.sel=[];if(G.done.size*2>=c.length){const tk=G.tok;return setTimeout(()=>{if(here()&&GCUR===G&&G.tok===tk)next1()},500)}return draw()}
+      const seen=G.seen||(G.seen=new Set()),knew=[a,b2].some(x=>seen.has(c.findIndex((y,j)=>y.id===x.id&&y.ty!==x.ty)));if(knew)miss();G.sel.forEach(j=>seen.add(j));   /* review: een misser alleen als de andere helft al eens open lag */
+      G.busy=true;draw();const tk=G.tok;setTimeout(()=>{if(G.tok!==tk||GCUR!==G)return;G.busy=false;G.sel=[];if(here())draw()},900)});
+    if(kind==='klok'){const r=()=>draw();$('#ghm').onclick=()=>{c.sh=(c.sh+10)%12+1;r()};$('#ghp').onclick=()=>{c.sh=c.sh%12+1;r()};$('#gmm').onclick=()=>{c.sm=(c.sm+45)%60;r()};$('#gmp').onclick=()=>{c.sm=(c.sm+15)%60;r()};
+      $('#gok').onclick=()=>{if(G.lock)return;if(c.sh%12===c.h%12&&c.sm===c.m){credit(pool[0].id);next1()}else{miss();toast(tijdNL(c.h,c.m))}}}
+    if(kind==='geld'){app.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{c.laid.push(+b.dataset.v);draw()});$('#greset').onclick=()=>{c.laid=[];draw()};
+      $('#gok').onclick=()=>{if(G.lock)return;const s=c.laid.reduce((a,b)=>a+b,0);if(s===c.c){credit(pool[0].id);next1()}else{miss();c.laid=[];toast(gEuro(c.c));draw()}}}};
+  const end=()=>{const secs=Math.max(1,Math.round((now()-G.t0)/1000)),pr=(typeof PRF!=='undefined'&&PRF)||(typeof LES!=='undefined'&&LES),best=gBest(kind),rec=!pr&&G.miss<=1&&(!best||secs<best);GCUR=null;clearInterval(G.iv);
+    if(rec&&!pr){S.gameBest=S.gameBest||{};S.gameBest[kind]=secs}if(!pr)save();
+    if(q){score(true,Math.max(2,(N-G.miss)*2));if(SCN&&SCN.sc===q.sc)SCN.game=Math.max(SCN.game||0,N-G.miss)}else if(!pr)addPts(Math.max(2,(N-G.miss)*2));
+    const msg=`<div class="big num">${gTime(secs)}</div>${G.miss>1?`<p>${T('game.again1')}</p>`:rec?`<p><b>${T('game.newRecord')}</b></p>`:''}${gBest(kind)?`<p class="muted num">${T('game.record',{t:gTime(gBest(kind))})}</p>`:''}`;
+    if(q){scFrame(q,`<div class="card celebrate stack" style="text-align:center">${msg}</div>${nextBtn('btn-main')}`);$('#nx').onclick=next}
+    else{paint(`<div class="card celebrate stack" style="text-align:center">${msg}</div>${contHtml()}<button class="btn btn-ghost" id="home">${T('cont.home')}</button>`);if(rec)petals();bindCont();$('#home').onclick=()=>show('vandaag')}};
+  draw()}
+/* de tegel op Vandaag: het spel dat nu het meest oplevert; Of kies zelf toont de vijf met hun record */
+function gBestKind(){let k=null,v=-1;for(const g of GKINDS){const w=gWorth(g);if(w>v){v=w;k=g}}return v<0?null:k}
+function startGame(kind){app.dataset.vak=kind==='klok'||kind==='geld'?'rk':'nl';app.dataset.strand='vl';const p=gPool(kind);if(!p){toast(tx('game.none'));return show('vandaag')}$('#nav').hidden=true;app.classList.add('sess');gamePlay(kind,p,null)}
+function vGames(){sub('game.chooseTitle',`<section class="card stack">${GKINDS.map(g=>{const ok=!!gPool(g),b=gBest(g);return `<button class="btn btn-ghost" data-g="${g}" ${ok?'':'disabled'} style="justify-content:space-between">${TB(GNAME[g])}<span class="small muted num">${ok?(b?gTime(b):''):esc(String(t('game.none')).replace(/<[^>]*>/g,''))}</span></button>`}).join('')}${S.speedBest>0?`<p class="small muted num">${T('game.oldRecord',{n:S.speedBest})}</p>`:''}</section>`);
+  app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>startGame(b.dataset.g))}
 function startSpeed(){
-  app.dataset.vak='nl';app.dataset.strand='vl';   /* de/het-snelronde is Nederlands, ook na een les die met rekenen eindigde */
+  app.dataset.vak='nl';app.dataset.strand='vl';{const k=gBestKind();if(k)return startGame(k)}   /* stap 6: de tegel start het spel dat nu het meest oplevert; zonder spel de oude snelronde */
+     /* de/het-snelronde is Nederlands, ook na een les die met rekenen eindigde */
   $('#nav').hidden=true;app.classList.add('sess');let good=0,left=60,cur=null,timer=null,started=false;
   const DH=NL.filter(x=>x.art==='de'||x.art==='het'),pick=()=>DH[Math.floor(Math.random()*DH.length)];   // alleen woorden met de of het
   const draw=()=>{paint(`<div class="sess-top"><button class="close" id="quit" aria-label="Stoppen">×</button><div class="timer" style="flex:1"><i style="width:${left/60*100}%"></i></div><span class="pill pill-apricot num" id="sec">${left}s</span></div>

@@ -9,9 +9,9 @@
  "learn": "nl",
  "level": "A2",
  "title": {
-  "nl": "Proef: rekenen in stappen en slepen",
-  "th": "ทดลอง: คิดเลขเป็นขั้น และการลาก",
-  "en": "Trial: maths in steps and dragging"
+  "nl": "Proef: rekenen in stappen, slepen en spellen",
+  "th": "ทดลอง: คิดเลขเป็นขั้น การลาก และเกม",
+  "en": "Trial: maths in steps, dragging and games"
  },
  "items": [
   {
@@ -702,6 +702,122 @@
      }
     ]
    }
+  },
+  {
+   "id": "proef-spel",
+   "place": "proef",
+   "subject": "nl",
+   "n": 2,
+   "level": "A2",
+   "title": {
+    "nl": "Vijf spellen",
+    "th": "ห้าเกม",
+    "en": "Five games"
+   },
+   "intro": {
+    "nl": "Speel de vijf spellen na elkaar. Een misser is geen fout.",
+    "th": "เล่นห้าเกมต่อกัน การพลาดไม่ใช่ความผิด",
+    "en": "Play the five games one after another. A slip is not a mistake."
+   },
+   "can": {
+    "nl": "De spellen spelen",
+    "th": "เล่นเกมต่าง ๆ ได้",
+    "en": "Play the games"
+   },
+   "targets": [
+    "proef.medicijn"
+   ],
+   "art": {
+    "bg": "room",
+    "tone": "lilac",
+    "alt": {
+     "nl": "Een kamer met een tafel.",
+     "th": "ห้องที่มีโต๊ะ",
+     "en": "A room with a table."
+    },
+    "things": [
+     {
+      "kind": "table",
+      "x": 170,
+      "y": 156,
+      "hot": true,
+      "label": {
+       "nl": "de tafel",
+       "th": "โต๊ะ",
+       "en": "the table"
+      },
+      "item": "proef.tafel"
+     }
+    ]
+   },
+   "steps": [
+    {
+     "type": "do",
+     "form": "point",
+     "items": [
+      "proef.tafel"
+     ],
+     "ask": {
+      "nl": "Waar speel je het spel? Tik erop.",
+      "th": "คุณเล่นเกมที่ไหน แตะที่นั่น",
+      "en": "Where do you play the game? Tap it."
+     },
+     "answer": "proef.tafel",
+     "why": {
+      "nl": "Aan de <b>tafel</b>.",
+      "th": "ที่ <b>tafel</b>",
+      "en": "At the <b>tafel</b>."
+     }
+    },
+    {
+     "type": "game",
+     "kind": "dehet",
+     "items": [
+      "proef.medicijn"
+     ]
+    },
+    {
+     "type": "game",
+     "kind": "klank",
+     "items": [
+      "proef.medicijn"
+     ]
+    },
+    {
+     "type": "game",
+     "kind": "koppel",
+     "items": [
+      "proef.medicijn"
+     ]
+    },
+    {
+     "type": "game",
+     "kind": "klok",
+     "items": [
+      "proef.medicijn"
+     ]
+    },
+    {
+     "type": "game",
+     "kind": "geld",
+     "items": [
+      "proef.medicijn"
+     ]
+    },
+    {
+     "type": "end",
+     "next": {
+      "nl": "Dit was een proef.",
+      "th": "นี่เป็นการทดลอง",
+      "en": "This was a trial."
+     },
+     "real": {
+      "nl": "Speel een spel aan tafel met iemand thuis.",
+      "th": "เล่นเกมที่โต๊ะกับคนที่บ้าน",
+      "en": "Play a game at the table with someone at home."
+     }
+    }
+   ]
   }
  ]
 }
