@@ -65,3 +65,8 @@ Een melding is van de leerder en kan in de toelichting persoonlijke tekst bevatt
 3. **Vraag het** vervangt de hulpknop op oefenschermen (voorstel), of komt ernaast?
 
 En voor de eigenaar: **A, B of C** (zie de tabel).
+
+## Besluiten
+
+- **Ontwerpsessie (24 november 2026):** één knop **Vraag het** in plaats van de hulpknop, met een blad: de uitleg bij de stap (als die er is), Vraag je begeleider, Fout melden. De tik op een steunregel blijft de snelle weg naar "vertaling klopt niet". Punten: 2 per plek, hooguit 10 per dag.
+- **Eigenaar (privacy, 24 november 2026): keuze B.** Een melding gaat versleuteld over de bestaande koppeling naar de begeleider, als hulpvraag, en blijft ook in de wachtrij op het toestel. C (verwerking op de pc) is een apart besluit voor later.
