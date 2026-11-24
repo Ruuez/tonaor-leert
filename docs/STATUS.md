@@ -17,6 +17,24 @@ Bijgewerkt: 14 november 2026.
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
 - M6/N-M6 (de vier strengen), cache v2-78: de klok telt per streng (SCHEMA 10, alleen toevoegend); Vandaag meldt een streng onder 12,5% in 7 dagen, of dat er vandaag nog niets gelezen of geluisterd is (met een knop naar een verhaal); bij meekijken de verdeling. Nog open: de keuze van de volgende scène laten meewegen. Besluit ontwerpsessie (18 november 2026): de strengen tellen alleen Nederlands; Engels krijgt later zijn eigen vier strengen (onderbouwing-engels), zodra er genoeg Engelse lesstof is; een gezamenlijke verdeling komt er niet. E-M2 (geen Nederlands in de Engelse oefeningen, de brug alleen bij gelijkenis, geen brug na een fout) akkoord.
+- Cache v2-102 (24 november 2026): antwoorden van de ontwerpsessie op de makkelijke start, plus haar speelronde.
+  - **Beginnersstart:** een instap- of ophaalvraag over iets wat nooit is aangeboden, wordt vervangen door het tonen ervan.
+    - Een woord of vaste zin verschijnt als woordkaart met lidwoord, geluid en vertaling.
+    - Bij een regel verschijnt de uitlegkaart van de scène.
+    - Een maakstap toont eerst het onderdeel.
+    - Bij open invoer en bij een maakstap staat de knop Weet ik niet; daarna volgt het antwoord of het voorbeeld, en de scène gaat door.
+  - **Na een week, alleen op de kaart:**
+    - Bij Nog niets komt één keer het aanbod van de startmeting. Het is weg te tikken en staat daarna op Route als knop Startmeting doen. Bij Nog niets staat de meting niet meer als taak op de kaart.
+    - Daarna komt één keer de vraag naar het weekdoel, met de vier keuzes en Later. Die vraag komt niet op dezelfde dag als het aanbod.
+    - De vraag geldt alleen voor nieuwe starters: S.startT, SCHEMA 17, alleen toevoegend. Wie al met de start van v2-101 begon, krijgt startT gelijk aan starter.
+  - **Overig:**
+    - Dag-1-kaart: de titel van de plek staat er ook in de steuntaal.
+    - Onderweg heeft geen minuten meer.
+    - Staat alles op het begin, dan toont de meting één zin: "Je begint bij het begin."
+  - **Getest:** tests uitgebreid (test-start, migratie 16 naar 17). Browsercontrole op 375 px: Nog niets door de eerste scène, het aanbod en de vraag na acht dagen, Route, en een meting met alles op Weet ik niet.
+  - **Bewust niet gedaan:**
+    - Het aanbod en de vraag staan alleen op de kaart, niet op Vandaag. De kaart is het thuisscherm.
+    - Wie op Ja tikt en de meting afbreekt, krijgt geen tweede aanbod; de meting blijft via Route te doen.
 - Cache v2-101 (24 november 2026): de makkelijke start (docs/ontwerp-start.md).
   - De start bestaat uit drie schermen: de taal, een kort welkom, en "hoeveel Nederlands ken je al?".
     - Nog niets: direct de eerste les.

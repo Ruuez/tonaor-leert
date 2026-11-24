@@ -161,6 +161,14 @@ ok('schema 10 → 12: een gekozen kaart en kleur blijven', r.S.home === 'kaart' 
 // 8n. stap 14 → 15: fout melden, de wachtrij op het toestel (docs/ontwerp-stap8-melden.md), alleen toegevoegd
 r = run({ [KEY]: raw({ ...CUR, schema: 14, dhOk: { w: 2 } }) });
 ok('schema 14 → 15: reports leeg, reportPts leeg, dhOk blijft, met reservekopie', Array.isArray(r.S.reports) && !r.S.reports.length && r.S.reportPts && r.S.dhOk.w === 2 && JSON.parse(r.ls._[KEY + '.bak']).schema === 14);
+// 8p. stap 16 → 17: na de eerste week (aanbod meting, vraag weekdoel), alleen toegevoegd
+r = run({ [KEY]: raw({ ...CUR, schema: 16 }) });
+ok('schema 16 → 17: startT null, placeOffer en goalAsk 0, voor een bestaande leerder, met reservekopie', r.S.startT === null && r.S.placeOffer === 0 && r.S.goalAsk === 0 && JSON.parse(r.ls._[KEY + '.bak']).schema === 16);
+r = run({ [KEY]: raw({ ...CUR, schema: 16, startT: 9, placeOffer: 1, goalAsk: 1 }) });
+r = run({ [KEY]: raw({ ...CUR, schema: 16, startLevel: 'niets', starter: 77 }) });
+ok('schema 16 → 17: wie al met de makkelijke start begon, krijgt startT = het begin van de beginnersstart', r.S.startT === 77);
+r = run({ [KEY]: raw({ ...CUR, schema: 16, startT: 9, placeOffer: 1, goalAsk: 1 }) });
+ok('schema 16 → 17 is herhaalbaar', r.S.startT === 9 && r.S.placeOffer === 1 && r.S.goalAsk === 1);
 // 8o. stap 15 → 16: de makkelijke start (docs/ontwerp-start.md), alleen toegevoegd; bestaande leerders krijgen geen beginnersstart
 r = run({ [KEY]: raw({ ...CUR, schema: 15, reports: [{ t: 1 }] }) });
 ok('schema 15 → 16: starter en startLevel null, kHint 0, meldingen blijven, met reservekopie', r.S.starter === null && r.S.startLevel === null && r.S.kHint === 0 && r.S.reports.length === 1 && JSON.parse(r.ls._[KEY + '.bak']).schema === 15);

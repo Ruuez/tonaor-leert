@@ -50,7 +50,14 @@ ok(/names\.some\(k=>lv\[k\]>0\)\?`<p>\$\{T\('place\.result'\)\}/.test(PE), '"elk
 
 /* 5. de beginnersstart in de les */
 ok(/\(nw\[0\]&&EN\.includes\(nw\[0\]\)\?'engels':'woorden'\)\)\{nw\.forEach\(w=>q\.push\(\{type:'learn'/.test(html), 'een nieuw woord eerst getoond (learn), daarna herkennen en ophalen');
-ok(/st\.role==='instap'&&\(typeof starterOn==='function'\?starterOn:\(\)=>false\)\(sc\.subject\|\|vak\)&&!\(qq\.items\|\|\[\]\)\.some\(id=>S\.items\[id\]&&S\.items\[id\]\.reps>0\)\)return;/.test(html), 'geen instapvraag over iets wat nog nooit gezien is');
+{ const SQ = cut('function sceneQ(', '\nfunction ');
+  ok(SQ.includes("never=id=>!(S.items[id]&&S.items[id].reps>0)&&!(S.introduced||[]).includes(id)") && SQ.includes("if(!stOn||!id||!never(id)||shown.has(id))return null"), 'beginnersstart: "nooit aangeboden" = geen herhaling en niet getoond; elk onderdeel één keer tonen per scène');
+  ok(SQ.includes("return w?{...base,type:'learn',w,items:[id],_new:1,_starter:1}:{...base,type:'sc_rule',st:rs,items:[id],_starter:1}"), 'tonen: een woord of vaste zin als woordkaart (lidwoord, geluid, vertaling), een regel met de uitlegkaart van de scène');
+  ok(SQ.includes("if(st.role==='instap'||st.role==='ophalen'){const sh=show((qq.items||[])[0],{...base,step:qph[st.role]||3});if(sh){q.push(sh);return}"), 'een instap- of ophaalvraag over iets nooit aangeboden wordt vervangen door het tonen (niet overgeslagen)');
+  ok(SQ.includes("else if(st.type==='make'){push(show((st.items||[])[0],base));"), 'een maakstap: wat nooit is aangeboden eerst tonen'); }
+ok(html.includes(`\${idkOn(q)&&!gs?\`<button class="linkish muted" id="idk">\${T('probe.dunno')}</button>\`:''}`) && html.includes("function idkOn(q){return (typeof starterOn==='function'?starterOn:()=>false)((q.sc&&q.sc.subject)||q.vak||'nl')}"), 'open invoer in een scène: Weet ik niet voor een starter');
+ok(/\$\('#idk'\)\.onclick=\(\)=>\{if\(done\)return;done=true;[\s\S]{0,500}T\('scene\.answer'\)/.test(html), 'Weet ik niet: het antwoord tonen en door');
+ok(/\$\('#idk'\)\.onclick=\(\)=>\{\$\('#ans'\)\.disabled=true;[^\n]*T\('scene\.model'\)/.test(html), 'maakstap: Weet ik niet toont het voorbeeld');
 ok((html.match(/\(q\.role==='instap'\|\|q\.role==='controle'\)&&!\(typeof starterOn==='function'\?starterOn:\(\)=>false\)\(\(q\.sc&&q\.sc\.subject\)\|\|q\.vak\|\|'nl'\)/g) || []).length >= 2, 'steuntaal overal tijdens de beginnersstart (ook bij instap en controle)');
 
 /* 6. de kaart op dag 1 */
@@ -66,6 +73,22 @@ for (const k of ['onb2.hi', 'onb2.l1', 'onb2.l2', 'onb2.l3', 'onb2.level', 'onb2
 ok(VK.includes(`\${String(T('onb.when')).replace(/h1>/g,'h2>')}<div class="chips" role="group" aria-label=`) && VK.includes('data-km="${k}" aria-pressed="false"'), 'Wanneer leer je op de kaart: geen tweede h1, groep met label, knoppen met aria-pressed');
 ok(html.includes("if(S.startLevel!=='veel'&&r0&&r0.miss>=MOTOR.placeStop)return next()}"), 'bij Veel de volledige meting');
 ok(PE.includes('PL[k].miss>=MOTOR.placeStop?0:'), 'een gestopt onderdeel telt als 0');
+
+/* 7b. na de eerste week (antwoord ontwerpsessie op de start) */
+ok(VK.includes("pOffer=wk1&&S.startLevel==='niets'&&!S.placement&&!S.placeOffer"), 'na een week: één keer het aanbod van de meting, alleen bij Nog niets');
+ok(VK.includes("gAsk=wk1&&!pOffer&&!S.weekGoalSet&&!S.goalAsk&&!(typeof S.placeOffer==='number'&&S.placeOffer>1&&now()-S.placeOffer<DAY)"), 'daarna één keer de vraag naar het weekdoel, niet als het al gekozen is');
+ok(VK.includes("typeof S.startT==='number'&&now()-S.startT>=MOTOR.askDays*DAY") && /askDays:7\b/.test(html), 'pas na zeven dagen; nooit voor bestaande leerders (startT null)');
+ok(VK.includes("$('#pOfferNo').onclick=()=>{S.placeOffer=now();save();vKaart()}") && VK.includes("S.weekGoalSet=true;S.goalAsk=1;save()") && VK.includes("$('#gAskNo').onclick=()=>{S.goalAsk=1;save();vKaart()}"), 'weg te tikken; zonder keuze blijft het standaard weekdoel');
+ok(html.includes("if($('#rPlace'))$('#rPlace').onclick=startPlacement;") && html.includes("!S.placement&&S.startLevel!=='niets'?"), 'de meting later via Route; bij Nog niets niet als taak op de kaart');
+ok(VK.includes('kcur"><b>${scT(cur.raw)}</b>'), 'dag 1: de titel van de plek met steuntaal (via scT, veilig)');
+ok(!/"map\.onderwegTip":"[^"]*\d/.test(html), 'Onderweg zonder minuten');
+ok(ON.includes('S.startT=now()'), 'het moment van de start wordt bewaard');
+
+ok(PE.includes("names.every(k=>!(lv[k]>0))?`<p class=\"prompt\">${T('place.beginAll')}</p>`"), 'alles bij het begin: één zin, geen zes gelijke regels');
+
+ok(html.includes("else if(st.type==='rule'){if(!shown.has(st.items[0]))q.push({...base,type:'sc_rule'"), 'een regel die al getoond is, komt niet nog eens als regelkaart (codereview 1)');
+ok(html.includes("const stOn=!(typeof LES!=='undefined'&&LES)&&"), 'in een losse les geen beginnersstart: een les schrijft niets in de voortgang (codereview 3)');
+ok(/\{const cl=\$\('#claim'\);if\(cl\)cl\.remove\(\)\}later\(\(\)=>\{if\(q\.role==='controle'&&SCN\)SCN\.ctrl=false;score\(false,10\);/.test(html), 'Weet ik niet telt als gestelde vraag en haalt de bezwaarknop weg (codereview 2)');
 
 /* 8. opslag */
 ok(/starter:null,startLevel:null,kHint:0/.test(html), 'nieuwe opslag: starter en startLevel leeg tot de keuze');
