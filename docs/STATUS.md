@@ -17,6 +17,10 @@ Bijgewerkt: 14 november 2026.
 - Fase 3, het herhaalmodel (docs/herhaalmodel.md), inclusief de verwerkte review: live sinds 13 november 2026.
 - Na gebruik: herhaling met tijd ertussen, dagbudget voor nieuwe woorden (eerst als vraag), Bijsturen op Ik, na de ronde te makkelijk/goed/te moeilijk en leuk/saai, vertaling melden, ervaringstest: live sinds 14 november 2026, cache v2-34 (t/m bad647d).
 - M6/N-M6 (de vier strengen), cache v2-78: de klok telt per streng (SCHEMA 10, alleen toevoegend); Vandaag meldt een streng onder 12,5% in 7 dagen, of dat er vandaag nog niets gelezen of geluisterd is (met een knop naar een verhaal); bij meekijken de verdeling. Nog open: de keuze van de volgende scène laten meewegen. Besluit ontwerpsessie (18 november 2026): de strengen tellen alleen Nederlands; Engels krijgt later zijn eigen vier strengen (onderbouwing-engels), zodra er genoeg Engelse lesstof is; een gezamenlijke verdeling komt er niet. E-M2 (geen Nederlands in de Engelse oefeningen, de brug alleen bij gelijkenis, geen brug na een fout) akkoord.
+- Cache v2-103 (24 november 2026): herstel van een fout in v2-102.
+  - **Wat er misging:** voor een starter crashte een typvraag in een scène, omdat de knop Weet ik niet een variabele gebruikte vóór de declaratie (TDZ). Het vorige scherm bleef dan staan, en de woordkaart leek drie keer te komen.
+  - **Wie het raakte:** alleen starters; bestaande leerders zagen de knop niet.
+  - **Test:** test-start controleert nu dat sc_q de variabele niet te vroeg gebruikt.
 - Cache v2-102 (24 november 2026): antwoorden van de ontwerpsessie op de makkelijke start, plus haar speelronde.
   - **Beginnersstart:** een instap- of ophaalvraag over iets wat nooit is aangeboden, wordt vervangen door het tonen ervan.
     - Een woord of vaste zin verschijnt als woordkaart met lidwoord, geluid en vertaling.

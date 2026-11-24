@@ -55,7 +55,7 @@ ok(/\(nw\[0\]&&EN\.includes\(nw\[0\]\)\?'engels':'woorden'\)\)\{nw\.forEach\(w=>
   ok(SQ.includes("return w?{...base,type:'learn',w,items:[id],_new:1,_starter:1}:{...base,type:'sc_rule',st:rs,items:[id],_starter:1}"), 'tonen: een woord of vaste zin als woordkaart (lidwoord, geluid, vertaling), een regel met de uitlegkaart van de scène');
   ok(SQ.includes("if(st.role==='instap'||st.role==='ophalen'){const sh=show((qq.items||[])[0],{...base,step:qph[st.role]||3});if(sh){q.push(sh);return}"), 'een instap- of ophaalvraag over iets nooit aangeboden wordt vervangen door het tonen (niet overgeslagen)');
   ok(SQ.includes("else if(st.type==='make'){push(show((st.items||[])[0],base));"), 'een maakstap: wat nooit is aangeboden eerst tonen'); }
-ok(html.includes(`\${idkOn(q)&&!gs?\`<button class="linkish muted" id="idk">\${T('probe.dunno')}</button>\`:''}`) && html.includes("function idkOn(q){return (typeof starterOn==='function'?starterOn:()=>false)((q.sc&&q.sc.subject)||q.vak||'nl')}"), 'open invoer in een scène: Weet ik niet voor een starter');
+ok(html.includes(`\${idkOn(q)&&qq.guess!==true?\`<button class="linkish muted" id="idk">\${T('probe.dunno')}</button>\`:''}`) && html.includes("function idkOn(q){return (typeof starterOn==='function'?starterOn:()=>false)((q.sc&&q.sc.subject)||q.vak||'nl')}"), 'open invoer in een scène: Weet ik niet voor een starter');
 ok(/\$\('#idk'\)\.onclick=\(\)=>\{if\(done\)return;done=true;[\s\S]{0,500}T\('scene\.answer'\)/.test(html), 'Weet ik niet: het antwoord tonen en door');
 ok(/\$\('#idk'\)\.onclick=\(\)=>\{\$\('#ans'\)\.disabled=true;[^\n]*T\('scene\.model'\)/.test(html), 'maakstap: Weet ik niet toont het voorbeeld');
 ok((html.match(/\(q\.role==='instap'\|\|q\.role==='controle'\)&&!\(typeof starterOn==='function'\?starterOn:\(\)=>false\)\(\(q\.sc&&q\.sc\.subject\)\|\|q\.vak\|\|'nl'\)/g) || []).length >= 2, 'steuntaal overal tijdens de beginnersstart (ook bij instap en controle)');
@@ -89,6 +89,9 @@ ok(PE.includes("names.every(k=>!(lv[k]>0))?`<p class=\"prompt\">${T('place.begin
 ok(html.includes("else if(st.type==='rule'){if(!shown.has(st.items[0]))q.push({...base,type:'sc_rule'"), 'een regel die al getoond is, komt niet nog eens als regelkaart (codereview 1)');
 ok(html.includes("const stOn=!(typeof LES!=='undefined'&&LES)&&"), 'in een losse les geen beginnersstart: een les schrijft niets in de voortgang (codereview 3)');
 ok(/\{const cl=\$\('#claim'\);if\(cl\)cl\.remove\(\)\}later\(\(\)=>\{if\(q\.role==='controle'&&SCN\)SCN\.ctrl=false;score\(false,10\);/.test(html), 'Weet ik niet telt als gestelde vraag en haalt de bezwaarknop weg (codereview 2)');
+
+{ const SCQ = cut('H.sc_q=q=>', '\nH.'), d = SCQ.indexOf('const gs=');
+  ok(d > 0 && !/\bgs\b/.test(SCQ.slice(0, d)), 'sc_q: gs wordt niet gebruikt vóór de declaratie (anders crasht een typvraag voor een starter)'); }
 
 /* 8. opslag */
 ok(/starter:null,startLevel:null,kHint:0/.test(html), 'nieuwe opslag: starter en startLevel leeg tot de keuze');
